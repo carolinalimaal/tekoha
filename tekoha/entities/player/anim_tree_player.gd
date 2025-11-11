@@ -10,7 +10,7 @@ func _process(_delta: float) -> void:
 		"Walk":
 			set("parameters/Walk/blend_position", owner.move_direction)
 		"Roll":
-			set("parameters/Roll/blend_position", owner.move_direction)
+			set("parameters/Roll/blend_position", owner.roll_direction)
 		"Attack1":
 			set("parameters/Attack_1/blend_position", owner.attack_direction)
 		"AttackEnd":
