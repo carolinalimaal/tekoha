@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcgy2tcw5nmvw"
-path="res://.godot/imported/curupira-Sheet.png-0f1ae8d1f3c6ff757b43268abfe0d2d1.ctex"
+uid="uid://d36nm3vhln3ww"
+path="res://.godot/imported/curupira_spritesheet.png-904bb8abb5434e0baa4c3a8c21dc15e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/entities/player/curupira-Sheet.png"
-dest_files=["res://.godot/imported/curupira-Sheet.png-0f1ae8d1f3c6ff757b43268abfe0d2d1.ctex"]
+source_file="res://assets/sprites/entities/player/curupira_spritesheet.png"
+dest_files=["res://.godot/imported/curupira_spritesheet.png-904bb8abb5434e0baa4c3a8c21dc15e1.ctex"]
 
 [params]
 
