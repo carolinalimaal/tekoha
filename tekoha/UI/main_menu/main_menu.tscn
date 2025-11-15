@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdopbw67bxvxq"]
+[gd_scene load_steps=6 format=3 uid="uid://bdopbw67bxvxq"]
 
 [ext_resource type="Script" uid="uid://brdnbthyw7g0h" path="res://UI/main_menu/main_menu.gd" id="1_qtoa1"]
+[ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_usm5j"]
 [ext_resource type="Texture2D" uid="uid://b2ip6k67en3ya" path="res://assets/UI/bg/bg_main_menu_1.png" id="2_usm5j"]
 [ext_resource type="Texture2D" uid="uid://dhcppev66xefc" path="res://assets/UI/logo/tekoha_colorful.svg" id="3_lib8g"]
 [ext_resource type="PackedScene" uid="uid://6eh6tcx4b8rb" path="res://UI/button/button.tscn" id="4_rxajg"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_usm5j")
 script = ExtResource("1_qtoa1")
 
 [node name="Background" type="TextureRect" parent="."]
