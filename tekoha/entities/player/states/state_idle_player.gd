@@ -15,9 +15,6 @@ func _update(_delta: float) -> void:
 	if direction:
 		transition_to("walk")
 		return
-	# TODO: isso sera arrumado depois 
-	owner_node.check_roll_input()
-	owner_node.check_attack_input()
 
 func _physics_update(_delta: float) -> void:
 	pass

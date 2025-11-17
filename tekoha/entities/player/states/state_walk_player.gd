@@ -18,9 +18,6 @@ func _update(_delta: float) -> void:
 	# Atualizar o move_direction e facing_direction
 	owner_node.move_direction = direction
 	owner_node.facing_direction = owner_node.move_direction
-	# TODO: isso sera arrumado depois 
-	owner_node.check_roll_input()
-	owner_node.check_attack_input()
 
 func _physics_update(_delta: float) -> void:
 	# Aplicar o movimento

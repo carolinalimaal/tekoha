@@ -9,7 +9,7 @@ const STUN_DURATION : float = 0.5
 func _enter() -> void:
 	owner_node.velocity = Vector2.ZERO
 	# Pegar a direcao do ataque
-	owner_node.attack_direction = owner_node.get_mouse_direction()
+	owner_node.attack_direction = owner_node.get_aim_direction()
 	# Alterar os valores do ataque
 	owner_node.hurtbox_component.attack_data.damage_value = ATTACK_DAMAGE
 	owner_node.hurtbox_component.attack_data.knockback_force= ATTACK_KNOCKBACK

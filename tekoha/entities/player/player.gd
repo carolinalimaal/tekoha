@@ -33,29 +33,24 @@ func _ready() -> void:
 	# Adicionar ao grupo "player"
 	self.add_to_group("player")
 
-func _process(_delta: float) -> void:
-	
-	pass
-
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
-func get_direction() -> Vector2:
-	return Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
-
-func get_mouse_direction() -> Vector2:
-	return (get_global_mouse_position() - global_position).normalized()
-
-func check_attack_input():
-	if Input.is_action_just_pressed("attack"):
+# Gerenciar os inputs para as acoes
+func _unhandled_input(_event: InputEvent) -> void:
+	if GlobalRefs.input_manager.get_action_pressed("attack"):
 		if state_machine.current_state.name != "AttackEnd":
 			state_machine.current_state.transition_to("attack1")
 		else:
 			state_machine.current_state.transition_to("attack2")
-
-func check_roll_input():
-	if Input.is_action_just_pressed("roll") and can_roll:
+	elif GlobalRefs.input_manager.get_action_pressed("roll") and can_roll:
 		state_machine.current_state.transition_to("roll")
+
+func get_direction() -> Vector2:
+	return GlobalRefs.input_manager.get_movement_vector().normalized()
+
+func get_aim_direction() -> Vector2:
+	return GlobalRefs.input_manager.get_aim_direction().normalized()
 
 func die():
 	# TODO: ver possivel dependencia com health_component

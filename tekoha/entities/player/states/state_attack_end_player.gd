@@ -12,9 +12,7 @@ func _exit() -> void:
 	owner_node.animation_tree.animation_finished.disconnect(_on_animation_finished)
 
 func _update(_delta: float) -> void:
-	# TODO: isso sera arrumado depois 
-	owner_node.check_roll_input()
-	owner_node.check_attack_input()
+	pass
 
 func _physics_update(_delta: float) -> void:
 	pass

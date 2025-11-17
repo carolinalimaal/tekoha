@@ -14,7 +14,7 @@ func _ready() -> void:
 func _enter() -> void:
 	owner_node.can_roll = false
 	# Pegar a direcao da rolagem e aplicar o movimento
-	owner_node.roll_direction = owner_node.get_mouse_direction()
+	owner_node.roll_direction = owner_node.get_aim_direction()
 	owner_node.velocity = owner_node.roll_direction * owner_node.ROLL_SPEED
 	# Desabilitar a hitbox_collision
 	owner_node.hitbox_component.hitbox_collision.set_deferred("disabled", true)
