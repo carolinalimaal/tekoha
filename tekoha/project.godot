@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalSignals="*res://globals/global_signals.gd"
+GlobalRefs="*res://globals/global_refs.gd"
 
 [global_group]
 
