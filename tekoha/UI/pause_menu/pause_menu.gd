@@ -11,7 +11,9 @@ func _ready() -> void:
 	back_to_game_button.pressed.connect(_on_back_to_game_pressed)
 	options_button.pressed.connect(_on_options_pressed)
 	back_to_main_menu_button.pressed.connect(_on_back_to_main_menu_pressed)
+	
 	animation_player.play("RESET")
+	
 	self.visible = false
 
 func _process(_delta: float) -> void:
