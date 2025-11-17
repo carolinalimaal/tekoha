@@ -5,7 +5,7 @@ extends Control
 @onready var back_to_main_menu_button: Button = $MenuOptions/BackToMainMenu
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var is_open : bool = false
+var _is_open : bool = false
 
 func _ready() -> void:
 	back_to_game_button.pressed.connect(_on_back_to_game_pressed)
@@ -25,13 +25,13 @@ func _pause_menu() -> void:
 
 func _pause() -> void:
 	get_tree().paused = true
-	is_open = true
+	_is_open = true
 	self.visible = true
 	animation_player.play("pause")
 
 func _resume() -> void:
 	get_tree().paused = false
-	is_open = false
+	_is_open = false
 	self.visible = false
 	animation_player.play_backwards("pause")
 
