@@ -3,7 +3,6 @@ extends Control
 
 var current_slot_selected: InventorySlotUI
 # TODO: Verificar se essa variavel ficara aqui ou em um script global
-var inventory : Inventory
 var _is_open: bool = false
 
 @onready var slots = $VBoxContainer/TextureRect/HBoxContainer/SlotsGrid.get_children()
@@ -15,7 +14,6 @@ var _is_open: bool = false
 func _ready() -> void:
 	# Conectar sinal para manter a UI do inventario atualizada
 	GlobalSignals.updated_inventory.connect(_update_ui)
-	inventory = GlobalSignals.inventory
 	# Conectar sinais dos slots
 	for i in len(slots):
 		if slots[i] is InventorySlotUI:
@@ -55,8 +53,8 @@ func _open() -> void:
 # Atualiza a UI do inventário
 func _update_ui() -> void:
 	for i in len(slots):
-		if inventory.inventory_slots[i].item:
-			slots[i].set_item_slot(inventory.inventory_slots[i])
+		if GlobalRefs.inventory.inventory_slots[i].item:
+			slots[i].set_item_slot(GlobalRefs.inventory.inventory_slots[i])
 		else: 
 			slots[i].set_item_slot(null)
 
@@ -91,7 +89,7 @@ func _deselect_all_slots() -> void:
 # Usa o item e o remove do inventário
 func _on_item_used(item_slot: ItemSlot) -> void:
 	if item_slot and !item_slot.is_empty():
-		inventory.remove_item_from_slot(item_slot.slot_index)
+		GlobalRefs.inventory.remove_item_from_slot(item_slot.slot_index)
 		# TODO: Funcionalidade de usar o item
 		
 		# Reativa todos os slots e reseta o current_slot_selected
