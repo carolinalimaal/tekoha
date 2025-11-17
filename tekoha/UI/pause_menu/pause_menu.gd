@@ -28,6 +28,7 @@ func _pause() -> void:
 	_is_open = true
 	self.visible = true
 	animation_player.play("pause")
+	back_to_game_button.grab_focus()
 
 func _resume() -> void:
 	get_tree().paused = false
