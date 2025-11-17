@@ -26,12 +26,10 @@ func _ready() -> void:
 	_close()
 
 # Gerenciar os inputs para abri ou fechar o inventário
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("inventory"):
-		# Se estiver aberto, fecha
-		if _is_open:
+func _unhandled_input(_event: InputEvent) -> void:
+	if GlobalRefs.input_manager.get_action_pressed("inventory"):
+		if _is_open and get_tree().paused:
 			_close()
-		# Se estiver fechado e o jogo não estiver pausado
 		elif !_is_open and !get_tree().paused:
 			_open()
 
