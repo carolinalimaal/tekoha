@@ -30,7 +30,7 @@ func _on_new_game_pressed() -> void:
 
 func _on_load_game_pressed() -> void:
 	# TODO: Funcionalidade de carregar jogo salvo
-	pass
+	get_tree().change_scene_to_file("res://globals/main_scene/main.tscn")
 
 func _on_options_pressed() -> void:
 	# TODO: Funcionalidade de abrir menu de opcoes
