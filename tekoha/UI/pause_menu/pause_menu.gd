@@ -16,14 +16,12 @@ func _ready() -> void:
 	
 	self.visible = false
 
-func _process(_delta: float) -> void:
-	_pause_menu()
-
-func _pause_menu() -> void:
-	if Input.is_action_just_pressed("pause") and not get_tree().paused and not is_open:
-		_pause()
-	elif Input.is_action_just_pressed("pause") and get_tree().paused and is_open:
-		_resume()
+func _unhandled_input(_event: InputEvent) -> void:
+	if GlobalRefs.input_manager.get_action_pressed("pause"):
+		if _is_open and get_tree().paused:
+			_resume()
+		elif !_is_open and !get_tree().paused:
+			_pause()
 
 func _pause() -> void:
 	get_tree().paused = true
