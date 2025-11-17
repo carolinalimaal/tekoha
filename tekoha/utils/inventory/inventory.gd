@@ -1,7 +1,6 @@
 class_name Inventory
 extends Node
-# TODO: Instanciar o inventario em algum lugar, provavelmente em um script global
-var inventory_slots: Array[ItemSlot]
+var inventory_slots: Array[ItemSlot] = []
 
 var _size: int = 6
 
