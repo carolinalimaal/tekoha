@@ -25,6 +25,7 @@ var anim_transition : int = 0
 @onready var state_machine: StateMachine = $StateMachine
 
 func _ready() -> void:
+	GlobalRefs.player = self
 	# Conectar sinais
 	health_component.died.connect(_on_player_died)
 	hitbox_component.attack_received.connect(_on_player_attack_received)
