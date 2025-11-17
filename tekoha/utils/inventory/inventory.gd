@@ -1,5 +1,6 @@
 class_name Inventory
-extends Node
+extends RefCounted
+
 var inventory_slots: Array[ItemSlot] = []
 
 var _size: int = 6
