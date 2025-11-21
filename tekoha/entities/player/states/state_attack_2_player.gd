@@ -9,7 +9,8 @@ const STUN_DURATION : float = 0.75
 func _enter() -> void:
 	owner_node.velocity = Vector2.ZERO
 	# Pegar a direcao do ataque
-	owner_node.attack_direction = owner_node.get_aim_direction()
+	var attack_direction = owner_node.get_aim_direction()
+	owner_node.attack_direction = attack_direction if attack_direction != Vector2.ZERO else owner_node.facing_direction
 	# Alterar os valores do ataque
 	owner_node.hurtbox_component.attack_data.damage_value = ATTACK_DAMAGE
 	owner_node.hurtbox_component.attack_data.knockback_force= ATTACK_KNOCKBACK
