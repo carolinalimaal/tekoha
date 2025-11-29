@@ -2,8 +2,7 @@ class_name WalkStatePlayer
 extends State
 
 func _enter() -> void:
-	# Atualizar variavel que controla animacoes
-	owner_node.anim_transition = 1
+	pass
 
 func _exit() -> void:
 	pass

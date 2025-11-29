@@ -23,8 +23,6 @@ func _enter() -> void:
 	_roll_timer.wait_time = owner_node.roll_cooldown
 	# Conectar o sinal animation_finished
 	owner_node.animation_tree.animation_finished.connect(_on_animation_finished)
-	# Atualizar a variavel que controla animacoes
-	owner_node.anim_transition = 2
 
 func _exit() -> void:
 	owner_node.velocity = Vector2.ZERO

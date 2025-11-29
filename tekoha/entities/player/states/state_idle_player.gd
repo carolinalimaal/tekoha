@@ -3,8 +3,6 @@ extends State
 
 func _enter() -> void:
 	owner_node.velocity = Vector2.ZERO
-	# Atualizar variavel que controla animacoes
-	owner_node.anim_transition = 0
 
 func _exit() -> void:
 	pass

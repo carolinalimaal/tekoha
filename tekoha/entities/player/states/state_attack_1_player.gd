@@ -17,8 +17,6 @@ func _enter() -> void:
 	owner_node.hurtbox_component.attack_data.stun_duration = STUN_DURATION
 	# Conectar o sinal animation_finished
 	owner_node.animation_tree.animation_finished.connect(_on_animation_finished)
-	# Atualizar variavel que controla animacoes
-	owner_node.anim_transition = 3
 
 func _exit() -> void:
 	owner_node.velocity = Vector2.ZERO
