@@ -20,8 +20,6 @@ func _enter() -> void:
 	owner_node.hitbox_component.hitbox_collision.set_deferred("disabled", true)
 	# Atribuir o tempo de stun
 	_stun_timer.wait_time = _attack_data.stun_duration
-	# Atualizar variavel que controla animacoes
-	owner_node.anim_transition = 6
 	# Iniciar o timer
 	_stun_timer.start()
 
