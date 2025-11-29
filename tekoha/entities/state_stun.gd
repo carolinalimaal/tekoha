@@ -16,6 +16,7 @@ func _enter() -> void:
 	# Aplicar knockback
 	var knockback_direction: Vector2 = -(_attack_data.attack_direction - owner_node.global_position).normalized()
 	owner_node.velocity = knockback_direction * _attack_data.knockback_force
+	owner_node.facing_direction = - knockback_direction
 	# Desabilitar a hitbox_collision
 	owner_node.hitbox_component.hitbox_collision.set_deferred("disabled", true)
 	# Atribuir o tempo de stun
