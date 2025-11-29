@@ -3,8 +3,8 @@ extends Enemy
 
 @export_category("Range")
 @export var chase_range: int = 200
-@export var circling_range: int = 100
-@export var retreat_range: int = 75
+@export var circling_range: int = 150
+@export var retreat_range: int = 50
 
 var chase_range_sqr: int
 var circling_range_sqr: int
