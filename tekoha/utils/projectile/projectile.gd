@@ -10,7 +10,8 @@ var direction: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	animation_tree.active = true
-	
+	# Adicionar ao grupo "projectile"
+	self.add_to_group("projectile")
 	visible_on_screen_notifier.screen_exited.connect(_on_visible_on_screen_notifier_screen_exited)
 
 func _process(delta: float) -> void:
