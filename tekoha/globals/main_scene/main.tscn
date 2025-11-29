@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://131hv46xermf"]
+[gd_scene load_steps=8 format=3 uid="uid://131hv46xermf"]
 
 [ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="1_i38rt"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="2_o2rku"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bvcb521no2utd" path="res://globals/input_manager.gd" id="3_n2rk1"]
 [ext_resource type="Script" uid="uid://bun1v203k2eax" path="res://globals/controller_manager.gd" id="4_ac4dx"]
 [ext_resource type="PackedScene" uid="uid://duntos8imf0u6" path="res://UI/pause_menu/pause_menu.tscn" id="4_mdv7j"]
+[ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="7_d60g8"]
 
 [node name="Main" type="Node2D"]
 
@@ -37,3 +38,6 @@ script = ExtResource("2_o2rku")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Level" type="Node2D" parent="."]
+
+[node name="Sacola" parent="Level" instance=ExtResource("7_d60g8")]
+position = Vector2(178, 123)
