@@ -25,10 +25,10 @@ func _update(_delta: float):
 		# Verificar distância do jogador
 		_distance_to_player = owner_node.get_distance_sqr_to_player()
 		if _distance_to_player > owner_node.circling_range_sqr:
-			transition_to("chase")
+			transition_to("Chase")
 			return
 		if _distance_to_player < owner_node.retreat_range_sqr:
-			transition_to("retreat")
+			transition_to("Retreat")
 			return
 
 func _physics_update(_delta: float):
@@ -37,5 +37,5 @@ func _physics_update(_delta: float):
 		owner_node.facing_direction = owner_node.get_direction_to_player()
 
 func _on_pause_timer_timeout():
-	transition_to("circling")
+	transition_to("Circling")
 	return

@@ -42,7 +42,7 @@ func die():
 
 func _on_enemy_died():
 	# Transicionar para DEATH
-	state_machine.current_state.transition_to("death")
+	state_machine.current_state.transition_to("Death")
 
 func _on_enemy_attack_received(attack_data: AttackData):
 	# Sofrer o dano 
@@ -51,4 +51,4 @@ func _on_enemy_attack_received(attack_data: AttackData):
 	var stun_state : StunState = state_machine.states.get("stun")
 	if state_machine.current_state.name not in ["Stun", "Death"]:
 		stun_state.receive_attack_data(attack_data)
-		state_machine.current_state.transition_to("stun")
+		state_machine.current_state.transition_to("Stun")
