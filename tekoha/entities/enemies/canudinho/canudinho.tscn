@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://bv45px7qd6mm" path="res://entities/enemies/generic_states/chase_enemy_state.gd" id="7_xjjco"]
 [ext_resource type="Script" uid="uid://ssligm7a6n5f" path="res://entities/enemies/generic_states/circling_enemy_state.gd" id="8_xj8cv"]
 [ext_resource type="Script" uid="uid://dtvqw8id0wbgd" path="res://entities/enemies/generic_states/pausing_enemy_state.gd" id="9_b5uvv"]
-[ext_resource type="Script" uid="uid://gf4t8gi88ftf" path="res://entities/enemies/generic_states/ranged_attack_state.gd" id="10_unx5h"]
+[ext_resource type="Script" uid="uid://gf4t8gi88ftf" path="res://entities/enemies/generic_states/ranged_attack_enemy_state.gd" id="10_unx5h"]
 [ext_resource type="Script" uid="uid://4emynb0r51v7" path="res://entities/enemies/generic_states/retreat_enemy_state.gd" id="11_xj8cv"]
 [ext_resource type="Script" uid="uid://sxrsmcd42b0n" path="res://entities/state_stun.gd" id="12_b5uvv"]
 [ext_resource type="Script" uid="uid://babneycdrb68l" path="res://entities/player/states/state_death_player.gd" id="13_4fimn"]
