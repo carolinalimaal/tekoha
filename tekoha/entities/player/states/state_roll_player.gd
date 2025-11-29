@@ -48,5 +48,5 @@ func _on_roll_timer_timeout() -> void:
 func _on_animation_finished(anim_name: StringName) -> void:
 	# No fim da animacao de rolagem, volta para IDLE
 	if anim_name in ["roll_down", "roll_up", "roll_left", "roll_right"]:
-		transition_to("idle")
+		transition_to("Idle")
 		return

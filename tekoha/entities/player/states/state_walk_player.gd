@@ -11,7 +11,7 @@ func _update(_delta: float) -> void:
 	# Verificar se ha input de entrada, se nao transiciona para IDLE
 	var direction : Vector2 = owner_node.get_direction()
 	if not direction:
-		transition_to("idle")
+		transition_to("Idle")
 		return
 	
 	# Atualizar o move_direction e facing_direction

@@ -37,5 +37,5 @@ func receive_attack_data(attack_data: AttackData):
 	_attack_data = attack_data
 
 func _on_stun_timer_timeout() -> void:
-	transition_to("idle")
+	transition_to("Idle")
 	return
