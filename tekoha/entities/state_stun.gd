@@ -19,9 +19,7 @@ func _enter() -> void:
 	owner_node.facing_direction = - knockback_direction
 	# Desabilitar a hitbox_collision
 	owner_node.hitbox_component.hitbox_collision.set_deferred("disabled", true)
-	# Atribuir o tempo de stun
 	_stun_timer.wait_time = _attack_data.stun_duration
-	# Iniciar o timer
 	_stun_timer.start()
 
 func _exit() -> void:
