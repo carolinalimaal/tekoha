@@ -1,4 +1,4 @@
-class_name MeleeAttackState 
+class_name MeleeAttackEnemyState 
 extends State
 
 func _enter():

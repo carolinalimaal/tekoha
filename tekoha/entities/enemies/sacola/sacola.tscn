@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://dtvqw8id0wbgd" path="res://entities/enemies/generic_states/pausing_enemy_state.gd" id="14_0flx1"]
 [ext_resource type="Script" uid="uid://bwvyh8mtxgbmv" path="res://entities/enemies/generic_states/lunge_enemy_state.gd" id="15_7vso5"]
 [ext_resource type="Script" uid="uid://4emynb0r51v7" path="res://entities/enemies/generic_states/retreat_enemy_state.gd" id="16_3bxu3"]
-[ext_resource type="Script" uid="uid://b63c1wvfgam8w" path="res://entities/enemies/generic_states/melee_attack_state.gd" id="16_lc60u"]
+[ext_resource type="Script" uid="uid://b63c1wvfgam8w" path="res://entities/enemies/generic_states/melee_attack_enemy_state.gd" id="16_lc60u"]
 [ext_resource type="Script" uid="uid://sxrsmcd42b0n" path="res://entities/state_stun.gd" id="17_3bxu3"]
 [ext_resource type="Script" uid="uid://babneycdrb68l" path="res://entities/player/states/state_death_player.gd" id="18_ab2eh"]
 
