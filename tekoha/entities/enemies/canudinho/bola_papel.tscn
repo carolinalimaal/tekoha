@@ -1,0 +1,221 @@
+[gd_scene load_steps=20 format=3 uid="uid://cwlallopgos46"]
+
+[ext_resource type="Script" uid="uid://0bkrlmh2efko" path="res://utils/projectile/projectile.gd" id="1_6fvpk"]
+[ext_resource type="Script" uid="uid://b25oeps4g35sq" path="res://utils/components/hurtbox_component.gd" id="1_devi0"]
+[ext_resource type="Texture2D" uid="uid://7b232fm3daoh" path="res://assets/sprites/entities/enemies/canudinho_spritesheet.png" id="2_6fvpk"]
+[ext_resource type="Resource" uid="uid://clacbrg07garl" path="res://entities/enemies/canudinho/bola_papel.tres" id="3_hi3mn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hi3mn"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1qim"]
+atlas = ExtResource("2_6fvpk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3dkw"]
+atlas = ExtResource("2_6fvpk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra004"]
+atlas = ExtResource("2_6fvpk")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r2w2"]
+atlas = ExtResource("2_6fvpk")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhiqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1qim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3dkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ra004")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r2w2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_rt83m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5707964]
+}
+
+[sub_resource type="Animation" id="Animation_yixpb"]
+resource_name = "bola_papel_h"
+length = 0.40000334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_rcab3"]
+resource_name = "bola_papel_v"
+length = 0.40000334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.5707964]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6bo8v"]
+_data = {
+&"RESET": SubResource("Animation_rt83m"),
+&"bola_papel_h": SubResource("Animation_yixpb"),
+&"bola_papel_v": SubResource("Animation_rcab3")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_suwlo"]
+animation = &"bola_papel_v"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ygw4o"]
+animation = &"bola_papel_v"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g57b1"]
+animation = &"bola_papel_h"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2dief"]
+animation = &"bola_papel_h"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_5llhv"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_suwlo")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_ygw4o")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_g57b1")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_2dief")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[node name="BolaPapel" type="Node2D" node_paths=PackedStringArray("animation_tree", "hurtbox_component", "visible_on_screen_notifier") groups=["projectile"]]
+script = ExtResource("1_6fvpk")
+speed = 200
+animation_tree = NodePath("AnimationTree")
+hurtbox_component = NodePath("HurtboxComponent")
+visible_on_screen_notifier = NodePath("VisibleOnScreenNotifier2D")
+metadata/_custom_type_script = "uid://0bkrlmh2efko"
+
+[node name="HurtboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("hurtbox_collision")]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("1_devi0")
+attack_data = ExtResource("3_hi3mn")
+hurtbox_collision = NodePath("HurtboxCollision")
+metadata/_custom_type_script = "uid://b25oeps4g35sq"
+
+[node name="HurtboxCollision" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = SubResource("CircleShape2D_hi3mn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_yhiqm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6bo8v")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
+tree_root = SubResource("AnimationNodeBlendSpace2D_5llhv")
+anim_player = NodePath("../AnimationPlayer")
+parameters/blend_position = Vector2(0, 0)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-7, -7, 14, 14)
