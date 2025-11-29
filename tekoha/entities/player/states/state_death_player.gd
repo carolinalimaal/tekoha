@@ -1,4 +1,4 @@
-class_name DeathStatePlayer
+class_name DeathState
 extends State
 
 func _enter() -> void:
