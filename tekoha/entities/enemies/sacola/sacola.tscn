@@ -1,4 +1,4 @@
-[gd_scene load_steps=167 format=3 uid="uid://d1ou3wqyvyflw"]
+[gd_scene load_steps=165 format=3 uid="uid://d1ou3wqyvyflw"]
 
 [ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="1_lvpuj"]
 [ext_resource type="Script" uid="uid://blof3mwpmsvbu" path="res://entities/enemies/sacola/sacola.gd" id="1_t6kiw"]
@@ -10,12 +10,10 @@
 [ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/state_machine/state_machine.gd" id="9_ornil"]
 [ext_resource type="Script" uid="uid://cai1y4n255biv" path="res://entities/enemies/generic_states/idle_enemy_state.gd" id="10_p7yjf"]
 [ext_resource type="Script" uid="uid://bclio32j8isjr" path="res://entities/enemies/generic_states/patrol_enemy_state.gd" id="11_7kqut"]
-[ext_resource type="Script" uid="uid://bv45px7qd6mm" path="res://entities/enemies/generic_states/chase_enemy_state.gd" id="12_7kqut"]
-[ext_resource type="Script" uid="uid://ssligm7a6n5f" path="res://entities/enemies/generic_states/circling_enemy_state.gd" id="13_v5mbn"]
-[ext_resource type="Script" uid="uid://dtvqw8id0wbgd" path="res://entities/enemies/generic_states/pausing_enemy_state.gd" id="14_0flx1"]
-[ext_resource type="Script" uid="uid://bwvyh8mtxgbmv" path="res://entities/enemies/generic_states/lunge_enemy_state.gd" id="15_7vso5"]
-[ext_resource type="Script" uid="uid://4emynb0r51v7" path="res://entities/enemies/generic_states/retreat_enemy_state.gd" id="16_3bxu3"]
-[ext_resource type="Script" uid="uid://b63c1wvfgam8w" path="res://entities/enemies/generic_states/melee_attack_enemy_state.gd" id="16_lc60u"]
+[ext_resource type="Script" uid="uid://dced3oaqt2vx" path="res://entities/enemies/sacola/states/chase_state.gd" id="11_8m785"]
+[ext_resource type="Script" uid="uid://beh158uf6wwom" path="res://entities/enemies/sacola/states/aiming_state.gd" id="15_gcpg8"]
+[ext_resource type="Script" uid="uid://dsproq4ku108r" path="res://entities/enemies/sacola/states/lunge_state.gd" id="16_gcpg8"]
+[ext_resource type="Script" uid="uid://b63c1wvfgam8w" path="res://entities/enemies/sacola/states/attack_state.gd" id="16_lc60u"]
 [ext_resource type="Script" uid="uid://sxrsmcd42b0n" path="res://entities/state_stun.gd" id="17_3bxu3"]
 [ext_resource type="Script" uid="uid://babneycdrb68l" path="res://entities/player/states/state_death_player.gd" id="18_ab2eh"]
 
@@ -1717,28 +1715,16 @@ script = ExtResource("11_7kqut")
 metadata/_custom_type_script = "uid://bclio32j8isjr"
 
 [node name="Chase" type="Node" parent="StateMachine"]
-script = ExtResource("12_7kqut")
-metadata/_custom_type_script = "uid://bv45px7qd6mm"
+script = ExtResource("11_8m785")
 
-[node name="Circling" type="Node" parent="StateMachine"]
-script = ExtResource("13_v5mbn")
-metadata/_custom_type_script = "uid://ssligm7a6n5f"
-
-[node name="Pausing" type="Node" parent="StateMachine"]
-script = ExtResource("14_0flx1")
-metadata/_custom_type_script = "uid://dtvqw8id0wbgd"
+[node name="Aiming" type="Node" parent="StateMachine"]
+script = ExtResource("15_gcpg8")
 
 [node name="Lunge" type="Node" parent="StateMachine"]
-script = ExtResource("15_7vso5")
-metadata/_custom_type_script = "uid://bwvyh8mtxgbmv"
+script = ExtResource("16_gcpg8")
 
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("16_lc60u")
-metadata/_custom_type_script = "uid://b63c1wvfgam8w"
-
-[node name="Retreat" type="Node" parent="StateMachine"]
-script = ExtResource("16_3bxu3")
-metadata/_custom_type_script = "uid://4emynb0r51v7"
 
 [node name="Stun" type="Node" parent="StateMachine"]
 script = ExtResource("17_3bxu3")
