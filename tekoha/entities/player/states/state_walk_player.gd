@@ -2,8 +2,7 @@ class_name WalkStatePlayer
 extends State
 
 func _enter() -> void:
-	# Atualizar variavel que controla animacoes
-	owner_node.anim_transition = 1
+	pass
 
 func _exit() -> void:
 	pass
@@ -12,7 +11,7 @@ func _update(_delta: float) -> void:
 	# Verificar se ha input de entrada, se nao transiciona para IDLE
 	var direction : Vector2 = owner_node.get_direction()
 	if not direction:
-		transition_to("idle")
+		transition_to("Idle")
 		return
 	
 	# Atualizar o move_direction e facing_direction

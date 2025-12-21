@@ -17,8 +17,6 @@ func _enter() -> void:
 	owner_node.hurtbox_component.attack_data.stun_duration = STUN_DURATION
 	# Conectar o sinal animation_finished
 	owner_node.animation_tree.animation_finished.connect(_on_animation_finished)
-	# Atualizar variavel que controla animacoes
-	owner_node.anim_transition = 3
 
 func _exit() -> void:
 	owner_node.velocity = Vector2.ZERO
@@ -41,5 +39,5 @@ func attack():
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name in ["attack_1_down", "attack_1_left", "attack_1_right", "attack_1_up"]:
-		transition_to("attackend")
+		transition_to("AttackEnd")
 		return
