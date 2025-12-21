@@ -5,6 +5,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	match owner.state_machine.current_state.name:
+		"Idle", "Aiming", "Lunge":
 			owner.anim_transition = 0
 			set("parameters/Idle/blend_position", owner.facing_direction)
 		"Patrol", "Chase":
