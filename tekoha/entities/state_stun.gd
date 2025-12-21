@@ -23,6 +23,7 @@ func _enter() -> void:
 	_stun_timer.start()
 
 func _exit() -> void:
+	_stun_timer.stop()
 	# Desabilitar a hitbox_collision
 	owner_node.hitbox_component.hitbox_collision.set_deferred("disabled", false)
 
