@@ -3,14 +3,10 @@ extends Enemy
 
 @export_category("Range")
 @export var chase_range: int = 200
-@export var circling_range: int = 100
 @export var attack_range: int = 50
-@export var retreat_range: int = 25
 
 var chase_range_sqr: int
-var circling_range_sqr: int
 var attack_range_sqr: int
-var retreat_range_sqr: int
 
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
@@ -26,9 +22,7 @@ func _ready() -> void:
 	hitbox_component.attack_received.connect(_on_enemy_attack_received)
 	
 	chase_range_sqr = chase_range * chase_range
-	circling_range_sqr = circling_range * circling_range
 	attack_range_sqr = attack_range * attack_range
-	retreat_range_sqr = retreat_range * retreat_range
 	
 	state_machine.init(self)
 
