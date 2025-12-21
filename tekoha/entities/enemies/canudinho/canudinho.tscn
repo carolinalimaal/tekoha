@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=3 uid="uid://cejbdhwi8cbep"]
+[gd_scene load_steps=159 format=3 uid="uid://cejbdhwi8cbep"]
 
 [ext_resource type="Script" uid="uid://8dwhdlge53bw" path="res://entities/enemies/canudinho/canudinho.gd" id="1_4fimn"]
 [ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="2_vcpk6"]
@@ -8,14 +8,13 @@
 [ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/state_machine/state_machine.gd" id="4_i4053"]
 [ext_resource type="Script" uid="uid://cai1y4n255biv" path="res://entities/enemies/generic_states/idle_enemy_state.gd" id="5_unx5h"]
 [ext_resource type="Script" uid="uid://bclio32j8isjr" path="res://entities/enemies/generic_states/patrol_enemy_state.gd" id="6_oi51r"]
-[ext_resource type="Script" uid="uid://bv45px7qd6mm" path="res://entities/enemies/generic_states/chase_enemy_state.gd" id="7_xjjco"]
-[ext_resource type="Script" uid="uid://ssligm7a6n5f" path="res://entities/enemies/generic_states/circling_enemy_state.gd" id="8_xj8cv"]
-[ext_resource type="Script" uid="uid://dtvqw8id0wbgd" path="res://entities/enemies/generic_states/pausing_enemy_state.gd" id="9_b5uvv"]
-[ext_resource type="Script" uid="uid://gf4t8gi88ftf" path="res://entities/enemies/generic_states/ranged_attack_enemy_state.gd" id="10_unx5h"]
-[ext_resource type="Script" uid="uid://4emynb0r51v7" path="res://entities/enemies/generic_states/retreat_enemy_state.gd" id="11_xj8cv"]
+[ext_resource type="Script" uid="uid://db3sf0cj07nfe" path="res://entities/enemies/canudinho/states/surround_state.gd" id="10_13p1o"]
+[ext_resource type="Script" uid="uid://dueui7pl88ghe" path="res://entities/enemies/canudinho/states/pause_state.gd" id="11_13p1o"]
 [ext_resource type="Script" uid="uid://sxrsmcd42b0n" path="res://entities/state_stun.gd" id="12_b5uvv"]
 [ext_resource type="Script" uid="uid://babneycdrb68l" path="res://entities/player/states/state_death_player.gd" id="13_4fimn"]
+[ext_resource type="Script" uid="uid://cm6unovbgnypl" path="res://entities/enemies/canudinho/states/attack_state.gd" id="13_fhqrl"]
 [ext_resource type="PackedScene" uid="uid://cwlallopgos46" path="res://entities/enemies/canudinho/bola_papel.tscn" id="13_qp7q8"]
+[ext_resource type="Script" uid="uid://chxd37ceo7sae" path="res://entities/enemies/canudinho/states/chase_state.gd" id="17_13p1o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4fimn"]
 radius = 9.0
@@ -752,31 +751,31 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("StateMachine/Attack")
+tracks/2/path = NodePath("AimingPoint:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateMachine/Attack")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"_shoot"
 }]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AimingPoint:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_nu0lw"]
@@ -806,31 +805,31 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("StateMachine/Attack")
+tracks/2/path = NodePath("AimingPoint:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-12, -14)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateMachine/Attack")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"_shoot"
 }]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AimingPoint:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2(-12, -14)]
 }
 
 [sub_resource type="Animation" id="Animation_yva5q"]
@@ -860,31 +859,31 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("StateMachine/Attack")
+tracks/2/path = NodePath("AimingPoint:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(12, -14)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateMachine/Attack")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"_shoot"
 }]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AimingPoint:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2(12, -14)]
 }
 
 [sub_resource type="Animation" id="Animation_waueu"]
@@ -914,31 +913,31 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("StateMachine/Attack")
+tracks/2/path = NodePath("AimingPoint:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -12)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateMachine/Attack")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"_shoot"
 }]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AimingPoint:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2(0, -12)]
 }
 
 [sub_resource type="Animation" id="Animation_brhlh"]
@@ -1665,25 +1664,17 @@ script = ExtResource("6_oi51r")
 metadata/_custom_type_script = "uid://bclio32j8isjr"
 
 [node name="Chase" type="Node" parent="StateMachine"]
-script = ExtResource("7_xjjco")
-metadata/_custom_type_script = "uid://bv45px7qd6mm"
+script = ExtResource("17_13p1o")
 
-[node name="Circling" type="Node" parent="StateMachine"]
-script = ExtResource("8_xj8cv")
-metadata/_custom_type_script = "uid://ssligm7a6n5f"
+[node name="Surround" type="Node" parent="StateMachine"]
+script = ExtResource("10_13p1o")
 
-[node name="Pausing" type="Node" parent="StateMachine"]
-script = ExtResource("9_b5uvv")
-metadata/_custom_type_script = "uid://dtvqw8id0wbgd"
+[node name="Pause" type="Node" parent="StateMachine"]
+script = ExtResource("11_13p1o")
 
 [node name="Attack" type="Node" parent="StateMachine"]
-script = ExtResource("10_unx5h")
+script = ExtResource("13_fhqrl")
 projectile = ExtResource("13_qp7q8")
-metadata/_custom_type_script = "uid://gf4t8gi88ftf"
-
-[node name="Retreat" type="Node" parent="StateMachine"]
-script = ExtResource("11_xj8cv")
-metadata/_custom_type_script = "uid://4emynb0r51v7"
 
 [node name="Stun" type="Node" parent="StateMachine"]
 script = ExtResource("12_b5uvv")
@@ -1692,3 +1683,9 @@ metadata/_custom_type_script = "uid://sxrsmcd42b0n"
 [node name="Death" type="Node" parent="StateMachine"]
 script = ExtResource("13_4fimn")
 metadata/_custom_type_script = "uid://babneycdrb68l"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -17.0
+offset_top = -41.0
+offset_right = 23.0
+offset_bottom = -18.0
