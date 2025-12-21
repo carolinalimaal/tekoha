@@ -44,3 +44,4 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 position = Vector2(178, 123)
 
 [node name="Canudinho" parent="Level" instance=ExtResource("8_114rs")]
+position = Vector2(-140, 143)
