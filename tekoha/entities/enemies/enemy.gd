@@ -31,7 +31,7 @@ func get_distance_sqr_to_player() -> float:
 		return global_position.distance_squared_to(GlobalRefs.player.global_position)
 	return INF
 
-func can_attack() -> bool:
+func is_attack_allowed() -> bool:
 	return enemies_attacking < max_attackers
 
 func register_attacker() -> void:
