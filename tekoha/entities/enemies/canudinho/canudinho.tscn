@@ -1683,9 +1683,3 @@ metadata/_custom_type_script = "uid://sxrsmcd42b0n"
 [node name="Death" type="Node" parent="StateMachine"]
 script = ExtResource("13_4fimn")
 metadata/_custom_type_script = "uid://babneycdrb68l"
-
-[node name="Label" type="Label" parent="."]
-offset_left = -17.0
-offset_top = -41.0
-offset_right = 23.0
-offset_bottom = -18.0
