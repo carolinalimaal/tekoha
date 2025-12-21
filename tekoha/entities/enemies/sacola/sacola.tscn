@@ -1646,7 +1646,7 @@ script = ExtResource("1_t6kiw")
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("1_lvpuj")
-_max_health = 15.0
+_max_health = 1.0
 metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
 [node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("hitbox_collision")]
