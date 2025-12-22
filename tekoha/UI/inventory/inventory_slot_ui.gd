@@ -18,6 +18,7 @@ var _inventory_ui: InventoryUI = get_parent()
 
 
 func _ready() -> void:
+	_inventory_ui = get_tree().get_root().get_node("/root/Main/UI/InventoryUi") as InventoryUI
 	# Conectar sinais aos botões
 	item_button.mouse_entered.connect(_on_show_description)
 	item_button.mouse_exited.connect(_on_hide_description)

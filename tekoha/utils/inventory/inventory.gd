@@ -14,11 +14,12 @@ func _init() -> void:
 func add_item(item: ConsumableItemData) -> bool:
 	# Pegar um slot vazio e, caso encontre um, adiciona o item a ele
 	var slot: ItemSlot = _get_empty_item_slot()
-	if !slot: 
+	if !slot:
 		return false
 	slot.item = item
 	# Emite sinais para atualizar a UI
 	GlobalSignals.updated_inventory.emit()
+	
 	return true
 
 # Remove um item do inventario

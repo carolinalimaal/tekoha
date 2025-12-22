@@ -1,10 +1,11 @@
-[gd_scene load_steps=292 format=3 uid="uid://cc1753k1fycf4"]
+[gd_scene load_steps=294 format=3 uid="uid://cc1753k1fycf4"]
 
 [ext_resource type="Script" uid="uid://du7gb4ysvswcn" path="res://entities/player/player.gd" id="1_fkugw"]
 [ext_resource type="Texture2D" uid="uid://d36nm3vhln3ww" path="res://assets/sprites/entities/player/curupira_spritesheet.png" id="1_wmv1v"]
 [ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="3_mpktj"]
 [ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="4_yg5k4"]
 [ext_resource type="Script" uid="uid://b25oeps4g35sq" path="res://utils/components/hurtbox_component.gd" id="5_8fjmc"]
+[ext_resource type="Script" uid="uid://jmfxhuogl38k" path="res://entities/player/pickup_area.gd" id="6_3wlsy"]
 [ext_resource type="Resource" uid="uid://d2gf7k7f2irga" path="res://entities/player/player_attack.tres" id="6_qiwj3"]
 [ext_resource type="Script" uid="uid://cpmntw43kee13" path="res://entities/player/anim_tree_player.gd" id="7_7thud"]
 [ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/state_machine/state_machine.gd" id="7_qiwj3"]
@@ -23,6 +24,10 @@ height = 58.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fjmc"]
 size = Vector2(82, 40)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqrof"]
+radius = 20.0
+height = 56.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmv1v"]
 size = Vector2(20, 17)
@@ -3032,6 +3037,13 @@ position = Vector2(0, 28)
 shape = SubResource("RectangleShape2D_8fjmc")
 disabled = true
 
+[node name="PickupArea" type="Area2D" parent="."]
+script = ExtResource("6_3wlsy")
+
+[node name="PickuCollision" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource("CapsuleShape2D_yqrof")
+debug_color = Color(0, 0.63529414, 0.4, 0.41960785)
+
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 19.5)
 shape = SubResource("RectangleShape2D_wmv1v")
@@ -3091,3 +3103,33 @@ script = ExtResource("15_yqrof")
 
 [node name="Death" type="Node" parent="StateMachine"]
 script = ExtResource("12_a1qjk")
+
+[node name="InteractUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InteractUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
+
+[node name="Label" type="Label" parent="InteractUI/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.52900004
+anchor_right = 0.5
+anchor_bottom = 0.52900004
+offset_left = -88.0
+offset_top = -11.515001
+offset_right = 90.0
+offset_bottom = 11.484999
+grow_horizontal = 0
+grow_vertical = 0
+text = "Pressione R para pegar"
