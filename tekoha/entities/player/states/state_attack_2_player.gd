@@ -2,8 +2,8 @@ class_name Attack2StatePlayer
 extends State
 
 const ATTACK_SPEED : int = 75
-const ATTACK_DAMAGE : int = 30
 const ATTACK_KNOCKBACK : int = 25
+const ATTACK_DAMAGE : float = 1.5
 const STUN_DURATION : float = 0.75
 
 func _enter() -> void:

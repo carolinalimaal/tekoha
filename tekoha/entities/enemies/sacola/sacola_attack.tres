@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_gq8bw")
-damage_value = 5.0
+damage_value = 0.5
 knockback_force = 20.0
 stun_duration = 0.5
