@@ -5,11 +5,11 @@ var current_slot_selected: InventorySlotUI
 # TODO: Verificar se essa variavel ficara aqui ou em um script global
 var _is_open: bool = false
 
-@onready var slots = $VBoxContainer/TextureRect/HBoxContainer/SlotsGrid.get_children()
-@onready var description_box: VBoxContainer = $VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox
-@onready var item_name: Label = $VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox/ItemName
-@onready var item_effect: Label = $VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox/ItemEffect
-@onready var item_description: RichTextLabel = $VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox/ItemDescription
+@onready var slots = $VBoxContainer/BgInventory/HBoxContainer/SlotsGrid.get_children()
+@onready var description_box: VBoxContainer = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox
+@onready var item_name: Label = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/ItemName
+@onready var item_effect: Label = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/ItemEffect
+@onready var item_description: RichTextLabel = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/ItemDescription
 
 func _ready() -> void:
 	# Conectar sinal para manter a UI do inventario atualizada
