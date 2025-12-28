@@ -32,13 +32,13 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+[node name="BgInventory" type="TextureRect" parent="VBoxContainer"]
 custom_minimum_size = Vector2(497, 466)
 layout_mode = 2
 texture = ExtResource("2_kqe8q")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/TextureRect"]
+[node name="Label" type="Label" parent="VBoxContainer/BgInventory"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4
@@ -50,7 +50,7 @@ text = "INVENTÁRIO"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TextureRect"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/BgInventory"]
 custom_minimum_size = Vector2(444, 324)
 layout_mode = 1
 anchors_preset = 8
@@ -66,7 +66,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="SlotsGrid" type="GridContainer" parent="VBoxContainer/TextureRect/HBoxContainer"]
+[node name="SlotsGrid" type="GridContainer" parent="VBoxContainer/BgInventory/HBoxContainer"]
 custom_minimum_size = Vector2(220, 324)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -75,43 +75,43 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 2
 
-[node name="InventorySlotUI" parent="VBoxContainer/TextureRect/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
+[node name="InventorySlotUI" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
 layout_mode = 2
 
-[node name="InventorySlotUI2" parent="VBoxContainer/TextureRect/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
+[node name="InventorySlotUI2" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
 layout_mode = 2
 
-[node name="InventorySlotUI3" parent="VBoxContainer/TextureRect/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
+[node name="InventorySlotUI3" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
 layout_mode = 2
 
-[node name="InventorySlotUI4" parent="VBoxContainer/TextureRect/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
+[node name="InventorySlotUI4" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
 layout_mode = 2
 
-[node name="InventorySlotUI5" parent="VBoxContainer/TextureRect/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
+[node name="InventorySlotUI5" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
 layout_mode = 2
 
-[node name="InventorySlotUI6" parent="VBoxContainer/TextureRect/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
+[node name="InventorySlotUI6" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TextureRect/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BgInventory/HBoxContainer"]
 custom_minimum_size = Vector2(200, 310)
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 
-[node name="DescriptionBox" type="VBoxContainer" parent="VBoxContainer/TextureRect/HBoxContainer/MarginContainer"]
+[node name="DescriptionBox" type="VBoxContainer" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(200, 320)
 layout_mode = 2
 
-[node name="ItemName" type="Label" parent="VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox"]
+[node name="ItemName" type="Label" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox"]
 layout_mode = 2
 text = "Name"
 
-[node name="ItemEffect" type="Label" parent="VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox"]
+[node name="ItemEffect" type="Label" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox"]
 layout_mode = 2
 text = "Effect"
 
-[node name="ItemDescription" type="RichTextLabel" parent="VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox"]
+[node name="ItemDescription" type="RichTextLabel" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox"]
 layout_mode = 2
 text = "Descrição"
 fit_content = true
