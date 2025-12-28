@@ -64,7 +64,6 @@ offset_right = 222.0
 offset_bottom = 202.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
 
 [node name="SlotsGrid" type="GridContainer" parent="VBoxContainer/BgInventory/HBoxContainer"]
 custom_minimum_size = Vector2(220, 324)
