@@ -21,6 +21,7 @@ func _ready() -> void:
 			slots[i].hide_description.connect(_on_hide_item_description)
 			slots[i].slot_selected.connect(_on_slot_selected)
 			slots[i].item_used.connect(_on_item_used)
+			slots[i].inventory_ui = self
 	
 	# Inventario inicia fechado
 	_close()

@@ -7,8 +7,8 @@ signal slot_selected(slot)
 signal item_used(item_slot)
 
 var item_slot: ItemSlot
+var inventory_ui: InventoryUI
 var _is_disable: bool = false
-var _inventory_ui: InventoryUI = get_parent()
 
 @onready var item_icon: TextureRect = $ItemIcon
 @onready var item_button: Button = $ItemButton
@@ -18,7 +18,6 @@ var _inventory_ui: InventoryUI = get_parent()
 
 
 func _ready() -> void:
-	_inventory_ui = get_tree().get_root().get_node("/root/Main/UI/InventoryUi") as InventoryUI
 	# Conectar sinais aos botões
 	item_button.mouse_entered.connect(_on_show_description)
 	item_button.mouse_exited.connect(_on_hide_description)
@@ -60,7 +59,7 @@ func show_options_menu():
 
 # Esconder as informações do item se ele não for o item selecionado
 func _on_hide_description() -> void:
-	if !_is_disable and item_slot and !item_slot.is_empty() and _inventory_ui.current_slot_selected != self:
+	if !_is_disable and item_slot and !item_slot.is_empty() and inventory_ui.current_slot_selected != self:
 		# Emite sinal para esconder as informações do item
 		hide_description.emit()
 
