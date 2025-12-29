@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://o4vt4qmxgkoc"]
+[gd_scene load_steps=7 format=3 uid="uid://o4vt4qmxgkoc"]
 
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_wu0yv"]
 [ext_resource type="Script" uid="uid://oxviwncuw21d" path="res://UI/inventory/inventory_ui.gd" id="2_732id"]
 [ext_resource type="Texture2D" uid="uid://ya7sx087abqn" path="res://assets/UI/inventory/inventory.png" id="2_kqe8q"]
 [ext_resource type="PackedScene" uid="uid://b3cbxargqp6kv" path="res://UI/inventory/inventory_slot_ui.tscn" id="4_732id"]
+[ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="5_3rh6v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b3oob"]
+texture = ExtResource("5_3rh6v")
 
 [node name="InventoryUi" type="Control"]
 process_mode = 3
@@ -115,3 +119,62 @@ layout_mode = 2
 text = "Descrição"
 fit_content = true
 scroll_active = false
+
+[node name="ConfirmationPopup" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="PanelContainer" parent="ConfirmationPopup"]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -75.0
+offset_right = 225.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_b3oob")
+
+[node name="MarginContainer" type="MarginContainer" parent="ConfirmationPopup/Bg"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmationPopup/Bg/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PopupLabel" type="Label" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "DESEJA USAR O ITEM X?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="UseButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(106.35, 31.8)
+layout_mode = 2
+focus_neighbor_right = NodePath("../CancelButton")
+text = "USAR"
+
+[node name="CancelButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(106.35, 31.8)
+layout_mode = 2
+focus_neighbor_left = NodePath("../UseButton")
+focus_behavior_recursive = 2
+text = "CANCELAR"
