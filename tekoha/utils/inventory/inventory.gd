@@ -1,6 +1,8 @@
 class_name Inventory
 extends RefCounted
 
+signal updated_inventory
+
 var inventory_slots: Array[ItemSlot] = []
 
 var _size: int = 6
@@ -18,7 +20,7 @@ func add_item(item: ConsumableItemData) -> bool:
 		return false
 	slot.item = item
 	# Emite sinais para atualizar a UI
-	GlobalSignals.updated_inventory.emit()
+	updated_inventory.emit()
 	
 	return true
 
@@ -33,7 +35,7 @@ func remove_item_from_slot(index: int) -> void:
 		return
 	slot.clear()
 	# Emite sinais para atualizar a UI
-	GlobalSignals.updated_inventory.emit()
+	updated_inventory.emit()
 
 # Retorna um slot vazio
 func _get_empty_item_slot() -> ItemSlot:
