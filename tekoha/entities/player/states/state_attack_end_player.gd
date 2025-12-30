@@ -4,8 +4,6 @@ extends State
 func _enter() -> void:
 	# Conectar o sinal animation_finished
 	owner_node.animation_tree.animation_finished.connect(_on_animation_finished)
-	# Atualizar variavel que controla animacoes
-	owner_node.anim_transition = 4
 
 func _exit() -> void:
 	# Desconectar o sinal de animation_finished (evitar conflito com outros estados)

@@ -3005,13 +3005,14 @@ transitions = ["Start", "Base", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-98, -170)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_mask = 896
+collision_mask = 912
 motion_mode = 1
 script = ExtResource("1_fkugw")
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("3_mpktj")
-_max_health = 31.0
+_max_health = 3.0
+metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
 [node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("hitbox_collision")]
 collision_layer = 2
@@ -3019,6 +3020,7 @@ collision_mask = 64
 input_pickable = false
 script = ExtResource("4_yg5k4")
 hitbox_collision = NodePath("HitboxCollision")
+metadata/_custom_type_script = "uid://2pwu4vjmtkg6"
 
 [node name="HitboxCollision" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CapsuleShape2D_8fjmc")
@@ -3031,6 +3033,7 @@ input_pickable = false
 script = ExtResource("5_8fjmc")
 attack_data = ExtResource("6_qiwj3")
 hurtbox_collision = NodePath("HurtboxCollision")
+metadata/_custom_type_script = "uid://b25oeps4g35sq"
 
 [node name="HurtboxCollision" type="CollisionShape2D" parent="HurtboxComponent"]
 position = Vector2(0, 28)

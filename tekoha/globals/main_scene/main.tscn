@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://duntos8imf0u6" path="res://UI/pause_menu/pause_menu.tscn" id="4_mdv7j"]
 [ext_resource type="PackedScene" uid="uid://br2ssfiytafqc" path="res://utils/pickup_item/pickup_item.tscn" id="7_d60g8"]
 [ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tacaca.tres" id="8_114rs"]
+[ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="7_d60g8"]
+[ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="8_114rs"]
 
 [node name="Main" type="Node2D"]
 
@@ -43,3 +45,8 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 [node name="tacaca" parent="." instance=ExtResource("7_d60g8")]
 position = Vector2(126, 60)
 item_data = ExtResource("8_114rs")
+[node name="Sacola" parent="Level" instance=ExtResource("7_d60g8")]
+position = Vector2(178, 123)
+
+[node name="Canudinho" parent="Level" instance=ExtResource("8_114rs")]
+position = Vector2(-140, 143)

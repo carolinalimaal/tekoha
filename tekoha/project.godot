@@ -23,6 +23,7 @@ GlobalRefs="*res://globals/global_refs.gd"
 [global_group]
 
 player=""
+projectile=""
 
 [input]
 

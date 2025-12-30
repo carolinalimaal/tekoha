@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3 uid="uid://da1ugbg8nxcqf"]
+
+[ext_resource type="Script" uid="uid://c8ylfafeubddo" path="res://utils/resources/attack_data.gd" id="1_gq8bw"]
+
+[resource]
+script = ExtResource("1_gq8bw")
+damage_value = 0.5
+knockback_force = 20.0
+stun_duration = 0.5
