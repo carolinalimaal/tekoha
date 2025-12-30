@@ -44,6 +44,10 @@ func _unhandled_input(_event: InputEvent) -> void:
 		return
 	
 	if GlobalRefs.input_manager.get_action_pressed("attack"):
+		# Bloquear ataque se estiver em ROLL
+		if state_machine.current_state.name == "Roll":
+			return
+		
 		if state_machine.current_state.name != "AttackEnd":
 			state_machine.current_state.transition_to("attack1")
 		else:
