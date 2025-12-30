@@ -1170,7 +1170,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_noira"]
 resource_name = "stun_down"
-length = 0.20000334
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1190,7 +1190,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -1198,7 +1198,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_1tbqr"]
 resource_name = "stun_left"
-length = 0.20000334
+length = 0.30000335
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1218,7 +1218,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -1226,7 +1226,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_g71t2"]
 resource_name = "stun_right"
-length = 0.20000334
+length = 0.30000335
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1246,7 +1246,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -1254,7 +1254,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_iuw7n"]
 resource_name = "stun_up"
-length = 0.20000334
+length = 0.30000335
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1274,7 +1274,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]

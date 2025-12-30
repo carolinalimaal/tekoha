@@ -25,8 +25,7 @@ func _process(_delta: float) -> void:
 			set("parameters/Attack_2/blend_position", owner.attack_direction)
 		"Stun":
 			owner.anim_transition = 6
-			set("parameters/Stun_Start/blend_position", -owner.velocity)
-			set("parameters/Stun_Loop/blend_position", -owner.velocity)
+			set("parameters/Stun/blend_position", -owner.velocity)
 		"Death":
 			owner.anim_transition = 7
 			set("parameters/Death/blend_position", -owner.velocity)
