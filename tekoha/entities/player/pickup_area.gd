@@ -1,0 +1,29 @@
+class_name PickupArea extends Area2D
+
+@onready var player: Player = get_tree().get_first_node_in_group("Player")
+@onready var inventory: Inventory = GlobalRefs.inventory
+@onready var interact_ui: CanvasLayer = $"../InteractUI"
+
+var item: PickupItem
+
+func _ready() -> void:
+	area_entered.connect(_on_item_entered_in_pickupArea)
+	area_exited.connect(_on_item_exited_in_pickupArea)
+
+func _on_item_entered_in_pickupArea(item_entered: Area2D):
+	if item_entered.item_data is ConsumableItemData:
+		interact_ui.visible = true
+		item = item_entered
+	#elif item_entered.item_data is MuiraquitaItemData:
+		#pass
+	#elif item_entered.item_data is CoinItemData:
+		#pass
+
+func _on_item_exited_in_pickupArea(_item: Area2D):
+	interact_ui.visible = false
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact") and interact_ui.visible == true:
+		if inventory.add_item(item.item_data):
+			await get_tree().create_timer(.3).timeout
+			item.queue_free()

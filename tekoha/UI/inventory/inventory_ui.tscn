@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://o4vt4qmxgkoc"]
+[gd_scene load_steps=7 format=3 uid="uid://o4vt4qmxgkoc"]
 
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_wu0yv"]
 [ext_resource type="Script" uid="uid://oxviwncuw21d" path="res://UI/inventory/inventory_ui.gd" id="2_732id"]
 [ext_resource type="Texture2D" uid="uid://ya7sx087abqn" path="res://assets/UI/inventory/inventory.png" id="2_kqe8q"]
 [ext_resource type="PackedScene" uid="uid://b3cbxargqp6kv" path="res://UI/inventory/inventory_slot_ui.tscn" id="4_732id"]
+[ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="5_3rh6v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b3oob"]
+texture = ExtResource("5_3rh6v")
 
 [node name="InventoryUi" type="Control"]
 process_mode = 3
@@ -32,13 +36,13 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+[node name="BgInventory" type="TextureRect" parent="VBoxContainer"]
 custom_minimum_size = Vector2(497, 466)
 layout_mode = 2
 texture = ExtResource("2_kqe8q")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/TextureRect"]
+[node name="Label" type="Label" parent="VBoxContainer/BgInventory"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4
@@ -50,7 +54,7 @@ text = "INVENTÁRIO"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TextureRect"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/BgInventory"]
 custom_minimum_size = Vector2(444, 324)
 layout_mode = 1
 anchors_preset = 8
@@ -64,9 +68,8 @@ offset_right = 222.0
 offset_bottom = 202.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
 
-[node name="SlotsGrid" type="GridContainer" parent="VBoxContainer/TextureRect/HBoxContainer"]
+[node name="SlotsGrid" type="GridContainer" parent="VBoxContainer/BgInventory/HBoxContainer"]
 custom_minimum_size = Vector2(220, 324)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -75,44 +78,103 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 2
 
-[node name="InventorySlotUI" parent="VBoxContainer/TextureRect/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
+[node name="InventorySlotUI" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
 layout_mode = 2
 
-[node name="InventorySlotUI2" parent="VBoxContainer/TextureRect/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
+[node name="InventorySlotUI2" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
 layout_mode = 2
 
-[node name="InventorySlotUI3" parent="VBoxContainer/TextureRect/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
+[node name="InventorySlotUI3" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
 layout_mode = 2
 
-[node name="InventorySlotUI4" parent="VBoxContainer/TextureRect/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
+[node name="InventorySlotUI4" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
 layout_mode = 2
 
-[node name="InventorySlotUI5" parent="VBoxContainer/TextureRect/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
+[node name="InventorySlotUI5" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
 layout_mode = 2
 
-[node name="InventorySlotUI6" parent="VBoxContainer/TextureRect/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
+[node name="InventorySlotUI6" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" instance=ExtResource("4_732id")]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TextureRect/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BgInventory/HBoxContainer"]
 custom_minimum_size = Vector2(200, 310)
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 
-[node name="DescriptionBox" type="VBoxContainer" parent="VBoxContainer/TextureRect/HBoxContainer/MarginContainer"]
+[node name="DescriptionBox" type="VBoxContainer" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(200, 320)
 layout_mode = 2
 
-[node name="ItemName" type="Label" parent="VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox"]
+[node name="ItemName" type="Label" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox"]
 layout_mode = 2
 text = "Name"
 
-[node name="ItemEffect" type="Label" parent="VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox"]
+[node name="ItemEffect" type="Label" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox"]
 layout_mode = 2
 text = "Effect"
 
-[node name="ItemDescription" type="RichTextLabel" parent="VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox"]
+[node name="ItemDescription" type="RichTextLabel" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox"]
 layout_mode = 2
 text = "Descrição"
 fit_content = true
 scroll_active = false
+
+[node name="ConfirmationPopup" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="PanelContainer" parent="ConfirmationPopup"]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -75.0
+offset_right = 225.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_b3oob")
+
+[node name="MarginContainer" type="MarginContainer" parent="ConfirmationPopup/Bg"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmationPopup/Bg/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PopupLabel" type="Label" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "DESEJA USAR O ITEM X?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="UseButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(106.35, 31.8)
+layout_mode = 2
+focus_neighbor_right = NodePath("../CancelButton")
+text = "USAR"
+
+[node name="CancelButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(106.35, 31.8)
+layout_mode = 2
+focus_neighbor_left = NodePath("../UseButton")
+focus_behavior_recursive = 2
+text = "CANCELAR"

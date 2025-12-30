@@ -1,31 +1,42 @@
 class_name InventoryUI
 extends Control
 
-var current_slot_selected: InventorySlotUI
-# TODO: Verificar se essa variavel ficara aqui ou em um script global
+var slots: Array
 var _is_open: bool = false
+var _current_slot_highlighted: InventorySlotUI = null
+var _current_slot_selected: InventorySlotUI = null
 
-@onready var slots = $VBoxContainer/TextureRect/HBoxContainer/SlotsGrid.get_children()
-@onready var description_box: VBoxContainer = $VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox
-@onready var item_name: Label = $VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox/ItemName
-@onready var item_effect: Label = $VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox/ItemEffect
-@onready var item_description: RichTextLabel = $VBoxContainer/TextureRect/HBoxContainer/MarginContainer/DescriptionBox/ItemDescription
+@onready var _slots_grid: GridContainer = $VBoxContainer/BgInventory/HBoxContainer/SlotsGrid
+@onready var _description_box: VBoxContainer = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox
+@onready var _item_name: Label = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/ItemName
+@onready var _item_effect: Label = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/ItemEffect
+@onready var _item_description: RichTextLabel = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/ItemDescription
+
+@onready var _confirmation_popup: Panel = $ConfirmationPopup
+@onready var _popup_label: Label = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/PopupLabel
+@onready var _use_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/UseButton
+@onready var _cancel_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
+
 
 func _ready() -> void:
-	# Conectar sinal para manter a UI do inventario atualizada
-	GlobalSignals.updated_inventory.connect(_update_ui)
-	# Conectar sinais dos slots
-	for i in len(slots):
-		if slots[i] is InventorySlotUI:
-			slots[i].show_description.connect(_on_show_item_description)
-			slots[i].hide_description.connect(_on_hide_item_description)
-			slots[i].slot_selected.connect(_on_slot_selected)
-			slots[i].item_used.connect(_on_item_used)
+	# Conectar sinal para atualizar o inventario
+	GlobalRefs.inventory.updated_inventory.connect(_update_ui)
 	
-	# Inventario inicia fechado
-	_close()
+	# Conectar sinais de click dos botoes do ConfirmationPopup
+	_use_button.pressed.connect(_on_confirm_use)
+	_cancel_button.pressed.connect(_on_cancel_use)
+	
+	_confirmation_popup.visible = false
+	
+	slots = _slots_grid.get_children()
+	
+	# Conectar sinais dos slots
+	for slot in slots:
+		if slot is InventorySlotUI:
+			slot.slot_clicked.connect(_on_slot_clicked)
+			slot.slot_highlighted.connect(_on_slot_highlighted)
+			slot.slot_unhighlighted.connect(_on_slot_unhighlighted)
 
-# Gerenciar os inputs para abri ou fechar o inventário
 func _unhandled_input(_event: InputEvent) -> void:
 	if GlobalRefs.input_manager.get_action_pressed("inventory"):
 		if _is_open and get_tree().paused:
@@ -33,64 +44,96 @@ func _unhandled_input(_event: InputEvent) -> void:
 		elif !_is_open and !get_tree().paused:
 			_open()
 
-func _close() -> void:
-	self.visible = false
-	_is_open = false
-	get_tree().paused = false
-	# Reativa todos os slots e reseta o current_slot_selected
-	_deselect_all_slots()
-	# Reseta o painel de informacoes do item
-	_on_hide_item_description()
-
 func _open() -> void:
-	self.visible = true
 	_is_open = true
+	visible = true
 	get_tree().paused = true
-	_update_ui()
+	_update_ui() # Atualiza a UI ao abrir o inventario
+	slots[0].item_button.grab_focus() # Primeiro item em foco
 
-# Atualiza a UI do inventário
+func _close() -> void:
+	_is_open = false
+	visible = false
+	get_tree().paused = false
+	_close_popup() # Fechar popup caso feche o inventario
+
 func _update_ui() -> void:
-	for i in len(slots):
-		if GlobalRefs.inventory.inventory_slots[i].item:
-			slots[i].set_item_slot(GlobalRefs.inventory.inventory_slots[i])
-		else: 
-			slots[i].set_item_slot(null)
+	# Referencia ao inventario
+	var inventory_slots = GlobalRefs.inventory.inventory_slots
+	
+	# Set dos itens do inventario aos slots da UI
+	for i in range(slots.size()):
+		if slots[i] is InventorySlotUI:
+			if i < inventory_slots.size():
+				slots[i].set_item_slot(inventory_slots[i])
+			else:
+				slots[i].set_item_slot(null)
 
-# Atribui as informações do item no painel
-func _on_show_item_description(item: ConsumableItemData) -> void:
-	description_box.visible = true
-	item_name.text = item.name
-	item_effect.text = str(item.health_gain)
-	item_description.text = item.description
 
-# Reseta as informações do item no painel
-func _on_hide_item_description() -> void:
-	description_box.visible = false
-	item_name.text = ""
-	item_effect.text = ""
-	item_description.text = ""
+# --- LOGICA DO POPUP ---
 
-# Salva o current_slot_selected e desabilita os demais
-func _on_slot_selected(slot: InventorySlotUI) -> void:
-	for s in slots:
-		if s is InventorySlotUI and s != slot:
-			s.set_disable(true)
-
-# Reabilita os slots e reseta o current_slot_selected
-func _deselect_all_slots() -> void:
+func _on_slot_clicked(slot: InventorySlotUI) -> void:
+	_current_slot_selected = slot
+	
+	_confirmation_popup.visible = true
+	_popup_label.text = "Deseja usar " + slot.item_slot.item.name + "?"
+	
+	# Bloquear foco nos slots quando o popup estiver aberto
 	for s in slots:
 		if s is InventorySlotUI:
-			s.set_disable(false)
-			s.hide_options_menu()
-	current_slot_selected = null
+			s.item_button.focus_mode = Control.FOCUS_NONE
+	
+	_use_button.grab_focus() # Focar no botao de usar
 
-# Usa o item e o remove do inventário
-func _on_item_used(item_slot: ItemSlot) -> void:
-	if item_slot and !item_slot.is_empty():
-		GlobalRefs.inventory.remove_item_from_slot(item_slot.slot_index)
+func _on_confirm_use() -> void:
+	var item_slot = _current_slot_selected.item_slot
+	if _current_slot_selected and item_slot and !item_slot.is_empty():
 		# TODO: Funcionalidade de usar o item
+		#GlobalRefs.player.health_component.heal(item_slot.item.health_gain)
+		print("Usou o item: " + item_slot.item.name)
 		
-		# Reativa todos os slots e reseta o current_slot_selected
-		_deselect_all_slots()
-		# Reseta o painel de informacoes do item
-		_on_hide_item_description()
+		GlobalRefs.inventory.remove_item_from_slot(item_slot.slot_index)
+	
+	_close_popup()
+
+func _on_cancel_use() -> void:
+	_close_popup()
+
+func _close_popup() -> void:
+	_confirmation_popup.visible = false
+	
+	# Permitir foco nos slots quando o popup estiver fechado
+	for s in slots:
+		if s is InventorySlotUI:
+			s.item_button.focus_mode = Control.FOCUS_ALL
+	
+	# Focar no item que foi clicado
+	if _current_slot_selected:
+		_current_slot_selected.item_button.grab_focus()
+	
+	_current_slot_selected = null
+
+
+# --- LOGICA DE DESCRICAO ---
+
+func _on_slot_highlighted(slot: InventorySlotUI) -> void:
+	if slot.item_slot and slot.item_slot.item:
+		_current_slot_highlighted = slot
+		_show_description(slot.item_slot.item)
+
+func _on_slot_unhighlighted(slot: InventorySlotUI) -> void:
+	if slot == _current_slot_highlighted:
+		_current_slot_highlighted = null
+		_clear_description()
+
+func _show_description(item: ConsumableItemData) -> void:
+	_description_box.visible = true
+	_item_name.text = item.name
+	_item_effect.text = str(item.health_gain)
+	_item_description.text = item.description
+
+func _clear_description() -> void:
+	_description_box.visible = false
+	_item_name.text = ""
+	_item_effect.text = ""
+	_item_description.text = ""
