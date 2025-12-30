@@ -39,6 +39,10 @@ func _physics_process(_delta: float) -> void:
 
 # Gerenciar os inputs para as acoes
 func _unhandled_input(_event: InputEvent) -> void:
+	# Bloquear input se estiver em STUN ou DEATH
+	if state_machine.current_state.name in ["Death", "Stun"]:
+		return
+	
 	if GlobalRefs.input_manager.get_action_pressed("attack"):
 		if state_machine.current_state.name != "AttackEnd":
 			state_machine.current_state.transition_to("attack1")
