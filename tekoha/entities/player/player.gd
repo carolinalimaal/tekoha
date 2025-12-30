@@ -14,7 +14,7 @@ var roll_direction : Vector2
 
 var can_roll : bool = true
 
-var roll_cooldown : float = 2.0
+var roll_cooldown : float = 1.0
 
 var anim_transition : int = 0
 
