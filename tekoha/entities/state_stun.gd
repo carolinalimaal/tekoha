@@ -2,15 +2,6 @@ class_name StunState
 extends State
 
 var _attack_data : AttackData
-var _stun_timer : Timer
-
-func _ready() -> void:
-	# Criar o timer, conectar sinal de timeout e adicionar o timer na arvore
-	_stun_timer = Timer.new()
-	_stun_timer.one_shot = true
-	_stun_timer.autostart = false
-	_stun_timer.timeout.connect(_on_stun_timer_timeout)
-	add_child(_stun_timer)
 
 func _enter() -> void:
 	# Aplicar knockback
@@ -19,13 +10,16 @@ func _enter() -> void:
 	owner_node.facing_direction = - knockback_direction
 	# Desabilitar a hitbox_collision
 	owner_node.hitbox_component.hitbox_collision.set_deferred("disabled", true)
-	_stun_timer.wait_time = _attack_data.stun_duration
-	_stun_timer.start()
+	
+	# Conectar o sinal animation_finished
+	owner_node.animation_tree.animation_finished.connect(_on_animation_finished)
 
 func _exit() -> void:
-	_stun_timer.stop()
 	# Desabilitar a hitbox_collision
 	owner_node.hitbox_component.hitbox_collision.set_deferred("disabled", false)
+	
+	# Disconectar o sinal animation_finished
+	owner_node.animation_tree.animation_finished.disconnect(_on_animation_finished)
 
 func _update(_delta: float) -> void:
 	pass
@@ -36,6 +30,8 @@ func _physics_update(_delta: float) -> void:
 func receive_attack_data(attack_data: AttackData):
 	_attack_data = attack_data
 
-func _on_stun_timer_timeout() -> void:
-	transition_to("Idle")
-	return
+func _on_animation_finished(anim_name: StringName) -> void:
+	# No fim da animacao de morte, chama o metodo die()
+	if anim_name in ["stun_down", "stun_up", "stun_left", "stun_right"]:
+		transition_to("Idle")
+		return
