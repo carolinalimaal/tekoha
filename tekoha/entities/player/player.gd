@@ -53,7 +53,11 @@ func _unhandled_input(_event: InputEvent) -> void:
 		else:
 			state_machine.current_state.transition_to("attack2")
 	elif GlobalRefs.input_manager.get_action_pressed("roll") and can_roll:
-		state_machine.current_state.transition_to("roll")
+		# Bloquear rolagem se estiver em ATTACK1, ATTACK_END ou ATTACK2
+		if state_machine.current_state.name in ["Attack1", "AttackEnd", "Attack2"]:
+			return
+		
+		state_machine.current_state.transition_to("Roll")
 
 func get_direction() -> Vector2:
 	return GlobalRefs.input_manager.get_movement_vector().normalized()
