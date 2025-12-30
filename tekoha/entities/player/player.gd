@@ -14,7 +14,7 @@ var roll_direction : Vector2
 
 var can_roll : bool = true
 
-var roll_cooldown : float = 2.0
+var roll_cooldown : float = 1.0
 
 var anim_transition : int = 0
 
@@ -39,13 +39,26 @@ func _physics_process(_delta: float) -> void:
 
 # Gerenciar os inputs para as acoes
 func _unhandled_input(_event: InputEvent) -> void:
+	# Bloquear input se estiver em STUN ou DEATH
+	if state_machine.current_state.name in ["Death", "Stun"]:
+		return
+	
 	if GlobalRefs.input_manager.get_action_pressed("attack"):
+		# Bloquear ataque se estiver em ROLL
+		if state_machine.current_state.name == "Roll":
+			return
+		
 		if state_machine.current_state.name != "AttackEnd":
-			state_machine.current_state.transition_to("attack1")
+			state_machine.current_state.transition_to("Attack1")
 		else:
 			state_machine.current_state.transition_to("attack2")
+		
 	elif GlobalRefs.input_manager.get_action_pressed("roll") and can_roll:
-		state_machine.current_state.transition_to("roll")
+		# Bloquear rolagem se estiver em ATTACK1, ATTACK_END ou ATTACK2
+		if state_machine.current_state.name in ["Attack1", "AttackEnd", "Attack2"]:
+			return
+		
+		state_machine.current_state.transition_to("Roll")
 
 func get_direction() -> Vector2:
 	return GlobalRefs.input_manager.get_movement_vector().normalized()
@@ -61,13 +74,16 @@ func die():
 
 func _on_player_died():
 	# Transicionar para DEATH
-	state_machine.current_state.transition_to("death")
+	state_machine.current_state.transition_to("Death")
 
 func _on_player_attack_received(attack_data: AttackData):
+	# Nao sofre dano se estiver em DEATH ou STUN
+	if state_machine.current_state.name in ["Death", "Stun"]:
+		return
+		
 	# Sofrer o dano 
 	health_component.take_damage(attack_data)
 	# Passar os dados do ataque para o stun_state e transicionar para STUN
 	var stun_state : StunState = state_machine.states.get("stun")
-	if state_machine.current_state.name not in ["Stun", "Death"]:
-		stun_state.receive_attack_data(attack_data)
-		state_machine.current_state.transition_to("stun")
+	stun_state.receive_attack_data(attack_data)
+	state_machine.current_state.transition_to("Stun")
