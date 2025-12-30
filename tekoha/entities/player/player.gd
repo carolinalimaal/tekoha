@@ -49,9 +49,10 @@ func _unhandled_input(_event: InputEvent) -> void:
 			return
 		
 		if state_machine.current_state.name != "AttackEnd":
-			state_machine.current_state.transition_to("attack1")
+			state_machine.current_state.transition_to("Attack1")
 		else:
 			state_machine.current_state.transition_to("attack2")
+		
 	elif GlobalRefs.input_manager.get_action_pressed("roll") and can_roll:
 		# Bloquear rolagem se estiver em ATTACK1, ATTACK_END ou ATTACK2
 		if state_machine.current_state.name in ["Attack1", "AttackEnd", "Attack2"]:
@@ -73,7 +74,7 @@ func die():
 
 func _on_player_died():
 	# Transicionar para DEATH
-	state_machine.current_state.transition_to("death")
+	state_machine.current_state.transition_to("Death")
 
 func _on_player_attack_received(attack_data: AttackData):
 	# Nao sofre dano se estiver em DEATH ou STUN
