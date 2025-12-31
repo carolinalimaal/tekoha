@@ -4,6 +4,7 @@ extends Node
 
 # Sinais para a UI ser atualizada
 signal wallet_updated(new_amout: int)
+signal muiraquita_updated(id: int)
 
 # Sinal para avisar que uma moeda foi coletada
 signal coin_collected(value: int)
