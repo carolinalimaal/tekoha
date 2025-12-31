@@ -9,6 +9,6 @@ func _ready() -> void:
 	animation_player.play("default")
 
 func collect() -> void:
+	GlobalSignals.coin_collected.emit(value)
 	# TODO: adicionar som de coletar moeda
-	GameManager.add_coin(value)
 	queue_free()
