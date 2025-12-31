@@ -11,12 +11,14 @@ func _ready() -> void:
 	area_exited.connect(_on_item_exited_in_pickupArea)
 
 func _on_item_entered_in_pickupArea(item_entered: Area2D):
-	if item_entered.item_data is ConsumableItemData:
+	if item_entered is not Coin and item_entered.item_data is ConsumableItemData:
 		interact_ui.visible = true
 		item = item_entered
+		
+	elif item_entered is Coin:
+		item_entered.collect()
+		
 	#elif item_entered.item_data is MuiraquitaItemData:
-		#pass
-	#elif item_entered.item_data is CoinItemData:
 		#pass
 
 func _on_item_exited_in_pickupArea(_item: Area2D):
