@@ -1,7 +1,7 @@
 class_name PickupArea extends Area2D
 
-@onready var player: Player = get_tree().get_first_node_in_group("Player")
-@onready var inventory: Inventory = GlobalRefs.inventory
+var inventory: Inventory
+
 @onready var interact_ui: CanvasLayer = $"../InteractUI"
 
 var item: PickupItem
@@ -9,6 +9,8 @@ var item: PickupItem
 func _ready() -> void:
 	area_entered.connect(_on_item_entered_in_pickupArea)
 	area_exited.connect(_on_item_exited_in_pickupArea)
+	
+	inventory = GlobalRefs.inventory
 
 func _on_item_entered_in_pickupArea(item_entered: Area2D):
 	if item_entered is not Coin and item_entered is not Muiraquita and item_entered.item_data is ConsumableItemData:
