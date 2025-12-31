@@ -17,6 +17,8 @@ func _on_muiraquita_found(id: int) -> void:
 func _add_coin(value: int) -> void:
 	wallet += value
 	
+	# TODO: adicionar som de coletar moeda
+	
 	GlobalSignals.wallet_updated.emit(wallet)
 	print("moeda coletada")
 

@@ -10,5 +10,4 @@ func _ready() -> void:
 
 func collect() -> void:
 	GlobalSignals.coin_collected.emit(value)
-	# TODO: adicionar som de coletar moeda
 	queue_free()
