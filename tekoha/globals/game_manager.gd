@@ -9,14 +9,16 @@ func _ready() -> void:
 	GlobalSignals.new_muiraquita_found.connect(_on_muiraquita_found)
 
 func _on_coin_collected(value: int) -> void:
-	add_coin(value)
+	_add_coin(value)
 
-func add_coin(value: int) -> void:
 func _on_muiraquita_found(id: int) -> void:
 	_register_muiraquita(id)
 
+func _add_coin(value: int) -> void:
 	wallet += value
+	
 	GlobalSignals.wallet_updated.emit(wallet)
+	print("moeda coletada")
 
 func _register_muiraquita(id: int) -> void:
 	# Registrar no dicionario
