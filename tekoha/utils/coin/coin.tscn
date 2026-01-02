@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmpf7e1nr1x4w"]
 
-[ext_resource type="Texture2D" uid="uid://sqn83bgph3xp" path="res://assets/sprites/items/foods/tile009.png" id="1_7dev2"]
 [ext_resource type="Script" uid="uid://dnrk3bq0b2448" path="res://utils/coin/coin.gd" id="1_hk7e5"]
+[ext_resource type="Texture2D" uid="uid://dndmw37mpkifh" path="res://assets/sprites/items/coin/acai_caroco.png" id="3_3fe2d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7dev2"]
-radius = 16.0
+radius = 8.0
 
 [sub_resource type="Animation" id="Animation_3fe2d"]
 length = 0.001
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_7dev2")]
+"values": [ExtResource("3_3fe2d")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -47,7 +47,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_7dev2")]
+"values": [ExtResource("3_3fe2d")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -74,7 +74,7 @@ collision_mask = 0
 script = ExtResource("1_hk7e5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_7dev2")
+texture = ExtResource("3_3fe2d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7dev2")
