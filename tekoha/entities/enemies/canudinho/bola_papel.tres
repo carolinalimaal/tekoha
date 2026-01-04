@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1_4tevd")
-damage_value = 0.5
+damage_value = 2
 knockback_force = 20.0
-stun_duration = 0.2
 metadata/_custom_type_script = "uid://c8ylfafeubddo"

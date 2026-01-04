@@ -2833,7 +2833,7 @@ states/Stun/position = Vector2(572, 168)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_i174x")
 states/Walk/position = Vector2(337, -120)
 transitions = ["Start", "Base", SubResource("AnimationNodeStateMachineTransition_a1qjk"), "Base", "Idle", SubResource("AnimationNodeStateMachineTransition_j3ovn"), "Idle", "Base", SubResource("AnimationNodeStateMachineTransition_7thud"), "Base", "Walk", SubResource("AnimationNodeStateMachineTransition_afbqv"), "Walk", "Base", SubResource("AnimationNodeStateMachineTransition_gx6sm"), "Roll", "Base", SubResource("AnimationNodeStateMachineTransition_yqrof"), "Base", "Roll", SubResource("AnimationNodeStateMachineTransition_3wlsy"), "Base", "Attack_1", SubResource("AnimationNodeStateMachineTransition_b2kln"), "Attack_1", "Base", SubResource("AnimationNodeStateMachineTransition_we0b7"), "Base", "Attack_End", SubResource("AnimationNodeStateMachineTransition_mtric"), "Attack_End", "Base", SubResource("AnimationNodeStateMachineTransition_eyb6c"), "Base", "Attack_2", SubResource("AnimationNodeStateMachineTransition_221hk"), "Attack_2", "Base", SubResource("AnimationNodeStateMachineTransition_ghoj8"), "Base", "Stun", SubResource("AnimationNodeStateMachineTransition_50fht"), "Base", "Death", SubResource("AnimationNodeStateMachineTransition_wuv6x"), "Death", "Base", SubResource("AnimationNodeStateMachineTransition_qpopc"), "Stun", "Base", SubResource("AnimationNodeStateMachineTransition_t1t22")]
-graph_offset = Vector2(0, -150)
+graph_offset = Vector2(-166, -22)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 912
@@ -2842,7 +2842,7 @@ script = ExtResource("1_fkugw")
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("3_mpktj")
-_max_health = 3.0
+max_health = 12
 metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
 [node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("hitbox_collision")]
@@ -2904,7 +2904,7 @@ parameters/Attack_1/blend_position = Vector2(0, 0.011933088)
 parameters/Attack_2/blend_position = Vector2(0, 0)
 parameters/Attack_End/blend_position = Vector2(0, 0)
 parameters/Base/blend_position = Vector2(0, 0)
-parameters/Death/blend_position = Vector2(0, 0.0023201704)
+parameters/Death/blend_position = Vector2(-0.76395535, 0.34185302)
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Roll/blend_position = Vector2(0, 0)
 parameters/Stun/blend_position = Vector2(-0.0016639233, 0.00507617)

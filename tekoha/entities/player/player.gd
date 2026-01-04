@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 signal player_dead()
+signal health_changed()
 
 const SPEED : float = 100.0
 const ROLL_SPEED : float = 120.0
@@ -24,8 +25,10 @@ var anim_transition : int = 0
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var state_machine: StateMachine = $StateMachine
 
-func _ready() -> void:
+func _init() -> void:
 	GlobalRefs.player = self
+
+func _ready() -> void:
 	# Conectar sinais
 	health_component.died.connect(_on_player_died)
 	hitbox_component.attack_received.connect(_on_player_attack_received)
@@ -83,6 +86,7 @@ func _on_player_attack_received(attack_data: AttackData):
 		
 	# Sofrer o dano 
 	health_component.take_damage(attack_data)
+	health_changed.emit()
 	# Passar os dados do ataque para o stun_state e transicionar para STUN
 	var stun_state : StunState = state_machine.states.get("stun")
 	stun_state.receive_attack_data(attack_data)
