@@ -20,7 +20,6 @@ func _add_coin(value: int) -> void:
 	# TODO: adicionar som de coletar moeda
 	
 	GlobalSignals.wallet_updated.emit(wallet)
-	print("moeda coletada")
 
 func _register_muiraquita(id: int) -> void:
 	# Registrar no dicionario
@@ -30,4 +29,3 @@ func _register_muiraquita(id: int) -> void:
 	
 	# Emitir sinal para mostrar UI
 	GlobalSignals.muiraquita_updated.emit(id)
-	print("muiraquita coletado")
