@@ -87,7 +87,10 @@ func _on_player_attack_received(attack_data: AttackData):
 	# Sofrer o dano 
 	health_component.take_damage(attack_data)
 	health_changed.emit()
-	# Passar os dados do ataque para o stun_state e transicionar para STUN
-	var stun_state : StunState = state_machine.states.get("stun")
-	stun_state.receive_attack_data(attack_data)
-	state_machine.current_state.transition_to("Stun")
+	
+	# Verifica novamente se nao foi para o estado de morte
+	if state_machine.current_state.name != "Death":
+		# Passar os dados do ataque para o stun_state e transicionar para STUN
+		var stun_state : StunState = state_machine.states.get("stun")
+		stun_state.receive_attack_data(attack_data)
+		state_machine.current_state.transition_to("Stun")
