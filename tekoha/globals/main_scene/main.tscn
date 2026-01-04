@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="1_i38rt"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="2_o2rku"]
 [ext_resource type="PackedScene" uid="uid://o4vt4qmxgkoc" path="res://UI/inventory/inventory_ui.tscn" id="3_ac4dx"]
-[ext_resource type="Script" uid="uid://bvcb521no2utd" path="res://globals/input_manager.gd" id="3_n2rk1"]
-[ext_resource type="Script" uid="uid://bun1v203k2eax" path="res://globals/controller_manager.gd" id="4_ac4dx"]
+[ext_resource type="Script" uid="uid://bvcb521no2utd" path="res://globals/input_manager/input_manager.gd" id="3_n2rk1"]
+[ext_resource type="Script" uid="uid://bun1v203k2eax" path="res://globals/input_manager/controller_manager.gd" id="4_ac4dx"]
 [ext_resource type="PackedScene" uid="uid://duntos8imf0u6" path="res://UI/pause_menu/pause_menu.tscn" id="4_mdv7j"]
-[ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="7_d60g8"]
-[ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="8_114rs"]
+[ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="8_114rs"]
+[ext_resource type="PackedScene" uid="uid://cmpf7e1nr1x4w" path="res://utils/coin/coin.tscn" id="9_58oj7"]
 
 [node name="Main" type="Node2D"]
 
@@ -40,8 +40,24 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Level" type="Node2D" parent="."]
 
-[node name="Sacola" parent="Level" instance=ExtResource("7_d60g8")]
-position = Vector2(178, 123)
+[node name="Coin" parent="Level" instance=ExtResource("9_58oj7")]
+position = Vector2(238, 2)
 
-[node name="Canudinho" parent="Level" instance=ExtResource("8_114rs")]
-position = Vector2(-140, 143)
+[node name="Coin2" parent="Level" instance=ExtResource("9_58oj7")]
+position = Vector2(238, 71)
+
+[node name="Coin3" parent="Level" instance=ExtResource("9_58oj7")]
+position = Vector2(322, -2)
+
+[node name="Coin4" parent="Level" instance=ExtResource("9_58oj7")]
+position = Vector2(315, 69)
+
+[node name="Muiraquita" parent="Level" instance=ExtResource("8_114rs")]
+position = Vector2(-180, -3)
+
+[node name="Muiraquita2" parent="Level" instance=ExtResource("8_114rs")]
+position = Vector2(-273, 9)
+id = 1
+
+[node name="Muiraquita3" parent="Level" instance=ExtResource("8_114rs")]
+position = Vector2(-154, 100)
