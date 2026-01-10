@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://131hv46xermf"]
+[gd_scene load_steps=11 format=3 uid="uid://131hv46xermf"]
 
 [ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="1_i38rt"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="2_o2rku"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bvcb521no2utd" path="res://globals/input_manager/input_manager.gd" id="3_n2rk1"]
 [ext_resource type="Script" uid="uid://bun1v203k2eax" path="res://globals/input_manager/controller_manager.gd" id="4_ac4dx"]
 [ext_resource type="PackedScene" uid="uid://duntos8imf0u6" path="res://UI/pause_menu/pause_menu.tscn" id="4_mdv7j"]
+[ext_resource type="PackedScene" uid="uid://dfmtpawqvhnlg" path="res://UI/game_over_menu/game_over_menu.tscn" id="4_si673"]
 [ext_resource type="PackedScene" uid="uid://cum3wr7pr2eq1" path="res://UI/heart_ui/heart_ui.tscn" id="5_58oj7"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="9_58oj7"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="10_si673"]
@@ -26,6 +27,9 @@ metadata/_custom_type_script = "uid://bun1v203k2eax"
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("4_mdv7j")]
+visible = false
+
+[node name="GameOverMenu" parent="UI" instance=ExtResource("4_si673")]
 visible = false
 
 [node name="InventoryUi" parent="UI" instance=ExtResource("3_ac4dx")]
