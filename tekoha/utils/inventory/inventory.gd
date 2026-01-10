@@ -11,6 +11,10 @@ func _init() -> void:
 	# Criar inventario com 6 slots
 	for i in range(_size):
 		inventory_slots.append(ItemSlot.new(i))
+	
+	#teste de item consumivel
+	var item: ConsumableItemData = load("res://data/items/tambaqui_assado.tres")
+	add_item(item)
 
 # Adiciona um item ao inventario
 func add_item(item: ConsumableItemData) -> bool:
