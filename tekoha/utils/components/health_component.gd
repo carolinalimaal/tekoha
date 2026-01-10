@@ -20,9 +20,7 @@ func take_damage(attack_data: AttackData) -> void:
 func heal(amout: int) -> void:
 	current_health += amout
 	current_health = min(current_health, max_health)
-	print("vida após curar: ", current_health)
 
-	
 
 func _die() -> void:
 	died.emit()
