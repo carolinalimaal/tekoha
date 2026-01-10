@@ -34,10 +34,14 @@ func _on_enemy_died():
 	state_machine.current_state.transition_to("Death")
 
 func _on_enemy_attack_received(attack_data: AttackData):
+	# Nao sofre dano se estiver em DEATH ou STUN
+	if state_machine.current_state.name in ["Death", "Stun"]:
+		return
 	# Sofrer o dano 
 	health_component.take_damage(attack_data)
-	# Passar os dados do ataque para o stun_state e transicionar para STUN
-	var stun_state : StunState = state_machine.states.get("stun")
-	if state_machine.current_state.name not in ["Stun", "Death"]:
+	# Verifica novamente se nao foi para o estado de morte
+	if state_machine.current_state.name != "Death":
+		# Passar os dados do ataque para o stun_state e transicionar para STUN
+		var stun_state : StunState = state_machine.states.get("stun")
 		stun_state.receive_attack_data(attack_data)
 		state_machine.current_state.transition_to("Stun")
