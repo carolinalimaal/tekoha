@@ -1204,7 +1204,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_o75l5"]
 resource_name = "stun_down"
 length = 0.30000335
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1233,7 +1232,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_nt2xp"]
 resource_name = "stun_left"
 length = 0.30000335
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1262,7 +1260,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_2ndyf"]
 resource_name = "stun_right"
 length = 0.30000335
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1291,7 +1288,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_oyijq"]
 resource_name = "stun_up"
 length = 0.30000335
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
