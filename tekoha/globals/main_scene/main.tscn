@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://131hv46xermf"]
+[gd_scene load_steps=10 format=3 uid="uid://131hv46xermf"]
 
 [ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="1_i38rt"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="2_o2rku"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://bun1v203k2eax" path="res://globals/input_manager/controller_manager.gd" id="4_ac4dx"]
 [ext_resource type="PackedScene" uid="uid://duntos8imf0u6" path="res://UI/pause_menu/pause_menu.tscn" id="4_mdv7j"]
 [ext_resource type="PackedScene" uid="uid://cum3wr7pr2eq1" path="res://UI/heart_ui/heart_ui.tscn" id="5_58oj7"]
+[ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="9_58oj7"]
+[ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="10_si673"]
 
 [node name="Main" type="Node2D"]
 
@@ -40,3 +42,9 @@ script = ExtResource("2_o2rku")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Level" type="Node2D" parent="."]
+
+[node name="Canudinho" parent="Level" instance=ExtResource("10_si673")]
+position = Vector2(0, 146)
+
+[node name="Sacola" parent="Level" instance=ExtResource("9_58oj7")]
+position = Vector2(184, 5)
