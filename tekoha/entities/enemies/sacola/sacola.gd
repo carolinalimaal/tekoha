@@ -29,11 +29,6 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
-func die():
-	# TODO: ver possivel dependencia com health_component
-	await get_tree().create_timer(.2).timeout
-	queue_free()
-
 func _on_enemy_died():
 	# Transicionar para DEATH
 	state_machine.current_state.transition_to("Death")

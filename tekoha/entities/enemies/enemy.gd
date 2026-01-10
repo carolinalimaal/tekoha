@@ -39,3 +39,8 @@ func register_attacker() -> void:
 
 func deregister_attacker() -> void:
 	enemies_attacking = max(0, enemies_attacking - 1)
+
+func die():
+	# TODO: ver possivel dependencia com health_component
+	await get_tree().create_timer(.2).timeout
+	queue_free()
