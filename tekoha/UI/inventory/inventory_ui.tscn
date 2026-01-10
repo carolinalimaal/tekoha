@@ -108,15 +108,12 @@ layout_mode = 2
 
 [node name="ItemName" type="Label" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox"]
 layout_mode = 2
-text = "Name"
 
 [node name="ItemEffect" type="Label" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox"]
 layout_mode = 2
-text = "Effect"
 
 [node name="ItemDescription" type="RichTextLabel" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox"]
 layout_mode = 2
-text = "Descrição"
 fit_content = true
 scroll_active = false
 
