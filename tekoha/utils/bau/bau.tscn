@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://cn6gcnndvsxy8"]
+
+[ext_resource type="Script" uid="uid://c2xtmwc8mqu1i" path="res://utils/bau/bau.gd" id="1_rqtb1"]
+[ext_resource type="Texture2D" uid="uid://dn43n5eehuux3" path="res://assets/sprites/bau/bau_sheet.png" id="2_pmfbf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqtb1"]
+size = Vector2(74, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1cy4"]
+size = Vector2(56, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65fed"]
+atlas = ExtResource("2_pmfbf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hguk"]
+atlas = ExtResource("2_pmfbf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4csk"]
+atlas = ExtResource("2_pmfbf")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7syt"]
+atlas = ExtResource("2_pmfbf")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tegxk"]
+atlas = ExtResource("2_pmfbf")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4626f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65fed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hguk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4csk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7syt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tegxk")
+}],
+"loop": true,
+"name": &"bau_animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bau" type="StaticBody2D"]
+collision_layer = 1024
+collision_mask = 25
+script = ExtResource("1_rqtb1")
+
+[node name="PlayerInteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteractArea"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_rqtb1")
+debug_color = Color(0.92358196, 0.24035683, 0.35711023, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_j1cy4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4626f")
+animation = &"bau_animation"
+
+[node name="InteractionUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="InteractionUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -213.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="InteractionUI/MarginContainer"]
+layout_mode = 2
+color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
+
+[node name="Label" type="Label" parent="InteractionUI/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -11.5
+offset_right = 98.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aperte R para abrir o Baú"
+
+[connection signal="body_entered" from="PlayerInteractArea" to="." method="_on_player_interact_area_body_entered"]
+[connection signal="body_exited" from="PlayerInteractArea" to="." method="_on_player_interact_area_body_exited"]

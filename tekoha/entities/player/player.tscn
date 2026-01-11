@@ -2836,7 +2836,7 @@ transitions = ["Start", "Base", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-162, -22.338837)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_mask = 912
+collision_mask = 1936
 motion_mode = 1
 script = ExtResource("1_fkugw")
 
