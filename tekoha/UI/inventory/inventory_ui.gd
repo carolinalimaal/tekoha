@@ -91,11 +91,7 @@ func _on_confirm_use() -> void:
 	var item_slot = _current_slot_selected.item_slot
 	if _current_slot_selected and item_slot and !item_slot.is_empty():
 		#GlobalRefs.player.health_component.heal(item_slot.item.health_gain)
-		print("Usou o item: " + item_slot.item.name)
-		#verificação do ganho de vida
-		print("vida atual: ", GlobalRefs.player.health_component.current_health)
 		GlobalRefs.player.heal(item_slot.item.health_gain)
-		print("vida restaurada pelo item: ", item_slot.item.health_gain)
 		
 		GlobalRefs.inventory.remove_item_from_slot(item_slot.slot_index)
 	
