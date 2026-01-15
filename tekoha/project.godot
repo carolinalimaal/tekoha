@@ -109,6 +109,7 @@ interact={
 2d_physics/layer_8="World"
 2d_physics/layer_9="Props"
 2d_physics/layer_10="Items"
+2d_physics/layer_11="Bau"
 
 [rendering]
 

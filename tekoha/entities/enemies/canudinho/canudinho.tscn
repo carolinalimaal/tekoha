@@ -1600,7 +1600,7 @@ graph_offset = Vector2(56, -105)
 
 [node name="Canudinho" type="CharacterBody2D"]
 collision_layer = 16
-collision_mask = 401
+collision_mask = 1425
 motion_mode = 1
 script = ExtResource("1_4fimn")
 

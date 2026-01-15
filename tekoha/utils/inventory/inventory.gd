@@ -15,6 +15,11 @@ func _init() -> void:
 	#teste de item consumivel
 	var item: ConsumableItemData = load("res://data/items/tambaqui_assado.tres")
 	add_item(item)
+	add_item(item)
+	add_item(item)
+	add_item(item)
+	add_item(item)
+	add_item(item)
 
 # Adiciona um item ao inventario
 func add_item(item: ConsumableItemData) -> bool:

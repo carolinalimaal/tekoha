@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cxafhawohq46p" path="res://UI/acai_ui/acai_ui.tscn" id="7_8lbkp"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="9_58oj7"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="10_si673"]
+[ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="11_8lbkp"]
 [ext_resource type="PackedScene" uid="uid://cmpf7e1nr1x4w" path="res://utils/coin/coin.tscn" id="12_qujwd"]
 
 [node name="Main" type="Node2D"]
@@ -39,6 +40,8 @@ visible = false
 
 [node name="HeartUI" parent="UI" instance=ExtResource("5_58oj7")]
 
+[node name="Bau" parent="." instance=ExtResource("11_8lbkp")]
+position = Vector2(224, 143)
 [node name="AcaiUI" parent="UI" instance=ExtResource("7_8lbkp")]
 
 [node name="Player" type="Node2D" parent="."]
