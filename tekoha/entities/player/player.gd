@@ -97,3 +97,7 @@ func _on_player_attack_received(attack_data: AttackData):
 		var stun_state : StunState = state_machine.states.get("stun")
 		stun_state.receive_attack_data(attack_data)
 		state_machine.current_state.transition_to("Stun")
+
+func heal(amount: int):
+	health_component.heal(amount)
+	health_changed.emit()
