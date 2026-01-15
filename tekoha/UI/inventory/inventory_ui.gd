@@ -1,6 +1,8 @@
 class_name InventoryUI
 extends Control
 
+signal item_used(item)
+
 var slots: Array
 var _is_open: bool = false
 var _current_slot_highlighted: InventorySlotUI = null
@@ -89,11 +91,7 @@ func _on_confirm_use() -> void:
 	var item_slot = _current_slot_selected.item_slot
 	if _current_slot_selected and item_slot and !item_slot.is_empty():
 		#GlobalRefs.player.health_component.heal(item_slot.item.health_gain)
-		print("Usou o item: " + item_slot.item.name)
-		#verificação do ganho de vida
-		print("vida atual: ", GlobalRefs.player.health_component.current_health)
-		GlobalRefs.player.health_component.heal(item_slot.item.health_gain)
-		print("vida restaurada pelo item: ", item_slot.item.health_gain)
+		GlobalRefs.player.heal(item_slot.item.health_gain)
 		
 		GlobalRefs.inventory.remove_item_from_slot(item_slot.slot_index)
 	
