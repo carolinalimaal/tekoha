@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://131hv46xermf"]
+[gd_scene load_steps=14 format=3 uid="uid://131hv46xermf"]
 
 [ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="1_i38rt"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="2_o2rku"]
@@ -40,8 +40,6 @@ visible = false
 
 [node name="HeartUI" parent="UI" instance=ExtResource("5_58oj7")]
 
-[node name="Bau" parent="." instance=ExtResource("11_8lbkp")]
-position = Vector2(224, 143)
 [node name="AcaiUI" parent="UI" instance=ExtResource("7_8lbkp")]
 
 [node name="Player" type="Node2D" parent="."]
@@ -65,3 +63,6 @@ position = Vector2(134, 130)
 
 [node name="Coin2" parent="Level" instance=ExtResource("12_qujwd")]
 position = Vector2(-197, 60)
+
+[node name="Bau" parent="Level" instance=ExtResource("11_8lbkp")]
+position = Vector2(224, 143)
