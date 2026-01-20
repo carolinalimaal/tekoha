@@ -35,19 +35,19 @@ region = Rect2(256, 0, 64, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_4626f"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_65fed")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_7hguk")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_s4csk")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_p7syt")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_tegxk")
 }],
 "loop": false,
@@ -64,6 +64,7 @@ animations = [{
 texture = ExtResource("3_65fed")
 
 [node name="Bau" type="StaticBody2D"]
+process_mode = 3
 collision_layer = 1024
 collision_mask = 25
 script = ExtResource("1_rqtb1")
@@ -80,14 +81,16 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_j1cy4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
 sprite_frames = SubResource("SpriteFrames_4626f")
 animation = &"bau_animation"
 
 [node name="InteractionUI" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
+layer = 0
 
 [node name="InteractionContainer" type="MarginContainer" parent="InteractionUI"]
+visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
