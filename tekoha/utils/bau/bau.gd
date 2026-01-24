@@ -1,4 +1,4 @@
-extends StaticBody2D
+class_name Bau extends StaticBody2D
 
 var openned: bool = false
 @onready var item: ConsumableItemData = load("res://data/items/tambaqui_assado.tres")
