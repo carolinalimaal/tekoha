@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=3 uid="uid://1fglvxuhlal0"]
+
+[ext_resource type="Script" uid="uid://bv7xgwalm2jk" path="res://entities/npcs/npc.gd" id="1_ii8d2"]
+[ext_resource type="Texture2D" uid="uid://bgnluxiwwhp7b" path="res://assets/sprites/entities/npcs/iara_com_cauda_idle_down.png" id="2_ii8d2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ii8d2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw2bh"]
+atlas = ExtResource("2_ii8d2")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1d3eg"]
+atlas = ExtResource("2_ii8d2")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4royr"]
+atlas = ExtResource("2_ii8d2")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vaykr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bw2bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1d3eg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4royr")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bw2bh"]
+radius = 33.13608
+
+[node name="Npc" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 1024
+collision_mask = 401
+motion_mode = 1
+script = ExtResource("1_ii8d2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 22)
+shape = SubResource("CircleShape2D_ii8d2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vaykr")
+animation = &"idle_down"
+autoplay = "idle_down"
+frame_progress = 0.0065736305
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+shape = SubResource("CircleShape2D_bw2bh")
+debug_color = Color(0.6392157, 0.5254902, 0, 0.23921569)
+
+[node name="InteractUI" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 0
+
+[node name="InteractContainer" type="MarginContainer" parent="InteractUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -213.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="InteractUI/InteractContainer"]
+layout_mode = 2
+color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
+
+[node name="Label" type="Label" parent="InteractUI/InteractContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -11.5
+offset_right = 98.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aperte R para conversar"
