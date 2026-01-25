@@ -52,7 +52,6 @@ shape = SubResource("CircleShape2D_ii8d2")
 sprite_frames = SubResource("SpriteFrames_vaykr")
 animation = &"idle_down"
 autoplay = "idle_down"
-frame_progress = 0.84889096
 
 [node name="InteractArea" type="Area2D" parent="."]
 

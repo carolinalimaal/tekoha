@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://131hv46xermf"]
+[gd_scene load_steps=11 format=3 uid="uid://131hv46xermf"]
 
 [ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="1_i38rt"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="2_o2rku"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cum3wr7pr2eq1" path="res://UI/heart_ui/heart_ui.tscn" id="5_58oj7"]
 [ext_resource type="PackedScene" uid="uid://cxafhawohq46p" path="res://UI/acai_ui/acai_ui.tscn" id="7_8lbkp"]
 [ext_resource type="PackedScene" uid="uid://1fglvxuhlal0" path="res://entities/npcs/npc.tscn" id="10_si673"]
-[ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="11_8lbkp"]
 
 [node name="Main" type="Node2D"]
 
@@ -52,5 +51,3 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Npc" parent="Level" instance=ExtResource("10_si673")]
 position = Vector2(250, 45)
-
-[node name="Bau" parent="Level" instance=ExtResource("11_8lbkp")]
