@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://84kqvhlbhwpg"]
+
+[ext_resource type="Texture2D" uid="uid://cfwpdmk86lun8" path="res://assets/sprites/pots/vaso_01.png" id="1_8ob30"]
+[ext_resource type="Script" uid="uid://d15ovrmrieuqa" path="res://utils/pots/pot.gd" id="1_3211e"]
+[ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="1_d5pp0"]
+[ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="2_d5pp0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3211e"]
+size = Vector2(34, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70yc0"]
+size = Vector2(34, 25)
+
+[node name="Pot" type="StaticBody2D"]
+collision_layer = 256
+collision_mask = 17
+script = ExtResource("1_3211e")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("1_d5pp0")
+max_health = 16
+metadata/_custom_type_script = "uid://cxfitvewp4xj5"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8ob30")
+hframes = 5
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 4
+script = ExtResource("2_d5pp0")
+metadata/_custom_type_script = "uid://2pwu4vjmtkg6"
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_3211e")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_70yc0")
