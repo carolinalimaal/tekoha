@@ -4,3 +4,4 @@ class_name Heart extends Panel
 
 func update_sprite(value: int):
 	animated_sprite_2d.animation = str(clampi(value, 0, 4))
+	animated_sprite_2d.frame = 0
