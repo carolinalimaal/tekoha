@@ -1,6 +1,6 @@
 class_name Heart extends Panel
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func update_sprite(value: int):
-	sprite_2d.frame = clampi(value, 0, 4)
+	animated_sprite_2d.animation = str(clampi(value, 0, 4))
