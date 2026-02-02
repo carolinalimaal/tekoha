@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://d1ou3wqyvyflw"]
+[gd_scene format=3 uid="uid://d1ou3wqyvyflw"]
 
 [ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="1_lvpuj"]
 [ext_resource type="Script" uid="uid://blof3mwpmsvbu" path="res://entities/enemies/sacola/sacola.gd" id="1_t6kiw"]
@@ -1631,31 +1631,31 @@ states/Walk/position = Vector2(520, -16)
 transitions = ["Start", "Base", SubResource("AnimationNodeStateMachineTransition_p7yjf"), "Base", "Idle", SubResource("AnimationNodeStateMachineTransition_7kqut"), "Idle", "Base", SubResource("AnimationNodeStateMachineTransition_v5mbn"), "Base", "Walk", SubResource("AnimationNodeStateMachineTransition_0flx1"), "Walk", "Base", SubResource("AnimationNodeStateMachineTransition_7vso5"), "Base", "Attack", SubResource("AnimationNodeStateMachineTransition_lc60u"), "Attack", "Base", SubResource("AnimationNodeStateMachineTransition_3bxu3"), "Base", "Stun", SubResource("AnimationNodeStateMachineTransition_ab2eh"), "Stun", "Base", SubResource("AnimationNodeStateMachineTransition_8m785"), "Base", "Death", SubResource("AnimationNodeStateMachineTransition_gcpg8"), "Death", "Base", SubResource("AnimationNodeStateMachineTransition_1m5dw")]
 graph_offset = Vector2(56, -105)
 
-[node name="Sacola" type="CharacterBody2D"]
+[node name="Sacola" type="CharacterBody2D" unique_id=461608080]
 y_sort_enabled = true
 collision_layer = 16
 collision_mask = 1425
 motion_mode = 1
 script = ExtResource("1_t6kiw")
 
-[node name="HealthComponent" type="Node" parent="."]
+[node name="HealthComponent" type="Node" parent="." unique_id=1477978883]
 script = ExtResource("1_lvpuj")
 max_health = 8
 metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
-[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("hitbox_collision")]
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=404593787 node_paths=PackedStringArray("hitbox_collision")]
 collision_layer = 32
 collision_mask = 4
 script = ExtResource("2_t6kiw")
 hitbox_collision = NodePath("HitboxCollision")
 metadata/_custom_type_script = "uid://2pwu4vjmtkg6"
 
-[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxComponent"]
+[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxComponent" unique_id=485488135]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_6tjw8")
 debug_color = Color(0.99692494, 0.051384434, 1.1551381e-06, 0.41960785)
 
-[node name="HurtboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("hurtbox_collision")]
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=1331285467 node_paths=PackedStringArray("hurtbox_collision")]
 collision_layer = 64
 collision_mask = 2
 script = ExtResource("3_yud06")
@@ -1663,25 +1663,23 @@ attack_data = ExtResource("4_o5gcg")
 hurtbox_collision = NodePath("HurtboxCollision")
 metadata/_custom_type_script = "uid://b25oeps4g35sq"
 
-[node name="HurtboxCollision" type="CollisionShape2D" parent="HurtboxComponent"]
+[node name="HurtboxCollision" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1687090213]
 position = Vector2(0, 23)
 shape = SubResource("RectangleShape2D_v8i60")
 disabled = true
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=928179189]
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_v8i60")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1840617448]
 sprite_frames = SubResource("SpriteFrames_n8d5x")
 animation = &"idle_down"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_rfwox")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1724362133]
+libraries/ = SubResource("AnimationLibrary_rfwox")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1606370014]
 active = false
 tree_root = SubResource("AnimationNodeStateMachine_spgyc")
 advance_expression_base_node = NodePath("..")
@@ -1694,38 +1692,38 @@ parameters/Stun/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 script = ExtResource("2_kcolf")
 
-[node name="NavAgent" type="NavigationAgent2D" parent="."]
+[node name="NavAgent" type="NavigationAgent2D" parent="." unique_id=982737471]
 path_postprocessing = 1
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("_initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=463188144 node_paths=PackedStringArray("_initial_state")]
 script = ExtResource("9_ornil")
 _initial_state = NodePath("Idle")
 metadata/_custom_type_script = "uid://coql161p0qttr"
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=720312832]
 script = ExtResource("10_p7yjf")
 metadata/_custom_type_script = "uid://cai1y4n255biv"
 
-[node name="Patrol" type="Node" parent="StateMachine"]
+[node name="Patrol" type="Node" parent="StateMachine" unique_id=2037965618]
 script = ExtResource("11_7kqut")
 metadata/_custom_type_script = "uid://bclio32j8isjr"
 
-[node name="Chase" type="Node" parent="StateMachine"]
+[node name="Chase" type="Node" parent="StateMachine" unique_id=106673185]
 script = ExtResource("11_8m785")
 
-[node name="Aiming" type="Node" parent="StateMachine"]
+[node name="Aiming" type="Node" parent="StateMachine" unique_id=408119287]
 script = ExtResource("15_gcpg8")
 
-[node name="Lunge" type="Node" parent="StateMachine"]
+[node name="Lunge" type="Node" parent="StateMachine" unique_id=1467523431]
 script = ExtResource("16_gcpg8")
 
-[node name="Attack" type="Node" parent="StateMachine"]
+[node name="Attack" type="Node" parent="StateMachine" unique_id=1935592285]
 script = ExtResource("16_lc60u")
 
-[node name="Stun" type="Node" parent="StateMachine"]
+[node name="Stun" type="Node" parent="StateMachine" unique_id=920024184]
 script = ExtResource("17_3bxu3")
 metadata/_custom_type_script = "uid://sxrsmcd42b0n"
 
-[node name="Death" type="Node" parent="StateMachine"]
+[node name="Death" type="Node" parent="StateMachine" unique_id=1649006007]
 script = ExtResource("18_ab2eh")
 metadata/_custom_type_script = "uid://babneycdrb68l"

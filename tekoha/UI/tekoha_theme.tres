@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://b71bgholxna22"]
+[gd_resource type="Theme" format=3 uid="uid://b71bgholxna22"]
 
 [ext_resource type="FontFile" uid="uid://byjqkrwux6cty" path="res://assets/fonts/Bahiana/Bahiana-Regular.ttf" id="1_tohiu"]
 [ext_resource type="Texture2D" uid="uid://wprck5201l0f" path="res://assets/UI/button/button.png" id="2_2knlb"]
