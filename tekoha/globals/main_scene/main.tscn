@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dfmtpawqvhnlg" path="res://UI/game_over_menu/game_over_menu.tscn" id="4_si673"]
 [ext_resource type="PackedScene" uid="uid://cum3wr7pr2eq1" path="res://UI/heart_ui/heart_ui.tscn" id="5_58oj7"]
 [ext_resource type="PackedScene" uid="uid://cxafhawohq46p" path="res://UI/acai_ui/acai_ui.tscn" id="7_8lbkp"]
-[ext_resource type="PackedScene" uid="uid://1fglvxuhlal0" path="res://entities/npcs/npc.tscn" id="10_si673"]
+[ext_resource type="PackedScene" uid="uid://1fglvxuhlal0" path="res://entities/npcs/iara.tscn" id="10_si673"]
 
 [node name="Main" type="Node2D"]
 
