@@ -1,6 +1,7 @@
-extends CharacterBody2D
+class_name NPC extends CharacterBody2D
 
 @export var sprite: AnimatedSprite2D
+@export var timeline_name: String
 
 var is_interacting: bool = false
 
@@ -10,6 +11,8 @@ var is_interacting: bool = false
 func _ready() -> void:
 	interact_area.body_entered.connect(_on_player_entered)
 	interact_area.body_exited.connect(_on_player_exited)
+	Dialogic.timeline_started.connect(_on_timeline_started)
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
 	interact_ui.visible = false
 
@@ -19,14 +22,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 			interact()
 
 func interact() -> void:
-	is_interacting = true
-	print("NPC começa a falar.")
-	await get_tree().create_timer(2.0).timeout
-	stop_interaction()
-
-func stop_interaction() -> void:
-	is_interacting = false
-	print("NPC terminou de falar.")
+	Dialogic.start(timeline_name)
 
 func _on_player_entered(body: Node2D):
 	if body is Player:
@@ -35,3 +31,9 @@ func _on_player_entered(body: Node2D):
 func _on_player_exited(body: Node2D):
 	if body is Player:
 		interact_ui.visible = false
+
+func _on_timeline_started() -> void:
+	is_interacting = true
+
+func _on_timeline_ended() -> void:
+	is_interacting = false
