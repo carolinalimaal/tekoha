@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" format=3 uid="uid://sloko2lmtvse"]
+
+[ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="1_aqw8v"]
+[ext_resource type="Texture2D" uid="uid://ba2n6xmsulju8" path="res://assets/sprites/items/foods/camarao.png" id="1_rcsjr"]
+
+[resource]
+script = ExtResource("1_aqw8v")
+icon = ExtResource("1_rcsjr")
+name = "Camarão no alho e óleo"
+description = "Receita simples e popular feita com camarão refogado no alho e óleo."
+metadata/_custom_type_script = "uid://bekubsjwettik"

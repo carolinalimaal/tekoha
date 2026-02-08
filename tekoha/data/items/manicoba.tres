@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" format=3 uid="uid://bylctqmopd47j"]
+
+[ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="1_oxvpw"]
+[ext_resource type="Texture2D" uid="uid://b27vgr8xc2wr1" path="res://assets/sprites/items/foods/manicoba.png" id="1_sp85t"]
+
+[resource]
+script = ExtResource("1_oxvpw")
+icon = ExtResource("1_sp85t")
+name = "Maniçoba"
+description = "Prato feito da folha de mandioca cozida por 7 dias para retirar o veneno."
+metadata/_custom_type_script = "uid://bekubsjwettik"

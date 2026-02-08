@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" format=3 uid="uid://c8aub04s02j8m"]
+
+[ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="1_3luio"]
+[ext_resource type="Texture2D" uid="uid://x7nee4r57fk5" path="res://assets/sprites/items/foods/cacau.png" id="1_tjxmk"]
+
+[resource]
+script = ExtResource("1_3luio")
+icon = ExtResource("1_tjxmk")
+name = "Cacau"
+description = "Fruta amazônica usada como matéria-prima do chocolate."
+metadata/_custom_type_script = "uid://bekubsjwettik"
