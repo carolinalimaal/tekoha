@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=21 format=3 uid="uid://cysurmfc3hijv"]
+
+[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="1_cb5gr"]
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_6ahxs"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="3_q83f1"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="4_lssyk"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="5_5rgim"]
+[ext_resource type="PackedScene" uid="uid://d0fufu0radrm" path="res://UI/dialogue/VisualNovelTextbox/custom_visual_novel_textbox.tscn" id="6_cb5gr"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="7_ii6k5"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="8_asgeu"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="9_es3yu"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="10_v45n5"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_w36sp"]
+
+[sub_resource type="Resource" id="Resource_faxvu"]
+script = ExtResource("2_6ahxs")
+scene = ExtResource("1_cb5gr")
+
+[sub_resource type="Resource" id="Resource_07t75"]
+script = ExtResource("2_6ahxs")
+scene = ExtResource("3_q83f1")
+
+[sub_resource type="Resource" id="Resource_qvn46"]
+script = ExtResource("2_6ahxs")
+scene = ExtResource("4_lssyk")
+
+[sub_resource type="Resource" id="Resource_cii72"]
+script = ExtResource("2_6ahxs")
+scene = ExtResource("5_5rgim")
+
+[sub_resource type="Resource" id="Resource_v3b2p"]
+script = ExtResource("2_6ahxs")
+scene = ExtResource("6_cb5gr")
+overrides = {
+"bold_font": "\"res://assets/fonts/Roboto_Condensed/static/RobotoCondensed-Bold.ttf\"",
+"bold_italics_font": "\"res://assets/fonts/Roboto_Condensed/static/RobotoCondensed-BoldItalic.ttf\"",
+"box_panel": "\"res://UI/dialogue/VisualNovelTextbox/custom_visual_novel_textbox.tres\"",
+"box_size": "Vector2(850.33, 241.33)",
+"italics_font": "\"res://assets/fonts/Roboto_Condensed/static/RobotoCondensed-Italic.ttf\"",
+"name_label_box_offset": "Vector2(20, 20)",
+"name_label_custom_font_size": "24.0",
+"name_label_font": "\"res://assets/fonts/Bahiana/Bahiana-Regular.ttf\"",
+"name_label_use_global_font": "false",
+"name_label_use_global_font_size": "false",
+"next_indicator_position_offset": "Vector2(-20, -20)",
+"next_indicator_size": "Vector2(10, 10)",
+"normal_font": "\"res://assets/fonts/Roboto_Condensed/static/RobotoCondensed-Regular.ttf\"",
+"text_size": "16.0",
+"text_use_global_font": "false",
+"text_use_global_size": "false"
+}
+
+[sub_resource type="Resource" id="Resource_87nxy"]
+script = ExtResource("2_6ahxs")
+scene = ExtResource("7_ii6k5")
+
+[sub_resource type="Resource" id="Resource_50ff1"]
+script = ExtResource("2_6ahxs")
+scene = ExtResource("8_asgeu")
+
+[sub_resource type="Resource" id="Resource_ogr5x"]
+script = ExtResource("2_6ahxs")
+scene = ExtResource("9_es3yu")
+
+[sub_resource type="Resource" id="Resource_202p2"]
+script = ExtResource("2_6ahxs")
+scene = ExtResource("10_v45n5")
+
+[resource]
+script = ExtResource("11_w36sp")
+name = "dialogue_box_style"
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
+layer_info = {
+"": SubResource("Resource_faxvu"),
+"10": SubResource("Resource_07t75"),
+"11": SubResource("Resource_qvn46"),
+"12": SubResource("Resource_cii72"),
+"13": SubResource("Resource_v3b2p"),
+"14": SubResource("Resource_87nxy"),
+"15": SubResource("Resource_50ff1"),
+"16": SubResource("Resource_ogr5x"),
+"17": SubResource("Resource_202p2")
+}
+metadata/_latest_layer = "13"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://131hv46xermf"]
+[gd_scene load_steps=11 format=3 uid="uid://131hv46xermf"]
 
 [ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="1_i38rt"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="2_o2rku"]
@@ -9,13 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dfmtpawqvhnlg" path="res://UI/game_over_menu/game_over_menu.tscn" id="4_si673"]
 [ext_resource type="PackedScene" uid="uid://cum3wr7pr2eq1" path="res://UI/heart_ui/heart_ui.tscn" id="5_58oj7"]
 [ext_resource type="PackedScene" uid="uid://cxafhawohq46p" path="res://UI/acai_ui/acai_ui.tscn" id="7_8lbkp"]
-[ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="9_58oj7"]
-[ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="10_si673"]
-[ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="11_8lbkp"]
-[ext_resource type="PackedScene" uid="uid://cmpf7e1nr1x4w" path="res://utils/coin/coin.tscn" id="12_qujwd"]
-[ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="14_2dpyo"]
-[ext_resource type="Texture2D" uid="uid://cfwpdmk86lun8" path="res://assets/sprites/pots/vaso_01.png" id="15_mb11l"]
-[ext_resource type="Texture2D" uid="uid://ctkrxbx1oi552" path="res://assets/sprites/pots/vaso_02.png" id="16_36wl3"]
+[ext_resource type="PackedScene" uid="uid://1fglvxuhlal0" path="res://entities/npcs/iara.tscn" id="10_si673"]
 
 [node name="Main" type="Node2D"]
 
@@ -45,9 +39,6 @@ visible = false
 
 [node name="AcaiUI" parent="UI" instance=ExtResource("7_8lbkp")]
 
-[node name="Bau" parent="." instance=ExtResource("11_8lbkp")]
-position = Vector2(224, 143)
-
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("1_i38rt")]
@@ -58,22 +49,5 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Level" type="Node2D" parent="."]
 
-[node name="Canudinho" parent="Level" instance=ExtResource("10_si673")]
-position = Vector2(0, 146)
-
-[node name="Sacola" parent="Level" instance=ExtResource("9_58oj7")]
-position = Vector2(184, 5)
-
-[node name="Coin" parent="Level" instance=ExtResource("12_qujwd")]
-position = Vector2(134, 130)
-
-[node name="Coin2" parent="Level" instance=ExtResource("12_qujwd")]
-position = Vector2(-197, 60)
-
-[node name="Pot" parent="Level" instance=ExtResource("14_2dpyo")]
-position = Vector2(-88, 50)
-sprite = ExtResource("15_mb11l")
-
-[node name="Pot2" parent="Level" instance=ExtResource("14_2dpyo")]
-position = Vector2(-170, -52)
-sprite = ExtResource("16_36wl3")
+[node name="Npc" parent="Level" instance=ExtResource("10_si673")]
+position = Vector2(250, 45)
