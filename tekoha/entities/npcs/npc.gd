@@ -23,6 +23,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func interact() -> void:
 	Dialogic.start(timeline_name)
+	interact_ui.visible = false
 
 func _on_player_entered(body: Node2D):
 	if body is Player:
@@ -37,3 +38,4 @@ func _on_timeline_started() -> void:
 
 func _on_timeline_ended() -> void:
 	is_interacting = false
+	interact_ui.visible = true
