@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" format=3 uid="uid://bf1jdb62ejs2n"]
+
+[ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="1_8h1xu"]
+[ext_resource type="Texture2D" uid="uid://codbyibf3r7il" path="res://assets/sprites/items/foods/acai_com_peixe.png" id="1_dlryv"]
+
+[resource]
+script = ExtResource("1_8h1xu")
+icon = ExtResource("1_dlryv")
+name = "Peixe Frito com Açaí"
+description = "Peixe crocante acompanhado de açaí."
+metadata/_custom_type_script = "uid://bekubsjwettik"

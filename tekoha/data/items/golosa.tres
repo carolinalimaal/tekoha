@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" format=3 uid="uid://d3cuhf8ovruif"]
+
+[ext_resource type="Texture2D" uid="uid://bf2v8uqpnvk12" path="res://assets/sprites/items/foods/golosa.png" id="1_2dxic"]
+[ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="2_0pxv2"]
+
+[resource]
+script = ExtResource("2_0pxv2")
+icon = ExtResource("1_2dxic")
+name = "Golosa"
+description = "Doce regional com preparo não especificado."
+metadata/_custom_type_script = "uid://bekubsjwettik"

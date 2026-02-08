@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" format=3 uid="uid://b1meuej4ch048"]
+
+[ext_resource type="Texture2D" uid="uid://dwj31rkg5h122" path="res://assets/sprites/items/foods/tacaca.png" id="1_1tfxd"]
+[ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="1_kw1iu"]
+
+[resource]
+script = ExtResource("1_kw1iu")
+icon = ExtResource("1_1tfxd")
+name = "Tacacá"
+description = "Prato típico do Pará feito com tucupi, goma, camarão seco e jambu."
+metadata/_custom_type_script = "uid://bekubsjwettik"

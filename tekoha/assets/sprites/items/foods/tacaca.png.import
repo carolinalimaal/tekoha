@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sqn83bgph3xp"
-path="res://.godot/imported/tile009.png-00c989d7b227b0b2691c57bbe2ffcc02.ctex"
+uid="uid://dwj31rkg5h122"
+path="res://.godot/imported/tacaca.png-29beb18524825a83aa8d8ef81c5accc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/items/foods/tile009.png"
-dest_files=["res://.godot/imported/tile009.png-00c989d7b227b0b2691c57bbe2ffcc02.ctex"]
+source_file="res://assets/sprites/items/foods/tacaca.png"
+dest_files=["res://.godot/imported/tacaca.png-29beb18524825a83aa8d8ef81c5accc7.ctex"]
 
 [params]
 

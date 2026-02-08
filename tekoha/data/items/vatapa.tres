@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" format=3 uid="uid://b1uk2qrqie5oq"]
+
+[ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="1_n0p17"]
+[ext_resource type="Texture2D" uid="uid://b2neqtgk5nwkl" path="res://assets/sprites/items/foods/vatapa.png" id="1_w7qgr"]
+
+[resource]
+script = ExtResource("1_n0p17")
+icon = ExtResource("1_w7qgr")
+name = "Vatapá"
+description = "Creme feito com azeite de dendê e leite de coco, servido com camarão."
+metadata/_custom_type_script = "uid://bekubsjwettik"

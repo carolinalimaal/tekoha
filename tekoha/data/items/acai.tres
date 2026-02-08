@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" format=3 uid="uid://c6xt7glr1vsml"]
+
+[ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="1_fgw5f"]
+
+[resource]
+script = ExtResource("1_fgw5f")
+name = "Açaí"
+description = "Fruta amazônica consumida amassada e batida."
+health_gain = 2
+metadata/_custom_type_script = "uid://bekubsjwettik"

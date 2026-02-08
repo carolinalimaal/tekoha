@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" format=3 uid="uid://epdf15gdoh3k"]
+
+[ext_resource type="Texture2D" uid="uid://b7neo6wjt53w0" path="res://assets/sprites/items/foods/pato_no_tucupi.png" id="1_a60ky"]
+[ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="1_eqk7b"]
+
+[resource]
+script = ExtResource("1_eqk7b")
+icon = ExtResource("1_a60ky")
+name = "Pato no Tucupi"
+description = "Prato emblemático da gastronomia paraense preparado com tucupi e jambu."
+metadata/_custom_type_script = "uid://bekubsjwettik"

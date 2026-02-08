@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="ConsumableItemData" load_steps=3 format=3 uid="uid://c680qx72e4gr7"]
+[gd_resource type="Resource" script_class="ConsumableItemData" format=3 uid="uid://c680qx72e4gr7"]
 
-[ext_resource type="Texture2D" uid="uid://sqn83bgph3xp" path="res://assets/sprites/items/foods/tile009.png" id="2_53wrc"]
+[ext_resource type="Texture2D" uid="uid://dbmvrignxwe38" path="res://assets/sprites/items/foods/tambaqui_assado.png" id="1_yn1ln"]
 [ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="3_b1rvv"]
 
 [resource]
 script = ExtResource("3_b1rvv")
-icon = ExtResource("2_53wrc")
+icon = ExtResource("1_yn1ln")
 name = "Tambaqui Assado"
 description = "Peixe amazônico assado na brasa."
 health_gain = 2
