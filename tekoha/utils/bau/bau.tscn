@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cn6gcnndvsxy8"]
+[gd_scene format=3 uid="uid://cn6gcnndvsxy8"]
 
 [ext_resource type="Script" uid="uid://c2xtmwc8mqu1i" path="res://utils/bau/bau.gd" id="1_rqtb1"]
+[ext_resource type="Resource" uid="uid://b1meuej4ch048" path="res://data/items/tacaca.tres" id="2_7hguk"]
 [ext_resource type="Texture2D" uid="uid://dn43n5eehuux3" path="res://assets/sprites/bau/bau_sheet.png" id="2_pmfbf"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="3_65fed"]
 [ext_resource type="FontFile" uid="uid://byjqkrwux6cty" path="res://assets/fonts/Bahiana/Bahiana-Regular.ttf" id="4_7hguk"]
@@ -63,33 +64,34 @@ animations = [{
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7syt"]
 texture = ExtResource("3_65fed")
 
-[node name="Bau" type="StaticBody2D"]
+[node name="Bau" type="StaticBody2D" unique_id=302874208]
 process_mode = 3
-collision_layer = 1024
-collision_mask = 25
+collision_layer = 256
+collision_mask = 17
 script = ExtResource("1_rqtb1")
+item = ExtResource("2_7hguk")
 
-[node name="PlayerInteractArea" type="Area2D" parent="."]
+[node name="PlayerInteractArea" type="Area2D" parent="." unique_id=261958616]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteractArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteractArea" unique_id=2105677821]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_rqtb1")
 debug_color = Color(0.92358196, 0.24035683, 0.35711023, 0.41960785)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1526283070]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_j1cy4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=805308064]
 process_mode = 3
 sprite_frames = SubResource("SpriteFrames_4626f")
 animation = &"bau_animation"
 
-[node name="InteractionUI" type="CanvasLayer" parent="."]
+[node name="InteractionUI" type="CanvasLayer" parent="." unique_id=218447874]
 process_mode = 3
 layer = 0
 
-[node name="InteractionContainer" type="MarginContainer" parent="InteractionUI"]
+[node name="InteractionContainer" type="MarginContainer" parent="InteractionUI" unique_id=197277728]
 visible = false
 anchors_preset = 3
 anchor_left = 1.0
@@ -101,11 +103,11 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="ColorRect" type="ColorRect" parent="InteractionUI/InteractionContainer"]
+[node name="ColorRect" type="ColorRect" parent="InteractionUI/InteractionContainer" unique_id=1724596439]
 layout_mode = 2
 color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
 
-[node name="Label" type="Label" parent="InteractionUI/InteractionContainer/ColorRect"]
+[node name="Label" type="Label" parent="InteractionUI/InteractionContainer/ColorRect" unique_id=895909432]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -120,16 +122,15 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Aperte R para abrir o Baú"
 
-[node name="ShowItemPanel" type="Panel" parent="InteractionUI"]
-visible = false
+[node name="ShowItemPanel" type="Panel" parent="InteractionUI" unique_id=2072546879]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Bg" type="PanelContainer" parent="InteractionUI/ShowItemPanel"]
-custom_minimum_size = Vector2(450, 150)
+[node name="Bg" type="PanelContainer" parent="InteractionUI/ShowItemPanel" unique_id=1760693185]
+custom_minimum_size = Vector2(600, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -144,24 +145,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_p7syt")
 
-[node name="MarginContainer" type="MarginContainer" parent="InteractionUI/ShowItemPanel/Bg"]
+[node name="MarginContainer" type="MarginContainer" parent="InteractionUI/ShowItemPanel/Bg" unique_id=263993794]
 layout_mode = 2
 theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 40
+theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer" unique_id=1450601922]
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 8
 
-[node name="TextureRect" type="TextureRect" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer" unique_id=1822400758]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+size_flags_vertical = 4
+expand_mode = 3
+stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer" unique_id=368104690]
 layout_mode = 2
+theme_override_constants/separation = 16
 
-[node name="ShowItemLabel" type="Label" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="ShowItemLabel" type="Label" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2128954324]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7hguk")
 theme_override_font_sizes/font_size = 32
@@ -169,17 +176,18 @@ text = "DESEJA PEGALR ESSE ITEM?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=813499164]
 layout_mode = 2
+theme_override_constants/separation = 8
 alignment = 1
 
-[node name="AcceptButton" type="Button" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="AcceptButton" type="Button" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1032947467]
 custom_minimum_size = Vector2(106.5, 31.8)
 layout_mode = 2
 theme = ExtResource("5_s4csk")
 text = "SIM"
 
-[node name="DeclineButton" type="Button" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="DeclineButton" type="Button" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1957290244]
 custom_minimum_size = Vector2(106.5, 31.8)
 layout_mode = 2
 theme = ExtResource("5_s4csk")
