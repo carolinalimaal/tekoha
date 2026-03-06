@@ -3,8 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="1_i38rt"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="2_o2rku"]
 [ext_resource type="PackedScene" uid="uid://o4vt4qmxgkoc" path="res://UI/inventory/inventory_ui.tscn" id="3_ac4dx"]
-[ext_resource type="Script" uid="uid://bvcb521no2utd" path="res://globals/input_manager/input_manager.gd" id="3_n2rk1"]
-[ext_resource type="Script" uid="uid://bun1v203k2eax" path="res://globals/input_manager/controller_manager.gd" id="4_ac4dx"]
 [ext_resource type="PackedScene" uid="uid://duntos8imf0u6" path="res://UI/pause_menu/pause_menu.tscn" id="4_mdv7j"]
 [ext_resource type="PackedScene" uid="uid://dfmtpawqvhnlg" path="res://UI/game_over_menu/game_over_menu.tscn" id="4_si673"]
 [ext_resource type="PackedScene" uid="uid://cum3wr7pr2eq1" path="res://UI/heart_ui/heart_ui.tscn" id="5_58oj7"]
@@ -13,17 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="11_8lbkp"]
 
 [node name="Main" type="Node2D" unique_id=273176472]
-
-[node name="Managers" type="Node" parent="." unique_id=1092699297]
-
-[node name="InputManager" type="Node" parent="Managers" unique_id=2139609022]
-process_mode = 3
-script = ExtResource("3_n2rk1")
-metadata/_custom_type_script = "uid://bvcb521no2utd"
-
-[node name="ControllerManager" type="Node" parent="Managers/InputManager" unique_id=2022521233]
-script = ExtResource("4_ac4dx")
-metadata/_custom_type_script = "uid://bun1v203k2eax"
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=79806553]
 

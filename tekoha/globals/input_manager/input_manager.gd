@@ -1,4 +1,3 @@
-class_name InputManager
 extends Node
 
 signal input_source_changed(source: InputSource)
