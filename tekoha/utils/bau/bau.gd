@@ -28,7 +28,7 @@ func _on_player_interact_area_body_exited(body: Node2D) -> void:
 
 # Lógica de apertar o interact input dentro da área do baú
 func _unhandled_input(_event: InputEvent) -> void:
-	if GlobalRefs.input_manager.get_action_pressed("interact"):
+	if InputManager.get_action_pressed("interact"):
 		if openned and get_tree().paused:
 			close_chest()
 		elif !openned and !get_tree().paused and can_interact:

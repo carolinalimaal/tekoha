@@ -40,7 +40,7 @@ func _ready() -> void:
 			slot.slot_unhighlighted.connect(_on_slot_unhighlighted)
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if GlobalRefs.input_manager.get_action_pressed("inventory"):
+	if InputManager.get_action_pressed("inventory"):
 		if _is_open and get_tree().paused:
 			_close()
 		elif !_is_open and !get_tree().paused:

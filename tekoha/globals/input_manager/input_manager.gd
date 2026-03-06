@@ -12,7 +12,6 @@ var active_input_source = InputSource.KEYBOARD
 var controller_manager: ControllerManager
 
 func _ready() -> void:
-	GlobalRefs.input_manager = self
 	controller_manager = $ControllerManager
 	controller_manager.controller_connected.connect(_on_controller_connected)
 	controller_manager.controller_disconnected.connect(_on_controller_disconnected)
