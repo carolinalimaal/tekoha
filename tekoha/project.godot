@@ -25,6 +25,7 @@ GlobalSignals="*res://globals/global_signals.gd"
 GlobalRefs="*res://globals/global_refs.gd"
 GameManager="*res://globals/game_manager.gd"
 InputManager="*uid://bavwf1fj0nui5"
+SaveManager="*uid://rcshhs053h4s"
 Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
