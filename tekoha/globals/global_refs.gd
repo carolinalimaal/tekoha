@@ -1,8 +1,7 @@
 extends Node
 
 
-var inventory: Inventory
 var player: Player
+var main_camera: PlayerCamera
 
-func _ready() -> void:
-	inventory = Inventory.new()
+var inventory: Inventory
