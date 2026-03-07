@@ -5,6 +5,9 @@ var current_save: SaveData
 func _ready() -> void:
 	GlobalSignals.coin_collected.connect(_on_coin_collected)
 	GlobalSignals.new_muiraquita_found.connect(_on_muiraquita_found)
+	
+	# Criar objeto Inventory em GlobalRefs
+	GlobalRefs.inventory = Inventory.new()
 
 func _on_coin_collected(value: int) -> void:
 	_add_coin(value)
