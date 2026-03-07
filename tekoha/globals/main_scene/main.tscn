@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="11_8lbkp"]
 [ext_resource type="Texture2D" uid="uid://cfwpdmk86lun8" path="res://assets/sprites/pots/vaso_01.png" id="11_qujwd"]
 [ext_resource type="PackedScene" uid="uid://cmpf7e1nr1x4w" path="res://utils/coin/coin.tscn" id="12_qujwd"]
+[ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="13_1u47b"]
 
 [node name="Main" type="Node2D" unique_id=273176472]
 
@@ -52,3 +53,6 @@ sprite = ExtResource("11_qujwd")
 
 [node name="Coin" parent="Level" unique_id=167121038 instance=ExtResource("12_qujwd")]
 position = Vector2(90, 322)
+
+[node name="SavePoint" parent="Level" unique_id=1593957308 instance=ExtResource("13_1u47b")]
+position = Vector2(227, 378)
