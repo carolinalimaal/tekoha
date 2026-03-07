@@ -1,25 +1,10 @@
 class_name Inventory
-extends RefCounted
+extends Node
 
 signal updated_inventory
 
-var inventory_slots: Array[ItemSlot] = []
-
-var _size: int = 6
-
 func _init() -> void:
-	# Criar inventario com 6 slots
-	for i in range(_size):
-		inventory_slots.append(ItemSlot.new(i))
-	
-	#teste de item consumivel
-	var item: ConsumableItemData = load("res://data/items/tambaqui_assado.tres")
-	add_item(item)
-	add_item(item)
-	add_item(item)
-	add_item(item)
-	add_item(item)
-	add_item(item)
+	GlobalRefs.inventory = self
 
 # Adiciona um item ao inventario
 func add_item(item: ConsumableItemData) -> bool:
@@ -36,7 +21,7 @@ func add_item(item: ConsumableItemData) -> bool:
 # Remove um item do inventario
 func remove_item_from_slot(index: int) -> void:
 	# Verifica se o index é válido
-	if index < 0 or index >= inventory_slots.size():
+	if index < 0 or index >= GameManager.current_save.inventory_slots.size():
 		return
 	# Pegar um slot pelo index e, caso contenha um item, limpa-lo
 	var slot: ItemSlot = _get_slot_by_index(index)
@@ -48,7 +33,7 @@ func remove_item_from_slot(index: int) -> void:
 
 # Retorna um slot vazio
 func _get_empty_item_slot() -> ItemSlot:
-	for slot in inventory_slots:
+	for slot in GameManager.current_save.inventory_slots:
 		if slot.is_empty():
 			return slot
 	return null
@@ -56,7 +41,7 @@ func _get_empty_item_slot() -> ItemSlot:
 # Retorna um slot pelo index
 func _get_slot_by_index(index: int) -> ItemSlot:
 	# Verifica se o index é válido
-	if index < 0 or index >= inventory_slots.size():
+	if index < 0 or index >= GameManager.current_save.inventory_slots.size():
 		return null
 	# Retorna o slot
-	return inventory_slots[index]
+	return GameManager.current_save.inventory_slots[index]
