@@ -1,8 +1,6 @@
 extends Node
 
-
-var wallet: int = 0
-var muiraquitas_collected: Dictionary = {}
+var current_save: SaveData
 
 func _ready() -> void:
 	GlobalSignals.coin_collected.connect(_on_coin_collected)
