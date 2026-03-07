@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bgiup2e5f7yt3"]
+
+[ext_resource type="Script" uid="uid://c5api7chbslvv" path="res://utils/save_point/save_point.gd" id="1_t7mtu"]
+[ext_resource type="Texture2D" uid="uid://d17lgfnwyb4g2" path="res://icon.svg" id="1_xpmo7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7mtu"]
+size = Vector2(118, 116)
+
+[node name="SavePoint" type="Area2D" unique_id=1593957308]
+script = ExtResource("1_t7mtu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1418852036]
+shape = SubResource("RectangleShape2D_t7mtu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=266610200]
+texture = ExtResource("1_xpmo7")
+
+[node name="InteractionUI" type="CanvasLayer" parent="." unique_id=1779905691]
+process_mode = 3
+layer = 0
+
+[node name="InteractionContainer" type="MarginContainer" parent="InteractionUI" unique_id=357694669]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -213.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="InteractionUI/InteractionContainer" unique_id=2029406541]
+layout_mode = 2
+color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
+
+[node name="Label" type="Label" parent="InteractionUI/InteractionContainer/ColorRect" unique_id=1192546849]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -11.5
+offset_right = 98.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aperte R para salvar"
