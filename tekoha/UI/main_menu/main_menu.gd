@@ -23,6 +23,15 @@ func _ready() -> void:
 	
 	var random_number: int = randi_range(0, 2)
 	background.texture = bg_list[random_number]
+	
+	# Verificar se existe save para mostrar ou nao o load_game_button
+	GameManager.current_save = SaveManager.load_game()
+	if GameManager.current_save:
+		load_game_button.visible = true
+		print("tem save")
+	else:
+		load_game_button.visible = false
+		print("nao tem save")
 
 func _on_new_game_pressed() -> void:
 	# TODO: Funcionalidade de novo jogo
