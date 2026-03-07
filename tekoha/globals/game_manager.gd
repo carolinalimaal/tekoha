@@ -16,15 +16,15 @@ func _on_muiraquita_found(id: int) -> void:
 	_register_muiraquita(id)
 
 func _add_coin(value: int) -> void:
-	wallet += value
+	current_save.wallet += value
 	
 	# TODO: adicionar som de coletar moeda
 	
-	GlobalSignals.wallet_updated.emit(wallet)
+	GlobalSignals.wallet_updated.emit(current_save.wallet)
 
 func _register_muiraquita(id: int) -> void:
 	# Registrar no dicionario
-	muiraquitas_collected[id] = true
+	current_save.collected_muiraquitas[id] = true
 	
 	# TODO: adicionar som de encontrar muiraquita
 	

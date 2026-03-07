@@ -61,7 +61,7 @@ func _close() -> void:
 
 func _update_ui() -> void:
 	# Referencia ao inventario
-	var inventory_slots = GlobalRefs.inventory.inventory_slots
+	var inventory_slots = GameManager.current_save.inventory_slots
 	
 	# Set dos itens do inventario aos slots da UI
 	for i in range(slots.size()):
