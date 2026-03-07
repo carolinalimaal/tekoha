@@ -1,4 +1,4 @@
-[gd_scene load_steps=284 format=3 uid="uid://cc1753k1fycf4"]
+[gd_scene format=3 uid="uid://cc1753k1fycf4"]
 
 [ext_resource type="Script" uid="uid://du7gb4ysvswcn" path="res://entities/player/player.gd" id="1_fkugw"]
 [ext_resource type="Texture2D" uid="uid://d36nm3vhln3ww" path="res://assets/sprites/entities/player/curupira_spritesheet.png" id="1_wmv1v"]
@@ -2835,17 +2835,17 @@ states/Walk/position = Vector2(337, -120)
 transitions = ["Start", "Base", SubResource("AnimationNodeStateMachineTransition_a1qjk"), "Base", "Idle", SubResource("AnimationNodeStateMachineTransition_j3ovn"), "Idle", "Base", SubResource("AnimationNodeStateMachineTransition_7thud"), "Base", "Walk", SubResource("AnimationNodeStateMachineTransition_afbqv"), "Walk", "Base", SubResource("AnimationNodeStateMachineTransition_gx6sm"), "Roll", "Base", SubResource("AnimationNodeStateMachineTransition_yqrof"), "Base", "Roll", SubResource("AnimationNodeStateMachineTransition_3wlsy"), "Base", "Attack_1", SubResource("AnimationNodeStateMachineTransition_b2kln"), "Attack_1", "Base", SubResource("AnimationNodeStateMachineTransition_we0b7"), "Base", "Attack_End", SubResource("AnimationNodeStateMachineTransition_mtric"), "Attack_End", "Base", SubResource("AnimationNodeStateMachineTransition_eyb6c"), "Base", "Attack_2", SubResource("AnimationNodeStateMachineTransition_221hk"), "Attack_2", "Base", SubResource("AnimationNodeStateMachineTransition_ghoj8"), "Base", "Stun", SubResource("AnimationNodeStateMachineTransition_50fht"), "Base", "Death", SubResource("AnimationNodeStateMachineTransition_wuv6x"), "Death", "Base", SubResource("AnimationNodeStateMachineTransition_qpopc"), "Stun", "Base", SubResource("AnimationNodeStateMachineTransition_t1t22")]
 graph_offset = Vector2(-162, -22.338837)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=551376006 groups=["player"]]
 collision_mask = 1936
 motion_mode = 1
 script = ExtResource("1_fkugw")
 
-[node name="HealthComponent" type="Node" parent="."]
+[node name="HealthComponent" type="Node" parent="." unique_id=1115901677]
 script = ExtResource("3_mpktj")
 max_health = 12
 metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
-[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("hitbox_collision")]
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=127847240 node_paths=PackedStringArray("hitbox_collision")]
 collision_layer = 2
 collision_mask = 64
 input_pickable = false
@@ -2853,11 +2853,11 @@ script = ExtResource("4_yg5k4")
 hitbox_collision = NodePath("HitboxCollision")
 metadata/_custom_type_script = "uid://2pwu4vjmtkg6"
 
-[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxComponent"]
+[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxComponent" unique_id=801959196]
 shape = SubResource("CapsuleShape2D_8fjmc")
 debug_color = Color(0.9992642, 0, 0.1321226, 0.41960785)
 
-[node name="HurtboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("hurtbox_collision")]
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=1530532557 node_paths=PackedStringArray("hurtbox_collision")]
 collision_layer = 4
 collision_mask = 32
 input_pickable = false
@@ -2866,35 +2866,33 @@ attack_data = ExtResource("6_qiwj3")
 hurtbox_collision = NodePath("HurtboxCollision")
 metadata/_custom_type_script = "uid://b25oeps4g35sq"
 
-[node name="HurtboxCollision" type="CollisionShape2D" parent="HurtboxComponent"]
+[node name="HurtboxCollision" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1858253504]
 position = Vector2(0, 28)
 shape = SubResource("RectangleShape2D_8fjmc")
 disabled = true
 
-[node name="PickupArea" type="Area2D" parent="."]
+[node name="PickupArea" type="Area2D" parent="." unique_id=430131616]
 collision_layer = 8
 collision_mask = 512
 script = ExtResource("6_3wlsy")
 
-[node name="PickupCollision" type="CollisionShape2D" parent="PickupArea"]
+[node name="PickupCollision" type="CollisionShape2D" parent="PickupArea" unique_id=101134700]
 shape = SubResource("CapsuleShape2D_yqrof")
 debug_color = Color(0, 0.63529414, 0.4, 0.41960785)
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1130165974]
 position = Vector2(0, 19.5)
 shape = SubResource("RectangleShape2D_wmv1v")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1791514108]
 sprite_frames = SubResource("SpriteFrames_f0mju")
 animation = &"idle_down"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=395739083]
 root_node = NodePath("../AnimatedSprite2D")
-libraries = {
-&"": SubResource("AnimationLibrary_51tmg")
-}
+libraries/ = SubResource("AnimationLibrary_51tmg")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=2067464949]
 active = false
 root_node = NodePath("../AnimatedSprite2D")
 tree_root = SubResource("AnimationNodeStateMachine_llrf1")
@@ -2911,38 +2909,38 @@ parameters/Stun/blend_position = Vector2(-0.0016639233, 0.00507617)
 parameters/Walk/blend_position = Vector2(0, 0)
 script = ExtResource("7_7thud")
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("_initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=194305456 node_paths=PackedStringArray("_initial_state")]
 script = ExtResource("7_qiwj3")
 _initial_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1799298666]
 script = ExtResource("8_26q78")
 
-[node name="Walk" type="Node" parent="StateMachine"]
+[node name="Walk" type="Node" parent="StateMachine" unique_id=1563208119]
 script = ExtResource("9_bectd")
 
-[node name="Roll" type="Node" parent="StateMachine"]
+[node name="Roll" type="Node" parent="StateMachine" unique_id=75611715]
 script = ExtResource("10_wvtmh")
 
-[node name="Attack1" type="Node" parent="StateMachine"]
+[node name="Attack1" type="Node" parent="StateMachine" unique_id=843174137]
 script = ExtResource("12_j3ovn")
 
-[node name="AttackEnd" type="Node" parent="StateMachine"]
+[node name="AttackEnd" type="Node" parent="StateMachine" unique_id=284108601]
 script = ExtResource("13_afbqv")
 
-[node name="Attack2" type="Node" parent="StateMachine"]
+[node name="Attack2" type="Node" parent="StateMachine" unique_id=1473250505]
 script = ExtResource("14_gx6sm")
 
-[node name="Stun" type="Node" parent="StateMachine"]
+[node name="Stun" type="Node" parent="StateMachine" unique_id=1761638460]
 script = ExtResource("15_yqrof")
 
-[node name="Death" type="Node" parent="StateMachine"]
+[node name="Death" type="Node" parent="StateMachine" unique_id=569168132]
 script = ExtResource("12_a1qjk")
 
-[node name="InteractUI" type="CanvasLayer" parent="."]
+[node name="InteractUI" type="CanvasLayer" parent="." unique_id=1023736987]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="InteractUI"]
+[node name="ColorRect" type="ColorRect" parent="InteractUI" unique_id=1610108021]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -2954,7 +2952,7 @@ grow_horizontal = 0
 grow_vertical = 0
 color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
 
-[node name="Label" type="Label" parent="InteractUI/ColorRect"]
+[node name="Label" type="Label" parent="InteractUI/ColorRect" unique_id=1175523446]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5

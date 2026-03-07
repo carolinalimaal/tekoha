@@ -36,6 +36,11 @@ func _ready() -> void:
 	state_machine.init(self)
 	# Adicionar ao grupo "player"
 	self.add_to_group("player")
+	
+	# Carregar dados do save
+	if GameManager.current_save:
+		health_component.current_health = GameManager.current_save.player_health
+		health_changed.emit()
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
