@@ -19,4 +19,4 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player or body.is_in_group("player"):
-		interaction_ui.visible = true
+		interaction_ui.visible = false
