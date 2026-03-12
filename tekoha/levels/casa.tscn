@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c1k48pyjcab6e"]
+
+[ext_resource type="PackedScene" uid="uid://1qrmsqlofmkg" path="res://utils/door/door.tscn" id="1_xbv5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5gpu"]
+size = Vector2(128, 128)
+
+[node name="Casa" type="Node2D" unique_id=1391894647]
+
+[node name="HouseDoor" parent="." unique_id=595878266 instance=ExtResource("1_xbv5q")]
+target_level_path = "uid://dfboy8hao30xs"
+door_name = "HouseDoor"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseDoor" unique_id=452487246]
+shape = SubResource("RectangleShape2D_k5gpu")
+debug_color = Color(0.65457684, 0.5179122, 0, 0.41960785)
+
+[node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=1130632949]
+position = Vector2(0, 128)

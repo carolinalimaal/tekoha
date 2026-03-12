@@ -7,13 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dfmtpawqvhnlg" path="res://UI/game_over_menu/game_over_menu.tscn" id="4_si673"]
 [ext_resource type="PackedScene" uid="uid://cum3wr7pr2eq1" path="res://UI/heart_ui/heart_ui.tscn" id="5_58oj7"]
 [ext_resource type="PackedScene" uid="uid://cxafhawohq46p" path="res://UI/acai_ui/acai_ui.tscn" id="7_8lbkp"]
-[ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="10_8lbkp"]
-[ext_resource type="PackedScene" uid="uid://1fglvxuhlal0" path="res://entities/npcs/iara.tscn" id="10_si673"]
-[ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="11_8lbkp"]
-[ext_resource type="Texture2D" uid="uid://cfwpdmk86lun8" path="res://assets/sprites/pots/vaso_01.png" id="11_qujwd"]
-[ext_resource type="PackedScene" uid="uid://cmpf7e1nr1x4w" path="res://utils/coin/coin.tscn" id="12_qujwd"]
-[ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="13_1u47b"]
-[ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="14_2dpyo"]
+[ext_resource type="PackedScene" uid="uid://dfboy8hao30xs" path="res://levels/level_1.tscn" id="8_114rs"]
 
 [node name="Main" type="Node2D" unique_id=273176472]
 
@@ -42,21 +36,4 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Level" type="Node2D" parent="." unique_id=793583955]
 
-[node name="Npc" parent="Level" unique_id=311914602 instance=ExtResource("10_si673")]
-position = Vector2(250, 45)
-
-[node name="Bau" parent="Level" unique_id=302874208 instance=ExtResource("11_8lbkp")]
-position = Vector2(359, 225)
-
-[node name="Pot" parent="Level" unique_id=398975014 instance=ExtResource("10_8lbkp")]
-position = Vector2(113, 190)
-sprite = ExtResource("11_qujwd")
-
-[node name="Coin" parent="Level" unique_id=167121038 instance=ExtResource("12_qujwd")]
-position = Vector2(90, 322)
-
-[node name="SavePoint" parent="Level" unique_id=1593957308 instance=ExtResource("13_1u47b")]
-position = Vector2(227, 378)
-
-[node name="Muiraquita" parent="Level" unique_id=1562499009 instance=ExtResource("14_2dpyo")]
-position = Vector2(236, 220)
+[node name="Level1" parent="Level" unique_id=1477400994 instance=ExtResource("8_114rs")]
