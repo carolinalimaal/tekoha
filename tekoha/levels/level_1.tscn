@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="6_nmsli"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="7_betor"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="8_vjtdm"]
+[ext_resource type="Texture2D" uid="uid://d17lgfnwyb4g2" path="res://icon.svg" id="9_3sk1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgw3c"]
 size = Vector2(64, 64)
@@ -16,6 +17,11 @@ size = Vector2(64, 64)
 size = Vector2(64, 64)
 
 [node name="Level1" type="Node2D" unique_id=1477400994]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1585908412]
+position = Vector2(224, 160.00003)
+scale = Vector2(6.75, 2.75)
+texture = ExtResource("9_3sk1a")
 
 [node name="Npc" parent="." unique_id=84738975 instance=ExtResource("1_l53as")]
 position = Vector2(250, 45)
@@ -37,7 +43,7 @@ position = Vector2(227, 378)
 position = Vector2(236, 220)
 
 [node name="HouseDoor" type="Area2D" parent="." unique_id=927461027]
-position = Vector2(104, 80)
+position = Vector2(96, 64)
 script = ExtResource("8_vjtdm")
 target_level_path = "uid://c1k48pyjcab6e"
 door_name = "HouseDoor"
@@ -48,10 +54,10 @@ shape = SubResource("RectangleShape2D_bgw3c")
 debug_color = Color(0.64648557, 0.5220463, 0, 0.41960785)
 
 [node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=135158793]
-position = Vector2(-8, 48)
+position = Vector2(0, 64)
 
 [node name="IaraDoor" type="Area2D" parent="." unique_id=2061687792]
-position = Vector2(512, 96)
+position = Vector2(512, 64)
 script = ExtResource("8_vjtdm")
 target_level_path = "uid://drx8l0yiwg3b4"
 door_name = "IaraDoor"

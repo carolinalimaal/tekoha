@@ -12,7 +12,8 @@ func _on_player_body_entered(body: Node2D) -> void:
 	if target_level_path == "":
 		push_error("Caminho do level não definido na porta!")
 		return
-		
+	
+	
 	# Carrega a cena dinamicamente a partir do texto
 	var next_level_scene = load(target_level_path)
 	var level_instance = next_level_scene.instantiate()
@@ -26,7 +27,13 @@ func _on_player_body_entered(body: Node2D) -> void:
 	level_container.call_deferred("add_child", level_instance)
 	current_level.queue_free() # queue_free() é o ideal para deletar e limpar a memória da cena velha
 	
-	GlobalRefs.player.global_position = level_container.get_child(0).get_node(door_name).get_node("Marker2D").global_position
+	
+	current_level = level_instance
+	var level_door = level_instance.get_node(door_name)
+	var level_door_marker = level_door.get_node("Marker2D")
+	var spawn_point = level_door_marker.global_position
+	
+	GlobalRefs.player.global_position = spawn_point
 	
 	
 	
