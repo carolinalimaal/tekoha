@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cimxmwhymgrfb" path="res://utils/mobilias/cadeira.tscn" id="4_ismwe"]
 [ext_resource type="PackedScene" uid="uid://b6iooc5tou12x" path="res://utils/mobilias/cadeira_verso.tscn" id="5_wyrnq"]
 [ext_resource type="PackedScene" uid="uid://y3j38m46qxw7" path="res://utils/mobilias/mesa_com_anzois.tscn" id="6_4prg2"]
+[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="10_4prg2"]
 
 [node name="Casa" type="Node2D" unique_id=1391894647]
 script = ExtResource("1_wyrnq")
@@ -49,5 +50,12 @@ position = Vector2(76, 232)
 [node name="MesaComAnzois" parent="Fumiture" unique_id=1136539553 instance=ExtResource("6_4prg2")]
 position = Vector2(204, 48)
 
-[node name="Player" parent="." unique_id=551376006 instance=ExtResource("3_14v6m")]
-position = Vector2(63, 28)
+[node name="Player" type="Node2D" parent="." unique_id=1942346384]
+
+[node name="Player" parent="Player" unique_id=551376006 instance=ExtResource("3_14v6m")]
+position = Vector2(193, 128)
+
+[node name="PlayerCamera" type="Camera2D" parent="Player" unique_id=1052331891]
+zoom = Vector2(2, 2)
+script = ExtResource("10_4prg2")
+metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
