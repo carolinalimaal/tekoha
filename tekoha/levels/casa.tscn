@@ -1,10 +1,12 @@
 [gd_scene format=4 uid="uid://c1k48pyjcab6e"]
 
 [ext_resource type="TileSet" uid="uid://ci84l86i0acmv" path="res://assets/sprites/tiles/interior_casas/house_interior.tres" id="1_bj8g5"]
-[ext_resource type="Texture2D" uid="uid://djcu7sok1gir3" path="res://assets/sprites/mobilias/ganchos casa curupira.png" id="2_ii1ht"]
+[ext_resource type="PackedScene" uid="uid://crvdhqbdq1vu5" path="res://utils/mobilias/ganchos.tscn" id="2_bj8g5"]
 [ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="3_14v6m"]
-[ext_resource type="Texture2D" uid="uid://dwa1gom2l2sey" path="res://assets/sprites/mobilias/cadeiras.png" id="3_rngul"]
-[ext_resource type="Texture2D" uid="uid://cdpleqr3jxey0" path="res://assets/sprites/mobilias/mesas.png" id="4_ej5pp"]
+[ext_resource type="PackedScene" uid="uid://ctle8osdm2yfw" path="res://utils/mobilias/mesa.tscn" id="3_ej5pp"]
+[ext_resource type="PackedScene" uid="uid://cimxmwhymgrfb" path="res://utils/mobilias/cadeira.tscn" id="4_ismwe"]
+[ext_resource type="PackedScene" uid="uid://b6iooc5tou12x" path="res://utils/mobilias/cadeira_verso.tscn" id="5_wyrnq"]
+[ext_resource type="PackedScene" uid="uid://y3j38m46qxw7" path="res://utils/mobilias/mesa_com_anzois.tscn" id="6_4prg2"]
 
 [node name="Casa" type="Node2D" unique_id=1391894647]
 
@@ -20,43 +22,26 @@ tile_set = ExtResource("1_bj8g5")
 
 [node name="Fumiture" type="Node2D" parent="." unique_id=1837253683]
 
-[node name="Gancho" type="Sprite2D" parent="Fumiture" unique_id=64681843]
-position = Vector2(351, -23)
-texture = ExtResource("2_ii1ht")
+[node name="Ganchos" parent="Fumiture" unique_id=953048075 instance=ExtResource("2_bj8g5")]
+position = Vector2(350, -19)
 
-[node name="Cadeira1" type="Sprite2D" parent="Fumiture" unique_id=1848279278]
-position = Vector2(253, 171)
-texture = ExtResource("3_rngul")
-hframes = 4
-frame = 2
+[node name="Mesa" parent="Fumiture" unique_id=984583220 instance=ExtResource("3_ej5pp")]
+position = Vector2(287, 179)
 
-[node name="Cadeira2" type="Sprite2D" parent="Fumiture" unique_id=874902325]
-position = Vector2(324, 171)
-texture = ExtResource("3_rngul")
-hframes = 4
-frame = 3
+[node name="Cadeira" parent="Fumiture" unique_id=1682056894 instance=ExtResource("4_ismwe")]
+position = Vector2(253, 175)
 
-[node name="Mesa" type="Sprite2D" parent="Fumiture" unique_id=1595653350]
-position = Vector2(289, 175)
-texture = ExtResource("4_ej5pp")
-hframes = 6
+[node name="CadeiraVerso" parent="Fumiture" unique_id=518454972 instance=ExtResource("5_wyrnq")]
+position = Vector2(322, 175)
 
-[node name="Mesa2" type="Sprite2D" parent="Fumiture" unique_id=95467690]
-position = Vector2(224, 52)
-texture = ExtResource("4_ej5pp")
-hframes = 6
-frame = 1
+[node name="Mesa2" parent="Fumiture" unique_id=892549469 instance=ExtResource("3_ej5pp")]
+position = Vector2(43, 236)
 
-[node name="Mesa3" type="Sprite2D" parent="Fumiture" unique_id=71249439]
-position = Vector2(48, 252)
-texture = ExtResource("4_ej5pp")
-hframes = 6
+[node name="CadeiraVerso2" parent="Fumiture" unique_id=1356101002 instance=ExtResource("5_wyrnq")]
+position = Vector2(76, 232)
 
-[node name="Cadeira3" type="Sprite2D" parent="Fumiture" unique_id=1957115411]
-position = Vector2(85, 247)
-texture = ExtResource("3_rngul")
-hframes = 4
-frame = 3
+[node name="MesaComAnzois" parent="Fumiture" unique_id=1136539553 instance=ExtResource("6_4prg2")]
+position = Vector2(204, 48)
 
 [node name="Player" parent="." unique_id=551376006 instance=ExtResource("3_14v6m")]
 position = Vector2(37, 57)
