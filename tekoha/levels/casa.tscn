@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cimxmwhymgrfb" path="res://utils/mobilias/cadeira.tscn" id="4_ismwe"]
 [ext_resource type="PackedScene" uid="uid://b6iooc5tou12x" path="res://utils/mobilias/cadeira_verso.tscn" id="5_wyrnq"]
 [ext_resource type="PackedScene" uid="uid://y3j38m46qxw7" path="res://utils/mobilias/mesa_com_anzois.tscn" id="6_4prg2"]
+[ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="9_wyrnq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4prg2"]
+size = Vector2(36, 12)
 
 [node name="Casa" type="Node2D" unique_id=1391894647]
 script = ExtResource("1_wyrnq")
@@ -47,3 +51,17 @@ position = Vector2(76, 232)
 
 [node name="MesaComAnzois" parent="Fumiture" unique_id=1136539553 instance=ExtResource("6_4prg2")]
 position = Vector2(204, 48)
+
+[node name="Door" type="Area2D" parent="." unique_id=1942538900]
+script = ExtResource("9_wyrnq")
+target_level_path = "uid://dfboy8hao30xs"
+door_name = "HouseDoor"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1476660294]
+position = Vector2(192, 284)
+shape = SubResource("RectangleShape2D_4prg2")
+debug_color = Color(0.877387, 0.23208266, 0.62498057, 0.41960785)
+
+[node name="Marker2D" type="Marker2D" parent="Door" unique_id=118570414]
+position = Vector2(191, 247)
