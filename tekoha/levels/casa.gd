@@ -3,11 +3,11 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#var level = get_parent()
-	#var level_parent = level.get_parent()
-	#
-	#var player_node = level_parent.get_child(1)
-	#var camera: PlayerCamera = player_node.get_child(1)
+	var level = get_parent()
+	var level_parent = level.get_parent()
+	
+	var player_node = level_parent.get_child(1)
+	var camera: PlayerCamera = player_node.get_child(1)
 	
 	#var camera: Camrea2D = GlobalRefs.camera (ideia)
 	
@@ -32,8 +32,7 @@ func _ready() -> void:
 	
 	#var camera: PlayerCamera = $Player/PlayerCamera
 	
-	#set_limits_camera(camera)
-	pass
+	set_limits_camera(camera)
 
 func set_limits_camera(camera: PlayerCamera) -> void:
 	camera.limit_bottom = 363
