@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://crvdhqbdq1vu5"]
+
+[ext_resource type="Texture2D" uid="uid://djcu7sok1gir3" path="res://assets/sprites/mobilias/ganchos casa curupira.png" id="1_bl8hb"]
+
+[node name="Ganchos" type="Node2D" unique_id=1901859649]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=784421628]
+texture = ExtResource("1_bl8hb")
