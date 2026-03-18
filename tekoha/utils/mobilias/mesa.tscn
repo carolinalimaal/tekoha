@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fvss"]
 size = Vector2(36, 42)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_876a2"]
+polygon = PackedVector2Array(-18, -21, -18, 9, -16, 9, -16, 21, -11, 21, -11, 9, 11, 9, 11, 21, 16, 21, 16, 9, 18, 9, 18, -21)
+
 [node name="Mesa" type="StaticBody2D" unique_id=984583220]
 collision_layer = 256
 
@@ -14,3 +17,6 @@ hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1775146197]
 shape = SubResource("RectangleShape2D_1fvss")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=786639765]
+occluder = SubResource("OccluderPolygon2D_876a2")

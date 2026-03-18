@@ -4,15 +4,30 @@
 [ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://assets/sprites/tiles/terra_grama/background.tscn" id="1_ismwe"]
 [ext_resource type="Script" uid="uid://cw2gh4q2c5xa3" path="res://levels/casa.gd" id="1_wyrnq"]
 [ext_resource type="PackedScene" uid="uid://crvdhqbdq1vu5" path="res://utils/mobilias/ganchos.tscn" id="2_bj8g5"]
-[ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="3_14v6m"]
 [ext_resource type="PackedScene" uid="uid://ctle8osdm2yfw" path="res://utils/mobilias/mesa.tscn" id="3_ej5pp"]
 [ext_resource type="PackedScene" uid="uid://cimxmwhymgrfb" path="res://utils/mobilias/cadeira.tscn" id="4_ismwe"]
 [ext_resource type="PackedScene" uid="uid://b6iooc5tou12x" path="res://utils/mobilias/cadeira_verso.tscn" id="5_wyrnq"]
 [ext_resource type="PackedScene" uid="uid://y3j38m46qxw7" path="res://utils/mobilias/mesa_com_anzois.tscn" id="6_4prg2"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="10_4prg2"]
+[ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="10_x2bmf"]
+
+[sub_resource type="Gradient" id="Gradient_4prg2"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x2bmf"]
+gradient = SubResource("Gradient_4prg2")
+fill = 2
+fill_to = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyguw"]
+size = Vector2(32, 20)
 
 [node name="Casa" type="Node2D" unique_id=1391894647]
 script = ExtResource("1_wyrnq")
+limit_top = -75
+limit_bottom = 363
+limit_left = -140
+limit_right = 539
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1518279033]
 
@@ -42,20 +57,36 @@ position = Vector2(253, 175)
 position = Vector2(322, 175)
 
 [node name="Mesa2" parent="Fumiture" unique_id=892549469 instance=ExtResource("3_ej5pp")]
-position = Vector2(43, 236)
+position = Vector2(39, 237)
 
 [node name="CadeiraVerso2" parent="Fumiture" unique_id=1356101002 instance=ExtResource("5_wyrnq")]
 position = Vector2(76, 232)
 
 [node name="MesaComAnzois" parent="Fumiture" unique_id=1136539553 instance=ExtResource("6_4prg2")]
-position = Vector2(204, 48)
+position = Vector2(213, 39)
 
-[node name="Player" type="Node2D" parent="." unique_id=1942346384]
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=721220855]
+position = Vector2(7, 15)
+scale = Vector2(6.015625, 5.1875)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_x2bmf")
+offset = Vector2(31, 20)
 
-[node name="Player" parent="Player" unique_id=551376006 instance=ExtResource("3_14v6m")]
-position = Vector2(193, 128)
-
-[node name="PlayerCamera" type="Camera2D" parent="Player" unique_id=1052331891]
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1052331891]
 zoom = Vector2(2, 2)
 script = ExtResource("10_4prg2")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
+
+[node name="HouseDoor" type="Area2D" parent="." unique_id=432131234]
+position = Vector2(192, 285)
+script = ExtResource("10_x2bmf")
+target_level_path = "uid://dfboy8hao30xs"
+door_name = "HouseDoor"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseDoor" unique_id=919103633]
+shape = SubResource("RectangleShape2D_gyguw")
+
+[node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=276414706]
+position = Vector2(0, -33)
