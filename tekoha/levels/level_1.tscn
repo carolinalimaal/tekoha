@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dfboy8hao30xs"]
 
+[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="1_3sk1a"]
+[ext_resource type="Script" uid="uid://dvrjfqrv7w6p5" path="res://levels/level_1.gd" id="1_08mmt"]
 [ext_resource type="PackedScene" uid="uid://1fglvxuhlal0" path="res://entities/npcs/iara.tscn" id="1_l53as"]
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="2_3sk1a"]
 [ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="3_08mmt"]
@@ -8,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="6_nmsli"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="7_betor"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="8_vjtdm"]
-[ext_resource type="Texture2D" uid="uid://d17lgfnwyb4g2" path="res://icon.svg" id="9_3sk1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgw3c"]
 size = Vector2(64, 64)
@@ -17,11 +18,11 @@ size = Vector2(64, 64)
 size = Vector2(64, 64)
 
 [node name="Level1" type="Node2D" unique_id=1477400994]
+script = ExtResource("1_08mmt")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1585908412]
-position = Vector2(224, 160.00003)
-scale = Vector2(6.75, 2.75)
-texture = ExtResource("9_3sk1a")
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1763816462]
+script = ExtResource("1_3sk1a")
+metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Npc" parent="." unique_id=84738975 instance=ExtResource("1_l53as")]
 position = Vector2(250, 45)
@@ -43,7 +44,7 @@ position = Vector2(227, 378)
 position = Vector2(236, 220)
 
 [node name="HouseDoor" type="Area2D" parent="." unique_id=927461027]
-position = Vector2(96, 64)
+position = Vector2(288, 160)
 script = ExtResource("8_vjtdm")
 target_level_path = "uid://c1k48pyjcab6e"
 door_name = "HouseDoor"

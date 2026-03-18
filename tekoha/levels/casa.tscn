@@ -89,4 +89,4 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_gyguw")
 
 [node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=276414706]
-position = Vector2(0, -33)
+position = Vector2(0, -61)
