@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://drx8l0yiwg3b4"]
+
+[ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="1_gi0j7"]
+[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="1_k2ha5"]
+[ext_resource type="Script" uid="uid://dripnx4vn4mgk" path="res://levels/level_iara.gd" id="1_o5msn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2ha5"]
+size = Vector2(64, 64)
+
+[node name="LevelIara" type="Node2D" unique_id=836949162]
+script = ExtResource("1_o5msn")
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=221085446]
+script = ExtResource("1_k2ha5")
+metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
+
+[node name="IaraDoor" type="Area2D" parent="." unique_id=724538779]
+position = Vector2(-160, 96)
+script = ExtResource("1_gi0j7")
+target_level_path = "uid://dfboy8hao30xs"
+door_name = "IaraDoor"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IaraDoor" unique_id=1831636978]
+shape = SubResource("RectangleShape2D_k2ha5")
+debug_color = Color(0.9580162, 9.62615e-08, 0.5320718, 0.41960785)
+
+[node name="Marker2D" type="Marker2D" parent="IaraDoor" unique_id=1612963782]
+position = Vector2(0, -64)

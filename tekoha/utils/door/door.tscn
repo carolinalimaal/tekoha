@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://1qrmsqlofmkg"]
+
+[ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="1_cpd5a"]
+
+[node name="Door" type="Area2D" unique_id=595878266]
+collision_layer = 2048
+script = ExtResource("1_cpd5a")
