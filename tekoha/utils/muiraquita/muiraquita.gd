@@ -7,13 +7,13 @@ extends Area2D
 
 func _ready() -> void:
 	# Verificar se esse controle de spawnar ou nao ficara no muiraquita ou no level
-	if GameManager.muiraquitas_collected.has(id):
-		queue_free()
+	if GameManager.current_save.collected_muiraquitas.has(id):
+		modulate = Color(1,1,1,0.3)
 	
 	animation_player.play("default")
 
 func collect() -> void:
 	# Bloquear registrar duas vezes o mesmo muiraquita
-	if !GameManager.muiraquitas_collected.has(id):
+	if !GameManager.current_save.collected_muiraquitas.has(id):
 		GlobalSignals.new_muiraquita_found.emit(id)
 		modulate = Color(1,1,1,0.3)

@@ -40,7 +40,7 @@ func _ready() -> void:
 			slot.slot_unhighlighted.connect(_on_slot_unhighlighted)
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if GlobalRefs.input_manager.get_action_pressed("inventory"):
+	if InputManager.get_action_pressed("inventory"):
 		if _is_open and get_tree().paused:
 			_close()
 		elif !_is_open and !get_tree().paused:
@@ -61,7 +61,7 @@ func _close() -> void:
 
 func _update_ui() -> void:
 	# Referencia ao inventario
-	var inventory_slots = GlobalRefs.inventory.inventory_slots
+	var inventory_slots = GameManager.current_save.inventory_slots
 	
 	# Set dos itens do inventario aos slots da UI
 	for i in range(slots.size()):

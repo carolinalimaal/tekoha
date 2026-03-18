@@ -156,8 +156,9 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 8
+alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer" unique_id=1822400758]
+[node name="ItemImage" type="TextureRect" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer" unique_id=1822400758]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 size_flags_vertical = 4
@@ -169,31 +170,28 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="ShowItemLabel" type="Label" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2128954324]
+custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7hguk")
 theme_override_font_sizes/font_size = 32
-text = "DESEJA PEGALR ESSE ITEM?"
+text = "item encontrado"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=813499164]
+[node name="ButtonsContainer" type="HBoxContainer" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=813499164]
 layout_mode = 2
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="AcceptButton" type="Button" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1032947467]
+[node name="AcceptButton" type="Button" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/ButtonsContainer" unique_id=1032947467]
 custom_minimum_size = Vector2(106.5, 31.8)
 layout_mode = 2
 theme = ExtResource("5_s4csk")
-text = "SIM"
+text = "PEGAR"
 
-[node name="DeclineButton" type="Button" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1957290244]
+[node name="DeclineButton" type="Button" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/ButtonsContainer" unique_id=1957290244]
 custom_minimum_size = Vector2(106.5, 31.8)
 layout_mode = 2
 theme = ExtResource("5_s4csk")
-text = "NÃO"
-
-[connection signal="body_entered" from="PlayerInteractArea" to="." method="_on_player_interact_area_body_entered"]
-[connection signal="body_exited" from="PlayerInteractArea" to="." method="_on_player_interact_area_body_exited"]
-[connection signal="pressed" from="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/AcceptButton" to="." method="_on_accept_button_pressed"]
-[connection signal="pressed" from="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/DeclineButton" to="." method="_on_decline_button_pressed"]
+text = "CANCELAR"

@@ -17,7 +17,7 @@ func _ready() -> void:
 	interact_ui.visible = false
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if GlobalRefs.input_manager.get_action_pressed("interact"):
+	if InputManager.get_action_pressed("interact"):
 		if !is_interacting and interact_ui.visible:
 			interact()
 

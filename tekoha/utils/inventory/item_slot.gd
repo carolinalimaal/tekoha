@@ -1,10 +1,10 @@
 class_name ItemSlot
-extends RefCounted
+extends Resource
 
-var item: ConsumableItemData
-var slot_index: int
+@export var item: ConsumableItemData
+@export var slot_index: int
 
-func _init(index: int) -> void:
+func _init(index: int = 0) -> void:
 	slot_index = index
 
 func is_empty() -> bool:

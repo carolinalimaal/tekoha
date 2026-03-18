@@ -24,6 +24,8 @@ config/icon="res://icon.svg"
 GlobalSignals="*res://globals/global_signals.gd"
 GlobalRefs="*res://globals/global_refs.gd"
 GameManager="*res://globals/game_manager.gd"
+InputManager="*uid://bavwf1fj0nui5"
+SaveManager="*uid://rcshhs053h4s"
 Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
@@ -182,6 +184,7 @@ dialogic_default_action={
 2d_physics/layer_9="Props"
 2d_physics/layer_10="Items"
 2d_physics/layer_11="NPCs"
+2d_physics/layer_12="Door"
 
 [rendering]
 

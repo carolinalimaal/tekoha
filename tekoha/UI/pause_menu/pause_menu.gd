@@ -17,7 +17,7 @@ func _ready() -> void:
 	self.visible = false
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if GlobalRefs.input_manager.get_action_pressed("pause"):
+	if InputManager.get_action_pressed("pause"):
 		if _is_open and get_tree().paused:
 			_resume()
 		elif !_is_open and !get_tree().paused:

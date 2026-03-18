@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bavwf1fj0nui5"]
+
+[ext_resource type="Script" uid="uid://bvcb521no2utd" path="res://globals/input_manager/input_manager.gd" id="1_sk0jw"]
+[ext_resource type="Script" uid="uid://bun1v203k2eax" path="res://globals/input_manager/controller_manager.gd" id="2_i1gik"]
+
+[node name="InputManager" type="Node" unique_id=973914486]
+script = ExtResource("1_sk0jw")
+
+[node name="ControllerManager" type="Node" parent="." unique_id=1993450999]
+script = ExtResource("2_i1gik")

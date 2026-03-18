@@ -36,6 +36,11 @@ func _ready() -> void:
 	state_machine.init(self)
 	# Adicionar ao grupo "player"
 	self.add_to_group("player")
+	
+	# Carregar dados do save
+	if GameManager.current_save:
+		health_component.current_health = GameManager.current_save.player_health
+		health_changed.emit()
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
@@ -46,7 +51,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if state_machine.current_state.name in ["Death", "Stun"]:
 		return
 	
-	if GlobalRefs.input_manager.get_action_pressed("attack"):
+	if InputManager.get_action_pressed("attack"):
 		# Bloquear ataques se ja estiver em ATTACK1 ou ATTACK2
 		if state_machine.current_state.name in ["Attack1", "Attack2"]:
 			return
@@ -59,7 +64,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		else:
 			state_machine.current_state.transition_to("attack2")
 		
-	elif GlobalRefs.input_manager.get_action_pressed("roll") and can_roll:
+	elif InputManager.get_action_pressed("roll") and can_roll:
 		# Bloquear rolagem se estiver em ATTACK1, ATTACK_END ou ATTACK2
 		if state_machine.current_state.name in ["Attack1", "AttackEnd", "Attack2"]:
 			return
@@ -67,10 +72,10 @@ func _unhandled_input(_event: InputEvent) -> void:
 		state_machine.current_state.transition_to("Roll")
 
 func get_direction() -> Vector2:
-	return GlobalRefs.input_manager.get_movement_vector().normalized()
+	return InputManager.get_movement_vector().normalized()
 
 func get_aim_direction() -> Vector2:
-	return GlobalRefs.input_manager.get_aim_direction().normalized()
+	return InputManager.get_aim_direction().normalized()
 
 func die():
 	# TODO: ver possivel dependencia com health_component

@@ -1,10 +1,15 @@
 extends Control
 
+@onready var menu_options: VBoxContainer = $VBoxContainer/MenuOptions
 @onready var new_game_button: Button = $VBoxContainer/MenuOptions/NewGame
 @onready var load_game_button: Button = $VBoxContainer/MenuOptions/LoadGame
 @onready var options_button: Button = $VBoxContainer/MenuOptions/Options
 @onready var quit_button: Button = $VBoxContainer/MenuOptions/Quit
 @onready var background: TextureRect = $Background
+
+@onready var confirmation_popup: Panel = $ConfirmationPopup
+@onready var confirm_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton
+@onready var cancel_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
 
 
 var bg_list: Array[Texture2D] = [
@@ -19,14 +24,35 @@ func _ready() -> void:
 	options_button.pressed.connect(_on_options_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
 	
+	confirm_button.pressed.connect(_on_confirm_pressed)
+	cancel_button.pressed.connect(_on_cancel_pressed)
+	
 	new_game_button.grab_focus()
 	
 	var random_number: int = randi_range(0, 2)
 	background.texture = bg_list[random_number]
+	
+	confirmation_popup.visible = false
+	
+	# Verificar se existe save para mostrar ou nao o load_game_button
+	GameManager.current_save = SaveManager.load_game()
+	if GameManager.current_save:
+		load_game_button.visible = true
+		print("tem save")
+	else:
+		load_game_button.visible = false
+		print("nao tem save")
 
 func _on_new_game_pressed() -> void:
-	# TODO: Funcionalidade de novo jogo
-	pass
+	if GameManager.current_save:
+		confirmation_popup.visible = true
+		confirm_button.grab_focus()
+		for b in menu_options.get_children():
+			if b is Button:
+				b.focus_mode = Control.FOCUS_NONE
+	else:
+		GameManager.current_save = SaveData.new()
+		get_tree().change_scene_to_file("res://globals/main_scene/main.tscn")
 
 func _on_load_game_pressed() -> void:
 	# TODO: Funcionalidade de carregar jogo salvo
@@ -38,3 +64,14 @@ func _on_options_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+func _on_confirm_pressed() -> void:
+	GameManager.current_save = SaveData.new()
+	get_tree().change_scene_to_file("res://globals/main_scene/main.tscn")
+
+func _on_cancel_pressed() -> void:
+	confirmation_popup.visible = false
+	for b in menu_options.get_children():
+			if b is Button:
+				b.focus_mode = Control.FOCUS_ALL
+	new_game_button.grab_focus()
