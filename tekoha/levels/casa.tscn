@@ -8,8 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cimxmwhymgrfb" path="res://utils/mobilias/cadeira.tscn" id="4_ismwe"]
 [ext_resource type="PackedScene" uid="uid://b6iooc5tou12x" path="res://utils/mobilias/cadeira_verso.tscn" id="5_wyrnq"]
 [ext_resource type="PackedScene" uid="uid://y3j38m46qxw7" path="res://utils/mobilias/mesa_com_anzois.tscn" id="6_4prg2"]
+[ext_resource type="Texture2D" uid="uid://dmelmo7mp7uap" path="res://assets/sprites/rede/rede_curupira.png" id="9_gyguw"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="10_4prg2"]
+[ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="10_vd5oq"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="10_x2bmf"]
+[ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="11_vd5oq"]
 
 [sub_resource type="Gradient" id="Gradient_4prg2"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -56,14 +59,20 @@ position = Vector2(253, 175)
 [node name="CadeiraVerso" parent="Fumiture" unique_id=518454972 instance=ExtResource("5_wyrnq")]
 position = Vector2(322, 175)
 
-[node name="Mesa2" parent="Fumiture" unique_id=892549469 instance=ExtResource("3_ej5pp")]
-position = Vector2(39, 237)
-
-[node name="CadeiraVerso2" parent="Fumiture" unique_id=1356101002 instance=ExtResource("5_wyrnq")]
-position = Vector2(76, 232)
-
 [node name="MesaComAnzois" parent="Fumiture" unique_id=1136539553 instance=ExtResource("6_4prg2")]
 position = Vector2(213, 39)
+
+[node name="Rede" type="Sprite2D" parent="Fumiture" unique_id=1134289601]
+position = Vector2(45, 24.000002)
+rotation = -0.7853982
+texture = ExtResource("9_gyguw")
+
+[node name="Bau" parent="Fumiture" unique_id=302874208 instance=ExtResource("10_vd5oq")]
+position = Vector2(19, 256)
+rotation = 4.712389
+
+[node name="Pot" parent="Fumiture" unique_id=1504675159 instance=ExtResource("11_vd5oq")]
+position = Vector2(371, 260)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=721220855]
 position = Vector2(7, 15)
@@ -72,6 +81,7 @@ energy = 0.5
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_x2bmf")
 offset = Vector2(31, 20)
+metadata/_edit_lock_ = true
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1052331891]
 zoom = Vector2(2, 2)

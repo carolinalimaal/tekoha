@@ -12,6 +12,7 @@ func _ready() -> void:
 	add_child(_roll_timer)
 
 func _enter() -> void:
+	owner_node.light_occluder.visible = false
 	owner_node.can_roll = false
 	# Pegar a direcao da rolagem e aplicar o movimento
 	var roll_direction = owner_node.get_aim_direction()
@@ -25,6 +26,7 @@ func _enter() -> void:
 	owner_node.animation_tree.animation_finished.connect(_on_animation_finished)
 
 func _exit() -> void:
+	owner_node.light_occluder.visible = true
 	owner_node.velocity = Vector2.ZERO
 	# Atualizar a facing_direction
 	owner_node.facing_direction = owner_node.roll_direction

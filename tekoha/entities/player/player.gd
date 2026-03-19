@@ -19,6 +19,7 @@ var roll_cooldown : float = 1.0
 
 var anim_transition : int = 0
 
+@onready var light_occluder: LightOccluder2D = $LightOccluder2D
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
