@@ -1,11 +1,14 @@
 class_name SavePoint
 extends Area2D
 
+@export var hammock_texture: Texture
+@onready var sprite: Sprite2D = $Sprite
 @onready var interaction_ui: CanvasLayer = $InteractionUI
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	sprite.texture = hammock_texture
 	
 	interaction_ui.visible = false
 
