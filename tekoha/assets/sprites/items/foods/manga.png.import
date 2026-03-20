@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf2v8uqpnvk12"
-path="res://.godot/imported/golosa.png-37b2c6cd2eed70bcd5a2a6abddeadb59.ctex"
+uid="uid://dr8aq8sgtmuxa"
+path="res://.godot/imported/manga.png-cf651f3e695217c428ccdbd7afcf4bf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/items/foods/golosa.png"
-dest_files=["res://.godot/imported/golosa.png-37b2c6cd2eed70bcd5a2a6abddeadb59.ctex"]
+source_file="res://assets/sprites/items/foods/manga.png"
+dest_files=["res://.godot/imported/manga.png-cf651f3e695217c428ccdbd7afcf4bf9.ctex"]
 
 [params]
 

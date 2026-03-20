@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" format=3 uid="uid://d3cuhf8ovruif"]
+
+[ext_resource type="Texture2D" uid="uid://dr8aq8sgtmuxa" path="res://assets/sprites/items/foods/manga.png" id="1_wu2u1"]
+[ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="2_tcsfi"]
+
+[resource]
+script = ExtResource("2_tcsfi")
+icon = ExtResource("1_wu2u1")
+name = "Manga"
+description = "Fruta suculenta, doce com polpa fibrosa e um caroço grande."
+health_gain = 1
+metadata/_custom_type_script = "uid://bekubsjwettik"
