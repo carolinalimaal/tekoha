@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://bgiup2e5f7yt3"]
 
 [ext_resource type="Script" uid="uid://c5api7chbslvv" path="res://utils/save_point/save_point.gd" id="1_t7mtu"]
-[ext_resource type="Texture2D" uid="uid://d17lgfnwyb4g2" path="res://icon.svg" id="1_xpmo7"]
+[ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="2_2r5c8"]
+[ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="3_c5jgo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7mtu"]
-size = Vector2(118, 116)
+size = Vector2(80, 42)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rp8wi"]
+texture = ExtResource("3_c5jgo")
 
 [node name="SavePoint" type="Area2D" unique_id=1593957308]
 script = ExtResource("1_t7mtu")
@@ -12,8 +16,7 @@ script = ExtResource("1_t7mtu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1418852036]
 shape = SubResource("RectangleShape2D_t7mtu")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=266610200]
-texture = ExtResource("1_xpmo7")
+[node name="Sprite" type="Sprite2D" parent="." unique_id=266610200]
 
 [node name="InteractionUI" type="CanvasLayer" parent="." unique_id=1779905691]
 process_mode = 3
@@ -48,3 +51,62 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Aperte R para salvar"
+
+[node name="ConfirmationPopup" type="Panel" parent="InteractionUI" unique_id=1862354731]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2r5c8")
+
+[node name="Bg" type="PanelContainer" parent="InteractionUI/ConfirmationPopup" unique_id=1428904032]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -75.0
+offset_right = 225.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rp8wi")
+
+[node name="MarginContainer" type="MarginContainer" parent="InteractionUI/ConfirmationPopup/Bg" unique_id=279400035]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InteractionUI/ConfirmationPopup/Bg/MarginContainer" unique_id=302464784]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PopupLabel" type="Label" parent="InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer" unique_id=2072341964]
+layout_mode = 2
+text = "Deseja Salvar seu progresso?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer" unique_id=1886938021]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=558926496]
+custom_minimum_size = Vector2(106.35, 31.8)
+layout_mode = 2
+focus_neighbor_right = NodePath("../CancelButton")
+text = "Sim"
+
+[node name="CancelButton" type="Button" parent="InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1048614959]
+custom_minimum_size = Vector2(106.35, 31.8)
+layout_mode = 2
+focus_neighbor_left = NodePath("../ConfirmButton")
+focus_behavior_recursive = 2
+text = "Não"
