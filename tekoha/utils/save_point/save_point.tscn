@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="3_c5jgo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5jgo"]
-size = Vector2(39.999996, 94)
+size = Vector2(32, 94)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7mtu"]
 size = Vector2(80, 42)
