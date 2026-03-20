@@ -1,10 +1,11 @@
 class_name SavePoint
-extends Area2D
+extends StaticBody2D
 
 @export var hammock_texture: Texture
 
 var detecting_player: bool
 
+@onready var interaction_area: Area2D = $InteractionArea
 @onready var sprite: Sprite2D = $Sprite
 @onready var interaction_ui: CanvasLayer = $InteractionUI
 @onready var interaction_container: MarginContainer = $InteractionUI/InteractionContainer
@@ -13,8 +14,8 @@ var detecting_player: bool
 @onready var cancel_button: Button = $InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
 
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	interaction_area.body_entered.connect(_on_body_entered)
+	interaction_area.body_exited.connect(_on_body_exited)
 	confirm_button.pressed.connect(_on_confirm_button_pressed)
 	cancel_button.pressed.connect(_on_cancel_button_pressed)
 	

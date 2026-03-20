@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c5api7chbslvv" path="res://utils/save_point/save_point.gd" id="1_t7mtu"]
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="2_2r5c8"]
+[ext_resource type="Texture2D" uid="uid://dj5c16c84x6wh" path="res://assets/sprites/props/hammock/rede_save.png" id="2_t7mtu"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="3_c5jgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5jgo"]
+size = Vector2(39.999996, 94)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7mtu"]
 size = Vector2(80, 42)
@@ -10,17 +14,28 @@ size = Vector2(80, 42)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rp8wi"]
 texture = ExtResource("3_c5jgo")
 
-[node name="SavePoint" type="Area2D" unique_id=1593957308]
+[node name="SavePoint" type="StaticBody2D" unique_id=1381855768]
+collision_layer = 256
 script = ExtResource("1_t7mtu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1418852036]
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="." unique_id=335203786]
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_c5jgo")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=798182932]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1418852036]
 shape = SubResource("RectangleShape2D_t7mtu")
+debug_color = Color(2.117753e-06, 0.65099275, 0.075226285, 0.41960785)
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=266610200]
+texture = ExtResource("2_t7mtu")
 
 [node name="InteractionUI" type="CanvasLayer" parent="." unique_id=1779905691]
 process_mode = 3
 layer = 0
+visible = false
 
 [node name="InteractionContainer" type="MarginContainer" parent="InteractionUI" unique_id=357694669]
 anchors_preset = 3
@@ -53,6 +68,7 @@ grow_vertical = 2
 text = "Aperte R para salvar"
 
 [node name="ConfirmationPopup" type="Panel" parent="InteractionUI" unique_id=1862354731]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
