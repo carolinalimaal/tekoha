@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://y3j38m46qxw7"]
 
-[ext_resource type="Texture2D" uid="uid://cdpleqr3jxey0" path="res://assets/sprites/mobilias/mesas.png" id="1_0q6h4"]
+[ext_resource type="Texture2D" uid="uid://cdpleqr3jxey0" path="res://assets/sprites/props/furniture/mesas.png" id="1_0q6h4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1fitp"]
 radius = 18.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn43n5eehuux3"
-path="res://.godot/imported/bau_sheet.png-245a324cbab2de589a6f4732b6dfc26f.ctex"
+uid="uid://djcu7sok1gir3"
+path="res://.godot/imported/ganchos casa curupira.png-e31906d8a6b7410f5569be74f7f4c7a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/bau/bau_sheet.png"
-dest_files=["res://.godot/imported/bau_sheet.png-245a324cbab2de589a6f4732b6dfc26f.ctex"]
+source_file="res://assets/sprites/props/furniture/ganchos casa curupira.png"
+dest_files=["res://.godot/imported/ganchos casa curupira.png-e31906d8a6b7410f5569be74f7f4c7a0.ctex"]
 
 [params]
 

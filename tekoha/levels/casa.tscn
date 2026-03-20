@@ -3,13 +3,15 @@
 [ext_resource type="TileSet" uid="uid://ci84l86i0acmv" path="res://assets/sprites/tiles/interior_casas/house_interior.tres" id="1_bj8g5"]
 [ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://assets/sprites/tiles/terra_grama/background.tscn" id="1_ismwe"]
 [ext_resource type="Script" uid="uid://cw2gh4q2c5xa3" path="res://levels/casa.gd" id="1_wyrnq"]
-[ext_resource type="PackedScene" uid="uid://crvdhqbdq1vu5" path="res://utils/mobilias/ganchos.tscn" id="2_bj8g5"]
-[ext_resource type="PackedScene" uid="uid://ctle8osdm2yfw" path="res://utils/mobilias/mesa.tscn" id="3_ej5pp"]
-[ext_resource type="PackedScene" uid="uid://cimxmwhymgrfb" path="res://utils/mobilias/cadeira.tscn" id="4_ismwe"]
-[ext_resource type="PackedScene" uid="uid://b6iooc5tou12x" path="res://utils/mobilias/cadeira_verso.tscn" id="5_wyrnq"]
-[ext_resource type="PackedScene" uid="uid://y3j38m46qxw7" path="res://utils/mobilias/mesa_com_anzois.tscn" id="6_4prg2"]
+[ext_resource type="PackedScene" uid="uid://crvdhqbdq1vu5" path="res://utils/furniture/ganchos.tscn" id="2_bj8g5"]
+[ext_resource type="PackedScene" uid="uid://ctle8osdm2yfw" path="res://utils/furniture/mesa.tscn" id="3_ej5pp"]
+[ext_resource type="PackedScene" uid="uid://cimxmwhymgrfb" path="res://utils/furniture/cadeira.tscn" id="4_ismwe"]
+[ext_resource type="PackedScene" uid="uid://b6iooc5tou12x" path="res://utils/furniture/cadeira_verso.tscn" id="5_wyrnq"]
+[ext_resource type="PackedScene" uid="uid://y3j38m46qxw7" path="res://utils/furniture/mesa_com_anzois.tscn" id="6_4prg2"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="10_4prg2"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="10_x2bmf"]
+[ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="11_gyguw"]
+[ext_resource type="Texture2D" uid="uid://dj5c16c84x6wh" path="res://assets/sprites/props/hammock/rede_save.png" id="12_vd5oq"]
 
 [sub_resource type="Gradient" id="Gradient_4prg2"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -90,3 +92,7 @@ shape = SubResource("RectangleShape2D_gyguw")
 
 [node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=276414706]
 position = Vector2(0, -61)
+
+[node name="SavePoint" parent="." unique_id=1593957308 instance=ExtResource("11_gyguw")]
+position = Vector2(58, 23)
+hammock_texture = ExtResource("12_vd5oq")
