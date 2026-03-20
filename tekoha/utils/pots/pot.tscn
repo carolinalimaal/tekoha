@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://84kqvhlbhwpg"]
+[gd_scene format=3 uid="uid://84kqvhlbhwpg"]
 
-[ext_resource type="Texture2D" uid="uid://cfwpdmk86lun8" path="res://assets/sprites/pots/vaso_01.png" id="1_8ob30"]
+[ext_resource type="Texture2D" uid="uid://cfwpdmk86lun8" path="res://assets/sprites/props/pots/vaso_01.png" id="1_8ob30"]
 [ext_resource type="Script" uid="uid://d15ovrmrieuqa" path="res://utils/pots/pot.gd" id="1_3211e"]
 [ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="1_d5pp0"]
 [ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="2_d5pp0"]

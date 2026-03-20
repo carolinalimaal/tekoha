@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctkrxbx1oi552"
-path="res://.godot/imported/vaso_02.png-4729561197505f7c4506ca2cbad2be31.ctex"
+uid="uid://dj5c16c84x6wh"
+path="res://.godot/imported/rede_save.png-abcf450167627236b784f881ca5763c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pots/vaso_02.png"
-dest_files=["res://.godot/imported/vaso_02.png-4729561197505f7c4506ca2cbad2be31.ctex"]
+source_file="res://assets/sprites/props/hammock/rede_save.png"
+dest_files=["res://.godot/imported/rede_save.png-abcf450167627236b784f881ca5763c2.ctex"]
 
 [params]
 

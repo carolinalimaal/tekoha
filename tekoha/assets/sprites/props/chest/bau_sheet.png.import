@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdpleqr3jxey0"
-path="res://.godot/imported/mesas.png-14d831d1434d4f1d1874629fc61bfc68.ctex"
+uid="uid://dn43n5eehuux3"
+path="res://.godot/imported/bau_sheet.png-56eb2b5ee17cc54bd8acd52754ebcd17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/mobilias/mesas.png"
-dest_files=["res://.godot/imported/mesas.png-14d831d1434d4f1d1874629fc61bfc68.ctex"]
+source_file="res://assets/sprites/props/chest/bau_sheet.png"
+dest_files=["res://.godot/imported/bau_sheet.png-56eb2b5ee17cc54bd8acd52754ebcd17.ctex"]
 
 [params]
 
