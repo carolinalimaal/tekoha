@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cwlallopgos46"]
+[gd_scene format=3 uid="uid://cwlallopgos46"]
 
 [ext_resource type="Script" uid="uid://0bkrlmh2efko" path="res://utils/projectile/projectile.gd" id="1_6fvpk"]
 [ext_resource type="Script" uid="uid://b25oeps4g35sq" path="res://utils/components/hurtbox_component.gd" id="1_devi0"]
@@ -183,7 +183,7 @@ blend_point_3/node = SubResource("AnimationNodeAnimation_2dief")
 blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
-[node name="BolaPapel" type="Node2D" node_paths=PackedStringArray("animation_tree", "hurtbox_component", "visible_on_screen_notifier") groups=["projectile"]]
+[node name="BolaPapel" type="Node2D" unique_id=1226409171 node_paths=PackedStringArray("animation_tree", "hurtbox_component", "visible_on_screen_notifier") groups=["projectile"]]
 script = ExtResource("1_6fvpk")
 speed = 200
 animation_tree = NodePath("AnimationTree")
@@ -191,7 +191,7 @@ hurtbox_component = NodePath("HurtboxComponent")
 visible_on_screen_notifier = NodePath("VisibleOnScreenNotifier2D")
 metadata/_custom_type_script = "uid://0bkrlmh2efko"
 
-[node name="HurtboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("hurtbox_collision")]
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=1810461286 node_paths=PackedStringArray("hurtbox_collision")]
 collision_layer = 64
 collision_mask = 2
 script = ExtResource("1_devi0")
@@ -199,23 +199,21 @@ attack_data = ExtResource("3_hi3mn")
 hurtbox_collision = NodePath("HurtboxCollision")
 metadata/_custom_type_script = "uid://b25oeps4g35sq"
 
-[node name="HurtboxCollision" type="CollisionShape2D" parent="HurtboxComponent"]
+[node name="HurtboxCollision" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1349902750]
 shape = SubResource("CircleShape2D_hi3mn")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=843007198]
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_yhiqm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_6bo8v")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=248341281]
+libraries/ = SubResource("AnimationLibrary_6bo8v")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=2085426936]
 active = false
 tree_root = SubResource("AnimationNodeBlendSpace2D_5llhv")
 anim_player = NodePath("../AnimationPlayer")
 parameters/blend_position = Vector2(0, 0)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=150518508]
 rect = Rect2(-7, -7, 14, 14)
