@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("3_b1rvv")
+health_gain = 2
 icon = ExtResource("1_yn1ln")
 name = "Tambaqui Assado"
 description = "Peixe amazônico assado na brasa."
-health_gain = 2

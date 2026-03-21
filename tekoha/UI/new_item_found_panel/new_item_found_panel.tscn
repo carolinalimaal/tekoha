@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dwpac52ya1ff2"]
+
+[ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_xjl8r"]
+[ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="2_dtjjs"]
+[ext_resource type="Script" uid="uid://byvnbt4y0gk8l" path="res://UI/new_item_found_panel/new_item_found_panel.gd" id="2_wmhuc"]
+[ext_resource type="PackedScene" uid="uid://by4j7ryqt0fv8" path="res://UI/new_item_found_panel/heart_icon.tscn" id="3_uw45p"]
+[ext_resource type="Texture2D" uid="uid://dbmvrignxwe38" path="res://assets/sprites/items/foods/tambaqui_assado.png" id="3_wmhuc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_id1l5"]
+texture = ExtResource("2_dtjjs")
+
+[node name="NewItemFoundPanel" type="Panel" unique_id=2133664499]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xjl8r")
+script = ExtResource("2_wmhuc")
+heart_icon = ExtResource("3_uw45p")
+
+[node name="Bg" type="PanelContainer" parent="." unique_id=406796316]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.875
+offset_top = -100.0
+offset_right = 318.875
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_id1l5")
+
+[node name="MarginContainer" type="MarginContainer" parent="Bg" unique_id=132070937]
+layout_mode = 2
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 28
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bg/MarginContainer" unique_id=286590447]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="Bg/MarginContainer/HBoxContainer" unique_id=608540150]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_wmhuc")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bg/MarginContainer/HBoxContainer" unique_id=859951629]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="ItemName" type="Label" parent="Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=837146837]
+layout_mode = 2
+text = "Nome"
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1032915191]
+layout_mode = 2
+
+[node name="HBHeartsContainer" type="HBoxContainer" parent="Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1388124508]
+custom_minimum_size = Vector2(220, 16)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ItemDescription" type="RichTextLabel" parent="Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1152343976]
+custom_minimum_size = Vector2(320, 55)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 14
+text = "Descrição"

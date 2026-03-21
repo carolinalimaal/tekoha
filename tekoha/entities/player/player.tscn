@@ -2936,33 +2936,3 @@ script = ExtResource("15_yqrof")
 
 [node name="Death" type="Node" parent="StateMachine" unique_id=569168132]
 script = ExtResource("12_a1qjk")
-
-[node name="InteractUI" type="CanvasLayer" parent="." unique_id=1023736987]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="InteractUI" unique_id=1610108021]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -35.0
-grow_horizontal = 0
-grow_vertical = 0
-color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
-
-[node name="Label" type="Label" parent="InteractUI/ColorRect" unique_id=1175523446]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.52900004
-anchor_right = 0.5
-anchor_bottom = 0.52900004
-offset_left = -88.0
-offset_top = -11.515001
-offset_right = 90.0
-offset_bottom = 11.484999
-grow_horizontal = 0
-grow_vertical = 0
-text = "Pressione R para pegar"

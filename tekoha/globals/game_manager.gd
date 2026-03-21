@@ -18,15 +18,22 @@ func _on_muiraquita_found(id: int) -> void:
 func _add_coin(value: int) -> void:
 	current_save.wallet += value
 	
-	# TODO: adicionar som de coletar moeda
+	if !current_save.known_items.has("coin"):
+		current_save.known_items["coin"] = true
+		GlobalRefs.new_item_found_panel.show_panel(GlobalRefs.ItemType.COIN, null)
 	
+	# TODO: adicionar som de coletar moeda
+	# Emitir sinal para mostrar UI
 	GlobalSignals.wallet_updated.emit(current_save.wallet)
 
 func _register_muiraquita(id: int) -> void:
 	# Registrar no dicionario
 	current_save.collected_muiraquitas[id] = true
 	
-	# TODO: adicionar som de encontrar muiraquita
+	if !current_save.known_items.has("muiraquita"):
+		current_save.known_items["muiraquita"] = true
+		GlobalRefs.new_item_found_panel.show_panel(GlobalRefs.ItemType.MUIRAQUITA, null)
 	
+	# TODO: adicionar som de encontrar muiraquita
 	# Emitir sinal para mostrar UI
 	GlobalSignals.muiraquita_updated.emit(id)
