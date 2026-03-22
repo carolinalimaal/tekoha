@@ -14,7 +14,7 @@ func _ready() -> void:
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
-	interact_ui.visible = false
+	interact_ui.hide()
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if InputManager.get_action_pressed("interact"):
@@ -23,19 +23,19 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func interact() -> void:
 	Dialogic.start(timeline_name)
-	interact_ui.visible = false
+	interact_ui.hide()
 
 func _on_player_entered(body: Node2D):
 	if body is Player:
-		interact_ui.visible = true
+		interact_ui.show()
 
 func _on_player_exited(body: Node2D):
 	if body is Player:
-		interact_ui.visible = false
+		interact_ui.hide()
 
 func _on_timeline_started() -> void:
 	is_interacting = true
 
 func _on_timeline_ended() -> void:
 	is_interacting = false
-	interact_ui.visible = true
+	interact_ui.show()
