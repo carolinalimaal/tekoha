@@ -8,14 +8,15 @@ extends Control
 @onready var background: TextureRect = $Background
 
 @onready var confirmation_popup: Panel = $ConfirmationPopup
+@onready var popup_label: Label = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/PopupLabel
 @onready var confirm_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton
 @onready var cancel_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
 
 
 var bg_list: Array[Texture2D] = [
-	preload("res://assets/UI/bg/bg_main_menu_1.png"),
-	preload("res://assets/UI/bg/bg_main_menu_2.png"),
-	preload("res://assets/UI/bg/bg_main_menu_3.png"),
+	load("res://assets/UI/bg/bg_main_menu_1.png"),
+	load("res://assets/UI/bg/bg_main_menu_2.png"),
+	load("res://assets/UI/bg/bg_main_menu_3.png"),
 ]
 
 func _ready() -> void:
@@ -32,20 +33,20 @@ func _ready() -> void:
 	var random_number: int = randi_range(0, 2)
 	background.texture = bg_list[random_number]
 	
-	confirmation_popup.visible = false
+	confirmation_popup.hide()
 	
 	# Verificar se existe save para mostrar ou nao o load_game_button
 	GameManager.current_save = SaveManager.load_game()
 	if GameManager.current_save:
-		load_game_button.visible = true
+		load_game_button.show()
 		print("tem save")
 	else:
-		load_game_button.visible = false
+		load_game_button.hide()
 		print("nao tem save")
 
 func _on_new_game_pressed() -> void:
 	if GameManager.current_save:
-		confirmation_popup.visible = true
+		confirmation_popup.show()
 		confirm_button.grab_focus()
 		for b in menu_options.get_children():
 			if b is Button:
@@ -70,7 +71,7 @@ func _on_confirm_pressed() -> void:
 	get_tree().change_scene_to_file("res://globals/main_scene/main.tscn")
 
 func _on_cancel_pressed() -> void:
-	confirmation_popup.visible = false
+	confirmation_popup.hide()
 	for b in menu_options.get_children():
 			if b is Button:
 				b.focus_mode = Control.FOCUS_ALL

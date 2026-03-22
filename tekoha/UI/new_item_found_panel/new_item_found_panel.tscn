@@ -21,7 +21,7 @@ script = ExtResource("2_wmhuc")
 heart_icon = ExtResource("3_uw45p")
 
 [node name="Bg" type="PanelContainer" parent="." unique_id=406796316]
-custom_minimum_size = Vector2(450, 150)
+custom_minimum_size = Vector2(637.75, 181)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,9 +29,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -318.875
-offset_top = -100.0
+offset_top = -94.5
 offset_right = 318.875
-offset_bottom = 100.0
+offset_bottom = 94.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_id1l5")
@@ -59,15 +59,19 @@ stretch_mode = 5
 [node name="VBoxContainer" type="VBoxContainer" parent="Bg/MarginContainer/HBoxContainer" unique_id=859951629]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 theme_override_constants/separation = 4
+alignment = 1
 
 [node name="ItemName" type="Label" parent="Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=837146837]
 layout_mode = 2
+theme_override_font_sizes/font_size = 28
 text = "Nome"
 vertical_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1032915191]
 layout_mode = 2
+theme_override_constants/separation = 1
 
 [node name="HBHeartsContainer" type="HBoxContainer" parent="Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1388124508]
 custom_minimum_size = Vector2(220, 16)

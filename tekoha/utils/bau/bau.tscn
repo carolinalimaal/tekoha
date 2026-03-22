@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://c2xtmwc8mqu1i" path="res://utils/bau/bau.gd" id="1_rqtb1"]
 [ext_resource type="Texture2D" uid="uid://dn43n5eehuux3" path="res://assets/sprites/props/chest/bau_sheet.png" id="2_pmfbf"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="3_65fed"]
-[ext_resource type="FontFile" uid="uid://byjqkrwux6cty" path="res://assets/fonts/Bahiana/Bahiana-Regular.ttf" id="4_7hguk"]
+[ext_resource type="Texture2D" uid="uid://codbyibf3r7il" path="res://assets/sprites/items/foods/acai_com_peixe.png" id="4_s4csk"]
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="5_s4csk"]
+[ext_resource type="Theme" uid="uid://bal4gagsnjcr2" path="res://UI/second_theme.tres" id="6_7hguk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rqtb1"]
 size = Vector2(74, 55)
@@ -126,52 +127,53 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("5_s4csk")
 
 [node name="Bg" type="PanelContainer" parent="InteractionUI/ShowItemPanel" unique_id=1760693185]
-custom_minimum_size = Vector2(600, 200)
+custom_minimum_size = Vector2(637.75, 181)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -100.0
-offset_right = 300.0
-offset_bottom = 100.0
+offset_left = -318.875
+offset_top = -90.5
+offset_right = 318.875
+offset_bottom = 90.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_p7syt")
 
 [node name="MarginContainer" type="MarginContainer" parent="InteractionUI/ShowItemPanel/Bg" unique_id=263993794]
 layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 24
 
 [node name="HBoxContainer" type="HBoxContainer" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer" unique_id=1450601922]
 layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 8
 alignment = 1
 
 [node name="ItemImage" type="TextureRect" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer" unique_id=1822400758]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 size_flags_vertical = 4
+texture = ExtResource("4_s4csk")
 expand_mode = 3
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer" unique_id=368104690]
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/separation = 16
+alignment = 1
 
 [node name="ShowItemLabel" type="Label" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2128954324]
 custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_7hguk")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 28
 text = "item encontrado"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -179,17 +181,19 @@ autowrap_mode = 3
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=813499164]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 16
 alignment = 1
 
 [node name="AcceptButton" type="Button" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/ButtonsContainer" unique_id=1032947467]
-custom_minimum_size = Vector2(106.5, 31.8)
+custom_minimum_size = Vector2(94.53, 29.5)
 layout_mode = 2
-theme = ExtResource("5_s4csk")
+focus_neighbor_right = NodePath("../DeclineButton")
+theme = ExtResource("6_7hguk")
 text = "PEGAR"
 
 [node name="DeclineButton" type="Button" parent="InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/ButtonsContainer" unique_id=1957290244]
-custom_minimum_size = Vector2(106.5, 31.8)
+custom_minimum_size = Vector2(94.53, 29.5)
 layout_mode = 2
-theme = ExtResource("5_s4csk")
+focus_neighbor_left = NodePath("../AcceptButton")
+theme = ExtResource("6_7hguk")
 text = "CANCELAR"

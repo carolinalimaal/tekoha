@@ -16,7 +16,7 @@ var _current_slot_selected: InventorySlotUI = null
 
 @onready var _confirmation_popup: Panel = $ConfirmationPopup
 @onready var _popup_label: Label = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/PopupLabel
-@onready var _use_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/UseButton
+@onready var _confirm_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton
 @onready var _cancel_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
 
 
@@ -25,7 +25,7 @@ func _ready() -> void:
 	GlobalRefs.inventory.updated_inventory.connect(_update_ui)
 	
 	# Conectar sinais de click dos botoes do ConfirmationPopup
-	_use_button.pressed.connect(_on_confirm_use)
+	_confirm_button.pressed.connect(_on_confirm_use)
 	_cancel_button.pressed.connect(_on_cancel_use)
 	
 	_confirmation_popup.visible = false
@@ -85,7 +85,7 @@ func _on_slot_clicked(slot: InventorySlotUI) -> void:
 		if s is InventorySlotUI:
 			s.item_button.focus_mode = Control.FOCUS_NONE
 	
-	_use_button.grab_focus() # Focar no botao de usar
+	_confirm_button.grab_focus() # Focar no botao de usar
 
 func _on_confirm_use() -> void:
 	var item_slot = _current_slot_selected.item_slot
