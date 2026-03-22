@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_wu0yv"]
 [ext_resource type="Script" uid="uid://oxviwncuw21d" path="res://UI/inventory/inventory_ui.gd" id="2_732id"]
 [ext_resource type="Texture2D" uid="uid://ya7sx087abqn" path="res://assets/UI/inventory/inventory.png" id="2_kqe8q"]
+[ext_resource type="PackedScene" uid="uid://by4j7ryqt0fv8" path="res://UI/heart_icon/heart_icon.tscn" id="3_5tf5m"]
 [ext_resource type="PackedScene" uid="uid://b3cbxargqp6kv" path="res://UI/inventory/inventory_slot_ui.tscn" id="4_732id"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="5_3rh6v"]
 [ext_resource type="Theme" uid="uid://bal4gagsnjcr2" path="res://UI/second_theme.tres" id="6_b3oob"]
@@ -20,6 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_wu0yv")
 script = ExtResource("2_732id")
+heart_icon = ExtResource("3_5tf5m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1091451621]
 custom_minimum_size = Vector2(497, 466)
@@ -98,10 +100,11 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BgInventory/HBoxContainer" unique_id=1502264820]
-custom_minimum_size = Vector2(200, 310)
 layout_mode = 2
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="DescriptionBox" type="VBoxContainer" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer" unique_id=1747612477]
 custom_minimum_size = Vector2(200, 320)
@@ -110,15 +113,19 @@ layout_mode = 2
 [node name="ItemName" type="Label" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox" unique_id=812797127]
 layout_mode = 2
 
-[node name="ItemEffect" type="Label" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox" unique_id=887862954]
+[node name="HBHeartsContainer" type="HBoxContainer" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox" unique_id=711549654]
+custom_minimum_size = Vector2(200, 16)
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="ItemDescription" type="RichTextLabel" parent="VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox" unique_id=219152336]
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 fit_content = true
 scroll_active = false
 
 [node name="ConfirmationPopup" type="Panel" parent="." unique_id=1618502428]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

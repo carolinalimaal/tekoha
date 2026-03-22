@@ -1,6 +1,10 @@
 class_name InventoryUI
 extends Control
 
+const HEART_SIZE: float = 4.0
+
+@export var heart_icon: PackedScene
+
 var slots: Array
 var _is_open: bool = false
 var _current_slot_highlighted: InventorySlotUI = null
@@ -9,7 +13,7 @@ var _current_slot_selected: InventorySlotUI = null
 @onready var _slots_grid: GridContainer = $VBoxContainer/BgInventory/HBoxContainer/SlotsGrid
 @onready var _description_box: VBoxContainer = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox
 @onready var _item_name: Label = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/ItemName
-@onready var _item_effect: Label = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/ItemEffect
+@onready var hb_hearts_container: HBoxContainer = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/HBHeartsContainer
 @onready var _item_description: RichTextLabel = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/ItemDescription
 
 @onready var _confirmation_popup: Panel = $ConfirmationPopup
@@ -128,11 +132,28 @@ func _on_slot_unhighlighted(slot: InventorySlotUI) -> void:
 func _show_description(item: ConsumableItemData) -> void:
 	_description_box.show()
 	_item_name.text = item.name
-	_item_effect.text = str(item.health_gain)
 	_item_description.text = item.description
+	calculate_hearts(item.health_gain)
 
 func _clear_description() -> void:
 	_description_box.hide()
 	_item_name.text = ""
-	_item_effect.text = ""
 	_item_description.text = ""
+	calculate_hearts(0)
+
+func calculate_hearts(health_gain: int) -> void:
+	var hearts = hb_hearts_container.get_children()
+	for heart in hearts:
+		hb_hearts_container.remove_child(heart)
+		heart.queue_free()
+	var total_hearts = ceil(health_gain / HEART_SIZE)
+	
+	for i in range(total_hearts):
+		var heart_instance = heart_icon.instantiate()
+		hb_hearts_container.add_child(heart_instance)
+		
+	hearts = hb_hearts_container.get_children()
+	for heart in hearts:
+		var value_to_display = clampi(health_gain, 0, 4)
+		heart.update_sprite(value_to_display)
+		health_gain -= 4
