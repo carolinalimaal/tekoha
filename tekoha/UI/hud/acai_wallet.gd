@@ -1,6 +1,6 @@
-extends CanvasLayer
+extends PanelContainer
 
-@onready var moedas: Label = $Moedas
+@onready var coin_label: Label = $HBoxContainer/CoinLabel
 
 func _ready() -> void:
 	GlobalSignals.wallet_updated.connect(_on_wallet_updated)
@@ -10,4 +10,4 @@ func _ready() -> void:
 		_on_wallet_updated(GameManager.current_save.wallet)
 	
 func _on_wallet_updated(wallet: int):
-	moedas.text = str(wallet)
+	coin_label.text = str(wallet)

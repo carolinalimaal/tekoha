@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ctwwnea1q8vto"]
+
+[ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_b4xaq"]
+[ext_resource type="Script" uid="uid://cxw6tyt1lgcko" path="res://UI/hud/hud_hearts.gd" id="1_ygoxw"]
+[ext_resource type="PackedScene" uid="uid://by4j7ryqt0fv8" path="res://UI/heart_icon/heart_icon.tscn" id="2_upt0d"]
+[ext_resource type="Texture2D" uid="uid://dndmw37mpkifh" path="res://assets/sprites/items/coin/acai_caroco.png" id="4_27nul"]
+[ext_resource type="Script" uid="uid://cscjabft3yi3c" path="res://UI/hud/acai_wallet.gd" id="4_576qf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27nul"]
+
+[node name="HUD" type="Control" unique_id=1518990495]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme = ExtResource("1_b4xaq")
+
+[node name="Hearts" type="PanelContainer" parent="." unique_id=1225341217]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_27nul")
+script = ExtResource("1_ygoxw")
+heart_icon = ExtResource("2_upt0d")
+
+[node name="HBHearts" type="HBoxContainer" parent="Hearts" unique_id=5929582]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="AcaiWallet" type="PanelContainer" parent="." unique_id=303574243]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -79.0
+offset_top = 1.0
+offset_bottom = 65.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_27nul")
+script = ExtResource("4_576qf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AcaiWallet" unique_id=15165677]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+alignment = 1
+
+[node name="CoinLabel" type="Label" parent="AcaiWallet/HBoxContainer" unique_id=707051205]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="AcaiWallet/HBoxContainer" unique_id=441271092]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_27nul")
+expand_mode = 3
+stretch_mode = 5

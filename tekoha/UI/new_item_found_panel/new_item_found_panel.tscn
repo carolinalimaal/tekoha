@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_xjl8r"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="2_dtjjs"]
 [ext_resource type="Script" uid="uid://byvnbt4y0gk8l" path="res://UI/new_item_found_panel/new_item_found_panel.gd" id="2_wmhuc"]
-[ext_resource type="PackedScene" uid="uid://by4j7ryqt0fv8" path="res://UI/new_item_found_panel/heart_icon.tscn" id="3_uw45p"]
+[ext_resource type="PackedScene" uid="uid://by4j7ryqt0fv8" path="res://UI/heart_icon/heart_icon.tscn" id="3_uw45p"]
 [ext_resource type="Texture2D" uid="uid://dbmvrignxwe38" path="res://assets/sprites/items/foods/tambaqui_assado.png" id="3_wmhuc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_id1l5"]
