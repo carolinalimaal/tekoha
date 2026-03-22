@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://1fglvxuhlal0"]
+[gd_scene format=3 uid="uid://1fglvxuhlal0"]
 
 [ext_resource type="Script" uid="uid://bv7xgwalm2jk" path="res://entities/npcs/npc.gd" id="1_vnxnj"]
 [ext_resource type="Texture2D" uid="uid://bgnluxiwwhp7b" path="res://assets/sprites/entities/npcs/iara_com_cauda_idle_down.png" id="2_v8f82"]
@@ -37,7 +37,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_bw2bh"]
 radius = 33.13608
 
-[node name="Iara" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+[node name="Iara" type="CharacterBody2D" unique_id=435183479 node_paths=PackedStringArray("sprite")]
 y_sort_enabled = true
 collision_layer = 1024
 collision_mask = 1937
@@ -46,26 +46,26 @@ script = ExtResource("1_vnxnj")
 sprite = NodePath("AnimatedSprite2D")
 timeline_name = "timeline_iara"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=567683469]
 position = Vector2(0, 22)
 shape = SubResource("CircleShape2D_ii8d2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1784119135]
 sprite_frames = SubResource("SpriteFrames_vaykr")
 animation = &"idle_down"
 autoplay = "idle_down"
 
-[node name="InteractArea" type="Area2D" parent="."]
+[node name="InteractArea" type="Area2D" parent="." unique_id=1764617323]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=539547174]
 shape = SubResource("CircleShape2D_bw2bh")
 debug_color = Color(0.6392157, 0.5254902, 0, 0.23921569)
 
-[node name="InteractUI" type="CanvasLayer" parent="."]
+[node name="InteractUI" type="CanvasLayer" parent="." unique_id=1692935311]
 process_mode = 3
 layer = 0
 
-[node name="InteractContainer" type="MarginContainer" parent="InteractUI"]
+[node name="InteractContainer" type="MarginContainer" parent="InteractUI" unique_id=565954656]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -76,11 +76,11 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="ColorRect" type="ColorRect" parent="InteractUI/InteractContainer"]
+[node name="ColorRect" type="ColorRect" parent="InteractUI/InteractContainer" unique_id=11373272]
 layout_mode = 2
 color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
 
-[node name="Label" type="Label" parent="InteractUI/InteractContainer/ColorRect"]
+[node name="Label" type="Label" parent="InteractUI/InteractContainer/ColorRect" unique_id=1351450620]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

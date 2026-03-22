@@ -16,12 +16,14 @@ var is_showing: bool
 @onready var item_description: RichTextLabel = $Bg/MarginContainer/HBoxContainer/VBoxContainer/ItemDescription
 
 func _ready() -> void:
-	visible = false
+	hide()
 
 #func _unhandled_input(_event: InputEvent) -> void:
 	#if InputManager.get_action_pressed("ui_accept") and is_showing:
 		#var tween = create_tween()
+		## Interpolação usando função seno para deixar mais suave
 		#tween.set_trans(Tween.TRANS_SINE)
+		## Fade-Out
 		#tween.tween_property(self, "modulate:a", 0.0, 0.5)
 		#await tween.finished
 		#hide()

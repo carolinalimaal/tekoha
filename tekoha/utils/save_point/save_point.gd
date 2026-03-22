@@ -21,31 +21,31 @@ func _ready() -> void:
 	
 	sprite.texture = hammock_texture
 	
-	interaction_ui.visible = false
-	interaction_container.visible = true
-	confirmation_popup.visible = false
+	interaction_ui.hide()
+	interaction_container.show()
+	confirmation_popup.hide()
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if InputManager.get_action_pressed("interact") and detecting_player:
 		_interact()
 
 func _interact() -> void:
-	confirmation_popup.visible = true
+	confirmation_popup.show()
 	confirm_button.grab_focus()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player or body.is_in_group("player"):
 		detecting_player = true
-		interaction_ui.visible = true
+		interaction_ui.show()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player or body.is_in_group("player"):
 		detecting_player = false
-		interaction_ui.visible = false
+		interaction_ui.hide()
 
 func _on_confirm_button_pressed() -> void:
 	SaveManager.save_game(GameManager.current_save)
-	confirmation_popup.visible = false
+	confirmation_popup.hide()
 
 func _on_cancel_button_pressed() -> void:
-	confirmation_popup.visible = false
+	confirmation_popup.hide()
