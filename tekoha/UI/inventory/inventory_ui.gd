@@ -1,8 +1,6 @@
 class_name InventoryUI
 extends Control
 
-signal item_used(item)
-
 var slots: Array
 var _is_open: bool = false
 var _current_slot_highlighted: InventorySlotUI = null
@@ -28,7 +26,7 @@ func _ready() -> void:
 	_confirm_button.pressed.connect(_on_confirm_use)
 	_cancel_button.pressed.connect(_on_cancel_use)
 	
-	_confirmation_popup.visible = false
+	_confirmation_popup.hide()
 	
 	slots = _slots_grid.get_children()
 	
@@ -48,14 +46,14 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func _open() -> void:
 	_is_open = true
-	visible = true
+	show()
 	get_tree().paused = true
 	_update_ui() # Atualiza a UI ao abrir o inventario
 	slots[0].item_button.grab_focus() # Primeiro item em foco
 
 func _close() -> void:
 	_is_open = false
-	visible = false
+	hide()
 	get_tree().paused = false
 	_close_popup() # Fechar popup caso feche o inventario
 
@@ -77,7 +75,7 @@ func _update_ui() -> void:
 func _on_slot_clicked(slot: InventorySlotUI) -> void:
 	_current_slot_selected = slot
 	
-	_confirmation_popup.visible = true
+	_confirmation_popup.show()
 	_popup_label.text = "Deseja usar " + slot.item_slot.item.name + "?"
 	
 	# Bloquear foco nos slots quando o popup estiver aberto
@@ -101,7 +99,7 @@ func _on_cancel_use() -> void:
 	_close_popup()
 
 func _close_popup() -> void:
-	_confirmation_popup.visible = false
+	_confirmation_popup.hide()
 	
 	# Permitir foco nos slots quando o popup estiver fechado
 	for s in slots:
@@ -128,13 +126,13 @@ func _on_slot_unhighlighted(slot: InventorySlotUI) -> void:
 		_clear_description()
 
 func _show_description(item: ConsumableItemData) -> void:
-	_description_box.visible = true
+	_description_box.show()
 	_item_name.text = item.name
 	_item_effect.text = str(item.health_gain)
 	_item_description.text = item.description
 
 func _clear_description() -> void:
-	_description_box.visible = false
+	_description_box.hide()
 	_item_name.text = ""
 	_item_effect.text = ""
 	_item_description.text = ""

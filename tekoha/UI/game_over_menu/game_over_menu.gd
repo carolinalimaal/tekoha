@@ -12,11 +12,11 @@ func _ready() -> void:
 	
 	animation_player.play("RESET")
 	
-	self.visible = false
+	self.hide()
 
 func _on_player_died() -> void:
 	get_tree().paused = true
-	self.visible = true
+	self.show()
 	animation_player.play("default")
 	continue_button.grab_focus()
 
