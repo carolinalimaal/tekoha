@@ -5,7 +5,9 @@
 [ext_resource type="Script" uid="uid://cw2gh4q2c5xa3" path="res://levels/casa.gd" id="1_wyrnq"]
 [ext_resource type="PackedScene" uid="uid://crvdhqbdq1vu5" path="res://utils/mobilias/ganchos.tscn" id="2_bj8g5"]
 [ext_resource type="PackedScene" uid="uid://ctle8osdm2yfw" path="res://utils/mobilias/mesa.tscn" id="3_ej5pp"]
+[ext_resource type="Texture2D" uid="uid://dwa1gom2l2sey" path="res://assets/sprites/mobilias/cadeiras.png" id="4_emlbn"]
 [ext_resource type="PackedScene" uid="uid://cimxmwhymgrfb" path="res://utils/mobilias/cadeira.tscn" id="4_ismwe"]
+[ext_resource type="Texture2D" uid="uid://cdpleqr3jxey0" path="res://assets/sprites/mobilias/mesas.png" id="5_ign5b"]
 [ext_resource type="PackedScene" uid="uid://b6iooc5tou12x" path="res://utils/mobilias/cadeira_verso.tscn" id="5_wyrnq"]
 [ext_resource type="PackedScene" uid="uid://y3j38m46qxw7" path="res://utils/mobilias/mesa_com_anzois.tscn" id="6_4prg2"]
 [ext_resource type="Texture2D" uid="uid://dmelmo7mp7uap" path="res://assets/sprites/rede/rede_curupira.png" id="9_gyguw"]
@@ -13,6 +15,32 @@
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="10_vd5oq"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="10_x2bmf"]
 [ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="11_vd5oq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dw8qo"]
+texture = ExtResource("4_emlbn")
+texture_region_size = Vector2i(32, 48)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_selil"]
+tile_size = Vector2i(32, 48)
+sources/0 = SubResource("TileSetAtlasSource_dw8qo")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2oay"]
+texture = ExtResource("5_ign5b")
+texture_region_size = Vector2i(64, 80)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lqqwg"]
+tile_size = Vector2i(64, 80)
+sources/0 = SubResource("TileSetAtlasSource_y2oay")
 
 [sub_resource type="Gradient" id="Gradient_4prg2"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -44,6 +72,14 @@ tile_set = ExtResource("1_bj8g5")
 [node name="HouseWalls" type="TileMapLayer" parent="Tiles" unique_id=975096059]
 tile_map_data = PackedByteArray("AAAAABIAAAABAAgAAAABABIAAAABAAgAAAACABIAAAABAAgAAAADABIAAAABAAgAAAAEABIAAAABAAgAAAAFABIAAAABAAgAAAAGABIAAAABAAgAAAAHABIAAAABAAgAAAAIABIAAAABAAgAAAAJABIAAAABAAgAAAAOABIAAAACAAgAAAAPABIAAAACAAgAAAAQABIAAAACAAgAAAARABIAAAACAAgAAAASABIAAAACAAgAAAATABIAAAACAAgAAAAUABIAAAACAAgAAAAVABIAAAACAAgAAAAWABIAAAACAAgAAAAXABIAAAACAAgAAAAYABIAAAADAAgAAAAYABEAAAADAAcAAAAYABAAAAADAAYAAAAYAA8AAAADAAYAAAAYAA4AAAADAAYAAAAYAA0AAAADAAYAAAAYAAwAAAADAAYAAAAYAAsAAAADAAYAAAAYAAoAAAADAAYAAAAYAAkAAAADAAYAAAAYAAgAAAADAAYAAAAYAAcAAAADAAYAAAAYAAYAAAADAAYAAAAYAAAAAAADAAYAAAAYAAEAAAADAAYAAAAYAAIAAAADAAYAAAAYAAMAAAADAAYAAAAYAAQAAAADAAYAAAAYAAUAAAADAAYAAAD//wAAAAAAAAYAAAD//wEAAAAAAAYAAAD//wIAAAAAAAYAAAD//wMAAAAAAAYAAAD//wQAAAAAAAYAAAD//wUAAAAAAAYAAAD//wYAAAAAAAYAAAD//wcAAAAAAAYAAAD//wgAAAAAAAYAAAD//wkAAAAAAAYAAAD//woAAAAAAAYAAAD//wsAAAAAAAYAAAD//wwAAAAAAAYAAAD//w0AAAAAAAYAAAD//w4AAAAAAAYAAAD//w8AAAAAAAYAAAD//xAAAAAAAAYAAAD//xEAAAAAAAcAAAD//xIAAAAAAAgAAAAAAP7/AAABAAQAAAAAAP//AAABAAUAAAABAP7/AAABAAQAAAABAP//AAABAAUAAAACAP7/AAABAAQAAAACAP//AAABAAUAAAADAP7/AAABAAQAAAADAP//AAABAAUAAAAEAP7/AAABAAQAAAAEAP//AAABAAUAAAAFAP7/AAABAAQAAAAFAP//AAABAAUAAAAGAP7/AAABAAQAAAAGAP//AAABAAUAAAAHAP7/AAABAAQAAAAHAP//AAABAAUAAAAIAP7/AAABAAQAAAAIAP//AAABAAUAAAAJAP7/AAABAAQAAAAJAP//AAABAAUAAAAKAP7/AAABAAQAAAAKAP//AAABAAUAAAALAP7/AAABAAQAAAALAP//AAABAAUAAAAMAP7/AAACAAQAAAAMAP//AAACAAUAAAANAP7/AAACAAQAAAANAP//AAACAAUAAAAOAP7/AAACAAQAAAAOAP//AAACAAUAAAAPAP7/AAACAAQAAAAPAP//AAACAAUAAAAQAP7/AAACAAQAAAAQAP//AAACAAUAAAARAP7/AAACAAQAAAARAP//AAACAAUAAAASAP7/AAACAAQAAAASAP//AAACAAUAAAATAP7/AAACAAQAAAATAP//AAACAAUAAAAUAP7/AAACAAQAAAAUAP//AAACAAUAAAAVAP7/AAACAAQAAAAVAP//AAACAAUAAAAWAP7/AAACAAQAAAAWAP//AAACAAUAAAAXAP7/AAACAAQAAAAXAP//AAACAAUAAAAYAP7/AAADAAQAAAAYAP//AAADAAUAAAAYAP3/AAADAAQAAAD///7/AAAAAAQAAAD/////AAAAAAUAAAAAAP3/AAABAAQAAAABAP3/AAACAAQAAAACAP3/AAABAAQAAAADAP3/AAACAAQAAAAEAP3/AAABAAQAAAAFAP3/AAACAAQAAAAGAP3/AAABAAQAAAAHAP3/AAACAAQAAAAIAP3/AAABAAQAAAAJAP3/AAACAAQAAAALAP3/AAACAAQAAAAMAP3/AAABAAQAAAAKAP3/AAABAAQAAAANAP3/AAACAAQAAAAOAP3/AAABAAQAAAAPAP3/AAACAAQAAAAQAP3/AAABAAQAAAARAP3/AAACAAQAAAATAP3/AAACAAQAAAAUAP3/AAABAAQAAAASAP3/AAABAAQAAAAVAP3/AAACAAQAAAAWAP3/AAABAAQAAAAXAP3/AAACAAQAAAD///3/AAAAAAQAAAAYAPz/AAADAAMAAAD///z/AAAAAAMAAAAAAPz/AAABAAMAAAABAPz/AAACAAMAAAACAPz/AAABAAMAAAADAPz/AAACAAMAAAAEAPz/AAABAAMAAAAFAPz/AAACAAMAAAAGAPz/AAABAAMAAAAHAPz/AAACAAMAAAAIAPz/AAABAAMAAAAJAPz/AAACAAMAAAALAPz/AAACAAMAAAAMAPz/AAABAAMAAAAKAPz/AAABAAMAAAANAPz/AAACAAMAAAAOAPz/AAABAAMAAAAPAPz/AAACAAMAAAAQAPz/AAABAAMAAAARAPz/AAACAAMAAAASAPz/AAABAAMAAAATAPz/AAACAAMAAAAUAPz/AAABAAMAAAAVAPz/AAACAAMAAAAWAPz/AAABAAMAAAAXAPz/AAACAAMAAAAKABIAAAABAAgAAAANABIAAAACAAgAAAA=")
 tile_set = ExtResource("1_bj8g5")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Tiles" unique_id=373726241]
+tile_map_data = PackedByteArray("AAABAAIAAAACAAAAAAAEAAIAAAADAAAAAAA=")
+tile_set = SubResource("TileSet_selil")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="Tiles" unique_id=361306583]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lqqwg")
 
 [node name="Fumiture" type="Node2D" parent="." unique_id=1837253683]
 
