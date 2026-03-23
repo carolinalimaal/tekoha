@@ -2888,6 +2888,7 @@ position = Vector2(0, 19.5)
 shape = SubResource("RectangleShape2D_wmv1v")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=821040279]
+visible = false
 occluder = SubResource("OccluderPolygon2D_3wlsy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1791514108]

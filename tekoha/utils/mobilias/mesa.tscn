@@ -19,4 +19,5 @@ hframes = 6
 shape = SubResource("RectangleShape2D_1fvss")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=786639765]
+visible = false
 occluder = SubResource("OccluderPolygon2D_876a2")
