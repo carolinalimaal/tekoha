@@ -30,9 +30,7 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
-directories/dch_directory={
-"character_iara": "res://data/dialogues/characters/character_iara.dch"
-}
+directories/dch_directory={}
 directories/dtl_directory={
 "timeline_iara": "res://data/dialogues/timelines/timeline_iara.dtl"
 }

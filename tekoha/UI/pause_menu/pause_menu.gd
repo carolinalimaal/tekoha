@@ -14,7 +14,7 @@ func _ready() -> void:
 	
 	animation_player.play("RESET")
 	
-	self.visible = false
+	self.hide()
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if InputManager.get_action_pressed("pause"):
@@ -26,14 +26,14 @@ func _unhandled_input(_event: InputEvent) -> void:
 func _pause() -> void:
 	get_tree().paused = true
 	_is_open = true
-	self.visible = true
+	self.show()
 	animation_player.play("pause")
 	back_to_game_button.grab_focus()
 
 func _resume() -> void:
 	get_tree().paused = false
 	_is_open = false
-	self.visible = false
+	self.hide()
 	animation_player.play_backwards("pause")
 
 func _on_back_to_game_pressed() -> void:

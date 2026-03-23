@@ -1,7 +1,15 @@
 extends Node
 
+enum ItemType {
+	COIN,
+	MUIRAQUITA,
+	FOOD
+}
+
+var main_scene: Node2D
+var ui_canvas_layer: CanvasLayer
+var new_item_found_panel: NewItemFoundPanel
 
 var player: Player
-var main_camera: PlayerCamera
 
 var inventory: Inventory

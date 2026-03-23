@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dlcbi8g3t1t28"]
+
+[ext_resource type="Texture2D" uid="uid://dmn4cdu2ya3v5" path="res://assets/sprites/items/muiraquita/muiraquita2.png" id="1_mjvlh"]
+[ext_resource type="Script" uid="uid://bkye1g6tmnv67" path="res://utils/resources/items/item_data.gd" id="1_x85h8"]
+
+[resource]
+script = ExtResource("1_x85h8")
+icon = ExtResource("1_mjvlh")
+name = "Muiraquitã"
+description = "Um amuleto ancestral de pedra verde, esculpido no formato de um sapo. Dizem as lendas que foi moldado pelas guerreiras do barro do rio. Carrega uma sorte imensa e segredos antigos."
+metadata/_custom_type_script = "uid://bkye1g6tmnv67"

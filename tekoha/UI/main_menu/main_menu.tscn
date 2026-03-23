@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dhcppev66xefc" path="res://assets/UI/logo/tekoha_colorful.svg" id="3_lib8g"]
 [ext_resource type="PackedScene" uid="uid://6eh6tcx4b8rb" path="res://UI/button/button.tscn" id="4_rxajg"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="6_lib8g"]
+[ext_resource type="Theme" uid="uid://bal4gagsnjcr2" path="res://UI/second_theme.tres" id="7_rxajg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rxajg"]
 texture = ExtResource("6_lib8g")
@@ -85,53 +86,55 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Bg" type="PanelContainer" parent="ConfirmationPopup" unique_id=944172492]
-custom_minimum_size = Vector2(450, 150)
+custom_minimum_size = Vector2(637.75, 181)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -225.0
-offset_top = -75.0
-offset_right = 225.0
-offset_bottom = 75.0
+offset_left = -318.875
+offset_top = -90.5
+offset_right = 318.875
+offset_bottom = 90.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_rxajg")
 
 [node name="MarginContainer" type="MarginContainer" parent="ConfirmationPopup/Bg" unique_id=875534299]
 layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 28
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ConfirmationPopup/Bg/MarginContainer" unique_id=720577781]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 16
+alignment = 1
 
 [node name="PopupLabel" type="Label" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer" unique_id=1438671790]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 28
 text = "O jogo antigo será sobrescrito, deseja continuar?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer" unique_id=583837698]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 16
 alignment = 1
 
 [node name="ConfirmButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1282470018]
-custom_minimum_size = Vector2(106.35, 31.8)
+custom_minimum_size = Vector2(94.53, 29.5)
 layout_mode = 2
 focus_neighbor_right = NodePath("../CancelButton")
-text = "Sim"
+theme = ExtResource("7_rxajg")
+text = "Continuar"
 
 [node name="CancelButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=155563405]
-custom_minimum_size = Vector2(106.35, 31.8)
+custom_minimum_size = Vector2(94.53, 29.5)
 layout_mode = 2
 focus_neighbor_left = NodePath("../ConfirmButton")
-focus_behavior_recursive = 2
+theme = ExtResource("7_rxajg")
 text = "CANCELAR"
