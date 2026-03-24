@@ -58,7 +58,7 @@ shape = SubResource("RectangleShape2D_bgw3c")
 debug_color = Color(0.64648557, 0.5220463, 0, 0.41960785)
 
 [node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=135158793]
-position = Vector2(0, 64)
+position = Vector2(0, 137)
 
 [node name="IaraDoor" type="Area2D" parent="." unique_id=2061687792]
 position = Vector2(512, 64)

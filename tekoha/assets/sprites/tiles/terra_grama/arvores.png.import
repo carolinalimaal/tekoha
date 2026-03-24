@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bikc8jc4wc13w"
-path="res://.godot/imported/area interna casa curupira.png-a600cf43fe70e7ddd2b4d50dadbd58b5.ctex"
+uid="uid://blg4d3wtkohd4"
+path="res://.godot/imported/arvores.png-ff19fc55db52b2f8ad28cfb0fcbde07f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/interior_casas/area interna casa curupira.png"
-dest_files=["res://.godot/imported/area interna casa curupira.png-a600cf43fe70e7ddd2b4d50dadbd58b5.ctex"]
+source_file="res://assets/sprites/tiles/terra_grama/arvores.png"
+dest_files=["res://.godot/imported/arvores.png-ff19fc55db52b2f8ad28cfb0fcbde07f.ctex"]
 
 [params]
 

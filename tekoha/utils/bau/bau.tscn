@@ -121,6 +121,7 @@ grow_vertical = 2
 text = "Aperte R para abrir o Baú"
 
 [node name="ShowItemPanel" type="Panel" parent="InteractionUI" unique_id=2072546879]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
