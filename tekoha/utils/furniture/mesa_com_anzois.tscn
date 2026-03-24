@@ -23,4 +23,5 @@ position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_1fitp")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1411368015]
+visible = false
 occluder = SubResource("OccluderPolygon2D_0q6h4")

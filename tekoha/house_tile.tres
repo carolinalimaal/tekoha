@@ -1,0 +1,49 @@
+[gd_resource type="TileSet" format=3 uid="uid://c572ycuwtsljt"]
+
+[ext_resource type="Texture2D" uid="uid://dwjyuqr4ts0he" path="res://assets/sprites/tiles/interior_casas/casa_interna_curupira_novo.png" id="1_35ikd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_36ryn"]
+texture = ExtResource("1_35ikd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, 11.3167095, -16, 11.400102, 12.726837, -11.596655, 12.825113, -11.720512, -16, -16, -16)
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(10.122505, 16, 16, 16, 16, -16, 10.024227, -16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.122505, -16, -16, -16, -16, 16, -10.024227, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(10.122505, -16, 16, -16, 16, 16, 10.024227, 16)
+2:2/0 = 0
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.122505, -16, -16, -16, -16, 16, -10.024227, 16)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(10.712164, -11.252686, 16, -9.876812, 16, -16, 10.024227, -16)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -10.122505, 16, -16, -16, -16, -16, -10.024227)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.712164, -11.252686, -16, -9.876812, -16, -16, -10.024227, -16)
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 128
+sources/0 = SubResource("TileSetAtlasSource_36ryn")

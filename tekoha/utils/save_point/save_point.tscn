@@ -36,6 +36,7 @@ texture = ExtResource("2_t7mtu")
 [node name="InteractionUI" type="CanvasLayer" parent="." unique_id=1779905691]
 process_mode = 3
 layer = 0
+visible = false
 
 [node name="InteractionContainer" type="MarginContainer" parent="InteractionUI" unique_id=357694669]
 anchors_preset = 3
