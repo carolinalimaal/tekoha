@@ -6,14 +6,18 @@ class_name Door extends Area2D
 @export var door_name: String
 
 func _ready() -> void:
+	GlobalSignals.animation_midpoint_reached.connect(on_animation_midpoint_reached)
 	body_entered.connect(_on_player_body_entered)
 	
 func _on_player_body_entered(body: Node2D) -> void:
+	get_tree().paused = true
+	GlobalSignals.emit_signal("door_entered")
+	
+func on_animation_midpoint_reached() -> void:
 	if target_level_path == "":
 		push_error("Caminho do level não definido na porta!")
 		return
-	
-	
+
 	# Carrega a cena dinamicamente a partir do texto
 	var next_level_scene = load(target_level_path)
 	var level_instance = next_level_scene.instantiate()
@@ -34,7 +38,5 @@ func _on_player_body_entered(body: Node2D) -> void:
 	var spawn_point = level_door_marker.global_position
 	
 	GlobalRefs.player.global_position = spawn_point
-	
-	
-	
+	GlobalSignals.emit_signal("level_loading_finished")
 	

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ctwwnea1q8vto" path="res://UI/hud/hud.tscn" id="6_114rs"]
 [ext_resource type="PackedScene" uid="uid://c1k48pyjcab6e" path="res://levels/casa.tscn" id="6_d60g8"]
 [ext_resource type="PackedScene" uid="uid://dwpac52ya1ff2" path="res://UI/new_item_found_panel/new_item_found_panel.tscn" id="7_58oj7"]
+[ext_resource type="PackedScene" uid="uid://cs3n57e1xx86b" path="res://UI/loading_screen/loading_screen.tscn" id="7_si673"]
 
 [node name="Main" type="Node2D" unique_id=273176472]
 
@@ -27,6 +28,8 @@ visible = false
 
 [node name="NewItemFoundPanel" parent="UI" unique_id=2133664499 instance=ExtResource("7_58oj7")]
 visible = false
+
+[node name="LoadingScreen" parent="UI" unique_id=699405306 instance=ExtResource("7_si673")]
 
 [node name="Level" type="Node2D" parent="." unique_id=793583955]
 
