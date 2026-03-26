@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blg4d3wtkohd4"
-path="res://.godot/imported/arvores.png-ff19fc55db52b2f8ad28cfb0fcbde07f.ctex"
+path="res://.godot/imported/arvores.png-f84ac92264b13ffd0e64d6ab5797fb00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/terra_grama/arvores.png"
-dest_files=["res://.godot/imported/arvores.png-ff19fc55db52b2f8ad28cfb0fcbde07f.ctex"]
+source_file="res://assets/sprites/tiles/arvores/arvores.png"
+dest_files=["res://.godot/imported/arvores.png-f84ac92264b13ffd0e64d6ab5797fb00.ctex"]
 
 [params]
 
