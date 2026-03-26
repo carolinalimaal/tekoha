@@ -132,7 +132,7 @@ metadata/_edit_lock_ = true
 [node name="HouseDoor" type="Area2D" parent="." unique_id=432131234]
 position = Vector2(176, 275)
 script = ExtResource("10_x2bmf")
-target_level_path = "uid://dfboy8hao30xs"
+target_level_path = "uid://cudaprnhd7e17"
 door_name = "HouseDoor"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
