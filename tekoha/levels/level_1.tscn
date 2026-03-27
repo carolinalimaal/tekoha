@@ -6,11 +6,30 @@
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="2_3sk1a"]
 [ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="3_08mmt"]
 [ext_resource type="Texture2D" uid="uid://cfwpdmk86lun8" path="res://assets/sprites/props/pots/vaso_01.png" id="4_5ot28"]
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="4_nmsli"]
 [ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="5_5ot28"]
 [ext_resource type="PackedScene" uid="uid://cmpf7e1nr1x4w" path="res://utils/coin/coin.tscn" id="5_aerfg"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="5_betor"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="6_nmsli"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="7_betor"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="8_vjtdm"]
+
+[sub_resource type="Resource" id="Resource_selil"]
+script = ExtResource("4_nmsli")
+actor_name = "Iara"
+text_pt = "Ola, jovem rapaz, tudo bem? Parece com medo de algo."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_emlbn"]
+script = ExtResource("4_nmsli")
+actor_name = "Curupira"
+text_pt = "Oi... Eu sou o Curupira. Estou preocupado com a natureza. Tive tendo sonho terriveis com ela, pessoas fazendo maldades."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_vjtdm"]
+script = ExtResource("5_betor")
+dialogues = Array[ExtResource("4_nmsli")]([SubResource("Resource_selil"), SubResource("Resource_emlbn")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgw3c"]
 size = Vector2(64, 64)
@@ -25,8 +44,9 @@ script = ExtResource("1_08mmt")
 script = ExtResource("1_3sk1a")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
-[node name="Npc" parent="." unique_id=84738975 instance=ExtResource("1_l53as")]
-position = Vector2(250, 45)
+[node name="Iara" parent="." unique_id=435183479 instance=ExtResource("1_l53as")]
+position = Vector2(139, 63)
+npc_dialogue = SubResource("Resource_vjtdm")
 
 [node name="Bau" parent="." unique_id=302874208 instance=ExtResource("2_3sk1a")]
 position = Vector2(359, 225)
