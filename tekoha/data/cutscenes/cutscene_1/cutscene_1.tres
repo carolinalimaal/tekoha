@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="DialogueSettings" format=3 uid="uid://bqqf1ha3k1dn8"]
+
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="1_lbqvg"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="2_3xla2"]
+[ext_resource type="Texture2D" uid="uid://cs37ybs1grcvg" path="res://data/cutscenes/cutscene_1/img_1.jpeg" id="2_5q6n1"]
+[ext_resource type="Texture2D" uid="uid://dundn8qwdm7hl" path="res://data/cutscenes/cutscene_1/img_2.jpeg" id="3_k78cy"]
+[ext_resource type="Texture2D" uid="uid://l4tobh3q0lbp" path="res://data/cutscenes/cutscene_1/img_3.jpeg" id="4_y3s2b"]
+[ext_resource type="Texture2D" uid="uid://dfc0sw2a0yr8m" path="res://data/cutscenes/cutscene_1/img_4.jpeg" id="5_jpolb"]
+
+[sub_resource type="Resource" id="Resource_eadxp"]
+script = ExtResource("1_lbqvg")
+background_image = ExtResource("2_5q6n1")
+text_pt = "O Curupira é um rapaz que costuma passar seus dias de forma tranquila na Ilha do Combu. Ele pesca para se alimentar, vê as plantas crescerem e aproveita a companhia dos animais. "
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_5q6n1"]
+script = ExtResource("1_lbqvg")
+background_image = ExtResource("2_5q6n1")
+text_pt = "Ele frequentemente sonha com a natureza: as grandes árvores de castanha do Pará, os pássaros cantando e as aventuras que tem com os animais pela floresta."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_vx0x6"]
+script = ExtResource("1_lbqvg")
+background_image = ExtResource("3_k78cy")
+text_pt = "Entretanto, recentemente, Curupira começou a ter pesadelos que o enchem de receio. "
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_k78cy"]
+script = ExtResource("1_lbqvg")
+background_image = ExtResource("3_k78cy")
+text_pt = "As plantas, tão vivas quanto ele mesmo, agora estavam secas, e as árvores cortadas formavam um cenário verdadeiramente trágico nesse pesadelo. Os rios poluídos e a densa fumaça no céu acrescentavam ainda mais para o clima sombrio."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_4kn5i"]
+script = ExtResource("1_lbqvg")
+background_image = ExtResource("4_y3s2b")
+text_pt = "Os pesadelos o assustavam tanto que ele, muitas vezes, acordava assustado..."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_b3nf8"]
+script = ExtResource("1_lbqvg")
+background_image = ExtResource("5_jpolb")
+text_pt = "E, com medo de tamanha maldade que via, chorava."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[resource]
+script = ExtResource("2_3xla2")
+dialogues = Array[ExtResource("1_lbqvg")]([SubResource("Resource_eadxp"), SubResource("Resource_5q6n1"), SubResource("Resource_vx0x6"), SubResource("Resource_k78cy"), SubResource("Resource_4kn5i"), SubResource("Resource_b3nf8")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
