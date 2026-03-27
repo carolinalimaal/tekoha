@@ -18,47 +18,29 @@ var is_showing: bool
 func _ready() -> void:
 	hide()
 
-#func _unhandled_input(_event: InputEvent) -> void:
-	#if InputManager.get_action_pressed("ui_accept") and is_showing:
-		#var tween = create_tween()
-		## Interpolação usando função seno para deixar mais suave
-		#tween.set_trans(Tween.TRANS_SINE)
-		## Fade-Out
-		#tween.tween_property(self, "modulate:a", 0.0, 0.5)
-		#await tween.finished
-		#hide()
-		#get_tree().paused = false
-		#is_showing = false
-#
-#func show_panel(item_type: GlobalRefs.ItemType, item_data: ConsumableItemData) -> void:
-	#_load_item_data(item_type, item_data)
-	#modulate.a = 0.0
-	#show()
-	#get_tree().paused = true
-	#is_showing = true
-	#var tween = create_tween()
-	## Interpolação usando função seno para deixar mais suave
-	#tween.set_trans(Tween.TRANS_SINE)
-	## Fade-In
-	#tween.tween_property(self, "modulate:a", 1.0, 0.5)
+func _unhandled_input(_event: InputEvent) -> void:
+	if InputManager.get_action_pressed("ui_accept") and is_showing:
+		var tween = create_tween()
+		# Interpolação usando função seno para deixar mais suave
+		tween.set_trans(Tween.TRANS_SINE)
+		# Fade-Out
+		tween.tween_property(self, "modulate:a", 0.0, 0.5)
+		await tween.finished
+		hide()
+		get_tree().paused = false
+		is_showing = false
 
 func show_panel(item_type: GlobalRefs.ItemType, item_data: ConsumableItemData) -> void:
 	_load_item_data(item_type, item_data)
 	modulate.a = 0.0
 	show()
+	get_tree().paused = true
 	is_showing = true
 	var tween = create_tween()
 	# Interpolação usando função seno para deixar mais suave
 	tween.set_trans(Tween.TRANS_SINE)
 	# Fade-In
 	tween.tween_property(self, "modulate:a", 1.0, 0.5)
-	# Espera 2s
-	tween.tween_interval(2.5)
-	# Fade-Out
-	tween.tween_property(self, "modulate:a", 0.0, 0.5)
-	await tween.finished
-	hide()
-	is_showing = false
 
 func _load_item_data(item_type: GlobalRefs.ItemType, item_data: ConsumableItemData) -> void:
 	match item_type:
