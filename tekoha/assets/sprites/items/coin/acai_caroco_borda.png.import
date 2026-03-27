@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmn4cdu2ya3v5"
-path="res://.godot/imported/muiraquita2.png-096adbe9ce3228e59ed8a208c77f0e75.ctex"
+uid="uid://dt0bvasw6kfhi"
+path="res://.godot/imported/acai_caroco_borda.png-ce8518f9f2f17495553c49b30c90e75c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/items/muiraquita/muiraquita2.png"
-dest_files=["res://.godot/imported/muiraquita2.png-096adbe9ce3228e59ed8a208c77f0e75.ctex"]
+source_file="res://assets/sprites/items/coin/acai_caroco_borda.png"
+dest_files=["res://.godot/imported/acai_caroco_borda.png-ce8518f9f2f17495553c49b30c90e75c.ctex"]
 
 [params]
 
