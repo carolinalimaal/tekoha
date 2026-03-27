@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://duntos8imf0u6" path="res://UI/pause_menu/pause_menu.tscn" id="4_mdv7j"]
 [ext_resource type="PackedScene" uid="uid://dfmtpawqvhnlg" path="res://UI/game_over_menu/game_over_menu.tscn" id="4_si673"]
 [ext_resource type="PackedScene" uid="uid://ctwwnea1q8vto" path="res://UI/hud/hud.tscn" id="6_114rs"]
-[ext_resource type="PackedScene" uid="uid://c1k48pyjcab6e" path="res://levels/casa.tscn" id="6_d60g8"]
+[ext_resource type="PackedScene" uid="uid://c1k48pyjcab6e" path="res://levels/house/casa.tscn" id="6_d60g8"]
 [ext_resource type="PackedScene" uid="uid://dwpac52ya1ff2" path="res://UI/new_item_found_panel/new_item_found_panel.tscn" id="7_58oj7"]
 [ext_resource type="PackedScene" uid="uid://cs3n57e1xx86b" path="res://UI/loading_screen/loading_screen.tscn" id="7_si673"]
 

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c1k48pyjcab6e"]
 
 [ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://assets/sprites/tiles/terra_grama/background.tscn" id="1_ismwe"]
-[ext_resource type="Script" uid="uid://cw2gh4q2c5xa3" path="res://levels/casa.gd" id="1_wyrnq"]
+[ext_resource type="Script" uid="uid://cw2gh4q2c5xa3" path="res://levels/house/casa.gd" id="1_wyrnq"]
 [ext_resource type="TileSet" uid="uid://c572ycuwtsljt" path="res://house_tile.tres" id="3_gyguw"]
 [ext_resource type="Texture2D" uid="uid://baepvc7cw1inr" path="res://assets/sprites/tiles/interior_casas/moveis.png" id="4_vd5oq"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="10_4prg2"]
