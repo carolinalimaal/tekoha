@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blg4d3wtkohd4"
-path="res://.godot/imported/arvores.png-ff19fc55db52b2f8ad28cfb0fcbde07f.ctex"
+uid="uid://bfuifh5omshv6"
+path="res://.godot/imported/natureza.png-cb50d6da0873382fa88f4737018bd661.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/terra_grama/arvores.png"
-dest_files=["res://.godot/imported/arvores.png-ff19fc55db52b2f8ad28cfb0fcbde07f.ctex"]
+source_file="res://assets/sprites/tiles/natureza/natureza.png"
+dest_files=["res://.godot/imported/natureza.png-cb50d6da0873382fa88f4737018bd661.ctex"]
 
 [params]
 
