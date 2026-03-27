@@ -88,12 +88,25 @@ func _next_sentence() -> void:
 		_end_speech()
 
 func _end_speech() -> void:
-	solid_background.hide()
-	cutscene_background.hide()
 	dialogue_box.hide()
 	cutscene_box.hide()
 	is_showing = false
 	current_dialogue = []
+	
+	if solid_background.visible and cutscene_background.visible:
+		var fade_tween = create_tween()
+		fade_tween.set_parallel(true)
+		fade_tween.tween_property(cutscene_background, "modulate:a", 0.0, 0.5)
+		fade_tween.tween_property(solid_background, "modulate:a", 0.0, 0.5)
+		
+		await fade_tween.finished
+		
+		solid_background.hide()
+		cutscene_background.hide()
+		
+		solid_background.set_modulate(Color(255, 255, 255, 255))
+		cutscene_background.set_modulate(Color(255, 255, 255, 255))
+		
 	#if player:
 		#player.is_paused = false
 	dialogue_ended.emit()
