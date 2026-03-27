@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://assets/sprites/tiles/terra_grama/background.tscn" id="1_ismwe"]
 [ext_resource type="Script" uid="uid://cw2gh4q2c5xa3" path="res://levels/casa.gd" id="1_wyrnq"]
+[ext_resource type="Resource" uid="uid://bqqf1ha3k1dn8" path="res://data/cutscenes/cutscene_1/cutscene_1.tres" id="2_ign5b"]
 [ext_resource type="TileSet" uid="uid://c572ycuwtsljt" path="res://house_tile.tres" id="3_gyguw"]
 [ext_resource type="Texture2D" uid="uid://baepvc7cw1inr" path="res://assets/sprites/tiles/interior_casas/moveis.png" id="4_vd5oq"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="10_4prg2"]
@@ -11,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://cfwpdmk86lun8" path="res://assets/sprites/props/pots/vaso_01.png" id="11_selil"]
 [ext_resource type="Texture2D" uid="uid://dj5c16c84x6wh" path="res://assets/sprites/props/hammock/rede_save.png" id="12_vd5oq"]
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="13_i1302"]
+[ext_resource type="PackedScene" uid="uid://1fglvxuhlal0" path="res://entities/npcs/iara.tscn" id="13_vd5oq"]
 [ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="14_emlbn"]
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="14_ign5b"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="15_dw8qo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i1302"]
 texture = ExtResource("4_vd5oq")
@@ -82,8 +86,26 @@ fill_to = Vector2(0.5140845, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gyguw"]
 size = Vector2(32, 20)
 
+[sub_resource type="Resource" id="Resource_selil"]
+script = ExtResource("14_ign5b")
+actor_name = "Iara"
+text_pt = "Ola, jovem rapaz, tudo bem? Parece com medo de algo."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_emlbn"]
+script = ExtResource("14_ign5b")
+actor_name = "Curupira"
+text_pt = "Oi... Eu sou o Curupira. Estou preocupado com a natureza. Tive tendo sonho terriveis com ela, pessoas fazendo maldades."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_y2oay"]
+script = ExtResource("15_dw8qo")
+dialogues = Array[ExtResource("14_ign5b")]([SubResource("Resource_selil"), SubResource("Resource_emlbn")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
 [node name="Casa" type="Node2D" unique_id=1391894647]
 script = ExtResource("1_wyrnq")
+cutscene = ExtResource("2_ign5b")
 limit_top = -75
 limit_bottom = 363
 limit_left = -140
@@ -146,3 +168,7 @@ position = Vector2(-46, -202)
 position = Vector2(43.000004, 23)
 rotation = -0.7853982
 hammock_texture = ExtResource("12_vd5oq")
+
+[node name="Iara" parent="." unique_id=435183479 instance=ExtResource("13_vd5oq")]
+position = Vector2(46, 141)
+npc_dialogue = SubResource("Resource_y2oay")

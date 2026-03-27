@@ -26,6 +26,7 @@ GlobalRefs="*res://globals/global_refs.gd"
 GameManager="*res://globals/game_manager.gd"
 InputManager="*uid://bavwf1fj0nui5"
 SaveManager="*uid://rcshhs053h4s"
+DialogueControl="*uid://cqbcsw00s55w2"
 
 [dialogic]
 
