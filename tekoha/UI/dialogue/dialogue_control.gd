@@ -95,7 +95,6 @@ func _end_speech() -> void:
 	
 	if solid_background.visible and cutscene_background.visible:
 		var fade_tween = create_tween()
-		fade_tween.set_parallel(true)
 		fade_tween.tween_property(cutscene_background, "modulate:a", 0.0, 0.5)
 		fade_tween.tween_property(solid_background, "modulate:a", 0.0, 0.5)
 		
