@@ -26,7 +26,6 @@ GlobalRefs="*res://globals/global_refs.gd"
 GameManager="*res://globals/game_manager.gd"
 InputManager="*uid://bavwf1fj0nui5"
 SaveManager="*uid://rcshhs053h4s"
-Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
@@ -79,10 +78,6 @@ audio/channel_defaults={
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [global_group]
 
