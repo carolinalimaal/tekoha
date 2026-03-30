@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cc1753k1fycf4"]
 
 [ext_resource type="Script" uid="uid://du7gb4ysvswcn" path="res://entities/player/player.gd" id="1_fkugw"]
-[ext_resource type="Texture2D" uid="uid://d36nm3vhln3ww" path="res://assets/sprites/entities/player/curupira_spritesheet.png" id="1_wmv1v"]
 [ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="3_mpktj"]
 [ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="4_yg5k4"]
 [ext_resource type="Script" uid="uid://b25oeps4g35sq" path="res://utils/components/hurtbox_component.gd" id="5_8fjmc"]
@@ -673,22 +672,6 @@ region = Rect2(192, 672, 96, 96)
 atlas = ExtResource("7_b2kln")
 region = Rect2(288, 672, 96, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_435lp"]
-atlas = ExtResource("1_wmv1v")
-region = Rect2(96, 576, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8rp3i"]
-atlas = ExtResource("1_wmv1v")
-region = Rect2(192, 576, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gin0e"]
-atlas = ExtResource("1_wmv1v")
-region = Rect2(288, 576, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ief2"]
-atlas = ExtResource("1_wmv1v")
-region = Rect2(384, 576, 96, 96)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gtw6"]
 atlas = ExtResource("7_b2kln")
 region = Rect2(0, 576, 96, 96)
@@ -1354,18 +1337,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_435lp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8rp3i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gin0e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8ief2")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5gtw6")
 }, {
