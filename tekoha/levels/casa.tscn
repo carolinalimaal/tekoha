@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="10_x2bmf"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="11_gyguw"]
 [ext_resource type="Texture2D" uid="uid://cfwpdmk86lun8" path="res://assets/sprites/props/pots/vaso_01.png" id="11_selil"]
-[ext_resource type="Texture2D" uid="uid://dj5c16c84x6wh" path="res://assets/sprites/props/hammock/rede_save.png" id="12_vd5oq"]
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="13_i1302"]
 [ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="14_emlbn"]
 
@@ -190,4 +189,3 @@ position = Vector2(-46, -202)
 [node name="SavePoint" parent="." unique_id=1593957308 instance=ExtResource("11_gyguw")]
 position = Vector2(43.000004, 23)
 rotation = -0.7853982
-hammock_texture = ExtResource("12_vd5oq")
