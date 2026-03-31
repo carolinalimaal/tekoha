@@ -70,6 +70,49 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 128
 sources/0 = SubResource("TileSetAtlasSource_i1302")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd5oq"]
+atlas = ExtResource("11_selil")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1302"]
+atlas = ExtResource("11_selil")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emlbn"]
+atlas = ExtResource("11_selil")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ign5b"]
+atlas = ExtResource("11_selil")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw8qo"]
+atlas = ExtResource("11_selil")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_selil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd5oq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1302")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emlbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ign5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw8qo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Gradient" id="Gradient_ign5b"]
 offsets = PackedFloat32Array(0, 0.9736842)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -111,8 +154,8 @@ tile_set = SubResource("TileSet_emlbn")
 [node name="Fumiture" type="Node2D" parent="." unique_id=1837253683]
 
 [node name="Pot" parent="Fumiture" unique_id=264852977 instance=ExtResource("10_dw8qo")]
-position = Vector2(16, 232)
-sprite = ExtResource("11_selil")
+position = Vector2(20, 228)
+sprite_frames = SubResource("SpriteFrames_selil")
 
 [node name="Bau" parent="Fumiture" unique_id=302874208 instance=ExtResource("13_i1302")]
 position = Vector2(184, 16)
