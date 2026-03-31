@@ -154,7 +154,7 @@ tile_set = SubResource("TileSet_emlbn")
 [node name="Fumiture" type="Node2D" parent="." unique_id=1837253683]
 
 [node name="Pot" parent="Fumiture" unique_id=264852977 instance=ExtResource("10_dw8qo")]
-position = Vector2(20, 228)
+position = Vector2(22, 231)
 sprite_frames = SubResource("SpriteFrames_selil")
 
 [node name="Bau" parent="Fumiture" unique_id=302874208 instance=ExtResource("13_i1302")]
