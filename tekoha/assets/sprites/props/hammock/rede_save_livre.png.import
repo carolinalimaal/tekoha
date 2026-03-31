@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj5c16c84x6wh"
-path="res://.godot/imported/rede_save.png-abcf450167627236b784f881ca5763c2.ctex"
+uid="uid://4hv4ijur8gyw"
+path="res://.godot/imported/rede_save_livre.png-a9a667dcb33955d6edf1b18be58e29b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/props/hammock/rede_save.png"
-dest_files=["res://.godot/imported/rede_save.png-abcf450167627236b784f881ca5763c2.ctex"]
+source_file="res://assets/sprites/props/hammock/rede_save_livre.png"
+dest_files=["res://.godot/imported/rede_save_livre.png-a9a667dcb33955d6edf1b18be58e29b3.ctex"]
 
 [params]
 
