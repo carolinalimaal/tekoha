@@ -11,8 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://c8ui4rfngwjkm" path="res://utils/bush/bush.tscn" id="8_8ey48"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="8_nmlxt"]
 [ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="10_i7xcn"]
-[ext_resource type="Texture2D" uid="uid://cfwpdmk86lun8" path="res://assets/sprites/props/pots/vaso_01.png" id="11_k32l6"]
-[ext_resource type="Texture2D" uid="uid://ctkrxbx1oi552" path="res://assets/sprites/props/pots/vaso_02.png" id="12_5sfiw"]
 [ext_resource type="PackedScene" uid="uid://d2qw38t463t0o" path="res://levels/house/components/house.tscn" id="13_6wb8k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnmfa"]
@@ -527,11 +525,9 @@ position = Vector2(2312, 232)
 
 [node name="Pot" parent="World" unique_id=1469293570 instance=ExtResource("10_i7xcn")]
 position = Vector2(720, 944)
-sprite = ExtResource("11_k32l6")
 
 [node name="Pot2" parent="World" unique_id=2033851781 instance=ExtResource("10_i7xcn")]
 position = Vector2(752, 960)
-sprite = ExtResource("12_5sfiw")
 
 [node name="House" parent="World" unique_id=1616568896 instance=ExtResource("13_6wb8k")]
 position = Vector2(624, 880)
