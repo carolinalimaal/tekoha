@@ -3,16 +3,16 @@ extends Control
 @export var main_menu_music: AudioStream
 
 @onready var menu_options: VBoxContainer = $VBoxContainer/MenuOptions
-@onready var new_game_button: Button = $VBoxContainer/MenuOptions/NewGame
-@onready var load_game_button: Button = $VBoxContainer/MenuOptions/LoadGame
-@onready var options_button: Button = $VBoxContainer/MenuOptions/Options
-@onready var quit_button: Button = $VBoxContainer/MenuOptions/Quit
+@onready var new_game_button: DefaultButton = $VBoxContainer/MenuOptions/NewGame
+@onready var load_game_button: DefaultButton = $VBoxContainer/MenuOptions/LoadGame
+@onready var options_button: DefaultButton = $VBoxContainer/MenuOptions/Options
+@onready var quit_button: DefaultButton = $VBoxContainer/MenuOptions/Quit
 @onready var background: TextureRect = $Background
 
 @onready var confirmation_popup: Panel = $ConfirmationPopup
 @onready var popup_label: Label = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/PopupLabel
-@onready var confirm_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton
-@onready var cancel_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
+@onready var confirm_button: DefaultButton = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton
+@onready var cancel_button: DefaultButton = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
 
 
 var bg_list: Array[Texture2D] = [
@@ -69,6 +69,7 @@ func _on_options_pressed() -> void:
 	pass
 
 func _on_quit_pressed() -> void:
+	await get_tree().create_timer(0.25).timeout
 	get_tree().quit()
 
 func _on_confirm_pressed() -> void:

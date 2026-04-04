@@ -4,10 +4,10 @@
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_usm5j"]
 [ext_resource type="Texture2D" uid="uid://b2ip6k67en3ya" path="res://assets/UI/bg/bg_main_menu_1.png" id="2_usm5j"]
 [ext_resource type="Texture2D" uid="uid://dhcppev66xefc" path="res://assets/UI/logo/tekoha_colorful.svg" id="3_lib8g"]
-[ext_resource type="PackedScene" uid="uid://6eh6tcx4b8rb" path="res://UI/button/button.tscn" id="4_rxajg"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="6_lib8g"]
 [ext_resource type="Theme" uid="uid://bal4gagsnjcr2" path="res://UI/second_theme.tres" id="7_rxajg"]
 [ext_resource type="AudioStream" uid="uid://bvy34itisvfi2" path="res://assets/sound/music/main_menu.mp3" id="8_1dcnu"]
+[ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/button/button.gd" id="9_0xi1j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rxajg"]
 texture = ExtResource("6_lib8g")
@@ -63,21 +63,37 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 alignment = 1
 
-[node name="NewGame" parent="VBoxContainer/MenuOptions" unique_id=1969305162 instance=ExtResource("4_rxajg")]
+[node name="NewGame" type="Button" parent="VBoxContainer/MenuOptions" unique_id=509141453]
+custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
+theme = ExtResource("1_usm5j")
 text = "Novo Jogo"
+script = ExtResource("9_0xi1j")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
-[node name="LoadGame" parent="VBoxContainer/MenuOptions" unique_id=671176931 instance=ExtResource("4_rxajg")]
+[node name="LoadGame" type="Button" parent="VBoxContainer/MenuOptions" unique_id=1254114094]
+custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
+theme = ExtResource("1_usm5j")
 text = "Carregar Jogo"
+script = ExtResource("9_0xi1j")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
-[node name="Options" parent="VBoxContainer/MenuOptions" unique_id=1142161842 instance=ExtResource("4_rxajg")]
+[node name="Options" type="Button" parent="VBoxContainer/MenuOptions" unique_id=419911537]
+custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
+theme = ExtResource("1_usm5j")
 text = "Opções"
+script = ExtResource("9_0xi1j")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
-[node name="Quit" parent="VBoxContainer/MenuOptions" unique_id=1792638291 instance=ExtResource("4_rxajg")]
+[node name="Quit" type="Button" parent="VBoxContainer/MenuOptions" unique_id=1208747961]
+custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
+theme = ExtResource("1_usm5j")
 text = "Sair"
+script = ExtResource("9_0xi1j")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
 [node name="ConfirmationPopup" type="Panel" parent="." unique_id=1902073246]
 layout_mode = 1
@@ -127,16 +143,20 @@ layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="ConfirmButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1282470018]
+[node name="ConfirmButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=994012331]
 custom_minimum_size = Vector2(94.53, 29.5)
 layout_mode = 2
 focus_neighbor_right = NodePath("../CancelButton")
 theme = ExtResource("7_rxajg")
 text = "Continuar"
+script = ExtResource("9_0xi1j")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
-[node name="CancelButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=155563405]
+[node name="CancelButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1312022611]
 custom_minimum_size = Vector2(94.53, 29.5)
 layout_mode = 2
 focus_neighbor_left = NodePath("../ConfirmButton")
 theme = ExtResource("7_rxajg")
 text = "CANCELAR"
+script = ExtResource("9_0xi1j")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
