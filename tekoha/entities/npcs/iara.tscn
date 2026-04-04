@@ -44,7 +44,6 @@ collision_mask = 1937
 motion_mode = 1
 script = ExtResource("1_vnxnj")
 sprite = NodePath("AnimatedSprite2D")
-timeline_name = "timeline_iara"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=567683469]
 position = Vector2(0, 22)

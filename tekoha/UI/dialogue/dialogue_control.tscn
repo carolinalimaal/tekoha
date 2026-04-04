@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cqbcsw00s55w2"]
+
+[ext_resource type="Script" uid="uid://htwa4b33jjy0" path="res://UI/dialogue/dialogue_control.gd" id="1_f0bm7"]
+[ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="1_tlui7"]
+[ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="2_eee5t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f0bm7"]
+texture = ExtResource("1_tlui7")
+
+[node name="DialogueControl" type="CanvasLayer" unique_id=1252305104]
+process_mode = 3
+script = ExtResource("1_f0bm7")
+
+[node name="SolidBackground" type="ColorRect" parent="." unique_id=933009803]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CutsceneBackground" type="TextureRect" parent="." unique_id=1091056519]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="DialogueBox" type="PanelContainer" parent="." unique_id=1580730621]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -425.16504
+offset_top = -241.33002
+offset_right = 425.16504
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_eee5t")
+theme_override_styles/panel = SubResource("StyleBoxTexture_f0bm7")
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueBox" unique_id=948966551]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 52
+theme_override_constants/margin_bottom = 40
+
+[node name="SpeechTextDialogue" type="RichTextLabel" parent="DialogueBox/MarginContainer" unique_id=353063436]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 18
+text = "Personagem"
+
+[node name="CutsceneBox" type="PanelContainer" parent="." unique_id=1399184546]
+self_modulate = Color(1, 1, 1, 0.74509805)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -318.875
+offset_top = -181.0
+offset_right = 318.875
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_eee5t")
+theme_override_styles/panel = SubResource("StyleBoxTexture_f0bm7")
+
+[node name="MarginContainer" type="MarginContainer" parent="CutsceneBox" unique_id=1804442470]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 28
+
+[node name="SpeechTextCutscene" type="RichTextLabel" parent="CutsceneBox/MarginContainer" unique_id=1705030219]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 18
+text = "Personagem"

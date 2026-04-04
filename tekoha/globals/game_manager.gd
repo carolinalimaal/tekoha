@@ -1,5 +1,10 @@
 extends Node
 
+enum GameState {
+	NEW_GAME,
+	TALKED_TO_IARA
+}
+
 var current_save: SaveData
 
 func _ready() -> void:

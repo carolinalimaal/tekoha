@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dlcbi8g3t1t28"]
 
-[ext_resource type="Texture2D" uid="uid://dmn4cdu2ya3v5" path="res://assets/sprites/items/muiraquita/muiraquita2.png" id="1_mjvlh"]
+[ext_resource type="Texture2D" uid="uid://4jyvyqlkdb7d" path="res://assets/sprites/items/muiraquita/muiraquita_borda.png" id="1_mjvlh"]
 [ext_resource type="Script" uid="uid://bkye1g6tmnv67" path="res://utils/resources/items/item_data.gd" id="1_x85h8"]
 
 [resource]

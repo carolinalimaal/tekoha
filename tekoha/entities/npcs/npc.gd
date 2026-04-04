@@ -1,7 +1,7 @@
 class_name NPC extends CharacterBody2D
 
 @export var sprite: AnimatedSprite2D
-@export var timeline_name: String
+@export var npc_dialogue: DialogueSettings
 
 var is_interacting: bool = false
 
@@ -11,8 +11,8 @@ var is_interacting: bool = false
 func _ready() -> void:
 	interact_area.body_entered.connect(_on_player_entered)
 	interact_area.body_exited.connect(_on_player_exited)
-	Dialogic.timeline_started.connect(_on_timeline_started)
-	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	DialogueControl.dialogue_started.connect(_on_timeline_started)
+	DialogueControl.dialogue_ended.connect(_on_timeline_ended)
 	
 	interact_ui.hide()
 
@@ -22,7 +22,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 			interact()
 
 func interact() -> void:
-	Dialogic.start(timeline_name)
+	DialogueControl.start_speech(npc_dialogue)
 	interact_ui.hide()
 
 func _on_player_entered(body: Node2D):

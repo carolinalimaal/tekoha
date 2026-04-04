@@ -1,6 +1,7 @@
 class_name SaveData
 extends Resource
 
+@export var game_state: GameManager.GameState
 @export var player_health: int
 @export var wallet: int
 @export var known_items: Dictionary
@@ -9,6 +10,7 @@ extends Resource
 @export var inventory_slots: Array[ItemSlot]
 
 func _init() -> void:
+	game_state = GameManager.GameState.NEW_GAME
 	player_health = 12
 	wallet = 0
 	known_items = {}

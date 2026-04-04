@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfv16sgha8dhu"]
+[gd_scene format=3 uid="uid://bfv16sgha8dhu"]
 
 [ext_resource type="Script" uid="uid://dbkepn5k5mqk3" path="res://utils/muiraquita/muiraquita.gd" id="1_fubtg"]
-[ext_resource type="Texture2D" uid="uid://dmn4cdu2ya3v5" path="res://assets/sprites/items/muiraquita/muiraquita2.png" id="2_8hme8"]
+[ext_resource type="Texture2D" uid="uid://dmn4cdu2ya3v5" path="res://assets/sprites/items/muiraquita/muiraquita.png" id="2_8hme8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fubtg"]
 radius = 16.0
