@@ -22,10 +22,11 @@ metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=350104011]
 
-[node name="HitboxComponent" type="Area2D" parent="." unique_id=1180637139]
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1180637139 node_paths=PackedStringArray("hitbox_collision")]
 collision_layer = 256
 collision_mask = 4
 script = ExtResource("2_d5pp0")
+hitbox_collision = NodePath("HitboxCollision")
 metadata/_custom_type_script = "uid://2pwu4vjmtkg6"
 
 [node name="HitboxCollision" type="CollisionShape2D" parent="HitboxComponent" unique_id=821494976]

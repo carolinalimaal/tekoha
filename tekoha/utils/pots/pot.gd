@@ -11,6 +11,7 @@ class_name Pote extends StaticBody2D
 
 func _ready() -> void:
 	animated_sprite_2d.sprite_frames = sprite_frames
+	animated_sprite_2d.frame = 0
 	
 	hitbox_component.attack_received.connect(_on_pot_attack_received)
 	health_component.died.connect(_on_pot_destroyed)
@@ -19,7 +20,10 @@ func _on_pot_attack_received(attack_data: AttackData):
 	health_component.take_damage(attack_data)
 	animated_sprite_2d.frame = min(floor(abs(health_component.max_health - health_component.current_health) / 4), 4)
 	
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.BREAKING_POT)
+
 func _on_pot_destroyed():
 	hitbox_component.set_deferred("monitoring", false)
 	hitbox_collision.set_deferred("disabled", true)
 	collision.set_deferred("disabled", true)
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.BREAKING_POT)

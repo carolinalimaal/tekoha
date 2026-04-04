@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b2r8pkfcaxyp8"]
 
 [ext_resource type="Script" uid="uid://dmlhkmyapb517" path="res://globals/audio_manager/audio_manager.gd" id="1_gqfen"]
-[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="2_ix0j0"]
-[ext_resource type="Resource" uid="uid://dm712omsnnpbo" path="res://data/sfx/breaking_pot.tres" id="3_2bgjf"]
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="2_jkr7a"]
+[ext_resource type="Resource" uid="uid://dm712omsnnpbo" path="res://data/sfx/breaking_pot.tres" id="3_ix0j0"]
 
 [node name="AudioManager" type="Node2D" unique_id=1953541211]
 script = ExtResource("1_gqfen")
-sound_effects = Array[ExtResource("2_ix0j0")]([ExtResource("3_2bgjf")])
+sound_effects = Array[ExtResource("2_jkr7a")]([ExtResource("3_ix0j0")])
