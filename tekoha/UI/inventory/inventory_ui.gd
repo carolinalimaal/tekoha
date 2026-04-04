@@ -49,6 +49,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 			_open()
 
 func _open() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.OPEN_MENU)
 	_is_open = true
 	show()
 	get_tree().paused = true
@@ -56,6 +57,7 @@ func _open() -> void:
 	slots[0].item_button.grab_focus() # Primeiro item em foco
 
 func _close() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CLOSE_MENU)
 	_is_open = false
 	hide()
 	get_tree().paused = false

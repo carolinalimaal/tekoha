@@ -24,6 +24,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 			_pause()
 
 func _pause() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.OPEN_MENU)
 	get_tree().paused = true
 	_is_open = true
 	self.show()
@@ -31,6 +32,7 @@ func _pause() -> void:
 	back_button.grab_focus()
 
 func _resume() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CLOSE_MENU)
 	get_tree().paused = false
 	_is_open = false
 	self.hide()
