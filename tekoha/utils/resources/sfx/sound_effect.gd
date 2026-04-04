@@ -7,7 +7,8 @@ enum SOUND_EFFECT_TYPE {
 	# Adicionar os tipos de SFXs
 	BREAKING_POT,
 	UI_CLICK,
-	#UI_HOVER,
+	OPEN_MENU,
+	CLOSE_MENU,
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.
