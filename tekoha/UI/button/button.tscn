@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://6eh6tcx4b8rb"]
+[gd_scene format=3 uid="uid://6eh6tcx4b8rb"]
 
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_2qqt2"]
+[ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/button/button.gd" id="2_1try3"]
 
-[node name="Button" type="Button"]
+[node name="Button" type="Button" unique_id=1354316668]
 custom_minimum_size = Vector2(177.25, 55.313)
 offset_right = 8.0
 offset_bottom = 8.0
 theme = ExtResource("1_2qqt2")
+script = ExtResource("2_1try3")
