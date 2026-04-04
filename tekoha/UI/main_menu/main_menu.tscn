@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://6eh6tcx4b8rb" path="res://UI/button/button.tscn" id="4_rxajg"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="6_lib8g"]
 [ext_resource type="Theme" uid="uid://bal4gagsnjcr2" path="res://UI/second_theme.tres" id="7_rxajg"]
+[ext_resource type="AudioStream" uid="uid://bvy34itisvfi2" path="res://assets/sound/music/main_menu.mp3" id="8_1dcnu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rxajg"]
 texture = ExtResource("6_lib8g")
@@ -21,6 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_usm5j")
 script = ExtResource("1_qtoa1")
+main_menu_music = ExtResource("8_1dcnu")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1025405953]
 custom_minimum_size = Vector2(1152, 648)
