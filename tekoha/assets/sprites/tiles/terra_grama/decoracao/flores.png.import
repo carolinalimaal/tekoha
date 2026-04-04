@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq1n6ahl472l8"
-path="res://.godot/imported/casa_externa_curupira.png-89cd61f7e52092756b1ce06adf7de817.ctex"
+uid="uid://b6qky321g0rj6"
+path="res://.godot/imported/flores.png-d627b18f3418588f79d6d0d864089baa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/terra_grama/casa_externa_curupira.png"
-dest_files=["res://.godot/imported/casa_externa_curupira.png-89cd61f7e52092756b1ce06adf7de817.ctex"]
+source_file="res://assets/sprites/tiles/terra_grama/decoracao/flores.png"
+dest_files=["res://.godot/imported/flores.png-d627b18f3418588f79d6d0d864089baa.ctex"]
 
 [params]
 

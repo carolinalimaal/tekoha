@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cn6gcnndvsxy8"]
 
 [ext_resource type="Script" uid="uid://c2xtmwc8mqu1i" path="res://utils/bau/bau.gd" id="1_rqtb1"]
-[ext_resource type="Texture2D" uid="uid://dn43n5eehuux3" path="res://assets/sprites/props/chest/bau_sheet.png" id="2_pmfbf"]
+[ext_resource type="Texture2D" uid="uid://dmvskebko8h66" path="res://assets/sprites/props/chest/baus_sheets.png" id="2_65fed"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="3_65fed"]
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="5_s4csk"]
 [ext_resource type="Theme" uid="uid://bal4gagsnjcr2" path="res://UI/second_theme.tres" id="6_7hguk"]
@@ -12,43 +12,43 @@ size = Vector2(74, 55)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1cy4"]
 size = Vector2(56, 44)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_65fed"]
-atlas = ExtResource("2_pmfbf")
-region = Rect2(0, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hguk"]
-atlas = ExtResource("2_pmfbf")
-region = Rect2(64, 0, 64, 64)
+atlas = ExtResource("2_65fed")
+region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s4csk"]
-atlas = ExtResource("2_pmfbf")
-region = Rect2(128, 0, 64, 64)
+atlas = ExtResource("2_65fed")
+region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7syt"]
-atlas = ExtResource("2_pmfbf")
-region = Rect2(192, 0, 64, 64)
+atlas = ExtResource("2_65fed")
+region = Rect2(128, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tegxk"]
-atlas = ExtResource("2_pmfbf")
-region = Rect2(256, 0, 64, 64)
+atlas = ExtResource("2_65fed")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4626f"]
+atlas = ExtResource("2_65fed")
+region = Rect2(256, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4626f"]
 animations = [{
 "frames": [{
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_65fed")
-}, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7hguk")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_s4csk")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_p7syt")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tegxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4626f")
 }],
 "loop": false,
 "name": &"bau_animation",
