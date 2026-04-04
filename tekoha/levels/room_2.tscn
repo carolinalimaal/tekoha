@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c8ui4rfngwjkm" path="res://utils/bush/bush.tscn" id="8_8ey48"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="8_nmlxt"]
 [ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="10_i7xcn"]
+[ext_resource type="SpriteFrames" uid="uid://drc4q3kh0ufi2" path="res://assets/sprites/props/pots/vaso_01_2.tres" id="11_jeksu"]
+[ext_resource type="SpriteFrames" uid="uid://cqt7aidvj8f77" path="res://assets/sprites/props/pots/vaso_02_2.tres" id="12_reu2n"]
 [ext_resource type="PackedScene" uid="uid://d2qw38t463t0o" path="res://levels/house/components/house.tscn" id="13_6wb8k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnmfa"]
@@ -525,9 +527,11 @@ position = Vector2(2312, 232)
 
 [node name="Pot" parent="World" unique_id=1469293570 instance=ExtResource("10_i7xcn")]
 position = Vector2(720, 944)
+sprite_frames = ExtResource("11_jeksu")
 
 [node name="Pot2" parent="World" unique_id=2033851781 instance=ExtResource("10_i7xcn")]
 position = Vector2(752, 960)
+sprite_frames = ExtResource("12_reu2n")
 
 [node name="House" parent="World" unique_id=1616568896 instance=ExtResource("13_6wb8k")]
 position = Vector2(624, 880)
