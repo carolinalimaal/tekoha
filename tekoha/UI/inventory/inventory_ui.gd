@@ -18,8 +18,8 @@ var _current_slot_selected: InventorySlotUI = null
 
 @onready var _confirmation_popup: Panel = $ConfirmationPopup
 @onready var _popup_label: Label = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/PopupLabel
-@onready var _confirm_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton
-@onready var _cancel_button: Button = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
+@onready var _confirm_button: DefaultButton = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton
+@onready var _cancel_button: DefaultButton = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
 
 
 func _ready() -> void:
