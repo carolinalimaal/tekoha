@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bogdsqrpohorl"
-path="res://.godot/imported/breaking_pot.wav-aea45358259c41fc5d692e148061ffbe.sample"
+path="res://.godot/imported/breaking_pot.wav-f696efee5fdd32b68eda2f7a34d4f150.sample"
 
 [deps]
 
-source_file="res://assets/sound/sfx/breaking_pot.wav"
-dest_files=["res://.godot/imported/breaking_pot.wav-aea45358259c41fc5d692e148061ffbe.sample"]
+source_file="res://assets/sound/sfx/enviroment/breaking_pot.wav"
+dest_files=["res://.godot/imported/breaking_pot.wav-f696efee5fdd32b68eda2f7a34d4f150.sample"]
 
 [params]
 
