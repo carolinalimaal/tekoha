@@ -10,8 +10,8 @@ var detecting_player: bool
 @onready var interaction_ui: CanvasLayer = $InteractionUI
 @onready var interaction_container: MarginContainer = $InteractionUI/InteractionContainer
 @onready var confirmation_popup: Panel = $InteractionUI/ConfirmationPopup
-@onready var confirm_button: Button = $InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton
-@onready var cancel_button: Button = $InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
+@onready var confirm_button: DefaultButton = $InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton
+@onready var cancel_button: DefaultButton = $InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
 
 func _ready() -> void:
 	interaction_area.body_entered.connect(_on_body_entered)

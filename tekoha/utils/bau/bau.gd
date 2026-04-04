@@ -14,8 +14,8 @@ var can_interact: bool = false
 @onready var item_image: TextureRect = $InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/ItemImage
 
 @onready var buttons_container: HBoxContainer = $InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/ButtonsContainer
-@onready var accept_button: Button = $InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/ButtonsContainer/AcceptButton
-@onready var decline_button: Button = $InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/ButtonsContainer/DeclineButton
+@onready var accept_button: DefaultButton = $InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/ButtonsContainer/AcceptButton
+@onready var decline_button: DefaultButton = $InteractionUI/ShowItemPanel/Bg/MarginContainer/HBoxContainer/VBoxContainer/ButtonsContainer/DeclineButton
 
 
 func _ready() -> void:
