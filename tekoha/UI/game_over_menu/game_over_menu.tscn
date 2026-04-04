@@ -1,10 +1,38 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfmtpawqvhnlg"]
+[gd_scene format=3 uid="uid://dfmtpawqvhnlg"]
 
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_je7hj"]
 [ext_resource type="Script" uid="uid://dufyiwgpn6pg7" path="res://UI/game_over_menu/game_over_menu.gd" id="2_qbkh2"]
+[ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/button/button.gd" id="3_ya04a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_je7hj"]
 bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+
+[sub_resource type="Animation" id="Animation_qbkh2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.101960786, 0.101960786, 0.101960786, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_je7hj"]
 resource_name = "new_animation"
@@ -34,40 +62,13 @@ tracks/1/keys = {
 "values": [Color(0.101960786, 0.101960786, 0.101960786, 0), Color(0.101960786, 0.101960786, 0.101960786, 0.7058824)]
 }
 
-[sub_resource type="Animation" id="Animation_qbkh2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel:theme_override_styles/panel:bg_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.101960786, 0.101960786, 0.101960786, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ya04a"]
 _data = {
 &"RESET": SubResource("Animation_qbkh2"),
 &"default": SubResource("Animation_je7hj")
 }
 
-[node name="GameOverMenu" type="Control"]
+[node name="GameOverMenu" type="Control" unique_id=251347232]
 process_mode = 3
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
@@ -79,7 +80,7 @@ grow_vertical = 2
 theme = ExtResource("1_je7hj")
 script = ExtResource("2_qbkh2")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=90004148]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,7 +89,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_je7hj")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=2117336075]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -100,28 +101,31 @@ grow_vertical = 2
 theme_override_constants/separation = 32
 alignment = 1
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1079567845]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Você Morreu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=195025032]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="ContinueButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="ContinueButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1309139838]
 custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
+theme = ExtResource("1_je7hj")
 text = "Continuar"
+script = ExtResource("3_ya04a")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
-[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=954123903]
 custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
 text = "Menu Principal"
+script = ExtResource("3_ya04a")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ya04a")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1836214076]
+libraries/ = SubResource("AnimationLibrary_ya04a")
