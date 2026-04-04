@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://drc4q3kh0ufi2"]
+
+[ext_resource type="Texture2D" uid="uid://cfwpdmk86lun8" path="res://assets/sprites/props/pots/vaso_01.png" id="1_tx4hg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a462"]
+atlas = ExtResource("1_tx4hg")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44mqj"]
+atlas = ExtResource("1_tx4hg")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejtmw"]
+atlas = ExtResource("1_tx4hg")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcijf"]
+atlas = ExtResource("1_tx4hg")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt1ap"]
+atlas = ExtResource("1_tx4hg")
+region = Rect2(256, 64, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a462")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44mqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejtmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcijf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt1ap")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
