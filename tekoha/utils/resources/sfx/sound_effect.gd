@@ -6,6 +6,8 @@ extends Resource
 enum SOUND_EFFECT_TYPE {
 	# Adicionar os tipos de SFXs
 	BREAKING_POT,
+	UI_CLICK,
+	#UI_HOVER,
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.
