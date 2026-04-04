@@ -8,7 +8,7 @@ signal slot_unhighlighted(slot: InventorySlotUI)
 var item_slot: ItemSlot
 
 @onready var item_icon: TextureRect = $ItemIcon
-@onready var item_button: DefaultButton = $ItemButton
+@onready var item_button: Button = $ItemButton
 
 func _ready() -> void:
 	# Sinais para interacao de click, hover e focus

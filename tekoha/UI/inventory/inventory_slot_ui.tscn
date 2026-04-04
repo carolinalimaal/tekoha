@@ -1,14 +1,13 @@
-[gd_scene format=3 uid="uid://b3cbxargqp6kv"]
+[gd_scene load_steps=5 format=3 uid="uid://b3cbxargqp6kv"]
 
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_eou6k"]
 [ext_resource type="Script" uid="uid://b8ktkive2vulr" path="res://UI/inventory/inventory_slot_ui.gd" id="2_x4wo6"]
-[ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/button/button.gd" id="3_2pmw2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x4wo6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2pmw2"]
 
-[node name="InventorySlotUI" type="Control" unique_id=965805098]
+[node name="InventorySlotUI" type="Control"]
 custom_minimum_size = Vector2(106, 102)
 layout_mode = 3
 anchors_preset = 15
@@ -21,7 +20,7 @@ grow_vertical = 2
 theme = ExtResource("1_eou6k")
 script = ExtResource("2_x4wo6")
 
-[node name="ItemIcon" type="TextureRect" parent="." unique_id=1713780847]
+[node name="ItemIcon" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 1
 anchors_preset = 8
@@ -38,7 +37,7 @@ grow_vertical = 2
 expand_mode = 3
 stretch_mode = 5
 
-[node name="ItemButton" type="Button" parent="." unique_id=908914259]
+[node name="ItemButton" type="Button" parent="."]
 custom_minimum_size = Vector2(106, 102)
 layout_mode = 1
 anchors_preset = 15
@@ -48,5 +47,3 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_x4wo6")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_2pmw2")
-script = ExtResource("3_2pmw2")
-metadata/_custom_type_script = "uid://dy6wirss0gjld"

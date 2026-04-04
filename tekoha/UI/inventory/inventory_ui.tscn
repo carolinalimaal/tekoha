@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b3cbxargqp6kv" path="res://UI/inventory/inventory_slot_ui.tscn" id="4_732id"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="5_3rh6v"]
 [ext_resource type="Theme" uid="uid://bal4gagsnjcr2" path="res://UI/second_theme.tres" id="6_b3oob"]
-[ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/button/button.gd" id="8_6q7id"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b3oob"]
 texture = ExtResource("5_3rh6v")
@@ -174,20 +173,16 @@ layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="ConfirmButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=230807143]
+[node name="ConfirmButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=324493634]
 custom_minimum_size = Vector2(94.53, 29.5)
 layout_mode = 2
 focus_neighbor_right = NodePath("../CancelButton")
 theme = ExtResource("6_b3oob")
 text = "Usar"
-script = ExtResource("8_6q7id")
-metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
-[node name="CancelButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1697512449]
+[node name="CancelButton" type="Button" parent="ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=567710300]
 custom_minimum_size = Vector2(94.53, 29.5)
 layout_mode = 2
 focus_neighbor_left = NodePath("../ConfirmButton")
 theme = ExtResource("6_b3oob")
 text = "CANCELAR"
-script = ExtResource("8_6q7id")
-metadata/_custom_type_script = "uid://dy6wirss0gjld"
