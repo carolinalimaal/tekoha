@@ -105,6 +105,8 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_h3kau")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_1e7m2"]
+
 [sub_resource type="Gradient" id="Gradient_ign5b"]
 offsets = PackedFloat32Array(0, 0.9736842)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -151,6 +153,7 @@ tile_set = SubResource("TileSet_02v6b")
 
 [node name="Pot" parent="Fumiture" unique_id=264852977 instance=ExtResource("10_dw8qo")]
 position = Vector2(16, 232)
+sprite_frames = SubResource("SpriteFrames_1e7m2")
 
 [node name="Bau" parent="Fumiture" unique_id=302874208 instance=ExtResource("13_i1302")]
 position = Vector2(184, 16)
