@@ -1,5 +1,7 @@
 extends Control
 
+@export var main_menu_music: AudioStream
+
 @onready var menu_options: VBoxContainer = $VBoxContainer/MenuOptions
 @onready var new_game_button: Button = $VBoxContainer/MenuOptions/NewGame
 @onready var load_game_button: Button = $VBoxContainer/MenuOptions/LoadGame
@@ -29,6 +31,7 @@ func _ready() -> void:
 	cancel_button.pressed.connect(_on_cancel_pressed)
 	
 	new_game_button.grab_focus()
+	AudioManager.play_background_sound(main_menu_music)
 	
 	var random_number: int = randi_range(0, 2)
 	background.texture = bg_list[random_number]
@@ -53,10 +56,12 @@ func _on_new_game_pressed() -> void:
 				b.focus_mode = Control.FOCUS_NONE
 	else:
 		GameManager.current_save = SaveData.new()
+		AudioManager.stop_background_sound()
 		get_tree().change_scene_to_file("res://globals/main_scene/main.tscn")
 
 func _on_load_game_pressed() -> void:
 	# TODO: Funcionalidade de carregar jogo salvo
+	AudioManager.stop_background_sound()
 	get_tree().change_scene_to_file("res://globals/main_scene/main.tscn")
 
 func _on_options_pressed() -> void:
@@ -68,6 +73,7 @@ func _on_quit_pressed() -> void:
 
 func _on_confirm_pressed() -> void:
 	GameManager.current_save = SaveData.new()
+	AudioManager.stop_background_sound()
 	get_tree().change_scene_to_file("res://globals/main_scene/main.tscn")
 
 func _on_cancel_pressed() -> void:
