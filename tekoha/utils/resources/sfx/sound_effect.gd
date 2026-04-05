@@ -9,6 +9,12 @@ enum SOUND_EFFECT_TYPE {
 	UI_CLICK,
 	OPEN_MENU,
 	CLOSE_MENU,
+	CURUPIRA_WALK,
+	CURUPIRA_ATTACK_1,
+	CURUPIRA_ATTACK_2,
+	CURUPIRA_ROLL,
+	CURUPIRA_STUN,
+	CURUPIRA_DEATH
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.
