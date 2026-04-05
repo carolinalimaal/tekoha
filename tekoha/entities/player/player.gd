@@ -106,3 +106,6 @@ func _on_player_attack_received(attack_data: AttackData):
 func heal(amount: int):
 	health_component.heal(amount)
 	health_changed.emit()
+
+func play_sfx_walk() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.CURUPIRA_WALK)
