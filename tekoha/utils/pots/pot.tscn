@@ -18,7 +18,7 @@ script = ExtResource("1_3211e")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=674505068]
 script = ExtResource("1_d5pp0")
-max_health = 4
+max_health = 2
 metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=350104011]
