@@ -1,16 +1,16 @@
 extends Control
 
-@onready var back_to_game_button: Button = $MenuOptions/BackToGame
-@onready var options_button: Button = $MenuOptions/Options
-@onready var back_to_main_menu_button: Button = $MenuOptions/BackToMainMenu
+@onready var back_button: DefaultButton = $MenuOptions/Back
+@onready var options_button: DefaultButton = $MenuOptions/Options
+@onready var main_menu: DefaultButton = $MenuOptions/MainMenu
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var _is_open : bool = false
 
 func _ready() -> void:
-	back_to_game_button.pressed.connect(_on_back_to_game_pressed)
+	back_button.pressed.connect(_on_back_to_game_pressed)
 	options_button.pressed.connect(_on_options_pressed)
-	back_to_main_menu_button.pressed.connect(_on_back_to_main_menu_pressed)
+	main_menu.pressed.connect(_on_back_to_main_menu_pressed)
 	
 	animation_player.play("RESET")
 	
@@ -24,13 +24,15 @@ func _unhandled_input(_event: InputEvent) -> void:
 			_pause()
 
 func _pause() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.OPEN_MENU)
 	get_tree().paused = true
 	_is_open = true
 	self.show()
 	animation_player.play("pause")
-	back_to_game_button.grab_focus()
+	back_button.grab_focus()
 
 func _resume() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CLOSE_MENU)
 	get_tree().paused = false
 	_is_open = false
 	self.hide()

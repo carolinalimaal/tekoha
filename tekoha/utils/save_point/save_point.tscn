@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://4hv4ijur8gyw" path="res://assets/sprites/props/hammock/rede_save_livre.png" id="2_rp8wi"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="3_c5jgo"]
 [ext_resource type="Theme" uid="uid://bal4gagsnjcr2" path="res://UI/second_theme.tres" id="4_c5jgo"]
+[ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/button/button.gd" id="6_pg33l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5jgo"]
 size = Vector2(32, 94)
@@ -116,16 +117,20 @@ layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="ConfirmButton" type="Button" parent="InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=219431445]
+[node name="ConfirmButton" type="Button" parent="InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=929434708]
 custom_minimum_size = Vector2(94.53, 29.5)
 layout_mode = 2
 focus_neighbor_right = NodePath("../CancelButton")
 theme = ExtResource("4_c5jgo")
 text = "Salvar"
+script = ExtResource("6_pg33l")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
-[node name="CancelButton" type="Button" parent="InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1190292447]
+[node name="CancelButton" type="Button" parent="InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=808441684]
 custom_minimum_size = Vector2(94.53, 29.5)
 layout_mode = 2
 focus_neighbor_left = NodePath("../ConfirmButton")
 theme = ExtResource("4_c5jgo")
 text = "CANCELAR"
+script = ExtResource("6_pg33l")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"

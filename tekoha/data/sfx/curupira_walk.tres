@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://dt2fs32m4hfnb"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_38032"]
+[ext_resource type="AudioStream" uid="uid://xih3x3uwtsm" path="res://assets/sound/sfx/entities/curupira_walk.wav" id="2_1juas"]
+
+[resource]
+script = ExtResource("1_38032")
+type = 4
+sound_effect = ExtResource("2_1juas")
+volume = -25.0
+pitch_randomness = 0.2
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"

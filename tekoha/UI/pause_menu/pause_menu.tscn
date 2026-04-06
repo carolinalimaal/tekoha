@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://duntos8imf0u6"]
+[gd_scene format=3 uid="uid://duntos8imf0u6"]
 
 [ext_resource type="Script" uid="uid://4xy0bbutyqvj" path="res://UI/pause_menu/pause_menu.gd" id="1_2n0y6"]
-[ext_resource type="PackedScene" uid="uid://6eh6tcx4b8rb" path="res://UI/button/button.tscn" id="1_bsi2c"]
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_mc6od"]
+[ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/button/button.gd" id="3_mc6od"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n0y6"]
 bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
@@ -68,7 +68,7 @@ _data = {
 &"pause": SubResource("Animation_mc6od")
 }
 
-[node name="PauseMenu" type="Control"]
+[node name="PauseMenu" type="Control" unique_id=166965682]
 process_mode = 3
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
@@ -80,7 +80,7 @@ grow_vertical = 2
 theme = ExtResource("1_mc6od")
 script = ExtResource("1_2n0y6")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1524101190]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,7 +89,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2n0y6")
 
-[node name="MenuOptions" type="VBoxContainer" parent="."]
+[node name="MenuOptions" type="VBoxContainer" parent="." unique_id=820479951]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 1
 anchors_preset = 8
@@ -106,19 +106,29 @@ grow_vertical = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="BackToGame" parent="MenuOptions" instance=ExtResource("1_bsi2c")]
+[node name="Back" type="Button" parent="MenuOptions" unique_id=1478587972]
+custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
+theme = ExtResource("1_mc6od")
 text = "Voltar"
+script = ExtResource("3_mc6od")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
-[node name="Options" parent="MenuOptions" instance=ExtResource("1_bsi2c")]
+[node name="Options" type="Button" parent="MenuOptions" unique_id=1615726804]
+custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
+theme = ExtResource("1_mc6od")
 text = "Opções"
+script = ExtResource("3_mc6od")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
-[node name="BackToMainMenu" parent="MenuOptions" instance=ExtResource("1_bsi2c")]
+[node name="MainMenu" type="Button" parent="MenuOptions" unique_id=547291432]
+custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
+theme = ExtResource("1_mc6od")
 text = "Menu Principal"
+script = ExtResource("3_mc6od")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_0q86m")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1191772848]
+libraries/ = SubResource("AnimationLibrary_0q86m")

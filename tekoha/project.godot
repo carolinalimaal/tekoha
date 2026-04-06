@@ -19,6 +19,10 @@ run/main_scene="uid://bdopbw67bxvxq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ce8722fgpni35"
+
 [autoload]
 
 GlobalSignals="*res://globals/global_signals.gd"
@@ -26,6 +30,7 @@ GlobalRefs="*res://globals/global_refs.gd"
 GameManager="*res://globals/game_manager.gd"
 InputManager="*uid://bavwf1fj0nui5"
 SaveManager="*uid://rcshhs053h4s"
+AudioManager="*uid://b2r8pkfcaxyp8"
 DialogueControl="*uid://cqbcsw00s55w2"
 
 [dialogic]

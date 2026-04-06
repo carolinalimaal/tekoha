@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b2r8pkfcaxyp8"]
+
+[ext_resource type="Script" uid="uid://dmlhkmyapb517" path="res://globals/audio_manager/audio_manager.gd" id="1_gqfen"]
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="2_jkr7a"]
+[ext_resource type="Resource" uid="uid://dm712omsnnpbo" path="res://data/sfx/breaking_pot.tres" id="3_2bgjf"]
+[ext_resource type="Resource" uid="uid://befiltkfwjx2m" path="res://data/sfx/ui_click.tres" id="4_1d2wt"]
+[ext_resource type="Resource" uid="uid://dpaix4628y4ba" path="res://data/sfx/open_menu.tres" id="5_ulrmu"]
+[ext_resource type="Resource" uid="uid://dfu478ac72ads" path="res://data/sfx/close_menu.tres" id="6_fdt5a"]
+[ext_resource type="Resource" uid="uid://dt2fs32m4hfnb" path="res://data/sfx/curupira_walk.tres" id="7_fdt5a"]
+
+[node name="AudioManager" type="Node2D" unique_id=1953541211]
+process_mode = 3
+script = ExtResource("1_gqfen")
+sound_effects = Array[ExtResource("2_jkr7a")]([ExtResource("3_2bgjf"), ExtResource("4_1d2wt"), ExtResource("5_ulrmu"), ExtResource("6_fdt5a"), ExtResource("7_fdt5a")])

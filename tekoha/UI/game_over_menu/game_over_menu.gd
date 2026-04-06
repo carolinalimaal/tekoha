@@ -1,7 +1,7 @@
 extends Control
 
-@onready var continue_button: Button = $Panel/VBoxContainer/HBoxContainer/ContinueButton
-@onready var main_manu_button: Button = $Panel/VBoxContainer/HBoxContainer/MainMenuButton
+@onready var continue_button: DefaultButton = $Panel/VBoxContainer/HBoxContainer/ContinueButton
+@onready var main_manu_button: DefaultButton = $Panel/VBoxContainer/HBoxContainer/MainMenuButton
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
