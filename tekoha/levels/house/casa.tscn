@@ -120,6 +120,7 @@ fill_to = Vector2(0.5140845, 1)
 size = Vector2(32, 20)
 
 [node name="Casa" type="Node2D" unique_id=1391894647]
+y_sort_enabled = true
 script = ExtResource("1_wyrnq")
 cutscene = ExtResource("2_1e7m2")
 limit_top = -75
@@ -128,6 +129,7 @@ limit_left = -140
 limit_right = 539
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1518279033]
+z_index = -5
 
 [node name="Background" parent="Tiles" unique_id=1987475052 instance=ExtResource("1_ismwe")]
 position = Vector2(192, 127)
@@ -149,6 +151,7 @@ tile_map_data = PackedByteArray("AAAFAAgAAAAGAAIAAAAGAAgAAAAHAAIAAAAEAAgAAAAFAAI
 tile_set = SubResource("TileSet_02v6b")
 
 [node name="Fumiture" type="Node2D" parent="." unique_id=1837253683]
+y_sort_enabled = true
 
 [node name="Pot" parent="Fumiture" unique_id=264852977 instance=ExtResource("10_dw8qo")]
 position = Vector2(22, 232)
