@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cudaprnhd7e17"]
 
-[ext_resource type="Script" uid="uid://dkxarylmcik8v" path="res://levels/room_2.gd" id="1_5ituv"]
+[ext_resource type="Script" uid="uid://dkxarylmcik8v" path="res://levels/room_2/room_2.gd" id="1_5ituv"]
 [ext_resource type="TileSet" uid="uid://b1q61b6dvqte7" path="res://assets/sprites/tiles/terra_grama/grass_dirt_tiles.tres" id="2_q1wk2"]
 [ext_resource type="TileSet" uid="uid://bb5jgkxlak3pq" path="res://assets/sprites/tiles/terra_grama/decoracao/decoration_grass_tiles.tres" id="3_jeksu"]
 [ext_resource type="TileSet" uid="uid://bxlgig16enoj4" path="res://assets/sprites/tiles/terra_grama/decoracao/tree_tiles.tres" id="4_reu2n"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="10_i7xcn"]
 [ext_resource type="SpriteFrames" uid="uid://drc4q3kh0ufi2" path="res://assets/sprites/props/pots/vaso_01_2.tres" id="11_jeksu"]
 [ext_resource type="SpriteFrames" uid="uid://cqt7aidvj8f77" path="res://assets/sprites/props/pots/vaso_02_2.tres" id="12_reu2n"]
-[ext_resource type="PackedScene" uid="uid://d2qw38t463t0o" path="res://levels/house/components/house.tscn" id="13_6wb8k"]
+[ext_resource type="PackedScene" uid="uid://d2qw38t463t0o" path="res://levels/room_1/components/house.tscn" id="13_6wb8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ey48"]
 size = Vector2(64, 48)

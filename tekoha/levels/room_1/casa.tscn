@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c1k48pyjcab6e"]
 
 [ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://assets/sprites/tiles/terra_grama/background.tscn" id="1_ismwe"]
-[ext_resource type="Script" uid="uid://cw2gh4q2c5xa3" path="res://levels/house/casa.gd" id="1_wyrnq"]
+[ext_resource type="Script" uid="uid://cw2gh4q2c5xa3" path="res://levels/room_1/casa.gd" id="1_wyrnq"]
 [ext_resource type="Resource" uid="uid://bqqf1ha3k1dn8" path="res://data/cutscenes/cutscene_1/cutscene_1.tres" id="2_1e7m2"]
 [ext_resource type="Texture2D" uid="uid://baepvc7cw1inr" path="res://assets/sprites/tiles/interior_casas/moveis.png" id="4_vd5oq"]
 [ext_resource type="TileSet" uid="uid://ckp1proet01b6" path="res://assets/sprites/tiles/interior_casas/house_tile_set.tres" id="5_h3kau"]
@@ -109,11 +109,11 @@ tile_map_data = PackedByteArray("AAAAAP//AAACAAEAAAABAP//AAACAAEAAAACAP//AAACAAE
 tile_set = ExtResource("5_h3kau")
 
 [node name="NetWall" type="TileMapLayer" parent="Tiles" unique_id=1669886667]
-tile_map_data = PackedByteArray("AAAAAAIAAAACAAEAAAABAAIAAAADAAIAAAA=")
+tile_map_data = PackedByteArray("AAACAP7/AAABAAQAAAACAP//AAADAAQAAAACAAAAAAADAAQAAAA=")
 tile_set = ExtResource("5_h3kau")
 
 [node name="HouseFurniture" type="TileMapLayer" parent="Tiles" unique_id=1696911522]
-tile_map_data = PackedByteArray("AAAGAAUAAAAAAAUAAAAGAAQAAAAAAAQAAAAHAAQAAAABAAQAAAAHAAUAAAABAAUAAAAKAP//AAACAAEAAAAHAAAAAAACAAQAAAAHAAEAAAACAAUAAAAIAAEAAAADAAUAAAAIAAAAAAADAAQAAAAJAP7/AAABAAAAAAAKAP7/AAACAAAAAAAJAAAAAAAAAAEAAAAKAAAAAAAAAAIAAAADAP//AAAEAAAAAAADAAAAAAAEAAEAAAAEAAcAAAABAAMAAAAFAAcAAAACAAMAAAAGAAcAAAADAAMAAAAGAAYAAAADAAIAAAAFAAYAAAACAAIAAAAEAAYAAAABAAIAAAA=")
+tile_map_data = PackedByteArray("AAAGAAUAAAAAAAUAAAAGAAQAAAAAAAQAAAAHAAQAAAABAAQAAAAHAAUAAAABAAUAAAAKAP//AAACAAEAAAAHAAAAAAACAAQAAAAHAAEAAAACAAUAAAAIAAEAAAADAAUAAAAIAAAAAAADAAQAAAAJAP7/AAABAAAAAAAKAP7/AAACAAAAAAAJAAAAAAAAAAEAAAAKAAAAAAAAAAIAAAAEAAcAAAABAAMAAAAFAAcAAAACAAMAAAAGAAcAAAADAAMAAAAGAAYAAAADAAIAAAAFAAYAAAACAAIAAAAEAAYAAAABAAIAAAAEAAAAAAAEAAEAAAAEAP//AAAEAAAAAAA=")
 tile_set = SubResource("TileSet_emlbn")
 
 [node name="Porta" type="TileMapLayer" parent="Tiles" unique_id=285423174]
@@ -129,7 +129,7 @@ position = Vector2(22, 232)
 sprite_frames = ExtResource("8_h3kau")
 
 [node name="Bau" parent="Fumiture" unique_id=302874208 instance=ExtResource("13_i1302")]
-position = Vector2(184, 16)
+position = Vector2(202, 16)
 item = ExtResource("14_emlbn")
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1052331891]
@@ -160,6 +160,5 @@ position = Vector2(-46, -202)
 
 [node name="SavePoint" parent="." unique_id=1593957308 instance=ExtResource("11_gyguw")]
 z_index = -5
-position = Vector2(20.000004, 23)
-rotation = -1.5707964
+position = Vector2(46.000004, -3)
 hammock_texture = ExtResource("12_vd5oq")
