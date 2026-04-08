@@ -195,15 +195,14 @@ script = ExtResource("7_607sj")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Room3Door" type="Area2D" parent="." unique_id=449525539]
-position = Vector2(712, 94)
+position = Vector2(727, 94)
 script = ExtResource("8_607sj")
 target_level_path = "uid://cudaprnhd7e17"
 door_name = "Room3Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room3Door" unique_id=41526836]
-position = Vector2(10, 0)
 shape = SubResource("RectangleShape2D_w2msv")
 
 [node name="Marker2D" type="Marker2D" parent="Room3Door" unique_id=1094404449]
-position = Vector2(-77, 100)
+position = Vector2(-92, 77)
