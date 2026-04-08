@@ -3,6 +3,7 @@ extends Level
 @export var cutscene: DialogueSettings
 
 func _ready() -> void:
+	print("Casa carregada")
 	DialogueControl.dialogue_started.connect(_on_cutscene_started)
 	DialogueControl.dialogue_ended.connect(_on_cutscene_ended)
 	

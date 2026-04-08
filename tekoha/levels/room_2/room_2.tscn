@@ -14,8 +14,11 @@
 [ext_resource type="SpriteFrames" uid="uid://cqt7aidvj8f77" path="res://assets/sprites/props/pots/vaso_02_2.tres" id="12_reu2n"]
 [ext_resource type="PackedScene" uid="uid://d2qw38t463t0o" path="res://levels/room_1/components/house.tscn" id="13_6wb8k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ey48"]
-size = Vector2(64, 48)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khgse"]
+size = Vector2(36, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eta5w"]
+size = Vector2(166, 19)
 
 [node name="Room2" type="Node2D" unique_id=1916809086]
 y_sort_enabled = true
@@ -83,12 +86,27 @@ sprite_frames = ExtResource("12_reu2n")
 position = Vector2(624, 880)
 
 [node name="HouseDoor" parent="." unique_id=595878266 instance=ExtResource("7_uev6a")]
-position = Vector2(624, 941)
+position = Vector2(624, 963)
+monitorable = false
 target_level_path = "uid://c1k48pyjcab6e"
 door_name = "HouseDoor"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseDoor" unique_id=1319267029]
-shape = SubResource("RectangleShape2D_8ey48")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseDoor" unique_id=1966801129]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_khgse")
 
-[node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=913443819]
-position = Vector2(0, 100)
+[node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=1532514667]
+position = Vector2(-1, 70)
+
+[node name="Room3Door" parent="." unique_id=42071688 instance=ExtResource("7_uev6a")]
+position = Vector2(2067, 1650)
+monitorable = false
+target_level_path = "uid://by0aaf7e4rakj"
+door_name = "Room3Door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3Door" unique_id=1743485592]
+position = Vector2(1, -7.5)
+shape = SubResource("RectangleShape2D_eta5w")
+
+[node name="Marker2D" type="Marker2D" parent="Room3Door" unique_id=2112625929]
+position = Vector2(0, -70)
