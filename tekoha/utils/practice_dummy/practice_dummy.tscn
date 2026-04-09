@@ -12,17 +12,24 @@ region = Rect2(0, 0, 64, 64)
 atlas = ExtResource("1_h11rr")
 region = Rect2(64, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nj5e"]
+atlas = ExtResource("1_h11rr")
+region = Rect2(0, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_b8ncn"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_b8ncn")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_tacx3")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1nj5e")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"damage_anim",
 "speed": 5.0
 }]
 
@@ -42,6 +49,7 @@ script = ExtResource("1_1nj5e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=597375774]
 sprite_frames = SubResource("SpriteFrames_b8ncn")
+animation = &"damage_anim"
 
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=322498206]
 collision_layer = 256
@@ -82,7 +90,6 @@ wait_time = 1.5
 one_shot = true
 
 [node name="InteractionUI" type="CanvasLayer" parent="." unique_id=154580997]
-visible = false
 
 [node name="InteractionContainer" type="MarginContainer" parent="InteractionUI" unique_id=1291877923]
 anchors_preset = 3

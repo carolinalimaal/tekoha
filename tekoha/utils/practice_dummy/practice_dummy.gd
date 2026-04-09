@@ -44,6 +44,7 @@ func _on_interaction_area_body_exited(body: Node2D) -> void:
 		can_interact = false
 
 func _on_attack_received(attack_data: AttackData):
+	animated_sprite.play("damage_anim")
 	if current_state != TutorialState.NOT_INITIATED:
 		match current_state:
 			TutorialState.ATTACK_1:
