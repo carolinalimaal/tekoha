@@ -90,6 +90,7 @@ wait_time = 1.5
 one_shot = true
 
 [node name="InteractionUI" type="CanvasLayer" parent="." unique_id=154580997]
+visible = false
 
 [node name="InteractionContainer" type="MarginContainer" parent="InteractionUI" unique_id=1291877923]
 anchors_preset = 3
@@ -97,7 +98,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -256.0
+offset_left = -262.0
 offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0

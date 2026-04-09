@@ -16,6 +16,7 @@ var current_state: TutorialState = TutorialState.NOT_INITIATED
 @onready var tutorial_limit_2: StaticBody2D = $Limits/TutorialLimit2
 @onready var finish_timer: Timer = $FinishTimer
 @onready var interaction_ui: CanvasLayer = $InteractionUI
+@onready var int_container: MarginContainer = $InteractionUI/InteractionContainer
 @onready var int_ui_label: Label = $InteractionUI/InteractionContainer/ColorRect/Label
 var can_interact: bool = false
 
@@ -86,17 +87,25 @@ func set_limits_layer(condition: bool):
 func update_ui():
 	match current_state:
 		TutorialState.ATTACK_1:
+			interaction_container_adjustments(967, 313)
 			int_ui_label.text = "Clique no botão esquerdo para atacar"
 		
 		TutorialState.ATTACK_2:
+			interaction_container_adjustments(750, 530)
 			int_ui_label.text = "Clique no botão esquerdo duas vezes para realizar o ataque duplo"
 		
 		TutorialState.ROLL:
+			interaction_container_adjustments(915, 365)
 			int_ui_label.text = "Clique no botão direito para realizar o Dash"
 		
 		TutorialState.FINISHED:
+			interaction_container_adjustments(1107, 173)
 			int_ui_label.text = "Tutorial finalizado!"
 			finish_timer.start()
+
+func interaction_container_adjustments(pos: int, size: int):
+	int_container.position.x = pos
+	int_container.size.x = size
 
 func zoom_in_camera():
 	var tween: Tween = create_tween()
