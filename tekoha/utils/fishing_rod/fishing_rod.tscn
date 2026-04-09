@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bq8cawdjlt7lm"]
+
+[ext_resource type="Script" uid="uid://cflcqo2sjbsef" path="res://utils/fishing_rod/fishing_rod.gd" id="1_63r7i"]
+[ext_resource type="Texture2D" uid="uid://b1k3kr63p54ah" path="res://assets/sprites/props/fishing/vara_de_pesca.png" id="1_qi3eo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_63r7i"]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahwyk"]
+radius = 28.0
+
+[node name="FishingRod" type="StaticBody2D" unique_id=641523902]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("1_63r7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=336979032]
+shape = SubResource("CircleShape2D_63r7i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1001700711]
+texture = ExtResource("1_qi3eo")
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=1328998115]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=1703286531]
+shape = SubResource("CircleShape2D_ahwyk")
+debug_color = Color(0, 0.6383271, 0.3844508, 0.41960785)
+
+[node name="InteractionUI" type="CanvasLayer" parent="." unique_id=1766844176]
+process_mode = 3
+layer = 0
+visible = false
+
+[node name="InteractionContainer" type="MarginContainer" parent="InteractionUI" unique_id=841865083]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -213.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="InteractionUI/InteractionContainer" unique_id=1575187122]
+layout_mode = 2
+color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
+
+[node name="Label" type="Label" parent="InteractionUI/InteractionContainer/ColorRect" unique_id=177647832]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -11.5
+offset_right = 98.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aperte R para interagir"
