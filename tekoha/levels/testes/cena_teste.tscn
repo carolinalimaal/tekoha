@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c8o00utjk0fwc"]
+
+[ext_resource type="PackedScene" uid="uid://ckmfw2q3upa3o" path="res://utils/practice_dummy/practice_dummy.tscn" id="1_4npm3"]
+[ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="2_w3d1n"]
+
+[node name="CenaTeste" type="Node2D" unique_id=121166609]
+
+[node name="PracticeDummy" parent="." unique_id=492951067 instance=ExtResource("1_4npm3")]
+position = Vector2(208, 200)
+
+[node name="Player" parent="." unique_id=551376006 instance=ExtResource("2_w3d1n")]
+position = Vector2(656, 200)
