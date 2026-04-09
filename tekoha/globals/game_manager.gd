@@ -2,7 +2,8 @@ extends Node
 
 enum GameState {
 	NEW_GAME,
-	TALKED_TO_IARA
+	BEFORE_FISHING,
+	FIRST_MEET_IARA,
 }
 
 var current_save: SaveData
