@@ -36,6 +36,7 @@ size = Vector2(16, 17)
 radius = 56.568542
 
 [node name="PracticeDummy" type="StaticBody2D" unique_id=492951067]
+y_sort_enabled = true
 collision_layer = 256
 script = ExtResource("1_1nj5e")
 
