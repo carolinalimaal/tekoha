@@ -76,6 +76,10 @@ collision_layer = 0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/TutorialLimit2" unique_id=1855892084]
 polygon = PackedVector2Array(-80, 64, -80, 72, 152, 72, 152, 64)
 
+[node name="FinishTimer" type="Timer" parent="." unique_id=1844000113]
+wait_time = 1.5
+one_shot = true
+
 [node name="InteractionUI" type="CanvasLayer" parent="." unique_id=154580997]
 visible = false
 
@@ -104,3 +108,4 @@ text = "Aperte R para iniciar o tutorial"
 
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
+[connection signal="timeout" from="FinishTimer" to="." method="_on_finish_timer_timeout"]

@@ -14,6 +14,7 @@ var current_state: TutorialState = TutorialState.NOT_INITIATED
 @onready var interaction_area: Area2D = $InteractionArea
 @onready var tutorial_limit_1: StaticBody2D = $Limits/TutorialLimit
 @onready var tutorial_limit_2: StaticBody2D = $Limits/TutorialLimit2
+@onready var finish_timer: Timer = $FinishTimer
 @onready var interaction_ui: CanvasLayer = $InteractionUI
 @onready var int_ui_label: Label = $InteractionUI/InteractionContainer/ColorRect/Label
 var can_interact: bool = false
@@ -31,6 +32,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if InputManager.get_action_pressed("interact"):
 		if current_state == TutorialState.NOT_INITIATED and can_interact:
 			start_tutorial()
+			can_interact = false
 	#mudar para o estado finished
 	if InputManager.get_action_pressed("roll") and current_state == TutorialState.ROLL:
 		print("Roll realizado")
@@ -56,19 +58,25 @@ func _on_attack_received(attack_data: AttackData):
 					current_state = TutorialState.ROLL
 					update_ui()
 
+func _on_finish_timer_timeout() -> void:
+	zoom_out_camera()
+	interaction_ui.hide()
+
+
 func start_tutorial() -> void:
 	interaction_area.hide()
 	set_limits_layer(true)
+	zoom_in_camera()
 	print("Tutorial iniciado")
 	current_state = TutorialState.ATTACK_1
 	update_ui()
 	
 func end_tutorial():
 	current_state = TutorialState.FINISHED
-	update_ui()
 	print("Tutorial finalizado")
 	set_limits_layer(false)
-	interaction_ui.hide()
+	update_ui()
+	
 
 func set_limits_layer(condition: bool):
 	tutorial_limit_1.set_collision_layer_value(8, condition)
@@ -87,4 +95,12 @@ func update_ui():
 		
 		TutorialState.FINISHED:
 			int_ui_label.text = "Tutorial finalizado!"
-			interaction_ui.hide()
+			finish_timer.start()
+
+func zoom_in_camera():
+	var tween: Tween = create_tween()
+	tween.tween_property(get_node("../PlayerCamera"), "zoom", Vector2(2,2), 1)
+	
+func zoom_out_camera():
+	var tween: Tween = create_tween()
+	tween.tween_property(get_node("../PlayerCamera"), "zoom", Vector2(1,1), 1)
