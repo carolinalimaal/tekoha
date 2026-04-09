@@ -205,6 +205,7 @@ collision_layer = 128
 polygon = PackedVector2Array(-724, 606, -888, 602, -947, 678, -964, 680, -961, 0, 1637, 0, 1636, 719, 1496, 572, 1446, 493, 1255, 480, 1120, 403, 958, 318, 816, 258, 807, 66, 722, 39, 595, 74, 502, 182, 238, 166, 12, 174, -285, 290, -495, 329, -736, 429)
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1320015300]
+position = Vector2(632, 201)
 script = ExtResource("7_607sj")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
