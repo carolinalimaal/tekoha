@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		current_state._physics_update(delta)
 
 # Preencher o dict com todos os estados
-func init(owner_node: CharacterBody2D) -> void:
+func init(owner_node: Node2D) -> void:
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child

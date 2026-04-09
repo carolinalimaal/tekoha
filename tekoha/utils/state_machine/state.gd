@@ -3,7 +3,7 @@ extends Node
 
 signal Transitioned(state_name: String)
 
-@onready var owner_node: CharacterBody2D
+@onready var owner_node: Node2D
 @onready var state_machine: StateMachine
 
 func _enter() -> void:
