@@ -1,0 +1,90 @@
+extends StaticBody2D
+
+enum TutorialState {
+	NOT_INITIATED,
+	ATTACK_1,
+	ATTACK_2,
+	ROLL,
+	FINISHED
+}
+var current_state: TutorialState = TutorialState.NOT_INITIATED
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hitbox_comp: HitboxComponent = $HitboxComponent
+@onready var interaction_area: Area2D = $InteractionArea
+@onready var tutorial_limit_1: StaticBody2D = $Limits/TutorialLimit
+@onready var tutorial_limit_2: StaticBody2D = $Limits/TutorialLimit2
+@onready var interaction_ui: CanvasLayer = $InteractionUI
+@onready var int_ui_label: Label = $InteractionUI/InteractionContainer/ColorRect/Label
+var can_interact: bool = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	hitbox_comp.attack_received.connect(_on_attack_received)
+
+func _on_interaction_area_body_entered(body: Node2D) -> void:
+	if body is Player and current_state == TutorialState.NOT_INITIATED:
+		interaction_ui.show()
+		can_interact = true
+
+func _unhandled_input(_event: InputEvent) -> void:
+	if InputManager.get_action_pressed("interact"):
+		if current_state == TutorialState.NOT_INITIATED and can_interact:
+			start_tutorial()
+	#mudar para o estado finished
+	if InputManager.get_action_pressed("roll") and current_state == TutorialState.ROLL:
+		print("Roll realizado")
+		end_tutorial()
+
+func _on_interaction_area_body_exited(body: Node2D) -> void:
+	if body is Player and current_state == TutorialState.NOT_INITIATED:
+		interaction_ui.hide()
+		can_interact = false
+
+func _on_attack_received(attack_data: AttackData):
+	if current_state != TutorialState.NOT_INITIATED:
+		match current_state:
+			TutorialState.ATTACK_1:
+				if attack_data.damage_value == 4:
+					print("Ataque 1 realizado")
+					current_state = TutorialState.ATTACK_2
+					update_ui()
+		
+			TutorialState.ATTACK_2:
+				if attack_data.damage_value == 6:
+					print("Ataque 2 realizado")
+					current_state = TutorialState.ROLL
+					update_ui()
+
+func start_tutorial() -> void:
+	interaction_area.hide()
+	set_limits_layer(true)
+	print("Tutorial iniciado")
+	current_state = TutorialState.ATTACK_1
+	update_ui()
+	
+func end_tutorial():
+	current_state = TutorialState.FINISHED
+	update_ui()
+	print("Tutorial finalizado")
+	set_limits_layer(false)
+	interaction_ui.hide()
+
+func set_limits_layer(condition: bool):
+	tutorial_limit_1.set_collision_layer_value(8, condition)
+	tutorial_limit_2.set_collision_layer_value(8, condition)
+
+func update_ui():
+	match current_state:
+		TutorialState.ATTACK_1:
+			int_ui_label.text = "Clique no botão esquerdo para atacar"
+		
+		TutorialState.ATTACK_2:
+			int_ui_label.text = "Clique no botão esquerdo duas vezes para realizar o ataque duplo"
+		
+		TutorialState.ROLL:
+			int_ui_label.text = "Clique no botão direito para realizar o Dash"
+		
+		TutorialState.FINISHED:
+			int_ui_label.text = "Tutorial finalizado!"
+			interaction_ui.hide()
