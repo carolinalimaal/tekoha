@@ -495,6 +495,9 @@ sources/0 = SubResource("TileSetAtlasSource_kkt51")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3sq2"]
 size = Vector2(32, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xflk"]
+size = Vector2(96, 32)
+
 [node name="Room4" type="Node2D" unique_id=1956737914]
 script = ExtResource("1_3j4w8")
 limit_top = 720
@@ -544,3 +547,15 @@ shape = SubResource("RectangleShape2D_h3sq2")
 
 [node name="Marker2D" type="Marker2D" parent="Room2Door" unique_id=2022444826]
 position = Vector2(64, 0)
+
+[node name="Room5Door" parent="." unique_id=148805372 instance=ExtResource("6_h3sq2")]
+position = Vector2(736, 1504)
+target_level_path = "uid://bg2wya8wqj5e6"
+door_name = "Room4Door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room5Door" unique_id=240926542]
+position = Vector2(16, -16)
+shape = SubResource("RectangleShape2D_6xflk")
+
+[node name="Marker2D" type="Marker2D" parent="Room5Door" unique_id=455292062]
+position = Vector2(0, -96)
