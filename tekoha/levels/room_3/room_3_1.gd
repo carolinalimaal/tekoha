@@ -10,7 +10,7 @@ func _enter() -> void:
 
 	fishing_rod.fishing_rod_interated.connect(_on_player_interacted_with_fishing_rod)
 	
-	if GameManager.current_save.game_state == GameManager.GameState.FIRST_MEET_IARA:
+	if GameManager.current_save.game_state == GameManager.GameState.FIRST_MEETING_IARA:
 		transition_to("3_2")
 	
 	fishing_rod.show()
@@ -37,7 +37,7 @@ func _on_cutscene_started() -> void:
 	pass
 
 func _on_cutscene_ended() -> void:
-	GameManager.current_save.game_state = GameManager.GameState.FIRST_MEET_IARA
+	GameManager.current_save.game_state = GameManager.GameState.FIRST_MEETING_IARA
 	fishing_rod.has_interacted = true
 	
 	transition_to("3_2")
