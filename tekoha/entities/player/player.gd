@@ -14,7 +14,8 @@ var attack_direction : Vector2
 var roll_direction : Vector2
 
 var can_move : bool = true
-var can_attack : bool = false
+var can_attack_1 : bool = false
+var can_attack_2 : bool = false
 var can_roll : bool = false
 
 var roll_cooldown : float = 1.0
@@ -53,14 +54,14 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if state_machine.current_state.name in ["Death", "Stun"]:
 		return
 	
-	if InputManager.get_action_pressed("attack") and can_attack:
+	if InputManager.get_action_pressed("attack"):
 		# Bloquear ataques se ja estiver em ATTACK1 ou ATTACK2 ou ROLL
 		if state_machine.current_state.name in ["Attack1", "Attack2", "Roll"]:
 			return
 		
-		if state_machine.current_state.name != "AttackEnd":
+		if state_machine.current_state.name != "AttackEnd" and can_attack_1:
 			state_machine.current_state.transition_to("Attack1")
-		else:
+		elif state_machine.current_state.name == "AttackEnd" and can_attack_2:
 			state_machine.current_state.transition_to("attack2")
 		
 	elif InputManager.get_action_pressed("roll") and can_roll:
