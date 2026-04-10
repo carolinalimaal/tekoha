@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://8j1oxulw31uf" path="res://utils/practice_dummy/practice_dummy.gd" id="1_1nj5e"]
 [ext_resource type="Texture2D" uid="uid://dii8jnigb4vgv" path="res://assets/sprites/entities/practice_dummy/boneco de treino.png" id="1_h11rr"]
 [ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="2_1nj5e"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="2_slmq1"]
+[ext_resource type="Resource" uid="uid://bpdnrfj8ppa8q" path="res://data/dialogues/tutorial/attack_1.tres" id="3_cuxi5"]
+[ext_resource type="Resource" uid="uid://ca1rig5ioptmg" path="res://data/dialogues/tutorial/attack_2.tres" id="4_q8xp3"]
+[ext_resource type="Resource" uid="uid://bo5imxps1sjqp" path="res://data/dialogues/tutorial/roll.tres" id="5_o08cb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8ncn"]
 atlas = ExtResource("1_h11rr")
@@ -46,6 +50,7 @@ radius = 56.568542
 y_sort_enabled = true
 collision_layer = 256
 script = ExtResource("1_1nj5e")
+tutorial_instructions = Array[ExtResource("2_slmq1")]([ExtResource("3_cuxi5"), ExtResource("4_q8xp3"), ExtResource("5_o08cb")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=597375774]
 sprite_frames = SubResource("SpriteFrames_b8ncn")

@@ -9,6 +9,12 @@ enum TutorialState {
 }
 var current_state: TutorialState = TutorialState.NOT_INITIATED
 
+var can_interact: bool = false
+
+var index: int = 0
+@export var tutorial_instructions: Array[DialogueSettings]
+
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox_comp: HitboxComponent = $HitboxComponent
 @onready var interaction_area: Area2D = $InteractionArea
@@ -18,16 +24,12 @@ var current_state: TutorialState = TutorialState.NOT_INITIATED
 @onready var interaction_ui: CanvasLayer = $InteractionUI
 @onready var int_container: MarginContainer = $InteractionUI/InteractionContainer
 @onready var int_ui_label: Label = $InteractionUI/InteractionContainer/ColorRect/Label
-var can_interact: bool = false
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	hitbox_comp.attack_received.connect(_on_attack_received)
-
-func _on_interaction_area_body_entered(body: Node2D) -> void:
-	if body is Player and current_state == TutorialState.NOT_INITIATED:
-		interaction_ui.show()
-		can_interact = true
+	
+	global_position = Vector2(-357.0, 645.0)
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if InputManager.get_action_pressed("interact"):
@@ -38,6 +40,11 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if InputManager.get_action_pressed("roll") and current_state == TutorialState.ROLL:
 		print("Roll realizado")
 		end_tutorial()
+
+func _on_interaction_area_body_entered(body: Node2D) -> void:
+	if body is Player and current_state == TutorialState.NOT_INITIATED:
+		interaction_ui.show()
+		can_interact = true
 
 func _on_interaction_area_body_exited(body: Node2D) -> void:
 	if body is Player and current_state == TutorialState.NOT_INITIATED:
@@ -52,12 +59,18 @@ func _on_attack_received(attack_data: AttackData):
 				if attack_data.damage_value == 4:
 					print("Ataque 1 realizado")
 					current_state = TutorialState.ATTACK_2
+					GlobalRefs.player.can_attack_2 = true
+					index += 1
+					DialogueControl.start_speech(tutorial_instructions[index])
 					update_ui()
 		
 			TutorialState.ATTACK_2:
 				if attack_data.damage_value == 6:
 					print("Ataque 2 realizado")
 					current_state = TutorialState.ROLL
+					GlobalRefs.player.can_roll = true
+					index += 1
+					DialogueControl.start_speech(tutorial_instructions[index])
 					update_ui()
 
 func _on_finish_timer_timeout() -> void:
@@ -71,7 +84,9 @@ func start_tutorial() -> void:
 	zoom_in_camera()
 	print("Tutorial iniciado")
 	current_state = TutorialState.ATTACK_1
+	GlobalRefs.player.can_attack_1 = true
 	update_ui()
+	DialogueControl.start_speech(tutorial_instructions[index])
 	
 func end_tutorial():
 	current_state = TutorialState.FINISHED
@@ -109,8 +124,8 @@ func interaction_container_adjustments(pos: int, size: int):
 
 func zoom_in_camera():
 	var tween: Tween = create_tween()
-	tween.tween_property(get_node("../PlayerCamera"), "zoom", Vector2(2,2), 1)
+	tween.tween_property(get_node("../../../PlayerCamera"), "zoom", Vector2(2,2), 1)
 	
 func zoom_out_camera():
 	var tween: Tween = create_tween()
-	tween.tween_property(get_node("../PlayerCamera"), "zoom", Vector2(1,1), 1)
+	tween.tween_property(get_node("../../../PlayerCamera"), "zoom", Vector2(1,1), 1)
