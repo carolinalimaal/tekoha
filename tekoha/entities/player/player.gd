@@ -54,22 +54,21 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if state_machine.current_state.name in ["Death", "Stun"]:
 		return
 	
-	if InputManager.get_action_pressed("attack"):
-		# Bloquear ataques se ja estiver em ATTACK1 ou ATTACK2 ou ROLL
-		if state_machine.current_state.name in ["Attack1", "Attack2", "Roll"]:
-			return
-		
-		if state_machine.current_state.name != "AttackEnd" and can_attack_1:
-			state_machine.current_state.transition_to("Attack1")
-		elif state_machine.current_state.name == "AttackEnd" and can_attack_2:
-			state_machine.current_state.transition_to("attack2")
-		
-	elif InputManager.get_action_pressed("roll") and can_roll:
-		# Bloquear rolagem se estiver em ATTACK1, ATTACK_END ou ATTACK2
-		if state_machine.current_state.name in ["Attack1", "AttackEnd", "Attack2"]:
-			return
-		
-		state_machine.current_state.transition_to("Roll")
+	if can_move:
+		if InputManager.get_action_pressed("attack"):
+			# Bloquear ataques se ja estiver em ATTACK1 ou ATTACK2 ou ROLL
+			if state_machine.current_state.name in ["Attack1", "Attack2", "Roll"]:
+				return
+			if state_machine.current_state.name != "AttackEnd" and can_attack_1:
+				state_machine.current_state.transition_to("Attack1")
+			elif state_machine.current_state.name == "AttackEnd" and can_attack_2:
+				state_machine.current_state.transition_to("attack2")
+			
+		elif InputManager.get_action_pressed("roll") and can_roll:
+			# Bloquear rolagem se estiver em ATTACK1, ATTACK_END ou ATTACK2
+			if state_machine.current_state.name in ["Attack1", "AttackEnd", "Attack2"]:
+				return
+			state_machine.current_state.transition_to("Roll")
 
 func get_direction() -> Vector2:
 	return InputManager.get_movement_vector().normalized()
