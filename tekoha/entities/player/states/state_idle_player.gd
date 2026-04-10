@@ -10,7 +10,7 @@ func _exit() -> void:
 func _update(_delta: float) -> void:
 	# Verificar se ha  input de entrada, se sim transiciona para WALK
 	var direction : Vector2 = owner_node.get_direction()
-	if direction:
+	if direction and owner_node.can_move:
 		transition_to("Walk")
 		return
 
