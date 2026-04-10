@@ -8,7 +8,6 @@
 texture = ExtResource("1_tlui7")
 
 [node name="DialogueControl" type="CanvasLayer" unique_id=1252305104]
-process_mode = 3
 script = ExtResource("1_f0bm7")
 
 [node name="SolidBackground" type="ColorRect" parent="." unique_id=933009803]
