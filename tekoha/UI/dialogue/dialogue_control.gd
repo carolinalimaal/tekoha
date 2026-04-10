@@ -37,6 +37,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func start_speech(dialogue_data: DialogueSettings) -> void:
 	if !is_showing:
+		GlobalRefs.ui_canvas_layer.hud.hide()
 		dialogue_box.show()
 		is_showing = true
 		current_dialogue = dialogue_data.dialogues
@@ -52,7 +53,7 @@ func _show_sentence() -> void:
 	var current = current_dialogue[index]
 	var is_cutscene = current.background_image != null
 	
-	var text_to_show = _set_text_to_show(current)
+	var text_to_show = _set_actor_name(current)
 	match language:
 		Idiom.PT:
 			text_to_show += current.text_pt
@@ -87,6 +88,7 @@ func _next_sentence() -> void:
 		_end_speech()
 
 func _end_speech() -> void:
+	GlobalRefs.ui_canvas_layer.hud.show()
 	dialogue_box.hide()
 	cutscene_box.hide()
 	is_showing = false
@@ -134,7 +136,7 @@ func _set_background_image(current: DialogueLine, is_cutscene: bool) -> void:
 		
 		active_text_label = speech_text_dialogue
 
-func _set_text_to_show(current: DialogueLine) -> String:
+func _set_actor_name(current: DialogueLine) -> String:
 	if current.actor_name:
 		return current.actor_name + ": "
 	else:
