@@ -16,7 +16,6 @@ var current_dialogue: Array[DialogueLine]
 var index: int
 var type_tween: Tween
 var active_text_label: RichTextLabel
-var player: Player
 
 @onready var solid_background: ColorRect = $SolidBackground
 @onready var cutscene_background: TextureRect = $CutsceneBackground
@@ -43,8 +42,8 @@ func start_speech(dialogue_data: DialogueSettings) -> void:
 		current_dialogue = dialogue_data.dialogues
 		index = 0
 		
-		#if player:
-			#player.is_paused = true
+		if GlobalRefs.player:
+			GlobalRefs.player.can_move = false
 		
 		_show_sentence()
 		dialogue_started.emit()
@@ -106,8 +105,9 @@ func _end_speech() -> void:
 		solid_background.set_modulate(Color(255, 255, 255, 255))
 		cutscene_background.set_modulate(Color(255, 255, 255, 255))
 		
-	#if player:
-		#player.is_paused = false
+	if GlobalRefs.player:
+		GlobalRefs.player.can_move = true
+	
 	dialogue_ended.emit()
 
 func _set_background_image(current: DialogueLine, is_cutscene: bool) -> void:
