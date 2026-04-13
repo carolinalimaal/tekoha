@@ -37,7 +37,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func start_speech(dialogue_data: DialogueSettings) -> void:
 	if !is_showing:
-		GlobalRefs.ui_canvas_layer.hud.hide()
 		dialogue_box.show()
 		is_showing = true
 		current_dialogue = dialogue_data.dialogues
@@ -88,7 +87,6 @@ func _next_sentence() -> void:
 		_end_speech()
 
 func _end_speech() -> void:
-	GlobalRefs.ui_canvas_layer.hud.show()
 	dialogue_box.hide()
 	cutscene_box.hide()
 	is_showing = false
