@@ -18,6 +18,8 @@
 [ext_resource type="Resource" uid="uid://u4xbem2sufih" path="res://data/cutscenes/cutscene_3/cutscene_3.tres" id="16_2jupl"]
 [ext_resource type="Resource" uid="uid://dnypnxch0rxfl" path="res://data/cutscenes/cutscene_4/cutscene_4.tres" id="17_x4cld"]
 [ext_resource type="PackedScene" uid="uid://ckmfw2q3upa3o" path="res://utils/practice_dummy/practice_dummy.tscn" id="18_x4cld"]
+[ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="19_wbedm"]
+[ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="20_46t15"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_607sj"]
 texture = ExtResource("2_rnw8p")
@@ -241,3 +243,7 @@ position = Vector2(-440, 831)
 script = ExtResource("13_q0n6u")
 cutscenes = Array[ExtResource("15_4iyy6")]([ExtResource("16_2jupl"), ExtResource("17_x4cld")])
 practice_dummy_scene = ExtResource("18_x4cld")
+
+[node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("19_wbedm")]
+position = Vector2(-180, 404)
+hammock_texture = ExtResource("20_46t15")
