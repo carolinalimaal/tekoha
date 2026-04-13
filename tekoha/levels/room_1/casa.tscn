@@ -8,6 +8,7 @@
 [ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="8_h3kau"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="10_4prg2"]
 [ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="10_dw8qo"]
+[ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="10_wmk35"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="10_x2bmf"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="11_gyguw"]
 [ext_resource type="Texture2D" uid="uid://4hv4ijur8gyw" path="res://assets/sprites/props/hammock/rede_save_livre.png" id="12_vd5oq"]
@@ -73,6 +74,7 @@ sprite_frames = ExtResource("8_h3kau")
 [node name="Bau" parent="Fumiture" unique_id=302874208 instance=ExtResource("13_i1302")]
 position = Vector2(202, 16)
 item = ExtResource("14_emlbn")
+sprite_frames = ExtResource("10_wmk35")
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1052331891]
 zoom = Vector2(2, 2)

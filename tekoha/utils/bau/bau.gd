@@ -2,6 +2,7 @@ class_name Bau extends StaticBody2D
 
 @export var id: int
 @export var item: ConsumableItemData
+@export var sprite_frames: SpriteFrames
 
 var is_showing: bool = false
 var can_interact: bool = false
@@ -27,6 +28,8 @@ func _ready() -> void:
 	
 	show_item_panel.hide()
 	interaction_container.hide()
+	
+	sprite.sprite_frames = sprite_frames
 	
 	if GameManager.current_save.opened_chests.has(id):
 		item = null

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cn6gcnndvsxy8"]
 
 [ext_resource type="Script" uid="uid://c2xtmwc8mqu1i" path="res://utils/bau/bau.gd" id="1_rqtb1"]
-[ext_resource type="Texture2D" uid="uid://dmvskebko8h66" path="res://assets/sprites/props/chest/baus_sheets.png" id="2_65fed"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="3_65fed"]
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="5_s4csk"]
 [ext_resource type="Theme" uid="uid://bal4gagsnjcr2" path="res://UI/second_theme.tres" id="6_7hguk"]
@@ -12,54 +11,6 @@ size = Vector2(74, 55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1cy4"]
 size = Vector2(56, 44)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hguk"]
-atlas = ExtResource("2_65fed")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s4csk"]
-atlas = ExtResource("2_65fed")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7syt"]
-atlas = ExtResource("2_65fed")
-region = Rect2(128, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tegxk"]
-atlas = ExtResource("2_65fed")
-region = Rect2(192, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4626f"]
-atlas = ExtResource("2_65fed")
-region = Rect2(256, 64, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4626f"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7hguk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s4csk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p7syt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tegxk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4626f")
-}],
-"loop": false,
-"name": &"bau_animation",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7syt"]
 texture = ExtResource("3_65fed")
@@ -83,8 +34,6 @@ shape = SubResource("RectangleShape2D_j1cy4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=805308064]
 process_mode = 3
-sprite_frames = SubResource("SpriteFrames_4626f")
-animation = &"bau_animation"
 
 [node name="InteractionUI" type="CanvasLayer" parent="." unique_id=218447874]
 process_mode = 3
