@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://8j1oxulw31uf" path="res://utils/practice_dummy/practice_dummy.gd" id="1_1nj5e"]
 [ext_resource type="Texture2D" uid="uid://dii8jnigb4vgv" path="res://assets/sprites/entities/practice_dummy/boneco de treino.png" id="1_h11rr"]
 [ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="2_1nj5e"]
-[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="2_slmq1"]
-[ext_resource type="Resource" uid="uid://bpdnrfj8ppa8q" path="res://data/dialogues/tutorial/attack_1.tres" id="3_cuxi5"]
-[ext_resource type="Resource" uid="uid://ca1rig5ioptmg" path="res://data/dialogues/tutorial/attack_2.tres" id="4_q8xp3"]
-[ext_resource type="Resource" uid="uid://bo5imxps1sjqp" path="res://data/dialogues/tutorial/roll.tres" id="5_o08cb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8ncn"]
 atlas = ExtResource("1_h11rr")
@@ -43,14 +39,10 @@ size = Vector2(21, 42)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_slmq1"]
 size = Vector2(16, 17)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1nj5e"]
-radius = 56.568542
-
 [node name="PracticeDummy" type="StaticBody2D" unique_id=492951067]
 y_sort_enabled = true
 collision_layer = 256
 script = ExtResource("1_1nj5e")
-tutorial_instructions = Array[ExtResource("2_slmq1")]([ExtResource("3_cuxi5"), ExtResource("4_q8xp3"), ExtResource("5_o08cb")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=597375774]
 sprite_frames = SubResource("SpriteFrames_b8ncn")
@@ -70,56 +62,3 @@ debug_color = Color(0.9245441, 0.24829456, 0.31011727, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=631290276]
 position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_slmq1")
-
-[node name="InteractionArea" type="Area2D" parent="." unique_id=1321125933]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1543682903]
-shape = SubResource("CircleShape2D_1nj5e")
-
-[node name="Limits" type="Node2D" parent="." unique_id=1812956456]
-
-[node name="TutorialLimit" type="StaticBody2D" parent="Limits" unique_id=455073606]
-collision_layer = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/TutorialLimit" unique_id=2090283139]
-polygon = PackedVector2Array(-64, 64, -64, -64, 128, -64, 128, 64, 152, 64, 152, -72, -80, -72, -80, 64)
-
-[node name="TutorialLimit2" type="StaticBody2D" parent="Limits" unique_id=260804425]
-collision_layer = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/TutorialLimit2" unique_id=1855892084]
-polygon = PackedVector2Array(-80, 64, -80, 72, 152, 72, 152, 64)
-
-[node name="FinishTimer" type="Timer" parent="." unique_id=1844000113]
-wait_time = 1.5
-one_shot = true
-
-[node name="InteractionUI" type="CanvasLayer" parent="." unique_id=154580997]
-visible = false
-
-[node name="InteractionContainer" type="MarginContainer" parent="InteractionUI" unique_id=1291877923]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -262.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="ColorRect" type="ColorRect" parent="InteractionUI/InteractionContainer" unique_id=477925677]
-layout_mode = 2
-color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
-
-[node name="Label" type="Label" parent="InteractionUI/InteractionContainer/ColorRect" unique_id=211474629]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 8.0
-offset_right = 248.0
-offset_bottom = 31.0
-text = "Aperte R para iniciar o tutorial"
-
-[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
-[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
-[connection signal="timeout" from="FinishTimer" to="." method="_on_finish_timer_timeout"]
