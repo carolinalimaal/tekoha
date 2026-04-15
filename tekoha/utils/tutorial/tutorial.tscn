@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://bx27oixgqklgm"]
 
 [ext_resource type="Script" uid="uid://b5girm7k6uw5u" path="res://utils/tutorial/tutorial.gd" id="1_5udl4"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="2_j2fou"]
 [ext_resource type="PackedScene" uid="uid://ckmfw2q3upa3o" path="res://utils/practice_dummy/practice_dummy.tscn" id="2_mh1kf"]
+[ext_resource type="Resource" uid="uid://bpdnrfj8ppa8q" path="res://data/dialogues/tutorial/attack_1.tres" id="3_7dq56"]
+[ext_resource type="Resource" uid="uid://ca1rig5ioptmg" path="res://data/dialogues/tutorial/attack_2.tres" id="4_iu72u"]
+[ext_resource type="Resource" uid="uid://bo5imxps1sjqp" path="res://data/dialogues/tutorial/roll.tres" id="5_h5cln"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh1kf"]
 radius = 56.568542
@@ -11,8 +15,10 @@ size = Vector2(20, 56)
 
 [node name="Tutorial" type="Node2D" unique_id=1600673828]
 script = ExtResource("1_5udl4")
+tutorial_instructions = Array[ExtResource("2_j2fou")]([ExtResource("3_7dq56"), ExtResource("4_iu72u"), ExtResource("5_h5cln")])
 
 [node name="PracticeDummy" parent="." unique_id=492951067 instance=ExtResource("2_mh1kf")]
+visible = false
 position = Vector2(0, -53)
 
 [node name="PracticeDummy2" parent="." unique_id=2126296874 instance=ExtResource("2_mh1kf")]
@@ -75,3 +81,17 @@ offset_top = 8.0
 offset_right = 248.0
 offset_bottom = 31.0
 text = "Aperte R para iniciar o tutorial"
+
+[node name="TransitionCont" type="MarginContainer" parent="InteractionUI" unique_id=1794572811]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="TransitionRect" type="ColorRect" parent="InteractionUI/TransitionCont" unique_id=1621543032]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
+[connection signal="body_entered" from="RollArea" to="." method="_on_roll_area_body_entered"]
+[connection signal="timeout" from="FinishTimer" to="." method="_on_finish_timer_timeout"]

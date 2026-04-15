@@ -16,20 +16,23 @@ var index: int = 0
 
 @onready var practice_dummy: StaticBody2D = $PracticeDummy
 @onready var practice_dummy_2: StaticBody2D = $PracticeDummy2
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var hitbox_comp: HitboxComponent = $HitboxComponent
 @onready var interaction_area: Area2D = $InteractionArea
+@onready var roll_area: Area2D = $RollArea
 @onready var tutorial_limit_1: StaticBody2D = $Limits/TutorialLimit
 @onready var tutorial_limit_2: StaticBody2D = $Limits/TutorialLimit2
 @onready var finish_timer: Timer = $FinishTimer
 @onready var interaction_ui: CanvasLayer = $InteractionUI
 @onready var int_container: MarginContainer = $InteractionUI/InteractionContainer
+@onready var transition_cont: MarginContainer = $InteractionUI/TransitionCont
+@onready var transition_rect: ColorRect = $InteractionUI/TransitionCont/TransitionRect
 @onready var int_ui_label: Label = $InteractionUI/InteractionContainer/ColorRect/Label
 
 
 func _ready() -> void:
-	hitbox_comp.attack_received.connect(_on_attack_received)
-	practice_dummy.damage_received.connect(_on_dummy_damage_received)
+	practice_dummy_2.damage_received.connect(_on_dummy_damage_received)
+	practice_dummy.hide()
+	roll_area.hide()
+	transition_cont.hide()
 	global_position = Vector2(-357.0, 645.0)
 
 func _unhandled_input(_event: InputEvent) -> void:
@@ -37,10 +40,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 		if current_state == TutorialState.NOT_INITIATED and can_interact:
 			start_tutorial()
 			can_interact = false
-	#mudar para o estado finished
-	if InputManager.get_action_pressed("roll") and current_state == TutorialState.ROLL:
-		print("Roll realizado")
-		end_tutorial()
 
 func _on_interaction_area_body_entered(body: Node2D) -> void:
 	if body is Player and current_state == TutorialState.NOT_INITIATED:
@@ -53,9 +52,6 @@ func _on_interaction_area_body_exited(body: Node2D) -> void:
 		can_interact = false
 
 func _on_dummy_damage_received(attack_data: AttackData):
-	pass
-
-func _on_attack_received(attack_data: AttackData):
 	if current_state != TutorialState.NOT_INITIATED:
 		match current_state:
 			TutorialState.ATTACK_1:
@@ -70,16 +66,19 @@ func _on_attack_received(attack_data: AttackData):
 			TutorialState.ATTACK_2:
 				if attack_data.damage_value == 6:
 					print("Ataque 2 realizado")
-					current_state = TutorialState.ROLL
-					GlobalRefs.player.can_roll = true
-					index += 1
-					DialogueControl.start_speech(tutorial_instructions[index])
-					update_ui()
+					start_roll_tutorial()
 
 func _on_finish_timer_timeout() -> void:
 	zoom_out_camera()
 	interaction_ui.hide()
 
+func _on_roll_area_body_entered(body: Node2D) -> void:
+	if body is Player and current_state == TutorialState.ROLL:
+		if body.state_machine.current_state.name in ["Roll"]:
+			print("Roll realizado")
+			end_tutorial()
+		else:
+			print("Ops! Você deve entrar com dash nessa área!")
 
 func start_tutorial() -> void:
 	interaction_area.hide()
@@ -90,7 +89,16 @@ func start_tutorial() -> void:
 	GlobalRefs.player.can_attack_1 = true
 	update_ui()
 	DialogueControl.start_speech(tutorial_instructions[index])
-	
+
+func start_roll_tutorial():
+	current_state = TutorialState.ROLL
+	GlobalRefs.player.can_roll = true
+	index += 1
+	DialogueControl.start_speech(tutorial_instructions[index])
+	dummy_appearence_anim()
+	roll_area.show()
+	update_ui()
+
 func end_tutorial():
 	current_state = TutorialState.FINISHED
 	print("Tutorial finalizado")
@@ -132,3 +140,14 @@ func zoom_in_camera():
 func zoom_out_camera():
 	var tween: Tween = create_tween()
 	tween.tween_property(get_node("../../../PlayerCamera"), "zoom", Vector2(1,1), 1)
+
+func dummy_appearence_anim():
+	transition_cont.show()
+	transition_rect.modulate.a = 0.0
+	var tween: Tween = create_tween()
+	tween.tween_property(transition_rect, "modulate:a", 1, 1.0)
+	tween.tween_callback(func(): practice_dummy.show())
+	tween.tween_property(transition_rect, "modulate:a", 0, 1.0)
+	await tween.finished
+	transition_cont.hide()
+	
