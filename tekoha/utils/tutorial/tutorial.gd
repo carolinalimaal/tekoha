@@ -80,6 +80,10 @@ func _on_roll_area_body_entered(body: Node2D) -> void:
 		else:
 			print("Ops! Você deve entrar com dash nessa área!")
 
+func _on_cutscene_ended():
+	dummy_appearence_anim()
+	DialogueControl.dialogue_ended.disconnect(_on_cutscene_ended)
+
 func start_tutorial() -> void:
 	interaction_area.hide()
 	set_limits_layer(true)
@@ -91,11 +95,11 @@ func start_tutorial() -> void:
 	DialogueControl.start_speech(tutorial_instructions[index])
 
 func start_roll_tutorial():
+	DialogueControl.dialogue_ended.connect(_on_cutscene_ended)
 	current_state = TutorialState.ROLL
 	GlobalRefs.player.can_roll = true
 	index += 1
 	DialogueControl.start_speech(tutorial_instructions[index])
-	dummy_appearence_anim()
 	roll_area.show()
 	update_ui()
 
@@ -142,6 +146,7 @@ func zoom_out_camera():
 	tween.tween_property(get_node("../../../PlayerCamera"), "zoom", Vector2(1,1), 1)
 
 func dummy_appearence_anim():
+	GlobalRefs.player.can_move = false
 	transition_cont.show()
 	transition_rect.modulate.a = 0.0
 	var tween: Tween = create_tween()
@@ -150,4 +155,4 @@ func dummy_appearence_anim():
 	tween.tween_property(transition_rect, "modulate:a", 0, 1.0)
 	await tween.finished
 	transition_cont.hide()
-	
+	GlobalRefs.player.can_move = true
