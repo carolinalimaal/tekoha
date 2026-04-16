@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cokx7i5rnjlqt"]
+
+[ext_resource type="Script" uid="uid://d28d5x31pjupk" path="res://globals/interaction_manager/interaction_manager.gd" id="1_f4p8w"]
+
+[node name="InteractionManager" type="CanvasLayer" unique_id=38454031]
+process_mode = 3
+layer = 5
+script = ExtResource("1_f4p8w")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=8073147]
+custom_minimum_size = Vector2(100, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1139611271]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

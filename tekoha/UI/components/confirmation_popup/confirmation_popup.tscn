@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://ryb3syv1bcmd"]
+
+[ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="1_0sias"]
+[ext_resource type="Script" uid="uid://bu0uiv26fpj51" path="res://UI/components/confirmation_popup/confirmation_popup.gd" id="1_cu6ah"]
+[ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_jsspy"]
+[ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/components/button/button.gd" id="2_cu6ah"]
+[ext_resource type="Theme" uid="uid://bal4gagsnjcr2" path="res://UI/second_theme.tres" id="4_bpimx"]
+[ext_resource type="FontFile" uid="uid://byjqkrwux6cty" path="res://assets/fonts/Bahiana/Bahiana-Regular.ttf" id="4_kkrre"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jsspy"]
+texture = ExtResource("1_0sias")
+
+[node name="ConfirmationPopup" type="Control" unique_id=1699816863]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jsspy")
+script = ExtResource("1_cu6ah")
+
+[node name="Background" type="Panel" parent="." unique_id=225102194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Background" unique_id=697821058]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Background/CenterContainer" unique_id=690459360]
+custom_minimum_size = Vector2(637.75, 181)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jsspy")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/CenterContainer/PanelContainer" unique_id=88034249]
+layout_mode = 2
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 24
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer" unique_id=543721417]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Background/CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1256121138]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_vertical = 4
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1358186242]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="MessageLabel" type="RichTextLabel" parent="Background/CenterContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=215316507]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_kkrre")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonContainer" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=286398533]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="Background/CenterContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/ButtonContainer" unique_id=305152927]
+custom_minimum_size = Vector2(94.53, 29.5)
+layout_mode = 2
+focus_neighbor_right = NodePath("../CancelButton")
+theme = ExtResource("4_bpimx")
+text = "Confirmar"
+script = ExtResource("2_cu6ah")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"
+
+[node name="CancelButton" type="Button" parent="Background/CenterContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/ButtonContainer" unique_id=1508062872]
+custom_minimum_size = Vector2(94.53, 29.5)
+layout_mode = 2
+focus_neighbor_left = NodePath("../ConfirmButton")
+theme = ExtResource("4_bpimx")
+text = "Cancelar"
+script = ExtResource("2_cu6ah")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"

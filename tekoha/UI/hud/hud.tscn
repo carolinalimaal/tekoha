@@ -2,9 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_b4xaq"]
 [ext_resource type="Script" uid="uid://cxw6tyt1lgcko" path="res://UI/hud/hud_hearts.gd" id="1_ygoxw"]
-[ext_resource type="PackedScene" uid="uid://by4j7ryqt0fv8" path="res://UI/heart_icon/heart_icon.tscn" id="2_upt0d"]
+[ext_resource type="PackedScene" uid="uid://by4j7ryqt0fv8" path="res://UI/components/heart_icon/heart_icon.tscn" id="2_upt0d"]
 [ext_resource type="Texture2D" uid="uid://dndmw37mpkifh" path="res://assets/sprites/items/coin/acai_caroco.png" id="4_27nul"]
 [ext_resource type="Script" uid="uid://cscjabft3yi3c" path="res://UI/hud/acai_wallet.gd" id="4_576qf"]
+[ext_resource type="PackedScene" uid="uid://c18bln14y2w7t" path="res://UI/components/heart_container/heart_container.tscn" id="4_oj3ng"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27nul"]
 
@@ -26,9 +27,9 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_27nul")
 script = ExtResource("1_ygoxw")
 heart_icon = ExtResource("2_upt0d")
 
-[node name="HBHearts" type="HBoxContainer" parent="Hearts" unique_id=5929582]
-custom_minimum_size = Vector2(64, 64)
+[node name="HeartContainer" parent="Hearts" unique_id=438475558 instance=ExtResource("4_oj3ng")]
 layout_mode = 2
+heart_icon = ExtResource("2_upt0d")
 
 [node name="AcaiWallet" type="PanelContainer" parent="." unique_id=303574243]
 custom_minimum_size = Vector2(64, 64)

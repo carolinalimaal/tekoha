@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bv7xgwalm2jk" path="res://entities/npcs/npc.gd" id="1_vnxnj"]
 [ext_resource type="Texture2D" uid="uid://bgnluxiwwhp7b" path="res://assets/sprites/entities/npcs/iara_com_cauda_idle_down.png" id="2_v8f82"]
+[ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="3_v8f82"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ii8d2"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_v8f82"]
+radius = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bw2bh"]
 atlas = ExtResource("2_v8f82")
@@ -46,50 +48,24 @@ script = ExtResource("1_vnxnj")
 sprite = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=567683469]
-position = Vector2(0, 22)
-shape = SubResource("CircleShape2D_ii8d2")
+position = Vector2(5, 10)
+shape = SubResource("CircleShape2D_v8f82")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1784119135]
 sprite_frames = SubResource("SpriteFrames_vaykr")
 animation = &"idle_down"
 autoplay = "idle_down"
 
-[node name="InteractArea" type="Area2D" parent="." unique_id=1764617323]
+[node name="InteractableComponent" type="Area2D" parent="." unique_id=1888594196 node_paths=PackedStringArray("collision_shape", "marker")]
+script = ExtResource("3_v8f82")
+interact_label = "R Falar"
+collision_shape = NodePath("CollisionShape2D")
+marker = NodePath("../Marker2D")
+metadata/_custom_type_script = "uid://bevot8siuxavc"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=539547174]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=539547174]
 shape = SubResource("CircleShape2D_bw2bh")
 debug_color = Color(0.6392157, 0.5254902, 0, 0.23921569)
 
-[node name="InteractUI" type="CanvasLayer" parent="." unique_id=1692935311]
-process_mode = 3
-layer = 0
-
-[node name="InteractContainer" type="MarginContainer" parent="InteractUI" unique_id=565954656]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -213.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="ColorRect" type="ColorRect" parent="InteractUI/InteractContainer" unique_id=11373272]
-layout_mode = 2
-color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
-
-[node name="Label" type="Label" parent="InteractUI/InteractContainer/ColorRect" unique_id=1351450620]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = -11.5
-offset_right = 98.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Aperte R para conversar"
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1501288314]
+position = Vector2(0, -43)

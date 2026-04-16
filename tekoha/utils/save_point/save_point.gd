@@ -5,47 +5,41 @@ extends StaticBody2D
 
 var detecting_player: bool
 
-@onready var interaction_area: Area2D = $InteractionArea
 @onready var sprite: Sprite2D = $Sprite
-@onready var interaction_ui: CanvasLayer = $InteractionUI
-@onready var interaction_container: MarginContainer = $InteractionUI/InteractionContainer
-@onready var confirmation_popup: Panel = $InteractionUI/ConfirmationPopup
-@onready var confirm_button: DefaultButton = $InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton
-@onready var cancel_button: DefaultButton = $InteractionUI/ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
+@onready var interactable_component: InteractableComponent = $InteractableComponent
 
-func _ready() -> void:
-	interaction_area.body_entered.connect(_on_body_entered)
-	interaction_area.body_exited.connect(_on_body_exited)
-	confirm_button.pressed.connect(_on_confirm_button_pressed)
-	cancel_button.pressed.connect(_on_cancel_button_pressed)
-	
+func _ready() -> void:	
 	sprite.texture = hammock_texture
 	
-	interaction_ui.hide()
-	interaction_container.show()
-	confirmation_popup.hide()
 
-func _unhandled_input(_event: InputEvent) -> void:
-	if InputManager.get_action_pressed("interact") and detecting_player:
-		_interact()
+func interact() -> void:
+	UIManager.is_interact_ui_open = true
+	interactable_component.disable_interaction()
+	GlobalRefs.confirmation_popup.setup("Deseja salvar o jogo?", null, true, "Salvar")
+	UIManager.open_menu("confirmation")
+	_connect_signals()
 
-func _interact() -> void:
-	confirmation_popup.show()
-	confirm_button.grab_focus()
-
-func _on_body_entered(body: Node2D) -> void:
-	if body is Player or body.is_in_group("player"):
-		detecting_player = true
-		interaction_ui.show()
-
-func _on_body_exited(body: Node2D) -> void:
-	if body is Player or body.is_in_group("player"):
-		detecting_player = false
-		interaction_ui.hide()
-
-func _on_confirm_button_pressed() -> void:
+func _on_save_confirmed() -> void:
 	SaveManager.save_game(GameManager.current_save)
-	confirmation_popup.hide()
+	UIManager.is_interact_ui_open = false
+	interactable_component.enable_interaction()
+	UIManager.close_top_menu()
+	_disconnect_signals()
 
-func _on_cancel_button_pressed() -> void:
-	confirmation_popup.hide()
+func _on_save_cancelled() -> void:
+	UIManager.is_interact_ui_open = false
+	interactable_component.enable_interaction()
+	UIManager.close_top_menu()
+	_disconnect_signals()
+
+func _connect_signals() -> void:
+	if !GlobalRefs.confirmation_popup.confirmed.is_connected(_on_save_confirmed):
+		GlobalRefs.confirmation_popup.confirmed.connect(_on_save_confirmed)
+	if !GlobalRefs.confirmation_popup.cancelled.is_connected(_on_save_cancelled):
+		GlobalRefs.confirmation_popup.cancelled.connect(_on_save_cancelled)
+
+func _disconnect_signals() -> void:
+	if GlobalRefs.confirmation_popup.confirmed.is_connected(_on_save_confirmed):
+		GlobalRefs.confirmation_popup.confirmed.disconnect(_on_save_confirmed)
+	if GlobalRefs.confirmation_popup.cancelled.is_connected(_on_save_cancelled):
+		GlobalRefs.confirmation_popup.cancelled.disconnect(_on_save_cancelled)

@@ -5,8 +5,8 @@ extends State
 @onready var fishing_rod: FishingRod = $FishingRod
 
 func _enter() -> void:
-	DialogueControl.dialogue_started.connect(_on_cutscene_started)
-	DialogueControl.dialogue_ended.connect(_on_cutscene_ended)
+	DialogueManager.dialogue_started.connect(_on_cutscene_started)
+	DialogueManager.dialogue_ended.connect(_on_cutscene_ended)
 
 	fishing_rod.fishing_rod_interated.connect(_on_player_interacted_with_fishing_rod)
 	
@@ -17,8 +17,8 @@ func _enter() -> void:
 	
 
 func _exit() -> void:
-	DialogueControl.dialogue_started.disconnect(_on_cutscene_started)
-	DialogueControl.dialogue_ended.disconnect(_on_cutscene_ended)
+	DialogueManager.dialogue_started.disconnect(_on_cutscene_started)
+	DialogueManager.dialogue_ended.disconnect(_on_cutscene_ended)
 	
 	fishing_rod.fishing_rod_interated.disconnect(_on_player_interacted_with_fishing_rod)
 
@@ -31,7 +31,7 @@ func _physics_update(_delta: float) -> void:
 
 func _on_player_interacted_with_fishing_rod() -> void:
 	if GameManager.current_save.game_state == GameManager.GameState.BEFORE_FISHING:
-		DialogueControl.start_speech(cutscene)
+		DialogueManager.start_speech(cutscene)
 
 func _on_cutscene_started() -> void:
 	pass
@@ -39,5 +39,6 @@ func _on_cutscene_started() -> void:
 func _on_cutscene_ended() -> void:
 	GameManager.current_save.game_state = GameManager.GameState.FIRST_MEETING_IARA
 	fishing_rod.has_interacted = true
+	fishing_rod.interactable_component.monitoring = false
 	
 	transition_to("3_2")

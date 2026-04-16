@@ -5,46 +5,47 @@ extends Control
 @onready var main_menu: DefaultButton = $MenuOptions/MainMenu
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var _is_open : bool = false
-
 func _ready() -> void:
 	back_button.pressed.connect(_on_back_to_game_pressed)
 	options_button.pressed.connect(_on_options_pressed)
 	main_menu.pressed.connect(_on_back_to_main_menu_pressed)
-	
 	animation_player.play("RESET")
-	
-	self.hide()
 
-func _unhandled_input(_event: InputEvent) -> void:
-	if InputManager.get_action_pressed("pause"):
-		if _is_open and get_tree().paused:
-			_resume()
-		elif !_is_open and !get_tree().paused:
-			_pause()
-
-func _pause() -> void:
+func grab_initial_focus() -> void:
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.OPEN_MENU)
-	get_tree().paused = true
-	_is_open = true
-	self.show()
 	animation_player.play("pause")
 	back_button.grab_focus()
 
-func _resume() -> void:
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CLOSE_MENU)
-	get_tree().paused = false
-	_is_open = false
-	self.hide()
-	animation_player.play_backwards("pause")
-
 func _on_back_to_game_pressed() -> void:
-	_resume()
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CLOSE_MENU)
+	UIManager.close_top_menu()
 
 func _on_options_pressed() -> void:
-	# TODO: Funcionalidade de abrir menu de opcoes
 	pass
 
 func _on_back_to_main_menu_pressed() -> void:
-	_resume()
+	GlobalRefs.confirmation_popup.setup(
+		"Todo o progresso não salvo será perdido. Deseja sair?", 
+		null, 
+		true, 
+		"Sair", 
+		"Voltar"
+		)
+	
+	if !GlobalRefs.confirmation_popup.confirmed.is_connected(_confirm_quit):
+		GlobalRefs.confirmation_popup.confirmed.connect(_confirm_quit)
+	if !GlobalRefs.confirmation_popup.cancelled.is_connected(_cancel_quit):
+		GlobalRefs.confirmation_popup.cancelled.connect(_cancel_quit)
+		
+	UIManager.open_menu("confirmation")
+
+func _confirm_quit() -> void:
+	GlobalRefs.confirmation_popup.confirmed.disconnect(_confirm_quit)
+	GlobalRefs.confirmation_popup.cancelled.disconnect(_cancel_quit)
+	UIManager.close_all_menus()
 	get_tree().change_scene_to_file("res://UI/main_menu/main_menu.tscn")
+
+func _cancel_quit() -> void:
+	GlobalRefs.confirmation_popup.confirmed.disconnect(_confirm_quit)
+	GlobalRefs.confirmation_popup.cancelled.disconnect(_cancel_quit)
+	UIManager.close_top_menu()

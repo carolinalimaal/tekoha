@@ -38,6 +38,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 func start_speech(dialogue_data: DialogueSettings) -> void:
 	if !is_showing:
 		dialogue_box.show()
+		UIManager.is_interact_ui_open = true
 		is_showing = true
 		current_dialogue = dialogue_data.dialogues
 		index = 0
@@ -89,6 +90,7 @@ func _next_sentence() -> void:
 func _end_speech() -> void:
 	dialogue_box.hide()
 	cutscene_box.hide()
+	UIManager.is_interact_ui_open = false
 	is_showing = false
 	current_dialogue = []
 	
@@ -102,8 +104,8 @@ func _end_speech() -> void:
 		solid_background.hide()
 		cutscene_background.hide()
 		
-		solid_background.set_modulate(Color(255, 255, 255, 255))
-		cutscene_background.set_modulate(Color(255, 255, 255, 255))
+		solid_background.set_modulate(Color(1.0, 1.0, 1.0, 1.0))
+		cutscene_background.set_modulate(Color(1.0, 1.0, 1.0, 1.0))
 		
 	if GlobalRefs.player:
 		GlobalRefs.player.can_move = true

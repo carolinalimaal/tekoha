@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_je7hj"]
 [ext_resource type="Script" uid="uid://dufyiwgpn6pg7" path="res://UI/game_over_menu/game_over_menu.gd" id="2_qbkh2"]
-[ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/button/button.gd" id="3_ya04a"]
+[ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/components/button/button.gd" id="3_ya04a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_je7hj"]
 bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
