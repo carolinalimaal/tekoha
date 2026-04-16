@@ -60,7 +60,7 @@ func _on_dummy_damage_received(attack_data: AttackData):
 					current_state = TutorialState.ATTACK_2
 					GlobalRefs.player.can_attack_2 = true
 					index += 1
-					DialogueControl.start_speech(tutorial_instructions[index])
+					DialogueManager.start_speech(tutorial_instructions[index])
 					update_ui()
 		
 			TutorialState.ATTACK_2:
@@ -84,7 +84,7 @@ func _on_cutscene_ended():
 	dummy_appearence_anim()
 	roll_area.show()
 	update_ui()
-	DialogueControl.dialogue_ended.disconnect(_on_cutscene_ended)
+	DialogueManager.dialogue_ended.disconnect(_on_cutscene_ended)
 
 func start_tutorial() -> void:
 	interaction_area.hide()
@@ -94,14 +94,14 @@ func start_tutorial() -> void:
 	current_state = TutorialState.ATTACK_1
 	GlobalRefs.player.can_attack_1 = true
 	update_ui()
-	DialogueControl.start_speech(tutorial_instructions[index])
+	DialogueManager.start_speech(tutorial_instructions[index])
 
 func start_roll_tutorial():
-	DialogueControl.dialogue_ended.connect(_on_cutscene_ended)
+	DialogueManager.dialogue_ended.connect(_on_cutscene_ended)
 	current_state = TutorialState.ROLL
 	GlobalRefs.player.can_roll = true
 	index += 1
-	DialogueControl.start_speech(tutorial_instructions[index])
+	DialogueManager.start_speech(tutorial_instructions[index])
 
 func end_tutorial():
 	current_state = TutorialState.FINISHED
