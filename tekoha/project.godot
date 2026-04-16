@@ -31,7 +31,9 @@ GameManager="*res://globals/game_manager.gd"
 InputManager="*uid://bavwf1fj0nui5"
 SaveManager="*uid://rcshhs053h4s"
 AudioManager="*uid://b2r8pkfcaxyp8"
-DialogueControl="*uid://cqbcsw00s55w2"
+UIManager="*uid://1t3b3xadl6gm"
+DialogueManager="*uid://cqbcsw00s55w2"
+InteractionManager="*uid://cokx7i5rnjlqt"
 
 [dialogic]
 
