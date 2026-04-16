@@ -3,7 +3,8 @@
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_xjl8r"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/dialogue/dialogue_box.png" id="2_dtjjs"]
 [ext_resource type="Script" uid="uid://byvnbt4y0gk8l" path="res://UI/new_item_found_panel/new_item_found_panel.gd" id="2_wmhuc"]
-[ext_resource type="PackedScene" uid="uid://by4j7ryqt0fv8" path="res://UI/heart_icon/heart_icon.tscn" id="3_uw45p"]
+[ext_resource type="PackedScene" uid="uid://by4j7ryqt0fv8" path="res://UI/components/heart_icon/heart_icon.tscn" id="3_uw45p"]
+[ext_resource type="PackedScene" uid="uid://c18bln14y2w7t" path="res://UI/components/heart_container/heart_container.tscn" id="5_wmhuc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_id1l5"]
 texture = ExtResource("2_dtjjs")
@@ -71,10 +72,9 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="HBHeartsContainer" type="HBoxContainer" parent="Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1388124508]
-custom_minimum_size = Vector2(220, 16)
+[node name="HeartContainer" parent="Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=438475558 instance=ExtResource("5_wmhuc")]
 layout_mode = 2
-theme_override_constants/separation = 8
+heart_icon = ExtResource("3_uw45p")
 
 [node name="ItemDescription" type="RichTextLabel" parent="Bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1152343976]
 custom_minimum_size = Vector2(320, 55)

@@ -227,6 +227,10 @@ shape = SubResource("RectangleShape2D_w2msv")
 [node name="Marker2D" type="Marker2D" parent="Room3Door" unique_id=1094404449]
 position = Vector2(-92, 77)
 
+[node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("19_wbedm")]
+position = Vector2(-180, 404)
+hammock_texture = ExtResource("20_46t15")
+
 [node name="StateMachine" type="Node" parent="." unique_id=996926368 node_paths=PackedStringArray("_initial_state")]
 script = ExtResource("12_v8bbf")
 _initial_state = NodePath("3_1")
@@ -243,7 +247,3 @@ position = Vector2(-440, 831)
 script = ExtResource("13_q0n6u")
 cutscenes = Array[ExtResource("15_4iyy6")]([ExtResource("16_2jupl"), ExtResource("17_x4cld")])
 practice_dummy_scene = ExtResource("18_x4cld")
-
-[node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("19_wbedm")]
-position = Vector2(-180, 404)
-hammock_texture = ExtResource("20_46t15")

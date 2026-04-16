@@ -9,10 +9,7 @@ extends Control
 @onready var quit_button: DefaultButton = $VBoxContainer/MenuOptions/Quit
 @onready var background: TextureRect = $Background
 
-@onready var confirmation_popup: Panel = $ConfirmationPopup
-@onready var popup_label: Label = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/PopupLabel
-@onready var confirm_button: DefaultButton = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton
-@onready var cancel_button: DefaultButton = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
+@onready var confirmation_popup: ConfirmationPopup = $ConfirmationPopup
 
 
 var bg_list: Array[Texture2D] = [
@@ -27,8 +24,7 @@ func _ready() -> void:
 	options_button.pressed.connect(_on_options_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
 	
-	confirm_button.pressed.connect(_on_confirm_pressed)
-	cancel_button.pressed.connect(_on_cancel_pressed)
+	UIManager.register_menu("confirmation", confirmation_popup)
 	
 	new_game_button.grab_focus()
 	AudioManager.play_background_sound(main_menu_music)
@@ -49,15 +45,20 @@ func _ready() -> void:
 
 func _on_new_game_pressed() -> void:
 	if GameManager.current_save:
-		confirmation_popup.show()
-		confirm_button.grab_focus()
+		confirmation_popup.setup(
+			"O jogo antigo será sobrescrito, deseja continuar?", 
+			null, 
+			true, 
+			"Continuar", 
+			"Cancelar")
+		UIManager.open_menu("confirmation")
+		confirmation_popup.confirm_button.pressed.connect(_on_confirm_new_game)
+		confirmation_popup.cancel_button.pressed.connect(_on_cancel_new_game)
 		for b in menu_options.get_children():
 			if b is Button:
 				b.focus_mode = Control.FOCUS_NONE
 	else:
-		GameManager.current_save = SaveData.new()
-		AudioManager.stop_background_sound()
-		get_tree().change_scene_to_file("res://globals/main_scene/main.tscn")
+		_start_new_game()
 
 func _on_load_game_pressed() -> void:
 	# TODO: Funcionalidade de carregar jogo salvo
@@ -69,17 +70,42 @@ func _on_options_pressed() -> void:
 	pass
 
 func _on_quit_pressed() -> void:
-	await get_tree().create_timer(0.25).timeout
-	get_tree().quit()
+	confirmation_popup.setup(
+		"Tem certeza que deseja sair do jogo?", 
+		null, 
+		true, 
+		"Sair", 
+		"Voltar")
+	UIManager.open_menu("confirmation")
+	confirmation_popup.confirm_button.pressed.connect(_on_confirm_quit)
+	confirmation_popup.cancel_button.pressed.connect(_on_cancel_quit)
 
-func _on_confirm_pressed() -> void:
-	GameManager.current_save = SaveData.new()
-	AudioManager.stop_background_sound()
-	get_tree().change_scene_to_file("res://globals/main_scene/main.tscn")
+func _on_confirm_new_game() -> void:
+	confirmation_popup.confirm_button.pressed.disconnect(_on_confirm_new_game)
+	confirmation_popup.cancel_button.pressed.disconnect(_on_cancel_new_game)
+	_start_new_game()
 
-func _on_cancel_pressed() -> void:
-	confirmation_popup.hide()
+func _on_cancel_new_game() -> void:
+	confirmation_popup.confirm_button.pressed.disconnect(_on_confirm_new_game)
+	confirmation_popup.cancel_button.pressed.disconnect(_on_cancel_new_game)
+	UIManager.close_top_menu()
 	for b in menu_options.get_children():
 			if b is Button:
 				b.focus_mode = Control.FOCUS_ALL
 	new_game_button.grab_focus()
+
+func _start_new_game() -> void:
+	UIManager.close_all_menus()
+	GameManager.current_save = SaveData.new()
+	AudioManager.stop_background_sound()
+	get_tree().change_scene_to_file("res://globals/main_scene/main.tscn")
+
+func _on_confirm_quit() -> void:
+	await get_tree().create_timer(0.25).timeout
+	get_tree().quit()
+
+func _on_cancel_quit() -> void:
+	confirmation_popup.confirm_button.pressed.disconnect(_on_confirm_quit)
+	confirmation_popup.cancel_button.pressed.disconnect(_on_cancel_quit)
+	UIManager.close_top_menu()
+	quit_button.grab_focus()

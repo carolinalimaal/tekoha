@@ -7,31 +7,43 @@
 [ext_resource type="PackedScene" uid="uid://dfmtpawqvhnlg" path="res://UI/game_over_menu/game_over_menu.tscn" id="4_si673"]
 [ext_resource type="PackedScene" uid="uid://ctwwnea1q8vto" path="res://UI/hud/hud.tscn" id="6_114rs"]
 [ext_resource type="PackedScene" uid="uid://c1k48pyjcab6e" path="res://levels/room_1/casa.tscn" id="6_d60g8"]
+[ext_resource type="PackedScene" uid="uid://ryb3syv1bcmd" path="res://UI/components/confirmation_popup/confirmation_popup.tscn" id="7_8lbkp"]
 [ext_resource type="PackedScene" uid="uid://dwpac52ya1ff2" path="res://UI/new_item_found_panel/new_item_found_panel.tscn" id="7_58oj7"]
 [ext_resource type="PackedScene" uid="uid://cs3n57e1xx86b" path="res://UI/loading_screen/loading_screen.tscn" id="7_si673"]
 
 [node name="Main" type="Node2D" unique_id=273176472]
 y_sort_enabled = true
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=79806553]
-layer = 2
+[node name="UI" type="Node" parent="." unique_id=1414520590]
+process_mode = 3
 script = ExtResource("1_114rs")
 
-[node name="PauseMenu" parent="UI" unique_id=60225493 instance=ExtResource("4_mdv7j")]
+[node name="HUDLayer" type="CanvasLayer" parent="UI" unique_id=1420939801]
+layer = 10
+
+[node name="HUD" parent="UI/HUDLayer" unique_id=1518990495 instance=ExtResource("6_114rs")]
+
+[node name="MenuLayer" type="CanvasLayer" parent="UI" unique_id=522778381]
+layer = 20
+
+[node name="PauseMenu" parent="UI/MenuLayer" unique_id=60225493 instance=ExtResource("4_mdv7j")]
 visible = false
 
-[node name="GameOverMenu" parent="UI" unique_id=291677330 instance=ExtResource("4_si673")]
+[node name="GameOverMenu" parent="UI/MenuLayer" unique_id=291677330 instance=ExtResource("4_si673")]
 visible = false
 
-[node name="InventoryUi" parent="UI" unique_id=305267818 instance=ExtResource("3_ac4dx")]
+[node name="InventoryUi" parent="UI/MenuLayer" unique_id=305267818 instance=ExtResource("3_ac4dx")]
 visible = false
 
-[node name="HUD" parent="UI" unique_id=1518990495 instance=ExtResource("6_114rs")]
-
-[node name="NewItemFoundPanel" parent="UI" unique_id=2133664499 instance=ExtResource("7_58oj7")]
+[node name="NewItemFoundPanel" parent="UI/MenuLayer" unique_id=2133664499 instance=ExtResource("7_58oj7")]
 visible = false
 
-[node name="LoadingScreen" parent="UI" unique_id=699405306 instance=ExtResource("7_si673")]
+[node name="ConfirmationPopup" parent="UI/MenuLayer" unique_id=1699816863 instance=ExtResource("7_8lbkp")]
+
+[node name="SystemLayer" type="CanvasLayer" parent="UI" unique_id=804312928]
+layer = 100
+
+[node name="LoadingScreen" parent="UI/SystemLayer" unique_id=699405306 instance=ExtResource("7_si673")]
 
 [node name="Level" type="Node2D" parent="." unique_id=793583955]
 y_sort_enabled = true
