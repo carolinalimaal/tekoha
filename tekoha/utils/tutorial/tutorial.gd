@@ -82,6 +82,8 @@ func _on_roll_area_body_entered(body: Node2D) -> void:
 
 func _on_cutscene_ended():
 	dummy_appearence_anim()
+	roll_area.show()
+	update_ui()
 	DialogueControl.dialogue_ended.disconnect(_on_cutscene_ended)
 
 func start_tutorial() -> void:
@@ -100,8 +102,6 @@ func start_roll_tutorial():
 	GlobalRefs.player.can_roll = true
 	index += 1
 	DialogueControl.start_speech(tutorial_instructions[index])
-	roll_area.show()
-	update_ui()
 
 func end_tutorial():
 	current_state = TutorialState.FINISHED

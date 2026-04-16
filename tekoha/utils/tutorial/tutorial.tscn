@@ -32,6 +32,7 @@ position = Vector2(0, 23)
 shape = SubResource("CircleShape2D_mh1kf")
 
 [node name="RollArea" type="Area2D" parent="." unique_id=832948555]
+position = Vector2(-7, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RollArea" unique_id=467598073]
 position = Vector2(0, 4)
