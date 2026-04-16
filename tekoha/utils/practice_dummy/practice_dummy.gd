@@ -1,55 +1,15 @@
 extends StaticBody2D
 
-enum TutorialState {
-	NOT_INITIATED,
-	ATTACK_1,
-	ATTACK_2,
-	ROLL,
-	FINISHED
-}
-var current_state: TutorialState = TutorialState.NOT_INITIATED
+signal damage_received(attack_data: AttackData)
 
-var can_interact: bool = false
-
-var index: int = 0
-@export var tutorial_instructions: Array[DialogueSettings]
-
-
+@export var tutorial_dummy: bool
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox_comp: HitboxComponent = $HitboxComponent
-@onready var interaction_area: Area2D = $InteractionArea
-@onready var tutorial_limit_1: StaticBody2D = $Limits/TutorialLimit
-@onready var tutorial_limit_2: StaticBody2D = $Limits/TutorialLimit2
-@onready var finish_timer: Timer = $FinishTimer
-@onready var interaction_ui: CanvasLayer = $InteractionUI
-@onready var int_container: MarginContainer = $InteractionUI/InteractionContainer
-@onready var int_ui_label: Label = $InteractionUI/InteractionContainer/ColorRect/Label
 
 
 func _ready() -> void:
 	hitbox_comp.attack_received.connect(_on_attack_received)
-	
-	global_position = Vector2(-357.0, 645.0)
 
-func _unhandled_input(_event: InputEvent) -> void:
-	if InputManager.get_action_pressed("interact"):
-		if current_state == TutorialState.NOT_INITIATED and can_interact:
-			start_tutorial()
-			can_interact = false
-	#mudar para o estado finished
-	if InputManager.get_action_pressed("roll") and current_state == TutorialState.ROLL:
-		print("Roll realizado")
-		end_tutorial()
-
-func _on_interaction_area_body_entered(body: Node2D) -> void:
-	if body is Player and current_state == TutorialState.NOT_INITIATED:
-		interaction_ui.show()
-		can_interact = true
-
-func _on_interaction_area_body_exited(body: Node2D) -> void:
-	if body is Player and current_state == TutorialState.NOT_INITIATED:
-		interaction_ui.hide()
-		can_interact = false
 
 func _on_attack_received(attack_data: AttackData):
 	animated_sprite.play("damage_anim")
@@ -129,3 +89,6 @@ func zoom_in_camera():
 func zoom_out_camera():
 	var tween: Tween = create_tween()
 	tween.tween_property(get_node("../../../PlayerCamera"), "zoom", Vector2(1,1), 1)
+	if tutorial_dummy:
+		print("Ataque recebido")
+		damage_received.emit(attack_data)

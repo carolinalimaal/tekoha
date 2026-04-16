@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpnsbjg6loqq"
-path="res://.godot/imported/sala01.png-a667ee38f7a332df22734bfad0151650.ctex"
+uid="uid://b0do13h4w5fkm"
+path="res://.godot/imported/grama_terra_tile.png-cad8c07b2902a9005458f772a8d3fef8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/terra_grama/sala01.png"
-dest_files=["res://.godot/imported/sala01.png-a667ee38f7a332df22734bfad0151650.ctex"]
+source_file="res://assets/sprites/tiles/grama_terra/grama_terra_tile.png"
+dest_files=["res://.godot/imported/grama_terra_tile.png-cad8c07b2902a9005458f772a8d3fef8.ctex"]
 
 [params]
 
