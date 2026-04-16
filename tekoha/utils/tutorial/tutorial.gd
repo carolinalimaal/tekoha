@@ -23,8 +23,8 @@ var index: int = 0
 @onready var finish_timer: Timer = $FinishTimer
 @onready var interaction_ui: CanvasLayer = $InteractionUI
 @onready var int_container: MarginContainer = $InteractionUI/InteractionContainer
-@onready var transition_cont: MarginContainer = $InteractionUI/TransitionCont
-@onready var transition_rect: ColorRect = $InteractionUI/TransitionCont/TransitionRect
+@onready var transition_layer: CanvasLayer = $TransitionLayer
+@onready var transition_rect: ColorRect = $TransitionLayer/TransitionCont/TransitionRect
 @onready var int_ui_label: Label = $InteractionUI/InteractionContainer/ColorRect/Label
 
 
@@ -32,7 +32,7 @@ func _ready() -> void:
 	practice_dummy_2.damage_received.connect(_on_dummy_damage_received)
 	practice_dummy.hide()
 	roll_area.hide()
-	transition_cont.hide()
+	transition_layer.hide()
 	global_position = Vector2(-357.0, 645.0)
 
 func _unhandled_input(_event: InputEvent) -> void:
@@ -147,12 +147,12 @@ func zoom_out_camera():
 
 func dummy_appearence_anim():
 	GlobalRefs.player.can_move = false
-	transition_cont.show()
+	transition_layer.show()
 	transition_rect.modulate.a = 0.0
 	var tween: Tween = create_tween()
 	tween.tween_property(transition_rect, "modulate:a", 1, 1.0)
 	tween.tween_callback(func(): practice_dummy.show())
 	tween.tween_property(transition_rect, "modulate:a", 0, 1.0)
 	await tween.finished
-	transition_cont.hide()
+	transition_layer.hide()
 	GlobalRefs.player.can_move = true

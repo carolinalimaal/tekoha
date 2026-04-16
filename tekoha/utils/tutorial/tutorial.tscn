@@ -83,12 +83,14 @@ offset_right = 248.0
 offset_bottom = 31.0
 text = "Aperte R para iniciar o tutorial"
 
-[node name="TransitionCont" type="MarginContainer" parent="InteractionUI" unique_id=1794572811]
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=593721991]
 visible = false
+
+[node name="TransitionCont" type="MarginContainer" parent="TransitionLayer" unique_id=1794572811]
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="TransitionRect" type="ColorRect" parent="InteractionUI/TransitionCont" unique_id=1621543032]
+[node name="TransitionRect" type="ColorRect" parent="TransitionLayer/TransitionCont" unique_id=1621543032]
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
