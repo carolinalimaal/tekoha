@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://bx27oixgqklgm"]
+
+[ext_resource type="Script" uid="uid://b5girm7k6uw5u" path="res://utils/tutorial/tutorial.gd" id="1_5udl4"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="2_j2fou"]
+[ext_resource type="PackedScene" uid="uid://ckmfw2q3upa3o" path="res://utils/practice_dummy/practice_dummy.tscn" id="2_mh1kf"]
+[ext_resource type="Resource" uid="uid://bpdnrfj8ppa8q" path="res://data/dialogues/tutorial/attack_1.tres" id="3_7dq56"]
+[ext_resource type="Resource" uid="uid://ca1rig5ioptmg" path="res://data/dialogues/tutorial/attack_2.tres" id="4_iu72u"]
+[ext_resource type="Resource" uid="uid://bo5imxps1sjqp" path="res://data/dialogues/tutorial/roll.tres" id="5_h5cln"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mh1kf"]
+radius = 56.568542
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mh1kf"]
+size = Vector2(20, 56)
+
+[node name="Tutorial" type="Node2D" unique_id=1600673828]
+script = ExtResource("1_5udl4")
+tutorial_instructions = Array[ExtResource("2_j2fou")]([ExtResource("3_7dq56"), ExtResource("4_iu72u"), ExtResource("5_h5cln")])
+
+[node name="PracticeDummy" parent="." unique_id=492951067 instance=ExtResource("2_mh1kf")]
+visible = false
+position = Vector2(0, -53)
+
+[node name="PracticeDummy2" parent="." unique_id=2126296874 instance=ExtResource("2_mh1kf")]
+position = Vector2(0, 23)
+tutorial_dummy = true
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1785647429]
+position = Vector2(0, 23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1373593887]
+shape = SubResource("CircleShape2D_mh1kf")
+
+[node name="RollArea" type="Area2D" parent="." unique_id=832948555]
+position = Vector2(-7, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RollArea" unique_id=467598073]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_mh1kf")
+debug_color = Color(0.9195282, 0.21189004, 0.4797731, 0.41960785)
+
+[node name="Limits" type="Node2D" parent="." unique_id=1417734599]
+
+[node name="TutorialLimit" type="StaticBody2D" parent="Limits" unique_id=1158202312]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/TutorialLimit" unique_id=932209226]
+polygon = PackedVector2Array(-64, 80, -64, -64, 128, -64, 128, 80, 152, 80, 152, -72, -80, -72, -80, 80)
+
+[node name="TutorialLimit2" type="StaticBody2D" parent="Limits" unique_id=304964812]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/TutorialLimit2" unique_id=1507149188]
+polygon = PackedVector2Array(-80, 80, -80, 88, 152, 88, 152, 80)
+
+[node name="FinishTimer" type="Timer" parent="." unique_id=1767277861]
+wait_time = 1.5
+one_shot = true
+
+[node name="InteractionUI" type="CanvasLayer" parent="." unique_id=660448084]
+visible = false
+
+[node name="InteractionContainer" type="MarginContainer" parent="InteractionUI" unique_id=1663647076]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="InteractionUI/InteractionContainer" unique_id=474388465]
+layout_mode = 2
+color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
+
+[node name="Label" type="Label" parent="InteractionUI/InteractionContainer/ColorRect" unique_id=1843081537]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 8.0
+offset_right = 248.0
+offset_bottom = 31.0
+text = "Aperte R para iniciar o tutorial"
+
+[node name="TransitionCont" type="MarginContainer" parent="InteractionUI" unique_id=1794572811]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="TransitionRect" type="ColorRect" parent="InteractionUI/TransitionCont" unique_id=1621543032]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
+[connection signal="body_entered" from="RollArea" to="." method="_on_roll_area_body_entered"]
+[connection signal="timeout" from="FinishTimer" to="." method="_on_finish_timer_timeout"]
