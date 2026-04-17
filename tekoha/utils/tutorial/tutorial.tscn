@@ -16,7 +16,7 @@ size = Vector2(20, 56)
 
 [node name="Tutorial" type="Node2D" unique_id=1600673828]
 script = ExtResource("1_5udl4")
-tutorial_instructions = Array[ExtResource("2_j2fou")]([ExtResource("3_7dq56"), ExtResource("4_iu72u"), ExtResource("5_h5cln")])
+tutorial_instructions = Array[ExtResource("2_j2fou")]([ExtResource("3_7dq56"), ExtResource("4_iu72u"), ExtResource("5_h5cln"), ExtResource("5_h5cln")])
 
 [node name="PracticeDummy" parent="." unique_id=492951067 instance=ExtResource("2_mh1kf")]
 visible = false
@@ -37,6 +37,9 @@ metadata/_custom_type_script = "uid://bevot8siuxavc"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1373593887]
 position = Vector2(0, 23)
 shape = SubResource("CircleShape2D_mh1kf")
+
+[node name="PlayerReposition" type="Marker2D" parent="." unique_id=532163376]
+position = Vector2(88, 32)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1073670818]
 position = Vector2(0, -14)
