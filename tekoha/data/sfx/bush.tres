@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://kcv22s3oq8tv"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_n4e4n"]
+[ext_resource type="AudioStream" uid="uid://c4dm6n2lvq3ly" path="res://assets/sound/sfx/enviroment/bush.wav" id="2_j7254"]
+
+[resource]
+script = ExtResource("1_n4e4n")
+type = 7
+sound_effect = ExtResource("2_j7254")
+volume = -25.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"
