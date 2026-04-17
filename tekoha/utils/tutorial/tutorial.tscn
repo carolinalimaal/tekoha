@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://bpdnrfj8ppa8q" path="res://data/dialogues/tutorial/attack_1.tres" id="3_7dq56"]
 [ext_resource type="Resource" uid="uid://ca1rig5ioptmg" path="res://data/dialogues/tutorial/attack_2.tres" id="4_iu72u"]
 [ext_resource type="Resource" uid="uid://bo5imxps1sjqp" path="res://data/dialogues/tutorial/roll.tres" id="5_h5cln"]
+[ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="7_iu72u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh1kf"]
 radius = 56.568542
@@ -25,11 +26,20 @@ position = Vector2(0, -53)
 position = Vector2(0, 23)
 tutorial_dummy = true
 
-[node name="InteractionArea" type="Area2D" parent="." unique_id=1785647429]
-position = Vector2(0, 23)
+[node name="InteractableComponent" type="Area2D" parent="." unique_id=873083021 node_paths=PackedStringArray("collision_shape", "marker")]
+collision_layer = 0
+script = ExtResource("7_iu72u")
+interact_label = "R tutorial"
+collision_shape = NodePath("CollisionShape2D")
+marker = NodePath("../Marker2D")
+metadata/_custom_type_script = "uid://bevot8siuxavc"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1373593887]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1373593887]
+position = Vector2(0, 23)
 shape = SubResource("CircleShape2D_mh1kf")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1073670818]
+position = Vector2(0, -14)
 
 [node name="RollArea" type="Area2D" parent="." unique_id=832948555]
 position = Vector2(-7, -2)
@@ -53,36 +63,6 @@ collision_layer = 0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/TutorialLimit2" unique_id=1507149188]
 polygon = PackedVector2Array(-80, 80, -80, 88, 152, 88, 152, 80)
 
-[node name="FinishTimer" type="Timer" parent="." unique_id=1767277861]
-wait_time = 1.5
-one_shot = true
-
-[node name="InteractionUI" type="CanvasLayer" parent="." unique_id=660448084]
-visible = false
-
-[node name="InteractionContainer" type="MarginContainer" parent="InteractionUI" unique_id=1663647076]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -262.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="ColorRect" type="ColorRect" parent="InteractionUI/InteractionContainer" unique_id=474388465]
-layout_mode = 2
-color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
-
-[node name="Label" type="Label" parent="InteractionUI/InteractionContainer/ColorRect" unique_id=1843081537]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 8.0
-offset_right = 248.0
-offset_bottom = 31.0
-text = "Aperte R para iniciar o tutorial"
-
 [node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=593721991]
 visible = false
 
@@ -94,7 +74,4 @@ offset_bottom = 720.0
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
-[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
 [connection signal="body_entered" from="RollArea" to="." method="_on_roll_area_body_entered"]
-[connection signal="timeout" from="FinishTimer" to="." method="_on_finish_timer_timeout"]
