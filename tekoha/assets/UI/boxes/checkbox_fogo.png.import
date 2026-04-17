@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cky6noca1mc8s"
-path="res://.godot/imported/dialogue_box.png-79edb274c8f3c2acfca1741223379c4a.ctex"
+uid="uid://bym3x4j0qc6bh"
+path="res://.godot/imported/checkbox_fogo.png-b20045749b03c6efaf1a90e0f4927468.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/dialogue/dialogue_box.png"
-dest_files=["res://.godot/imported/dialogue_box.png-79edb274c8f3c2acfca1741223379c4a.ctex"]
+source_file="res://assets/UI/boxes/checkbox_fogo.png"
+dest_files=["res://.godot/imported/checkbox_fogo.png-b20045749b03c6efaf1a90e0f4927468.ctex"]
 
 [params]
 
