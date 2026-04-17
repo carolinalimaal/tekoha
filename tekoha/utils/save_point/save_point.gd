@@ -21,6 +21,8 @@ func interact() -> void:
 
 func _on_save_confirmed() -> void:
 	SaveManager.save_game(GameManager.current_save)
+	# Talvez esse som va para a Label na HUD para notificacoes
+	AudioManager.create_2d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.SAVE)
 	UIManager.is_interact_ui_open = false
 	interactable_component.enable_interaction()
 	UIManager.close_top_menu()
