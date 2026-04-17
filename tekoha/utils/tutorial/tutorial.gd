@@ -15,6 +15,7 @@ var index: int = 0
 @onready var practice_dummy: StaticBody2D = $PracticeDummy
 @onready var practice_dummy_2: StaticBody2D = $PracticeDummy2
 @onready var interactable_comp: InteractableComponent = $InteractableComponent
+@onready var player_reposition: Marker2D = $PlayerReposition
 @onready var roll_area: Area2D = $RollArea
 @onready var tutorial_limit_1: StaticBody2D = $Limits/TutorialLimit
 @onready var tutorial_limit_2: StaticBody2D = $Limits/TutorialLimit2
@@ -32,7 +33,7 @@ func interact() -> void:
 	if current_state == TutorialState.NOT_INITIATED:
 		start_tutorial()
 
-func _on_dummy_damage_received(attack_data: AttackData):
+func _on_dummy_damage_received(attack_data: AttackData) -> void:
 	if current_state != TutorialState.NOT_INITIATED:
 		match current_state:
 			TutorialState.ATTACK_1:
@@ -55,11 +56,15 @@ func _on_roll_area_body_entered(body: Node2D) -> void:
 			end_tutorial()
 		else:
 			print("Ops! Você deve entrar com dash nessa área!")
+			DialogueManager.start_speech(tutorial_instructions[index])
 
-func _on_cutscene_ended():
-	dummy_appearence_anim()
-	roll_area.show()
-	DialogueManager.dialogue_ended.disconnect(_on_cutscene_ended)
+func _on_cutscene_ended() -> void:
+	if current_state == TutorialState.ROLL and !practice_dummy.visible:
+		dummy_appearence_anim()
+		roll_area.show()
+	
+	if index > 0:
+		player_reposition_respawn()
 
 func start_tutorial() -> void:
 	interactable_comp.disable_interaction()
@@ -67,36 +72,38 @@ func start_tutorial() -> void:
 	zoom_in_camera()
 	print("Tutorial iniciado")
 	current_state = TutorialState.ATTACK_1
+	DialogueManager.dialogue_ended.connect(_on_cutscene_ended)
 	GlobalRefs.player.can_attack_1 = true
 	DialogueManager.start_speech(tutorial_instructions[index])
 
-func start_roll_tutorial():
-	DialogueManager.dialogue_ended.connect(_on_cutscene_ended)
+func start_roll_tutorial() -> void:
 	current_state = TutorialState.ROLL
 	GlobalRefs.player.can_roll = true
 	index += 1
 	DialogueManager.start_speech(tutorial_instructions[index])
+	index += 1
 
-func end_tutorial():
+func end_tutorial() -> void:
 	current_state = TutorialState.FINISHED
+	DialogueManager.dialogue_ended.disconnect(_on_cutscene_ended)
 	print("Tutorial finalizado")
 	set_limits_layer(false)
 	zoom_out_camera()
 
-func set_limits_layer(condition: bool):
+func set_limits_layer(condition: bool) -> void:
 	tutorial_limit_1.set_collision_layer_value(8, condition)
 	tutorial_limit_2.set_collision_layer_value(8, condition)
 
-func zoom_in_camera():
+func zoom_in_camera() -> void:
 	var tween: Tween = create_tween()
 	tween.tween_property(get_node("../../../PlayerCamera"), "zoom", Vector2(2,2), 1)
 	
-func zoom_out_camera():
+func zoom_out_camera() -> void:
 	await get_tree().create_timer(1).timeout
 	var tween: Tween = create_tween()
 	tween.tween_property(get_node("../../../PlayerCamera"), "zoom", Vector2(1,1), 1)
 
-func dummy_appearence_anim():
+func dummy_appearence_anim() -> void:
 	GlobalRefs.player.can_move = false
 	transition_layer.show()
 	transition_rect.modulate.a = 0.0
@@ -107,3 +114,6 @@ func dummy_appearence_anim():
 	await tween.finished
 	transition_layer.hide()
 	GlobalRefs.player.can_move = true
+
+func player_reposition_respawn() -> void:
+	GlobalRefs.player.position = player_reposition.global_position
