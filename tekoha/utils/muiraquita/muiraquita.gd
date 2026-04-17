@@ -15,5 +15,6 @@ func _ready() -> void:
 func collect() -> void:
 	# Bloquear registrar duas vezes o mesmo muiraquita
 	if !GameManager.current_save.collected_muiraquitas.has(id):
+		AudioManager.create_2d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.PICKUP_ITEM)
 		GlobalSignals.new_muiraquita_found.emit(id)
 		modulate = Color(1,1,1,0.3)

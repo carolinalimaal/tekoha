@@ -5,16 +5,19 @@ extends Resource
 # Registre os tipos de sons aqui para facilitar a chamada no código.
 enum SOUND_EFFECT_TYPE {
 	# Adicionar os tipos de SFXs
-	BREAKING_POT,
-	UI_CLICK,
-	OPEN_MENU,
-	CLOSE_MENU,
 	CURUPIRA_WALK,
 	CURUPIRA_ATTACK_1,
 	CURUPIRA_ATTACK_2,
 	CURUPIRA_ROLL,
 	CURUPIRA_STUN,
-	CURUPIRA_DEATH
+	CURUPIRA_DEATH,
+	BREAKING_POT,
+	BUSH,
+	PICKUP_ITEM,
+	UI_CLICK,
+	OPEN_MENU,
+	CLOSE_MENU,
+	SAVE,
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.
