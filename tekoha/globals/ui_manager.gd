@@ -41,7 +41,10 @@ func close_top_menu() -> void:
 		return
 		
 	var top_menu = menu_stack.pop_back()
-	top_menu.hide()
+	if top_menu.has_method("close_ui"):
+		top_menu.close_ui()
+	else:
+		top_menu.hide()
 	
 	# Se fechar o último menu e a pilha ficou vazia, despausa o jogo
 	if menu_stack.is_empty():
@@ -55,6 +58,9 @@ func close_top_menu() -> void:
 # Função utilitária para limpar tudo de uma vez
 func close_all_menus() -> void:
 	for menu in menu_stack:
-		menu.hide()
+		if menu.has_method("close_ui"):
+			menu.close_ui()
+		else:
+			menu.hide()
 	menu_stack.clear()
 	get_tree().paused = false

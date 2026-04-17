@@ -31,6 +31,10 @@ func grab_initial_focus() -> void:
 	if slots.size() > 0:
 		slots[0].item_button.grab_focus()
 
+func close_ui() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CLOSE_MENU)
+	hide()
+
 func _update_ui() -> void:
 	# Referencia ao inventario
 	var inventory_slots = GameManager.current_save.inventory_slots

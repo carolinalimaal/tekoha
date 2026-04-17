@@ -16,6 +16,11 @@ func grab_initial_focus() -> void:
 	animation_player.play("pause")
 	back_button.grab_focus()
 
+func close_ui() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CLOSE_MENU)
+	animation_player.play_backwards("pause")
+	hide()
+
 func _on_back_to_game_pressed() -> void:
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CLOSE_MENU)
 	UIManager.close_top_menu()
