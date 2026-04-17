@@ -32,8 +32,7 @@ func _add_coin(value: int) -> void:
 	if !current_save.known_items.has("coin"):
 		current_save.known_items["coin"] = true
 		GlobalRefs.new_item_found_panel.show_panel(GlobalRefs.ItemType.COIN, null)
-	
-	# TODO: adicionar som de coletar moeda
+
 	# Emitir sinal para mostrar UI
 	GlobalSignals.wallet_updated.emit(current_save.wallet)
 
@@ -44,7 +43,6 @@ func _register_muiraquita(id: int) -> void:
 	if !current_save.known_items.has("muiraquita"):
 		current_save.known_items["muiraquita"] = true
 		GlobalRefs.new_item_found_panel.show_panel(GlobalRefs.ItemType.MUIRAQUITA, null)
-	
-	# TODO: adicionar som de encontrar muiraquita
+
 	# Emitir sinal para mostrar UI
 	GlobalSignals.muiraquita_updated.emit(id)
