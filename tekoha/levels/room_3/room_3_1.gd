@@ -2,7 +2,7 @@ extends State
 
 @export var cutscene: DialogueSettings
 
-@onready var fishing_rod: FishingRod = $FishingRod
+@onready var fishing_rod: FishingRod = $"../../FishingRod"
 
 func _enter() -> void:
 	DialogueManager.dialogue_started.connect(_on_cutscene_started)

@@ -17,6 +17,7 @@ radius = 56.568542
 size = Vector2(20, 56)
 
 [node name="Tutorial" type="Node2D" unique_id=1600673828]
+y_sort_enabled = true
 script = ExtResource("1_5udl4")
 tutorial_instructions = Array[ExtResource("2_j2fou")]([ExtResource("3_7dq56"), ExtResource("4_iu72u"), ExtResource("5_h5cln"), ExtResource("6_h5cln")])
 
