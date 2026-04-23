@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dc1wapt25fjje"]
+
+[ext_resource type="Texture2D" uid="uid://cyac0w2a7a8s4" path="res://assets/sprites/props/sign/placa.png" id="1_i3gde"]
+[ext_resource type="Script" uid="uid://dxu21o36av8b6" path="res://utils/sign/sign.gd" id="1_sxotu"]
+[ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="2_paytu"]
+[ext_resource type="Resource" uid="uid://cgp0cpm6odq2t" path="res://data/dialogues/sign/sign_room_4.tres" id="2_wok1d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paytu"]
+size = Vector2(30, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxotu"]
+size = Vector2(42, 42)
+
+[node name="Sign" type="StaticBody2D" unique_id=556060269]
+collision_layer = 256
+script = ExtResource("1_sxotu")
+sign_text = ExtResource("2_wok1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1957154103]
+texture = ExtResource("1_i3gde")
+offset = Vector2(16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1558615928]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_paytu")
+
+[node name="InteractableComponent" type="Area2D" parent="." unique_id=833358792 node_paths=PackedStringArray("collision_shape", "marker")]
+collision_layer = 0
+script = ExtResource("2_paytu")
+interact_label = "R Ler"
+collision_shape = NodePath("CollisionShape2D")
+marker = NodePath("../Marker2D")
+metadata/_custom_type_script = "uid://bevot8siuxavc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1669126706]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_sxotu")
+debug_color = Color(1.347661e-06, 0.6420948, 0.32870603, 0.41960785)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=171847685]
+position = Vector2(16, -15)
