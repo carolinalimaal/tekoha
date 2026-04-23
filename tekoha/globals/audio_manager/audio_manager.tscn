@@ -7,8 +7,13 @@
 [ext_resource type="Resource" uid="uid://dpaix4628y4ba" path="res://data/sfx/open_menu.tres" id="5_ulrmu"]
 [ext_resource type="Resource" uid="uid://dfu478ac72ads" path="res://data/sfx/close_menu.tres" id="6_fdt5a"]
 [ext_resource type="Resource" uid="uid://dt2fs32m4hfnb" path="res://data/sfx/curupira_walk.tres" id="7_fdt5a"]
+[ext_resource type="Resource" uid="uid://bgqbtdby8qv86" path="res://data/sfx/curupira_attack_1.tres" id="8_lgug7"]
+[ext_resource type="Resource" uid="uid://llf3xb2jby5d" path="res://data/sfx/curupira_attack_2.tres" id="9_qmnf0"]
+[ext_resource type="Resource" uid="uid://kjvjik1fb254" path="res://data/sfx/pickup_item.tres" id="10_2d6s7"]
+[ext_resource type="Resource" uid="uid://kcv22s3oq8tv" path="res://data/sfx/bush.tres" id="11_1m5h4"]
+[ext_resource type="Resource" uid="uid://cdgxngwu47jib" path="res://data/sfx/save.tres" id="12_684e1"]
 
 [node name="AudioManager" type="Node2D" unique_id=1953541211]
 process_mode = 3
 script = ExtResource("1_gqfen")
-sound_effects = Array[ExtResource("2_jkr7a")]([ExtResource("3_2bgjf"), ExtResource("4_1d2wt"), ExtResource("5_ulrmu"), ExtResource("6_fdt5a"), ExtResource("7_fdt5a")])
+sound_effects = Array[ExtResource("2_jkr7a")]([ExtResource("3_2bgjf"), ExtResource("4_1d2wt"), ExtResource("5_ulrmu"), ExtResource("6_fdt5a"), ExtResource("7_fdt5a"), ExtResource("8_lgug7"), ExtResource("9_qmnf0"), ExtResource("10_2d6s7"), ExtResource("11_1m5h4"), ExtResource("12_684e1")])

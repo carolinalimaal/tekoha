@@ -1,0 +1,108 @@
+[gd_scene format=4 uid="uid://c1k48pyjcab6e"]
+
+[ext_resource type="Script" uid="uid://cw2gh4q2c5xa3" path="res://levels/room_1/casa.gd" id="1_wyrnq"]
+[ext_resource type="Resource" uid="uid://bqqf1ha3k1dn8" path="res://data/cutscenes/cutscene_1/cutscene_1.tres" id="2_1e7m2"]
+[ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://levels/background/background.tscn" id="3_snts5"]
+[ext_resource type="TileSet" uid="uid://dw27k52a7hjbm" path="res://assets/sprites/tiles/interior_casas/moveis.tres" id="4_7yov0"]
+[ext_resource type="TileSet" uid="uid://ckp1proet01b6" path="res://assets/sprites/tiles/interior_casas/house_tile_set.tres" id="5_h3kau"]
+[ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="8_h3kau"]
+[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="10_4prg2"]
+[ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="10_dw8qo"]
+[ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="10_wmk35"]
+[ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="10_x2bmf"]
+[ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="11_gyguw"]
+[ext_resource type="Texture2D" uid="uid://4hv4ijur8gyw" path="res://assets/sprites/props/hammock/rede_save_livre.png" id="12_vd5oq"]
+[ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="13_i1302"]
+[ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="14_emlbn"]
+
+[sub_resource type="Gradient" id="Gradient_ign5b"]
+offsets = PackedFloat32Array(0, 0.9736842)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dw8qo"]
+gradient = SubResource("Gradient_ign5b")
+fill = 2
+fill_from = Vector2(0.52347416, 0)
+fill_to = Vector2(0.5140845, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyguw"]
+size = Vector2(32, 20)
+
+[node name="Casa" type="Node2D" unique_id=1391894647]
+y_sort_enabled = true
+script = ExtResource("1_wyrnq")
+cutscene = ExtResource("2_1e7m2")
+limit_top = -75
+limit_bottom = 363
+limit_left = -140
+limit_right = 539
+
+[node name="Background" parent="." unique_id=1987475052 instance=ExtResource("3_snts5")]
+
+[node name="Tiles" type="Node2D" parent="." unique_id=1518279033]
+
+[node name="HouseFloor" type="TileMapLayer" parent="Tiles" unique_id=485303561]
+z_index = -10
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAIAAAABAAAAAAACAAIAAAACAAAAAAACAAIAAAADAAAAAAACAAIAAAAEAAAAAAACAAIAAAAFAAAAAAACAAIAAAAGAAAAAAACAAIAAAAHAAAAAAACAAIAAAAIAAAAAAACAAIAAAAJAAAAAAACAAIAAAAKAAAAAAACAAIAAAAKAAEAAAACAAIAAAAJAAEAAAACAAIAAAAIAAEAAAACAAIAAAAHAAEAAAACAAIAAAAGAAEAAAACAAIAAAAFAAEAAAACAAIAAAAEAAEAAAACAAIAAAADAAEAAAACAAIAAAACAAEAAAACAAIAAAABAAEAAAACAAIAAAAAAAEAAAACAAIAAAAAAAIAAAACAAIAAAABAAIAAAACAAIAAAACAAIAAAACAAIAAAADAAIAAAACAAIAAAAEAAIAAAACAAIAAAAFAAIAAAACAAIAAAAGAAIAAAACAAIAAAAHAAIAAAACAAIAAAAIAAIAAAACAAIAAAAJAAIAAAACAAIAAAAKAAIAAAACAAIAAAAKAAMAAAACAAIAAAAKAAQAAAACAAIAAAAKAAUAAAACAAIAAAAKAAYAAAACAAIAAAAKAAcAAAACAAIAAAAJAAcAAAACAAIAAAAIAAcAAAACAAIAAAAHAAcAAAACAAIAAAAGAAcAAAACAAIAAAAFAAcAAAACAAIAAAAEAAcAAAACAAIAAAADAAcAAAACAAIAAAACAAcAAAACAAIAAAABAAcAAAACAAIAAAAAAAcAAAACAAIAAAAAAAYAAAACAAIAAAABAAYAAAACAAIAAAACAAYAAAACAAIAAAADAAYAAAACAAIAAAAEAAYAAAACAAIAAAAFAAYAAAACAAIAAAAGAAYAAAACAAIAAAAHAAYAAAACAAIAAAAIAAYAAAACAAIAAAAJAAYAAAACAAIAAAAJAAUAAAACAAIAAAAIAAUAAAACAAIAAAAHAAUAAAACAAIAAAAGAAUAAAACAAIAAAAFAAUAAAACAAIAAAAEAAUAAAACAAIAAAADAAUAAAACAAIAAAACAAUAAAACAAIAAAABAAUAAAACAAIAAAAAAAUAAAACAAIAAAAAAAQAAAACAAIAAAABAAQAAAACAAIAAAACAAQAAAACAAIAAAADAAQAAAACAAIAAAAEAAQAAAACAAIAAAAFAAQAAAACAAIAAAAGAAQAAAACAAIAAAAHAAQAAAACAAIAAAAIAAQAAAACAAIAAAAJAAQAAAACAAIAAAAJAAMAAAACAAIAAAAIAAMAAAACAAIAAAAHAAMAAAACAAIAAAAGAAMAAAACAAIAAAAFAAMAAAACAAIAAAAEAAMAAAACAAIAAAADAAMAAAACAAIAAAACAAMAAAACAAIAAAABAAMAAAACAAIAAAAAAAMAAAACAAIAAAA=")
+tile_set = ExtResource("5_h3kau")
+
+[node name="HouseWalls" type="TileMapLayer" parent="Tiles" unique_id=2048047314]
+z_index = -10
+tile_map_data = PackedByteArray("AAAAAP//AAACAAEAAAABAP//AAACAAEAAAACAP//AAACAAEAAAADAP//AAACAAEAAAAEAP//AAACAAEAAAAFAP//AAACAAEAAAAGAP//AAACAAEAAAAHAP//AAACAAEAAAAIAP//AAACAAEAAAAJAP//AAACAAEAAAAKAP//AAACAAEAAAAAAP7/AAADAAAAAAABAP7/AAADAAAAAAACAP7/AAADAAAAAAADAP7/AAADAAAAAAAEAP7/AAADAAAAAAAFAP7/AAADAAAAAAAGAP7/AAADAAAAAAAHAP7/AAADAAAAAAAIAP7/AAADAAAAAAAJAP7/AAADAAAAAAAKAP7/AAADAAAAAAD///7/AAABAAEAAAALAP7/AAADAAEAAAD/////AAABAAIAAAD//wAAAAABAAIAAAD//wEAAAABAAIAAAD//wIAAAABAAIAAAD//wMAAAABAAIAAAD//wQAAAABAAIAAAD//wcAAAABAAIAAAD//wYAAAABAAIAAAD//wUAAAABAAIAAAALAAcAAAADAAIAAAALAAYAAAADAAIAAAALAAUAAAADAAIAAAALAAQAAAADAAIAAAALAAMAAAADAAIAAAALAAIAAAADAAIAAAALAP//AAADAAIAAAALAAAAAAADAAIAAAALAAEAAAADAAIAAAAAAAgAAAACAAMAAAABAAgAAAACAAMAAAACAAgAAAACAAMAAAADAAgAAAACAAMAAAAEAAgAAAACAAMAAAAGAAgAAAACAAMAAAAHAAgAAAACAAMAAAAIAAgAAAACAAMAAAAJAAgAAAACAAMAAAAKAAgAAAACAAMAAAD//wgAAAABAAMAAAALAAgAAAADAAMAAAA=")
+tile_set = ExtResource("5_h3kau")
+
+[node name="NetWall" type="TileMapLayer" parent="Tiles" unique_id=1669886667]
+tile_map_data = PackedByteArray("AAACAP7/AAABAAQAAAACAP//AAADAAQAAAACAAAAAAADAAQAAAA=")
+tile_set = ExtResource("5_h3kau")
+
+[node name="HouseFurniture" type="TileMapLayer" parent="Tiles" unique_id=1696911522]
+tile_map_data = PackedByteArray("AAAGAAUAAAAAAAUAAAAGAAQAAAAAAAQAAAAHAAQAAAABAAQAAAAHAAUAAAABAAUAAAAKAP//AAACAAEAAAAHAAAAAAACAAQAAAAHAAEAAAACAAUAAAAIAAEAAAADAAUAAAAIAAAAAAADAAQAAAAJAP7/AAABAAAAAAAKAP7/AAACAAAAAAAJAAAAAAAAAAEAAAAKAAAAAAAAAAIAAAAEAAcAAAABAAMAAAAFAAcAAAACAAMAAAAGAAcAAAADAAMAAAAGAAYAAAADAAIAAAAFAAYAAAACAAIAAAAEAAYAAAABAAIAAAAEAAAAAAAEAAEAAAAEAP//AAAEAAAAAAA=")
+tile_set = ExtResource("4_7yov0")
+
+[node name="Porta" type="TileMapLayer" parent="Tiles" unique_id=285423174]
+z_index = -10
+tile_map_data = PackedByteArray("AAAFAAgAAAAGAAIAAAAGAAgAAAAHAAIAAAAEAAgAAAAFAAIAAAA=")
+tile_set = ExtResource("5_h3kau")
+
+[node name="Fumiture" type="Node2D" parent="." unique_id=1837253683]
+y_sort_enabled = true
+
+[node name="Pot" parent="Fumiture" unique_id=264852977 instance=ExtResource("10_dw8qo")]
+position = Vector2(22, 232)
+sprite_frames = ExtResource("8_h3kau")
+
+[node name="Bau" parent="Fumiture" unique_id=302874208 instance=ExtResource("13_i1302")]
+position = Vector2(202, 16)
+item = ExtResource("14_emlbn")
+sprite_frames = ExtResource("10_wmk35")
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1052331891]
+zoom = Vector2(2, 2)
+script = ExtResource("10_4prg2")
+metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1379758599]
+position = Vector2(176, -79)
+scale = Vector2(5.4999995, 5.0000005)
+energy = 0.4
+texture = SubResource("GradientTexture2D_dw8qo")
+offset = Vector2(0, 35)
+metadata/_edit_lock_ = true
+
+[node name="HouseDoor" type="Area2D" parent="." unique_id=432131234]
+position = Vector2(176, 275)
+script = ExtResource("10_x2bmf")
+target_level_path = "uid://cudaprnhd7e17"
+door_name = "HouseDoor"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseDoor" unique_id=919103633]
+shape = SubResource("RectangleShape2D_gyguw")
+
+[node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=276414706]
+position = Vector2(-1, -88)
+
+[node name="SavePoint" parent="." unique_id=1593957308 instance=ExtResource("11_gyguw")]
+z_index = -5
+position = Vector2(46.000004, -3)
+hammock_texture = ExtResource("12_vd5oq")

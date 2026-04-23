@@ -16,7 +16,6 @@ var current_dialogue: Array[DialogueLine]
 var index: int
 var type_tween: Tween
 var active_text_label: RichTextLabel
-var player: Player
 
 @onready var solid_background: ColorRect = $SolidBackground
 @onready var cutscene_background: TextureRect = $CutsceneBackground
@@ -39,12 +38,13 @@ func _unhandled_input(_event: InputEvent) -> void:
 func start_speech(dialogue_data: DialogueSettings) -> void:
 	if !is_showing:
 		dialogue_box.show()
+		UIManager.is_interact_ui_open = true
 		is_showing = true
 		current_dialogue = dialogue_data.dialogues
 		index = 0
 		
-		#if player:
-			#player.is_paused = true
+		if GlobalRefs.player:
+			GlobalRefs.player.can_move = false
 		
 		_show_sentence()
 		dialogue_started.emit()
@@ -53,7 +53,7 @@ func _show_sentence() -> void:
 	var current = current_dialogue[index]
 	var is_cutscene = current.background_image != null
 	
-	var text_to_show = _set_text_to_show(current)
+	var text_to_show = _set_actor_name(current)
 	match language:
 		Idiom.PT:
 			text_to_show += current.text_pt
@@ -90,6 +90,7 @@ func _next_sentence() -> void:
 func _end_speech() -> void:
 	dialogue_box.hide()
 	cutscene_box.hide()
+	UIManager.is_interact_ui_open = false
 	is_showing = false
 	current_dialogue = []
 	
@@ -103,11 +104,12 @@ func _end_speech() -> void:
 		solid_background.hide()
 		cutscene_background.hide()
 		
-		solid_background.set_modulate(Color(255, 255, 255, 255))
-		cutscene_background.set_modulate(Color(255, 255, 255, 255))
+		solid_background.set_modulate(Color(1.0, 1.0, 1.0, 1.0))
+		cutscene_background.set_modulate(Color(1.0, 1.0, 1.0, 1.0))
 		
-	#if player:
-		#player.is_paused = false
+	if GlobalRefs.player:
+		GlobalRefs.player.can_move = true
+	
 	dialogue_ended.emit()
 
 func _set_background_image(current: DialogueLine, is_cutscene: bool) -> void:
@@ -134,7 +136,7 @@ func _set_background_image(current: DialogueLine, is_cutscene: bool) -> void:
 		
 		active_text_label = speech_text_dialogue
 
-func _set_text_to_show(current: DialogueLine) -> String:
+func _set_actor_name(current: DialogueLine) -> String:
 	if current.actor_name:
 		return current.actor_name + ": "
 	else:

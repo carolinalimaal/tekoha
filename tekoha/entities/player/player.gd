@@ -4,7 +4,7 @@ extends CharacterBody2D
 signal player_dead()
 signal health_changed()
 
-const SPEED : float = 100.0
+const SPEED : float = 750.0 #250.0
 const ROLL_SPEED : float = 120.0
 
 var move_direction : Vector2
@@ -13,7 +13,10 @@ var facing_direction : Vector2 = Vector2.RIGHT
 var attack_direction : Vector2
 var roll_direction : Vector2
 
-var can_roll : bool = true
+var can_move : bool = true
+var can_attack_1 : bool = false
+var can_attack_2 : bool = false
+var can_roll : bool = false
 
 var roll_cooldown : float = 1.0
 
@@ -51,25 +54,21 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if state_machine.current_state.name in ["Death", "Stun"]:
 		return
 	
-	if InputManager.get_action_pressed("attack"):
-		# Bloquear ataques se ja estiver em ATTACK1 ou ATTACK2
-		if state_machine.current_state.name in ["Attack1", "Attack2"]:
-			return
-		# Bloquear ataque se estiver em ROLL
-		if state_machine.current_state.name == "Roll":
-			return
-		
-		if state_machine.current_state.name != "AttackEnd":
-			state_machine.current_state.transition_to("Attack1")
-		else:
-			state_machine.current_state.transition_to("attack2")
-		
-	elif InputManager.get_action_pressed("roll") and can_roll:
-		# Bloquear rolagem se estiver em ATTACK1, ATTACK_END ou ATTACK2
-		if state_machine.current_state.name in ["Attack1", "AttackEnd", "Attack2"]:
-			return
-		
-		state_machine.current_state.transition_to("Roll")
+	if can_move:
+		if InputManager.get_action_pressed("attack"):
+			# Bloquear ataques se ja estiver em ATTACK1 ou ATTACK2 ou ROLL
+			if state_machine.current_state.name in ["Attack1", "Attack2", "Roll"]:
+				return
+			if state_machine.current_state.name != "AttackEnd" and can_attack_1:
+				state_machine.current_state.transition_to("Attack1")
+			elif state_machine.current_state.name == "AttackEnd" and can_attack_2:
+				state_machine.current_state.transition_to("attack2")
+			
+		elif InputManager.get_action_pressed("roll") and can_roll:
+			# Bloquear rolagem se estiver em ATTACK1, ATTACK_END ou ATTACK2
+			if state_machine.current_state.name in ["Attack1", "AttackEnd", "Attack2"]:
+				return
+			state_machine.current_state.transition_to("Roll")
 
 func get_direction() -> Vector2:
 	return InputManager.get_movement_vector().normalized()
@@ -109,3 +108,9 @@ func heal(amount: int):
 
 func play_sfx_walk() -> void:
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.CURUPIRA_WALK)
+
+func play_sfx_attack_1() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.CURUPIRA_ATTACK_1)
+
+func play_sfx_attack_2() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.CURUPIRA_ATTACK_2)

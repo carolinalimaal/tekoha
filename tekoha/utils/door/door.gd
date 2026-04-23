@@ -6,10 +6,10 @@ class_name Door extends Area2D
 @export var door_name: String
 
 func _ready() -> void:
-	GlobalSignals.animation_midpoint_reached.connect(on_animation_midpoint_reached)
 	body_entered.connect(_on_player_body_entered)
 	
-func _on_player_body_entered(body: Node2D) -> void:
+func _on_player_body_entered(_body: Node2D) -> void:
+	GlobalSignals.animation_midpoint_reached.connect(on_animation_midpoint_reached, CONNECT_ONE_SHOT)
 	get_tree().paused = true
 	GlobalSignals.emit_signal("door_entered")
 	

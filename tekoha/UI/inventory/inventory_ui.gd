@@ -1,36 +1,20 @@
 class_name InventoryUI
 extends Control
 
-const HEART_SIZE: float = 4.0
-
-@export var heart_icon: PackedScene
-
 var slots: Array
-var _is_open: bool = false
 var _current_slot_highlighted: InventorySlotUI = null
 var _current_slot_selected: InventorySlotUI = null
 
 @onready var _slots_grid: GridContainer = $VBoxContainer/BgInventory/HBoxContainer/SlotsGrid
 @onready var _description_box: VBoxContainer = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox
 @onready var _item_name: Label = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/ItemName
-@onready var hb_hearts_container: HBoxContainer = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/HBHeartsContainer
+@onready var _heart_container: HBoxContainer = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/HeartContainer
 @onready var _item_description: RichTextLabel = $VBoxContainer/BgInventory/HBoxContainer/MarginContainer/DescriptionBox/ItemDescription
-
-@onready var _confirmation_popup: Panel = $ConfirmationPopup
-@onready var _popup_label: Label = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/PopupLabel
-@onready var _confirm_button: DefaultButton = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton
-@onready var _cancel_button: DefaultButton = $ConfirmationPopup/Bg/MarginContainer/VBoxContainer/HBoxContainer/CancelButton
 
 
 func _ready() -> void:
 	# Conectar sinal para atualizar o inventario
 	GlobalRefs.inventory.updated_inventory.connect(_update_ui)
-	
-	# Conectar sinais de click dos botoes do ConfirmationPopup
-	_confirm_button.pressed.connect(_on_confirm_use)
-	_cancel_button.pressed.connect(_on_cancel_use)
-	
-	_confirmation_popup.hide()
 	
 	slots = _slots_grid.get_children()
 	
@@ -41,27 +25,15 @@ func _ready() -> void:
 			slot.slot_highlighted.connect(_on_slot_highlighted)
 			slot.slot_unhighlighted.connect(_on_slot_unhighlighted)
 
-func _unhandled_input(_event: InputEvent) -> void:
-	if InputManager.get_action_pressed("inventory"):
-		if _is_open and get_tree().paused:
-			_close()
-		elif !_is_open and !get_tree().paused:
-			_open()
-
-func _open() -> void:
+func grab_initial_focus() -> void:
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.OPEN_MENU)
-	_is_open = true
-	show()
-	get_tree().paused = true
-	_update_ui() # Atualiza a UI ao abrir o inventario
-	slots[0].item_button.grab_focus() # Primeiro item em foco
+	_update_ui()
+	if slots.size() > 0:
+		slots[0].item_button.grab_focus()
 
-func _close() -> void:
+func close_ui() -> void:
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CLOSE_MENU)
-	_is_open = false
 	hide()
-	get_tree().paused = false
-	_close_popup() # Fechar popup caso feche o inventario
 
 func _update_ui() -> void:
 	# Referencia ao inventario
@@ -77,19 +49,20 @@ func _update_ui() -> void:
 
 
 # --- LOGICA DO POPUP ---
-
 func _on_slot_clicked(slot: InventorySlotUI) -> void:
 	_current_slot_selected = slot
+	GlobalRefs.confirmation_popup.setup(
+		"Deseja usar " + slot.item_slot.item.name + "?", 
+		null, 
+		true,
+		"Usar")
 	
-	_confirmation_popup.show()
-	_popup_label.text = "Deseja usar " + slot.item_slot.item.name + "?"
-	
+	UIManager.open_menu("confirmation")
+	_connect_signals()
 	# Bloquear foco nos slots quando o popup estiver aberto
 	for s in slots:
 		if s is InventorySlotUI:
 			s.item_button.focus_mode = Control.FOCUS_NONE
-	
-	_confirm_button.grab_focus() # Focar no botao de usar
 
 func _on_confirm_use() -> void:
 	var item_slot = _current_slot_selected.item_slot
@@ -105,7 +78,8 @@ func _on_cancel_use() -> void:
 	_close_popup()
 
 func _close_popup() -> void:
-	_confirmation_popup.hide()
+	_disconnect_signals()
+	UIManager.close_top_menu()
 	
 	# Permitir foco nos slots quando o popup estiver fechado
 	for s in slots:
@@ -117,6 +91,18 @@ func _close_popup() -> void:
 		_current_slot_selected.item_button.grab_focus()
 	
 	_current_slot_selected = null
+
+func _connect_signals() -> void:
+	if !GlobalRefs.confirmation_popup.confirmed.is_connected(_on_confirm_use):
+		GlobalRefs.confirmation_popup.confirmed.connect(_on_confirm_use)
+	if !GlobalRefs.confirmation_popup.cancelled.is_connected(_on_cancel_use):
+		GlobalRefs.confirmation_popup.cancelled.connect(_on_cancel_use)
+
+func _disconnect_signals() -> void:
+	if GlobalRefs.confirmation_popup.confirmed.is_connected(_on_confirm_use):
+		GlobalRefs.confirmation_popup.confirmed.disconnect(_on_confirm_use)
+	if GlobalRefs.confirmation_popup.cancelled.is_connected(_on_cancel_use):
+		GlobalRefs.confirmation_popup.cancelled.disconnect(_on_cancel_use)
 
 
 # --- LOGICA DE DESCRICAO ---
@@ -135,27 +121,10 @@ func _show_description(item: ConsumableItemData) -> void:
 	_description_box.show()
 	_item_name.text = item.name
 	_item_description.text = item.description
-	calculate_hearts(item.health_gain)
+	_heart_container.update_hearts(item.health_gain)
 
 func _clear_description() -> void:
 	_description_box.hide()
 	_item_name.text = ""
 	_item_description.text = ""
-	calculate_hearts(0)
-
-func calculate_hearts(health_gain: int) -> void:
-	var hearts = hb_hearts_container.get_children()
-	for heart in hearts:
-		hb_hearts_container.remove_child(heart)
-		heart.queue_free()
-	var total_hearts = ceil(health_gain / HEART_SIZE)
-	
-	for i in range(total_hearts):
-		var heart_instance = heart_icon.instantiate()
-		hb_hearts_container.add_child(heart_instance)
-		
-	hearts = hb_hearts_container.get_children()
-	for heart in hearts:
-		var value_to_display = clampi(health_gain, 0, 4)
-		heart.update_sprite(value_to_display)
-		health_gain -= 4
+	_heart_container.update_hearts(0)
