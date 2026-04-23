@@ -55,4 +55,4 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="Player" unique_id=791118259 instance=ExtResource("1_i38rt")]
-position = Vector2(60, 42)
+position = Vector2(48, 24)
