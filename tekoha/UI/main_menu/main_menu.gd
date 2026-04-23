@@ -61,8 +61,8 @@ func _on_new_game_pressed() -> void:
 		_start_new_game()
 
 func _on_load_game_pressed() -> void:
-	# TODO: Funcionalidade de carregar jogo salvo
 	AudioManager.stop_background_sound()
+	# Carrega a main e ela verifica se precisa mudar o level carregado
 	get_tree().change_scene_to_file("res://globals/main_scene/main.tscn")
 
 func _on_options_pressed() -> void:

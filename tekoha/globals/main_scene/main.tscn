@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://131hv46xermf"]
 
+[ext_resource type="Script" uid="uid://ct255vd7tcn31" path="res://globals/main_scene/main.gd" id="1_8lbkp"]
 [ext_resource type="Script" uid="uid://bboxucgvceb8l" path="res://globals/main_scene/ui.gd" id="1_114rs"]
 [ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="1_i38rt"]
 [ext_resource type="PackedScene" uid="uid://o4vt4qmxgkoc" path="res://UI/inventory/inventory_ui.tscn" id="3_ac4dx"]
@@ -13,6 +14,7 @@
 
 [node name="Main" type="Node2D" unique_id=273176472]
 y_sort_enabled = true
+script = ExtResource("1_8lbkp")
 
 [node name="UI" type="Node" parent="." unique_id=1414520590]
 process_mode = 3
@@ -55,4 +57,4 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="Player" unique_id=791118259 instance=ExtResource("1_i38rt")]
-position = Vector2(60, 42)
+position = Vector2(48, 24)

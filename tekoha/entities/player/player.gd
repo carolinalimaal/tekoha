@@ -41,9 +41,7 @@ func _ready() -> void:
 	self.add_to_group("player")
 	
 	# Carregar dados do save
-	if GameManager.current_save:
-		health_component.current_health = GameManager.current_save.player_health
-		health_changed.emit()
+	update_stats_from_save()
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
@@ -105,6 +103,23 @@ func _on_player_attack_received(attack_data: AttackData):
 func heal(amount: int):
 	health_component.heal(amount)
 	health_changed.emit()
+
+func update_stats_from_save() -> void:
+	if GameManager.current_save:
+		# Atualizar a vida
+		health_component.current_health = GameManager.current_save.player_health
+		health_changed.emit()
+		
+		# Atualizar flags de habilidades
+		var state = GameManager.current_save.game_state
+		if state >= GameManager.GameState.TRAINING_COMPLETE:
+			can_attack_1 = true
+			can_attack_2 = true
+			can_roll = true
+		else:
+			can_attack_1 = false
+			can_attack_2 = false
+			can_roll = false
 
 func play_sfx_walk() -> void:
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.CURUPIRA_WALK)
