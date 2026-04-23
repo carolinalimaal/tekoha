@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bm42ohdv2timx" path="res://assets/sprites/tiles/restaurante_interno/moveis/moveis.png" id="4_8imx6"]
 [ext_resource type="Script" uid="uid://dfho07qjg6y3i" path="res://levels/room_6/roll_mecanic.gd" id="5_0ipkc"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="5_8imx6"]
+[ext_resource type="Texture2D" uid="uid://chighqrp3ctbd" path="res://assets/sprites/tiles/objetos/objetos.png" id="5_fxwqa"]
 [ext_resource type="Texture2D" uid="uid://bhcc8dd3rymmg" path="res://assets/sprites/props/bar_counter/balcao_passavel.png" id="6_copml"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="7_fxwqa"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="9_copml"]
@@ -344,10 +345,50 @@ texture_region_size = Vector2i(32, 32)
 3:15/0 = 0
 9:15/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hwci"]
+texture = ExtResource("5_fxwqa")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_4hwci"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 128
 sources/0 = SubResource("TileSetAtlasSource_j0ms1")
+sources/1 = SubResource("TileSetAtlasSource_4hwci")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxphn"]
 size = Vector2(30, 48)
@@ -372,7 +413,6 @@ z_index = -100
 position = Vector2(801, 542)
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1544974918]
-y_sort_enabled = true
 
 [node name="Floor" type="TileMapLayer" parent="Tiles" unique_id=2011963491]
 z_index = -15
@@ -417,6 +457,7 @@ debug_color = Color(0.93845415, 0.23231229, 0.24014667, 0.41960785)
 shape = SubResource("RectangleShape2D_u15um")
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1714251315]
+zoom = Vector2(2, 2)
 script = ExtResource("7_fxwqa")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
