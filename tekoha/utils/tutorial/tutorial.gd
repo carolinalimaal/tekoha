@@ -86,6 +86,7 @@ func start_roll_tutorial() -> void:
 func end_tutorial() -> void:
 	current_state = TutorialState.FINISHED
 	DialogueManager.dialogue_ended.disconnect(_on_cutscene_ended)
+	GameManager.current_save.game_state = GameManager.GameState.TRAINING_COMPLETE
 	print("Tutorial finalizado")
 	set_limits_layer(false)
 	zoom_out_camera()
