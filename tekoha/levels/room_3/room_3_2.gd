@@ -3,6 +3,8 @@ extends State
 @export var cutscenes: Array[DialogueSettings]
 @export var tutorial_packed_scene: PackedScene
 
+@onready var room_3: Node2D = $"../.."
+
 var index: int = 0
 
 func _enter() -> void:
@@ -10,7 +12,7 @@ func _enter() -> void:
 	DialogueManager.dialogue_ended.connect(_on_cutscene_ended)
 	
 	var tutorial_scene = tutorial_packed_scene.instantiate()
-	add_child(tutorial_scene)
+	room_3.add_child(tutorial_scene)
 	
 	print("sala 3.2")
 
