@@ -45,6 +45,8 @@ func start_speech(dialogue_data: DialogueSettings) -> void:
 		
 		if GlobalRefs.player:
 			GlobalRefs.player.can_move = false
+			if GlobalRefs.player.state_machine != null:
+				GlobalRefs.player.state_machine.current_state.transition_to("Idle")
 		
 		_show_sentence()
 		dialogue_started.emit()
