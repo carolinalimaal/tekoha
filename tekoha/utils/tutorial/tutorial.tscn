@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://bo5imxps1sjqp" path="res://data/dialogues/tutorial/roll.tres" id="5_h5cln"]
 [ext_resource type="Resource" uid="uid://ceb6jm67ri2aq" path="res://data/dialogues/tutorial/roll_respawn.tres" id="6_h5cln"]
 [ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="7_iu72u"]
+[ext_resource type="PackedScene" uid="uid://yg4avtagj8bh" path="res://UI/tutorial_ui/tutorial_ui.tscn" id="9_315tt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh1kf"]
 radius = 56.568542
@@ -68,6 +69,7 @@ collision_layer = 0
 polygon = PackedVector2Array(-80, 80, -80, 88, 152, 88, 152, 80)
 
 [node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=593721991]
+layer = 10
 visible = false
 
 [node name="TransitionCont" type="MarginContainer" parent="TransitionLayer" unique_id=1794572811]
@@ -77,5 +79,8 @@ offset_bottom = 720.0
 [node name="TransitionRect" type="ColorRect" parent="TransitionLayer/TransitionCont" unique_id=1621543032]
 layout_mode = 2
 color = Color(0, 0, 0, 1)
+
+[node name="TutorialUI" parent="." unique_id=255701048 instance=ExtResource("9_315tt")]
+layer = 8
 
 [connection signal="body_entered" from="RollArea" to="." method="_on_roll_area_body_entered"]
