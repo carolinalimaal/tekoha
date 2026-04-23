@@ -25,7 +25,7 @@ var index: int = 0
 
 func _ready() -> void:
 	practice_dummy_2.damage_received.connect(_on_dummy_damage_received)
-	practice_dummy.hide()
+	hide_second_practice_dummy()
 	roll_area.hide()
 	transition_layer.hide()
 	global_position = Vector2(-357.0, 645.0)
@@ -124,7 +124,7 @@ func dummy_appearence_anim() -> void:
 	var tween: Tween = create_tween()
 	tween.tween_property(transition_rect, "modulate:a", 1, 1.0)
 	tutorial_ui.hide_ui()
-	tween.tween_callback(func(): practice_dummy.show())
+	tween.tween_callback(func(): show_second_practice_dummy())
 	tween.tween_property(transition_rect, "modulate:a", 0, 1.0)
 	tutorial_ui.show_ui()
 	await tween.finished
@@ -133,3 +133,11 @@ func dummy_appearence_anim() -> void:
 
 func player_reposition_respawn() -> void:
 	GlobalRefs.player.position = player_reposition.global_position
+
+func hide_second_practice_dummy() -> void:
+	practice_dummy.hide()
+	practice_dummy.collision_shape.disabled = true
+
+func show_second_practice_dummy() -> void:
+	practice_dummy.show()
+	practice_dummy.collision_shape.disabled = false
