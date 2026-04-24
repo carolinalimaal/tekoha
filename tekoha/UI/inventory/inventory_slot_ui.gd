@@ -8,7 +8,7 @@ signal slot_unhighlighted(slot: InventorySlotUI)
 var item_slot: ItemSlot
 
 @onready var item_icon: TextureRect = $ItemIcon
-@onready var item_button: DefaultButton = $ItemButton
+@onready var item_button: Button = $ItemButton
 
 func _ready() -> void:
 	# Sinais para interacao de click, hover e focus
@@ -26,11 +26,17 @@ func set_item_slot(_item_slot: ItemSlot) -> void:
 	if item_slot and item_slot.item:
 		item_icon.texture = item_slot.item.icon
 		item_icon.visible = true
+		
 		item_button.disabled = false
+		item_button.focus_mode = Control.FOCUS_ALL # Permite focar via teclado/controle
+		item_button.mouse_filter = Control.MOUSE_FILTER_STOP # Permite detectar mouse
 	else:
 		item_icon.texture = null
 		item_icon.visible = false
+		
 		item_button.disabled = true
+		item_button.focus_mode = Control.FOCUS_NONE # Impede que as setas parem aqui
+		item_button.mouse_filter = Control.MOUSE_FILTER_IGNORE # Ignora hover e cliques
 
 # --- METODOS DOS SINAIS ---
 

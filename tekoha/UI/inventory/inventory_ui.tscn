@@ -78,21 +78,27 @@ columns = 2
 
 [node name="InventorySlotUI" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" unique_id=1250569498 instance=ExtResource("4_732id")]
 layout_mode = 2
+theme = null
 
 [node name="InventorySlotUI2" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" unique_id=1063997999 instance=ExtResource("4_732id")]
 layout_mode = 2
+theme = null
 
 [node name="InventorySlotUI3" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" unique_id=1476187340 instance=ExtResource("4_732id")]
 layout_mode = 2
+theme = null
 
 [node name="InventorySlotUI4" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" unique_id=1389474220 instance=ExtResource("4_732id")]
 layout_mode = 2
+theme = null
 
 [node name="InventorySlotUI5" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" unique_id=1183204236 instance=ExtResource("4_732id")]
 layout_mode = 2
+theme = null
 
 [node name="InventorySlotUI6" parent="VBoxContainer/BgInventory/HBoxContainer/SlotsGrid" unique_id=676874404 instance=ExtResource("4_732id")]
 layout_mode = 2
+theme = null
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BgInventory/HBoxContainer" unique_id=1502264820]
 layout_mode = 2
