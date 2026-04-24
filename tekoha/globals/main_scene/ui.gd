@@ -23,16 +23,16 @@ func _ready() -> void:
 	UIManager.register_menu("confirmation", confirmation_popup)
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if UIManager.is_interact_ui_open:
-		return
-	
 	# Abre ou fecha o Pause
 	if InputManager.get_action_pressed("pause"):
 		if UIManager.menu_stack.is_empty():
 			UIManager.open_menu("pause")
 		elif UIManager.menu_stack.back() == pause_menu:
 			UIManager.close_top_menu()
-
+	
+	if UIManager.is_interact_ui_open:
+		return
+		
 	# Abre ou fecha o Inventário
 	if InputManager.get_action_pressed("inventory"):
 		if UIManager.menu_stack.is_empty():
