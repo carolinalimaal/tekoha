@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="4_oqleg"]
 [ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://levels/background/background.tscn" id="5_mhh0g"]
 [ext_resource type="PackedScene" uid="uid://1qrmsqlofmkg" path="res://utils/door/door.tscn" id="6_oqleg"]
+[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="7_mhh0g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oqleg"]
 texture = ExtResource("1_ix5wx")
@@ -13,6 +14,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -40,6 +42,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_pu6nj"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 128
 sources/0 = SubResource("TileSetAtlasSource_oqleg")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pu6nj"]
@@ -156,11 +159,6 @@ tile_set = SubResource("TileSet_pu6nj")
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAMAAAAAAAQAAAAAAAQAAAAAAAUAAAAAAAUAAAAAAAYAAAAAAAYAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAABAAIAAAABAAIAAAABAAMAAAABAAMAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAACAAIAAAACAAIAAAACAAMAAAACAAMAAAACAAQAAAACAAQAAAACAAUAAAACAAUAAAACAAYAAAACAAYAAAADAAEAAAADAAEAAAADAAIAAAADAAIAAAADAAMAAAADAAMAAAADAAQAAAADAAQAAAADAAUAAAADAAUAAAADAAYAAAADAAYAAAAEAAAAAAAEAAAAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAIAAAAEAAMAAAAEAAMAAAAEAAQAAAAEAAQAAAAEAAUAAAAEAAUAAAAEAAYAAAAEAAYAAAAFAAAAAAAFAAAAAAAFAAEAAAAFAAEAAAAFAAIAAAAFAAIAAAAFAAMAAAAFAAMAAAAFAAQAAAAFAAQAAAAFAAUAAAAFAAUAAAAFAAYAAAAFAAYAAAAGAAEAAAAGAAEAAAAGAAIAAAAGAAIAAAAGAAMAAAAGAAMAAAAGAAQAAAAGAAQAAAAGAAUAAAAGAAUAAAAGAAYAAAAGAAYAAAAHAAAAAAAHAAAAAAAHAAEAAAAHAAEAAAAHAAIAAAAHAAIAAAAHAAMAAAAHAAMAAAAHAAQAAAAHAAQAAAAHAAUAAAAHAAUAAAAHAAYAAAAHAAYAAAAJAAQAAAAJAAQAAAAJAAUAAAAJAAUAAAAJAAYAAAAJAAYAAAA=")
 tile_set = SubResource("TileSet_jdn40")
 
-[node name="Bau" parent="." unique_id=302874208 instance=ExtResource("4_oqleg")]
-position = Vector2(288, 64)
-
-[node name="Background" parent="." unique_id=1987475052 instance=ExtResource("5_mhh0g")]
-
 [node name="Room6Door" parent="." unique_id=595878266 instance=ExtResource("6_oqleg")]
 position = Vector2(32, 224)
 target_level_path = "res://levels/room_6/room_6.tscn"
@@ -184,3 +182,19 @@ shape = SubResource("RectangleShape2D_oqleg")
 
 [node name="Marker2D" type="Marker2D" parent="Room8Door" unique_id=452520962]
 position = Vector2(-64, 0)
+
+[node name="Bau" parent="." unique_id=302874208 instance=ExtResource("4_oqleg")]
+position = Vector2(288, 64)
+
+[node name="Background" parent="." unique_id=1987475052 instance=ExtResource("5_mhh0g")]
+
+[node name="Limits" type="Node2D" parent="." unique_id=1167088004]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Limits" unique_id=1225975865]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/StaticBody2D" unique_id=484505557]
+polygon = PackedVector2Array(0, 224, 32, 224, 32, 256, 64, 256, 64, 224, 320, 224, 320, 128, 352, 128, 352, 64, 384, 64, 384, 288, 0, 288)
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=327988160]
+script = ExtResource("7_mhh0g")
+metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
