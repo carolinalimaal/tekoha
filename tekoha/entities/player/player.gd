@@ -4,7 +4,7 @@ extends CharacterBody2D
 signal player_dead()
 signal health_changed()
 
-const SPEED : float = 750.0 #250.0
+const SPEED : float = 450.0 #250.0
 const ROLL_SPEED : float = 120.0
 
 var move_direction : Vector2
@@ -16,7 +16,7 @@ var roll_direction : Vector2
 var can_move : bool = true
 var can_attack_1 : bool = false
 var can_attack_2 : bool = false
-var can_roll : bool = false
+var can_roll : bool = true
 
 var roll_cooldown : float = 1.0
 
@@ -69,6 +69,8 @@ func _unhandled_input(_event: InputEvent) -> void:
 			state_machine.current_state.transition_to("Roll")
 
 func get_direction() -> Vector2:
+	if !can_move:
+		return Vector2.ZERO
 	return InputManager.get_movement_vector().normalized()
 
 func get_aim_direction() -> Vector2:
