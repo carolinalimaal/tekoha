@@ -13,7 +13,10 @@ texture = ExtResource("2_2knlb")
 [resource]
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_tohiu")
+Button/styles/focus = SubResource("StyleBoxTexture_c70bm")
+Button/styles/hover = SubResource("StyleBoxTexture_c70bm")
 Button/styles/normal = SubResource("StyleBoxTexture_c70bm")
+Button/styles/pressed = SubResource("StyleBoxTexture_c70bm")
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_tohiu")
 RichTextLabel/fonts/bold_font = ExtResource("3_12rjc")

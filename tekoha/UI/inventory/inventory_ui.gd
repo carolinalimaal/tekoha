@@ -28,8 +28,10 @@ func _ready() -> void:
 func grab_initial_focus() -> void:
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.OPEN_MENU)
 	_update_ui()
-	if slots.size() > 0:
-		slots[0].item_button.grab_focus()
+	for slot in slots:
+		if slot is InventorySlotUI and slot.item_button.focus_mode != Control.FOCUS_NONE:
+			slot.item_button.grab_focus()
+			break
 
 func close_ui() -> void:
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CLOSE_MENU)
@@ -83,7 +85,7 @@ func _close_popup() -> void:
 	
 	# Permitir foco nos slots quando o popup estiver fechado
 	for s in slots:
-		if s is InventorySlotUI:
+		if s is InventorySlotUI and s.item_slot.item:
 			s.item_button.focus_mode = Control.FOCUS_ALL
 	
 	# Focar no item que foi clicado
