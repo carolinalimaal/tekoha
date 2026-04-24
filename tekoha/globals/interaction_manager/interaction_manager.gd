@@ -19,6 +19,8 @@ func _process(_delta: float) -> void:
 		container.position = screen_position - (container.size / 2)
 
 func _unhandled_input(_event: InputEvent) -> void:
+	if UIManager.is_interact_ui_open:
+		return
 	if InputManager.get_action_pressed("interact") and current_interactable != null:
 		if !get_tree().paused:
 			# Se o input for consumido aqui, nao propaga para o resto dos _unhandled_input do jogo
