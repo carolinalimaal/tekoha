@@ -92,6 +92,9 @@ func _close_popup() -> void:
 	
 	_current_slot_selected = null
 
+func cancel_action() -> void:
+	_close_popup()
+
 func _connect_signals() -> void:
 	if !GlobalRefs.confirmation_popup.confirmed.is_connected(_on_confirm_use):
 		GlobalRefs.confirmation_popup.confirmed.connect(_on_confirm_use)

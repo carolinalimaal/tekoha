@@ -48,9 +48,13 @@ func _confirm_quit() -> void:
 	GlobalRefs.confirmation_popup.confirmed.disconnect(_confirm_quit)
 	GlobalRefs.confirmation_popup.cancelled.disconnect(_cancel_quit)
 	UIManager.close_all_menus()
+	DialogueManager.force_close()
 	get_tree().change_scene_to_file("res://UI/main_menu/main_menu.tscn")
 
 func _cancel_quit() -> void:
 	GlobalRefs.confirmation_popup.confirmed.disconnect(_confirm_quit)
 	GlobalRefs.confirmation_popup.cancelled.disconnect(_cancel_quit)
 	UIManager.close_top_menu()
+
+func cancel_action() -> void:
+	_on_back_to_game_pressed()

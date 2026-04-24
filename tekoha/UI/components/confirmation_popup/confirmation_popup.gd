@@ -43,3 +43,6 @@ func _on_cancel_pressed() -> void:
 func grab_initial_focus() -> void:
 	if button_container.visible:
 		confirm_button.grab_focus()
+
+func cancel_action() -> void:
+	_on_cancel_pressed()

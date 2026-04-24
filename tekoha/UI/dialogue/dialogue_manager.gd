@@ -31,13 +31,13 @@ func _ready() -> void:
 	cutscene_box.hide()
 	is_showing = false
 
-func _unhandled_input(_event: InputEvent) -> void:
-	if InputManager.get_action_pressed("ui_accept") and is_showing:
+func _input(_event: InputEvent) -> void:
+	if InputManager.get_action_pressed("skip_dialogue") and is_showing:
+		get_viewport().set_input_as_handled()
 		_next_sentence()
 
 func start_speech(dialogue_data: DialogueSettings) -> void:
 	if !is_showing:
-		dialogue_box.show()
 		UIManager.is_interact_ui_open = true
 		is_showing = true
 		current_dialogue = dialogue_data.dialogues
@@ -45,8 +45,6 @@ func start_speech(dialogue_data: DialogueSettings) -> void:
 		
 		if GlobalRefs.player:
 			GlobalRefs.player.can_move = false
-			#if GlobalRefs.player.state_machine != null:
-				#GlobalRefs.player.state_machine.current_state.transition_to("Idle")
 		
 		_show_sentence()
 		dialogue_started.emit()
@@ -95,6 +93,7 @@ func _end_speech() -> void:
 	UIManager.is_interact_ui_open = false
 	is_showing = false
 	current_dialogue = []
+	index = 0
 	
 	if solid_background.visible and cutscene_background.visible:
 		var fade_tween = create_tween()
@@ -105,6 +104,7 @@ func _end_speech() -> void:
 		
 		solid_background.hide()
 		cutscene_background.hide()
+		cutscene_background.texture = null
 		
 		solid_background.set_modulate(Color(1.0, 1.0, 1.0, 1.0))
 		cutscene_background.set_modulate(Color(1.0, 1.0, 1.0, 1.0))
@@ -143,3 +143,16 @@ func _set_actor_name(current: DialogueLine) -> String:
 		return current.actor_name + ": "
 	else:
 		return ""
+
+func force_close() -> void:
+	is_showing = false
+	current_dialogue = []
+	index = 0
+	dialogue_box.hide()
+	cutscene_box.hide()
+	solid_background.hide()
+	cutscene_background.hide()
+	cutscene_background.texture = null
+	UIManager.is_interact_ui_open = false
+	if type_tween and type_tween.is_running():
+		type_tween.kill()
