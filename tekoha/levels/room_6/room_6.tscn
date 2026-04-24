@@ -149,7 +149,7 @@ texture_region_size = Vector2i(32, 32)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, -16, 16, -16, 2.1762905, 16, 2.1762905)
 8:3/0 = 0
-8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, -16, 16, -16, 0.60935974, -10.446194, 0.26115417, -10.794401, -13.493004, -8.182852, -16, 8.879265, -16, 8.879265, -14.015312, 10.794403, -11.403763, 10.794403, 0.08705139, 16, -0.26115608)
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, 0.14741516, 11.006994, -0.049138546, 11.006994, -16, -11.006994, -16, -11.105271, -0.14741516, -16, -0.04913807)
 9:3/0 = 0
 9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, -16, 16, -16, 2.1762905, 16, 2.1762905)
 0:4/0 = 0
@@ -160,11 +160,11 @@ texture_region_size = Vector2i(32, 32)
 5:4/0 = 0
 6:4/0 = 0
 7:4/0 = 0
-7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 11.926071, -4.7007866, 11.926071, -5.048994, 6.180666, -13.231846, 6.180666, -13.231846, -2.3503933, -16, -3.220909)
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.994175, 0.0832119, 3.9386997, 6.9620676, 0, 6.9620676, -0.09827709, 11.940623, -4.9138365, 11.940623, -4.9138374, 0.049138546, -7.045279, 0.02773714, -6.879371, -2.1129498, -9.04146, -2.0146728, -8.986892, -0.19416142, -10.76208, 7.0175424, -14.090559, 7.0175424, -13.9552965, -1.5232894, -16, -1.81812, -16, -16, 16, -16, 16, 0.027737617)
 8:4/0 = 0
-8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, -16, -16, -16, -0.60935974, -10.446194, -0.26115417, -10.794401, 13.493004, -8.182852, 16, 8.879265, 16, 8.879265, 14.015312, 10.794403, 11.403763, 10.794403, -0.08705139, 16, 0.26115608)
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -0.14741516, 11.006994, 0.049138546, 11.006994, 16, -11.006994, 16, -11.105271, 0.14741516, -16, 0.04913807)
 9:4/0 = 0
-9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, -16, -16, -16, 11.926071, 4.7007866, 11.926071, 5.048994, 6.180666, 13.231846, 6.180666, 13.231846, -2.3503933, 16, -3.220909)
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.994175, 0.0832119, -3.9386997, 6.9620676, 0, 6.9620676, 0.09827709, 11.940623, 4.9138365, 11.940623, 4.9138374, 0.049138546, 7.045279, 0.02773714, 6.879371, -2.1129498, 9.04146, -2.0146728, 8.986892, -0.19416142, 10.76208, 7.0175424, 14.090559, 7.0175424, 13.9552965, -1.5232894, 16, -1.81812, 16, -16, -16, -16, -16, 0.027737617)
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -173,6 +173,7 @@ texture_region_size = Vector2i(32, 32)
 5:5/0 = 0
 6:5/0 = 0
 8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.139737, -16, 9.139736, -16, 9.139736, -6.9285107, 5.9948807, -7.125063, 5.9912615, -9.957698, 5.048192, -9.957698, 4.9927187, -13.785448, 4.0496492, -13.896398, 4.1276226, -15.183756, -4.049649, -15.172315, -3.883225, -13.729974, -4.9927177, -13.896398, -4.9927177, -9.957698, -5.9357867, -10.068647, -5.9357867, -7.017542, -9.04146, -7.026787)
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -565,7 +566,6 @@ tile_map_data = PackedByteArray("AAANAAUAAAAHAAIAAAANAAYAAAAFAAIAAAAQAAUAAAAHAAI
 tile_set = SubResource("TileSet_0ipkc")
 
 [node name="Furniture" type="TileMapLayer" parent="Tiles" unique_id=1831374715]
-y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAQABAAAAAHAAMAAAAQABEAAAAHAAQAAAARABAAAAAJAAMAAAARABEAAAAJAAQAAAAUAAcAAAAIAAoAAAAUAAgAAAAIAAsAAAAUAAkAAAAIAAwAAAAUAAoAAAAIAA0AAAAUAAsAAAAIAA4AAAAVAAcAAAAJAAoAAAAVAAgAAAAJAAsAAAAVAAkAAAAJAAwAAAAVAAoAAAAJAA0AAAAVAAsAAAAJAA4AAAALABYAAAAHAAMAAAALABcAAAAHAAQAAAAMABYAAAAIAAMAAAAMABcAAAAIAAQAAAAMABgAAAAIAAUAAAANABYAAAAJAAMAAAANABcAAAAJAAQAAAALABIAAAAHAAQAAAAMABIAAAAIAAQAAAAMABMAAAAIAAUAAAANABIAAAAJAAQAAAALABEAAAAHAAMAAAAMABEAAAAIAAMAAAANABEAAAAJAAMAAAALAA0AAAAHAAMAAAALAA4AAAAHAAQAAAAMAA0AAAAIAAMAAAAMAA4AAAAIAAQAAAAMAA8AAAAIAAUAAAANAA0AAAAJAAMAAAANAA4AAAAJAAQAAAAQABUAAAAHAAMAAAAQABYAAAAHAAQAAAARABUAAAAJAAMAAAARABYAAAAJAAQAAAAYABAAAAAHAAMAAAAYABEAAAAHAAQAAAAZABAAAAAJAAMAAAAZABEAAAAJAAQAAAAYABUAAAAHAAMAAAAYABYAAAAHAAQAAAAZABUAAAAJAAMAAAAZABYAAAAJAAQAAAAUABMAAAAHAAMAAAAUABQAAAAHAAQAAAAVABMAAAAJAAMAAAAVABQAAAAJAAQAAAA=")
 tile_set = SubResource("TileSet_gclr0")
 
@@ -594,124 +594,144 @@ debug_color = Color(0.93845415, 0.23231229, 0.24014667, 0.41960785)
 shape = SubResource("RectangleShape2D_u15um")
 
 [node name="DeskDecoration" type="Node2D" parent="." unique_id=1701779313]
-z_index = 2
-position = Vector2(402, 448)
+y_sort_enabled = true
+position = Vector2(402, 445)
 
 [node name="Sprite2D" type="Sprite2D" parent="DeskDecoration" unique_id=664697443]
+y_sort_enabled = true
 position = Vector2(-33, -1)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D2" type="Sprite2D" parent="DeskDecoration" unique_id=468588629]
+y_sort_enabled = true
 position = Vector2(29, -1)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D3" type="Sprite2D" parent="DeskDecoration" unique_id=298994076]
+y_sort_enabled = true
 position = Vector2(-2, -9)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D4" type="Sprite2D" parent="DeskDecoration" unique_id=937913569]
+y_sort_enabled = true
 position = Vector2(-33, 128)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D5" type="Sprite2D" parent="DeskDecoration" unique_id=1301526977]
+y_sort_enabled = true
 position = Vector2(-2, 119)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D6" type="Sprite2D" parent="DeskDecoration" unique_id=875788325]
+y_sort_enabled = true
 position = Vector2(29, 128)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D7" type="Sprite2D" parent="DeskDecoration" unique_id=1431894268]
+y_sort_enabled = true
 position = Vector2(-33, 288)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D8" type="Sprite2D" parent="DeskDecoration" unique_id=281958034]
+y_sort_enabled = true
 position = Vector2(-2, 279)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D9" type="Sprite2D" parent="DeskDecoration" unique_id=1900027422]
+y_sort_enabled = true
 position = Vector2(29, 288)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D10" type="Sprite2D" parent="DeskDecoration" unique_id=287525420]
+y_sort_enabled = true
 position = Vector2(127, 256)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D11" type="Sprite2D" parent="DeskDecoration" unique_id=2041673244]
+y_sort_enabled = true
 position = Vector2(157, 256)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D12" type="Sprite2D" parent="DeskDecoration" unique_id=374358032]
+y_sort_enabled = true
 position = Vector2(255, 192)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D13" type="Sprite2D" parent="DeskDecoration" unique_id=252935454]
+y_sort_enabled = true
 position = Vector2(285, 192)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D14" type="Sprite2D" parent="DeskDecoration" unique_id=451190139]
+y_sort_enabled = true
 position = Vector2(127, 94)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D15" type="Sprite2D" parent="DeskDecoration" unique_id=1457035652]
+y_sort_enabled = true
 position = Vector2(157, 94)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D16" type="Sprite2D" parent="DeskDecoration" unique_id=488337910]
+y_sort_enabled = true
 position = Vector2(383, 95)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D17" type="Sprite2D" parent="DeskDecoration" unique_id=1916285689]
+y_sort_enabled = true
 position = Vector2(413, 95)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D18" type="Sprite2D" parent="DeskDecoration" unique_id=702744952]
+y_sort_enabled = true
 position = Vector2(383, 256)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D19" type="Sprite2D" parent="DeskDecoration" unique_id=690110561]
+y_sort_enabled = true
 position = Vector2(413, 256)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D20" type="Sprite2D" parent="DeskDecoration" unique_id=2025549074]
+y_sort_enabled = true
 position = Vector2(-20, 1)
 texture = ExtResource("5_fxwqa")
 hframes = 7
@@ -719,6 +739,7 @@ vframes = 5
 frame = 4
 
 [node name="Sprite2D21" type="Sprite2D" parent="DeskDecoration" unique_id=685121508]
+y_sort_enabled = true
 position = Vector2(13, -6)
 texture = ExtResource("5_fxwqa")
 hframes = 7
@@ -726,6 +747,7 @@ vframes = 5
 frame = 9
 
 [node name="Sprite2D22" type="Sprite2D" parent="DeskDecoration" unique_id=106215686]
+y_sort_enabled = true
 position = Vector2(141, 93)
 texture = ExtResource("5_fxwqa")
 hframes = 7
@@ -733,6 +755,7 @@ vframes = 5
 frame = 8
 
 [node name="Sprite2D23" type="Sprite2D" parent="DeskDecoration" unique_id=722874600]
+y_sort_enabled = true
 position = Vector2(142, 254)
 texture = ExtResource("5_fxwqa")
 hframes = 7
@@ -767,7 +790,7 @@ position = Vector2(65, 0)
 [node name="Room7Door" type="Area2D" parent="." unique_id=1581697807]
 position = Vector2(836, 234)
 script = ExtResource("9_copml")
-target_level_path = "res://levels/room_7/room_7.tscn"
+target_level_path = "uid://yeu56q2hrpgm"
 door_name = "Room7Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 

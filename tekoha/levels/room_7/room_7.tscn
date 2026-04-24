@@ -5,7 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://jnsu1vbgckad" path="res://assets/sprites/tiles/interior_cozinha/cozinha.png" id="3_k7k0n"]
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="4_oqleg"]
 [ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://levels/background/background.tscn" id="5_mhh0g"]
-[ext_resource type="PackedScene" uid="uid://1qrmsqlofmkg" path="res://utils/door/door.tscn" id="6_oqleg"]
+[ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="5_pu6nj"]
+[ext_resource type="SpriteFrames" uid="uid://c7nm8qbhvooas" path="res://assets/sprites/props/chest/chest_02.tres" id="6_pu6nj"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="7_mhh0g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oqleg"]
@@ -137,10 +138,10 @@ physics_layer_0/collision_layer = 128
 sources/0 = SubResource("TileSetAtlasSource_pu6nj")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhh0g"]
-size = Vector2(32, 32)
+size = Vector2(30, 30)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqleg"]
-size = Vector2(32, 64)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtyum"]
+size = Vector2(27, 59)
 
 [node name="Room7" type="Node2D" unique_id=838014098]
 y_sort_enabled = true
@@ -162,42 +163,50 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAMAAAAAAAQAAAAAAAQAAAAAAAUAAAAAAAUAAAAAAAYAAAAAAAYAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAABAAIAAAABAAIAAAABAAMAAAABAAMAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAACAAIAAAACAAIAAAACAAMAAAACAAMAAAACAAQAAAACAAQAAAACAAUAAAACAAUAAAACAAYAAAACAAYAAAADAAEAAAADAAEAAAADAAIAAAADAAIAAAADAAMAAAADAAMAAAADAAQAAAADAAQAAAADAAUAAAADAAUAAAADAAYAAAADAAYAAAAEAAAAAAAEAAAAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAIAAAAEAAMAAAAEAAMAAAAEAAQAAAAEAAQAAAAEAAUAAAAEAAUAAAAEAAYAAAAEAAYAAAAFAAAAAAAFAAAAAAAFAAEAAAAFAAEAAAAFAAIAAAAFAAIAAAAFAAMAAAAFAAMAAAAFAAQAAAAFAAQAAAAFAAUAAAAFAAUAAAAFAAYAAAAFAAYAAAAGAAEAAAAGAAEAAAAGAAIAAAAGAAIAAAAGAAMAAAAGAAMAAAAGAAQAAAAGAAQAAAAGAAUAAAAGAAUAAAAGAAYAAAAGAAYAAAAHAAAAAAAHAAAAAAAHAAEAAAAHAAEAAAAHAAIAAAAHAAIAAAAHAAMAAAAHAAMAAAAHAAQAAAAHAAQAAAAHAAUAAAAHAAUAAAAHAAYAAAAHAAYAAAAJAAQAAAAJAAQAAAAJAAUAAAAJAAUAAAAJAAYAAAAJAAYAAAA=")
 tile_set = SubResource("TileSet_jdn40")
 
-[node name="Room6Door" parent="." unique_id=595878266 instance=ExtResource("6_oqleg")]
-position = Vector2(32, 224)
-target_level_path = "res://levels/room_6/room_6.tscn"
+[node name="Room7Door" type="Area2D" parent="." unique_id=962157623]
+position = Vector2(48, 239)
+script = ExtResource("5_pu6nj")
+target_level_path = "uid://dnquhp1xxloh7"
 door_name = "Room7Door"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room6Door" unique_id=2108011192]
-position = Vector2(16, 16)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room7Door" unique_id=1049109750]
 shape = SubResource("RectangleShape2D_mhh0g")
 
-[node name="Marker2D" type="Marker2D" parent="Room6Door" unique_id=140519713]
-position = Vector2(15, -33)
+[node name="Marker2D" type="Marker2D" parent="Room7Door" unique_id=1810861292]
+position = Vector2(-1, -69)
 
-[node name="Room8Door" parent="." unique_id=2130820928 instance=ExtResource("6_oqleg")]
-position = Vector2(352, 96)
+[node name="Room8Door" type="Area2D" parent="." unique_id=1835176623]
+position = Vector2(336, 101)
+script = ExtResource("5_pu6nj")
 target_level_path = "res://levels/room_8/room_8.tscn"
-door_name = "Room7Door"
+door_name = "Room8Door"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room8Door" unique_id=817280013]
-position = Vector2(-16, 0)
-shape = SubResource("RectangleShape2D_oqleg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room8Door" unique_id=183943563]
+position = Vector2(-0.5, -3.5)
+shape = SubResource("RectangleShape2D_vtyum")
 
-[node name="Marker2D" type="Marker2D" parent="Room8Door" unique_id=452520962]
-position = Vector2(-64, 0)
+[node name="Marker2D" type="Marker2D" parent="Room8Door" unique_id=1121873401]
+position = Vector2(-55, 11)
 
 [node name="Bau" parent="." unique_id=302874208 instance=ExtResource("4_oqleg")]
 position = Vector2(288, 64)
+id = 1
+sprite_frames = ExtResource("6_pu6nj")
 
 [node name="Background" parent="." unique_id=1987475052 instance=ExtResource("5_mhh0g")]
 
 [node name="Limits" type="Node2D" parent="." unique_id=1167088004]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Limits" unique_id=1225975865]
+collision_layer = 128
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/StaticBody2D" unique_id=484505557]
 polygon = PackedVector2Array(0, 224, 32, 224, 32, 256, 64, 256, 64, 224, 320, 224, 320, 128, 352, 128, 352, 64, 384, 64, 384, 288, 0, 288)
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=327988160]
+position = Vector2(47, 170)
+zoom = Vector2(2, 2)
 script = ExtResource("7_mhh0g")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"

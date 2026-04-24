@@ -14,6 +14,7 @@ func _on_player_body_entered(_body: Node2D) -> void:
 	GlobalSignals.emit_signal("door_entered")
 	
 func on_animation_midpoint_reached() -> void:
+	print("carregando")
 	if target_level_path == "":
 		push_error("Caminho do level não definido na porta!")
 		return
