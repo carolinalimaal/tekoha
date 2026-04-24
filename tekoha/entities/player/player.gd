@@ -71,6 +71,8 @@ func _unhandled_input(_event: InputEvent) -> void:
 			state_machine.current_state.transition_to("Roll")
 
 func get_direction() -> Vector2:
+	if !can_move:
+		return Vector2.ZERO
 	return InputManager.get_movement_vector().normalized()
 
 func get_aim_direction() -> Vector2:

@@ -504,6 +504,7 @@ texture_region_size = Vector2i(32, 32)
 1:4/animation_frame_4/duration = 1.0
 1:4/animation_frame_5/duration = 1.0
 1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:3/animation_separation = Vector2i(5, 0)
 1:3/animation_speed = 5.0
 1:3/animation_frame_0/duration = 1.0
