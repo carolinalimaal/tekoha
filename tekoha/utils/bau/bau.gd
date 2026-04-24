@@ -16,7 +16,7 @@ func _ready() -> void:
 		item = null
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if InputManager.get_action_pressed("interact") and is_showing:
+	if InputManager.get_action_pressed("ui_cancel") and is_showing:
 		# Se o input for consumido aqui, nao propaga para o resto dos _unhandled_input do jogo
 		get_viewport().set_input_as_handled()
 		close_chest()

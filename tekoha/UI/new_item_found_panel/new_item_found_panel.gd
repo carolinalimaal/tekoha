@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if InputManager.get_action_pressed("ui_accept") and is_showing:
-		get_viewport().set_input_as_handled() # Engolimos o input!
+		get_viewport().set_input_as_handled()
 		
 		var tween = create_tween()
 		tween.set_trans(Tween.TRANS_SINE)
