@@ -43,6 +43,17 @@ func _ready() -> void:
 		load_game_button.hide()
 		print("nao tem save")
 
+func _unhandled_input(_event: InputEvent) -> void:
+	if InputManager.get_action_pressed("ui_cancel"):
+		if !UIManager.menu_stack.is_empty():
+			get_viewport().set_input_as_handled()
+			var top_menu = UIManager.menu_stack.back()
+			
+			if top_menu.has_method("cancel_action"):
+				top_menu.cancel_action()
+			else:
+				UIManager.close_top_menu()
+
 func _on_new_game_pressed() -> void:
 	if GameManager.current_save:
 		confirmation_popup.setup(
@@ -52,8 +63,8 @@ func _on_new_game_pressed() -> void:
 			"Continuar", 
 			"Cancelar")
 		UIManager.open_menu("confirmation")
-		confirmation_popup.confirm_button.pressed.connect(_on_confirm_new_game)
-		confirmation_popup.cancel_button.pressed.connect(_on_cancel_new_game)
+		confirmation_popup.confirmed.connect(_on_confirm_new_game)
+		confirmation_popup.cancelled.connect(_on_cancel_new_game)
 		for b in menu_options.get_children():
 			if b is Button:
 				b.focus_mode = Control.FOCUS_NONE
@@ -77,17 +88,17 @@ func _on_quit_pressed() -> void:
 		"Sair", 
 		"Voltar")
 	UIManager.open_menu("confirmation")
-	confirmation_popup.confirm_button.pressed.connect(_on_confirm_quit)
-	confirmation_popup.cancel_button.pressed.connect(_on_cancel_quit)
+	confirmation_popup.confirmed.connect(_on_confirm_quit)
+	confirmation_popup.cancelled.connect(_on_cancel_quit)
 
 func _on_confirm_new_game() -> void:
-	confirmation_popup.confirm_button.pressed.disconnect(_on_confirm_new_game)
-	confirmation_popup.cancel_button.pressed.disconnect(_on_cancel_new_game)
+	confirmation_popup.confirmed.disconnect(_on_confirm_new_game)
+	confirmation_popup.cancelled.disconnect(_on_cancel_new_game)
 	_start_new_game()
 
 func _on_cancel_new_game() -> void:
-	confirmation_popup.confirm_button.pressed.disconnect(_on_confirm_new_game)
-	confirmation_popup.cancel_button.pressed.disconnect(_on_cancel_new_game)
+	confirmation_popup.confirmed.disconnect(_on_confirm_new_game)
+	confirmation_popup.cancelled.disconnect(_on_cancel_new_game)
 	UIManager.close_top_menu()
 	for b in menu_options.get_children():
 			if b is Button:
@@ -105,7 +116,13 @@ func _on_confirm_quit() -> void:
 	get_tree().quit()
 
 func _on_cancel_quit() -> void:
-	confirmation_popup.confirm_button.pressed.disconnect(_on_confirm_quit)
-	confirmation_popup.cancel_button.pressed.disconnect(_on_cancel_quit)
+	confirmation_popup.confirmed.disconnect(_on_confirm_quit)
+	confirmation_popup.cancelled.disconnect(_on_cancel_quit)
 	UIManager.close_top_menu()
 	quit_button.grab_focus()
+
+func cancel_action() -> void:
+	if confirmation_popup.confirm_button.text == "Continuar":
+		_on_cancel_new_game()
+	else:
+		_on_cancel_quit()

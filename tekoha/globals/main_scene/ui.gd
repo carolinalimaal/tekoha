@@ -23,6 +23,15 @@ func _ready() -> void:
 	UIManager.register_menu("confirmation", confirmation_popup)
 
 func _unhandled_input(_event: InputEvent) -> void:
+	if InputManager.get_action_pressed("ui_cancel"):
+		if !UIManager.menu_stack.is_empty():
+			get_viewport().set_input_as_handled()
+			var top_menu = UIManager.menu_stack.back()
+			if top_menu.has_method("cancel_action"):
+				top_menu.cancel_action()
+			else:
+				UIManager.close_top_menu()
+			return
 	# Abre ou fecha o Pause
 	if InputManager.get_action_pressed("pause"):
 		if UIManager.menu_stack.is_empty():

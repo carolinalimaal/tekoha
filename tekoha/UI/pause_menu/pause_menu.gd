@@ -55,3 +55,6 @@ func _cancel_quit() -> void:
 	GlobalRefs.confirmation_popup.confirmed.disconnect(_confirm_quit)
 	GlobalRefs.confirmation_popup.cancelled.disconnect(_cancel_quit)
 	UIManager.close_top_menu()
+
+func cancel_action() -> void:
+	_on_back_to_game_pressed()
