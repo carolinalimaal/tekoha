@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cokx7i5rnjlqt"]
 
 [ext_resource type="Script" uid="uid://d28d5x31pjupk" path="res://globals/interaction_manager/interaction_manager.gd" id="1_f4p8w"]
+[ext_resource type="FontFile" uid="uid://byjqkrwux6cty" path="res://assets/fonts/Bahiana/Bahiana-Regular.ttf" id="2_tarl8"]
 
 [node name="InteractionManager" type="CanvasLayer" unique_id=38454031]
 process_mode = 3
@@ -16,6 +17,8 @@ mouse_filter = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1139611271]
 layout_mode = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_tarl8")
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 fit_content = true
 scroll_active = false

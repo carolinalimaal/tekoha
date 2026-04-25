@@ -26,7 +26,7 @@ texture = ExtResource("1_qi3eo")
 [node name="InteractableComponent" type="Area2D" parent="." unique_id=1396489842 node_paths=PackedStringArray("collision_shape", "marker")]
 collision_layer = 0
 script = ExtResource("3_ahwyk")
-interact_label = "R Pescar"
+interact_label = "[interact] Pescar"
 collision_shape = NodePath("CollisionShape2D")
 marker = NodePath("../Marker2D")
 metadata/_custom_type_script = "uid://bevot8siuxavc"
