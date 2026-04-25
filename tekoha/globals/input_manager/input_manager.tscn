@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://2rnq21fajxub" path="res://assets/UI/ui_button_icons/keyboard/S.svg" id="11_kqm00"]
 [ext_resource type="Texture2D" uid="uid://btg6imat44cve" path="res://assets/UI/ui_button_icons/keyboard/D.svg" id="12_6c5q1"]
 [ext_resource type="Texture2D" uid="uid://t5lpqomr2tsj" path="res://assets/UI/ui_button_icons/controller/A-Button.svg" id="13_ptaef"]
+[ext_resource type="Texture2D" uid="uid://d1md7xr2t1t37" path="res://assets/UI/ui_button_icons/controller/X-Button.svg" id="14_kqm00"]
+[ext_resource type="Texture2D" uid="uid://cd3mcc4hi3xdr" path="res://assets/UI/ui_button_icons/controller/RB.svg" id="15_6c5q1"]
 
 [node name="InputManager" type="Node" unique_id=973914486]
 script = ExtResource("1_sk0jw")
@@ -34,5 +36,9 @@ keyboard_icons = Dictionary[String, Texture2D]({
 "roll": ExtResource("8_0u5i6")
 })
 controller_icons = Dictionary[String, Texture2D]({
-"interact": ExtResource("13_ptaef")
+"attack": ExtResource("14_kqm00"),
+"interact": ExtResource("13_ptaef"),
+"inventory": null,
+"pause": null,
+"roll": ExtResource("15_6c5q1")
 })

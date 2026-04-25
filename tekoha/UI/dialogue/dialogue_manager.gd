@@ -30,6 +30,7 @@ func _ready() -> void:
 	dialogue_box.hide()
 	cutscene_box.hide()
 	is_showing = false
+	InputManager.input_source_changed.connect(_on_input_source_changed)
 
 func _input(_event: InputEvent) -> void:
 	if InputManager.get_action_pressed("skip_dialogue") and is_showing:
@@ -59,6 +60,8 @@ func _show_sentence() -> void:
 			text_to_show += current.text_pt
 		Idiom.EN:
 			text_to_show += current.text_en
+	
+	text_to_show = InputManager.icon_mapper.parse_input_text(text_to_show, 32)
 	
 	_set_background_image(current, is_cutscene)
 	
@@ -156,3 +159,16 @@ func force_close() -> void:
 	UIManager.is_interact_ui_open = false
 	if type_tween and type_tween.is_running():
 		type_tween.kill()
+
+func _on_input_source_changed(_source: InputManager.InputSource) -> void:
+	if is_showing:
+		var current = current_dialogue[index]
+		var text_to_show = _set_actor_name(current)
+		match language:
+			Idiom.PT:
+				text_to_show += current.text_pt
+			Idiom.EN:
+				text_to_show += current.text_en
+		text_to_show = InputManager.icon_mapper.parse_input_text(text_to_show, 32)
+		active_text_label.text = text_to_show
+		active_text_label.visible_characters = -1

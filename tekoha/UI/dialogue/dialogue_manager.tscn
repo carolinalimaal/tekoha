@@ -51,6 +51,7 @@ theme_override_constants/margin_bottom = 40
 [node name="SpeechTextDialogue" type="RichTextLabel" parent="DialogueBox/MarginContainer" unique_id=353063436]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
 text = "Personagem"
 
 [node name="CutsceneBox" type="PanelContainer" parent="." unique_id=1399184546]
@@ -78,4 +79,5 @@ theme_override_constants/margin_bottom = 28
 [node name="SpeechTextCutscene" type="RichTextLabel" parent="CutsceneBox/MarginContainer" unique_id=1705030219]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
 text = "Personagem"
