@@ -10,9 +10,11 @@ enum InputSource {
 var active_input_source = InputSource.KEYBOARD
 
 var controller_manager: ControllerManager
+var icon_mapper: IconMapper
 
 func _ready() -> void:
 	controller_manager = $ControllerManager
+	icon_mapper = $IconMapper
 	controller_manager.controller_connected.connect(_on_controller_connected)
 	controller_manager.controller_disconnected.connect(_on_controller_disconnected)
 	

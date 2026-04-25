@@ -2,9 +2,37 @@
 
 [ext_resource type="Script" uid="uid://bvcb521no2utd" path="res://globals/input_manager/input_manager.gd" id="1_sk0jw"]
 [ext_resource type="Script" uid="uid://bun1v203k2eax" path="res://globals/input_manager/controller_manager.gd" id="2_i1gik"]
+[ext_resource type="Script" uid="uid://bbgh8uulbe6bk" path="res://globals/input_manager/icon_mapper.gd" id="3_i1gik"]
+[ext_resource type="Texture2D" uid="uid://w11onwcmvdyb" path="res://assets/UI/ui_button_icons/keyboard/R.svg" id="4_nvhuf"]
+[ext_resource type="Texture2D" uid="uid://b0btr5ih8qdhh" path="res://assets/UI/ui_button_icons/keyboard/E.svg" id="5_mewg5"]
+[ext_resource type="Texture2D" uid="uid://c1o5ty7v6so5c" path="res://assets/UI/ui_button_icons/keyboard/ESC.svg" id="6_5fnpp"]
+[ext_resource type="Texture2D" uid="uid://dusjoknpgyyfa" path="res://assets/UI/ui_button_icons/keyboard/Mouse-Left_Click.svg" id="7_53uit"]
+[ext_resource type="Texture2D" uid="uid://cnvy7v51j1ju4" path="res://assets/UI/ui_button_icons/keyboard/Mouse-Right-Click.svg" id="8_0u5i6"]
+[ext_resource type="Texture2D" uid="uid://da6abm4oukkme" path="res://assets/UI/ui_button_icons/keyboard/W.svg" id="9_ptaef"]
+[ext_resource type="Texture2D" uid="uid://un2gm4r8s257" path="res://assets/UI/ui_button_icons/keyboard/A.svg" id="10_smlqt"]
+[ext_resource type="Texture2D" uid="uid://2rnq21fajxub" path="res://assets/UI/ui_button_icons/keyboard/S.svg" id="11_kqm00"]
+[ext_resource type="Texture2D" uid="uid://btg6imat44cve" path="res://assets/UI/ui_button_icons/keyboard/D.svg" id="12_6c5q1"]
+[ext_resource type="Texture2D" uid="uid://t5lpqomr2tsj" path="res://assets/UI/ui_button_icons/controller/A-Button.svg" id="13_ptaef"]
 
 [node name="InputManager" type="Node" unique_id=973914486]
 script = ExtResource("1_sk0jw")
 
 [node name="ControllerManager" type="Node" parent="." unique_id=1993450999]
 script = ExtResource("2_i1gik")
+
+[node name="IconMapper" type="Node" parent="." unique_id=1430897626]
+script = ExtResource("3_i1gik")
+keyboard_icons = Dictionary[String, Texture2D]({
+"attack": ExtResource("7_53uit"),
+"interact": ExtResource("4_nvhuf"),
+"inventory": ExtResource("5_mewg5"),
+"move_down": ExtResource("11_kqm00"),
+"move_left": ExtResource("10_smlqt"),
+"move_right": ExtResource("12_6c5q1"),
+"move_up": ExtResource("9_ptaef"),
+"pause": ExtResource("6_5fnpp"),
+"roll": ExtResource("8_0u5i6")
+})
+controller_icons = Dictionary[String, Texture2D]({
+"interact": ExtResource("13_ptaef")
+})
