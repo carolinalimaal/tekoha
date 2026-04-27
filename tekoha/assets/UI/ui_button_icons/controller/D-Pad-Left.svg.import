@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvglk2nmwv737"
-path="res://.godot/imported/W.svg-fc9be9af5b6cc1c8b2a06317f695fe40.ctex"
+uid="uid://pr4kvfyyjmxy"
+path="res://.godot/imported/D-Pad-Left.svg-ec78f47ac74acabde6a60b6e08e2fedf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/ui_button_icons/keyboard/W.svg"
-dest_files=["res://.godot/imported/W.svg-fc9be9af5b6cc1c8b2a06317f695fe40.ctex"]
+source_file="res://assets/UI/ui_button_icons/controller/D-Pad-Left.svg"
+dest_files=["res://.godot/imported/D-Pad-Left.svg-ec78f47ac74acabde6a60b6e08e2fedf.ctex"]
 
 [params]
 

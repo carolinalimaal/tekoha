@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dusjoknpgyyfa"
-path="res://.godot/imported/Mouse-Left_Click.svg-2c3562feb6cdf35597750e6a16409420.ctex"
+uid="uid://b15uytfmof25l"
+path="res://.godot/imported/D-Pad-Down.svg-26c6fcc4d382e371e8313c85757a5f77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/ui_button_icons/keyboard/Mouse-Left_Click.svg"
-dest_files=["res://.godot/imported/Mouse-Left_Click.svg-2c3562feb6cdf35597750e6a16409420.ctex"]
+source_file="res://assets/UI/ui_button_icons/controller/D-Pad-Down.svg"
+dest_files=["res://.godot/imported/D-Pad-Down.svg-26c6fcc4d382e371e8313c85757a5f77.ctex"]
 
 [params]
 
