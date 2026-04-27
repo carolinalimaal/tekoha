@@ -56,7 +56,7 @@ func _update_prompt() -> void:
 		var active = active_areas.back()
 		current_interactable = active.node
 		current_marker = active.marker
-		rich_label.text = InputManager.icon_mapper.parse_input_text(active.text)
+		rich_label.text = InputManager.icon_mapper.parse_input_text(active.text, 32)
 		container.show()
 
 func _on_input_source_changed(_source: InputManager.InputSource) -> void:
