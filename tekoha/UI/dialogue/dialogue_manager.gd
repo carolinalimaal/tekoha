@@ -61,7 +61,7 @@ func _show_sentence() -> void:
 		Idiom.EN:
 			text_to_show += current.text_en
 	
-	text_to_show = InputManager.icon_mapper.parse_input_text(text_to_show, 32)
+	text_to_show = InputManager.icon_mapper.parse_input_text(text_to_show, 36)
 	
 	_set_background_image(current, is_cutscene)
 	
@@ -169,6 +169,6 @@ func _on_input_source_changed(_source: InputManager.InputSource) -> void:
 				text_to_show += current.text_pt
 			Idiom.EN:
 				text_to_show += current.text_en
-		text_to_show = InputManager.icon_mapper.parse_input_text(text_to_show, 32)
+		text_to_show = InputManager.icon_mapper.parse_input_text(text_to_show, 36)
 		active_text_label.text = text_to_show
 		active_text_label.visible_characters = -1
