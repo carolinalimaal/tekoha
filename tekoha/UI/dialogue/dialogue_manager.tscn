@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqbcsw00s55w2"]
 
-[ext_resource type="Script" path="res://UI/dialogue/dialogue_manager.gd" id="1_f0bm7"]
+[ext_resource type="Script" uid="uid://htwa4b33jjy0" path="res://UI/dialogue/dialogue_manager.gd" id="1_f0bm7"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/boxes/dialogue_box.png" id="1_tlui7"]
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="2_eee5t"]
 [ext_resource type="PackedScene" uid="uid://tc0txhjv7cm5" path="res://UI/components/navigation_legend/navigation_legend.tscn" id="4_xayoh"]
@@ -84,11 +84,5 @@ bbcode_enabled = true
 text = "Personagem"
 
 [node name="NavigationLegend" parent="." unique_id=1102564893 instance=ExtResource("4_xayoh")]
-anchor_left = 0.8758681
-anchor_top = 0.9367284
-offset_left = -21.111084
-offset_top = -2.444458
-size_flags_horizontal = 4
-size_flags_vertical = 4
 legend_text = "[skip_dialogue] Avançar"
 icon_size = 32
