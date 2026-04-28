@@ -84,6 +84,5 @@ bbcode_enabled = true
 text = "Personagem"
 
 [node name="NavigationLegend" parent="." unique_id=1102564893 instance=ExtResource("4_xayoh")]
-theme = ExtResource("2_eee5t")
-legend_text = "[skip_dialogue] Avançar"
+legend_text = "[skip_dialogue] Continuar"
 icon_size = 32

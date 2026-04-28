@@ -107,5 +107,5 @@ metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
 [node name="NavigationLegend" parent="." unique_id=1102564893 instance=ExtResource("7_b3ybe")]
 layout_mode = 1
-legend_text = "[ui_accept] Selecionar [ui_cancel] Cancelar"
+legend_text = "[ui_accept] Confirmar [ui_cancel] Cancelar"
 icon_size = 32
