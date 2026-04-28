@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://tc0txhjv7cm5"]
 
+[ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_oe50y"]
 [ext_resource type="Script" uid="uid://ery26bidm0d7" path="res://UI/components/navigation_legend/navigation_legend.gd" id="1_r7xjo"]
 
 [node name="NavigationLegend" type="MarginContainer" unique_id=1102564893]
@@ -13,6 +14,7 @@ offset_left = -21.0
 offset_top = -20.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("1_oe50y")
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
