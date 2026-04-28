@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq480ds2sue6d"
-path="res://.godot/imported/heart_full 1.png-b2ae97f04b09dd0288220ddb6afc2635.ctex"
+uid="uid://bldoqmphdvwnc"
+path="res://.godot/imported/açaí.png-027c708bc9141c2d94cb150f34253722.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/hearts/heart_full 1.png"
-dest_files=["res://.godot/imported/heart_full 1.png-b2ae97f04b09dd0288220ddb6afc2635.ctex"]
+source_file="res://assets/UI/hud/coin/açaí.png"
+dest_files=["res://.godot/imported/açaí.png-027c708bc9141c2d94cb150f34253722.ctex"]
 
 [params]
 
