@@ -2,7 +2,7 @@ class_name NavigationLegend
 extends MarginContainer
 
 @export_multiline() var legend_text: String
-@export var icon_size: int = 24
+@export var icon_size: int = 32
 
 @onready var legend: RichTextLabel = $Legend
 
