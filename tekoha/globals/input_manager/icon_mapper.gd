@@ -29,7 +29,7 @@ var controller_icons: Dictionary[String, String] = {
 	"inventory": "res://assets/UI/ui_button_icons/controller/Select.svg",
 	"skip_dialogue": "res://assets/UI/ui_button_icons/controller/A-Button.svg",
 	"ui_accept": "res://assets/UI/ui_button_icons/controller/A-Button.svg",
-	"ui_cancel": "res://assets/UI/ui_button_icons/controller/B-Button",
+	"ui_cancel": "res://assets/UI/ui_button_icons/controller/B-Button.svg",
 	"ui_select": "res://assets/UI/ui_button_icons/controller/A-Button.svg"
 }
 
