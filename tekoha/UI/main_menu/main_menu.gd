@@ -10,6 +10,7 @@ extends Control
 @onready var background: TextureRect = $Background
 
 @onready var confirmation_popup: ConfirmationPopup = $ConfirmationPopup
+@onready var navigation_legend: NavigationLegend = $NavigationLegend
 
 
 var bg_list: Array[Texture2D] = [
@@ -56,6 +57,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func _on_new_game_pressed() -> void:
 	if GameManager.current_save:
+		navigation_legend.hide()
 		confirmation_popup.setup(
 			"O jogo antigo será sobrescrito, deseja continuar?", 
 			null, 
@@ -81,6 +83,7 @@ func _on_options_pressed() -> void:
 	pass
 
 func _on_quit_pressed() -> void:
+	navigation_legend.hide()
 	confirmation_popup.setup(
 		"Tem certeza que deseja sair do jogo?", 
 		null, 
@@ -90,6 +93,9 @@ func _on_quit_pressed() -> void:
 	UIManager.open_menu("confirmation")
 	confirmation_popup.confirmed.connect(_on_confirm_quit)
 	confirmation_popup.cancelled.connect(_on_cancel_quit)
+	for b in menu_options.get_children():
+			if b is Button:
+				b.focus_mode = Control.FOCUS_NONE
 
 func _on_confirm_new_game() -> void:
 	confirmation_popup.confirmed.disconnect(_on_confirm_new_game)
@@ -97,6 +103,7 @@ func _on_confirm_new_game() -> void:
 	_start_new_game()
 
 func _on_cancel_new_game() -> void:
+	navigation_legend.show()
 	confirmation_popup.confirmed.disconnect(_on_confirm_new_game)
 	confirmation_popup.cancelled.disconnect(_on_cancel_new_game)
 	UIManager.close_top_menu()
@@ -116,9 +123,13 @@ func _on_confirm_quit() -> void:
 	get_tree().quit()
 
 func _on_cancel_quit() -> void:
+	navigation_legend.show()
 	confirmation_popup.confirmed.disconnect(_on_confirm_quit)
 	confirmation_popup.cancelled.disconnect(_on_cancel_quit)
 	UIManager.close_top_menu()
+	for b in menu_options.get_children():
+			if b is Button:
+				b.focus_mode = Control.FOCUS_ALL
 	quit_button.grab_focus()
 
 func cancel_action() -> void:
