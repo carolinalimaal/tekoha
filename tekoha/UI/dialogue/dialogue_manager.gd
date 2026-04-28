@@ -23,13 +23,16 @@ var active_text_label: RichTextLabel
 @onready var speech_text_dialogue: RichTextLabel = $DialogueBox/MarginContainer/SpeechTextDialogue
 @onready var cutscene_box: PanelContainer = $CutsceneBox
 @onready var speech_text_cutscene: RichTextLabel = $CutsceneBox/MarginContainer/SpeechTextCutscene
+@onready var navigation_legend: NavigationLegend = $NavigationLegend
 
 func _ready() -> void:
 	solid_background.hide()
 	cutscene_background.hide()
 	dialogue_box.hide()
 	cutscene_box.hide()
+	navigation_legend.hide()
 	is_showing = false
+	InputManager.input_source_changed.connect(_on_input_source_changed)
 
 func _input(_event: InputEvent) -> void:
 	if InputManager.get_action_pressed("skip_dialogue") and is_showing:
@@ -59,6 +62,8 @@ func _show_sentence() -> void:
 			text_to_show += current.text_pt
 		Idiom.EN:
 			text_to_show += current.text_en
+	
+	text_to_show = InputManager.icon_mapper.parse_input_text(text_to_show, 36)
 	
 	_set_background_image(current, is_cutscene)
 	
@@ -90,6 +95,7 @@ func _next_sentence() -> void:
 func _end_speech() -> void:
 	dialogue_box.hide()
 	cutscene_box.hide()
+	navigation_legend.hide()
 	UIManager.is_interact_ui_open = false
 	is_showing = false
 	current_dialogue = []
@@ -119,6 +125,7 @@ func _set_background_image(current: DialogueLine, is_cutscene: bool) -> void:
 		dialogue_box.hide()
 		cutscene_box.show()
 		solid_background.show()
+		navigation_legend.show()
 		
 		if cutscene_background.texture != current.background_image:
 			cutscene_background.texture = current.background_image
@@ -135,6 +142,7 @@ func _set_background_image(current: DialogueLine, is_cutscene: bool) -> void:
 		dialogue_box.show()
 		cutscene_box.hide()
 		solid_background.hide()
+		navigation_legend.show()
 		
 		active_text_label = speech_text_dialogue
 
@@ -152,7 +160,21 @@ func force_close() -> void:
 	cutscene_box.hide()
 	solid_background.hide()
 	cutscene_background.hide()
+	navigation_legend.hide()
 	cutscene_background.texture = null
 	UIManager.is_interact_ui_open = false
 	if type_tween and type_tween.is_running():
 		type_tween.kill()
+
+func _on_input_source_changed(_source: InputManager.InputSource) -> void:
+	if is_showing:
+		var current = current_dialogue[index]
+		var text_to_show = _set_actor_name(current)
+		match language:
+			Idiom.PT:
+				text_to_show += current.text_pt
+			Idiom.EN:
+				text_to_show += current.text_en
+		text_to_show = InputManager.icon_mapper.parse_input_text(text_to_show, 36)
+		active_text_label.text = text_to_show
+		active_text_label.visible_characters = -1

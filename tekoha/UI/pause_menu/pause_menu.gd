@@ -4,6 +4,7 @@ extends Control
 @onready var options_button: DefaultButton = $MenuOptions/Options
 @onready var main_menu: DefaultButton = $MenuOptions/MainMenu
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var navigation_legend: NavigationLegend = $NavigationLegend
 
 func _ready() -> void:
 	back_button.pressed.connect(_on_back_to_game_pressed)
@@ -29,6 +30,7 @@ func _on_options_pressed() -> void:
 	pass
 
 func _on_back_to_main_menu_pressed() -> void:
+	navigation_legend.hide()
 	GlobalRefs.confirmation_popup.setup(
 		"Todo o progresso não salvo será perdido. Deseja sair?", 
 		null, 
@@ -45,6 +47,7 @@ func _on_back_to_main_menu_pressed() -> void:
 	UIManager.open_menu("confirmation")
 
 func _confirm_quit() -> void:
+	navigation_legend.show()
 	GlobalRefs.confirmation_popup.confirmed.disconnect(_confirm_quit)
 	GlobalRefs.confirmation_popup.cancelled.disconnect(_cancel_quit)
 	UIManager.close_all_menus()
@@ -52,6 +55,7 @@ func _confirm_quit() -> void:
 	get_tree().change_scene_to_file("res://UI/main_menu/main_menu.tscn")
 
 func _cancel_quit() -> void:
+	navigation_legend.show()
 	GlobalRefs.confirmation_popup.confirmed.disconnect(_confirm_quit)
 	GlobalRefs.confirmation_popup.cancelled.disconnect(_cancel_quit)
 	UIManager.close_top_menu()

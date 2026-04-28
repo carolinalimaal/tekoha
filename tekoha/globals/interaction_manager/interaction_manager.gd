@@ -10,6 +10,7 @@ var current_marker: Marker2D
 func _ready() -> void:
 	container.hide()
 	rich_label.bbcode_enabled = true
+	InputManager.input_source_changed.connect(_on_input_source_changed)
 
 # Atualiza a posição da UI para seguir o Marker2D no mundo
 func _process(_delta: float) -> void:
@@ -55,5 +56,9 @@ func _update_prompt() -> void:
 		var active = active_areas.back()
 		current_interactable = active.node
 		current_marker = active.marker
-		rich_label.text = active.text
+		rich_label.text = InputManager.icon_mapper.parse_input_text(active.text, 32)
 		container.show()
+
+func _on_input_source_changed(_source: InputManager.InputSource) -> void:
+	if current_interactable:
+		_update_prompt()

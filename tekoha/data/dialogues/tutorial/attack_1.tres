@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_gwei7"]
 script = ExtResource("1_8bu4m")
-text_pt = "Aperte botão esquerdo do mouse para atacar uma vez."
+text_pt = "Aperte [attack] para realizar um ataque simples."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [resource]

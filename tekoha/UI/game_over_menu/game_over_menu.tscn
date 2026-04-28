@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_je7hj"]
 [ext_resource type="Script" uid="uid://dufyiwgpn6pg7" path="res://UI/game_over_menu/game_over_menu.gd" id="2_qbkh2"]
 [ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/components/button/button.gd" id="3_ya04a"]
+[ext_resource type="PackedScene" uid="uid://tc0txhjv7cm5" path="res://UI/components/navigation_legend/navigation_legend.tscn" id="4_dgsoq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_je7hj"]
 bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
@@ -104,7 +105,7 @@ alignment = 1
 [node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1079567845]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "Você Morreu"
+text = "Você Morreu!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -129,3 +130,8 @@ metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1836214076]
 libraries/ = SubResource("AnimationLibrary_ya04a")
+
+[node name="NavigationLegend" parent="." unique_id=1102564893 instance=ExtResource("4_dgsoq")]
+layout_mode = 1
+legend_text = "[ui_accept] Continuar"
+icon_size = 32

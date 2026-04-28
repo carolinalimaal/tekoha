@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bt0j2ujlqm4m1" path="res://assets/UI/boxes/popup_box.png" id="3_wmhuc"]
 [ext_resource type="Texture2D" uid="uid://dbmvrignxwe38" path="res://assets/sprites/items/foods/tambaqui_assado.png" id="4_uw45p"]
 [ext_resource type="PackedScene" uid="uid://c18bln14y2w7t" path="res://UI/components/heart_container/heart_container.tscn" id="5_wmhuc"]
+[ext_resource type="PackedScene" uid="uid://tc0txhjv7cm5" path="res://UI/components/navigation_legend/navigation_legend.tscn" id="7_id1l5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_id1l5"]
 texture = ExtResource("3_wmhuc")
@@ -82,3 +83,8 @@ custom_minimum_size = Vector2(320, 55)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 14
 text = "Descrição"
+
+[node name="NavigationLegend" parent="." unique_id=1102564893 instance=ExtResource("7_id1l5")]
+layout_mode = 1
+legend_text = "[ui_accept] Continuar"
+icon_size = 32

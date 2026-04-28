@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://by4j7ryqt0fv8" path="res://UI/components/heart_icon/heart_icon.tscn" id="3_5tf5m"]
 [ext_resource type="PackedScene" uid="uid://b3cbxargqp6kv" path="res://UI/inventory/inventory_slot_ui.tscn" id="4_732id"]
 [ext_resource type="PackedScene" uid="uid://c18bln14y2w7t" path="res://UI/components/heart_container/heart_container.tscn" id="6_xr7nv"]
+[ext_resource type="PackedScene" uid="uid://tc0txhjv7cm5" path="res://UI/components/navigation_legend/navigation_legend.tscn" id="7_5tf5m"]
 
 [node name="InventoryUi" type="Control" unique_id=958641381]
 process_mode = 3
@@ -123,3 +124,7 @@ custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 fit_content = true
 scroll_active = false
+
+[node name="NavigationLegend" parent="VBoxContainer" unique_id=1102564893 instance=ExtResource("7_5tf5m")]
+layout_mode = 2
+legend_text = "[ui_accept] Usar item [ui_cancel] Fechar"

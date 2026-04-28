@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://htwa4b33jjy0" path="res://UI/dialogue/dialogue_manager.gd" id="1_f0bm7"]
 [ext_resource type="Texture2D" uid="uid://cky6noca1mc8s" path="res://assets/UI/boxes/dialogue_box.png" id="1_tlui7"]
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="2_eee5t"]
+[ext_resource type="PackedScene" uid="uid://tc0txhjv7cm5" path="res://UI/components/navigation_legend/navigation_legend.tscn" id="4_xayoh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f0bm7"]
 texture = ExtResource("1_tlui7")
@@ -51,6 +52,7 @@ theme_override_constants/margin_bottom = 40
 [node name="SpeechTextDialogue" type="RichTextLabel" parent="DialogueBox/MarginContainer" unique_id=353063436]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
 text = "Personagem"
 
 [node name="CutsceneBox" type="PanelContainer" parent="." unique_id=1399184546]
@@ -78,4 +80,9 @@ theme_override_constants/margin_bottom = 28
 [node name="SpeechTextCutscene" type="RichTextLabel" parent="CutsceneBox/MarginContainer" unique_id=1705030219]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
 text = "Personagem"
+
+[node name="NavigationLegend" parent="." unique_id=1102564893 instance=ExtResource("4_xayoh")]
+legend_text = "[skip_dialogue] Continuar"
+icon_size = 32
