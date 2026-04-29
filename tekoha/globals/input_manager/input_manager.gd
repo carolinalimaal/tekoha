@@ -1,6 +1,7 @@
 extends Node
 
 signal input_source_changed(source: InputSource)
+signal active_controller_changed(device_id: int)
 
 enum InputSource {
 	KEYBOARD,
@@ -28,6 +29,12 @@ func _input(event: InputEvent) -> void:
 		_set_input_source(InputSource.KEYBOARD)
 	elif event is InputEventJoypadButton or (event is InputEventJoypadMotion and abs(event.axis_value) > controller_manager.analog_deadzone):
 		_set_input_source(InputSource.CONTROLLER)
+		
+		var current_device = event.device
+		if controller_manager.active_controller != current_device:
+			controller_manager.active_controller = current_device
+			print("Jogador trocou de controle! Novo ativo: ", current_device)
+			active_controller_changed.emit(current_device)
 
 func get_movement_vector() -> Vector2:
 	match active_input_source:

@@ -4,6 +4,11 @@ extends Node
 signal controller_connected(device_id: int)
 signal controller_disconnected(device_id: int)
 
+enum ControllerType {
+	PLAYSTATION,
+	XBOX,
+}
+
 @export var analog_deadzone: float = 0.2
 @export var trigger_threshold: float = 0.5
 
@@ -70,11 +75,16 @@ func get_controller_stick_input(device_id: int = -1, left_stick: bool = true) ->
 func _register_controller(device_id: int) -> void:
 	if connected_controllers.has(device_id):
 		return
+	
+	var joy_name = Input.get_joy_name(device_id)
+	var controller_type = _guess_controller_type(joy_name)
+	
 	connected_controllers[device_id] = {
-		"name" : Input.get_joy_name(device_id),
-		"guid" : Input.get_joy_guid(device_id)
+		"name" : joy_name,
+		"guid" : Input.get_joy_guid(device_id),
+		"type" : controller_type
 	}
-	print("Controle conectado! %s (id:%s)" % [Input.get_joy_name(device_id), device_id])
+	print("Controle conectado! %s (id:%s) - Tipo: %s" % [Input.get_joy_name(device_id), device_id, controller_type])
 	
 	if active_controller == -1:
 		active_controller = device_id
@@ -84,7 +94,7 @@ func _register_controller(device_id: int) -> void:
 func _deregister_controller(device_id: int) -> void:
 	if connected_controllers.has(device_id):
 		var controller_name = connected_controllers[device_id].name
-		print("Controle disconectado! %s (id:%s)" % [controller_name, device_id])
+		print("Controle disconectado! %s (id:%s) " % [controller_name, device_id])
 		connected_controllers.erase(device_id)
 		
 		if active_controller == device_id:
@@ -98,3 +108,17 @@ func _on_joy_connection_changed(device_id: int, connected: bool) -> void:
 		_register_controller(device_id)
 	else:
 		_deregister_controller(device_id)
+
+func _guess_controller_type(joy_name: String) -> ControllerType:
+	var lower_joy_name: String = joy_name.to_lower()
+	if contains_any_of(lower_joy_name, ["ps5", "ps-5", "ps 5", "ps4", "ps-4", "ps 4", "playstation", "play station", "play-station", "dualshock"]):
+		return ControllerType.PLAYSTATION
+	else:
+		return ControllerType.XBOX
+
+func contains_any_of(compare_string: String, strings: Array[String]) -> bool:
+	var lowercase_string := compare_string.to_lower()
+	for string in strings:
+		if lowercase_string.contains(string):
+			return true
+	return false

@@ -8,6 +8,7 @@ extends MarginContainer
 
 func _ready() -> void:
 	InputManager.input_source_changed.connect(_on_input_source_changed)
+	InputManager.active_controller_changed.connect(_on_controller_swapped)
 	_update_visuals()
 
 func _update_visuals() -> void:
@@ -15,6 +16,9 @@ func _update_visuals() -> void:
 		legend.text = InputManager.icon_mapper.parse_input_text(legend_text, icon_size)
 
 func _on_input_source_changed(_source: InputManager.InputSource) -> void:
+	_update_visuals()
+
+func _on_controller_swapped(_new_device_id: int) -> void:
 	_update_visuals()
 
 func set_legend_text(text: String) -> void:
