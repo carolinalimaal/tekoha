@@ -772,7 +772,7 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 position = Vector2(482, 190)
 hammock_texture = ExtResource("10_j0ms1")
 
-[node name="Room6Door" type="Area2D" parent="." unique_id=976366615]
+[node name="Room6Door" type="Area2D" parent="." unique_id=976366615 groups=["doors"]]
 position = Vector2(674, 811)
 rotation = -1.5707964
 script = ExtResource("9_copml")
@@ -787,7 +787,7 @@ shape = SubResource("RectangleShape2D_fxwqa")
 [node name="Marker2D" type="Marker2D" parent="Room6Door" unique_id=847099291]
 position = Vector2(65, 0)
 
-[node name="Room7Door" type="Area2D" parent="." unique_id=1581697807]
+[node name="Room7Door" type="Area2D" parent="." unique_id=1581697807 groups=["doors"]]
 position = Vector2(836, 234)
 script = ExtResource("9_copml")
 target_level_path = "uid://yeu56q2hrpgm"
