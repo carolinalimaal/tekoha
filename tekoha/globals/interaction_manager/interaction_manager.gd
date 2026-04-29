@@ -11,6 +11,7 @@ func _ready() -> void:
 	container.hide()
 	rich_label.bbcode_enabled = true
 	InputManager.input_source_changed.connect(_on_input_source_changed)
+	InputManager.active_controller_changed.connect(_on_controller_swapped)
 
 # Atualiza a posição da UI para seguir o Marker2D no mundo
 func _process(_delta: float) -> void:
@@ -39,15 +40,15 @@ func register_interactable(interactable: Node, text: String, marker: Marker2D) -
 			
 	if !exists:
 		active_areas.append({"node": interactable, "text": text, "marker": marker})
-		_update_prompt()
+		_update_visuals()
 
 func unregister_interactable(interactable: Node) -> void:
 	for i in range(active_areas.size() - 1, -1, -1):
 		if active_areas[i].node == interactable:
 			active_areas.remove_at(i)
-	_update_prompt()
+	_update_visuals()
 
-func _update_prompt() -> void:
+func _update_visuals() -> void:
 	if active_areas.is_empty():
 		container.hide()
 		current_interactable = null
@@ -61,4 +62,8 @@ func _update_prompt() -> void:
 
 func _on_input_source_changed(_source: InputManager.InputSource) -> void:
 	if current_interactable:
-		_update_prompt()
+		_update_visuals()
+
+func _on_controller_swapped(_new_device_id: int) -> void:
+	if current_interactable:
+		_update_visuals()
