@@ -1,6 +1,6 @@
 class_name NPC extends CharacterBody2D
 
-@export var sprite: AnimatedSprite2D
+@export var animated_sprite: AnimatedSprite2D
 @export var npc_dialogue: DialogueSettings
 
 var is_interacting: bool = false
