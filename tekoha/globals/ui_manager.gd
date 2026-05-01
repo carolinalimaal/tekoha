@@ -31,7 +31,6 @@ func open_menu(menu_name: String) -> void:
 	menu.show()
 	menu_stack.push_back(menu)
 	
-	# Se o menu tiver uma função chamada grab_initial_focus, o Maestro a executa
 	if menu.has_method("grab_initial_focus"):
 		menu.grab_initial_focus()
 
@@ -55,7 +54,7 @@ func close_top_menu() -> void:
 		if previous_menu.has_method("grab_initial_focus"):
 			previous_menu.grab_initial_focus()
 
-# Função utilitária para limpar tudo de uma vez
+# Função para limpar tudo de uma vez
 func close_all_menus() -> void:
 	for menu in menu_stack:
 		if menu.has_method("close_ui"):
