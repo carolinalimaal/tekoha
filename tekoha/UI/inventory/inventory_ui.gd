@@ -76,10 +76,9 @@ func _on_cancel_use() -> void:
 
 func _close_popup() -> void:
 	_disconnect_popup_signals()
-	UIManager.close_top_menu()
-	
 	# Permitir foco nos slots quando o popup estiver fechado
 	_set_slots_focus(true)
+	UIManager.close_top_menu()
 	
 	# Focar no item que foi clicado
 	if _current_slot_selected:
