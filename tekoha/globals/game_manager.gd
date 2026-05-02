@@ -36,6 +36,11 @@ func _add_coin(value: int) -> void:
 	# Emitir sinal para mostrar UI
 	GlobalSignals.wallet_updated.emit(current_save.wallet)
 
+func _remove_coin(value: int) -> void:
+	if current_save.wallet >= value:
+		current_save.wallet -= value
+		GlobalSignals.wallet_updated.emit(current_save.wallet)
+
 func _register_muiraquita(id: int) -> void:
 	# Registrar no dicionario
 	current_save.collected_muiraquitas[id] = true
