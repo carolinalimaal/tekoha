@@ -5,8 +5,9 @@
 
 [resource]
 script = ExtResource("1_61yrh")
+health_gain = 1
 icon = ExtResource("1_8kn7k")
 name = "Chocolate"
 description = "Feito a partir da semente de cacau fermentada e moída."
-health_gain = 1
+price = 10
 metadata/_custom_type_script = "uid://bekubsjwettik"
