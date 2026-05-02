@@ -76,3 +76,4 @@ position = Vector2(0, -43)
 layer = 18
 
 [node name="ShopUI" parent="CanvasLayer" unique_id=644589358 instance=ExtResource("5_2m0bf")]
+visible = false
