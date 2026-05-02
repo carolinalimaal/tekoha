@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://d35pugw3ryxj8"]
 
-[ext_resource type="Texture2D" uid="uid://dbmvrignxwe38" path="res://assets/sprites/items/foods/tambaqui_assado.png" id="1_3n63w"]
 [ext_resource type="PackedScene" uid="uid://c18bln14y2w7t" path="res://UI/components/heart_container/heart_container.tscn" id="1_l818l"]
 [ext_resource type="Script" uid="uid://dib0pq17gowj8" path="res://UI/shop_ui/shop_item_row.gd" id="1_uyma1"]
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="2_44wua"]
@@ -36,7 +35,6 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_3n63w")
 expand_mode = 3
 stretch_mode = 5
 
@@ -45,7 +43,6 @@ layout_mode = 2
 
 [node name="ItemName" type="Label" parent="MarginContainer/HBoxContainer/ItemInfo" unique_id=1442604234]
 layout_mode = 2
-text = "Tambaqui Assado"
 
 [node name="HeartContainer" parent="MarginContainer/HBoxContainer/ItemInfo" unique_id=438475558 instance=ExtResource("1_l818l")]
 layout_mode = 2
@@ -55,9 +52,9 @@ heart_icon = ExtResource("2_s8t4v")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Price" type="Label" parent="MarginContainer/HBoxContainer" unique_id=205401702]
+[node name="PriceLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=205401702]
 layout_mode = 2
-text = "5"
+text = "0"
 
 [node name="CoinIcon" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=571742337]
 custom_minimum_size = Vector2(24, 24)
