@@ -68,18 +68,17 @@ _data = {
 &"default": SubResource("Animation_8hme8")
 }
 
-[node name="Muiraquita" type="Area2D"]
+[node name="Muiraquita" type="Area2D" unique_id=1877604477]
+y_sort_enabled = true
 collision_layer = 512
 collision_mask = 0
 script = ExtResource("1_fubtg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1103056214]
 texture = ExtResource("2_8hme8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1449033520]
 shape = SubResource("CircleShape2D_fubtg")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ev3fk")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1665149488]
+libraries/ = SubResource("AnimationLibrary_ev3fk")
