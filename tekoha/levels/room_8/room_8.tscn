@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="3_lfef4"]
 [ext_resource type="Texture2D" uid="uid://bfuifh5omshv6" path="res://assets/sprites/tiles/natureza/natureza.png" id="4_a1oop"]
 [ext_resource type="Texture2D" uid="uid://cxh2q0k5csj8w" path="res://assets/sprites/tiles/plataformas/pier area externa.png" id="5_6mn3v"]
+[ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/nature.tres" id="6_6mn3v"]
 [ext_resource type="PackedScene" uid="uid://r33bwb7ekbh8" path="res://entities/npcs/npc_seller.tscn" id="8_f01of"]
+[ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="9_a1oop"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnup6"]
 texture = ExtResource("2_8qeqp")
@@ -566,6 +568,9 @@ sources/2 = SubResource("TileSetAtlasSource_28wv3")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfef4"]
 size = Vector2(10, 94)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mn3v"]
+size = Vector2(230, 16)
+
 [node name="Room8" type="Node2D" unique_id=2101955080]
 y_sort_enabled = true
 script = ExtResource("1_wjxbu")
@@ -588,6 +593,11 @@ tile_set = SubResource("TileSet_evuck")
 [node name="Platforms" type="TileMapLayer" parent="Tiles" unique_id=712526207]
 tile_set = SubResource("TileSet_lvpqs")
 
+[node name="Rocks" type="TileMapLayer" parent="Tiles" unique_id=1677015697]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAArAAwAAAAFAAEAAAArAAsAAAAEAAAAAAAuAAwAAAAAAAEAAAApAA0AAAABAAEAAAAWAAgAAAAEAAAAAAAWAAkAAAAFAAEAAAAQABAAAAACAAEAAAACAAsAAAAAAAAAAAAHAAcAAAABAAAAAAAIAAIAAAADAAAAAAAJAAEAAAACAAEAAAA=")
+tile_set = ExtResource("6_6mn3v")
+
 [node name="Limits" type="Node2D" parent="." unique_id=969320535]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Limits" unique_id=949254458]
@@ -595,7 +605,7 @@ collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/StaticBody2D" unique_id=1163230527]
-polygon = PackedVector2Array(114, -20, 266, -1, 237.37674, 89.16322, 206, 188, 110, 240, 34, 313, -6, 365, -20, 376, -20, 478, 251, 477, 253, 509, 510, 510, 512, 538, 767, 539, 767, 571, 828, 575, 831, 601, 918, 604, 931, 634, 1049, 633, 1061, 615, 1085, 602, 1099, 578, 1149, 571, 1157, 550, 1182, 541, 1184, 485, 1242, 472, 1265, 446, 1342, 442, 1349, 418, 1407, 409, 1419, 356, 1332, 246, 1232, 237, 1136, 177, 986, 166, 912, 178, 809, 205, 724, 240, 626, 192, 550, 207, 528, 119, 534, 4, 1063.3987, 73.133224, 1443, 198, 1462, 395, 1087, 668, 889, 658, 698, 582, 445, 558, 180, 532, -40, 504, -39, 362, -39, 27)
+polygon = PackedVector2Array(114, -20, 266, -1, 249, 90, 206, 188, 110, 240, 34, 313, -6, 365, -20, 376, -20, 478, 251, 477, 253, 509, 510, 510, 512, 538, 767, 539, 767, 571, 828, 575, 831, 601, 918, 604, 931, 634, 1049, 633, 1061, 615, 1085, 602, 1099, 578, 1149, 571, 1157, 550, 1182, 541, 1184, 485, 1242, 472, 1265, 446, 1342, 442, 1349, 418, 1407, 409, 1419, 356, 1332, 246, 1232, 237, 1136, 177, 986, 166, 912, 178, 809, 205, 724, 240, 626, 192, 550, 207, 528, 119, 534, 4, 1063.3987, 73.133224, 1443, 198, 1462, 395, 1087, 668, 889, 658, 698, 582, 445, 558, 180, 532, -40, 504, -39, 362, -39, 27)
 
 [node name="Room8Door" type="Area2D" parent="." unique_id=1788409691]
 position = Vector2(-10, 426)
@@ -608,7 +618,20 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_lfef4")
 
 [node name="Marker2D" type="Marker2D" parent="Room8Door" unique_id=238184618]
-position = Vector2(50, 0)
+position = Vector2(60, 0)
+
+[node name="Room9Door" type="Area2D" parent="." unique_id=1468011042]
+position = Vector2(406, 88)
+script = ExtResource("2_1p0c7")
+target_level_path = "res://levels/room_9/room_9.tscn"
+door_name = "Room9Door"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room9Door" unique_id=1623038280]
+shape = SubResource("RectangleShape2D_6mn3v")
+
+[node name="Marker2D" type="Marker2D" parent="Room9Door" unique_id=1108853285]
+position = Vector2(-20, 60)
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=2010751751]
 zoom = Vector2(1.5, 1.5)
@@ -618,3 +641,6 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 [node name="NpcSeller" parent="." unique_id=561111194 instance=ExtResource("8_f01of")]
 y_sort_enabled = true
 position = Vector2(552, 295)
+
+[node name="Muiraquita" parent="." unique_id=700033084 instance=ExtResource("9_a1oop")]
+position = Vector2(1310, 393)
