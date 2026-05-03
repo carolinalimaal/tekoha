@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://r33bwb7ekbh8" path="res://entities/npcs/npc_seller.tscn" id="8_f01of"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="9_a1oop"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnup6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6mn3v"]
 texture = ExtResource("2_8qeqp")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -191,7 +191,7 @@ texture_region_size = Vector2i(32, 32)
 3:3/0/terrains_peering_bit/top_side = 0
 3:3/0/terrains_peering_bit/top_right_corner = 1
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itpey"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnup6"]
 texture = ExtResource("3_f01of")
 texture_region_size = Vector2i(32, 32)
 1:1/animation_columns = 4
@@ -476,10 +476,10 @@ terrain_set_0/terrain_1/name = "Dirt"
 terrain_set_0/terrain_1/color = Color(0.45534468, 0.4590909, 0.24654505, 1)
 terrain_set_0/terrain_2/name = "Water"
 terrain_set_0/terrain_2/color = Color(0.25266293, 0.5407262, 0.43934014, 1)
-sources/0 = SubResource("TileSetAtlasSource_gnup6")
-sources/1 = SubResource("TileSetAtlasSource_itpey")
+sources/0 = SubResource("TileSetAtlasSource_6mn3v")
+sources/1 = SubResource("TileSetAtlasSource_gnup6")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bw01x"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itpey"]
 texture = ExtResource("4_a1oop")
 texture_region_size = Vector2i(32, 32)
 57:6/size_in_atlas = Vector2i(4, 6)
@@ -523,9 +523,9 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 128
 physics_layer_0/collision_mask = 17
-sources/0 = SubResource("TileSetAtlasSource_bw01x")
+sources/0 = SubResource("TileSetAtlasSource_itpey")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28wv3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d3h20"]
 texture = ExtResource("5_6mn3v")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -563,7 +563,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_lvpqs"]
 tile_size = Vector2i(32, 32)
-sources/2 = SubResource("TileSetAtlasSource_28wv3")
+sources/2 = SubResource("TileSetAtlasSource_d3h20")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfef4"]
 size = Vector2(10, 94)
