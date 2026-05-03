@@ -27,5 +27,4 @@ func _on_pot_destroyed():
 	hitbox_collision.set_deferred("disabled", true)
 	collision.set_deferred("disabled", true)
 	y_sort_enabled = false
-	z_index = -1
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.BREAKING_POT)

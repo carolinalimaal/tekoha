@@ -1,44 +1,44 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://cqt7aidvj8f77"]
 
-[ext_resource type="Texture2D" uid="uid://dkt311i8mmiao" path="res://assets/sprites/props/pots/vaso_01.png" id="1_qmtj0"]
+[ext_resource type="Texture2D" uid="uid://ctkrxbx1oi552" path="res://assets/sprites/props/pots/vaso_02.png" id="1_qmtj0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i8eux"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_47nte"]
 atlas = ExtResource("1_qmtj0")
-region = Rect2(0, 128, 64, 64)
+region = Rect2(0, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j0uur"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4lpm"]
 atlas = ExtResource("1_qmtj0")
-region = Rect2(64, 128, 64, 64)
+region = Rect2(64, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ajexu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s3qp"]
 atlas = ExtResource("1_qmtj0")
-region = Rect2(128, 128, 64, 64)
+region = Rect2(128, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dnswj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1k2f"]
 atlas = ExtResource("1_qmtj0")
-region = Rect2(192, 128, 64, 64)
+region = Rect2(192, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1183l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_chkvy"]
 atlas = ExtResource("1_qmtj0")
-region = Rect2(256, 128, 64, 64)
+region = Rect2(256, 64, 64, 64)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i8eux")
+"texture": SubResource("AtlasTexture_47nte")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j0uur")
+"texture": SubResource("AtlasTexture_r4lpm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ajexu")
+"texture": SubResource("AtlasTexture_1s3qp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dnswj")
+"texture": SubResource("AtlasTexture_h1k2f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1183l")
+"texture": SubResource("AtlasTexture_chkvy")
 }],
 "loop": false,
 "name": &"default",
