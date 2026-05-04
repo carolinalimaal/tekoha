@@ -17,10 +17,43 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u15um"]
 texture = ExtResource("8_u15um")
 texture_region_size = Vector2i(32, 32)
-7:3/size_in_atlas = Vector2i(3, 3)
+7:3/size_in_atlas = Vector2i(1, 2)
 7:3/0 = 0
-7:3/0/texture_origin = Vector2i(0, -18)
-7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-37.780403, -4.9619427, -9.227472, -4.613737, -9.749783, -13.8412075, 9.22747, -14.189415, 8.879265, -5.31015, 38.476818, -4.9619427, 38.65092, -0.60936165, 47.70429, -0.9575672, 47.70429, 15.408138, 45.440945, 24.287401, 44.22222, 24.809713, 38.245884, 16.501251, 36.703712, 30.072369, 33.002495, 29.763935, 32.922707, 17.73895, 10.22078, 17.837227, 9.561474, 31.306107, 8.944603, 42.10132, -7.710861, 41.484447, -10.486774, 29.147064, -10.417335, 17.935505, -31.939938, 17.935505, -32.385628, 28.83863, -37.32058, 28.83863, -38.86275, 17.426552, -44.723007, 23.903679, -47.807354, 15.26751, -48.052498, -0.78346443, -38.825027, -0.4352579)
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -5.454359, -12.186315, -5.454359, -11.793208, -1.5232887, -6.6828175, -1.5232887, -6.7810946, -9.680259, 16, -9.778536, 16, 16, -0.39310646, 16, -0.19655418, 27.861454, -5.0121136, 27.861454, -5.1103897, 16, -10.220779, 16, -10.220779, 19.901037, -11.006994, 20.294146, -11.301825, 22.751064, -13.9552965, 22.751064, -13.9552965, 14.102711, -16, 13.906158)
+8:3/size_in_atlas = Vector2i(1, 3)
+8:3/0 = 0
+8:3/0/texture_origin = Vector2i(0, -16)
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -9.836834, -10.446196, -9.836834, -10.097988, -16, 10.446194, -16, 10.968506, -9.836834, 16, -9.836834, 16, 16, 10.6202965, 16, 10.6202965, 26.724848, 8.879265, 29.5105, 8.879265, 40.653107, -8.531059, 40.653107, -9.227472, 29.684605, -10.446195, 27.247158, -10.446194, 16, -16, 16)
+9:3/size_in_atlas = Vector2i(1, 2)
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -5.454359, 12.186315, -5.454359, 11.793208, -1.5232887, 6.6828175, -1.5232887, 6.7810946, -9.680259, -16, -9.778536, -16, 16, 0.39310646, 16, 0.19655418, 27.861454, 5.0121136, 27.861454, 5.1103897, 16, 10.220779, 16, 10.220779, 19.901037, 11.006994, 20.294146, 11.301825, 22.751064, 13.9552965, 22.751064, 13.9552965, 14.102711, 16, 13.906158)
+2:17/0 = 0
+2:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 9.715691, 16, 9.715691, 16, 16, -16, 16)
+3:17/0 = 0
+3:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 9.715691, 16, 9.715691, 16, 16, -16, 16)
+4:17/0 = 0
+4:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 9.715691, 16, 9.715691, 16, 16, -16, 16)
+5:17/0 = 0
+5:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 9.715691, 16, 9.715691, 16, 16, -16, 16)
+6:17/0 = 0
+6:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 9.715691, 16, 9.715691, 16, 16, -16, 16)
+7:17/0 = 0
+7:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 9.715691, 16, 9.715691, 16, 16, -16, 16)
+1:17/0 = 0
+1:18/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+2:18/0 = 0
+3:18/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+6:18/0 = 0
+7:18/0 = 0
+7:19/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_33ovj"]
 tile_size = Vector2i(32, 32)
@@ -298,10 +331,10 @@ sources/1 = SubResource("TileSetAtlasSource_4hwci")
 sources/2 = SubResource("TileSetAtlasSource_yxphn")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxphn"]
-size = Vector2(30, 36)
+size = Vector2(32, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u15um"]
-size = Vector2(36, 36)
+size = Vector2(36, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxwqa"]
 size = Vector2(28, 66)
@@ -336,12 +369,12 @@ tile_map_data = PackedByteArray("AAAJABkAAAADAAUAAAAJABgAAAADAAQAAAAJABcAAAADAAQ
 tile_set = ExtResource("3_yxphn")
 
 [node name="Furniture" type="TileMapLayer" parent="Tiles" unique_id=2125976557]
-tile_map_data = PackedByteArray("AAARABUAAAAJAAMAAAAVABMAAAAIAAMAAAANABEAAAAJAAMAAAARABAAAAAJAAMAAAAZABUAAAAJAAMAAAANABYAAAAJAAMAAAALABYAAAAHAAMAAAALABEAAAAHAAMAAAAQABAAAAAHAAMAAAAQABUAAAAHAAMAAAAUABMAAAAIAAMAAAAYABUAAAAHAAMAAAATABMAAAAHAAMAAAAWABMAAAAJAAMAAAAMABEAAAAIAAMAAAAMABYAAAAIAAMAAAALAA0AAAAHAAMAAAANAA0AAAAJAAMAAAAMAA0AAAAIAAMAAAAUAAkAAAAAAAwAAAAUAAoAAAAAAA0AAAAUAAsAAAAAAA4AAAAUAAwAAAAAAA8AAAAUAA0AAAAAABAAAAAVAAkAAAABAAwAAAAVAAoAAAABAA0AAAAVAAsAAAABAA4AAAAVAAwAAAABAA8AAAAVAA0AAAABABAAAAARAAQAAAACAAwAAAARAAUAAAACAA0AAAARAAYAAAACAA4AAAARAAcAAAACAA8AAAASAAQAAAADAAwAAAASAAUAAAADAA0AAAASAAYAAAADAA4AAAASAAcAAAADAA8AAAATAAQAAAAEAAwAAAATAAUAAAAEAA0AAAATAAYAAAAEAA4AAAATAAcAAAAEAA8AAAAUAAQAAAAFAAwAAAAUAAUAAAAFAA0AAAAUAAYAAAAFAA4AAAAUAAcAAAAFAA8AAAAVAA4AAAABABEAAAAVAA8AAAABABIAAAAVABAAAAABABMAAAAWAA8AAAACABIAAAAWABAAAAACABMAAAAXAA8AAAADABIAAAAXABAAAAADABMAAAAYAA8AAAAEABIAAAAYABAAAAAEABMAAAAZAA8AAAAFABIAAAAZABAAAAAFABMAAAAaAA8AAAAGABIAAAAaABAAAAAGABMAAAAbAA8AAAAHABIAAAAbABAAAAAHABMAAAALAA4AAAAHAAQAAAALABIAAAAHAAQAAAAQABEAAAAHAAQAAAARABEAAAAJAAQAAAANAA4AAAAJAAQAAAANABIAAAAJAAQAAAATABQAAAAHAAQAAAALABcAAAAHAAQAAAAQABYAAAAHAAQAAAAYABYAAAAHAAQAAAAZABYAAAAJAAQAAAAWABQAAAAJAAQAAAARABYAAAAJAAQAAAANABcAAAAJAAQAAAAMABcAAAAIAAQAAAAMABgAAAAIAAUAAAAUABQAAAAIAAQAAAAUABUAAAAIAAUAAAAVABQAAAAIAAQAAAAVABUAAAAIAAUAAAAMABIAAAAIAAQAAAAMABMAAAAIAAUAAAAMAA4AAAAIAAQAAAAMAA8AAAAIAAUAAAA=")
+tile_map_data = PackedByteArray("AAAUAAkAAAAAAAwAAAAUAAoAAAAAAA0AAAAUAAsAAAAAAA4AAAAUAAwAAAAAAA8AAAAUAA0AAAAAABAAAAAVAAkAAAABAAwAAAAVAAoAAAABAA0AAAAVAAsAAAABAA4AAAAVAAwAAAABAA8AAAAVAA0AAAABABAAAAARAAQAAAACAAwAAAARAAUAAAACAA0AAAARAAYAAAACAA4AAAARAAcAAAACAA8AAAASAAQAAAADAAwAAAASAAUAAAADAA0AAAASAAYAAAADAA4AAAASAAcAAAADAA8AAAATAAQAAAAEAAwAAAATAAUAAAAEAA0AAAATAAYAAAAEAA4AAAATAAcAAAAEAA8AAAAUAAQAAAAFAAwAAAAUAAUAAAAFAA0AAAAUAAYAAAAFAA4AAAAUAAcAAAAFAA8AAAAVAA4AAAABABEAAAAVAA8AAAABABIAAAAVABAAAAABABMAAAAWAA8AAAACABIAAAAWABAAAAACABMAAAAXAA8AAAADABIAAAAXABAAAAADABMAAAAYAA8AAAAEABIAAAAYABAAAAAEABMAAAAZAA8AAAAFABIAAAAZABAAAAAFABMAAAAaAA8AAAAGABIAAAAaABAAAAAGABMAAAAbAA8AAAAHABIAAAAbABAAAAAHABMAAAA=")
 tile_set = ExtResource("4_4hwci")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Tiles" unique_id=749366329]
+[node name="FurntirueEsp" type="TileMapLayer" parent="Tiles" unique_id=749366329]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAARAA4AAAAHAAMAAAA=")
+tile_map_data = PackedByteArray("AAALABEAAAAHAAMAAAAMABEAAAAIAAMAAAANABEAAAAJAAMAAAALAA4AAAAHAAMAAAAMAA4AAAAIAAMAAAANAA4AAAAJAAMAAAALABcAAAAHAAMAAAAMABcAAAAIAAMAAAANABcAAAAJAAMAAAAQABYAAAAHAAMAAAARABYAAAAJAAMAAAAYABYAAAAHAAMAAAAZABYAAAAJAAMAAAATABQAAAAHAAMAAAAUABQAAAAIAAMAAAAVABQAAAAIAAMAAAAWABQAAAAJAAMAAAARABEAAAAJAAMAAAAQABEAAAAHAAMAAAAWAA4AAAACABEAAAAXAA4AAAADABEAAAAYAA4AAAAEABEAAAAZAA4AAAAFABEAAAAaAA4AAAAGABEAAAAbAA4AAAAHABEAAAA=")
 tile_set = SubResource("TileSet_33ovj")
 
 [node name="RoofWheel" type="TileMapLayer" parent="Tiles" unique_id=902466555]
@@ -367,142 +400,143 @@ scale = Vector2(1, 0.7352941)
 texture = ExtResource("6_copml")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RollMecanic/StaticBody2D" unique_id=230248164]
-position = Vector2(0, -6)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_yxphn")
 debug_color = Color(0.93845415, 0.23231229, 0.24014667, 0.41960785)
 
 [node name="RollArea" type="Area2D" parent="RollMecanic/StaticBody2D" unique_id=1894141868]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RollMecanic/StaticBody2D/RollArea" unique_id=898148196]
-position = Vector2(0, -6)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_u15um")
 
 [node name="DeskDecoration" type="Node2D" parent="." unique_id=1701779313]
+z_index = 1
 y_sort_enabled = true
 position = Vector2(402, 445)
 
 [node name="Sprite2D" type="Sprite2D" parent="DeskDecoration" unique_id=664697443]
 y_sort_enabled = true
-position = Vector2(-33, -1)
+position = Vector2(-33, 19)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D2" type="Sprite2D" parent="DeskDecoration" unique_id=468588629]
 y_sort_enabled = true
-position = Vector2(29, -1)
+position = Vector2(29, 19)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D3" type="Sprite2D" parent="DeskDecoration" unique_id=298994076]
 y_sort_enabled = true
-position = Vector2(-2, -9)
+position = Vector2(-2, 11)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D4" type="Sprite2D" parent="DeskDecoration" unique_id=937913569]
 y_sort_enabled = true
-position = Vector2(-33, 128)
+position = Vector2(-33, 116)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D5" type="Sprite2D" parent="DeskDecoration" unique_id=1301526977]
 y_sort_enabled = true
-position = Vector2(-2, 119)
+position = Vector2(-2, 107)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D6" type="Sprite2D" parent="DeskDecoration" unique_id=875788325]
 y_sort_enabled = true
-position = Vector2(29, 128)
+position = Vector2(29, 116)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D7" type="Sprite2D" parent="DeskDecoration" unique_id=1431894268]
 y_sort_enabled = true
-position = Vector2(-33, 288)
+position = Vector2(-33, 305)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D8" type="Sprite2D" parent="DeskDecoration" unique_id=281958034]
 y_sort_enabled = true
-position = Vector2(-2, 279)
+position = Vector2(-2, 296)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D9" type="Sprite2D" parent="DeskDecoration" unique_id=1900027422]
 y_sort_enabled = true
-position = Vector2(29, 288)
+position = Vector2(29, 305)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D10" type="Sprite2D" parent="DeskDecoration" unique_id=287525420]
 y_sort_enabled = true
-position = Vector2(127, 256)
+position = Vector2(127, 273)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D11" type="Sprite2D" parent="DeskDecoration" unique_id=2041673244]
 y_sort_enabled = true
-position = Vector2(157, 256)
+position = Vector2(157, 273)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D12" type="Sprite2D" parent="DeskDecoration" unique_id=374358032]
 y_sort_enabled = true
-position = Vector2(255, 192)
+position = Vector2(255, 203)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D13" type="Sprite2D" parent="DeskDecoration" unique_id=252935454]
 y_sort_enabled = true
-position = Vector2(285, 192)
+position = Vector2(285, 203)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D14" type="Sprite2D" parent="DeskDecoration" unique_id=451190139]
 y_sort_enabled = true
-position = Vector2(127, 94)
+position = Vector2(127, 115)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D15" type="Sprite2D" parent="DeskDecoration" unique_id=1457035652]
 y_sort_enabled = true
-position = Vector2(157, 94)
+position = Vector2(157, 115)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D18" type="Sprite2D" parent="DeskDecoration" unique_id=702744952]
 y_sort_enabled = true
-position = Vector2(383, 256)
+position = Vector2(383, 273)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D19" type="Sprite2D" parent="DeskDecoration" unique_id=690110561]
 y_sort_enabled = true
-position = Vector2(413, 256)
+position = Vector2(413, 273)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D20" type="Sprite2D" parent="DeskDecoration" unique_id=2025549074]
 y_sort_enabled = true
-position = Vector2(-20, 1)
+position = Vector2(-20, 17)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
@@ -510,7 +544,7 @@ frame = 4
 
 [node name="Sprite2D21" type="Sprite2D" parent="DeskDecoration" unique_id=685121508]
 y_sort_enabled = true
-position = Vector2(13, -6)
+position = Vector2(13, 10)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
@@ -518,7 +552,7 @@ frame = 9
 
 [node name="Sprite2D22" type="Sprite2D" parent="DeskDecoration" unique_id=106215686]
 y_sort_enabled = true
-position = Vector2(141, 93)
+position = Vector2(141, 114)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
@@ -526,7 +560,7 @@ frame = 8
 
 [node name="Sprite2D23" type="Sprite2D" parent="DeskDecoration" unique_id=722874600]
 y_sort_enabled = true
-position = Vector2(142, 254)
+position = Vector2(142, 271)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
