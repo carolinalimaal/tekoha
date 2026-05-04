@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" format=3 uid="uid://6emc5pw2epmo"]
+
+[ext_resource type="Texture2D" uid="uid://couunh4mjoyqk" path="res://assets/sprites/tiles/restaurantes/restaurante generico externo.png" id="1_00cek"]
+[ext_resource type="Texture2D" uid="uid://cxyebnpwjx8c1" path="res://assets/sprites/tiles/restaurantes/restaurante_cecilia_externo.png" id="2_00cek"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bw01x"]
+texture = ExtResource("1_00cek")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(9, 9)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bf8hf"]
+texture = ExtResource("2_00cek")
+texture_region_size = Vector2i(32, 32)
+0:2/size_in_atlas = Vector2i(9, 7)
+0:2/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_bw01x")
+sources/3 = SubResource("TileSetAtlasSource_bf8hf")
