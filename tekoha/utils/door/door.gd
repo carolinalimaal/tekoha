@@ -38,6 +38,10 @@ func on_animation_midpoint_reached() -> void:
 	var level_door_marker = level_door.get_node("Marker2D")
 	var spawn_point = level_door_marker.global_position
 	
+	var next_level_camera = level_instance.get_node("PlayerCamera")
+	next_level_camera.global_position.x = level_door_marker.global_position.x
+	next_level_camera.global_position.y = level_door_marker.global_position.y
+	
 	GlobalRefs.player.global_position = spawn_point
 	GlobalSignals.emit_signal("level_loading_finished")
 	

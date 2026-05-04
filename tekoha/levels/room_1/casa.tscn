@@ -89,7 +89,7 @@ texture = SubResource("GradientTexture2D_dw8qo")
 offset = Vector2(0, 35)
 metadata/_edit_lock_ = true
 
-[node name="HouseDoor" type="Area2D" parent="." unique_id=432131234]
+[node name="HouseDoor" type="Area2D" parent="." unique_id=432131234 groups=["doors"]]
 position = Vector2(176, 275)
 script = ExtResource("10_x2bmf")
 target_level_path = "uid://cudaprnhd7e17"
