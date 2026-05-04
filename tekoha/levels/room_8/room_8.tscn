@@ -575,8 +575,9 @@ size = Vector2(230, 16)
 y_sort_enabled = true
 script = ExtResource("1_wjxbu")
 limit_top = 100
-limit_bottom = 700
-limit_right = 1438
+limit_top = 110
+limit_bottom = 720
+limit_right = 1440
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1109945342]
 y_sort_enabled = true
