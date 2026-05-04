@@ -3001,6 +3001,9 @@ shape = SubResource("RectangleShape2D_wmv1v")
 sprite_frames = SubResource("SpriteFrames_f0mju")
 animation = &"idle_down"
 
+[node name="YsortOrigin" type="Marker2D" parent="." unique_id=1294261602]
+position = Vector2(0, 20)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=395739083]
 root_node = NodePath("../AnimatedSprite2D")
 libraries/ = SubResource("AnimationLibrary_51tmg")
