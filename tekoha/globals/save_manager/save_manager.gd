@@ -16,6 +16,7 @@ func _update_data() -> void:
 		if GlobalRefs.player.health_component:
 			GameManager.current_save.player_health = GlobalRefs.player.health_component.current_health
 		GameManager.current_save.player_position = GlobalRefs.player.global_position
+		GameManager.current_save.camera_pos = GlobalRefs.player.global_position
 	
 	var main_node = get_tree().root.find_child("Main", true, false)
 	if main_node:

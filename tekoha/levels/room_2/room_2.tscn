@@ -93,7 +93,7 @@ sprite_frames = ExtResource("12_reu2n")
 [node name="House" parent="World" unique_id=1616568896 instance=ExtResource("13_6wb8k")]
 position = Vector2(624, 880)
 
-[node name="HouseDoor" parent="." unique_id=595878266 instance=ExtResource("7_uev6a")]
+[node name="HouseDoor" parent="." unique_id=595878266 groups=["doors"] instance=ExtResource("7_uev6a")]
 position = Vector2(624, 963)
 monitorable = false
 target_level_path = "uid://c1k48pyjcab6e"
@@ -106,7 +106,7 @@ shape = SubResource("RectangleShape2D_khgse")
 [node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=1532514667]
 position = Vector2(-1, 70)
 
-[node name="Room3Door" parent="." unique_id=42071688 instance=ExtResource("7_uev6a")]
+[node name="Room3Door" parent="." unique_id=42071688 groups=["doors"] instance=ExtResource("7_uev6a")]
 position = Vector2(2067, 1650)
 monitorable = false
 target_level_path = "uid://by0aaf7e4rakj"
@@ -119,7 +119,7 @@ shape = SubResource("RectangleShape2D_eta5w")
 [node name="Marker2D" type="Marker2D" parent="Room3Door" unique_id=2112625929]
 position = Vector2(0, -70)
 
-[node name="Room4Door" parent="." unique_id=1788106564 instance=ExtResource("7_uev6a")]
+[node name="Room4Door" parent="." unique_id=1788106564 groups=["doors"] instance=ExtResource("7_uev6a")]
 position = Vector2(2464, 1312)
 target_level_path = "uid://i24bxl3cnsmh"
 door_name = "Room2Door"
@@ -131,7 +131,7 @@ shape = SubResource("RectangleShape2D_i6edo")
 [node name="Marker2D" type="Marker2D" parent="Room4Door" unique_id=202250850]
 position = Vector2(-32, 0)
 
-[node name="Room6Door" type="Area2D" parent="." unique_id=1815723609]
+[node name="Room6Door" type="Area2D" parent="." unique_id=1815723609 groups=["doors"]]
 position = Vector2(945, 1237)
 script = ExtResource("14_eta5w")
 target_level_path = "uid://dnquhp1xxloh7"
