@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm76otpxch14d"
-path="res://.godot/imported/pier area externa.png-7eb6037df27846afc97a2404c6768ec2.ctex"
+uid="uid://br872k82ac3bp"
+path="res://.godot/imported/restaurante cecília externo.png-460ef5662571427d0b023198eab9a13f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/plataformas/pier area externa.png"
-dest_files=["res://.godot/imported/pier area externa.png-7eb6037df27846afc97a2404c6768ec2.ctex"]
+source_file="res://assets/sprites/tiles/exterior_restaurante/restaurante cecília externo.png"
+dest_files=["res://.godot/imported/restaurante cecília externo.png-460ef5662571427d0b023198eab9a13f.ctex"]
 
 [params]
 
