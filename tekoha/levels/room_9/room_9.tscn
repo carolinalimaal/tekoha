@@ -265,3 +265,23 @@ debug_color = Color(0.99235517, 0.08491052, 0, 0.41960785)
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("10_tog6q")]
 position = Vector2(916, 533)
 hammock_texture = ExtResource("11_1xkgs")
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1414332641]
+
+[node name="Sacola" parent="Enemies" unique_id=461608080 instance=ExtResource("2_25ocl")]
+position = Vector2(524, 826)
+
+[node name="Sacola2" parent="Enemies" unique_id=1945811351 instance=ExtResource("2_25ocl")]
+position = Vector2(604, 701)
+
+[node name="Sacola3" parent="Enemies" unique_id=516401579 instance=ExtResource("2_25ocl")]
+position = Vector2(1637, 227)
+
+[node name="Canudinho" parent="Enemies" unique_id=2132468328 instance=ExtResource("3_cpiwb")]
+position = Vector2(684, 817)
+
+[node name="Canudinho2" parent="Enemies" unique_id=1255304946 instance=ExtResource("3_cpiwb")]
+position = Vector2(803, 628)
+
+[node name="Canudinho3" parent="Enemies" unique_id=300966700 instance=ExtResource("3_cpiwb")]
+position = Vector2(1594, 381)
