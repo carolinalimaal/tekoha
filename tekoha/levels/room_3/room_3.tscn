@@ -64,7 +64,7 @@ position = Vector2(632, 201)
 script = ExtResource("7_607sj")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
-[node name="Room3Door" type="Area2D" parent="." unique_id=449525539]
+[node name="Room3Door" type="Area2D" parent="." unique_id=449525539 groups=["doors"]]
 position = Vector2(727, 94)
 script = ExtResource("8_607sj")
 target_level_path = "uid://cudaprnhd7e17"

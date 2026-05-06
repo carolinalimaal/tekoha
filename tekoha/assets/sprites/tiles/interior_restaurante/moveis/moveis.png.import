@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm76otpxch14d"
-path="res://.godot/imported/pier area externa.png-7eb6037df27846afc97a2404c6768ec2.ctex"
+uid="uid://dtirpdsn68hs8"
+path="res://.godot/imported/moveis.png-39a7cea5f2eea67de707a70e62e2a463.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/plataformas/pier area externa.png"
-dest_files=["res://.godot/imported/pier area externa.png-7eb6037df27846afc97a2404c6768ec2.ctex"]
+source_file="res://assets/sprites/tiles/interior_restaurante/moveis/moveis.png"
+dest_files=["res://.godot/imported/moveis.png-39a7cea5f2eea67de707a70e62e2a463.ctex"]
 
 [params]
 
