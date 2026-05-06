@@ -138,10 +138,10 @@ physics_layer_0/collision_layer = 128
 sources/0 = SubResource("TileSetAtlasSource_pu6nj")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhh0g"]
-size = Vector2(30, 30)
+size = Vector2(30, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtyum"]
-size = Vector2(27, 59)
+size = Vector2(16, 59)
 
 [node name="Room7" type="Node2D" unique_id=838014098]
 y_sort_enabled = true
@@ -171,6 +171,7 @@ door_name = "Room7Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room7Door" unique_id=1049109750]
+position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_mhh0g")
 
 [node name="Marker2D" type="Marker2D" parent="Room7Door" unique_id=1810861292]
@@ -184,7 +185,6 @@ door_name = "Room8Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room8Door" unique_id=183943563]
-position = Vector2(-0.5, -3.5)
 shape = SubResource("RectangleShape2D_vtyum")
 
 [node name="Marker2D" type="Marker2D" parent="Room8Door" unique_id=1121873401]

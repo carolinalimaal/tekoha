@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DialogueSettings" format=3 uid="uid://bcoe8lp2wc3b6"]
+
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="1_qvl1i"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="2_8proe"]
+
+[sub_resource type="Resource" id="Resource_8proe"]
+script = ExtResource("1_qvl1i")
+actor_name = "Vendedor"
+text_pt = "Vê se tu não queres levar nada daqui."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[resource]
+script = ExtResource("2_8proe")
+dialogues = Array[ExtResource("1_qvl1i")]([SubResource("Resource_8proe")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"

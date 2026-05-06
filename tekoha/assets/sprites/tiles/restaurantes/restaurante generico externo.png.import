@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq1n6ahl472l8"
-path="res://.godot/imported/casa_externa_curupira.png-ba05412dd5cea8ac0846e03ed76bce7b.ctex"
+uid="uid://couunh4mjoyqk"
+path="res://.godot/imported/restaurante generico externo.png-5f5575baa8a3d7f6544f595857e26fad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/grama_terra/casa_externa_curupira.png"
-dest_files=["res://.godot/imported/casa_externa_curupira.png-ba05412dd5cea8ac0846e03ed76bce7b.ctex"]
+source_file="res://assets/sprites/tiles/restaurantes/restaurante generico externo.png"
+dest_files=["res://.godot/imported/restaurante generico externo.png-5f5575baa8a3d7f6544f595857e26fad.ctex"]
 
 [params]
 

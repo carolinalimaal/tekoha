@@ -5,13 +5,19 @@ class_name Door extends Area2D
 @export_file("*.tscn") var target_level_path: String
 @export var door_name: String
 
+var is_active: bool = false
+
 func _ready() -> void:
 	body_entered.connect(_on_player_body_entered)
 	
-func _on_player_body_entered(_body: Node2D) -> void:
-	GlobalSignals.animation_midpoint_reached.connect(on_animation_midpoint_reached, CONNECT_ONE_SHOT)
-	get_tree().paused = true
-	GlobalSignals.emit_signal("door_entered")
+	await get_tree().create_timer(0.5, true).timeout
+	is_active = true
+
+func _on_player_body_entered(body: Node2D) -> void:
+	if is_active and body is Player:
+		GlobalSignals.animation_midpoint_reached.connect(on_animation_midpoint_reached, CONNECT_ONE_SHOT)
+		get_tree().paused = true
+		GlobalSignals.emit_signal("door_entered")
 	
 func on_animation_midpoint_reached() -> void:
 	print("carregando")

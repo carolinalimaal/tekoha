@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://r33bwb7ekbh8"]
+
+[ext_resource type="Script" uid="uid://bj5skw2krg38x" path="res://entities/npcs/npc_seller.gd" id="1_jc6bo"]
+[ext_resource type="Resource" uid="uid://bcoe8lp2wc3b6" path="res://data/dialogues/npcs/npc_seller.tres" id="2_8yvss"]
+[ext_resource type="Texture2D" uid="uid://bgnluxiwwhp7b" path="res://assets/sprites/entities/npcs/iara_com_cauda_idle_down.png" id="2_jc6bo"]
+[ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="4_gxtx1"]
+[ext_resource type="PackedScene" uid="uid://dmt7bvfe1i6dc" path="res://UI/shop_ui/shop_ui.tscn" id="5_2m0bf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yvss"]
+atlas = ExtResource("2_jc6bo")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxtx1"]
+atlas = ExtResource("2_jc6bo")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m0bf"]
+atlas = ExtResource("2_jc6bo")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ysqxp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yvss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxtx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m0bf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jc6bo"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gxtx1"]
+radius = 33.13608
+
+[node name="NpcSeller" type="CharacterBody2D" unique_id=561111194 node_paths=PackedStringArray("animated_sprite")]
+collision_layer = 1024
+collision_mask = 1425
+script = ExtResource("1_jc6bo")
+animated_sprite = NodePath("AnimatedSprite2D")
+npc_dialogue = ExtResource("2_8yvss")
+metadata/_custom_type_script = "uid://bv7xgwalm2jk"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2057313326]
+sprite_frames = SubResource("SpriteFrames_ysqxp")
+autoplay = "default"
+frame_progress = 0.9563381
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1565048543]
+position = Vector2(6, 11)
+shape = SubResource("CircleShape2D_jc6bo")
+
+[node name="InteractableComponent" type="Area2D" parent="." unique_id=112716152 node_paths=PackedStringArray("collision_shape", "marker")]
+script = ExtResource("4_gxtx1")
+interact_label = "[interact] Falar"
+collision_shape = NodePath("CollisionShape2D")
+marker = NodePath("Marker2D")
+metadata/_custom_type_script = "uid://bevot8siuxavc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=279974623]
+shape = SubResource("CircleShape2D_gxtx1")
+debug_color = Color(0.6392157, 0.5254902, 0, 0.23921569)
+
+[node name="Marker2D" type="Marker2D" parent="InteractableComponent" unique_id=297286161]
+position = Vector2(0, -43)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1649991059]
+layer = 18
+
+[node name="ShopUI" parent="CanvasLayer" unique_id=644589358 instance=ExtResource("5_2m0bf")]
+visible = false
