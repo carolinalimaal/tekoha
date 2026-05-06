@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm76otpxch14d"
-path="res://.godot/imported/pier area externa.png-7eb6037df27846afc97a2404c6768ec2.ctex"
+uid="uid://brypa6v7xn60g"
+path="res://.godot/imported/sala01.png-e9c3873f77f181e12c1d78a45eea4a88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/plataformas/pier area externa.png"
-dest_files=["res://.godot/imported/pier area externa.png-7eb6037df27846afc97a2404c6768ec2.ctex"]
+source_file="res://sala01.png"
+dest_files=["res://.godot/imported/sala01.png-e9c3873f77f181e12c1d78a45eea4a88.ctex"]
 
 [params]
 
