@@ -49,5 +49,7 @@ func on_animation_midpoint_reached() -> void:
 	next_level_camera.global_position.y = level_door_marker.global_position.y
 	
 	GlobalRefs.player.global_position = spawn_point
+	print(spawn_point)
+	print(next_level_camera.global_position)
 	GlobalSignals.emit_signal("level_loading_finished")
 	

@@ -1,9 +1,10 @@
 extends StaticBody2D
 
-signal torch_turnned_off()
+signal torch_turnned_off(torch_id)
 
 var hit_numbers: int = 0
 var can_be_damaged: bool = true
+@export var torch_id: int
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
@@ -42,4 +43,4 @@ func _on_torch_attack_received(_attack_data: AttackData):
 func torch_off():
 	hitbox_component.set_deferred("monitoring", false)
 	hitbox_collision.set_deferred("disabled", true)
-	torch_turnned_off.emit()
+	torch_turnned_off.emit(torch_id)
