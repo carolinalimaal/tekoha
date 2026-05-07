@@ -14,6 +14,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cqt7aidvj8f77" path="res://assets/sprites/props/pots/vaso_02_2.tres" id="12_reu2n"]
 [ext_resource type="PackedScene" uid="uid://d2qw38t463t0o" path="res://levels/room_1/components/house.tscn" id="13_6wb8k"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="14_eta5w"]
+[ext_resource type="PackedScene" uid="uid://buoeecbau0yyv" path="res://utils/torch/torche.tscn" id="15_i6edo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khgse"]
 size = Vector2(36, 27)
@@ -67,6 +68,7 @@ polygon = PackedVector2Array(2496, 1728, 40, 1728, 56, 0, 2496, 0, 2496, 1232, 2
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=27133479]
 position = Vector2(680, 1042)
+zoom = Vector2(1.5, 1.5)
 script = ExtResource("4_tb3ar")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
@@ -144,3 +146,6 @@ shape = SubResource("RectangleShape2D_m550c")
 
 [node name="Marker2D" type="Marker2D" parent="Room6Door" unique_id=1522723332]
 position = Vector2(74, 3)
+
+[node name="Torche" parent="." unique_id=458272595 instance=ExtResource("15_i6edo")]
+position = Vector2(909, 1317)

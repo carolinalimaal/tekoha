@@ -14,8 +14,8 @@ var attack_direction : Vector2
 var roll_direction : Vector2
 
 var can_move : bool = true
-var can_attack_1 : bool = false
-var can_attack_2 : bool = false
+var can_attack_1 : bool = true
+var can_attack_2 : bool = true
 var can_roll : bool = true
 
 var roll_cooldown : float = 1.0
