@@ -4,8 +4,11 @@
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/ground.tres" id="2_fkh8x"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/nature.tres" id="3_unx7x"]
 [ext_resource type="Texture2D" uid="uid://d02ps50bfbx6l" path="res://assets/sprites/tiles/tekoha_referencia.png" id="4_tmyom"]
+[ext_resource type="Script" uid="uid://bs7b7nv2t6yri" path="res://levels/room_10/root_mecanic.gd" id="5_stqjc"]
 [ext_resource type="Texture2D" uid="uid://dq8aacsowke52" path="res://assets/sprites/props/roots/raizes.png" id="5_unx7x"]
-[ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="6_tmyom"]
+[ext_resource type="PackedScene" uid="uid://buoeecbau0yyv" path="res://utils/torch/torche.tscn" id="6_tmyom"]
+[ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="8_vjkxj"]
+[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="9_xpsvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmyom"]
 atlas = ExtResource("5_unx7x")
@@ -85,7 +88,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_stqjc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpsvw"]
+size = Vector2(356, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjkxj"]
+size = Vector2(348, 46)
 
 [node name="Room10" type="Node2D" unique_id=1677076673]
 y_sort_enabled = true
@@ -118,9 +125,11 @@ texture = ExtResource("4_tmyom")
 [node name="RootMecanic" type="Node2D" parent="." unique_id=956618240]
 y_sort_enabled = true
 position = Vector2(1111, 313)
+script = ExtResource("5_stqjc")
 
 [node name="Roots" type="StaticBody2D" parent="RootMecanic" unique_id=1436896866]
 position = Vector2(20, -82)
+collision_layer = 256
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RootMecanic/Roots" unique_id=578302708]
 position = Vector2(4, -1)
@@ -134,15 +143,40 @@ polygon = PackedVector2Array(-110, 54, -114, 55, -114, 43, -110, 43, -110, 35, -
 [node name="Torches" type="Node2D" parent="RootMecanic" unique_id=935384397]
 position = Vector2(539, 765)
 
-[node name="Torch" type="StaticBody2D" parent="RootMecanic/Torches" unique_id=1442572294]
+[node name="Torche" parent="RootMecanic/Torches" unique_id=458272595 instance=ExtResource("6_tmyom")]
+position = Vector2(-351, -5)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RootMecanic/Torches/Torch" unique_id=853263083]
-sprite_frames = SubResource("SpriteFrames_stqjc")
+[node name="Torche2" parent="RootMecanic/Torches" unique_id=167045170 instance=ExtResource("6_tmyom")]
+position = Vector2(-655, -348)
 
-[node name="HitboxComponent" type="Area2D" parent="RootMecanic/Torches/Torch" unique_id=1443232516]
-script = ExtResource("6_tmyom")
-metadata/_custom_type_script = "uid://2pwu4vjmtkg6"
+[node name="Torche3" parent="RootMecanic/Torches" unique_id=896982718 instance=ExtResource("6_tmyom")]
+position = Vector2(-219, -498)
 
-[node name="HitBoxCollision" type="CollisionShape2D" parent="RootMecanic/Torches/Torch/HitboxComponent" unique_id=1604989238]
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=915924181]
+script = ExtResource("9_xpsvw")
+metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RootMecanic/Torches/Torch" unique_id=1411829663]
+[node name="Room10Door" type="Area2D" parent="." unique_id=665739645]
+position = Vector2(2193, 1823)
+script = ExtResource("8_vjkxj")
+target_level_path = "uid://bsa41718lxg80"
+door_name = "Room10Door"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room10Door" unique_id=1879300882]
+shape = SubResource("RectangleShape2D_xpsvw")
+
+[node name="Marker2D" type="Marker2D" parent="Room10Door" unique_id=1037434381]
+position = Vector2(0, -92)
+
+[node name="Room11Door" type="Area2D" parent="." unique_id=1379114903]
+position = Vector2(1113, 26)
+script = ExtResource("8_vjkxj")
+door_name = "Room11Door"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room11Door" unique_id=1894313004]
+shape = SubResource("RectangleShape2D_vjkxj")
+
+[node name="Marker2D" type="Marker2D" parent="Room11Door" unique_id=1150822044]
+position = Vector2(4, 103)

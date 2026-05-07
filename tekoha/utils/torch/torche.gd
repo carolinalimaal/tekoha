@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+signal torch_turnned_off()
+
 var hit_numbers: int = 0
 var can_be_damaged: bool = true
 
@@ -40,3 +42,4 @@ func _on_torch_attack_received(_attack_data: AttackData):
 func torch_off():
 	hitbox_component.set_deferred("monitoring", false)
 	hitbox_collision.set_deferred("disabled", true)
+	torch_turnned_off.emit()
