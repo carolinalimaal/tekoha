@@ -1,10 +1,14 @@
 extends Node2D
 
-@onready var torche_one: StaticBody2D = $Torches/Torche
-@onready var torche_two: StaticBody2D = $Torches/Torche2
-@onready var torche_three: StaticBody2D = $Torches/Torche3
-@onready var root: StaticBody2D = $Roots
-@onready var animated_sprite: AnimatedSprite2D = $Roots/AnimatedSprite2D
+@onready var torche_one: Torch = $Torches/Torche
+@onready var torche_two: Torch = $Torches/Torche2
+@onready var torche_three: Torch = $Torches/Torche3
+@onready var root: Root = $Root
+@onready var root_two: Root = $Root2
+@onready var root_three: Root = $Root3
+@onready var root_four: Root = $Root4
+@onready var root_five: Root = $Root5
+@onready var root_six: Root = $Root6
 
 var torches_off: int = 0
 
@@ -18,5 +22,9 @@ func _on_torch_turned_off(_torch_id: int):
 	torches_off+=1
 	print(torches_off)
 	if torches_off == 3:
-		animated_sprite.play("default")
-		root.set_collision_layer_value(9, false)
+		root.root_remove()
+		root_two.root_remove()
+		root_three.root_remove()
+		root_four.root_remove()
+		root_five.root_remove()
+		root_six.root_remove()

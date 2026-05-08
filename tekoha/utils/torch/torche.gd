@@ -1,4 +1,4 @@
-extends StaticBody2D
+class_name Torch extends StaticBody2D
 
 signal torch_turnned_off(torch_id)
 
