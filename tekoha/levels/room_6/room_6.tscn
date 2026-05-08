@@ -416,126 +416,108 @@ y_sort_enabled = true
 position = Vector2(402, 445)
 
 [node name="Sprite2D" type="Sprite2D" parent="DeskDecoration" unique_id=664697443]
-y_sort_enabled = true
 position = Vector2(-33, 19)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D2" type="Sprite2D" parent="DeskDecoration" unique_id=468588629]
-y_sort_enabled = true
 position = Vector2(29, 19)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D3" type="Sprite2D" parent="DeskDecoration" unique_id=298994076]
-y_sort_enabled = true
 position = Vector2(-2, 11)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D4" type="Sprite2D" parent="DeskDecoration" unique_id=937913569]
-y_sort_enabled = true
 position = Vector2(-33, 116)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D5" type="Sprite2D" parent="DeskDecoration" unique_id=1301526977]
-y_sort_enabled = true
 position = Vector2(-2, 107)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D6" type="Sprite2D" parent="DeskDecoration" unique_id=875788325]
-y_sort_enabled = true
 position = Vector2(29, 116)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D7" type="Sprite2D" parent="DeskDecoration" unique_id=1431894268]
-y_sort_enabled = true
 position = Vector2(-33, 305)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D8" type="Sprite2D" parent="DeskDecoration" unique_id=281958034]
-y_sort_enabled = true
 position = Vector2(-2, 296)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D9" type="Sprite2D" parent="DeskDecoration" unique_id=1900027422]
-y_sort_enabled = true
 position = Vector2(29, 305)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D10" type="Sprite2D" parent="DeskDecoration" unique_id=287525420]
-y_sort_enabled = true
 position = Vector2(127, 273)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D11" type="Sprite2D" parent="DeskDecoration" unique_id=2041673244]
-y_sort_enabled = true
 position = Vector2(157, 273)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D12" type="Sprite2D" parent="DeskDecoration" unique_id=374358032]
-y_sort_enabled = true
 position = Vector2(255, 203)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D13" type="Sprite2D" parent="DeskDecoration" unique_id=252935454]
-y_sort_enabled = true
 position = Vector2(285, 203)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D14" type="Sprite2D" parent="DeskDecoration" unique_id=451190139]
-y_sort_enabled = true
 position = Vector2(127, 115)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D15" type="Sprite2D" parent="DeskDecoration" unique_id=1457035652]
-y_sort_enabled = true
 position = Vector2(157, 115)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D18" type="Sprite2D" parent="DeskDecoration" unique_id=702744952]
-y_sort_enabled = true
 position = Vector2(383, 273)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D19" type="Sprite2D" parent="DeskDecoration" unique_id=690110561]
-y_sort_enabled = true
 position = Vector2(413, 273)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 
 [node name="Sprite2D20" type="Sprite2D" parent="DeskDecoration" unique_id=2025549074]
-y_sort_enabled = true
 position = Vector2(-20, 17)
 texture = ExtResource("5_fxwqa")
 hframes = 7
@@ -543,7 +525,6 @@ vframes = 5
 frame = 4
 
 [node name="Sprite2D21" type="Sprite2D" parent="DeskDecoration" unique_id=685121508]
-y_sort_enabled = true
 position = Vector2(13, 10)
 texture = ExtResource("5_fxwqa")
 hframes = 7
@@ -551,20 +532,11 @@ vframes = 5
 frame = 9
 
 [node name="Sprite2D22" type="Sprite2D" parent="DeskDecoration" unique_id=106215686]
-y_sort_enabled = true
 position = Vector2(141, 114)
 texture = ExtResource("5_fxwqa")
 hframes = 7
 vframes = 5
 frame = 8
-
-[node name="Sprite2D23" type="Sprite2D" parent="DeskDecoration" unique_id=722874600]
-y_sort_enabled = true
-position = Vector2(142, 271)
-texture = ExtResource("5_fxwqa")
-hframes = 7
-vframes = 5
-frame = 14
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1714251315]
 position = Vector2(674, 762)

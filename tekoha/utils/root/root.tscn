@@ -3,78 +3,78 @@
 [ext_resource type="Script" uid="uid://vynhb2nxv1ub" path="res://utils/root/root.gd" id="1_5nv24"]
 [ext_resource type="Texture2D" uid="uid://dq8aacsowke52" path="res://assets/sprites/props/roots/raizes.png" id="1_k5cda"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmyom"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nv24"]
 atlas = ExtResource("1_k5cda")
-region = Rect2(0, 0, 87, 32)
+region = Rect2(0, 0, 96, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_stqjc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs4l6"]
 atlas = ExtResource("1_k5cda")
-region = Rect2(87, 0, 87, 32)
+region = Rect2(96, 0, 96, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vjkxj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf7h4"]
 atlas = ExtResource("1_k5cda")
-region = Rect2(174, 0, 87, 32)
+region = Rect2(192, 0, 96, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xpsvw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfci7"]
 atlas = ExtResource("1_k5cda")
-region = Rect2(261, 0, 87, 32)
+region = Rect2(288, 0, 96, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sv1jy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j44ok"]
 atlas = ExtResource("1_k5cda")
-region = Rect2(348, 0, 87, 32)
+region = Rect2(384, 0, 96, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3f205"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj7v5"]
 atlas = ExtResource("1_k5cda")
-region = Rect2(435, 0, 87, 32)
+region = Rect2(480, 0, 96, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gmos8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf8mr"]
 atlas = ExtResource("1_k5cda")
-region = Rect2(522, 0, 87, 32)
+region = Rect2(576, 0, 96, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cdxcb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkaqe"]
 atlas = ExtResource("1_k5cda")
-region = Rect2(609, 0, 87, 32)
+region = Rect2(672, 0, 96, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mptwh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bfms"]
 atlas = ExtResource("1_k5cda")
-region = Rect2(696, 0, 87, 32)
+region = Rect2(768, 0, 96, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_egbhk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ipih"]
 atlas = ExtResource("1_k5cda")
-region = Rect2(783, 0, 87, 32)
+region = Rect2(864, 0, 96, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5nv24"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tmyom")
+"texture": SubResource("AtlasTexture_5nv24")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_stqjc")
+"texture": SubResource("AtlasTexture_cs4l6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vjkxj")
+"texture": SubResource("AtlasTexture_cf7h4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xpsvw")
+"texture": SubResource("AtlasTexture_gfci7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sv1jy")
+"texture": SubResource("AtlasTexture_j44ok")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3f205")
+"texture": SubResource("AtlasTexture_bj7v5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gmos8")
+"texture": SubResource("AtlasTexture_cf8mr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cdxcb")
+"texture": SubResource("AtlasTexture_pkaqe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mptwh")
+"texture": SubResource("AtlasTexture_8bfms")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_egbhk")
+"texture": SubResource("AtlasTexture_8ipih")
 }],
 "loop": false,
 "name": &"default",
@@ -91,4 +91,4 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_5nv24")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=189485640]
-polygon = PackedVector2Array(-84, 4, -83, 10, -77, 10, -67, 10, -58, 18, -58, 24, -55, 24, -51, 21, -51, 19, -45, 19, -45, 21, -40, 22, -40, 24, -36, 24, -36, 25, -32, 25, -32, 27, -17, 28, -17, 21, -8, 22, -7, 22, -7, 24, 3, 24, 3, 26, 7, 26, 8, 28, 17, 28, 17, 26, 13, 26, 13, 25, 13, 24, 11, 20, 11, 18, 15, 18, 15, 17, 15, 16, 19, 16, 41, 16, 41, 18, 59, 18, 59, 16, 63, 16, 63, 14, 53, 14, 53, 12, -85, 3)
+polygon = PackedVector2Array(-94, 5, -91, 11, -77, 10, -69, 11, -67, 17, -67, 28, -61, 19, -51, 21, -51, 19, -48, 22, -45, 24, -43, 25, -40, 26, -39, 27, -32, 27, -17, 28, -17, 21, -15, 24, -7, 24, -2, 26, 1, 28, 6, 28, 8, 28, 17, 28, 17, 26, 13, 26, 13, 25, 13, 24, 11, 20, 11, 18, 15, 18, 15, 17, 15, 16, 19, 16, 41, 16, 41, 18, 59, 18, 59, 16, 63, 16, 63, 14, 53, 14, 53, 12, -90, 2)

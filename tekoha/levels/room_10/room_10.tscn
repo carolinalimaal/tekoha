@@ -87,48 +87,52 @@ position = Vector2(3190, 1067)
 y_sort_enabled = true
 position = Vector2(1111, 313)
 script = ExtResource("5_stqjc")
+meta_activations = 3
 
-[node name="Root" parent="RootMecanic" unique_id=1127486074 instance=ExtResource("5_vjkxj")]
+[node name="Roots" type="Node2D" parent="RootMecanic" unique_id=556243180]
+y_sort_enabled = true
+
+[node name="Root" parent="RootMecanic/Roots" unique_id=1127486074 instance=ExtResource("5_vjkxj")]
 position = Vector2(-66, -82)
 
-[node name="Root2" parent="RootMecanic" unique_id=355362289 instance=ExtResource("5_vjkxj")]
+[node name="Root2" parent="RootMecanic/Roots" unique_id=355362289 instance=ExtResource("5_vjkxj")]
 position = Vector2(95, -88)
 scale = Vector2(1.4, 1.4)
 flip_sprite = true
 
-[node name="Root3" parent="RootMecanic" unique_id=341550919 instance=ExtResource("5_vjkxj")]
+[node name="Root3" parent="RootMecanic/Roots" unique_id=341550919 instance=ExtResource("5_vjkxj")]
 position = Vector2(-52, -127)
 scale = Vector2(1.2, 1.2)
 
-[node name="Root4" parent="RootMecanic" unique_id=1694932337 instance=ExtResource("5_vjkxj")]
+[node name="Root4" parent="RootMecanic/Roots" unique_id=1694932337 instance=ExtResource("5_vjkxj")]
 position = Vector2(122, -141)
 scale = Vector2(1.1, 1.1)
 flip_sprite = true
 
-[node name="Root5" parent="RootMecanic" unique_id=395248491 instance=ExtResource("5_vjkxj")]
+[node name="Root5" parent="RootMecanic/Roots" unique_id=395248491 instance=ExtResource("5_vjkxj")]
 position = Vector2(98, 1107)
 rotation = -2.0943952
 scale = Vector2(1.1, 1.1)
 flip_sprite = true
 
-[node name="Root6" parent="RootMecanic" unique_id=1668897350 instance=ExtResource("5_vjkxj")]
+[node name="Root6" parent="RootMecanic/Roots" unique_id=1668897350 instance=ExtResource("5_vjkxj")]
 position = Vector2(22, 1020)
-rotation = 4.118977
+rotation = -2.1642082
 scale = Vector2(1.1, 1.1)
 flip_sprite = true
 
-[node name="Torches" type="Node2D" parent="RootMecanic" unique_id=935384397]
+[node name="MecanicActivators" type="Node2D" parent="RootMecanic" unique_id=935384397]
 position = Vector2(539, 765)
 
-[node name="Torche" parent="RootMecanic/Torches" unique_id=458272595 instance=ExtResource("6_tmyom")]
+[node name="Torche" parent="RootMecanic/MecanicActivators" unique_id=458272595 instance=ExtResource("6_tmyom")]
 position = Vector2(-333, -45)
 torch_id = 1
 
-[node name="Torche2" parent="RootMecanic/Torches" unique_id=167045170 instance=ExtResource("6_tmyom")]
+[node name="Torche2" parent="RootMecanic/MecanicActivators" unique_id=167045170 instance=ExtResource("6_tmyom")]
 position = Vector2(-655, -348)
 torch_id = 2
 
-[node name="Torche3" parent="RootMecanic/Torches" unique_id=896982718 instance=ExtResource("6_tmyom")]
+[node name="Torche3" parent="RootMecanic/MecanicActivators" unique_id=896982718 instance=ExtResource("6_tmyom")]
 position = Vector2(-219, -498)
 torch_id = 3
 
