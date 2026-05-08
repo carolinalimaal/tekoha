@@ -131,16 +131,16 @@ shape = SubResource("RectangleShape2D_i6edo")
 [node name="Marker2D" type="Marker2D" parent="Room4Door" unique_id=202250850]
 position = Vector2(-32, 0)
 
-[node name="Room6Door" type="Area2D" parent="." unique_id=1815723609 groups=["doors"]]
+[node name="Room11Door" type="Area2D" parent="." unique_id=1815723609 groups=["doors"]]
 position = Vector2(945, 1237)
 script = ExtResource("14_eta5w")
-target_level_path = "uid://dnquhp1xxloh7"
-door_name = "Room6Door"
+target_level_path = "uid://bas33vmll12wo"
+door_name = "Room11Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room6Door" unique_id=1733252627]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room11Door" unique_id=1733252627]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_m550c")
 
-[node name="Marker2D" type="Marker2D" parent="Room6Door" unique_id=1522723332]
+[node name="Marker2D" type="Marker2D" parent="Room11Door" unique_id=1522723332]
 position = Vector2(74, 3)

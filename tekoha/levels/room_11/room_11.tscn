@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="7_hvq2q"]
 [ext_resource type="Resource" uid="uid://c6xt7glr1vsml" path="res://data/items/acai.tres" id="8_q4msy"]
 [ext_resource type="SpriteFrames" uid="uid://d1u4kbte4dt8y" path="res://assets/sprites/props/chest/chest_03.tres" id="9_khelp"]
+[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="11_q4msy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ds1xc"]
 size = Vector2(128, 32)
@@ -85,18 +86,18 @@ position = Vector2(960, 608)
 item = ExtResource("8_q4msy")
 sprite_frames = ExtResource("9_khelp")
 
-[node name="Room10Door" type="Area2D" parent="." unique_id=2095600415]
+[node name="Room11Door" type="Area2D" parent="." unique_id=2095600415]
 position = Vector2(1984, 1280)
 script = ExtResource("7_drjbi")
-target_level_path = "res://levels/room_10/room_10.tscn"
+target_level_path = "uid://cudaprnhd7e17"
 door_name = "Room11Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room10Door" unique_id=465117992]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room11Door" unique_id=465117992]
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_ds1xc")
 
-[node name="Marker2D" type="Marker2D" parent="Room10Door" unique_id=1337002795]
+[node name="Marker2D" type="Marker2D" parent="Room11Door" unique_id=1337002795]
 position = Vector2(0, -32)
 
 [node name="Room12Door" type="Area2D" parent="." unique_id=688075895]
@@ -124,3 +125,7 @@ polygon = PackedVector2Array(2368, 672, 2144, 672, 2048, 736, 2016, 672, 1920, 7
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Limits/Area2D" unique_id=1245029087]
 polygon = PackedVector2Array(2336, 800, 1952, 992, 1984, 1088, 2112, 1248, 2048, 1280, 2048, 1312, 1920, 1312, 1504, 960, 1344, 832, 1088, 800, 896, 832, 736, 896, 576, 736, 640, 576, 704, 448, 480, 832, 2112, 1472)
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1584578629]
+script = ExtResource("11_q4msy")
+metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"

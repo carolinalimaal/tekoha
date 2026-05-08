@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="8_uhwsh"]
 [ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="9_0m1lt"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="10_7woc8"]
+[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="11_uhwsh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvq2q"]
 size = Vector2(32, 160)
@@ -70,3 +71,7 @@ hammock_texture = ExtResource("6_lp40p")
 position = Vector2(3072, 608)
 item = ExtResource("8_uhwsh")
 sprite_frames = ExtResource("9_0m1lt")
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=729321195]
+script = ExtResource("11_uhwsh")
+metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
