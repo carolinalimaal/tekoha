@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="2_25ocl"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="3_cpiwb"]
 [ext_resource type="TileSet" uid="uid://bh3nxny1kscq1" path="res://assets/sprites/tiles/natureza/arvores.tres" id="4_1xkgs"]
-[ext_resource type="Texture2D" uid="uid://cxh2q0k5csj8w" path="res://assets/sprites/tiles/plataformas/pier area externa.png" id="4_aaooc"]
+[ext_resource type="Texture2D" uid="uid://cm76otpxch14d" path="res://assets/sprites/tiles/plataformas/pier area externa.png" id="4_aaooc"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/ground.tres" id="4_cpiwb"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/nature.tres" id="5_tog6q"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="6_1xkgs"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="7_cljv6"]
-[ext_resource type="Texture2D" uid="uid://3bol3fqqlkg" path="res://assets/sprites/tiles/casas/casas.png" id="7_o0u6k"]
+[ext_resource type="TileSet" uid="uid://cwihu0lcjfmkq" path="res://assets/sprites/tiles/casas/casas_genericas.tres" id="8_cpiwb"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="10_tog6q"]
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="11_1xkgs"]
 [ext_resource type="Script" uid="uid://sjtw4n37y6af" path="res://utils/secret_area/secret_area.gd" id="12_1xkgs"]
@@ -59,24 +59,6 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_ej02v"]
 tile_size = Vector2i(32, 32)
 sources/2 = SubResource("TileSetAtlasSource_cpiwb")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aaooc"]
-texture = ExtResource("7_o0u6k")
-24:1/size_in_atlas = Vector2i(12, 9)
-24:1/0 = 0
-24:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-81.28424, -50.802647, 82.97766, -49.109226, 82.41318, 72.252655, -81.28424, 72.252655)
-12:1/size_in_atlas = Vector2i(12, 9)
-12:1/0 = 0
-12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-81.28424, -50.802647, 82.97766, -49.109226, 82.41318, 72.252655, -81.28424, 72.252655)
-0:1/size_in_atlas = Vector2i(12, 9)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-81.28424, -50.802647, 82.97766, -49.109226, 82.41318, 72.252655, -81.28424, 72.252655)
-
-[sub_resource type="TileSet" id="TileSet_g5wxr"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 128
-physics_layer_0/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_aaooc")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tog6q"]
 size = Vector2(230, 16)
@@ -130,8 +112,8 @@ tile_set = ExtResource("4_1xkgs")
 
 [node name="Houses" type="TileMapLayer" parent="Tiles" unique_id=1868574297]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAhAAwAAAAYAAEAAAAhABcAAAAAAAEAAAAoABQAAAAMAAEAAAA=")
-tile_set = SubResource("TileSet_g5wxr")
+tile_map_data = PackedByteArray("AAAhAAwAAQAeAAAAAAAhABYAAQAAAAAAAAAoABQAAQAGAAAAAAA=")
+tile_set = ExtResource("8_cpiwb")
 
 [node name="Decorations" type="TileMapLayer" parent="Tiles" unique_id=325445348]
 tile_map_data = PackedByteArray("AAAfABIAAAAJAAEAAAAMAAkAAAAGAAEAAAAOAAcAAAAGAAEAAAARAA4AAAAGAAEAAAATAAQAAAAGAAEAAAAUAB0AAAAGAAEAAAAVABMAAAAGAAEAAAAWABgAAAAGAAEAAAAXAAwAAAAGAAEAAAAXAA4AAAAGAAEAAAAbABYAAAAGAAEAAAAfAA4AAAAGAAEAAAAgABkAAAAGAAEAAAAgABsAAAAGAAEAAAAiAA4AAAAGAAEAAAAlAA4AAAAGAAEAAAAoABsAAAAGAAEAAAAqABQAAAAGAAEAAAAtAAcAAAAGAAEAAAAxAAQAAAAGAAEAAAAyABgAAAAGAAEAAAAzABIAAAAGAAEAAAA0AB0AAAAGAAEAAAA1ABYAAAAGAAEAAAAdABwAAAAOAAIAAAAuAAQAAAAFAAEAAAAuAAUAAAAHAAMAAAA2AAUAAAAHAAMAAAA1AAUAAAAKAAIAAAAzAAAAAAANAAEAAAAzAAEAAAAKAAEAAAA0AAYAAAAEAAIAAAAvAAoAAAAEAAIAAAApAA8AAAAEAAIAAAAnAA4AAAAKAAEAAAAnAAsAAAAEAAIAAAAgABEAAAAIAAEAAAA=")
