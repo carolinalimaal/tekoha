@@ -1,5 +1,7 @@
 class_name RootMecanic extends Node2D
 
+signal shake_camera()
+
 #@onready var torche_one: Torch = $Torches/Torche
 #@onready var torche_two: Torch = $Torches/Torche2
 #@onready var torche_three: Torch = $Torches/Torche3
@@ -25,6 +27,7 @@ func _ready() -> void:
 
 func _on_torch_turned_off(_torch_id: int):
 	current_activations+=1
+	shake_camera.emit()
 	print(current_activations)
 	if current_activations == meta_activations:
 		for root in roots.get_children():
