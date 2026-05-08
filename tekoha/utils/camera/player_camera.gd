@@ -2,6 +2,7 @@ class_name PlayerCamera extends Camera2D
 
 var level: Level
 var target_position : Vector2 = Vector2.ZERO
+var can_follow_player: bool = true
 
 var random_strengh: float = 25.0
 var shake_fade: float = 4
@@ -14,7 +15,7 @@ func _ready() -> void:
 		limit_right = level.limit_right
 		limit_bottom = level.limit_bottom
 		limit_top = level.limit_top
-	var root_mecanic: RootMecanic = get_parent().get_node_or_null("RootMecanic")
+	var root_mecanic: RootMecanic = level.get_node_or_null("RootMecanic")
 	if root_mecanic:
 		print("root mecanic")
 		root_mecanic.shake_camera.connect(_on_camera_shake)
@@ -23,11 +24,11 @@ func _ready() -> void:
 	make_current()
 
 func _process(delta: float) -> void:
-	get_target()
-	global_position = global_position.lerp(target_position, 1 - exp(-delta * 5))
-	# vai atualizando o camera shake até chegar em 0, no caso dura
+	if can_follow_player:
+		get_target()
+		global_position = global_position.lerp(target_position, 1 - exp(-delta * 5))
+	# vai atualizando o camera shake até chegar em 0, no caso dura cerca de 1s
 	if shake_strengh > 0:
-		print("camera tremendo")
 		shake_strengh = lerpf(shake_strengh, 0, shake_fade * delta)
 		offset = random_offset()
 		if shake_strengh < 0.1:

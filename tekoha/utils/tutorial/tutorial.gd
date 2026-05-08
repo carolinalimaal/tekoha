@@ -111,6 +111,7 @@ func set_limits_layer(condition: bool) -> void:
 func zoom_in_camera() -> void:
 	var tween: Tween = create_tween()
 	tween.tween_property(get_node("../PlayerCamera"), "zoom", Vector2(2,2), 1)
+
 func zoom_out_camera() -> void:
 	await get_tree().create_timer(1).timeout
 	var tween: Tween = create_tween()
