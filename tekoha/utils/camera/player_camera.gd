@@ -48,4 +48,6 @@ func apply_shake():
 
 func _on_camera_shake():
 	print("can_camera_shake")
+	if InputManager.active_input_source == InputManager.InputSource.CONTROLLER:
+		Input.start_joy_vibration(0, 0.5, 0.5, 0.6)
 	apply_shake()
