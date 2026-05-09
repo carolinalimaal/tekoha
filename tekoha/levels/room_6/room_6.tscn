@@ -428,7 +428,7 @@ shape = SubResource("RectangleShape2D_j0ms1")
 position = Vector2(0, 67)
 
 [node name="Muiraquita" parent="." unique_id=1877604477 instance=ExtResource("12_4hwci")]
-position = Vector2(721, 318)
+position = Vector2(731, 318)
 
 [connection signal="body_entered" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_entered"]
 [connection signal="body_exited" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_exited"]
