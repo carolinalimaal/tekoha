@@ -133,6 +133,9 @@ torch_id = 2
 position = Vector2(-219, -498)
 torch_id = 3
 
+[node name="RootsMarkerPos" type="Marker2D" parent="RootMecanic" unique_id=722476802]
+position = Vector2(0, -112)
+
 [node name="Enemies" type="Node2D" parent="." unique_id=804290088]
 
 [node name="Sacola" parent="Enemies" unique_id=461608080 instance=ExtResource("11_ar5hv")]
@@ -186,6 +189,3 @@ shape = SubResource("RectangleShape2D_vjkxj")
 
 [node name="Marker2D" type="Marker2D" parent="Room11Door" unique_id=1150822044]
 position = Vector2(4, 103)
-
-[node name="RootsMarkerPos" type="Marker2D" parent="." unique_id=722476802]
-position = Vector2(1111, 201)

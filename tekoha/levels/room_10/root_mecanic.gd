@@ -13,7 +13,7 @@ signal shake_camera()
 #@onready var root_six: Root = $Root6
 @onready var mecanic_activators: Node2D = $MecanicActivators
 @onready var roots: Node2D = $Roots
-@onready var roots_marker: Marker2D = $"../RootsMarkerPos"
+@onready var roots_marker: Marker2D = $RootsMarkerPos
 
 @export var meta_activations: int
 var current_activations: int = 0
@@ -24,9 +24,9 @@ func _ready() -> void:
 	#torche_two.torch_turnned_off.connect(_on_torch_turned_off)
 	#torche_three.torch_turnned_off.connect(_on_torch_turned_off)
 	for activator in mecanic_activators.get_children():
-		activator.torch_turnned_off.connect(_on_torch_turned_off)
+		activator.puzzle_activator.connect(_on_puzzle_activator_off)
 
-func _on_torch_turned_off(_torch_id: int):
+func _on_puzzle_activator_off(_id: int):
 	current_activations+=1
 	shake_camera.emit()
 	await get_tree().create_timer(1).timeout
