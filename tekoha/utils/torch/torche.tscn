@@ -146,6 +146,7 @@ size = Vector2(8, 47)
 size = Vector2(4, 12)
 
 [node name="Torche" type="StaticBody2D" unique_id=458272595]
+y_sort_enabled = true
 collision_layer = 256
 script = ExtResource("1_7hks3")
 

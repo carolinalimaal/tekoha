@@ -119,6 +119,7 @@ rotation = -2.1642082
 scale = Vector2(1.1, 1.1)
 
 [node name="MecanicActivators" type="Node2D" parent="RootMecanic" unique_id=935384397]
+y_sort_enabled = true
 position = Vector2(539, 765)
 
 [node name="Torche" parent="RootMecanic/MecanicActivators" unique_id=458272595 instance=ExtResource("6_tmyom")]
