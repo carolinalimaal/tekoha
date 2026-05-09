@@ -31,9 +31,6 @@ func _on_torch_turned_off(_torch_id: int):
 	shake_camera.emit()
 	await get_tree().create_timer(1).timeout
 	camera_zoom_in_roots()
-	if current_activations == meta_activations:
-		for root in roots.get_children():
-			root.root_remove()
 
 func camera_zoom_in_roots():
 	get_tree().paused = true
@@ -65,13 +62,17 @@ func camera_anim(camera: PlayerCamera):
 func root_anim():
 	match current_activations:
 		1:
-			var root: Root = roots.get_child(0)
+			var root: Root = roots.get_child(current_activations - 1)
 			root.root_remove()
 		2:
-			var root: Root = roots.get_child(1)
+			var root: Root = roots.get_child(current_activations - 1)
 			root.root_remove()
 		meta_activations:
-			var root_one: Root = roots.get_child(2)
-			var root_two: Root = roots.get_child(3)
-			root_one.root_remove()
-			root_two.root_remove()
+			for i in range(2, len( roots.get_children())):
+				print(i)
+				var root: Root = roots.get_child(i)
+				root.root_remove()
+			#var root_one: Root = roots.get_child(2)
+			#var root_two: Root = roots.get_child(3)
+			#root_one.root_remove()
+			#root_two.root_remove()
