@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7dnaku45615r"
-path="res://.godot/imported/restaurante interno.png-4d16b45dcb163b5743789f00f235239c.ctex"
+uid="uid://d02ps50bfbx6l"
+path="res://.godot/imported/tekoha_referencia.png-a50c9a8a6b38c99743d639d3d2f6c1fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/restaurante_interno/restaurante interno.png"
-dest_files=["res://.godot/imported/restaurante interno.png-4d16b45dcb163b5743789f00f235239c.ctex"]
+source_file="res://assets/sprites/tiles/tekoha_referencia.png"
+dest_files=["res://.godot/imported/tekoha_referencia.png-a50c9a8a6b38c99743d639d3d2f6c1fb.ctex"]
 
 [params]
 

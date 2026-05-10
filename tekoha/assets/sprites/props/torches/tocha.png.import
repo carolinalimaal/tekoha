@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm42ohdv2timx"
-path="res://.godot/imported/moveis.png-4ced496ca9a53f5aaef66f0cf408e706.ctex"
+uid="uid://dbndokkjmn888"
+path="res://.godot/imported/tocha.png-b36594d649d33c8ead8f68e5bcfa0951.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/restaurante_interno/moveis/moveis.png"
-dest_files=["res://.godot/imported/moveis.png-4ced496ca9a53f5aaef66f0cf408e706.ctex"]
+source_file="res://assets/sprites/props/torches/tocha.png"
+dest_files=["res://.godot/imported/tocha.png-b36594d649d33c8ead8f68e5bcfa0951.ctex"]
 
 [params]
 
