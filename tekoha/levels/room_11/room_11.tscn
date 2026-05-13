@@ -20,6 +20,9 @@ size = Vector2(128, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvq2q"]
 size = Vector2(32, 160)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4msy"]
+size = Vector2(400, 16)
+
 [node name="Room11" type="Node2D" unique_id=263309058]
 y_sort_enabled = true
 script = ExtResource("1_hvq2q")
@@ -117,6 +120,19 @@ shape = SubResource("RectangleShape2D_hvq2q")
 
 [node name="Marker2D" type="Marker2D" parent="Room12Door" unique_id=2122796225]
 position = Vector2(-96, -32)
+
+[node name="Room13Door" type="Area2D" parent="." unique_id=272076136]
+position = Vector2(920, 271)
+script = ExtResource("7_drjbi")
+target_level_path = "uid://co0vptwphskq3"
+door_name = "Room13Door"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room13Door" unique_id=2108403245]
+shape = SubResource("RectangleShape2D_q4msy")
+
+[node name="Marker2D" type="Marker2D" parent="Room13Door" unique_id=1476808719]
+position = Vector2(0, 60)
 
 [node name="Limits" type="Node2D" parent="." unique_id=361058024]
 
