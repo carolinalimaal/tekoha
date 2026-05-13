@@ -8,9 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="6_khelp"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="7_drjbi"]
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="7_hvq2q"]
-[ext_resource type="Resource" uid="uid://c6xt7glr1vsml" path="res://data/items/acai.tres" id="8_q4msy"]
 [ext_resource type="SpriteFrames" uid="uid://d1u4kbte4dt8y" path="res://assets/sprites/props/chest/chest_03.tres" id="9_khelp"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="11_q4msy"]
+
+[sub_resource type="Resource" id="Resource_hvq2q"]
+metadata/__load_path__ = "res://data/items/acai.tres"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ds1xc"]
 size = Vector2(128, 32)
@@ -83,7 +85,7 @@ position = Vector2(1088, 736)
 
 [node name="Bau" parent="Puzzle" unique_id=302874208 instance=ExtResource("7_hvq2q")]
 position = Vector2(960, 608)
-item = ExtResource("8_q4msy")
+item = SubResource("Resource_hvq2q")
 sprite_frames = ExtResource("9_khelp")
 
 [node name="Room11Door" type="Area2D" parent="." unique_id=2095600415]
