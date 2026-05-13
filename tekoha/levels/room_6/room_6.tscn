@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="9_copml"]
 [ext_resource type="Texture2D" uid="uid://4hv4ijur8gyw" path="res://assets/sprites/props/hammock/rede_save_livre.png" id="10_j0ms1"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="12_4hwci"]
+[ext_resource type="PackedScene" uid="uid://c4rfo8vpkou8r" path="res://entities/npcs/cecilia/npc_cecila.tscn" id="13_yxphn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hwci"]
 texture = ExtResource("8_u15um")
@@ -429,6 +430,9 @@ position = Vector2(0, 67)
 
 [node name="Muiraquita" parent="." unique_id=1877604477 instance=ExtResource("12_4hwci")]
 position = Vector2(731, 318)
+
+[node name="Cecila" parent="." unique_id=2125482859 instance=ExtResource("13_yxphn")]
+position = Vector2(648, 483)
 
 [connection signal="body_entered" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_entered"]
 [connection signal="body_exited" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_exited"]

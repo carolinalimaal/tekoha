@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://c4rfo8vpkou8r"]
+
+[ext_resource type="Script" uid="uid://drcfbij8j2dnn" path="res://entities/npcs/cecilia/npc_cecila.gd" id="1_v5rs4"]
+[ext_resource type="Texture2D" uid="uid://ynb6l0qsdsfi" path="res://assets/sprites/entities/npcs/npc_cecilia.png" id="2_6p7ux"]
+[ext_resource type="Resource" uid="uid://cg3qwx52dkf45" path="res://data/dialogues/npcs/cecilia/npc_cecilia_1.tres" id="2_j34bt"]
+[ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="3_j34bt"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="3_qufrp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogakm"]
+atlas = ExtResource("2_6p7ux")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jetl5"]
+atlas = ExtResource("2_6p7ux")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsgd6"]
+atlas = ExtResource("2_6p7ux")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g83rx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogakm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jetl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsgd6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v5rs4"]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6p7ux"]
+radius = 30.0
+
+[node name="Cecila" type="CharacterBody2D" unique_id=2125482859 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("1_v5rs4")
+dialogues_list = Array[ExtResource("3_qufrp")]([ExtResource("2_j34bt")])
+animated_sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=401344223]
+sprite_frames = SubResource("SpriteFrames_g83rx")
+autoplay = "default"
+frame_progress = 0.9346058
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=968206527]
+position = Vector2(0, 19)
+shape = SubResource("CircleShape2D_v5rs4")
+
+[node name="InteractableComponent" type="Area2D" parent="." unique_id=566545719 node_paths=PackedStringArray("collision_shape", "marker")]
+script = ExtResource("3_j34bt")
+interact_label = "[interact] Falar"
+collision_shape = NodePath("CollisionShape2D")
+marker = NodePath("Marker2D")
+metadata/_custom_type_script = "uid://bevot8siuxavc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1697060972]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_6p7ux")
+debug_color = Color(0.6392157, 0.5254902, 0, 0.23921569)
+
+[node name="Marker2D" type="Marker2D" parent="InteractableComponent" unique_id=561498737]
+position = Vector2(0, -44)

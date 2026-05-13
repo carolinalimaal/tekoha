@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://r33bwb7ekbh8"]
 
-[ext_resource type="Script" uid="uid://bj5skw2krg38x" path="res://entities/npcs/npc_seller.gd" id="1_jc6bo"]
+[ext_resource type="Script" uid="uid://bj5skw2krg38x" path="res://entities/npcs/vendedor/npc_seller.gd" id="1_jc6bo"]
 [ext_resource type="Resource" uid="uid://bcoe8lp2wc3b6" path="res://data/dialogues/npcs/npc_seller.tres" id="2_8yvss"]
 [ext_resource type="Texture2D" uid="uid://cpsop22n6m24c" path="res://assets/sprites/entities/npcs/npc_vendedor.png" id="3_2m0bf"]
 [ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="4_gxtx1"]
@@ -52,7 +52,7 @@ metadata/_custom_type_script = "uid://bv7xgwalm2jk"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2057313326]
 sprite_frames = SubResource("SpriteFrames_ysqxp")
 autoplay = "default"
-frame_progress = 0.9563381
+frame_progress = 0.031014483
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1565048543]
 position = Vector2(0, 19)
