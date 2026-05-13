@@ -90,8 +90,9 @@ sprite_frames = ExtResource("9_khelp")
 
 [node name="Room11Door" type="Area2D" parent="." unique_id=2095600415]
 position = Vector2(1984, 1280)
+collision_layer = 2048
 script = ExtResource("7_drjbi")
-target_level_path = "uid://cudaprnhd7e17"
+target_level_path = "uid://b5dpy7jba3ouw"
 door_name = "Room11Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
@@ -104,9 +105,10 @@ position = Vector2(0, -32)
 
 [node name="Room12Door" type="Area2D" parent="." unique_id=688075895]
 position = Vector2(2368, 768)
+collision_layer = 2048
 script = ExtResource("7_drjbi")
-target_level_path = "res://levels/room_12/room_12.tscn"
-door_name = "Room11Door"
+target_level_path = "uid://c3gfgte4qpksc"
+door_name = "Room12Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room12Door" unique_id=831091715]

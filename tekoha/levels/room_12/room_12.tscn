@@ -40,17 +40,18 @@ position = Vector2(170, 784)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1626228944]
 
-[node name="Room11Door" type="Area2D" parent="." unique_id=688075895]
+[node name="Room12Door" type="Area2D" parent="." unique_id=688075895]
 position = Vector2(364, 768)
+collision_layer = 2048
 script = ExtResource("10_7woc8")
 target_level_path = "uid://bas33vmll12wo"
 door_name = "Room12Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room11Door" unique_id=831091715]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room12Door" unique_id=831091715]
 shape = SubResource("RectangleShape2D_hvq2q")
 
-[node name="Marker2D" type="Marker2D" parent="Room11Door" unique_id=2122796225]
+[node name="Marker2D" type="Marker2D" parent="Room12Door" unique_id=2122796225]
 position = Vector2(96, 0)
 
 [node name="Limits" type="Node2D" parent="." unique_id=361058024]

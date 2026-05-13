@@ -130,6 +130,7 @@ polygon = PackedVector2Array(149, 1083, 301, 1086, 200, 1069, 270, 979, 307, 885
 
 [node name="Room9Door" type="Area2D" parent="." unique_id=684170949]
 position = Vector2(425, 1072)
+collision_layer = 2048
 script = ExtResource("6_1xkgs")
 target_level_path = "uid://cxu3pgktrcblc"
 door_name = "Room9Door"
@@ -143,9 +144,9 @@ position = Vector2(20, -60)
 
 [node name="Room10Door" type="Area2D" parent="." unique_id=47484530]
 position = Vector2(1723, 39)
-collision_layer = 0
+collision_layer = 2048
 script = ExtResource("6_1xkgs")
-target_level_path = "res://levels/room_10/room_10.tscn"
+target_level_path = "uid://b5dpy7jba3ouw"
 door_name = "Room10Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 

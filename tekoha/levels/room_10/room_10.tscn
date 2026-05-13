@@ -168,6 +168,7 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Room10Door" type="Area2D" parent="." unique_id=665739645]
 position = Vector2(2193, 1823)
+collision_layer = 2048
 script = ExtResource("8_vjkxj")
 target_level_path = "uid://bsa41718lxg80"
 door_name = "Room10Door"
@@ -181,7 +182,9 @@ position = Vector2(7, -206)
 
 [node name="Room11Door" type="Area2D" parent="." unique_id=1379114903]
 position = Vector2(1113, -162)
+collision_layer = 2048
 script = ExtResource("8_vjkxj")
+target_level_path = "uid://bas33vmll12wo"
 door_name = "Room11Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
