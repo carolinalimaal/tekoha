@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bfuifh5omshv6" path="res://assets/sprites/tiles/natureza/natureza.png" id="4_a1oop"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/nature.tres" id="6_6mn3v"]
 [ext_resource type="TileSet" uid="uid://6emc5pw2epmo" path="res://assets/sprites/tiles/restaurantes/restaurantes.tres" id="7_gnup6"]
-[ext_resource type="PackedScene" uid="uid://r33bwb7ekbh8" path="res://entities/npcs/npc_seller.tscn" id="8_f01of"]
+[ext_resource type="PackedScene" uid="uid://r33bwb7ekbh8" path="res://entities/npcs/vendedor/npc_seller.tscn" id="8_f01of"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="9_a1oop"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6mn3v"]
