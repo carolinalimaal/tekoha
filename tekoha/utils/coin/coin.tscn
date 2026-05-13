@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmpf7e1nr1x4w"]
+[gd_scene format=3 uid="uid://cmpf7e1nr1x4w"]
 
 [ext_resource type="Script" uid="uid://dnrk3bq0b2448" path="res://utils/coin/coin.gd" id="1_hk7e5"]
 [ext_resource type="Texture2D" uid="uid://dndmw37mpkifh" path="res://assets/sprites/items/coin/acai_caroco.png" id="3_3fe2d"]
@@ -68,18 +68,16 @@ _data = {
 &"default": SubResource("Animation_hk7e5")
 }
 
-[node name="Coin" type="Area2D"]
-collision_layer = 512
+[node name="Coin" type="Area2D" unique_id=1696453107]
+collision_layer = 1920
 collision_mask = 0
 script = ExtResource("1_hk7e5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1313077837]
 texture = ExtResource("3_3fe2d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91046148]
 shape = SubResource("CircleShape2D_7dev2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_gvnrx")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=809855339]
+libraries/ = SubResource("AnimationLibrary_gvnrx")

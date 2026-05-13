@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7dnaku45615r"
-path="res://.godot/imported/restaurante interno.png-4d16b45dcb163b5743789f00f235239c.ctex"
+uid="uid://dq8aacsowke52"
+path="res://.godot/imported/raizes.png-a7566abc5651fbd08fa336b1599d276b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/restaurante_interno/restaurante interno.png"
-dest_files=["res://.godot/imported/restaurante interno.png-4d16b45dcb163b5743789f00f235239c.ctex"]
+source_file="res://assets/sprites/props/roots/raizes.png"
+dest_files=["res://.godot/imported/raizes.png-a7566abc5651fbd08fa336b1599d276b.ctex"]
 
 [params]
 
