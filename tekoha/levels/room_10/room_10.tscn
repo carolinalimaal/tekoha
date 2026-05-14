@@ -26,7 +26,7 @@ size = Vector2(348, 46)
 [node name="Room10" type="Node2D" unique_id=1823858816]
 y_sort_enabled = true
 script = ExtResource("1_xpsvw")
-limit_top = -370
+limit_top = -192
 limit_bottom = 1847
 limit_left = 10
 limit_right = 3990

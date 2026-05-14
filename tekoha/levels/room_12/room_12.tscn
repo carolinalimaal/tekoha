@@ -73,5 +73,6 @@ item = ExtResource("8_uhwsh")
 sprite_frames = ExtResource("9_0m1lt")
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=729321195]
+zoom = Vector2(1.5, 1.5)
 script = ExtResource("11_uhwsh")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"

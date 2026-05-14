@@ -74,11 +74,11 @@ metadata/_custom_type_script = "uid://bs7b7nv2t6yri"
 [node name="Roots" type="Node2D" parent="RootMecanic" unique_id=997678319]
 
 [node name="Root" parent="RootMecanic/Roots" unique_id=1127486074 instance=ExtResource("8_drjbi")]
-position = Vector2(-85, 38.99997)
+position = Vector2(-66, 51)
 scale = Vector2(1.7, 1.7)
 
 [node name="Root2" parent="RootMecanic/Roots" unique_id=1370464628 instance=ExtResource("8_drjbi")]
-position = Vector2(132, 59)
+position = Vector2(106, 65)
 scale = Vector2(1.5, 1.5)
 flip_sprite = true
 
@@ -88,7 +88,7 @@ scale = Vector2(1.4, 1.4)
 flip_sprite = true
 
 [node name="Root4" parent="RootMecanic/Roots" unique_id=1892609401 instance=ExtResource("8_drjbi")]
-position = Vector2(-62, 8)
+position = Vector2(-44, 9)
 scale = Vector2(1.5, 1.5)
 
 [node name="MecanicActivators" type="Node2D" parent="RootMecanic" unique_id=1892105930]
@@ -186,5 +186,6 @@ polygon = PackedVector2Array(2368, 672, 2152, 688, 2096, 768, 2016, 672, 1920, 7
 polygon = PackedVector2Array(2336, 800, 2192, 808, 1952, 992, 1984, 1088, 2112, 1248, 2048, 1280, 2048, 1312, 1920, 1312, 1504, 960, 1368, 824, 1088, 800, 896, 832, 736, 896, 576, 736, 640, 576, 704, 448, 480, 832, 2112, 1472)
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1584578629]
+zoom = Vector2(1.5, 1.5)
 script = ExtResource("11_q4msy")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
