@@ -18,19 +18,28 @@ signal shake_camera()
 @export var meta_activations: int
 var current_activations: int = 0
 
+@export var has_consumable: bool
+var consumable
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#torche_one.torch_turnned_off.connect(_on_torch_turned_off)
 	#torche_two.torch_turnned_off.connect(_on_torch_turned_off)
 	#torche_three.torch_turnned_off.connect(_on_torch_turned_off)
+	if has_consumable:
+		consumable = get_node("Bau") as Bau
+		turn_consumable_off()
+	
 	for activator in mecanic_activators.get_children():
 		activator.puzzle_activator.connect(_on_puzzle_activator_off)
 
-func _on_puzzle_activator_off(_id: int):
+func _on_puzzle_activator_off():
 	current_activations+=1
-	shake_camera.emit()
-	await get_tree().create_timer(1).timeout
-	camera_zoom_in_roots()
+	if current_activations in [1, (meta_activations/2) + 1, meta_activations]:
+		shake_camera.emit()
+		await get_tree().create_timer(1).timeout
+		camera_zoom_in_roots()
+	
 
 func camera_zoom_in_roots():
 	get_tree().paused = true
@@ -60,19 +69,36 @@ func camera_anim(camera: PlayerCamera):
 	get_tree().paused = false
 
 func root_anim():
+	var middle_step = (meta_activations/2) + 1
+	print("aqui",middle_step)
 	match current_activations:
 		1:
-			var root: Root = roots.get_child(current_activations - 1)
+			var root: Root = roots.get_child(0)
 			root.root_remove()
-		2:
-			var root: Root = roots.get_child(current_activations - 1)
+			
+		middle_step:
+			var root: Root = roots.get_child(1)
 			root.root_remove()
+			
 		meta_activations:
-			for i in range(2, len( roots.get_children())):
+			for i in range(2, len(roots.get_children())):
 				print(i)
 				var root: Root = roots.get_child(i)
 				root.root_remove()
-			#var root_one: Root = roots.get_child(2)
-			#var root_two: Root = roots.get_child(3)
-			#root_one.root_remove()
-			#root_two.root_remove()
+			
+			if has_consumable:
+				turn_consumable_on()
+
+func turn_consumable_on():
+	consumable.visible = true
+	consumable.interactable_component.set_deferred("monitoring", true)
+	
+	var consumable_colision = consumable.get_node("CollisionShape2D")
+	consumable_colision.set_deferred("disabled", false)
+
+func turn_consumable_off():
+	consumable.visible = false
+	consumable.interactable_component.set_deferred("monitoring", false)
+	
+	var consumable_colision = consumable.get_node("CollisionShape2D")
+	consumable_colision.set_deferred("disabled", true)
