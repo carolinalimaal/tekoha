@@ -152,6 +152,7 @@ script = ExtResource("1_7hks3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1632676263]
 sprite_frames = SubResource("SpriteFrames_7hks3")
+animation = &"first_hit"
 
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=893045416]
 collision_layer = 128
