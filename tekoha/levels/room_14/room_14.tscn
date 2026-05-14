@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://dudwlyucxl1ad" path="res://levels/room_14/room_14.gd" id="1_ra45h"]
 [ext_resource type="TileSet" uid="uid://ckp1proet01b6" path="res://assets/sprites/tiles/interior_casas/house_tile_set.tres" id="2_6jjks"]
 [ext_resource type="Texture2D" uid="uid://d02ps50bfbx6l" path="res://assets/sprites/tiles/tekoha_referencia.png" id="3_72037"]
+[ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="4_bnmol"]
+[ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="5_50e1o"]
+[ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="6_50e1o"]
+[ext_resource type="SpriteFrames" uid="uid://c4iwvjw63l00o" path="res://assets/sprites/props/pots/vaso_02_1.tres" id="6_dndjf"]
+[ext_resource type="SpriteFrames" uid="uid://cqt7aidvj8f77" path="res://assets/sprites/props/pots/vaso_02_2.tres" id="6_drkai"]
 
 [node name="Room14" type="Node2D" unique_id=2068467507]
 script = ExtResource("1_ra45h")
@@ -26,3 +31,34 @@ visible = false
 modulate = Color(1, 1, 1, 0.41960785)
 position = Vector2(3747, 6770)
 texture = ExtResource("3_72037")
+
+[node name="Furniture" type="Node2D" parent="." unique_id=1118118285]
+
+[node name="Bau" parent="Furniture" unique_id=302874208 instance=ExtResource("4_bnmol")]
+position = Vector2(383, 317)
+
+[node name="Bau2" parent="Furniture" unique_id=1275905486 instance=ExtResource("4_bnmol")]
+position = Vector2(635, 209)
+
+[node name="Bau3" parent="Furniture" unique_id=933992229 instance=ExtResource("4_bnmol")]
+position = Vector2(801, 571)
+
+[node name="Pot" parent="Furniture" unique_id=222727829 instance=ExtResource("5_50e1o")]
+position = Vector2(371, 506)
+sprite_frames = ExtResource("6_50e1o")
+
+[node name="Pot2" parent="Furniture" unique_id=570896013 instance=ExtResource("5_50e1o")]
+position = Vector2(384, 265)
+sprite_frames = ExtResource("6_drkai")
+
+[node name="Pot3" parent="Furniture" unique_id=328243586 instance=ExtResource("5_50e1o")]
+position = Vector2(971, 411)
+sprite_frames = ExtResource("6_drkai")
+
+[node name="Pot4" parent="Furniture" unique_id=951462894 instance=ExtResource("5_50e1o")]
+position = Vector2(795, 715)
+sprite_frames = ExtResource("6_50e1o")
+
+[node name="Pot5" parent="Furniture" unique_id=642247482 instance=ExtResource("5_50e1o")]
+position = Vector2(966, 715)
+sprite_frames = ExtResource("6_dndjf")
