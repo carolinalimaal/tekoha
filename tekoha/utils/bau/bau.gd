@@ -29,13 +29,9 @@ func interact() -> void:
 
 func update_item_panel():
 	if item == null:
-		print("Aqui")
 		if enemy_file != "":
-			print("Aqui2")
-			
 			GlobalRefs.confirmation_popup.setup("VOCÊ ENCONTROU UM INIMIGO!", null, false)
 		else:
-			print("Aqui3")
 			GlobalRefs.confirmation_popup.setup("O BAÚ ESTÁ VAZIO.", null, false)
 	elif verify_full_inventory():
 		GlobalRefs.confirmation_popup.setup("SEU INVENTÁRIO ESTÁ CHEIO.", null, false)

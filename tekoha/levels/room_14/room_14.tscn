@@ -8,6 +8,7 @@
 [ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="6_50e1o"]
 [ext_resource type="SpriteFrames" uid="uid://c4iwvjw63l00o" path="res://assets/sprites/props/pots/vaso_02_1.tres" id="6_dndjf"]
 [ext_resource type="SpriteFrames" uid="uid://cqt7aidvj8f77" path="res://assets/sprites/props/pots/vaso_02_2.tres" id="6_drkai"]
+[ext_resource type="Resource" uid="uid://d3cuhf8ovruif" path="res://data/items/manga.tres" id="6_mch0w"]
 [ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="6_t76wk"]
 [ext_resource type="SpriteFrames" uid="uid://d1u4kbte4dt8y" path="res://assets/sprites/props/chest/chest_03.tres" id="7_mch0w"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="10_wybie"]
@@ -65,6 +66,7 @@ sprite_frames = ExtResource("6_t76wk")
 
 [node name="Bau3" parent="Furniture" unique_id=933992229 instance=ExtResource("4_bnmol")]
 position = Vector2(801, 571)
+item = ExtResource("6_mch0w")
 sprite_frames = ExtResource("7_mch0w")
 
 [node name="Pot" parent="Furniture" unique_id=222727829 instance=ExtResource("5_50e1o")]
