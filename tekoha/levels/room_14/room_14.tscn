@@ -60,6 +60,7 @@ sprite_frames = ExtResource("6_t76wk")
 
 [node name="Bau2" parent="Furniture" unique_id=1275905486 instance=ExtResource("4_bnmol")]
 position = Vector2(635, 209)
+enemy_file = "uid://d1ou3wqyvyflw"
 sprite_frames = ExtResource("6_t76wk")
 
 [node name="Bau3" parent="Furniture" unique_id=933992229 instance=ExtResource("4_bnmol")]
@@ -101,7 +102,7 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 [node name="Room14Door" type="Area2D" parent="." unique_id=240560434]
 position = Vector2(672, 752)
 script = ExtResource("11_t76wk")
-target_level_path = "res://levels/room_10/room_11.tscn"
+target_level_path = "uid://bas33vmll12wo"
 door_name = "Room14Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 

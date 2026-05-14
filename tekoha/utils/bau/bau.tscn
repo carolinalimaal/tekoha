@@ -40,3 +40,6 @@ debug_color = Color(8.1822276e-07, 0.64699197, 0.23097259, 0.41960785)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=302639467]
 position = Vector2(0, -28)
+
+[node name="EnemySpawn" type="Marker2D" parent="." unique_id=1519174459]
+position = Vector2(-62, 34)

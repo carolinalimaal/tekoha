@@ -88,6 +88,7 @@ position = Vector2(1088, 736)
 
 [node name="Bau" parent="Puzzle" unique_id=302874208 instance=ExtResource("7_hvq2q")]
 position = Vector2(960, 608)
+id = null
 item = SubResource("Resource_hvq2q")
 sprite_frames = ExtResource("9_khelp")
 
