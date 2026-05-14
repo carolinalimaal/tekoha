@@ -34,20 +34,21 @@ func _ready() -> void:
 		activator.puzzle_activator.connect(_on_puzzle_activator_off)
 
 func _on_puzzle_activator_off():
-	current_activations+=1
+	current_activations += 1
+	var step = current_activations
 	if current_activations in [1, (meta_activations/2) + 1, meta_activations]:
 		shake_camera.emit()
 		await get_tree().create_timer(1).timeout
-		camera_zoom_in_roots()
+		camera_zoom_in_roots(step)
 	
 
-func camera_zoom_in_roots():
+func camera_zoom_in_roots(step: int):
 	get_tree().paused = true
 	var camera: PlayerCamera = get_parent().get_node("PlayerCamera")
 	if camera:
-		camera_anim(camera)
+		camera_anim(camera, step)
 
-func camera_anim(camera: PlayerCamera):
+func camera_anim(camera: PlayerCamera, step: int):
 	camera.can_follow_player = false
 	var roots_marker_pos: Vector2 = roots_marker.global_position
 	var tween_zoom_in = create_tween()
@@ -56,7 +57,7 @@ func camera_anim(camera: PlayerCamera):
 	tween_zoom_in.parallel().tween_property(camera,"zoom",Vector2(2, 2),1.2)
 	await tween_zoom_in.finished
 
-	root_anim()
+	root_anim(step)
 	await get_tree().create_timer(1.2).timeout
 
 	# volta da câmera
@@ -68,10 +69,10 @@ func camera_anim(camera: PlayerCamera):
 	camera.can_follow_player = true
 	get_tree().paused = false
 
-func root_anim():
+func root_anim(step: int):
 	var middle_step = (meta_activations/2) + 1
 	print("aqui",middle_step)
-	match current_activations:
+	match step:
 		1:
 			var root: Root = roots.get_child(0)
 			root.root_remove()
