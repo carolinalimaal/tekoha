@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bugadubgfnpfs" path="res://levels/room_3/room_3.gd" id="1_grr8x"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/ground.tres" id="2_wbedm"]
-[ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/nature.tres" id="3_2jupl"]
+[ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="3_2jupl"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="7_607sj"]
 [ext_resource type="TileSet" uid="uid://dw27k52a7hjbm" path="res://assets/sprites/tiles/interior_casas/moveis.tres" id="7_w2msv"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="8_607sj"]

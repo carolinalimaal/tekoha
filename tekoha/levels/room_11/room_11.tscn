@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://dye2ui75xx5us" path="res://assets/sprites/tiles/grama_terra/grass_dirt_tileset.tres" id="1_aceh1"]
 [ext_resource type="Script" uid="uid://ba7ox1ik14qpb" path="res://levels/room_11/room_11.gd" id="1_hvq2q"]
-[ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/nature.tres" id="2_roctp"]
+[ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="2_roctp"]
 [ext_resource type="PackedScene" uid="uid://c8ui4rfngwjkm" path="res://utils/bush/bush.tscn" id="4_hvq2q"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="5_q4msy"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="6_khelp"]
