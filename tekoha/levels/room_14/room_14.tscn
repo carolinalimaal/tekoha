@@ -9,6 +9,16 @@
 [ext_resource type="SpriteFrames" uid="uid://c4iwvjw63l00o" path="res://assets/sprites/props/pots/vaso_02_1.tres" id="6_dndjf"]
 [ext_resource type="SpriteFrames" uid="uid://cqt7aidvj8f77" path="res://assets/sprites/props/pots/vaso_02_2.tres" id="6_drkai"]
 
+[sub_resource type="Gradient" id="Gradient_ign5b"]
+offsets = PackedFloat32Array(0, 0.9736842)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dndjf"]
+gradient = SubResource("Gradient_ign5b")
+fill = 2
+fill_from = Vector2(0.52347416, 0)
+fill_to = Vector2(0.5140845, 1)
+
 [node name="Room14" type="Node2D" unique_id=2068467507]
 script = ExtResource("1_ra45h")
 
@@ -62,3 +72,10 @@ sprite_frames = ExtResource("6_50e1o")
 [node name="Pot5" parent="Furniture" unique_id=642247482 instance=ExtResource("5_50e1o")]
 position = Vector2(966, 715)
 sprite_frames = ExtResource("6_dndjf")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1892424865]
+position = Vector2(672, 100.45311)
+scale = Vector2(10.1875, 9.515626)
+energy = 0.4
+texture = SubResource("GradientTexture2D_dndjf")
+offset = Vector2(0, 35)
