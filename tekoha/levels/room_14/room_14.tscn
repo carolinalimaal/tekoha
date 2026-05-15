@@ -29,6 +29,7 @@ fill_to = Vector2(0.5140845, 1)
 size = Vector2(64, 32)
 
 [node name="Room14" type="Node2D" unique_id=2068467507]
+y_sort_enabled = true
 script = ExtResource("1_ra45h")
 limit_top = -101
 limit_bottom = 985
@@ -55,6 +56,7 @@ tile_map_data = PackedByteArray("AAATABcAAAAFAAIAAAAWABcAAAAHAAIAAAARABYAAAADAAI
 tile_set = ExtResource("2_6jjks")
 
 [node name="Furniture" type="Node2D" parent="." unique_id=1118118285]
+y_sort_enabled = true
 
 [node name="Bau" parent="Furniture" unique_id=302874208 instance=ExtResource("4_bnmol")]
 position = Vector2(383, 361)
@@ -79,7 +81,7 @@ position = Vector2(372, 197)
 sprite_frames = ExtResource("6_drkai")
 
 [node name="Pot3" parent="Furniture" unique_id=328243586 instance=ExtResource("5_50e1o")]
-position = Vector2(968, 445)
+position = Vector2(968, 453)
 sprite_frames = ExtResource("6_drkai")
 
 [node name="Pot4" parent="Furniture" unique_id=951462894 instance=ExtResource("5_50e1o")]
