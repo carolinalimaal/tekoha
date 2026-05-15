@@ -106,7 +106,7 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 [node name="Room14Door" type="Area2D" parent="." unique_id=240560434]
 position = Vector2(672, 752)
 script = ExtResource("11_t76wk")
-target_level_path = "uid://bas33vmll12wo"
+target_level_path = "uid://co0vptwphskq3"
 door_name = "Room14Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
