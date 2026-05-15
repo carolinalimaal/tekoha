@@ -22,7 +22,7 @@ size = Vector2(20, 39)
 y_sort_enabled = true
 script = ExtResource("1_xuy42")
 limit_top = 10
-limit_bottom = 1000
+limit_bottom = 1100
 limit_left = 224
 limit_right = 2430
 
