@@ -14,9 +14,14 @@ var level_parent: Level
 @export var has_consumable: bool
 var consumable
 
+var enemies: Node2D
+
 func _ready() -> void:
 	level_parent = get_parent()
 	print(level_parent.name)
+	
+	enemies = get_parent().get_node_or_null("Enemies")
+	
 	if has_consumable:
 		consumable = get_node("Bau") as Bau
 		turn_consumable_off()
@@ -40,7 +45,7 @@ func _on_puzzle_activator_off():
 			camera_zoom_in_roots(step)
 
 func camera_zoom_in_roots(step: int):
-	get_tree().paused = true
+	partial_pause()
 	var camera: PlayerCamera = get_parent().get_node("PlayerCamera")
 	
 	if camera:
@@ -65,7 +70,7 @@ func camera_anim(camera: PlayerCamera, step: int):
 	await tween_zoom_out.finished
 
 	camera.can_follow_player = true
-	get_tree().paused = false
+	partial_despause()
 
 func root_anim(step: int):
 	var middle_step = (meta_activations/2) + 1
@@ -110,3 +115,15 @@ func turn_consumable_off():
 	
 	var consumable_colision = consumable.get_node("CollisionShape2D")
 	consumable_colision.set_deferred("disabled", true)
+
+func partial_pause():
+	GlobalRefs.player.can_move = false
+	mecanic_activators.process_mode = Node.PROCESS_MODE_DISABLED
+	if enemies != null:
+		enemies.process_mode = Node.PROCESS_MODE_DISABLED
+
+func partial_despause():
+	GlobalRefs.player.can_move = true
+	mecanic_activators.process_mode = Node.PROCESS_MODE_INHERIT
+	if enemies != null:
+		enemies.process_mode = Node.PROCESS_MODE_INHERIT

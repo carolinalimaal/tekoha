@@ -82,7 +82,6 @@ position = Vector2(858, 1434)
 position = Vector2(3165, 671)
 
 [node name="RootMecanic" type="Node2D" parent="." unique_id=956618240]
-process_mode = 3
 y_sort_enabled = true
 position = Vector2(1111, 313)
 script = ExtResource("5_stqjc")
