@@ -52,6 +52,7 @@ radius = 14.0
 radius = 30.0
 
 [node name="NPCDonoBarco" type="CharacterBody2D" unique_id=1741828607 node_paths=PackedStringArray("animated_sprite")]
+collision_layer = 1024
 script = ExtResource("1_rmrje")
 animated_sprite = NodePath("AnimatedSprite2D")
 npc_dialogue = SubResource("Resource_jtmfk")
