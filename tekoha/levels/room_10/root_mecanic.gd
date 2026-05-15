@@ -118,12 +118,14 @@ func turn_consumable_off():
 
 func partial_pause():
 	GlobalRefs.player.can_move = false
+	UIManager.is_interact_ui_open = true
 	mecanic_activators.process_mode = Node.PROCESS_MODE_DISABLED
 	if enemies != null:
 		enemies.process_mode = Node.PROCESS_MODE_DISABLED
 
 func partial_despause():
 	GlobalRefs.player.can_move = true
+	UIManager.is_interact_ui_open = false
 	mecanic_activators.process_mode = Node.PROCESS_MODE_INHERIT
 	if enemies != null:
 		enemies.process_mode = Node.PROCESS_MODE_INHERIT
