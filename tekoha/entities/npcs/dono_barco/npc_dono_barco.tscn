@@ -1,8 +1,20 @@
 [gd_scene format=3 uid="uid://b2sy76ie66ulp"]
 
 [ext_resource type="Script" uid="uid://bv7xgwalm2jk" path="res://entities/npcs/npc.gd" id="1_rmrje"]
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="2_1euh0"]
 [ext_resource type="Texture2D" uid="uid://chs6gllwmr2br" path="res://assets/sprites/entities/npcs/npc_dono_barco.png" id="2_j46lk"]
 [ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="3_1euh0"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="3_6jbsf"]
+
+[sub_resource type="Resource" id="Resource_u6lot"]
+script = ExtResource("2_1euh0")
+text_pt = "Teste"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_jtmfk"]
+script = ExtResource("3_6jbsf")
+dialogues = Array[ExtResource("2_1euh0")]([SubResource("Resource_u6lot")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_flrnh"]
 atlas = ExtResource("2_j46lk")
@@ -39,8 +51,10 @@ radius = 14.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6tns2"]
 radius = 30.0
 
-[node name="NPCDonoBarco" type="CharacterBody2D" unique_id=1741828607]
+[node name="NPCDonoBarco" type="CharacterBody2D" unique_id=1741828607 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("1_rmrje")
+animated_sprite = NodePath("AnimatedSprite2D")
+npc_dialogue = SubResource("Resource_jtmfk")
 metadata/_custom_type_script = "uid://bv7xgwalm2jk"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=398090295]
