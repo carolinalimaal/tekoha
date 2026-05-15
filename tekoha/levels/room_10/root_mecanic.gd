@@ -9,10 +9,14 @@ signal shake_camera()
 @export var meta_activations: int
 var current_activations: int = 0
 
+var level_parent: Level
+
 @export var has_consumable: bool
 var consumable
 
 func _ready() -> void:
+	level_parent = get_parent()
+	print(level_parent.name)
 	if has_consumable:
 		consumable = get_node("Bau") as Bau
 		turn_consumable_off()
@@ -24,11 +28,16 @@ func _on_puzzle_activator_off():
 	current_activations += 1
 	var step = current_activations
 	
-	if current_activations in [1, (meta_activations/2) + 1, meta_activations]:
-		shake_camera.emit()
-		await get_tree().create_timer(1).timeout
-		camera_zoom_in_roots(step)
-	
+	if level_parent.name == "Room10":
+		if current_activations in [1, (meta_activations/2) + 1, meta_activations]:
+			shake_camera.emit()
+			await get_tree().create_timer(1).timeout
+			camera_zoom_in_roots(step)
+	else:
+		if current_activations == meta_activations:
+			shake_camera.emit()
+			await get_tree().create_timer(1).timeout
+			camera_zoom_in_roots(step)
 
 func camera_zoom_in_roots(step: int):
 	get_tree().paused = true
@@ -61,22 +70,31 @@ func camera_anim(camera: PlayerCamera, step: int):
 func root_anim(step: int):
 	var middle_step = (meta_activations/2) + 1
 	print("aqui",middle_step)
-	match step:
-		1:
-			var root: Root = roots.get_child(0)
-			root.root_remove()
+	if level_parent.name == "Room10":
+		match step:
+			1:
+				var root: Root = roots.get_child(0)
+				root.root_remove()
 			
-		middle_step:
-			var root: Root = roots.get_child(1)
-			root.root_remove()
+			middle_step:
+				var root: Root = roots.get_child(1)
+				root.root_remove()
 			
-		meta_activations:
-			for i in range(2, len(roots.get_children())):
+			meta_activations:
+				for i in range(2, len(roots.get_children())):
+					print(i)
+					var root: Root = roots.get_child(i)
+					root.root_remove()
+			
+				if has_consumable:
+					turn_consumable_on()
+	else:
+		for i in range(len(roots.get_children())):
 				print(i)
 				var root: Root = roots.get_child(i)
 				root.root_remove()
 			
-			if has_consumable:
+		if has_consumable:
 				turn_consumable_on()
 
 func turn_consumable_on():
