@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://b2sy76ie66ulp"]
+
+[ext_resource type="Script" uid="uid://bv7xgwalm2jk" path="res://entities/npcs/npc.gd" id="1_rmrje"]
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="2_1euh0"]
+[ext_resource type="Texture2D" uid="uid://chs6gllwmr2br" path="res://assets/sprites/entities/npcs/npc_dono_barco.png" id="2_j46lk"]
+[ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="3_1euh0"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="3_6jbsf"]
+
+[sub_resource type="Resource" id="Resource_u6lot"]
+script = ExtResource("2_1euh0")
+text_pt = "Teste"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_jtmfk"]
+script = ExtResource("3_6jbsf")
+dialogues = Array[ExtResource("2_1euh0")]([SubResource("Resource_u6lot")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flrnh"]
+atlas = ExtResource("2_j46lk")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjhii"]
+atlas = ExtResource("2_j46lk")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqdde"]
+atlas = ExtResource("2_j46lk")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50qtd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flrnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjhii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqdde")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p37qh"]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6tns2"]
+radius = 30.0
+
+[node name="NPCDonoBarco" type="CharacterBody2D" unique_id=1741828607 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("1_rmrje")
+animated_sprite = NodePath("AnimatedSprite2D")
+npc_dialogue = SubResource("Resource_jtmfk")
+metadata/_custom_type_script = "uid://bv7xgwalm2jk"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=398090295]
+sprite_frames = SubResource("SpriteFrames_50qtd")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=955029692]
+position = Vector2(0, 19)
+shape = SubResource("CircleShape2D_p37qh")
+
+[node name="InteractableComponent" type="Area2D" parent="." unique_id=2135994786 node_paths=PackedStringArray("collision_shape", "marker")]
+script = ExtResource("3_1euh0")
+interact_label = "[interact] Falar"
+collision_shape = NodePath("CollisionShape2D")
+marker = NodePath("Marker2D")
+metadata/_custom_type_script = "uid://bevot8siuxavc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=870942591]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_6tns2")
+debug_color = Color(0.6392157, 0.5254902, 0, 0.23921569)
+
+[node name="Marker2D" type="Marker2D" parent="InteractableComponent" unique_id=1408412893]
+position = Vector2(0, -45)

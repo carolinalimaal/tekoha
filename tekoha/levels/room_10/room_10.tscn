@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://br7u668sprpdj" path="res://levels/room_10/room_10.gd" id="1_xpsvw"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/ground.tres" id="2_fkh8x"]
-[ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/nature.tres" id="3_unx7x"]
+[ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="3_unx7x"]
 [ext_resource type="TileSet" uid="uid://dye2ui75xx5us" path="res://assets/sprites/tiles/grama_terra/grass_dirt_tileset.tres" id="4_cdxcb"]
 [ext_resource type="PackedScene" uid="uid://c8ui4rfngwjkm" path="res://utils/bush/bush.tscn" id="5_mptwh"]
 [ext_resource type="Script" uid="uid://bs7b7nv2t6yri" path="res://levels/room_10/root_mecanic.gd" id="5_stqjc"]

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bfuifh5omshv6" path="res://assets/sprites/tiles/natureza/natureza.png" id="3_85668"]
 [ext_resource type="PackedScene" uid="uid://1qrmsqlofmkg" path="res://utils/door/door.tscn" id="4_85668"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="5_2mt7e"]
-[ext_resource type="Texture2D" uid="uid://cm76otpxch14d" path="res://assets/sprites/tiles/plataformas/pier area externa.png" id="5_06kpn"]
+[ext_resource type="Texture2D" uid="uid://cm76otpxch14d" path="res://assets/sprites/tiles/plataformas/pier_1.png" id="5_06kpn"]
 [ext_resource type="Texture2D" uid="uid://br872k82ac3bp" path="res://assets/sprites/tiles/exterior_restaurante/restaurante cecília externo.png" id="6_77sj4"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="8_cqf1r"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="8_ln8wb"]
