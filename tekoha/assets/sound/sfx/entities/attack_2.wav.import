@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dnpryonux0vy3"
-path="res://.godot/imported/Whoosh 2.wav-cdc53f0d9f4732b61bcbc74719bab2dc.sample"
+path="res://.godot/imported/attack_2.wav-9b497033ca907ed29c5ec7c7ba46b34e.sample"
 
 [deps]
 
-source_file="res://assets/sound/sfx/entities/Whoosh 2.wav"
-dest_files=["res://.godot/imported/Whoosh 2.wav-cdc53f0d9f4732b61bcbc74719bab2dc.sample"]
+source_file="res://assets/sound/sfx/entities/attack_2.wav"
+dest_files=["res://.godot/imported/attack_2.wav-9b497033ca907ed29c5ec7c7ba46b34e.sample"]
 
 [params]
 

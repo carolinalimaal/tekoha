@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://eq54xta1xet3"
-path="res://.godot/imported/Whoosh 3.wav-14c52d0b9c315fa351876e9d824f2e3c.sample"
+path="res://.godot/imported/attack_3.wav-e2aa51709c15f51859fb61d95936bbf4.sample"
 
 [deps]
 
-source_file="res://assets/sound/sfx/entities/Whoosh 3.wav"
-dest_files=["res://.godot/imported/Whoosh 3.wav-14c52d0b9c315fa351876e9d824f2e3c.sample"]
+source_file="res://assets/sound/sfx/entities/attack_3.wav"
+dest_files=["res://.godot/imported/attack_3.wav-e2aa51709c15f51859fb61d95936bbf4.sample"]
 
 [params]
 

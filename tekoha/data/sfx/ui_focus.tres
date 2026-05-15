@@ -1,11 +1,10 @@
 [gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://befiltkfwjx2m"]
 
 [ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_ajmiw"]
-[ext_resource type="AudioStream" uid="uid://dvkq2vkifkdha" path="res://assets/sound/sfx/ui/ui_click.wav" id="2_funbt"]
+[ext_resource type="AudioStream" uid="uid://dvkq2vkifkdha" path="res://assets/sound/sfx/ui/ui_focus.wav" id="2_funbt"]
 
 [resource]
 script = ExtResource("1_ajmiw")
 type = 9
 sound_effect = ExtResource("2_funbt")
-volume = -40.0
 metadata/_custom_type_script = "uid://dogggnwn8i6i7"
