@@ -1,6 +1,8 @@
 class_name Canudinho
 extends Enemy
 
+signal puzzle_activator()
+
 @export_category("Range")
 @export var chase_range: int = 200
 @export var aiming_range: int = 120
@@ -31,6 +33,10 @@ func _physics_process(_delta: float) -> void:
 
 func _on_enemy_died():
 	# Transicionar para DEATH
+	var parent_node = get_parent()
+	if parent_node.name == "MecanicActivators":
+		print("puzzle activation")
+		puzzle_activator.emit()
 	state_machine.current_state.transition_to("Death")
 
 func _on_enemy_attack_received(attack_data: AttackData):

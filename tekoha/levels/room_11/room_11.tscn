@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="6_khelp"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="7_drjbi"]
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="7_hvq2q"]
+[ext_resource type="Script" uid="uid://bs7b7nv2t6yri" path="res://levels/room_10/root_mecanic.gd" id="7_khelp"]
+[ext_resource type="PackedScene" uid="uid://dx6yr2evs52lk" path="res://utils/root/root.tscn" id="8_drjbi"]
 [ext_resource type="SpriteFrames" uid="uid://d1u4kbte4dt8y" path="res://assets/sprites/props/chest/chest_03.tres" id="9_khelp"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="11_q4msy"]
 
@@ -26,7 +28,7 @@ size = Vector2(400, 16)
 [node name="Room11" type="Node2D" unique_id=263309058]
 y_sort_enabled = true
 script = ExtResource("1_hvq2q")
-limit_top = 352
+limit_top = 210
 limit_bottom = 1376
 limit_left = 384
 limit_right = 2656
@@ -60,34 +62,69 @@ position = Vector2(1824, 984)
 [node name="Canudinho" parent="Enemies" unique_id=2132468328 instance=ExtResource("6_khelp")]
 position = Vector2(1728, 864)
 
-[node name="Puzzle" type="Node2D" parent="." unique_id=1892105930]
+[node name="RootMecanic" type="Node2D" parent="." unique_id=344034010]
+y_sort_enabled = true
+position = Vector2(921, 331)
+script = ExtResource("7_khelp")
+meta_activations = 9
+has_consumable = true
+metadata/_custom_type_script = "uid://bs7b7nv2t6yri"
 
-[node name="Canudinho2" parent="Puzzle" unique_id=669012262 instance=ExtResource("6_khelp")]
+[node name="Roots" type="Node2D" parent="RootMecanic" unique_id=997678319]
+
+[node name="Root" parent="RootMecanic/Roots" unique_id=1127486074 instance=ExtResource("8_drjbi")]
+position = Vector2(-66, 51)
+scale = Vector2(1.7, 1.7)
+
+[node name="Root2" parent="RootMecanic/Roots" unique_id=1370464628 instance=ExtResource("8_drjbi")]
+position = Vector2(106, 65)
+scale = Vector2(1.5, 1.5)
+flip_sprite = true
+
+[node name="Root3" parent="RootMecanic/Roots" unique_id=980740044 instance=ExtResource("8_drjbi")]
+position = Vector2(107, 24)
+scale = Vector2(1.4, 1.4)
+flip_sprite = true
+
+[node name="Root4" parent="RootMecanic/Roots" unique_id=1892609401 instance=ExtResource("8_drjbi")]
+position = Vector2(-44, 9)
+scale = Vector2(1.5, 1.5)
+
+[node name="MecanicActivators" type="Node2D" parent="RootMecanic" unique_id=1892105930]
+position = Vector2(-921, -331)
+
+[node name="Canudinho2" parent="RootMecanic/MecanicActivators" unique_id=669012262 instance=ExtResource("6_khelp")]
 position = Vector2(800, 512)
 
-[node name="Canudinho3" parent="Puzzle" unique_id=560409219 instance=ExtResource("6_khelp")]
+[node name="Canudinho3" parent="RootMecanic/MecanicActivators" unique_id=560409219 instance=ExtResource("6_khelp")]
 position = Vector2(1120, 480)
 
-[node name="Canudinho4" parent="Puzzle" unique_id=854329079 instance=ExtResource("6_khelp")]
+[node name="Canudinho4" parent="RootMecanic/MecanicActivators" unique_id=854329079 instance=ExtResource("6_khelp")]
 position = Vector2(896, 736)
 
-[node name="Sacola2" parent="Puzzle" unique_id=476191902 instance=ExtResource("5_q4msy")]
+[node name="Sacola2" parent="RootMecanic/MecanicActivators" unique_id=476191902 instance=ExtResource("5_q4msy")]
 position = Vector2(896, 512)
 
-[node name="Sacola3" parent="Puzzle" unique_id=1218953658 instance=ExtResource("5_q4msy")]
+[node name="Sacola3" parent="RootMecanic/MecanicActivators" unique_id=1218953658 instance=ExtResource("5_q4msy")]
 position = Vector2(1024, 448)
 
-[node name="Sacola4" parent="Puzzle" unique_id=258615061 instance=ExtResource("5_q4msy")]
+[node name="Sacola4" parent="RootMecanic/MecanicActivators" unique_id=258615061 instance=ExtResource("5_q4msy")]
 position = Vector2(768, 640)
 
-[node name="Sacola5" parent="Puzzle" unique_id=749972550 instance=ExtResource("5_q4msy")]
+[node name="Sacola5" parent="RootMecanic/MecanicActivators" unique_id=749972550 instance=ExtResource("5_q4msy")]
 position = Vector2(1152, 608)
 
-[node name="Sacola6" parent="Puzzle" unique_id=176091705 instance=ExtResource("5_q4msy")]
+[node name="Sacola6" parent="RootMecanic/MecanicActivators" unique_id=176091705 instance=ExtResource("5_q4msy")]
 position = Vector2(1088, 736)
 
-[node name="Bau" parent="Puzzle" unique_id=302874208 instance=ExtResource("7_hvq2q")]
-position = Vector2(960, 608)
+[node name="Sacola7" parent="RootMecanic/MecanicActivators" unique_id=472007731 instance=ExtResource("5_q4msy")]
+position = Vector2(1075, 614)
+
+[node name="RootsMarkerPos" type="Marker2D" parent="RootMecanic" unique_id=2082166847]
+position = Vector2(-8, 32)
+
+[node name="Bau" parent="RootMecanic" unique_id=302874208 instance=ExtResource("7_hvq2q")]
+position = Vector2(39, 277)
 item = SubResource("Resource_hvq2q")
 sprite_frames = ExtResource("9_khelp")
 
@@ -121,17 +158,17 @@ shape = SubResource("RectangleShape2D_hvq2q")
 [node name="Marker2D" type="Marker2D" parent="Room12Door" unique_id=2122796225]
 position = Vector2(-96, -32)
 
-[node name="Room13Door" type="Area2D" parent="." unique_id=272076136]
+[node name="Room14Door" type="Area2D" parent="." unique_id=272076136]
 position = Vector2(920, 271)
 script = ExtResource("7_drjbi")
-target_level_path = "uid://co0vptwphskq3"
-door_name = "Room13Door"
+target_level_path = "uid://jf0s5w8yt62r"
+door_name = "Room14Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room13Door" unique_id=2108403245]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room14Door" unique_id=2108403245]
 shape = SubResource("RectangleShape2D_q4msy")
 
-[node name="Marker2D" type="Marker2D" parent="Room13Door" unique_id=1476808719]
+[node name="Marker2D" type="Marker2D" parent="Room14Door" unique_id=1476808719]
 position = Vector2(0, 60)
 
 [node name="Limits" type="Node2D" parent="." unique_id=361058024]
@@ -147,5 +184,6 @@ polygon = PackedVector2Array(2368, 672, 2152, 688, 2096, 768, 2016, 672, 1920, 7
 polygon = PackedVector2Array(2336, 800, 2192, 808, 1952, 992, 1984, 1088, 2112, 1248, 2048, 1280, 2048, 1312, 1920, 1312, 1504, 960, 1368, 824, 1088, 800, 896, 832, 736, 896, 576, 736, 640, 576, 704, 448, 480, 832, 2112, 1472)
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1584578629]
+zoom = Vector2(1.5, 1.5)
 script = ExtResource("11_q4msy")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"

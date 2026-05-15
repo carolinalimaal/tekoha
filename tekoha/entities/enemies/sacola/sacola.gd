@@ -1,6 +1,8 @@
 class_name Sacola
 extends Enemy
 
+signal puzzle_activator()
+
 @export_category("Range")
 @export var chase_range: int = 200
 @export var attack_range: int = 50
@@ -31,6 +33,9 @@ func _physics_process(_delta: float) -> void:
 
 func _on_enemy_died():
 	# Transicionar para DEATH
+	var parent = get_parent()
+	if parent.name == "MecanicActivators":
+		puzzle_activator.emit()
 	state_machine.current_state.transition_to("Death")
 
 func _on_enemy_attack_received(attack_data: AttackData):

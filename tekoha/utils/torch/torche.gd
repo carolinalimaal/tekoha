@@ -1,6 +1,6 @@
 class_name Torch extends StaticBody2D
 
-signal puzzle_activator(torch_id)
+signal puzzle_activator()
 
 @export var torch_id: int
 
@@ -28,4 +28,4 @@ func _on_torch_attack_received(_attack_data: AttackData):
 func torch_off():
 	hitbox_component.set_deferred("monitoring", false)
 	hitbox_collision.set_deferred("disabled", true)
-	puzzle_activator.emit(torch_id)
+	puzzle_activator.emit()

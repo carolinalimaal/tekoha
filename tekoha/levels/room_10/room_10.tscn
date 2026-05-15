@@ -26,7 +26,7 @@ size = Vector2(348, 46)
 [node name="Room10" type="Node2D" unique_id=1823858816]
 y_sort_enabled = true
 script = ExtResource("1_xpsvw")
-limit_top = -370
+limit_top = -192
 limit_bottom = 1847
 limit_left = 10
 limit_right = 3990
@@ -82,7 +82,6 @@ position = Vector2(858, 1434)
 position = Vector2(3165, 671)
 
 [node name="RootMecanic" type="Node2D" parent="." unique_id=956618240]
-process_mode = 3
 y_sort_enabled = true
 position = Vector2(1111, 313)
 script = ExtResource("5_stqjc")

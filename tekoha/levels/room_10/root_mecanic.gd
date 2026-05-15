@@ -2,15 +2,6 @@ class_name RootMecanic extends Node2D
 
 signal shake_camera()
 
-#@onready var torche_one: Torch = $Torches/Torche
-#@onready var torche_two: Torch = $Torches/Torche2
-#@onready var torche_three: Torch = $Torches/Torche3
-#@onready var root: Root = $Root
-#@onready var root_two: Root = $Root2
-#@onready var root_three: Root = $Root3
-#@onready var root_four: Root = $Root4
-#@onready var root_five: Root = $Root5
-#@onready var root_six: Root = $Root6
 @onready var mecanic_activators: Node2D = $MecanicActivators
 @onready var roots: Node2D = $Roots
 @onready var roots_marker: Marker2D = $RootsMarkerPos
@@ -18,27 +9,49 @@ signal shake_camera()
 @export var meta_activations: int
 var current_activations: int = 0
 
-# Called when the node enters the scene tree for the first time.
+var level_parent: Level
+
+@export var has_consumable: bool
+var consumable
+
+var enemies: Node2D
+
 func _ready() -> void:
-	#torche_one.torch_turnned_off.connect(_on_torch_turned_off)
-	#torche_two.torch_turnned_off.connect(_on_torch_turned_off)
-	#torche_three.torch_turnned_off.connect(_on_torch_turned_off)
+	level_parent = get_parent()
+	print(level_parent.name)
+	
+	enemies = get_parent().get_node_or_null("Enemies")
+	
+	if has_consumable:
+		consumable = get_node("Bau") as Bau
+		turn_consumable_off()
+	
 	for activator in mecanic_activators.get_children():
 		activator.puzzle_activator.connect(_on_puzzle_activator_off)
 
-func _on_puzzle_activator_off(_id: int):
-	current_activations+=1
-	shake_camera.emit()
-	await get_tree().create_timer(1).timeout
-	camera_zoom_in_roots()
+func _on_puzzle_activator_off():
+	current_activations += 1
+	var step = current_activations
+	
+	if level_parent.name == "Room10":
+		if current_activations in [1, (meta_activations/2) + 1, meta_activations]:
+			shake_camera.emit()
+			await get_tree().create_timer(1).timeout
+			camera_zoom_in_roots(step)
+	else:
+		if current_activations == meta_activations:
+			shake_camera.emit()
+			await get_tree().create_timer(1).timeout
+			camera_zoom_in_roots(step)
 
-func camera_zoom_in_roots():
-	get_tree().paused = true
+func camera_zoom_in_roots(step: int):
+	partial_pause()
 	var camera: PlayerCamera = get_parent().get_node("PlayerCamera")
+	
 	if camera:
-		camera_anim(camera)
+		camera_anim(camera, step)
 
-func camera_anim(camera: PlayerCamera):
+func camera_anim(camera: PlayerCamera, step: int):
 	camera.can_follow_player = false
 	var roots_marker_pos: Vector2 = roots_marker.global_position
 	var tween_zoom_in = create_tween()
@@ -47,7 +60,7 @@ func camera_anim(camera: PlayerCamera):
 	tween_zoom_in.parallel().tween_property(camera,"zoom",Vector2(2, 2),1.2)
 	await tween_zoom_in.finished
 
-	root_anim()
+	root_anim(step)
 	await get_tree().create_timer(1.2).timeout
 
 	# volta da câmera
@@ -57,22 +70,62 @@ func camera_anim(camera: PlayerCamera):
 	await tween_zoom_out.finished
 
 	camera.can_follow_player = true
-	get_tree().paused = false
+	partial_despause()
 
-func root_anim():
-	match current_activations:
-		1:
-			var root: Root = roots.get_child(current_activations - 1)
-			root.root_remove()
-		2:
-			var root: Root = roots.get_child(current_activations - 1)
-			root.root_remove()
-		meta_activations:
-			for i in range(2, len( roots.get_children())):
+func root_anim(step: int):
+	var middle_step = (meta_activations/2) + 1
+	print("aqui",middle_step)
+	if level_parent.name == "Room10":
+		match step:
+			1:
+				var root: Root = roots.get_child(0)
+				root.root_remove()
+			
+			middle_step:
+				var root: Root = roots.get_child(1)
+				root.root_remove()
+			
+			meta_activations:
+				for i in range(2, len(roots.get_children())):
+					print(i)
+					var root: Root = roots.get_child(i)
+					root.root_remove()
+			
+				if has_consumable:
+					turn_consumable_on()
+	else:
+		for i in range(len(roots.get_children())):
 				print(i)
 				var root: Root = roots.get_child(i)
 				root.root_remove()
-			#var root_one: Root = roots.get_child(2)
-			#var root_two: Root = roots.get_child(3)
-			#root_one.root_remove()
-			#root_two.root_remove()
+			
+		if has_consumable:
+				turn_consumable_on()
+
+func turn_consumable_on():
+	consumable.visible = true
+	consumable.interactable_component.set_deferred("monitoring", true)
+	
+	var consumable_colision = consumable.get_node("CollisionShape2D")
+	consumable_colision.set_deferred("disabled", false)
+
+func turn_consumable_off():
+	consumable.visible = false
+	consumable.interactable_component.set_deferred("monitoring", false)
+	
+	var consumable_colision = consumable.get_node("CollisionShape2D")
+	consumable_colision.set_deferred("disabled", true)
+
+func partial_pause():
+	GlobalRefs.player.can_move = false
+	UIManager.is_interact_ui_open = true
+	mecanic_activators.process_mode = Node.PROCESS_MODE_DISABLED
+	if enemies != null:
+		enemies.process_mode = Node.PROCESS_MODE_DISABLED
+
+func partial_despause():
+	GlobalRefs.player.can_move = true
+	UIManager.is_interact_ui_open = false
+	mecanic_activators.process_mode = Node.PROCESS_MODE_INHERIT
+	if enemies != null:
+		enemies.process_mode = Node.PROCESS_MODE_INHERIT

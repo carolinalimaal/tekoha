@@ -2,12 +2,14 @@ class_name Bau extends StaticBody2D
 
 @export var id: int
 @export var item: ConsumableItemData
+@export_file var enemy_file: String
 @export var sprite_frames: SpriteFrames
 
 var is_showing: bool = false
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interactable_component: InteractableComponent = $InteractableComponent
+@onready var enemy_spawn: Marker2D = $EnemySpawn
 
 func _ready() -> void:
 	sprite.sprite_frames = sprite_frames
@@ -27,7 +29,10 @@ func interact() -> void:
 
 func update_item_panel():
 	if item == null:
-		GlobalRefs.confirmation_popup.setup("O BAÚ ESTÁ VAZIO.", null, false)
+		if enemy_file != "":
+			GlobalRefs.confirmation_popup.setup("VOCÊ ENCONTROU UM INIMIGO!", null, false)
+		else:
+			GlobalRefs.confirmation_popup.setup("O BAÚ ESTÁ VAZIO.", null, false)
 	elif verify_full_inventory():
 		GlobalRefs.confirmation_popup.setup("SEU INVENTÁRIO ESTÁ CHEIO.", null, false)
 	elif item:
@@ -50,12 +55,21 @@ func open_chest():
 		GlobalRefs.confirmation_popup.cancelled.connect(_on_chest_cancelled)
 		
 	UIManager.open_menu("confirmation")
+	
+	if enemy_file != "":
+		var enemy_scene = load(enemy_file)
+		var enemy: Enemy = enemy_scene.instantiate() as Enemy
+		enemy.global_position = enemy_spawn.global_position
+		get_tree().current_scene.add_child(enemy)
+		print(enemy.global_position)
 
 func close_chest():
 	UIManager.is_interact_ui_open = false
 	is_showing = false
 	
 	UIManager.close_top_menu() 
+	
+	enemy_file = ""
 	
 	sprite.play_backwards("bau_animation")
 	interactable_component.enable_interaction()
