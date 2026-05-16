@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c1k48pyjcab6e"]
 
-[ext_resource type="Script" uid="uid://cw2gh4q2c5xa3" path="res://levels/room_1/casa.gd" id="1_wyrnq"]
+[ext_resource type="Script" uid="uid://cw2gh4q2c5xa3" path="res://levels/room_1/room_1.gd" id="1_wyrnq"]
 [ext_resource type="Resource" uid="uid://bqqf1ha3k1dn8" path="res://data/cutscenes/cutscene_1/cutscene_1.tres" id="2_1e7m2"]
 [ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://levels/background/background.tscn" id="3_snts5"]
 [ext_resource type="TileSet" uid="uid://dw27k52a7hjbm" path="res://assets/sprites/tiles/interior_casas/moveis.tres" id="4_7yov0"]
