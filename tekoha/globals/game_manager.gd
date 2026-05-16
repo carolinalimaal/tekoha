@@ -51,3 +51,7 @@ func _register_muiraquita(id: int) -> void:
 
 	# Emitir sinal para mostrar UI
 	GlobalSignals.muiraquita_updated.emit(id)
+
+func set_game_state(new_state: GameState) -> void:
+	if new_state and new_state != current_save.game_state:
+		current_save.game_state = new_state

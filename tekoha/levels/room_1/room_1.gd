@@ -13,4 +13,4 @@ func _on_cutscene_started() -> void:
 	pass
 
 func _on_cutscene_ended() -> void:
-	GameManager.current_save.game_state = GameManager.GameState.BEFORE_FISHING
+	GameManager.set_game_state(GameManager.GameState.BEFORE_FISHING)

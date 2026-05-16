@@ -28,7 +28,7 @@ fill_to = Vector2(0.5140845, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gyguw"]
 size = Vector2(32, 20)
 
-[node name="Casa" type="Node2D" unique_id=1391894647]
+[node name="Room1" type="Node2D" unique_id=1391894647]
 y_sort_enabled = true
 script = ExtResource("1_wyrnq")
 cutscene = ExtResource("2_1e7m2")
