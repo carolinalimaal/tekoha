@@ -21,7 +21,7 @@ func _init() -> void:
 	opened_chests = {}
 	player_position = Vector2.ZERO
 	camera_pos = Vector2.ZERO
-	current_level_path = 'res://levels/room_1/casa.tscn'
+	current_level_path = 'res://levels/room_1/room_1.tscn'
 	
 	for i in range(6):
 		inventory_slots.append(ItemSlot.new(i))
