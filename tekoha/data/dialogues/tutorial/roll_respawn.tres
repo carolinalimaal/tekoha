@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_mi1rn"]
 script = ExtResource("1_mi1rn")
-text_pt = "Ops! Parece que você não passou pelos inimigos rolando. Lembre-se de apertar o botão direito do mouse para efetuar o rolamento!"
+text_pt = "Ops! Parece que você não passou pelos inimigos rolando. Aperte [roll] para efetuar o rolamento!"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [resource]

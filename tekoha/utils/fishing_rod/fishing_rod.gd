@@ -7,11 +7,16 @@ var has_interacted: bool
 
 @onready var interactable_component: InteractableComponent = $InteractableComponent
 
-func _ready() -> void:
-	# TODO: Adicionar verificação do estado atual do jogo
-	if GameManager.current_save.game_state > GameManager.GameState.BEFORE_FISHING:
-		has_interacted = true
-
 func interact() -> void:
 	if !has_interacted:
 		fishing_rod_interated.emit()
+
+func disable_fishing_rod_interaction() -> void:
+	has_interacted = true
+	if interactable_component:
+		interactable_component.disable_interaction()
+
+func enable_fishing_rod_interaction() -> void:
+	has_interacted = false
+	if interactable_component:
+		interactable_component.enable_interaction()

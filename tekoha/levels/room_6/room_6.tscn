@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://4hv4ijur8gyw" path="res://assets/sprites/props/hammock/rede_save_livre.png" id="10_j0ms1"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="12_4hwci"]
 [ext_resource type="PackedScene" uid="uid://c4rfo8vpkou8r" path="res://entities/npcs/cecilia/npc_cecila.tscn" id="13_yxphn"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="14_bs7kn"]
+[ext_resource type="Resource" uid="uid://cg3qwx52dkf45" path="res://data/dialogues/npcs/cecilia/npc_cecilia_1.tres" id="15_d3h8c"]
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="16_a5usx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hwci"]
 texture = ExtResource("8_u15um")
@@ -321,6 +324,17 @@ size = Vector2(28, 66)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0ms1"]
 size = Vector2(26, 54)
 
+[sub_resource type="Resource" id="Resource_dc3iq"]
+script = ExtResource("16_a5usx")
+actor_name = "Cecília"
+text_pt = "Muito obrigada, Curupira! Meus clientes estão satisfeitos agora. Vou lhe fazer aquela recompensa que prometi!"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_1n6nv"]
+script = ExtResource("14_bs7kn")
+dialogues = Array[ExtResource("16_a5usx")]([SubResource("Resource_dc3iq")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
 [node name="Room6" type="Node2D" unique_id=1667791600]
 y_sort_enabled = true
 script = ExtResource("1_us3uc")
@@ -433,6 +447,7 @@ position = Vector2(731, 318)
 
 [node name="Cecila" parent="." unique_id=2125482859 instance=ExtResource("13_yxphn")]
 position = Vector2(648, 483)
+dialogues_list = Array[ExtResource("14_bs7kn")]([ExtResource("15_d3h8c"), SubResource("Resource_1n6nv")])
 
 [connection signal="body_entered" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_entered"]
 [connection signal="body_exited" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_exited"]

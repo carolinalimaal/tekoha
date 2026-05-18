@@ -34,24 +34,23 @@ collision_layer = 0
 script = ExtResource("7_iu72u")
 interact_label = "[interact] tutorial"
 collision_shape = NodePath("CollisionShape2D")
-marker = NodePath("../Marker2D")
+marker = NodePath("Marker2D")
 metadata/_custom_type_script = "uid://bevot8siuxavc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1373593887]
 position = Vector2(0, 23)
 shape = SubResource("CircleShape2D_mh1kf")
 
+[node name="Marker2D" type="Marker2D" parent="InteractableComponent" unique_id=1073670818]
+position = Vector2(0, -14)
+
 [node name="PlayerReposition" type="Marker2D" parent="." unique_id=532163376]
 position = Vector2(88, 32)
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1073670818]
-position = Vector2(0, -14)
-
 [node name="RollArea" type="Area2D" parent="." unique_id=832948555]
-position = Vector2(-7, -2)
+position = Vector2(-7, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RollArea" unique_id=467598073]
-position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_mh1kf")
 debug_color = Color(0.9195282, 0.21189004, 0.4797731, 0.41960785)
 
@@ -61,13 +60,15 @@ debug_color = Color(0.9195282, 0.21189004, 0.4797731, 0.41960785)
 collision_layer = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/TutorialLimit" unique_id=932209226]
-polygon = PackedVector2Array(-64, 80, -64, -64, 128, -64, 128, 80, 152, 80, 152, -72, -80, -72, -80, 80)
+position = Vector2(34.032978, -18.720608)
+polygon = PackedVector2Array(-98.032974, 98.72061, -98.032974, -45.279392, 93.967026, -45.279392, 93.967026, 98.72061, 117.967026, 98.72061, 117.967026, -53.279392, -114.032974, -53.279392, -114.032974, 98.72061)
 
 [node name="TutorialLimit2" type="StaticBody2D" parent="Limits" unique_id=304964812]
 collision_layer = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/TutorialLimit2" unique_id=1507149188]
-polygon = PackedVector2Array(-80, 80, -80, 88, 152, 88, 152, 80)
+position = Vector2(36, 84)
+polygon = PackedVector2Array(-116, -4, -116, 4, 116, 4, 116, -4)
 
 [node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=593721991]
 layer = 10

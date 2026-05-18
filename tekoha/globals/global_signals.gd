@@ -20,3 +20,6 @@ signal animation_midpoint_reached()
 
 # Sinal para avisar que o carregamento do level terminou
 signal level_loading_finished()
+
+## Sinal para avisar que o estado do jogo mudou
+#signal game_state_changed(new_state: GameManager.GameState)

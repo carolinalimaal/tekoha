@@ -1,5 +1,7 @@
 extends Node2D
 
+signal tutorial_finished
+
 enum TutorialState {
 	NOT_INITIATED,
 	ATTACK_1,
@@ -7,9 +9,23 @@ enum TutorialState {
 	ROLL,
 	FINISHED
 }
+
+const DIALOG_ATTACK_1 = 0
+const DIALOG_ATTACK_2 = 1
+const DIALOG_ROLL = 2
+const DIALOG_ROLL_FAIL = 3
+
+# Valores de dano esperados
+const DMG_EXPECTED_ATTACK_1 = 4
+const DMG_EXPECTED_ATTACK_2 = 6
+
+# Tempos de espera
+const DELAY_UI_FEEDBACK = 1.2
+const DELAY_ROLL_CHECK = 0.5
+const DELAY_CAMERA_ZOOM = 1.0
+
 var current_state: TutorialState = TutorialState.NOT_INITIATED
 
-var index: int = 0
 @export var tutorial_instructions: Array[DialogueSettings]
 
 @onready var practice_dummy: StaticBody2D = $PracticeDummy
@@ -25,6 +41,9 @@ var index: int = 0
 
 func _ready() -> void:
 	practice_dummy_2.damage_received.connect(_on_dummy_damage_received)
+	_setup_initial_state()
+
+func _setup_initial_state() -> void:
 	hide_second_practice_dummy()
 	roll_area.hide()
 	transition_layer.hide()
@@ -32,38 +51,51 @@ func _ready() -> void:
 
 func interact() -> void:
 	if current_state == TutorialState.NOT_INITIATED:
-		start_tutorial()
+		_start_tutorial()
 
+# MÁQUINA DE ESTADOS
+func _change_state(new_state: TutorialState) -> void:
+	current_state = new_state
+	
+	match current_state:
+		TutorialState.ATTACK_1:
+			GlobalRefs.player.can_attack_1 = true
+			_play_dialogue(DIALOG_ATTACK_1)
+			
+		TutorialState.ATTACK_2:
+			tutorial_ui.mark_attack_1_done()
+			await _wait(DELAY_UI_FEEDBACK)
+			GlobalRefs.player.can_attack_2 = true
+			_play_dialogue(DIALOG_ATTACK_2)
+			
+		TutorialState.ROLL:
+			tutorial_ui.mark_attack_2_done()
+			await _wait(DELAY_UI_FEEDBACK)
+			GlobalRefs.player.can_roll = true
+			_play_dialogue(DIALOG_ROLL)
+			
+		TutorialState.FINISHED:
+			tutorial_ui.mark_roll_done()
+			await _wait(DELAY_UI_FEEDBACK)
+			_end_tutorial()
+
+# SINAIS / INTERAÇÕES
 func _on_dummy_damage_received(attack_data: AttackData) -> void:
-	if current_state != TutorialState.NOT_INITIATED:
-		match current_state:
-			TutorialState.ATTACK_1:
-				if attack_data.damage_value == 4:
-					current_state = TutorialState.ATTACK_2
-					tutorial_ui.mark_attack_1_done()
-					await get_tree().create_timer(1.2).timeout
-					GlobalRefs.player.can_attack_2 = true
-					index += 1
-					DialogueManager.start_speech(tutorial_instructions[index])
-		
-			TutorialState.ATTACK_2:
-				if attack_data.damage_value == 6:
-					current_state = TutorialState.ROLL
-					tutorial_ui.mark_attack_2_done()
-					await get_tree().create_timer(1.2).timeout
-					start_roll_tutorial()
+	if current_state == TutorialState.ATTACK_1 and attack_data.damage_value == DMG_EXPECTED_ATTACK_1:
+		_change_state(TutorialState.ATTACK_2)
+	elif current_state == TutorialState.ATTACK_2 and attack_data.damage_value == DMG_EXPECTED_ATTACK_2:
+		_change_state(TutorialState.ROLL)
 
 func _on_roll_area_body_entered(body: Node2D) -> void:
-	if body is Player and current_state == TutorialState.ROLL:
-		if body.state_machine.current_state.name in ["Roll"]:
-			current_state = TutorialState.FINISHED
-			await get_tree().create_timer(0.5).timeout
-			tutorial_ui.mark_roll_done()
-			await get_tree().create_timer(1.2).timeout
-			end_tutorial()
-		else:
-			print("Ops! Você deve entrar com dash nessa área!")
-			DialogueManager.start_speech(tutorial_instructions[index])
+	if !(body is Player) or current_state != TutorialState.ROLL:
+		return
+		
+	if body.state_machine.current_state.name == "Roll":
+		await _wait(DELAY_ROLL_CHECK)
+		_change_state(TutorialState.FINISHED)
+	else:
+		print("Ops! Você deve entrar com dash nessa área!")
+		_play_dialogue(DIALOG_ROLL_FAIL)
 
 func _on_cutscene_started() -> void:
 	tutorial_ui.hide_ui()
@@ -73,36 +105,42 @@ func _on_cutscene_ended() -> void:
 		dummy_appearence_anim()
 		roll_area.show()
 	
-	if index > 0:
+	if current_state != TutorialState.ATTACK_1:
 		player_reposition_respawn()
 	
 	if current_state != TutorialState.FINISHED:
 		tutorial_ui.show_ui()
 
-func start_tutorial() -> void:
+# FLUXO DO TUTORIAL
+func _start_tutorial() -> void:
+	print("Tutorial iniciado")
 	interactable_comp.disable_interaction()
 	set_limits_layer(true)
 	zoom_in_camera()
-	print("Tutorial iniciado")
-	current_state = TutorialState.ATTACK_1
+	
 	DialogueManager.dialogue_ended.connect(_on_cutscene_ended)
 	DialogueManager.dialogue_started.connect(_on_cutscene_started)
-	GlobalRefs.player.can_attack_1 = true
-	DialogueManager.start_speech(tutorial_instructions[index])
+	
+	_change_state(TutorialState.ATTACK_1)
 
-func start_roll_tutorial() -> void:
-	GlobalRefs.player.can_roll = true
-	index += 1
-	DialogueManager.start_speech(tutorial_instructions[index])
-
-func end_tutorial() -> void:
+func _end_tutorial() -> void:
+	print("Tutorial finalizado")
 	DialogueManager.dialogue_ended.disconnect(_on_cutscene_ended)
 	DialogueManager.dialogue_started.disconnect(_on_cutscene_started)
-	GameManager.current_save.game_state = GameManager.GameState.TRAINING_COMPLETE
-	print("Tutorial finalizado")
+	
+	GameManager.set_game_state(GameManager.GameState.TRAINING_COMPLETE)
 	set_limits_layer(false)
 	zoom_out_camera()
 	tutorial_ui.hide_ui()
+	tutorial_finished.emit()
+
+# FUNÇÕES UTILITÁRIAS E VISUAIS
+func _play_dialogue(dialog_index: int) -> void:
+	if dialog_index < tutorial_instructions.size():
+		DialogueManager.start_speech(tutorial_instructions[dialog_index])
+
+func _wait(seconds: float) -> Signal:
+	return get_tree().create_timer(seconds).timeout
 
 func set_limits_layer(condition: bool) -> void:
 	tutorial_limit_1.set_collision_layer_value(8, condition)
@@ -110,34 +148,40 @@ func set_limits_layer(condition: bool) -> void:
 
 func zoom_in_camera() -> void:
 	var tween: Tween = create_tween()
-	tween.tween_property(get_node("../PlayerCamera"), "zoom", Vector2(2,2), 1)
+	tween.tween_property(get_node("../PlayerCamera"), "zoom", Vector2(2, 2), DELAY_CAMERA_ZOOM)
 
 func zoom_out_camera() -> void:
-	await get_tree().create_timer(1).timeout
+	await _wait(DELAY_CAMERA_ZOOM)
 	var tween: Tween = create_tween()
-	tween.tween_property(get_node("../PlayerCamera"), "zoom", Vector2(1,1), 1)
+	tween.tween_property(get_node("../PlayerCamera"), "zoom", Vector2(1, 1), DELAY_CAMERA_ZOOM)
 
 func dummy_appearence_anim() -> void:
 	GlobalRefs.player.can_move = false
 	transition_layer.show()
 	transition_rect.modulate.a = 0.0
+	
 	var tween: Tween = create_tween()
-	tween.tween_property(transition_rect, "modulate:a", 1, 1.0)
+	tween.tween_property(transition_rect, "modulate:a", 1.0, 1.0)
 	tutorial_ui.hide_ui()
-	tween.tween_callback(func(): show_second_practice_dummy())
-	tween.tween_property(transition_rect, "modulate:a", 0, 1.0)
-	tutorial_ui.show_ui()
+	tween.tween_callback(show_second_practice_dummy)
+	tween.tween_property(transition_rect, "modulate:a", 0.0, 1.0)
+	
 	await tween.finished
+	tutorial_ui.show_ui()
 	transition_layer.hide()
 	GlobalRefs.player.can_move = true
 
 func player_reposition_respawn() -> void:
-	GlobalRefs.player.position = player_reposition.global_position
+	GlobalRefs.player.global_position = player_reposition.global_position
 
 func hide_second_practice_dummy() -> void:
 	practice_dummy.hide()
-	practice_dummy.collision_shape.disabled = true
+	practice_dummy.collision_shape.set_deferred("disabled", true)
 
 func show_second_practice_dummy() -> void:
 	practice_dummy.show()
-	practice_dummy.collision_shape.disabled = false
+	practice_dummy.collision_shape.set_deferred("disabled", false)
+
+func disable_tutorial_interaction() -> void:
+	if interactable_comp:
+		interactable_comp.disable_interaction()

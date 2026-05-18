@@ -1,33 +1,33 @@
 extends State
 
-@export var cutscenes: Array[DialogueSettings]
 @export var tutorial_packed_scene: PackedScene
+@export var path_block_message: DialogueSettings
+@onready var fishing_rod: FishingRod = $"../../FishingRod"
+@onready var path_block: PathBlock = $"../../PathBlock"
 
-@onready var room_3: Node2D = $"../.."
-
-var index: int = 0
+var tutorial_instance: Node2D
 
 func _enter() -> void:
-	DialogueManager.dialogue_started.connect(_on_cutscene_started)
-	DialogueManager.dialogue_ended.connect(_on_cutscene_ended)
+	if fishing_rod:
+		fishing_rod.disable_fishing_rod_interaction() 
 	
-	var tutorial_scene = tutorial_packed_scene.instantiate()
-	room_3.add_child(tutorial_scene)
+	if path_block:
+		path_block.path_block_message = path_block_message
+		path_block.set_deferred("monitoring", true)
 	
-	print("sala 3.2")
+	if tutorial_packed_scene:
+		tutorial_instance = tutorial_packed_scene.instantiate() 
+		owner_node.add_child(tutorial_instance) 
+		tutorial_instance.tutorial_finished.connect(_on_tutorial_finished)
 
 func _exit() -> void:
-	DialogueManager.dialogue_started.disconnect(_on_cutscene_started)
-	DialogueManager.dialogue_ended.disconnect(_on_cutscene_ended)
+	if tutorial_instance:
+		if tutorial_instance.tutorial_finished.is_connected(_on_tutorial_finished):
+			tutorial_instance.tutorial_finished.disconnect(_on_tutorial_finished)
 
-func _update(_delta: float) -> void:
-	pass
-
-func _physics_update(_delta: float) -> void:
-	pass
-
-func _on_cutscene_started() -> void:
-	pass
-
-func _on_cutscene_ended() -> void:
-	pass
+func _on_tutorial_finished() -> void:
+	if path_block:
+		path_block.set_deferred("monitoring", false)
+		path_block.hide()
+	
+	owner_node.change_room_state()

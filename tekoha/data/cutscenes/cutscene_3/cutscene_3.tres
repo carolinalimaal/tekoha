@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_gkvpp"]
 script = ExtResource("1_gkvpp")
-text_pt = "Teste da cutscene 3"
+text_pt = "Teste da cutscene pescando até sacola sair da água"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [resource]
