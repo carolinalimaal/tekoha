@@ -83,7 +83,7 @@ position = Vector2(966, 715)
 sprite_frames = ExtResource("12_mch0w")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1847665103]
-energy = 0.8
+energy = 0.98
 blend_mode = 1
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1334648957]
