@@ -15,16 +15,6 @@
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="11_t76wk"]
 [ext_resource type="SpriteFrames" uid="uid://dl2so67ufwqwm" path="res://assets/sprites/props/pots/vaso_02_3.tres" id="12_mch0w"]
 
-[sub_resource type="Gradient" id="Gradient_ign5b"]
-offsets = PackedFloat32Array(0, 0.9736842)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dndjf"]
-gradient = SubResource("Gradient_ign5b")
-fill = 2
-fill_from = Vector2(0.52347416, 0)
-fill_to = Vector2(0.5140845, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mch0w"]
 size = Vector2(64, 32)
 
@@ -92,13 +82,9 @@ sprite_frames = ExtResource("11_mch0w")
 position = Vector2(966, 715)
 sprite_frames = ExtResource("12_mch0w")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1892424865]
-position = Vector2(672, 100.45311)
-scale = Vector2(10.1875, 9.515626)
-energy = 0.4
-texture = SubResource("GradientTexture2D_dndjf")
-offset = Vector2(0, 35)
-metadata/_edit_lock_ = true
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1847665103]
+energy = 0.8
+blend_mode = 1
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1334648957]
 zoom = Vector2(2, 2)
