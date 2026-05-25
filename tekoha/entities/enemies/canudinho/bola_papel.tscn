@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://7b232fm3daoh" path="res://assets/sprites/entities/enemies/canudinho_spritesheet.png" id="2_6fvpk"]
 [ext_resource type="Resource" uid="uid://clacbrg07garl" path="res://entities/enemies/canudinho/bola_papel.tres" id="3_hi3mn"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6fvpk"]
+radius = 6.0827627
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_hi3mn"]
 radius = 7.0
 
@@ -183,13 +186,18 @@ blend_point_3/node = SubResource("AnimationNodeAnimation_2dief")
 blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
-[node name="BolaPapel" type="Node2D" unique_id=1226409171 node_paths=PackedStringArray("animation_tree", "hurtbox_component", "visible_on_screen_notifier") groups=["projectile"]]
+[node name="BolaPapel" type="Area2D" unique_id=1799604730 node_paths=PackedStringArray("animation_tree", "hurtbox_component", "visible_on_screen_notifier") groups=["projectile"]]
+collision_layer = 0
+collision_mask = 128
 script = ExtResource("1_6fvpk")
 speed = 200
 animation_tree = NodePath("AnimationTree")
 hurtbox_component = NodePath("HurtboxComponent")
 visible_on_screen_notifier = NodePath("VisibleOnScreenNotifier2D")
-metadata/_custom_type_script = "uid://0bkrlmh2efko"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=510698242]
+shape = SubResource("CircleShape2D_6fvpk")
+debug_color = Color(0.663191, 0.5133951, 5.7756904e-07, 0.41960785)
 
 [node name="HurtboxComponent" type="Area2D" parent="." unique_id=1810461286 node_paths=PackedStringArray("hurtbox_collision")]
 collision_layer = 64
