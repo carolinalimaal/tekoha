@@ -193,7 +193,7 @@ metadata/_custom_type_script = "uid://0bkrlmh2efko"
 
 [node name="HurtboxComponent" type="Area2D" parent="." unique_id=1810461286 node_paths=PackedStringArray("hurtbox_collision")]
 collision_layer = 64
-collision_mask = 2
+collision_mask = 130
 script = ExtResource("1_devi0")
 attack_data = ExtResource("3_hi3mn")
 hurtbox_collision = NodePath("HurtboxCollision")

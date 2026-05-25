@@ -3065,6 +3065,7 @@ script = ExtResource("15_yqrof")
 script = ExtResource("12_a1qjk")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1749657786]
+position = Vector2(0, -21)
 color = Color(1, 0.9490196, 0.2901961, 1)
 energy = 0.9
 shadow_enabled = true

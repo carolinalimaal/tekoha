@@ -14,6 +14,8 @@
 [ext_resource type="SpriteFrames" uid="uid://cv3hbm5lptd1d" path="res://assets/sprites/props/pots/vaso_01_3.tres" id="11_mch0w"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="11_t76wk"]
 [ext_resource type="SpriteFrames" uid="uid://dl2so67ufwqwm" path="res://assets/sprites/props/pots/vaso_02_3.tres" id="12_mch0w"]
+[ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="15_hksbc"]
+[ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="16_0mwue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mch0w"]
 size = Vector2(64, 32)
@@ -103,3 +105,21 @@ shape = SubResource("RectangleShape2D_mch0w")
 
 [node name="Marker2D" type="Marker2D" parent="Room14Door" unique_id=1764054172]
 position = Vector2(-1, -56)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=452241584]
+position = Vector2(674, 446)
+
+[node name="Sacola" parent="Enemies" unique_id=461608080 instance=ExtResource("15_hksbc")]
+position = Vector2(-272, 172)
+
+[node name="Sacola2" parent="Enemies" unique_id=249321171 instance=ExtResource("15_hksbc")]
+position = Vector2(-272, -18)
+
+[node name="Sacola3" parent="Enemies" unique_id=553958468 instance=ExtResource("15_hksbc")]
+position = Vector2(265, -125)
+
+[node name="Canudinho" parent="Enemies" unique_id=2132468328 instance=ExtResource("16_0mwue")]
+position = Vector2(185, 251)
+
+[node name="Canudinho2" parent="Enemies" unique_id=1857772725 instance=ExtResource("16_0mwue")]
+position = Vector2(247, 229)
