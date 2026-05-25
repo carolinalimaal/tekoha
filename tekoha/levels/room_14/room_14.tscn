@@ -93,19 +93,6 @@ zoom = Vector2(2, 2)
 script = ExtResource("10_wybie")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
-[node name="Room14Door" type="Area2D" parent="." unique_id=240560434]
-position = Vector2(672, 752)
-script = ExtResource("11_t76wk")
-target_level_path = "uid://co0vptwphskq3"
-door_name = "Room14Door"
-metadata/_custom_type_script = "uid://dot8xsk0qoeln"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room14Door" unique_id=814042905]
-shape = SubResource("RectangleShape2D_mch0w")
-
-[node name="Marker2D" type="Marker2D" parent="Room14Door" unique_id=1764054172]
-position = Vector2(-1, -56)
-
 [node name="Enemies" type="Node2D" parent="." unique_id=452241584]
 position = Vector2(674, 446)
 
@@ -123,3 +110,16 @@ position = Vector2(185, 251)
 
 [node name="Canudinho2" parent="Enemies" unique_id=1857772725 instance=ExtResource("16_0mwue")]
 position = Vector2(247, 229)
+
+[node name="Room14Door" type="Area2D" parent="." unique_id=240560434]
+position = Vector2(672, 752)
+script = ExtResource("11_t76wk")
+target_level_path = "uid://co0vptwphskq3"
+door_name = "Room14Door"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room14Door" unique_id=814042905]
+shape = SubResource("RectangleShape2D_mch0w")
+
+[node name="Marker2D" type="Marker2D" parent="Room14Door" unique_id=1764054172]
+position = Vector2(-1, -56)
