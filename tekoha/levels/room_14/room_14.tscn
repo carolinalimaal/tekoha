@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://ckp1proet01b6" path="res://assets/sprites/tiles/interior_casas/house_tile_set.tres" id="2_6jjks"]
 [ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://levels/background/background.tscn" id="3_vay0d"]
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="4_bnmol"]
+[ext_resource type="Texture2D" uid="uid://pojrhvng50vq" path="res://assets/sprites/tiles/interior_restaurante/moveis/moveis.png" id="4_nh63o"]
 [ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="5_50e1o"]
 [ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="6_50e1o"]
 [ext_resource type="SpriteFrames" uid="uid://cqt7aidvj8f77" path="res://assets/sprites/props/pots/vaso_02_2.tres" id="6_drkai"]
@@ -14,8 +15,35 @@
 [ext_resource type="SpriteFrames" uid="uid://cv3hbm5lptd1d" path="res://assets/sprites/props/pots/vaso_01_3.tres" id="11_mch0w"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="11_t76wk"]
 [ext_resource type="SpriteFrames" uid="uid://dl2so67ufwqwm" path="res://assets/sprites/props/pots/vaso_02_3.tres" id="12_mch0w"]
+[ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="14_4yb6g"]
+[ext_resource type="Texture2D" uid="uid://4hv4ijur8gyw" path="res://assets/sprites/props/hammock/rede_save_livre.png" id="15_gslru"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="15_hksbc"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="16_0mwue"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or13i"]
+texture = ExtResource("4_nh63o")
+texture_region_size = Vector2i(32, 32)
+0:8/0 = 0
+1:8/0 = 0
+0:0/0 = 0
+0:10/size_in_atlas = Vector2i(2, 2)
+0:10/0 = 0
+2:10/size_in_atlas = Vector2i(2, 2)
+2:10/0 = 0
+0:9/size_in_atlas = Vector2i(2, 1)
+0:9/0 = 0
+0:4/size_in_atlas = Vector2i(2, 2)
+0:4/0 = 0
+0:2/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:4/size_in_atlas = Vector2i(2, 2)
+2:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pujtt"]
+tile_size = Vector2i(32, 32)
+sources/4 = SubResource("TileSetAtlasSource_or13i")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mch0w"]
 size = Vector2(64, 32)
@@ -44,8 +72,12 @@ tile_map_data = PackedByteArray("AAAKABYAAAABAAIAAAAKABUAAAABAAIAAAAKAAYAAAABAAI
 tile_set = ExtResource("2_6jjks")
 
 [node name="HouseInnerWalls" type="TileMapLayer" parent="Tiles" unique_id=963252949]
-tile_map_data = PackedByteArray("AAATABcAAAAFAAIAAAAWABcAAAAHAAIAAAARABYAAAADAAIAAAARABUAAAADAAIAAAARABQAAAADAAIAAAARABAAAAADAAIAAAARAA8AAAADAAIAAAAQAA8AAAACAAMAAAAPAA8AAAACAAMAAAAOAA8AAAACAAMAAAANAA8AAAACAAMAAAAMAA8AAAACAAMAAAALAA8AAAACAAMAAAAXABYAAAABAAIAAAAXABUAAAABAAIAAAAXABEAAAABAAIAAAAYABEAAAACAAMAAAAZABEAAAACAAMAAAAbABEAAAACAAMAAAAaABEAAAACAAMAAAAXABQAAAABAAIAAAAXABMAAAABAAIAAAAXABIAAAABAAIAAAAXABAAAAABAAIAAAAXAA8AAAABAAIAAAAXAA4AAAABAAIAAAAXAA0AAAABAAIAAAAXAAwAAAABAAIAAAAaAAwAAAACAAMAAAAbAAwAAAACAAMAAAAcAAwAAAACAAMAAAAdAAwAAAACAAMAAAAeAAwAAAACAAMAAAAUAAQAAAABAAIAAAAUAAUAAAABAAIAAAAUAAYAAAABAAIAAAAUAAcAAAABAAIAAAAUAAgAAAABAAIAAAAVAAgAAAADAAIAAAAVAAcAAAADAAIAAAAVAAYAAAADAAIAAAAVAAUAAAADAAIAAAAVAAQAAAADAAIAAAAXAAsAAAABAAIAAAAXAAoAAAABAAIAAAAXAAkAAAABAAIAAAAVAAkAAAADAAMAAAAUAAkAAAABAAMAAAALAAkAAAACAAMAAAAMAAkAAAACAAMAAAANAAkAAAACAAMAAAAOAAkAAAACAAMAAAAPAAkAAAACAAMAAAAQAAkAAAACAAMAAAARAAkAAAACAAMAAAASAAkAAAACAAMAAAAcABEAAAADAAEAAAAZAAwAAAABAAEAAAAZAA0AAAABAAIAAAAcABIAAAADAAIAAAATAAoAAAADAAIAAAATAAkAAAADAAEAAAARABEAAAADAAIAAAA=")
+tile_map_data = PackedByteArray("AAATABcAAAAFAAIAAAAWABcAAAAHAAIAAAARABYAAAADAAIAAAARABUAAAADAAIAAAARABQAAAADAAIAAAARABAAAAADAAIAAAARAA8AAAADAAIAAAAQAA8AAAACAAMAAAAPAA8AAAACAAMAAAAOAA8AAAACAAMAAAANAA8AAAACAAMAAAAMAA8AAAACAAMAAAALAA8AAAACAAMAAAAXABYAAAABAAIAAAAXABUAAAABAAIAAAAXABEAAAABAAIAAAAYABEAAAACAAMAAAAZABEAAAACAAMAAAAbABEAAAACAAMAAAAaABEAAAACAAMAAAAXABQAAAABAAIAAAAXABMAAAABAAIAAAAXABIAAAABAAIAAAAXABAAAAABAAIAAAAXAA8AAAABAAIAAAAXAA4AAAABAAIAAAAXAA0AAAABAAIAAAAXAAwAAAABAAIAAAAaAAwAAAACAAMAAAAbAAwAAAACAAMAAAAcAAwAAAACAAMAAAAdAAwAAAACAAMAAAAeAAwAAAACAAMAAAAUAAQAAAABAAIAAAAUAAUAAAABAAIAAAAUAAYAAAABAAIAAAAUAAcAAAABAAIAAAAUAAgAAAABAAIAAAAVAAgAAAADAAIAAAAVAAcAAAADAAIAAAAVAAYAAAADAAIAAAAVAAUAAAADAAIAAAAVAAQAAAADAAIAAAAXAAsAAAABAAIAAAAXAAoAAAABAAIAAAAXAAkAAAABAAIAAAAVAAkAAAADAAMAAAAUAAkAAAABAAMAAAALAAkAAAACAAMAAAAMAAkAAAACAAMAAAANAAkAAAACAAMAAAAOAAkAAAACAAMAAAAPAAkAAAACAAMAAAAQAAkAAAACAAMAAAARAAkAAAACAAMAAAASAAkAAAACAAMAAAAcABEAAAADAAEAAAAZAAwAAAABAAEAAAAZAA0AAAABAAIAAAAcABIAAAADAAIAAAATAAoAAAADAAIAAAATAAkAAAADAAEAAAARABEAAAADAAIAAAAOABEAAAADAAIAAAAOABAAAAADAAIAAAA=")
 tile_set = ExtResource("2_6jjks")
+
+[node name="Decorations" type="TileMapLayer" parent="Tiles" unique_id=624952240]
+tile_map_data = PackedByteArray("AAAPAAwABAAAAAQAAAAPAAkABAAAAAgAAAAQAAkABAABAAgAAAAeAAYABAAAAAAAAAAeAAgABAAAAAoAAAAdAAYABAAAAAIAAAAPAAQABAAAAAkAAAAbAAQABAABAAAAAAAcAAQABAACAAAAAAAcAAUABAACAAEAAAAcAAcABAACAAQAAAA=")
+tile_set = SubResource("TileSet_pujtt")
 
 [node name="Furniture" type="Node2D" parent="." unique_id=1118118285]
 y_sort_enabled = true
@@ -83,6 +115,10 @@ sprite_frames = ExtResource("11_mch0w")
 [node name="Pot5" parent="Furniture" unique_id=642247482 instance=ExtResource("5_50e1o")]
 position = Vector2(966, 715)
 sprite_frames = ExtResource("12_mch0w")
+
+[node name="SavePoint" parent="Furniture" unique_id=1381855768 instance=ExtResource("14_4yb6g")]
+position = Vector2(399, 548)
+hammock_texture = ExtResource("15_gslru")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1847665103]
 energy = 0.98
