@@ -444,6 +444,7 @@ position = Vector2(0, 67)
 
 [node name="Muiraquita" parent="." unique_id=1877604477 instance=ExtResource("12_4hwci")]
 position = Vector2(731, 318)
+id = 3
 
 [node name="Cecila" parent="." unique_id=2125482859 instance=ExtResource("13_yxphn")]
 position = Vector2(648, 483)

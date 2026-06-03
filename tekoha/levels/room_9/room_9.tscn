@@ -207,6 +207,7 @@ debug_color = Color(0.69803923, 0.49411765, 0, 0.41960785)
 
 [node name="Muiraquita" parent="FingerMuiraquita" unique_id=1877604477 instance=ExtResource("13_rsjlr")]
 position = Vector2(967, 920)
+id = 5
 
 [node name="FingerEnemies" type="Node2D" parent="." unique_id=1267283066]
 

@@ -95,6 +95,7 @@ position = Vector2(520, 776)
 
 [node name="Muiraquita2" parent="World" unique_id=1037859168 instance=ExtResource("8_nmlxt")]
 position = Vector2(2312, 232)
+id = 1
 
 [node name="Pot" parent="World" unique_id=1469293570 instance=ExtResource("10_i7xcn")]
 position = Vector2(720, 944)

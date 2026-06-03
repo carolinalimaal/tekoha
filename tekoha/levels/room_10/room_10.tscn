@@ -77,9 +77,11 @@ sprite_frames = ExtResource("8_6acsn")
 
 [node name="Muiraquita" parent="World" unique_id=1877604477 instance=ExtResource("7_8nycx")]
 position = Vector2(858, 1434)
+id = 6
 
 [node name="Muiraquita2" parent="World" unique_id=628375794 instance=ExtResource("7_8nycx")]
 position = Vector2(3165, 671)
+id = 7
 
 [node name="RootMecanic" type="Node2D" parent="." unique_id=956618240]
 y_sort_enabled = true

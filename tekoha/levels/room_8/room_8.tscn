@@ -562,3 +562,4 @@ position = Vector2(467, 363)
 
 [node name="Muiraquita" parent="." unique_id=700033084 instance=ExtResource("9_a1oop")]
 position = Vector2(1282, 459)
+id = 4

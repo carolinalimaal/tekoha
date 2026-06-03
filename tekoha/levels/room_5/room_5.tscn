@@ -722,3 +722,4 @@ hammock_texture = ExtResource("9_06kpn")
 
 [node name="Muiraquita" parent="." unique_id=899051990 instance=ExtResource("12_1mig3")]
 position = Vector2(480, 968)
+id = 2
