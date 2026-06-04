@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://b0do13h4w5fkm" path="res://assets/sprites/tiles/grama_terra/grama_terra_tile.png" id="2_777hw"]
 [ext_resource type="AudioStream" uid="uid://ddwpcn8y5abs7" path="res://assets/sound/music/room_2_loop.wav" id="2_ggyjx"]
 [ext_resource type="Texture2D" uid="uid://2orevd14dvd4" path="res://assets/sprites/tiles/rio_terra/terra_rio.png" id="3_2mt7e"]
-[ext_resource type="Texture2D" uid="uid://bfuifh5omshv6" path="res://assets/sprites/tiles/natureza/natureza.png" id="3_85668"]
 [ext_resource type="PackedScene" uid="uid://1qrmsqlofmkg" path="res://utils/door/door.tscn" id="4_85668"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="5_2mt7e"]
 [ext_resource type="Texture2D" uid="uid://cm76otpxch14d" path="res://assets/sprites/tiles/plataformas/pier_1.png" id="5_06kpn"]
+[ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="5_ggyjx"]
 [ext_resource type="Texture2D" uid="uid://br872k82ac3bp" path="res://assets/sprites/tiles/exterior_restaurante/restaurante cecília externo.png" id="6_77sj4"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="8_cqf1r"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="8_ln8wb"]
@@ -482,52 +482,6 @@ terrain_set_0/terrain_2/color = Color(0.25266293, 0.5407262, 0.43934014, 1)
 sources/0 = SubResource("TileSetAtlasSource_pmo2d")
 sources/1 = SubResource("TileSetAtlasSource_777hw")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2mt7e"]
-texture = ExtResource("3_85668")
-texture_region_size = Vector2i(32, 32)
-57:6/size_in_atlas = Vector2i(4, 6)
-57:6/0 = 0
-57:6/0/texture_origin = Vector2i(0, 80)
-57:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-54:8/size_in_atlas = Vector2i(3, 4)
-54:8/0 = 0
-54:8/0/texture_origin = Vector2i(2, 48)
-54:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-21:6/size_in_atlas = Vector2i(3, 6)
-21:6/0 = 0
-21:6/0/texture_origin = Vector2i(0, 80)
-21:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-0:6/size_in_atlas = Vector2i(3, 6)
-0:6/0 = 0
-0:6/0/texture_origin = Vector2i(0, 80)
-0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-17:8/size_in_atlas = Vector2i(4, 4)
-17:8/0 = 0
-17:8/0/texture_origin = Vector2i(0, 48)
-17:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-3:2/size_in_atlas = Vector2i(10, 10)
-3:2/0 = 0
-3:2/0/texture_origin = Vector2i(-16, 144)
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-29.634876, -27.65922, 38.076374, -27.402245, 37.757748, 10.514812, -29.473343, 10.8334465)
-13:5/size_in_atlas = Vector2i(4, 7)
-13:5/0 = 0
-13:5/0/texture_origin = Vector2i(-6, 96)
-13:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-24:3/size_in_atlas = Vector2i(4, 9)
-24:3/0 = 0
-24:3/0/texture_origin = Vector2i(0, 128)
-24:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-28:6/size_in_atlas = Vector2i(3, 6)
-28:6/0 = 0
-28:6/0/texture_origin = Vector2i(0, 80)
-28:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-
-[sub_resource type="TileSet" id="TileSet_pmo2d"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 128
-physics_layer_0/collision_mask = 17
-sources/0 = SubResource("TileSetAtlasSource_2mt7e")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mig3"]
 texture = ExtResource("6_77sj4")
 texture_region_size = Vector2i(32, 32)
@@ -664,8 +618,8 @@ tile_set = SubResource("TileSet_cqf1r")
 
 [node name="Nature" type="TileMapLayer" parent="Tiles" unique_id=1024378657]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAdAA4AAAA5AAYAAAAfABAAAAA5AAYAAAAIAA4AAAA5AAYAAAAaAA4AAAAcAAYAAAAPAA4AAAA2AAgAAAADABAAAAA2AAgAAAALABAAAAA2AAgAAAAZAA4AAAA2AAgAAAAVAA4AAAARAAgAAAAGABAAAAA5AAYAAAD2/wkAAAARAAgAAAD3/wcAAAA5AAYAAAD4/w4AAAANAAUAAAD5/wgAAAADAAIAAAD6/wsAAAA5AAYAAAD7/xEAAAA5AAYAAAD9/wgAAAA5AAYAAAD9/w0AAAA5AAYAAAD9/xEAAAANAAUAAAD//w4AAAAYAAMAAAAAAAkAAAANAAUAAAAAABIAAAAYAAMAAAABAAgAAAA2AAgAAAABAAwAAAA5AAYAAAACABEAAAA5AAYAAAADAAwAAAANAAUAAAAEAAcAAAA5AAYAAAAEABAAAAANAAUAAAAGAAcAAAARAAgAAAAGAAwAAAA5AAYAAAAIAAgAAAANAAUAAAAJAAkAAAA5AAYAAAALAAsAAAADAAIAAAAMAAgAAAA2AAgAAAAMAA8AAAA5AAYAAAANAAoAAAA5AAYAAAAOAAsAAAA2AAgAAAASAAgAAAA5AAYAAAASAAwAAAARAAgAAAAUAAgAAAARAAgAAAAVAA0AAAARAAgAAAAYAAoAAAA5AAYAAAAbAAoAAAANAAUAAAAcAA0AAAA5AAYAAAAIABAAAAARAAgAAAATAAsAAAAVAAYAAAAVAAoAAAA2AAgAAAAWAAwAAAANAAUAAAAXAA0AAAA5AAYAAAAZAAoAAAAYAAMAAAAeAAkAAAA5AAYAAAAgAAwAAAADAAIAAAAiAA8AAAANAAUAAAAlAAsAAAA5AAYAAAAjAAkAAAAYAAMAAAAhAAgAAAARAAgAAAAEABMAAAAcAAYAAAAhAA8AAAAAAAYAAAAlAA8AAAA5AAYAAAA=")
-tile_set = SubResource("TileSet_pmo2d")
+tile_map_data = PackedByteArray("AAAdAA4AAAA5AAYAAAAfABAAAAA5AAYAAAAIAA4AAAA5AAYAAAAaAA4AAAAcAAYAAAAPAA4AAAA2AAkAAAADABAAAAA2AAkAAAALABAAAAA2AAkAAAAZAA4AAAA2AAkAAAAVAA4AAAARAAgAAAAGABAAAAA5AAYAAAD2/wkAAAARAAgAAAD3/wcAAAA5AAYAAAD4/w4AAAANAAUAAAD5/wgAAAADAAIAAAD6/wsAAAA5AAYAAAD7/xEAAAA5AAYAAAD9/wgAAAA5AAYAAAD9/w0AAAA5AAYAAAD9/xEAAAANAAUAAAD//w4AAAAYAAMAAAAAAAkAAAANAAUAAAAAABIAAAAYAAMAAAABAAgAAAA2AAkAAAABAAwAAAA5AAYAAAACABEAAAA5AAYAAAADAAwAAAANAAUAAAAEAAcAAAA5AAYAAAAEABAAAAANAAUAAAAGAAcAAAARAAgAAAAGAAwAAAA5AAYAAAAIAAgAAAANAAUAAAAJAAkAAAA5AAYAAAALAAsAAAADAAIAAAAMAAgAAAA2AAkAAAAMAA8AAAA5AAYAAAANAAoAAAA5AAYAAAAOAAsAAAA2AAkAAAASAAgAAAA5AAYAAAASAAwAAAARAAgAAAAUAAgAAAARAAgAAAAVAA0AAAARAAgAAAAYAAoAAAA5AAYAAAAbAAoAAAANAAUAAAAcAA0AAAA5AAYAAAAIABAAAAARAAgAAAATAAsAAAAVAAYAAAAVAAoAAAA2AAkAAAAWAAwAAAANAAUAAAAXAA0AAAA5AAYAAAAZAAoAAAAYAAMAAAAeAAkAAAA5AAYAAAAgAAwAAAADAAIAAAAiAA8AAAANAAUAAAAlAAsAAAA5AAYAAAAjAAkAAAAYAAMAAAAhAAgAAAARAAgAAAAEABMAAAAcAAYAAAAhAA8AAAAAAAYAAAAlAA8AAAA5AAYAAAAfAAwAAAANAAUAAAD6/w4AAAAAAAYAAAA=")
+tile_set = ExtResource("5_ggyjx")
 
 [node name="Restaurant" type="TileMapLayer" parent="Tiles" unique_id=998249889]
 tile_map_data = PackedByteArray("AAAfABUAAAAAAAcAAAAfABYAAAAAAAgAAAAgABAAAAABAAIAAAAgABEAAAABAAMAAAAgABIAAAABAAQAAAAgABMAAAABAAUAAAAgABQAAAABAAYAAAAgABUAAAABAAcAAAAgABYAAAABAAgAAAAhABAAAAACAAIAAAAhABEAAAACAAMAAAAhABIAAAACAAQAAAAhABMAAAACAAUAAAAhABQAAAACAAYAAAAhABUAAAACAAcAAAAhABYAAAACAAgAAAAiABAAAAADAAIAAAAiABEAAAADAAMAAAAiABIAAAADAAQAAAAiABMAAAADAAUAAAAiABQAAAADAAYAAAAiABUAAAADAAcAAAAiABYAAAADAAgAAAAjABAAAAAEAAIAAAAjABEAAAAEAAMAAAAjABIAAAAEAAQAAAAjABMAAAAEAAUAAAAjABQAAAAEAAYAAAAjABUAAAAEAAcAAAAjABYAAAAEAAgAAAAkABAAAAAFAAIAAAAkABEAAAAFAAMAAAAkABIAAAAFAAQAAAAkABMAAAAFAAUAAAAkABQAAAAFAAYAAAAkABUAAAAFAAcAAAAkABYAAAAFAAgAAAAlABAAAAAGAAIAAAAlABEAAAAGAAMAAAAlABIAAAAGAAQAAAAlABMAAAAGAAUAAAAlABQAAAAGAAYAAAAlABUAAAAGAAcAAAAlABYAAAAGAAgAAAAmABAAAAAHAAIAAAAmABEAAAAHAAMAAAAmABIAAAAHAAQAAAAmABMAAAAHAAUAAAAmABQAAAAHAAYAAAAmABUAAAAHAAcAAAAnABAAAAAIAAIAAAAnABEAAAAIAAMAAAAnABIAAAAIAAQAAAAnABMAAAAIAAUAAAAnABQAAAAIAAYAAAAnABUAAAAIAAcAAAA=")

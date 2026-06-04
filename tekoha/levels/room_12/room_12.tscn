@@ -56,11 +56,11 @@ position = Vector2(96, 0)
 
 [node name="Limits" type="Node2D" parent="." unique_id=361058024]
 
-[node name="Area2D" type="Area2D" parent="Limits" unique_id=171662544]
+[node name="StaticBody2D" type="StaticBody2D" parent="Limits" unique_id=268495799]
 collision_layer = 128
 collision_mask = 17
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/Area2D" unique_id=2115228787]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/StaticBody2D" unique_id=2115228787]
 polygon = PackedVector2Array(355, 672, 547, 640, 707, 672, 899, 576, 995, 480, 1155, 480, 1219, 704, 931, 896, 387, 800, 355, 800, 1219, 1120, 1347, 256)
 
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("5_vppv2")]
