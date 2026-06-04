@@ -8,6 +8,7 @@ enum GameState {
 	FIRST_MEETING_CECILIA,
 	AFTER_FIRST_ENEMY,
 	SECOND_MEETING_CECILIA,
+	IN_KITCHEN,
 }
 
 var current_save: SaveData
@@ -55,3 +56,4 @@ func set_game_state(new_state: GameState) -> void:
 	if new_state and new_state != current_save.game_state:
 		print("estado antigo: ", current_save.game_state, " estado novo: ", new_state)
 		current_save.game_state = new_state
+		GlobalSignals.game_state_changed.emit(new_state)

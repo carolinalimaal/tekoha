@@ -21,5 +21,4 @@ func _on_timeline_ended() -> void:
 	if GameManager.current_save.game_state == GameManager.GameState.TRAINING_COMPLETE:
 		GameManager.set_game_state(GameManager.GameState.FIRST_MEETING_CECILIA)
 	elif GameManager.current_save.game_state == GameManager.GameState.AFTER_FIRST_ENEMY:
-		#GameManager.set_game_state(GameManager.GameState.FIRST_MEETING_CECILIA)
-		print("indo para a segunda fase do jogo!")
+		GameManager.set_game_state(GameManager.GameState.SECOND_MEETING_CECILIA)

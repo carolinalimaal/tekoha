@@ -10,6 +10,9 @@
 [ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="6_vtyum"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="7_mhh0g"]
 [ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="8_jdn40"]
+[ext_resource type="Script" uid="uid://d1vcrcidpkigq" path="res://utils/path_block.gd" id="11_4m76p"]
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="12_lveah"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="13_8n5gw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pu6nj"]
 texture = ExtResource("3_k7k0n")
@@ -253,6 +256,20 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtyum"]
 size = Vector2(32, 64)
 
+[sub_resource type="Resource" id="Resource_rak3t"]
+script = ExtResource("12_lveah")
+actor_name = "Curupira"
+text_pt = "Não posso voltar pro salão... Tem muitas pessoas lá, vou dar a volta pela floresta para ir para casa."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_1n1lg"]
+script = ExtResource("13_8n5gw")
+dialogues = Array[ExtResource("12_lveah")]([SubResource("Resource_rak3t")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lveah"]
+radius = 29.274563
+
 [node name="Room7" type="Node2D" unique_id=838014098]
 y_sort_enabled = true
 script = ExtResource("1_k7k0n")
@@ -331,3 +348,15 @@ position = Vector2(47, 170)
 zoom = Vector2(2, 2)
 script = ExtResource("7_mhh0g")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
+
+[node name="PathBlock" type="Area2D" parent="." unique_id=1066191275]
+position = Vector2(367, 336)
+script = ExtResource("11_4m76p")
+path_block_message = SubResource("Resource_1n1lg")
+push_direction = Vector2(0, -1)
+push_distance = 32.0
+metadata/_custom_type_script = "uid://d1vcrcidpkigq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathBlock" unique_id=1395391267]
+shape = SubResource("CircleShape2D_lveah")
+debug_color = Color(0.6392157, 0.5254902, 0, 0.7607843)

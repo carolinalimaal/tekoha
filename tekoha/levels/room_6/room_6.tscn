@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dnquhp1xxloh7"]
 
-[ext_resource type="Script" uid="uid://up3s6m65v4h7" path="res://utils/level/level.gd" id="1_us3uc"]
+[ext_resource type="Script" uid="uid://dj5gbwsev0rga" path="res://levels/room_6/room_6.gd" id="1_bs7kn"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/ground.tres" id="2_fxwqa"]
 [ext_resource type="TileSet" uid="uid://ccj1hrp0264wr" path="res://assets/sprites/tiles/interior_restaurante/interior_restaurante_tiles.tres" id="3_yxphn"]
 [ext_resource type="Script" uid="uid://dfho07qjg6y3i" path="res://levels/room_6/roll_mecanic.gd" id="5_0ipkc"]
@@ -337,7 +337,7 @@ metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
 [node name="Room6" type="Node2D" unique_id=1667791600]
 y_sort_enabled = true
-script = ExtResource("1_us3uc")
+script = ExtResource("1_bs7kn")
 limit_top = 74
 limit_bottom = 876
 limit_left = 46
