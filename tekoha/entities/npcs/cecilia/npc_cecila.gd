@@ -1,17 +1,19 @@
 extends NPC
 
-# Possivelmente tera uma FSM aqui para decidir qual dialogo ira acontecer
-# Programar isso para analisar o game_state em current_save
-
 @export var dialogues_list: Array[DialogueSettings]
+
+var current_dialogue_index: int = -1
 
 func _ready() -> void:
 	super()
-	# Verificar essas condicoes aqui
-	if GameManager.current_save.game_state == GameManager.GameState.TRAINING_COMPLETE:
+	if GameManager.current_save.game_state < GameManager.GameState.AFTER_FIRST_ENEMY:
 		npc_dialogue = dialogues_list[0]
-	elif GameManager.current_save.game_state == GameManager.GameState.AFTER_FIRST_ENEMY:
+	elif GameManager.current_save.game_state >= GameManager.GameState.AFTER_FIRST_ENEMY:
 		npc_dialogue = dialogues_list[1]
+
+func interact() -> void:
+	current_dialogue_index = dialogues_list.find(npc_dialogue)
+	super()
 
 func _on_timeline_started() -> void:
 	super()

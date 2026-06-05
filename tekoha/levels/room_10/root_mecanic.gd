@@ -1,6 +1,7 @@
 class_name RootMecanic extends Node2D
 
 signal shake_camera()
+signal puzzle_completed
 
 @onready var mecanic_activators: Node2D = $MecanicActivators
 @onready var roots: Node2D = $Roots
@@ -71,6 +72,8 @@ func camera_anim(camera: PlayerCamera, step: int):
 
 	camera.can_follow_player = true
 	partial_despause()
+	if step == meta_activations:
+		puzzle_completed.emit()
 
 func root_anim(step: int):
 	var middle_step = (meta_activations/2) + 1
@@ -101,6 +104,19 @@ func root_anim(step: int):
 			
 		if has_consumable:
 				turn_consumable_on()
+
+func set_completed() -> void:
+	for activator in mecanic_activators.get_children():
+		if activator is Torch:
+			activator.hitbox_component.monitoring = false
+			activator.hitbox_collision.disabled = true
+
+	for root in roots.get_children():
+		root.hide()
+		root.set_collision_layer_value(9, false)
+
+	if has_consumable:
+		turn_consumable_on()
 
 func turn_consumable_on():
 	consumable.visible = true

@@ -8,16 +8,45 @@
 [sub_resource type="Resource" id="Resource_meiwg"]
 script = ExtResource("1_meiwg")
 background_image = ExtResource("2_81xkw")
-text_pt = "Teste da cutscene 2"
+text_pt = "..."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_8128d"]
 script = ExtResource("1_meiwg")
+actor_name = "Iara"
 background_image = ExtResource("3_q8wif")
-text_pt = "Teste da cutscene 2"
+text_pt = "Ei!! O que é isso na sua mão? Não vai jogar nada nessa água não!!!"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_81xkw"]
+script = ExtResource("1_meiwg")
+actor_name = "Curupira"
+background_image = ExtResource("2_81xkw")
+text_pt = "Não estou jogando nada nessas águas, estou apenas pescando!"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_q8wif"]
+script = ExtResource("1_meiwg")
+actor_name = "Iara"
+background_image = ExtResource("3_q8wif")
+text_pt = "Você é o Curupira, não é?"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_yepy2"]
+script = ExtResource("1_meiwg")
+actor_name = "Curupira"
+background_image = ExtResource("2_81xkw")
+text_pt = "Não sei do que você está falando..."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_erium"]
+script = ExtResource("1_meiwg")
+actor_name = "Iara"
+background_image = ExtResource("3_q8wif")
+text_pt = "É você mesmo!! Claro que sabe, você é o Curupira! Você deveria estar me ajudando a proteger os animais!"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [resource]
 script = ExtResource("2_w1dvp")
-dialogues = Array[ExtResource("1_meiwg")]([SubResource("Resource_meiwg"), SubResource("Resource_8128d")])
+dialogues = Array[ExtResource("1_meiwg")]([SubResource("Resource_meiwg"), SubResource("Resource_8128d"), SubResource("Resource_81xkw"), SubResource("Resource_q8wif"), SubResource("Resource_yepy2"), SubResource("Resource_erium")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
