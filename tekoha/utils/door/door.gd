@@ -1,5 +1,6 @@
 class_name Door extends Area2D
 
+
 # Isso cria um botão no Inspetor para você selecionar o arquivo .tscn, 
 # mas salva apenas o texto do caminho, evitando a dependência circular!
 @export_file("*.tscn") var target_level_path: String
@@ -47,6 +48,12 @@ func on_animation_midpoint_reached() -> void:
 	var next_level_camera = level_instance.get_node("PlayerCamera")
 	next_level_camera.global_position.x = level_door_marker.global_position.x
 	next_level_camera.global_position.y = level_door_marker.global_position.y
+	
+	var next_level_is_dark = level_instance.dark_room
+	if next_level_is_dark:
+		GlobalRefs.player.turn_light_on_or_off(true)
+	else:
+		GlobalRefs.player.turn_light_on_or_off(false)
 	
 	GlobalRefs.player.global_position = spawn_point
 	GlobalSignals.emit_signal("level_loading_finished")

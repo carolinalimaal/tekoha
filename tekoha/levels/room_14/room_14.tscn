@@ -79,6 +79,7 @@ limit_top = -101
 limit_bottom = 985
 limit_left = -1
 limit_right = 1326
+dark_room = true
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1563633268]
 y_sort_enabled = true
