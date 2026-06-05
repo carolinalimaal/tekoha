@@ -9,6 +9,9 @@
 [ext_resource type="TileSet" uid="uid://6emc5pw2epmo" path="res://assets/sprites/tiles/restaurantes/restaurantes.tres" id="7_gnup6"]
 [ext_resource type="PackedScene" uid="uid://r33bwb7ekbh8" path="res://entities/npcs/vendedor/npc_seller.tscn" id="8_f01of"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="9_a1oop"]
+[ext_resource type="Script" uid="uid://d1vcrcidpkigq" path="res://utils/path_block.gd" id="10_6mn3v"]
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="11_itpey"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="12_d3h20"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6mn3v"]
 texture = ExtResource("2_8qeqp")
@@ -484,6 +487,20 @@ size = Vector2(10, 94)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mn3v"]
 size = Vector2(224, 16)
 
+[sub_resource type="Resource" id="Resource_bw01x"]
+script = ExtResource("11_itpey")
+actor_name = "Curupira"
+text_pt = "Melhor ir andando pela floresta, o restaurante tá muito cheio..."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_evuck"]
+script = ExtResource("12_d3h20")
+dialogues = Array[ExtResource("11_itpey")]([SubResource("Resource_bw01x")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnup6"]
+size = Vector2(10, 100)
+
 [node name="Room8" type="Node2D" unique_id=2101955080]
 y_sort_enabled = true
 script = ExtResource("1_wjxbu")
@@ -524,7 +541,7 @@ position = Vector2(27, 60)
 polygon = PackedVector2Array(114, -20, 266, -1, 249, 90, 206, 188, 110, 240, 34, 313, -6, 365, -20, 376, -20, 478, 228, 477, 240, 453, 286, 446, 300, 419, 352, 413, 367, 384, 483, 383, 743, 413, 773, 412, 775, 389, 830, 388, 839, 413, 865, 413, 871, 355, 926, 354, 934, 384, 991, 381, 1000, 357, 1110, 351, 1181, 417, 1216, 462, 1248, 452, 1279, 440, 1297, 421, 1376, 417, 1419, 356, 1332, 246, 1232, 237, 1136, 177, 986, 166, 912, 178, 809, 205, 724, 240, 626, 192, 550, 207, 528, 119, 534, 4, 1063.3987, 73.133224, 1443, 198, 1433, 422, 1200, 497, 1111, 410, 753, 448, 427, 409, 180, 532, -40, 504, -39, 362, -39, 27)
 
 [node name="Room8Door" type="Area2D" parent="." unique_id=1788409691]
-position = Vector2(20, 485)
+position = Vector2(15, 485)
 collision_layer = 2048
 script = ExtResource("2_1p0c7")
 target_level_path = "uid://yeu56q2hrpgm"
@@ -563,3 +580,15 @@ position = Vector2(467, 363)
 [node name="Muiraquita" parent="." unique_id=700033084 instance=ExtResource("9_a1oop")]
 position = Vector2(1282, 459)
 id = 4
+
+[node name="PathBlock" type="Area2D" parent="." unique_id=68991560]
+position = Vector2(30, 485)
+script = ExtResource("10_6mn3v")
+path_block_message = SubResource("Resource_evuck")
+push_direction = Vector2(1, 0)
+push_distance = 32.0
+metadata/_custom_type_script = "uid://d1vcrcidpkigq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathBlock" unique_id=2139761038]
+shape = SubResource("RectangleShape2D_gnup6")
+debug_color = Color(0.6392157, 0.5254902, 0, 0.7607843)
