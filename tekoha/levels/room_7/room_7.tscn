@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="4_oqleg"]
 [ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://levels/background/background.tscn" id="5_mhh0g"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="5_pu6nj"]
+[ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interior_restaurante/moveis/moveis.tres" id="5_rak3t"]
 [ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="6_vtyum"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="7_mhh0g"]
 [ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="8_jdn40"]
@@ -348,6 +349,10 @@ tile_set = SubResource("TileSet_8n5gw")
 [node name="Porta" type="TileMapLayer" parent="Tiles" unique_id=897060643]
 tile_map_data = PackedByteArray("AAALAAoAAAABAAUAAAAMAAoAAAAFAAEAAAAKAAoAAAAEAAEAAAALAAsAAAADAAIAAAA=")
 tile_set = ExtResource("2_jdn40")
+
+[node name="Decoration" type="TileMapLayer" parent="Tiles" unique_id=1726615915]
+tile_map_data = PackedByteArray("AAAMAAAAAQACAAkAAAA=")
+tile_set = ExtResource("5_rak3t")
 
 [node name="Limits" type="Node2D" parent="Tiles" unique_id=1167088004]
 
