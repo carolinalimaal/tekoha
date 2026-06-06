@@ -22,8 +22,10 @@ func _update_cecilia() -> void:
 	var state = GameManager.current_save.game_state
 	if state <= GameManager.GameState.TRAINING_COMPLETE:
 		npc_cecilia.global_position = first_cecilia_spawn.global_position
+		npc_cecilia.npc_dialogue = npc_cecilia.dialogues_list[0]
 	elif state >= GameManager.GameState.AFTER_FIRST_ENEMY:
 		npc_cecilia.global_position = second_cecilia_spawn.global_position
+		npc_cecilia.npc_dialogue = npc_cecilia.dialogues_list[1]
 
 func _on_game_state_changed(new_state: GameManager.GameState) -> void:
 	if new_state >= GameManager.GameState.AFTER_FIRST_ENEMY:

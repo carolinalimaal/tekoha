@@ -13,6 +13,9 @@ enum GameState {
 	IN_ROOM_8,
 	AFTER_PUZZLE_1,
 	AFTER_PUZZLE_2,
+	ROOM_14_UNLOCKED,
+	TOOLS_COLLECTED,
+	AFTER_PUZZLE_3,
 }
 
 var current_save: SaveData

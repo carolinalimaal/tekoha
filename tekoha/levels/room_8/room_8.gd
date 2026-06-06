@@ -7,7 +7,7 @@ func  _ready() -> void:
 		GameManager.set_game_state(GameManager.GameState.IN_ROOM_8)
 		_auto_save()
 	
-	room_8_door.monitoring = false
+	room_8_door.set_deferred("monitoring", false)
 	
 
 func _auto_save() -> void:

@@ -35,7 +35,7 @@ func _on_puzzle_activator_off():
 	var step = current_activations
 	
 	if level_parent.name == "Room10":
-		if current_activations in [1, (meta_activations/2) + 1, meta_activations]:
+		if current_activations in [1, (meta_activations/2.0) + 1, meta_activations]:
 			shake_camera.emit()
 			await get_tree().create_timer(1).timeout
 			camera_zoom_in_roots(step)
@@ -76,7 +76,7 @@ func camera_anim(camera: PlayerCamera, step: int):
 		puzzle_completed.emit()
 
 func root_anim(step: int):
-	var middle_step = (meta_activations/2) + 1
+	var middle_step = (meta_activations/2.0) + 1
 	print("aqui",middle_step)
 	if level_parent.name == "Room10":
 		match step:
@@ -110,6 +110,8 @@ func set_completed() -> void:
 		if activator is Torch:
 			activator.hitbox_component.monitoring = false
 			activator.hitbox_collision.disabled = true
+		if activator.puzzle_activator.is_connected(_on_puzzle_activator_off):
+			activator.puzzle_activator.disconnect(_on_puzzle_activator_off)
 
 	for root in roots.get_children():
 		root.hide()

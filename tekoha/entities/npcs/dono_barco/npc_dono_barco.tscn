@@ -1,14 +1,67 @@
 [gd_scene format=3 uid="uid://b2sy76ie66ulp"]
 
-[ext_resource type="Script" uid="uid://bv7xgwalm2jk" path="res://entities/npcs/npc.gd" id="1_rmrje"]
+[ext_resource type="Script" uid="uid://dp1y1t05gr5fq" path="res://entities/npcs/dono_barco/npc_dono_barco.gd" id="1_1euh0"]
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="2_1euh0"]
 [ext_resource type="Texture2D" uid="uid://chs6gllwmr2br" path="res://assets/sprites/entities/npcs/npc_dono_barco.png" id="2_j46lk"]
 [ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="3_1euh0"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="3_6jbsf"]
 
+[sub_resource type="Resource" id="Resource_1euh0"]
+script = ExtResource("2_1euh0")
+actor_name = "Curupira"
+text_pt = "Tu es o dono desse barco?"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_cl38t"]
+script = ExtResource("2_1euh0")
+actor_name = "Pescador"
+text_pt = "Sim, tu es o Curupira, nao e?"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_grtgn"]
+script = ExtResource("2_1euh0")
+actor_name = "Curupira"
+text_pt = "Sim... E eu estou precisando voltar pra minha cabana, mas preciso passar por esse rio"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_ff8i3"]
+script = ExtResource("2_1euh0")
+actor_name = "Curupira"
+text_pt = "Tu podes me ajudar a atravessar esse rio?"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_7di1m"]
+script = ExtResource("2_1euh0")
+actor_name = "Pescador"
+text_pt = "Ó, eu te levo, mas vais ter que me ajudar. Preciso arrumar uma coisa no motor do barco e as ferramentas tão na casa azul."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_ninet"]
+script = ExtResource("2_1euh0")
+actor_name = "Pescador"
+text_pt = "Se tu pegares pra mim, arrumo o barco. So tem um detalhe, a casa ta infestada com essas coisas que surgiram aqui na vila."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_6jbsf"]
+script = ExtResource("3_6jbsf")
+dialogues = Array[ExtResource("2_1euh0")]([SubResource("Resource_1euh0"), SubResource("Resource_cl38t"), SubResource("Resource_grtgn"), SubResource("Resource_ff8i3"), SubResource("Resource_7di1m"), SubResource("Resource_ninet")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
+[sub_resource type="Resource" id="Resource_1cplf"]
+script = ExtResource("2_1euh0")
+actor_name = "Pescador"
+text_pt = "Pega lá as ferramentas na minha casa, é a azul"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_fnfl1"]
+script = ExtResource("3_6jbsf")
+dialogues = Array[ExtResource("2_1euh0")]([SubResource("Resource_1cplf")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
 [sub_resource type="Resource" id="Resource_u6lot"]
 script = ExtResource("2_1euh0")
-text_pt = "Teste"
+actor_name = "Pescador"
+text_pt = "Como eu prometi pra ti, vou te levar pra perto da tua casa."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_jtmfk"]
@@ -53,9 +106,9 @@ radius = 30.0
 
 [node name="NPCDonoBarco" type="CharacterBody2D" unique_id=1741828607 node_paths=PackedStringArray("animated_sprite")]
 collision_layer = 1024
-script = ExtResource("1_rmrje")
+script = ExtResource("1_1euh0")
+dialogues_list = Array[ExtResource("3_6jbsf")]([SubResource("Resource_6jbsf"), SubResource("Resource_fnfl1"), SubResource("Resource_jtmfk")])
 animated_sprite = NodePath("AnimatedSprite2D")
-npc_dialogue = SubResource("Resource_jtmfk")
 metadata/_custom_type_script = "uid://bv7xgwalm2jk"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=398090295]

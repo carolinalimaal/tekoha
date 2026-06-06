@@ -14,8 +14,8 @@ func _ready() -> void:
 		GameManager.set_game_state(GameManager.GameState.IN_KITCHEN)
 		_auto_save()
 	
-	room_7_door.monitoring = false
-	room_8_door.monitoring = false
+	room_7_door.set_deferred("monitoring", false)
+	room_8_door.set_deferred("monitoring", false)
 	
 	cecilia.npc_dialogue = cecilia.dialogues_list[0]
 	
@@ -48,14 +48,12 @@ func _after_first_dialogue() -> void:
 	cecilia.interactable_component.disable_interaction()
 	path_block2.set_deferred("monitoring", false)
 	area_2d.set_deferred("monitoring", true)
-	if GameManager.current_save.game_state == GameManager.GameState.IN_KITCHEN:
-		GameManager.set_game_state(GameManager.GameState.AFTER_CECILIA_GIFT)
 
 func _after_exit_dialogue() -> void:
 	_phase = Phase.DONE
 	area_2d.set_deferred("monitoring", false)
 	cecilia.interactable_component.disable_interaction()
-	room_8_door.monitoring = true
+	room_8_door.set_deferred("monitoring", true)
 
 func _auto_save() -> void:
 	await get_tree().process_frame
