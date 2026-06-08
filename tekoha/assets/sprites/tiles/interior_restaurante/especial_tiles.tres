@@ -1,7 +1,15 @@
 [gd_resource type="TileSet" format=3 uid="uid://c2k8hq2241a5o"]
 
 [ext_resource type="Texture2D" uid="uid://pojrhvng50vq" path="res://assets/sprites/tiles/interior_restaurante/moveis/moveis.png" id="1_eknl0"]
+[ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="1_ycqb6"]
 [ext_resource type="Texture2D" uid="uid://chighqrp3ctbd" path="res://assets/sprites/tiles/objetos/objetos.png" id="2_ycqb6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xaiu6"]
+texture = ExtResource("1_ycqb6")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(4, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-58, -27, 58.5, -27.5, 58.5, 24.5, -58, 24.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yxphn"]
 texture = ExtResource("1_eknl0")
@@ -104,3 +112,4 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 128
 sources/2 = SubResource("TileSetAtlasSource_yxphn")
 sources/3 = SubResource("TileSetAtlasSource_u15um")
+sources/0 = SubResource("TileSetAtlasSource_xaiu6")

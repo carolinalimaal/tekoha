@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="5_50e1o"]
 [ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="6_50e1o"]
 [ext_resource type="SpriteFrames" uid="uid://cqt7aidvj8f77" path="res://assets/sprites/props/pots/vaso_02_2.tres" id="6_drkai"]
+[ext_resource type="TileSet" uid="uid://dywrwaqccjtxq" path="res://assets/sprites/tiles/interior_cozinha/cozinha.tres" id="6_gslru"]
 [ext_resource type="Resource" uid="uid://d3cuhf8ovruif" path="res://data/items/manga.tres" id="6_mch0w"]
 [ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="6_t76wk"]
 [ext_resource type="SpriteFrames" uid="uid://d1u4kbte4dt8y" path="res://assets/sprites/props/chest/chest_03.tres" id="7_mch0w"]
@@ -16,9 +17,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cv3hbm5lptd1d" path="res://assets/sprites/props/pots/vaso_01_3.tres" id="11_mch0w"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="11_t76wk"]
 [ext_resource type="SpriteFrames" uid="uid://dl2so67ufwqwm" path="res://assets/sprites/props/pots/vaso_02_3.tres" id="12_mch0w"]
-[ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="14_4yb6g"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="15_hksbc"]
-[ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="15_nh63o"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="16_0mwue"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4yb6g"]
@@ -108,8 +107,12 @@ tile_set = ExtResource("2_6jjks")
 
 [node name="Decorations" type="TileMapLayer" parent="Tiles" unique_id=624952240]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAeAAkAAgAAAAoAAAAPAAwAAgAAAAQAAAAPAAkAAgAAAAgAAAAQAAkAAgABAAgAAAAaAAQAAgABAAAAAAAbAAQAAgACAAAAAAAbAAUAAgACAAEAAAAeAAYAAgAAAAAAAAAbAAcAAgACAAQAAAAPAAQAAgAAAAkAAAA=")
+tile_map_data = PackedByteArray("AAAPAAwAAgAAAAQAAAAPAAkAAgAAAAgAAAAPAAQAAgAAAAkAAAAXAAQAAgABAAAAAAAYAAQAAgACAAAAAAAYAAUAAgACAAEAAAAWAAYAAgACAAQAAAAYAAkAAgAAAAoAAAAcAAwAAgAEAAoAAAAaAAQAAgABAAgAAAANAAkAAgAEAAoAAAANABEAAAAAAAAAAAA=")
 tile_set = ExtResource("5_4yb6g")
+
+[node name="Cozinha" type="TileMapLayer" parent="Tiles" unique_id=770062088]
+tile_map_data = PackedByteArray("AAAdAAYAAAABAAIAAQAeAAYAAgAAAAIAAgAeAAcAAgAAAAMAAgAeAAgAAgAAAAMAAgAeAAkAAgAAAAUAAQAeAAoAAgAAAAYAAAAeAAsAAgACAAYAAAAdAAcAAAACAAYAAAAcAAQAAgAHAAAAAAAcAAUAAgAHAAEAAAAcAAYAAgAHAAIAAAAdAAQAAAABAAAAAAAdAAUAAAABAAEAAQAeAAUAAgAAAAEAAQAbAAYAAgACAAUAAAAaAAYAAgACAAUAAAAaAAcAAAACAAYAAAAbAAcAAAACAAYAAAAcAAcAAAACAAYAAAA=")
+tile_set = ExtResource("6_gslru")
 
 [node name="Furniture" type="Node2D" parent="." unique_id=1118118285]
 y_sort_enabled = true
@@ -147,10 +150,6 @@ sprite_frames = ExtResource("11_mch0w")
 [node name="Pot5" parent="Furniture" unique_id=642247482 instance=ExtResource("5_50e1o")]
 position = Vector2(966, 715)
 sprite_frames = ExtResource("12_mch0w")
-
-[node name="SavePoint" parent="Furniture" unique_id=1381855768 instance=ExtResource("14_4yb6g")]
-position = Vector2(434, 548)
-hammock_texture = ExtResource("15_nh63o")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1847665103]
 energy = 0.9
