@@ -1,0 +1,43 @@
+[gd_resource type="TileSet" format=3 uid="uid://bnhj0h66lti0o"]
+
+[ext_resource type="Texture2D" uid="uid://b6r8kxcula7ip" path="res://assets/sprites/tiles/barco/barco.png" id="1_c3s06"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8k31m"]
+texture = ExtResource("1_c3s06")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/animation_columns = 4
+0:0/animation_speed = 5.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:3/size_in_atlas = Vector2i(3, 3)
+0:3/animation_columns = 4
+0:3/animation_speed = 5.0
+0:3/animation_frame_0/duration = 1.0
+0:3/animation_frame_1/duration = 1.0
+0:3/animation_frame_2/duration = 1.0
+0:3/animation_frame_3/duration = 1.0
+0:3/0 = 0
+0:7/size_in_atlas = Vector2i(3, 2)
+0:7/animation_columns = 4
+0:7/animation_speed = 5.0
+0:7/animation_frame_0/duration = 1.0
+0:7/animation_frame_1/duration = 1.0
+0:7/animation_frame_2/duration = 1.0
+0:7/animation_frame_3/duration = 1.0
+0:7/0 = 0
+0:10/size_in_atlas = Vector2i(3, 2)
+0:10/animation_columns = 4
+0:10/animation_speed = 5.0
+0:10/animation_frame_0/duration = 1.0
+0:10/animation_frame_1/duration = 1.0
+0:10/animation_frame_2/duration = 1.0
+0:10/animation_frame_3/duration = 1.0
+0:10/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_8k31m")
