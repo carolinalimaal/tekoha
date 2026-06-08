@@ -39,6 +39,7 @@ func _ready() -> void:
 	state_machine.init(self)
 	# Adicionar ao grupo "player"
 	self.add_to_group("player")
+	$PointLight2D.hide()
 	
 	# Carregar dados do save
 	update_stats_from_save()
@@ -131,3 +132,9 @@ func play_sfx_attack_1() -> void:
 
 func play_sfx_attack_2() -> void:
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.CURUPIRA_ATTACK_2)
+
+func turn_light_on_or_off(light: bool):
+	if light:
+		$PointLight2D.show()
+	else:
+		$PointLight2D.hide()

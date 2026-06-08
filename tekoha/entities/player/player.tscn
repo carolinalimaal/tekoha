@@ -2946,11 +2946,22 @@ states/Walk/position = Vector2(337, -120)
 transitions = ["Start", "Base", SubResource("AnimationNodeStateMachineTransition_a1qjk"), "Base", "Idle", SubResource("AnimationNodeStateMachineTransition_j3ovn"), "Idle", "Base", SubResource("AnimationNodeStateMachineTransition_7thud"), "Base", "Walk", SubResource("AnimationNodeStateMachineTransition_afbqv"), "Walk", "Base", SubResource("AnimationNodeStateMachineTransition_gx6sm"), "Roll", "Base", SubResource("AnimationNodeStateMachineTransition_yqrof"), "Base", "Roll", SubResource("AnimationNodeStateMachineTransition_3wlsy"), "Base", "Attack_1", SubResource("AnimationNodeStateMachineTransition_b2kln"), "Attack_1", "Base", SubResource("AnimationNodeStateMachineTransition_we0b7"), "Base", "Attack_End", SubResource("AnimationNodeStateMachineTransition_mtric"), "Attack_End", "Base", SubResource("AnimationNodeStateMachineTransition_eyb6c"), "Base", "Attack_2", SubResource("AnimationNodeStateMachineTransition_221hk"), "Attack_2", "Base", SubResource("AnimationNodeStateMachineTransition_ghoj8"), "Base", "Stun", SubResource("AnimationNodeStateMachineTransition_50fht"), "Base", "Death", SubResource("AnimationNodeStateMachineTransition_wuv6x"), "Death", "Base", SubResource("AnimationNodeStateMachineTransition_qpopc"), "Stun", "Base", SubResource("AnimationNodeStateMachineTransition_t1t22")]
 graph_offset = Vector2(-162, -22.338837)
 
+[sub_resource type="Gradient" id="Gradient_3wlsy"]
+offsets = PackedFloat32Array(0.1502463, 0.682266, 0.9729064)
+colors = PackedColorArray(1, 1, 1, 1, 0.059880257, 0.059880257, 0.059880257, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b2kln"]
+gradient = SubResource("Gradient_3wlsy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8710247, 0.24204947)
+
 [node name="Player" type="CharacterBody2D" unique_id=551376006 groups=["player"]]
 y_sort_enabled = true
 collision_mask = 3984
 motion_mode = 1
 script = ExtResource("1_fkugw")
+can_iluminate = true
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1115901677]
 script = ExtResource("3_mpktj")
@@ -3052,3 +3063,14 @@ script = ExtResource("15_yqrof")
 
 [node name="Death" type="Node" parent="StateMachine" unique_id=569168132]
 script = ExtResource("12_a1qjk")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1749657786]
+position = Vector2(0, -21)
+color = Color(1, 0.9490196, 0.2901961, 1)
+energy = 0.8
+range_z_max = 0
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
+texture = SubResource("GradientTexture2D_b2kln")
+texture_scale = 4.0

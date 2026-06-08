@@ -49,7 +49,7 @@ tile_set = ExtResource("3_75667")
 
 [node name="Houses" type="TileMapLayer" parent="Tiles" unique_id=353636524]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAApABQAAQAMAAAAAAAbAAgAAQASAAAAAAAtAAcAAQAYAAAAAAA=")
+tile_map_data = PackedByteArray("AAApABQAAQAMAAAAAAAbAAgAAQAYAAAAAAAtAAcAAQASAAAAAAA=")
 tile_set = ExtResource("5_vm8ag")
 
 [node name="Barco" type="TileMapLayer" parent="Tiles" unique_id=1053561797]
@@ -93,7 +93,7 @@ shape = SubResource("RectangleShape2D_jk2ql")
 position = Vector2(-60, 0)
 
 [node name="Room14Door" type="Area2D" parent="." unique_id=980794711]
-position = Vector2(934, 336)
+position = Vector2(882, 333)
 collision_layer = 2048
 script = ExtResource("7_ha3u4")
 target_level_path = "uid://jf0s5w8yt62r"
