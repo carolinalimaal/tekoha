@@ -35,7 +35,7 @@ func _on_puzzle_activator_off():
 	var step = current_activations
 	
 	if level_parent.name == "Room10":
-		if current_activations in [1, (meta_activations/2.0) + 1, meta_activations]:
+		if current_activations in [1, meta_activations / 2 + 1, meta_activations]:
 			shake_camera.emit()
 			await get_tree().create_timer(1).timeout
 			camera_zoom_in_roots(step)
@@ -76,34 +76,22 @@ func camera_anim(camera: PlayerCamera, step: int):
 		puzzle_completed.emit()
 
 func root_anim(step: int):
-	var middle_step = (meta_activations/2.0) + 1
-	print("aqui",middle_step)
+	var middle_step: int = meta_activations / 2 + 1
 	if level_parent.name == "Room10":
-		match step:
-			1:
-				var root: Root = roots.get_child(0)
-				root.root_remove()
-			
-			middle_step:
-				var root: Root = roots.get_child(1)
-				root.root_remove()
-			
-			meta_activations:
-				for i in range(2, len(roots.get_children())):
-					print(i)
-					var root: Root = roots.get_child(i)
-					root.root_remove()
-			
-				if has_consumable:
-					turn_consumable_on()
-	else:
-		for i in range(len(roots.get_children())):
-				print(i)
-				var root: Root = roots.get_child(i)
-				root.root_remove()
-			
-		if has_consumable:
+		if step == 1:
+			roots.get_child(0).root_remove()
+		elif step == middle_step:
+			roots.get_child(1).root_remove()
+		elif step == meta_activations:
+			for i in range(2, roots.get_child_count()):
+				roots.get_child(i).root_remove()
+			if has_consumable:
 				turn_consumable_on()
+	else:
+		for root in roots.get_children():
+			root.root_remove()
+		if has_consumable:
+			turn_consumable_on()
 
 func set_completed() -> void:
 	for activator in mecanic_activators.get_children():
