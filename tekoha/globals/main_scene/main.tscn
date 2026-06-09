@@ -52,6 +52,7 @@ layer = 100
 y_sort_enabled = true
 
 [node name="Room1" parent="Level" unique_id=1391894647 instance=ExtResource("6_d60g8")]
+dark_room = false
 
 [node name="Player" type="Node2D" parent="." unique_id=1480307805]
 y_sort_enabled = true

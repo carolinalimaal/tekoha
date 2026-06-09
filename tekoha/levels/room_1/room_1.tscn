@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cw2gh4q2c5xa3" path="res://levels/room_1/room_1.gd" id="1_wyrnq"]
 [ext_resource type="Resource" uid="uid://bqqf1ha3k1dn8" path="res://data/cutscenes/cutscene_1/cutscene_1.tres" id="2_1e7m2"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="2_sq6vw"]
 [ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://levels/background/background.tscn" id="3_snts5"]
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="4_6q2b7"]
 [ext_resource type="TileSet" uid="uid://dw27k52a7hjbm" path="res://assets/sprites/tiles/interior_casas/moveis.tres" id="4_7yov0"]
 [ext_resource type="TileSet" uid="uid://ckp1proet01b6" path="res://assets/sprites/tiles/interior_casas/house_tile_set.tres" id="5_h3kau"]
 [ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="8_h3kau"]
@@ -14,6 +16,17 @@
 [ext_resource type="Texture2D" uid="uid://4hv4ijur8gyw" path="res://assets/sprites/props/hammock/rede_save_livre.png" id="12_vd5oq"]
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="13_i1302"]
 [ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="14_emlbn"]
+
+[sub_resource type="Resource" id="Resource_h180t"]
+script = ExtResource("4_6q2b7")
+actor_name = "Curupira"
+text_pt = "Que diazinho cansativo, vou tirar um cochilo pra visitar a Iara amanhã."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_eseu5"]
+script = ExtResource("2_sq6vw")
+dialogues = Array[ExtResource("4_6q2b7")]([SubResource("Resource_h180t")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
 [sub_resource type="Gradient" id="Gradient_ign5b"]
 offsets = PackedFloat32Array(0, 0.9736842)
@@ -31,11 +44,12 @@ size = Vector2(32, 20)
 [node name="Room1" type="Node2D" unique_id=1391894647]
 y_sort_enabled = true
 script = ExtResource("1_wyrnq")
-cutscene = ExtResource("2_1e7m2")
+cutscenes_list = Array[ExtResource("2_sq6vw")]([ExtResource("2_1e7m2"), SubResource("Resource_eseu5")])
 limit_top = -75
 limit_bottom = 363
 limit_left = -140
 limit_right = 539
+dark_room = null
 
 [node name="Background" parent="." unique_id=1987475052 instance=ExtResource("3_snts5")]
 
