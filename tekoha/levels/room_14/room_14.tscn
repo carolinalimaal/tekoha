@@ -10,9 +10,9 @@
 [ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="6_50e1o"]
 [ext_resource type="SpriteFrames" uid="uid://cqt7aidvj8f77" path="res://assets/sprites/props/pots/vaso_02_2.tres" id="6_drkai"]
 [ext_resource type="TileSet" uid="uid://dywrwaqccjtxq" path="res://assets/sprites/tiles/interior_cozinha/cozinha.tres" id="6_gslru"]
-[ext_resource type="Resource" uid="uid://d3cuhf8ovruif" path="res://data/items/manga.tres" id="6_mch0w"]
 [ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="6_t76wk"]
 [ext_resource type="SpriteFrames" uid="uid://d1u4kbte4dt8y" path="res://assets/sprites/props/chest/chest_03.tres" id="7_mch0w"]
+[ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="9_nh63o"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="10_wybie"]
 [ext_resource type="SpriteFrames" uid="uid://cv3hbm5lptd1d" path="res://assets/sprites/props/pots/vaso_01_3.tres" id="11_mch0w"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="11_t76wk"]
@@ -67,6 +67,11 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 128
 physics_layer_0/collision_mask = 81
 sources/0 = SubResource("TileSetAtlasSource_gslru")
+
+[sub_resource type="Resource" id="Resource_4yb6g"]
+script = ExtResource("9_nh63o")
+name = "Caixa de ferramentas"
+metadata/_custom_type_script = "uid://bekubsjwettik"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mch0w"]
 size = Vector2(64, 32)
@@ -128,7 +133,7 @@ sprite_frames = ExtResource("6_t76wk")
 
 [node name="Bau3" parent="Furniture" unique_id=933992229 instance=ExtResource("4_bnmol")]
 position = Vector2(801, 616)
-item = ExtResource("6_mch0w")
+item = SubResource("Resource_4yb6g")
 sprite_frames = ExtResource("7_mch0w")
 
 [node name="Pot" parent="Furniture" unique_id=222727829 instance=ExtResource("5_50e1o")]

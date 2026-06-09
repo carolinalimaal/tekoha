@@ -16,9 +16,12 @@ func _ready() -> void:
 
 func _on_player_body_entered(body: Node2D) -> void:
 	if is_active and body is Player:
-		GlobalSignals.animation_midpoint_reached.connect(on_animation_midpoint_reached, CONNECT_ONE_SHOT)
-		get_tree().paused = true
-		GlobalSignals.emit_signal("door_entered")
+		trigger_transition()
+
+func trigger_transition() -> void:
+	GlobalSignals.animation_midpoint_reached.connect(on_animation_midpoint_reached, CONNECT_ONE_SHOT)
+	get_tree().paused = true
+	GlobalSignals.emit_signal("door_entered")
 	
 func on_animation_midpoint_reached() -> void:
 	if target_level_path == "":

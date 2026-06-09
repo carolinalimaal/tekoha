@@ -12,12 +12,91 @@
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="9_3gh8j"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="10_lnuge"]
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="11_2ryh5"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="12_n6g6m"]
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="13_11rqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk2ql"]
 size = Vector2(16, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ha3u4"]
 size = Vector2(20, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6g6m"]
+size = Vector2(38, 34)
+
+[sub_resource type="Resource" id="Resource_1euh0"]
+script = ExtResource("13_11rqf")
+actor_name = "Curupira"
+text_pt = "Tu es o dono desse barco?"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_cl38t"]
+script = ExtResource("13_11rqf")
+actor_name = "Pescador"
+text_pt = "Sim, tu es o Curupira, nao e?"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_grtgn"]
+script = ExtResource("13_11rqf")
+actor_name = "Curupira"
+text_pt = "Sim... E eu estou precisando voltar pra minha cabana, mas preciso passar por esse rio"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_ff8i3"]
+script = ExtResource("13_11rqf")
+actor_name = "Curupira"
+text_pt = "Tu podes me ajudar a atravessar esse rio?"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_7di1m"]
+script = ExtResource("13_11rqf")
+actor_name = "Pescador"
+text_pt = "Ó, eu te levo, mas vais ter que me ajudar. Preciso arrumar uma coisa no motor do barco e as ferramentas tão na casa azul."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_ninet"]
+script = ExtResource("13_11rqf")
+actor_name = "Pescador"
+text_pt = "Se tu pegares pra mim, arrumo o barco. So tem um detalhe, a casa ta infestada com essas coisas que surgiram aqui na vila."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_6jbsf"]
+script = ExtResource("12_n6g6m")
+dialogues = Array[ExtResource("13_11rqf")]([SubResource("Resource_1euh0"), SubResource("Resource_cl38t"), SubResource("Resource_grtgn"), SubResource("Resource_ff8i3"), SubResource("Resource_7di1m"), SubResource("Resource_ninet")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
+[sub_resource type="Resource" id="Resource_1cplf"]
+script = ExtResource("13_11rqf")
+actor_name = "Pescador"
+text_pt = "Pega lá as ferramentas na minha casa, é a azul"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_fnfl1"]
+script = ExtResource("12_n6g6m")
+dialogues = Array[ExtResource("13_11rqf")]([SubResource("Resource_1cplf")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
+[sub_resource type="Resource" id="Resource_u6lot"]
+script = ExtResource("13_11rqf")
+actor_name = "Pescador"
+text_pt = "Como eu prometi pra ti, vou te levar pra perto da tua casa."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_jtmfk"]
+script = ExtResource("12_n6g6m")
+dialogues = Array[ExtResource("13_11rqf")]([SubResource("Resource_u6lot")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
+[sub_resource type="Resource" id="Resource_ymt15"]
+script = ExtResource("13_11rqf")
+actor_name = "Pescador"
+text_pt = "teste aqui"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_c4pr1"]
+script = ExtResource("12_n6g6m")
+dialogues = Array[ExtResource("13_11rqf")]([SubResource("Resource_ymt15")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
 [node name="Room13" type="Node2D" unique_id=1333157004]
 y_sort_enabled = true
@@ -106,12 +185,27 @@ shape = SubResource("RectangleShape2D_ha3u4")
 [node name="Marker2D" type="Marker2D" parent="Room14Door" unique_id=1816407927]
 position = Vector2(0, 60)
 
+[node name="Room4Door" type="Area2D" parent="." unique_id=303421374]
+position = Vector2(746, 998)
+collision_layer = 0
+monitoring = false
+script = ExtResource("7_ha3u4")
+target_level_path = "uid://i24bxl3cnsmh"
+door_name = "Room13Door"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room4Door" unique_id=278124219]
+shape = SubResource("RectangleShape2D_n6g6m")
+
+[node name="Marker2D" type="Marker2D" parent="Room4Door" unique_id=1817662377]
+
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("10_lnuge")]
 position = Vector2(410, 536)
 hammock_texture = ExtResource("11_2ryh5")
 
 [node name="NPCDonoBarco" parent="." unique_id=1741828607 instance=ExtResource("8_ha3u4")]
 position = Vector2(611, 820)
+dialogues_list = Array[ExtResource("12_n6g6m")]([SubResource("Resource_6jbsf"), SubResource("Resource_fnfl1"), SubResource("Resource_jtmfk"), SubResource("Resource_c4pr1")])
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1256912823]
 

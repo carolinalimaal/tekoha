@@ -14,14 +14,8 @@ var is_showing: bool = false
 func _ready() -> void:
 	sprite.sprite_frames = sprite_frames
 	
-	if GameManager.current_save.opened_chests.has(id):
+	if GameManager.current_save.opened_chests.has(id) or (item and item.name == "Caixa de ferramentas" and GameManager.current_save.game_state >= GameManager.GameState.TOOLS_COLLECTED):
 		item = null
-
-#func _unhandled_input(_event: InputEvent) -> void:
-	#if InputManager.get_action_pressed("ui_cancel") and is_showing:
-		## Se o input for consumido aqui, nao propaga para o resto dos _unhandled_input do jogo
-		#get_viewport().set_input_as_handled()
-		#close_chest()
 
 func interact() -> void:
 	update_item_panel()
@@ -33,6 +27,8 @@ func update_item_panel():
 			GlobalRefs.confirmation_popup.setup("VOCÊ ENCONTROU UM INIMIGO!", null, false)
 		else:
 			GlobalRefs.confirmation_popup.setup("O BAÚ ESTÁ VAZIO.", null, false)
+	elif item.name == "Caixa de ferramentas":
+		GlobalRefs.confirmation_popup.setup("VOCÊ ENCONTROU A CAIXA DE FERRAMENTAS!", null, false)
 	elif verify_full_inventory():
 		GlobalRefs.confirmation_popup.setup("SEU INVENTÁRIO ESTÁ CHEIO.", null, false)
 	elif item:
@@ -41,7 +37,6 @@ func update_item_panel():
 
 func open_chest():
 	UIManager.is_interact_ui_open = true
-	#get_tree().paused = true
 	
 	sprite.play("bau_animation")
 	interactable_component.disable_interaction()
@@ -53,7 +48,7 @@ func open_chest():
 		GlobalRefs.confirmation_popup.confirmed.connect(_on_chest_confirmed)
 	if !GlobalRefs.confirmation_popup.cancelled.is_connected(_on_chest_cancelled):
 		GlobalRefs.confirmation_popup.cancelled.connect(_on_chest_cancelled)
-		
+	
 	UIManager.open_menu("confirmation")
 	
 	if enemy_file != "":
@@ -62,6 +57,11 @@ func open_chest():
 		enemy.global_position = enemy_spawn.global_position
 		get_tree().current_scene.add_child(enemy)
 		print(enemy.global_position)
+	
+	if item and item.name == "Caixa de ferramentas":
+		item = null
+		print("pegou a caixa de ferramentas")
+		GameManager.set_game_state(GameManager.GameState.TOOLS_COLLECTED)
 
 func close_chest():
 	UIManager.is_interact_ui_open = false

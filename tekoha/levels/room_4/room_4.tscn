@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://1qrmsqlofmkg" path="res://utils/door/door.tscn" id="6_h3sq2"]
 [ext_resource type="PackedScene" uid="uid://dc1wapt25fjje" path="res://utils/sign/sign.tscn" id="7_6xflk"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="8_haabk"]
+[ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="8_pm3eg"]
+[ext_resource type="Script" uid="uid://d1vcrcidpkigq" path="res://utils/path_block.gd" id="10_urt5k"]
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/dialogue/dialogue_line.gd" id="11_5mqem"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/dialogue/dialogue_settings.gd" id="12_pm3eg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xflk"]
 texture = ExtResource("2_ptwuu")
@@ -484,6 +488,22 @@ size = Vector2(32, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xflk"]
 size = Vector2(96, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm3eg"]
+
+[sub_resource type="Resource" id="Resource_6m4mh"]
+script = ExtResource("11_5mqem")
+actor_name = "Curupira"
+text_pt = "Não é hora de voltar na Tia Cecilia, preciso ir para casa descansar."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_25pbt"]
+script = ExtResource("12_pm3eg")
+dialogues = Array[ExtResource("11_5mqem")]([SubResource("Resource_6m4mh")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojuiy"]
+size = Vector2(136, 20)
+
 [node name="Room4" type="Node2D" unique_id=1956737914]
 y_sort_enabled = true
 script = ExtResource("1_3j4w8")
@@ -545,8 +565,34 @@ shape = SubResource("RectangleShape2D_6xflk")
 [node name="Marker2D" type="Marker2D" parent="Room5Door" unique_id=455292062]
 position = Vector2(0, -96)
 
+[node name="Room13Door" type="Area2D" parent="." unique_id=1485131359]
+position = Vector2(1020, 644)
+monitoring = false
+script = ExtResource("8_pm3eg")
+target_level_path = "uid://co0vptwphskq3"
+door_name = "Room4Door"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room13Door" unique_id=532831333]
+shape = SubResource("RectangleShape2D_pm3eg")
+
+[node name="Marker2D" type="Marker2D" parent="Room13Door" unique_id=417711950]
+position = Vector2(-70, 62)
+
 [node name="Sign" parent="." unique_id=556060269 instance=ExtResource("7_6xflk")]
 position = Vector2(640, 1120)
 
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("8_haabk")]
 position = Vector2(544, 1696)
+
+[node name="PathBlock" type="Area2D" parent="." unique_id=580061877]
+position = Vector2(738, 1447)
+script = ExtResource("10_urt5k")
+path_block_message = SubResource("Resource_25pbt")
+push_direction = Vector2(0, -1)
+push_distance = 32.0
+metadata/_custom_type_script = "uid://d1vcrcidpkigq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathBlock" unique_id=236298655]
+shape = SubResource("RectangleShape2D_ojuiy")
+debug_color = Color(0.63288116, 0.5287686, 3.85046e-07, 0.41960785)

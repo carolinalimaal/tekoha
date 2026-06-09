@@ -40,6 +40,20 @@ metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m550c"]
 size = Vector2(6, 158)
 
+[sub_resource type="Resource" id="Resource_3mnv1"]
+script = ExtResource("3_i6edo")
+actor_name = "Curupira"
+text_pt = "Não é hora de ir pescar, preciso ir para casa descansar."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_s6q7c"]
+script = ExtResource("4_m550c")
+dialogues = Array[ExtResource("3_i6edo")]([SubResource("Resource_3mnv1")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwu00"]
+size = Vector2(176, 6)
+
 [node name="Room2" type="Node2D" unique_id=1916809086]
 y_sort_enabled = true
 script = ExtResource("1_5ituv")
@@ -142,10 +156,10 @@ door_name = "Room2Door"
 shape = SubResource("RectangleShape2D_i6edo")
 
 [node name="Marker2D" type="Marker2D" parent="Room4Door" unique_id=202250850]
-position = Vector2(-48, 0)
+position = Vector2(-69, 0)
 
 [node name="PathBlock" type="Area2D" parent="." unique_id=363540769]
-position = Vector2(2370, 1338)
+position = Vector2(2440, 1338)
 collision_layer = 0
 script = ExtResource("16_m550c")
 path_block_message = SubResource("Resource_qwu00")
@@ -153,4 +167,16 @@ push_direction = Vector2(-1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathBlock" unique_id=1055223826]
 shape = SubResource("RectangleShape2D_m550c")
+debug_color = Color(0.6392157, 0.5254902, 0, 0.7607843)
+
+[node name="PathBlock2" type="Area2D" parent="." unique_id=119578826]
+position = Vector2(2071, 1614)
+script = ExtResource("16_m550c")
+path_block_message = SubResource("Resource_s6q7c")
+push_direction = Vector2(0, -1)
+push_distance = 32.0
+metadata/_custom_type_script = "uid://d1vcrcidpkigq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathBlock2" unique_id=50993251]
+shape = SubResource("RectangleShape2D_qwu00")
 debug_color = Color(0.6392157, 0.5254902, 0, 0.7607843)
