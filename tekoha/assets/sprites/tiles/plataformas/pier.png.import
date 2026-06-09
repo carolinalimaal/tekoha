@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm76otpxch14d"
-path="res://.godot/imported/pier_1.png-76d5b0d902cfdc7e1efa34c420050a54.ctex"
+uid="uid://dafxv8p5gc3ow"
+path="res://.godot/imported/pier.png-e6eda77b3fc14c33d73df61c1054a1e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/plataformas/pier_1.png"
-dest_files=["res://.godot/imported/pier_1.png-76d5b0d902cfdc7e1efa34c420050a54.ctex"]
+source_file="res://assets/sprites/tiles/plataformas/pier.png"
+dest_files=["res://.godot/imported/pier.png-e6eda77b3fc14c33d73df61c1054a1e6.ctex"]
 
 [params]
 
