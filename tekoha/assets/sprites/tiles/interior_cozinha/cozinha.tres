@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://dywrwaqccjtxq"]
 
 [ext_resource type="Texture2D" uid="uid://jnsu1vbgckad" path="res://assets/sprites/tiles/interior_cozinha/cozinha.png" id="1_agiyw"]
-[ext_resource type="Texture2D" uid="uid://8iq8ruxfu2bl" path="res://assets/sprites/tiles/interior_restaurante/restaurante cecilia interno.png" id="2_bteqr"]
+[ext_resource type="Texture2D" uid="uid://8iq8ruxfu2bl" path="res://assets/sprites/tiles/interior_restaurante/restaurante_cecilia_interno.png" id="2_bteqr"]
 [ext_resource type="Texture2D" uid="uid://bvf21u4drc8ip" path="res://assets/sprites/tiles/interior_cozinha/cozinha_generica.png" id="3_sk1la"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pu6nj"]

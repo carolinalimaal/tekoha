@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://ccj1hrp0264wr"]
 
-[ext_resource type="Texture2D" uid="uid://8iq8ruxfu2bl" path="res://assets/sprites/tiles/interior_restaurante/restaurante cecilia interno.png" id="1_plnvg"]
+[ext_resource type="Texture2D" uid="uid://8iq8ruxfu2bl" path="res://assets/sprites/tiles/interior_restaurante/restaurante_cecilia_interno.png" id="1_plnvg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u15um"]
 texture = ExtResource("1_plnvg")
@@ -93,6 +93,18 @@ texture_region_size = Vector2i(32, 32)
 6:6/0 = 0
 7:6/0 = 0
 8:6/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+13:3/0 = 0
+12:3/0 = 0
+11:3/0 = 0
+10:3/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
 
 [resource]
 tile_size = Vector2i(32, 32)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d3kh2bp1xd1y" path="res://levels/room_7/room_7.gd" id="1_k7k0n"]
 [ext_resource type="TileSet" uid="uid://ccj1hrp0264wr" path="res://assets/sprites/tiles/interior_restaurante/interior_restaurante_tiles.tres" id="2_jdn40"]
 [ext_resource type="TileSet" uid="uid://dywrwaqccjtxq" path="res://assets/sprites/tiles/interior_cozinha/cozinha.tres" id="3_rak3t"]
-[ext_resource type="Texture2D" uid="uid://8iq8ruxfu2bl" path="res://assets/sprites/tiles/interior_restaurante/restaurante cecilia interno.png" id="4_4m76p"]
+[ext_resource type="Texture2D" uid="uid://8iq8ruxfu2bl" path="res://assets/sprites/tiles/interior_restaurante/restaurante_cecilia_interno.png" id="4_4m76p"]
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/bau/bau.tscn" id="4_oqleg"]
 [ext_resource type="PackedScene" uid="uid://bdturhe2xujfa" path="res://levels/background/background.tscn" id="5_mhh0g"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="5_pu6nj"]

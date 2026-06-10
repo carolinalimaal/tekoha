@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8iq8ruxfu2bl"
-path="res://.godot/imported/restaurante cecilia interno.png-38770194b1bc170cfe6d9f6d7a00b810.ctex"
+path="res://.godot/imported/restaurante_cecilia_interno.png-053c425a787dc09034a522c0ae1a2c83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/interior_restaurante/restaurante cecilia interno.png"
-dest_files=["res://.godot/imported/restaurante cecilia interno.png-38770194b1bc170cfe6d9f6d7a00b810.ctex"]
+source_file="res://assets/sprites/tiles/interior_restaurante/restaurante_cecilia_interno.png"
+dest_files=["res://.godot/imported/restaurante_cecilia_interno.png-053c425a787dc09034a522c0ae1a2c83.ctex"]
 
 [params]
 
