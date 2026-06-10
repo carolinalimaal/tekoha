@@ -7,7 +7,7 @@ var _distance_to_player: float
 func _ready() -> void:
 	# Criar o timer, conectar sinal de timeout e adicionar o timer na arvore
 	print("Aqui 1")
-	owner_node.nav_agent.target_position = GlobalRefs.player.global_position
+	
 	_nav_timer = Timer.new()
 	_nav_timer.timeout.connect(_on_nav_timer_timeout)
 	_nav_timer.wait_time = _makepath_time
