@@ -1,6 +1,7 @@
 extends Level
 
 @export var room_2_music: AudioStream
+@export var path_block_messages: Array[DialogueSettings]
 
 @onready var room_4_door: Door = $Room4Door
 @onready var room_3_door: Door = $Room3Door
@@ -11,27 +12,24 @@ func _ready() -> void:
 	AudioManager.play_background_sound(room_2_music)
 	
 	if GameManager.current_save.game_state <= GameManager.GameState.BEFORE_FISHING:
-		_lock_room_4_door(true)
-		_lock_room_3_door(false)
+		_lock_room_door(room_3_door, path_block_2, false)
+		_lock_room_door(room_4_door, path_block, true, 0)
 	elif GameManager.current_save.game_state == GameManager.GameState.AFTER_PUZZLE_3:
-		_lock_room_4_door(false)
-		_lock_room_3_door(true)
+		_lock_room_door(room_3_door, path_block_2, true, 1)
+		_lock_room_door(room_4_door, path_block, false)
+	elif GameManager.current_save.game_state == GameManager.GameState.PRE_BOSSFIGHT:
+		_lock_room_door(room_3_door, path_block_2, false)
+		_lock_room_door(room_4_door, path_block, true, 2)
 	else:
-		_lock_room_4_door(false)
-		_lock_room_3_door(false)
+		_lock_room_door(room_3_door, path_block_2, false)
+		_lock_room_door(room_4_door, path_block, false)
 
-func _lock_room_4_door(lock: bool) -> void:
+func _lock_room_door(door: Door, path: PathBlock, lock: bool, i: int = -1) -> void:
 	if lock:
-		room_4_door.set_deferred("monitoring", false)
-		path_block.set_deferred("monitoring", true)
+		door.set_deferred("monitoring", false)
+		path.set_deferred("monitoring", true)
+		path.path_block_message = path_block_messages[i]
 	else:
-		room_4_door.set_deferred("monitoring", true)
-		path_block.set_deferred("monitoring", false)
-
-func _lock_room_3_door(lock: bool) -> void:
-	if lock:
-		room_3_door.set_deferred("monitoring", false)
-		path_block_2.set_deferred("monitoring", true)
-	else:
-		room_3_door.set_deferred("monitoring", true)
-		path_block_2.set_deferred("monitoring", false)
+		door.set_deferred("monitoring", true)
+		path.set_deferred("monitoring", false)
+		path.path_block_message = path_block_messages[i]

@@ -17,15 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://d2qw38t463t0o" path="res://levels/room_2/components/house.tscn" id="13_6wb8k"]
 [ext_resource type="Script" uid="uid://d1vcrcidpkigq" path="res://utils/path_block.gd" id="16_m550c"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_khgse"]
-size = Vector2(36, 27)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eta5w"]
-size = Vector2(166, 19)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6edo"]
-size = Vector2(8, 96)
-
 [sub_resource type="Resource" id="Resource_m550c"]
 script = ExtResource("3_i6edo")
 actor_name = "Curupira"
@@ -36,9 +27,6 @@ metadata/_custom_type_script = "uid://x6215xlpsejj"
 script = ExtResource("4_m550c")
 dialogues = Array[ExtResource("3_i6edo")]([SubResource("Resource_m550c")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m550c"]
-size = Vector2(6, 158)
 
 [sub_resource type="Resource" id="Resource_3mnv1"]
 script = ExtResource("3_i6edo")
@@ -51,6 +39,29 @@ script = ExtResource("4_m550c")
 dialogues = Array[ExtResource("3_i6edo")]([SubResource("Resource_3mnv1")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
+[sub_resource type="Resource" id="Resource_smkma"]
+script = ExtResource("3_i6edo")
+actor_name = "Curupira"
+text_pt = "Preciso ir falar com a Iara!"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_xdmhn"]
+script = ExtResource("4_m550c")
+dialogues = Array[ExtResource("3_i6edo")]([SubResource("Resource_smkma")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khgse"]
+size = Vector2(36, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eta5w"]
+size = Vector2(166, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6edo"]
+size = Vector2(8, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m550c"]
+size = Vector2(6, 158)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwu00"]
 size = Vector2(176, 6)
 
@@ -58,6 +69,7 @@ size = Vector2(176, 6)
 y_sort_enabled = true
 script = ExtResource("1_5ituv")
 room_2_music = ExtResource("2_126x5")
+path_block_messages = Array[ExtResource("4_m550c")]([SubResource("Resource_qwu00"), SubResource("Resource_s6q7c"), SubResource("Resource_xdmhn")])
 limit_bottom = 1728
 limit_left = 32
 limit_right = 2496
@@ -162,7 +174,6 @@ position = Vector2(-69, 0)
 position = Vector2(2440, 1338)
 collision_layer = 0
 script = ExtResource("16_m550c")
-path_block_message = SubResource("Resource_qwu00")
 push_direction = Vector2(-1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathBlock" unique_id=1055223826]
@@ -172,7 +183,6 @@ debug_color = Color(0.6392157, 0.5254902, 0, 0.7607843)
 [node name="PathBlock2" type="Area2D" parent="." unique_id=119578826]
 position = Vector2(2071, 1614)
 script = ExtResource("16_m550c")
-path_block_message = SubResource("Resource_s6q7c")
 push_direction = Vector2(0, -1)
 push_distance = 32.0
 metadata/_custom_type_script = "uid://d1vcrcidpkigq"
