@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://84kqvhlbhwpg"]
+
+[ext_resource type="Script" uid="uid://d15ovrmrieuqa" path="res://utils/props/pots/pot.gd" id="1_3211e"]
+[ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="1_d5pp0"]
+[ext_resource type="PackedScene" uid="uid://cmpf7e1nr1x4w" path="res://utils/props/coin/coin.tscn" id="2_70yc0"]
+[ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="2_d5pp0"]
+[ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="3_3211e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3211e"]
+size = Vector2(34, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70yc0"]
+size = Vector2(34, 25)
+
+[node name="Pot" type="StaticBody2D" unique_id=222727829]
+y_sort_enabled = true
+collision_layer = 256
+collision_mask = 17
+script = ExtResource("1_3211e")
+coin_scene = ExtResource("2_70yc0")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=674505068]
+script = ExtResource("1_d5pp0")
+max_health = 2
+metadata/_custom_type_script = "uid://cxfitvewp4xj5"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=350104011]
+sprite_frames = ExtResource("3_3211e")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1180637139 node_paths=PackedStringArray("hitbox_collision")]
+collision_layer = 256
+collision_mask = 4
+script = ExtResource("2_d5pp0")
+hitbox_collision = NodePath("HitboxCollision")
+metadata/_custom_type_script = "uid://2pwu4vjmtkg6"
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxComponent" unique_id=821494976]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_3211e")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1610201163]
+z_index = 1
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_70yc0")

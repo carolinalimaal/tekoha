@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2qw38t463t0o"]
 
-[ext_resource type="Texture2D" uid="uid://cq1n6ahl472l8" path="res://assets/sprites/tiles/casas/casa_externa_curupira.png" id="1_mw1t2"]
+[ext_resource type="Texture2D" uid="uid://cq1n6ahl472l8" path="res://assets/sprites/tiles/exteriores/casas/casa_externa_curupira.png" id="1_mw1t2"]
 
 [node name="House" type="StaticBody2D" unique_id=1616568896]
 collision_layer = 256

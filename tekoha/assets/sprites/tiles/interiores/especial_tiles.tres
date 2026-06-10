@@ -1,0 +1,115 @@
+[gd_resource type="TileSet" format=3 uid="uid://c2k8hq2241a5o"]
+
+[ext_resource type="Texture2D" uid="uid://pojrhvng50vq" path="res://assets/sprites/tiles/interiores/moveis/moveis.png" id="1_eknl0"]
+[ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="1_ycqb6"]
+[ext_resource type="Texture2D" uid="uid://chighqrp3ctbd" path="res://assets/sprites/tiles/objetos/objetos.png" id="2_ycqb6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xaiu6"]
+texture = ExtResource("1_ycqb6")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(4, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-58, -27, 58.5, -27.5, 58.5, 24.5, -58, 24.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yxphn"]
+texture = ExtResource("1_eknl0")
+texture_region_size = Vector2i(32, 32)
+2:17/0 = 0
+2:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 10.010935, 16, 10.010935, 16, 16, -16, 16)
+3:17/0 = 0
+3:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 10.010935, 16, 10.010935, 16, 16, -16, 16)
+4:17/0 = 0
+4:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 10.010935, 16, 10.010935, 16, 16, -16, 16)
+5:17/0 = 0
+5:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 10.010935, 16, 10.010935, 16, 16, -16, 16)
+6:17/0 = 0
+6:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 10.010935, 16, 10.010935, 16, 16, -16, 16)
+7:17/0 = 0
+7:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 10.010935, 16, 10.010935, 16, 16, -16, 16)
+7:3/size_in_atlas = Vector2i(1, 2)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -5.6583557, 16, -5.6583557, 16, 16, -0.34820557, 16, -0.17410278, 27.769466, -4.8748913, 28.117674, -5.048994, 16, -9.749781, 16, -11.142607, 23.06868, -13.580052, 23.06868, -13.580051, 16, -16, 13.667105)
+8:3/size_in_atlas = Vector2i(1, 3)
+8:3/0 = 0
+8:3/0/texture_origin = Vector2i(0, -16)
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -5.6583557, 9.053368, -5.31015, 9.22747, -18.19379, -8.879267, -18.19379, -8.879267, -5.6583557, -16, -5.6583557, -16, 16, -9.401575, 16, -9.227472, 30.03281, -9.0533695, 40.653107, 9.401573, 40.653107, 9.22747, 29.858707, 9.749781, 16, 16, 16)
+9:3/size_in_atlas = Vector2i(1, 2)
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -5.6583557, -16, -5.6583557, -16, 16, 0.34820557, 16, 0.17410278, 27.769466, 4.8748913, 28.117674, 5.048994, 16, 9.749781, 16, 11.142607, 23.06868, 13.580052, 23.06868, 13.580051, 16, 16, 13.667105)
+4:11/0 = 0
+4:10/0 = 0
+1:17/0 = 0
+1:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 10.024122, 16, 10.024122, 16, 16, -16, 16)
+0:10/size_in_atlas = Vector2i(2, 2)
+0:10/0 = 0
+0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.093158, 29.925266, 5.8966045, 29.925266, 6.5845413, 29.139051, 6.8793716, 28.156284, 7.8621387, 28.156284, 7.8621387, 26.387302, 8.844906, 25.994196, 8.943182, 18.721718, -9.139736, 18.819996, -9.139736, 25.60109, -8.156969, 26.19075, -7.9604154, 27.6649, -6.5845413, 27.861454, -7.075925, 28.745945, -6.093158, 28.9425)
+2:10/size_in_atlas = Vector2i(2, 2)
+2:10/0 = 0
+2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.093158, 29.925266, 5.8966045, 29.925266, 6.5845413, 29.139051, 6.8793716, 28.156284, 7.8621387, 28.156284, 7.8621387, 26.387302, 8.844906, 25.994196, 8.943182, 18.721718, -9.139736, 18.819996, -9.139736, 25.60109, -8.156969, 26.19075, -7.9604154, 27.6649, -6.5845413, 27.861454, -7.075925, 28.745945, -6.093158, 28.9425)
+5:10/size_in_atlas = Vector2i(1, 2)
+5:10/0 = 0
+0:9/size_in_atlas = Vector2i(2, 1)
+0:9/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.3707547, -2.1129498, 6.9776487, -2.1129498, 5.8966045, 4.9629755, 4.619007, 7.321617, 3.636238, 9.4837055, -3.4396858, 9.4837055, -5.208667, 6.7319565, -6.3879876, 4.569868)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.490814, 3.22091, -8.356955, 0.08705139, 8.705162, 0.08705139, 11.316711, 3.0468063, 11.664917, 6.7029753, 4.0043755, 11.055556, -3.4820633, 11.055556, -10.968504, 7.3993883)
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:4/size_in_atlas = Vector2i(2, 2)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 7.9216976, -18.106739, -2.6986008, 17.410324, -2.6986008, 17.410324, 6.180666, 2.6115494, 13.667104, 2.7856522, 21.153542, -2.959755, 21.153542, -2.959755, 13.841208)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.3707547, -2.1129498, 6.9776487, -2.1129498, 5.8966045, 4.9629755, 4.619007, 7.321617, 3.636238, 9.4837055, -3.4396858, 9.4837055, -5.208667, 6.7319565, -6.3879876, 4.569868)
+0:4/size_in_atlas = Vector2i(2, 2)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.932632, -10.010938, 17.75853, -10.010937, 17.584427, 0.43525696, 26.8119, 0.9575691, 26.986002, 13.318897, 24.548557, 14.015311, 24.896763, 22.54637, 22.45932, 22.894575, 20.370079, 13.667106, 16, 13.144794, 15.49519, 25.854332, 11.316711, 25.854332, 11.83902, 13.667106, -11.142607, 13.493001, -10.968504, 25.506124, -15.843395, 25.506124, -16, 13.318898, -17.75853, 13.318899)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u15um"]
+texture = ExtResource("2_ycqb6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 128
+sources/2 = SubResource("TileSetAtlasSource_yxphn")
+sources/3 = SubResource("TileSetAtlasSource_u15um")
+sources/0 = SubResource("TileSetAtlasSource_xaiu6")

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c8ui4rfngwjkm"]
+
+[ext_resource type="Script" uid="uid://bs7l7rtsy2ste" path="res://utils/props/bush/bush.gd" id="1_b14lp"]
+[ext_resource type="Texture2D" uid="uid://be0qxtpxxsegt" path="res://assets/sprites/props/bush/arbustos.png" id="1_rao2u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b14lp"]
+radius = 16.0
+height = 112.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sltqe"]
+radius = 24.0
+height = 112.0
+
+[node name="Bush" type="StaticBody2D" unique_id=1810771264]
+y_sort_enabled = true
+collision_layer = 256
+collision_mask = 17
+script = ExtResource("1_b14lp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1353298739]
+scale = Vector2(2, 2)
+texture = ExtResource("1_rao2u")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=989535269]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_b14lp")
+
+[node name="PlayerRollArea" type="Area2D" parent="." unique_id=1932728221]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRollArea" unique_id=89610606]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_sltqe")
+debug_color = Color(0.8434005, 0.11474829, 0.8737881, 0.41960785)
+
+[connection signal="body_entered" from="PlayerRollArea" to="." method="_on_player_roll_area_body_entered"]
+[connection signal="body_exited" from="PlayerRollArea" to="." method="_on_player_roll_area_body_exited"]

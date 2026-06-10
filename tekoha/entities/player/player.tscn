@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://d2gf7k7f2irga" path="res://entities/player/player_attack.tres" id="6_qiwj3"]
 [ext_resource type="Texture2D" uid="uid://d36nm3vhln3ww" path="res://assets/sprites/entities/player/curupira_spritesheet.png" id="7_3wlsy"]
 [ext_resource type="Script" uid="uid://cpmntw43kee13" path="res://entities/player/anim_tree_player.gd" id="7_7thud"]
-[ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/state_machine/state_machine.gd" id="7_qiwj3"]
+[ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/components/state_machine/state_machine.gd" id="7_qiwj3"]
 [ext_resource type="Script" uid="uid://c17pxlfbcnior" path="res://entities/player/states/state_idle_player.gd" id="8_26q78"]
 [ext_resource type="Script" uid="uid://bcktgb632rml5" path="res://entities/player/states/state_walk_player.gd" id="9_bectd"]
 [ext_resource type="Script" uid="uid://bl5pvcn1s15tv" path="res://entities/player/states/state_roll_player.gd" id="10_wvtmh"]

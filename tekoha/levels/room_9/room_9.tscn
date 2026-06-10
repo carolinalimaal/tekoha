@@ -3,21 +3,68 @@
 [ext_resource type="Script" uid="uid://b5f7xqfg4bqmr" path="res://levels/room_9/room_9.gd" id="1_g5wxr"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="2_25ocl"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="3_cpiwb"]
-[ext_resource type="TileSet" uid="uid://bh3nxny1kscq1" path="res://assets/sprites/tiles/natureza/arvores.tres" id="4_1xkgs"]
-[ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/ground.tres" id="4_cpiwb"]
+[ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="4_cpiwb"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="5_tog6q"]
-[ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/door/door.gd" id="6_1xkgs"]
-[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/camera/player_camera.gd" id="7_cljv6"]
-[ext_resource type="TileSet" uid="uid://cwihu0lcjfmkq" path="res://assets/sprites/tiles/casas/casas_genericas.tres" id="8_cpiwb"]
-[ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="10_tog6q"]
+[ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="6_1xkgs"]
+[ext_resource type="Texture2D" uid="uid://bfuifh5omshv6" path="res://assets/sprites/tiles/natureza/natureza.png" id="6_25ocl"]
+[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="7_cljv6"]
+[ext_resource type="TileSet" uid="uid://cwihu0lcjfmkq" path="res://assets/sprites/tiles/exteriores/casas/casas_genericas.tres" id="8_cpiwb"]
+[ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/components/save_point/save_point.tscn" id="10_tog6q"]
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="11_1xkgs"]
-[ext_resource type="Script" uid="uid://sjtw4n37y6af" path="res://utils/secret_area/secret_area.gd" id="12_1xkgs"]
-[ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/muiraquita/muiraquita.tscn" id="13_rsjlr"]
-[ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/pots/pot.tscn" id="14_vhq43"]
+[ext_resource type="Script" uid="uid://sjtw4n37y6af" path="res://utils/components/secret_area/secret_area.gd" id="12_1xkgs"]
+[ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/props/muiraquita/muiraquita.tscn" id="13_rsjlr"]
+[ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/props/pots/pot.tscn" id="14_vhq43"]
 [ext_resource type="SpriteFrames" uid="uid://drc4q3kh0ufi2" path="res://assets/sprites/props/pots/vaso_01_2.tres" id="15_vhq43"]
 [ext_resource type="SpriteFrames" uid="uid://c4iwvjw63l00o" path="res://assets/sprites/props/pots/vaso_02_1.tres" id="16_kgm55"]
 [ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="19_cpiwb"]
 [ext_resource type="SpriteFrames" uid="uid://dl2so67ufwqwm" path="res://assets/sprites/props/pots/vaso_02_3.tres" id="20_ej02v"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mf6jk"]
+texture = ExtResource("6_25ocl")
+texture_region_size = Vector2i(32, 32)
+54:8/size_in_atlas = Vector2i(3, 4)
+54:8/0 = 0
+54:8/0/texture_origin = Vector2i(2, 48)
+54:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+21:6/size_in_atlas = Vector2i(3, 6)
+21:6/0 = 0
+21:6/0/texture_origin = Vector2i(0, 80)
+21:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:6/size_in_atlas = Vector2i(3, 6)
+0:6/0 = 0
+0:6/0/texture_origin = Vector2i(0, 80)
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+17:8/size_in_atlas = Vector2i(4, 4)
+17:8/0 = 0
+17:8/0/texture_origin = Vector2i(0, 48)
+17:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:2/size_in_atlas = Vector2i(10, 10)
+3:2/0 = 0
+3:2/0/texture_origin = Vector2i(-16, 144)
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-29.634876, -27.65922, 38.076374, -27.402245, 37.757748, 10.514812, -29.473343, 10.8334465)
+13:5/size_in_atlas = Vector2i(4, 7)
+13:5/0 = 0
+13:5/0/texture_origin = Vector2i(-6, 96)
+13:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+24:3/size_in_atlas = Vector2i(4, 9)
+24:3/0 = 0
+24:3/0/texture_origin = Vector2i(0, 128)
+24:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+28:6/size_in_atlas = Vector2i(3, 6)
+28:6/0 = 0
+28:6/0/texture_origin = Vector2i(0, 80)
+28:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+57:6/size_in_atlas = Vector2i(4, 6)
+57:6/next_alternative_id = 4
+57:6/0 = 0
+57:6/0/texture_origin = Vector2i(0, 80)
+57:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_cpiwb"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 128
+physics_layer_0/collision_mask = 17
+sources/0 = SubResource("TileSetAtlasSource_mf6jk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tog6q"]
 size = Vector2(230, 16)
@@ -65,7 +112,7 @@ tile_set = ExtResource("5_tog6q")
 [node name="SecretRoof" type="TileMapLayer" parent="Tiles" unique_id=377327125]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAbABwAAAANAAUAAAAcAB8AAAANAAUAAAAfABwAAAAYAAMAAAAfAB0AAAA5AAYAAAAiAAwAAAANAAUAAAAeAAwAAAAYAAMAAAAgAAwAAAA5AAYAAAAkAAsAAAA5AAYAAAAiAAYAAAAYAAMAAAAfAAgAAAA5AAYAAAAmAAoAAAARAAgAAAAbABgAAAAAAAYAAAAcABgAAAA2AAgAAAAaABgAAAA2AAgAAAA=")
-tile_set = ExtResource("4_1xkgs")
+tile_set = SubResource("TileSet_cpiwb")
 
 [node name="Houses" type="TileMapLayer" parent="Tiles" unique_id=1868574297]
 y_sort_enabled = true
