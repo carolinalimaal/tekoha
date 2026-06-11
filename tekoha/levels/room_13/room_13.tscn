@@ -12,18 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="9_3gh8j"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/save_point/save_point.tscn" id="10_lnuge"]
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="11_2ryh5"]
-[ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="13_8k31m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk2ql"]
 size = Vector2(16, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ha3u4"]
 size = Vector2(20, 39)
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_n6g6m"]
-vertices = PackedVector2Array(936.64844, 751.8594, 722.35156, 749.1406, 741.8125, 597.8672, 931.34375, 595.1406)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(733, 588, 941, 585, 947, 762, 711, 759)])
 
 [node name="Room13" type="Node2D" unique_id=1333157004]
 y_sort_enabled = true
@@ -135,9 +129,3 @@ position = Vector2(2093, 409)
 
 [node name="Canudinho5" parent="Enemies" unique_id=453265282 instance=ExtResource("9_3gh8j")]
 position = Vector2(1812, 409)
-
-[node name="Sacola" parent="Enemies" unique_id=461608080 instance=ExtResource("13_8k31m")]
-position = Vector2(828, 642)
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=236560853]
-navigation_polygon = SubResource("NavigationPolygon_n6g6m")

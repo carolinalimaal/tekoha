@@ -1694,6 +1694,7 @@ parameters/Walk/blend_position = Vector2(0, 0)
 script = ExtResource("2_kcolf")
 
 [node name="NavAgent" type="NavigationAgent2D" parent="." unique_id=982737471]
+path_max_distance = 30.0
 path_postprocessing = 1
 debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)

@@ -1646,6 +1646,8 @@ parameters/Walk/blend_position = Vector2(0, 0)
 script = ExtResource("4_b5uvv")
 
 [node name="NavAgent" type="NavigationAgent2D" parent="." unique_id=1156291853]
+debug_enabled = true
+debug_path_custom_color = Color(0, 1, 0, 1)
 
 [node name="AimingPoint" type="Marker2D" parent="." unique_id=527879996]
 
