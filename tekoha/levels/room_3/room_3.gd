@@ -7,7 +7,8 @@ func _ready() -> void:
 	change_room_state()
 
 func _process(_delta: float) -> void:
-	print(state_machine.current_state.name)
+	#print(state_machine.current_state.name)
+	pass
 
 func change_room_state() -> void:
 	var current_game_state = GameManager.current_save.game_state

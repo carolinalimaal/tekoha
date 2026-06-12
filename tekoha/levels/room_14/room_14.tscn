@@ -211,9 +211,11 @@ position = Vector2(-1, -56)
 navigation_polygon = SubResource("NavigationPolygon_nh63o")
 
 [node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D" unique_id=1223454977]
+color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(471, 388, 474, 430, 525, 430, 526, 388)
 
 [node name="Polygon2D2" type="Polygon2D" parent="NavigationRegion2D" unique_id=779514868]
 position = Vector2(-97.15906, 0)
 scale = Vector2(1.1136364, 1)
+color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(896.3061, 271, 896.3061, 229, 859.48975, 229, 859.48975, 271)

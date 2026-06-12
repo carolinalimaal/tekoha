@@ -9,6 +9,7 @@ extends State
 
 @onready var fishing_rod: FishingRod = $"../../FishingRod"
 @onready var path_block: PathBlock = $"../../PathBlock"
+@onready var navigation_region_2d: NavigationRegion2D = $"../../NavigationRegion2D"
 
 var tutorial_instance: Node2D
 var enemy_instance: Node2D
@@ -66,6 +67,9 @@ func _on_dialogue_ended() -> void:
 func _start_combat() -> void:
 	current_phase = Phase.COMBAT
 	
+	navigation_region_2d.set_deferred("enabled", true)
+	print("Região 2d habilitada")
+	
 	if enemy_scene:
 		enemy_instance = enemy_scene.instantiate()
 		owner_node.add_child(enemy_instance)
@@ -81,6 +85,9 @@ func _on_enemy_defeated() -> void:
 		DialogueManager.start_speech(cutscene_2)
 
 func _finish_state() -> void:
+	navigation_region_2d.set_deferred("disabled", true)
+	print("Região 2d desabilitada")
+	
 	if path_block:
 		path_block.set_deferred("monitoring", false)
 	GameManager.set_game_state(GameManager.GameState.AFTER_FIRST_ENEMY)
