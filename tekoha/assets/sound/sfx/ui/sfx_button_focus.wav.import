@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dvkq2vkifkdha"
-path="res://.godot/imported/ui_focus.wav-aa58b62c7b07323850232ad263765492.sample"
+path="res://.godot/imported/sfx_button_focus.wav-7b3d8e32dc97e79203b8b084e3c290e3.sample"
 
 [deps]
 
-source_file="res://assets/sound/sfx/ui/ui_focus.wav"
-dest_files=["res://.godot/imported/ui_focus.wav-aa58b62c7b07323850232ad263765492.sample"]
+source_file="res://assets/sound/sfx/ui/sfx_button_focus.wav"
+dest_files=["res://.godot/imported/sfx_button_focus.wav-7b3d8e32dc97e79203b8b084e3c290e3.sample"]
 
 [params]
 

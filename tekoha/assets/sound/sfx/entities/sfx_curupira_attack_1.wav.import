@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b7ooty6xsblvq"
-path="res://.godot/imported/attack_1.wav-34f39f86d69ae9c9400eaa251c7706be.sample"
+path="res://.godot/imported/sfx_curupira_attack_1.wav-aa0a714fef9d0fc72b903e24ac01b770.sample"
 
 [deps]
 
-source_file="res://assets/sound/sfx/entities/attack_1.wav"
-dest_files=["res://.godot/imported/attack_1.wav-34f39f86d69ae9c9400eaa251c7706be.sample"]
+source_file="res://assets/sound/sfx/entities/sfx_curupira_attack_1.wav"
+dest_files=["res://.godot/imported/sfx_curupira_attack_1.wav-aa0a714fef9d0fc72b903e24ac01b770.sample"]
 
 [params]
 
