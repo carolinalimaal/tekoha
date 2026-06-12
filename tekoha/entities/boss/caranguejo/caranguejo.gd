@@ -1,0 +1,2 @@
+class_name Caranguejo
+extends CharacterBody2D

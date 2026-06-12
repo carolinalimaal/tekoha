@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://bmfhnte8gq8ms"]
+
+[ext_resource type="Texture2D" uid="uid://l6ksfsnsipeb" path="res://assets/sprites/entities/boss/carranguejo/caranguejo.png" id="1_3euh3"]
+[ext_resource type="Script" uid="uid://b2uyncu7bx0db" path="res://entities/boss/caranguejo/caranguejo.gd" id="1_yj4m4"]
+[ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="2_4i4ph"]
+[ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="3_yj4m4"]
+[ext_resource type="Script" uid="uid://b25oeps4g35sq" path="res://utils/components/hurtbox_component.gd" id="4_4havc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yj4m4"]
+radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5yts"]
+atlas = ExtResource("1_3euh3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w8ec"]
+atlas = ExtResource("1_3euh3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i4ph"]
+atlas = ExtResource("1_3euh3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj4m4"]
+atlas = ExtResource("1_3euh3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4havc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5yts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w8ec")
+}],
+"loop": true,
+"name": &"walk_h",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i4ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj4m4")
+}],
+"loop": true,
+"name": &"walk_v",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ydlg6"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4i4ph"]
+radius = 9.055386
+
+[node name="Caranguejo" type="CharacterBody2D" unique_id=1701010688]
+script = ExtResource("1_yj4m4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1043758936]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_yj4m4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=397109087]
+sprite_frames = SubResource("SpriteFrames_4havc")
+animation = &"walk_h"
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1860673571]
+script = ExtResource("2_4i4ph")
+max_health = 2
+metadata/_custom_type_script = "uid://cxfitvewp4xj5"
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1006615641 node_paths=PackedStringArray("hitbox_collision")]
+script = ExtResource("3_yj4m4")
+hitbox_collision = NodePath("HitboxCollision")
+metadata/_custom_type_script = "uid://2pwu4vjmtkg6"
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxComponent" unique_id=1078451825]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_ydlg6")
+debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=1331913191 node_paths=PackedStringArray("hurtbox_collision")]
+script = ExtResource("4_4havc")
+hurtbox_collision = NodePath("HurtboxCollision")
+metadata/_custom_type_script = "uid://b25oeps4g35sq"
+
+[node name="HurtboxCollision" type="CollisionShape2D" parent="HurtboxComponent" unique_id=457998542]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_4i4ph")
+debug_color = Color(0.9957457, 0.061378665, 0, 0.41960785)
