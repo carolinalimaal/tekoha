@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://xih3x3uwtsm"
-path="res://.godot/imported/curupira_walk.wav-d8b16ee09f2b086bcc41e67813f750e6.sample"
+path="res://.godot/imported/sfx_curupira_walk.wav-1eb6f871ca516550be47215b32d34201.sample"
 
 [deps]
 
-source_file="res://assets/sound/sfx/entities/curupira_walk.wav"
-dest_files=["res://.godot/imported/curupira_walk.wav-d8b16ee09f2b086bcc41e67813f750e6.sample"]
+source_file="res://assets/sound/sfx/entities/sfx_curupira_walk.wav"
+dest_files=["res://.godot/imported/sfx_curupira_walk.wav-1eb6f871ca516550be47215b32d34201.sample"]
 
 [params]
 

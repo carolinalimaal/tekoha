@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://dt2fs32m4hfnb"]
 
 [ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_38032"]
-[ext_resource type="AudioStream" uid="uid://xih3x3uwtsm" path="res://assets/sound/sfx/entities/curupira_walk.wav" id="2_1juas"]
+[ext_resource type="AudioStream" uid="uid://xih3x3uwtsm" path="res://assets/sound/sfx/entities/sfx_curupira_walk.wav" id="2_1juas"]
 
 [resource]
 script = ExtResource("1_38032")

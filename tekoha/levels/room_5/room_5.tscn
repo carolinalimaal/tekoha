@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://r787xu0ctkdt" path="res://levels/room_5/room_5.gd" id="1_pmo2d"]
 [ext_resource type="Texture2D" uid="uid://b0do13h4w5fkm" path="res://assets/sprites/tiles/chao/grama_terra/grama_terra_tile.png" id="2_777hw"]
-[ext_resource type="AudioStream" uid="uid://ddwpcn8y5abs7" path="res://assets/sound/music/room_2_loop.wav" id="2_ggyjx"]
+[ext_resource type="AudioStream" uid="uid://ddwpcn8y5abs7" path="res://assets/sound/music/bgm_ambiente.wav" id="2_ggyjx"]
 [ext_resource type="Texture2D" uid="uid://2orevd14dvd4" path="res://assets/sprites/tiles/chao/terra_rio/terra_rio.png" id="3_2mt7e"]
 [ext_resource type="PackedScene" uid="uid://1qrmsqlofmkg" path="res://utils/components/door/door.tscn" id="4_85668"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="5_2mt7e"]

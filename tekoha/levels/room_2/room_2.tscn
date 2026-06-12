@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cudaprnhd7e17"]
 
 [ext_resource type="Script" uid="uid://dkxarylmcik8v" path="res://levels/room_2/room_2.gd" id="1_5ituv"]
-[ext_resource type="AudioStream" uid="uid://ddwpcn8y5abs7" path="res://assets/sound/music/room_2_loop.wav" id="2_126x5"]
+[ext_resource type="AudioStream" uid="uid://ddwpcn8y5abs7" path="res://assets/sound/music/bgm_ambiente.wav" id="2_126x5"]
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="3_i6edo"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="3_khgse"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="4_m550c"]
