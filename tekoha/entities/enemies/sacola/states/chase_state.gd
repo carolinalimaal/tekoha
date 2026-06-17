@@ -40,7 +40,9 @@ func _physics_update(_delta: float):
 		#if !owner_node.move_direction.is_zero_approx():
 			#owner_node.facing_direction = owner_node.move_direction
 			
-		owner_node.to_local(owner_node.nav_agent.get_next_path_position()).normalized()
+		owner_node.move_direction = owner_node.global_position.direction_to(
+		owner_node.nav_agent.get_next_path_position()
+		)
 		owner_node.velocity = owner_node.move_direction * owner_node.chase_speed
 		if !owner_node.move_direction.is_zero_approx():
 			owner_node.facing_direction = owner_node.move_direction
