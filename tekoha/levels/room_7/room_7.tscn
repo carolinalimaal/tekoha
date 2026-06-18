@@ -15,6 +15,8 @@
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="12_lveah"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="13_8n5gw"]
 [ext_resource type="PackedScene" uid="uid://c4rfo8vpkou8r" path="res://entities/npcs/cecilia/npc_cecila.tscn" id="14_8n5gw"]
+[ext_resource type="PackedScene" uid="uid://b1lajrf8hafkd" path="res://entities/npcs/genericos/npc_fogao.tscn" id="16_86gnr"]
+[ext_resource type="PackedScene" uid="uid://1akl6u1hwbk4" path="res://entities/npcs/genericos/npc_balcao_cozinha.tscn" id="17_ic5qo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lveah"]
 texture = ExtResource("4_4m76p")
@@ -124,6 +126,9 @@ metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rak3t"]
 size = Vector2(12, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n1lg"]
+size = Vector2(16, 58)
+
 [sub_resource type="Resource" id="Resource_8n5gw"]
 script = ExtResource("12_lveah")
 actor_name = "Cecilia"
@@ -156,9 +161,6 @@ metadata/_custom_type_script = "uid://x6215xlpsejj"
 script = ExtResource("13_8n5gw")
 dialogues = Array[ExtResource("12_lveah")]([SubResource("Resource_xr7sx"), SubResource("Resource_u3lv7")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n1lg"]
-size = Vector2(16, 58)
 
 [node name="Room7" type="Node2D" unique_id=838014098]
 y_sort_enabled = true
@@ -268,13 +270,19 @@ metadata/_custom_type_script = "uid://d1vcrcidpkigq"
 shape = SubResource("RectangleShape2D_rak3t")
 debug_color = Color(0.6392157, 0.5254902, 0, 0.7607843)
 
-[node name="NpcCecila" parent="." unique_id=2125482859 instance=ExtResource("14_8n5gw")]
-position = Vector2(100, 107)
-dialogues_list = Array[ExtResource("13_8n5gw")]([SubResource("Resource_ic5qo"), SubResource("Resource_cs4eo")])
-
 [node name="Area2D" type="Area2D" parent="." unique_id=1945160891]
 position = Vector2(368, 97)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1573523687]
 shape = SubResource("RectangleShape2D_1n1lg")
 debug_color = Color(0.8730078, 0.00046340286, 0.843584, 0.41960785)
+
+[node name="NpcCecila" parent="." unique_id=2125482859 instance=ExtResource("14_8n5gw")]
+position = Vector2(68, 117)
+dialogues_list = Array[ExtResource("13_8n5gw")]([SubResource("Resource_ic5qo"), SubResource("Resource_cs4eo")])
+
+[node name="NpcFogao" parent="." unique_id=1438173127 instance=ExtResource("16_86gnr")]
+position = Vector2(99, 82)
+
+[node name="NpcBalcaoCozinha" parent="." unique_id=1982547839 instance=ExtResource("17_ic5qo")]
+position = Vector2(308, 144)

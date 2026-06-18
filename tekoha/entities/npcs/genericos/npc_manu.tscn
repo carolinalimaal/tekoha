@@ -35,6 +35,8 @@ animations = [{
 size = Vector2(17, 16)
 
 [node name="NpcManu" type="CharacterBody2D" unique_id=459407605]
+collision_layer = 1024
+collision_mask = 1425
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1490684527]
 sprite_frames = SubResource("SpriteFrames_c5y3b")
