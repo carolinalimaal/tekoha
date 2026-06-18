@@ -8,7 +8,7 @@ signal puzzle_activator()
 @export var attack_range: int = 50
 
 var chase_range_sqr: int
-var attack_range_sqr: int
+var attack_range_sqr: float
 
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
@@ -19,12 +19,17 @@ func _ready() -> void:
 	state_machine = $StateMachine
 	nav_agent = $NavAgent
 	
+	
 	# Conectar sinais
 	health_component.died.connect(_on_enemy_died)
 	hitbox_component.attack_received.connect(_on_enemy_attack_received)
 	
 	chase_range_sqr = chase_range * chase_range
 	attack_range_sqr = attack_range * attack_range
+	
+	nav_agent.path_desired_distance = 5.0
+	nav_agent.target_desired_distance = attack_range
+	nav_agent.target_position = GlobalRefs.player.position
 	
 	state_machine.init(self)
 

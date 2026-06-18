@@ -14,6 +14,7 @@ func _update(_delta: float):
 		# Verificar distância do jogador
 		_distance_to_player = owner_node.get_distance_sqr_to_player()
 		if _distance_to_player > owner_node.attack_range_sqr:
+			print("voltou para chase")
 			transition_to("Chase")
 			return
 		if owner_node.can_attack and owner_node.is_attack_allowed():
