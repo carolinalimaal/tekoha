@@ -134,4 +134,3 @@ libraries/ = SubResource("AnimationLibrary_ya04a")
 [node name="NavigationLegend" parent="." unique_id=1102564893 instance=ExtResource("4_dgsoq")]
 layout_mode = 1
 legend_text = "[ui_accept] Continuar"
-icon_size = 32
