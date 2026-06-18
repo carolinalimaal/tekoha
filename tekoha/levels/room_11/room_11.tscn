@@ -67,6 +67,7 @@ position = Vector2(1384, 808)
 position = Vector2(2152, 784)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1626228944]
+y_sort_enabled = true
 
 [node name="Sacola" parent="Enemies" unique_id=461608080 instance=ExtResource("5_q4msy")]
 position = Vector2(1824, 984)
@@ -103,6 +104,7 @@ position = Vector2(-44, 9)
 scale = Vector2(1.5, 1.5)
 
 [node name="MecanicActivators" type="Node2D" parent="RootMecanic" unique_id=1892105930]
+y_sort_enabled = true
 position = Vector2(-921, -331)
 
 [node name="Canudinho2" parent="RootMecanic/MecanicActivators" unique_id=669012262 instance=ExtResource("6_khelp")]

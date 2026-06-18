@@ -167,6 +167,7 @@ script = ExtResource("10_wybie")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Enemies" type="Node2D" parent="." unique_id=452241584]
+y_sort_enabled = true
 position = Vector2(674, 446)
 
 [node name="Sacola" parent="Enemies" unique_id=461608080 instance=ExtResource("15_hksbc")]

@@ -227,6 +227,7 @@ shape = SubResource("CircleShape2D_kgm55")
 debug_color = Color(0.69994324, 0.49268162, 5.7756904e-07, 0.41960785)
 
 [node name="EnemySpawnPoints" type="Node2D" parent="FingerEnemies" unique_id=1098655083]
+y_sort_enabled = true
 position = Vector2(1069, 260)
 
 [node name="Sacola1" type="Marker2D" parent="FingerEnemies/EnemySpawnPoints" unique_id=609488450]
@@ -255,6 +256,7 @@ position = Vector2(916, 533)
 hammock_texture = ExtResource("11_1xkgs")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1414332641]
+y_sort_enabled = true
 
 [node name="Sacola" parent="Enemies" unique_id=461608080 instance=ExtResource("2_25ocl")]
 position = Vector2(524, 826)
