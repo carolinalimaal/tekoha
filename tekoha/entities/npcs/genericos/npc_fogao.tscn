@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b1lajrf8hafkd"]
+
+[ext_resource type="Texture2D" uid="uid://xtg6a8ovjvnn" path="res://assets/sprites/entities/npcs/npc_cozinhando.png" id="1_suft4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_salmk"]
+atlas = ExtResource("1_suft4")
+region = Rect2(0, 0, 46, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt4pl"]
+atlas = ExtResource("1_suft4")
+region = Rect2(46, 0, 46, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evfsl"]
+atlas = ExtResource("1_suft4")
+region = Rect2(92, 0, 46, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrnrb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_salmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt4pl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evfsl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4cinf"]
+radius = 11.0
+
+[node name="NpcFogao" type="CharacterBody2D" unique_id=1438173127]
+collision_layer = 1024
+collision_mask = 1425
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=420974533]
+sprite_frames = SubResource("SpriteFrames_lrnrb")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=584751778]
+position = Vector2(0, 22)
+shape = SubResource("CircleShape2D_4cinf")

@@ -17,6 +17,8 @@
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="14_bs7kn"]
 [ext_resource type="Resource" uid="uid://cg3qwx52dkf45" path="res://data/dialogues/npcs/cecilia/npc_cecilia_1.tres" id="15_d3h8c"]
 [ext_resource type="Resource" uid="uid://bcybr431sm52y" path="res://data/dialogues/npcs/cecilia/npc_cecilia_2.tres" id="16_bs7kn"]
+[ext_resource type="PackedScene" uid="uid://bdyh6ssl6wnjg" path="res://entities/npcs/genericos/npc_manu.tscn" id="18_a5usx"]
+[ext_resource type="PackedScene" uid="uid://c6i540q8c04us" path="res://entities/npcs/genericos/npc_sandro.tscn" id="19_dc3iq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j0ms1"]
 texture = ExtResource("5_fxwqa")
@@ -193,6 +195,14 @@ position = Vector2(632, 700)
 
 [node name="SecondCeciliaSpawnPoint" type="Marker2D" parent="." unique_id=241871122]
 position = Vector2(799, 381)
+
+[node name="NpcManu" parent="." unique_id=1511157617 instance=ExtResource("18_a5usx")]
+z_index = 1
+position = Vector2(401, 537)
+
+[node name="NpcSandro" parent="." unique_id=1427079839 instance=ExtResource("19_dc3iq")]
+y_sort_enabled = true
+position = Vector2(657, 342)
 
 [connection signal="body_entered" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_entered"]
 [connection signal="body_exited" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_exited"]

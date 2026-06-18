@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://1akl6u1hwbk4"]
+
+[ext_resource type="Texture2D" uid="uid://dwk4x13he40e7" path="res://assets/sprites/entities/npcs/npc_tabua_cortar.png" id="1_4s8ys"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvyud"]
+atlas = ExtResource("1_4s8ys")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knbc4"]
+atlas = ExtResource("1_4s8ys")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk120"]
+atlas = ExtResource("1_4s8ys")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18som"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvyud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knbc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk120")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qdkh"]
+size = Vector2(17, 4)
+
+[node name="NpcBalcaoCozinha" type="CharacterBody2D" unique_id=1982547839]
+collision_layer = 1024
+collision_mask = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=417664635]
+sprite_frames = SubResource("SpriteFrames_18som")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=132748957]
+position = Vector2(-2.5, 14)
+shape = SubResource("RectangleShape2D_3qdkh")
