@@ -40,6 +40,7 @@ func _physics_update(_delta: float):
 			transition_to("Aiming")
 			return
 			
+		#owner_node.move_direction = owner_node.to_local(owner_node.nav_agent.get_next_path_position()).normalized()
 		owner_node.move_direction = owner_node.global_position.direction_to(
 		owner_node.nav_agent.get_next_path_position()
 		)
