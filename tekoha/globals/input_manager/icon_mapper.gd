@@ -6,15 +6,15 @@ var keyboard_icons: Dictionary[String, String] = {
 	"move_left": "res://assets/UI/ui_button_icons/keyboard/A.svg",
 	"move_right": "res://assets/UI/ui_button_icons/keyboard/D.svg",
 	"move_down": "res://assets/UI/ui_button_icons/keyboard/S.svg",
-	"attack": "res://assets/UI/ui_button_icons/keyboard/Mouse-Left-Click.svg",
-	"roll": "res://assets/UI/ui_button_icons/keyboard/Mouse-Right-Click.svg",
+	"attack": "res://assets/UI/ui_button_icons/keyboard/O.svg",
+	"roll": "res://assets/UI/ui_button_icons/keyboard/P.svg",
 	"interact": "res://assets/UI/ui_button_icons/keyboard/R.svg",
 	"pause": "res://assets/UI/ui_button_icons/keyboard/ESC.svg",
 	"inventory": "res://assets/UI/ui_button_icons/keyboard/E.svg",
-	"skip_dialogue": "res://assets/UI/ui_button_icons/keyboard/Mouse-Left-Click.svg",
-	"ui_accept": "res://assets/UI/ui_button_icons/keyboard/Space.svg",
-	"ui_cancel": "res://assets/UI/ui_button_icons/keyboard/ESC.svg",
-	"ui_select": "res://assets/UI/ui_button_icons/keyboard/Space.svg"
+	"skip_dialogue": "res://assets/UI/ui_button_icons/keyboard/O.svg",
+	"ui_accept": "res://assets/UI/ui_button_icons/keyboard/O.svg",
+	"ui_cancel": "res://assets/UI/ui_button_icons/keyboard/P.svg",
+	"ui_select": "res://assets/UI/ui_button_icons/keyboard/O.svg"
 }
 
 var playstation_icons: Dictionary[String, String] = {
