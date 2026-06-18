@@ -32,20 +32,6 @@ func _update(_delta: float):
 			#return
 
 func _physics_update(_delta: float):
-	pass
-	#if GlobalRefs.player:
-		# TODO: Implementar navigation
-		#print("Aqui 2")
-		#owner_node.move_direction = owner_node.to_local(owner_node.nav_agent.get_next_path_position()).normalized()
-		#owner_node.move_direction = owner_node.get_direction_to_player()
-		#owner_node.velocity = owner_node.move_direction * owner_node.chase_speed
-		#if !owner_node.move_direction.is_zero_approx():
-			#owner_node.facing_direction = owner_node.move_direction
-			
-		
-		#owner_node.velocity = owner_node.move_direction * owner_node.chase_speed
-		#if !owner_node.move_direction.is_zero_approx():
-			#owner_node.facing_direction = owner_node.move_direction
 	
 	if GlobalRefs.player:
 		_distance_to_player = owner_node.get_distance_sqr_to_player()
@@ -57,10 +43,8 @@ func _physics_update(_delta: float):
 		owner_node.move_direction = owner_node.global_position.direction_to(
 		owner_node.nav_agent.get_next_path_position()
 		)
-		var current_agent_pos = owner_node.global_position
-		var next_path_pos = owner_node.nav_agent.get_next_path_position()
 		
-		owner_node.velocity = current_agent_pos.direction_to(next_path_pos) * owner_node.chase_speed
+		owner_node.velocity = owner_node.move_direction * owner_node.chase_speed
 		
 		if !owner_node.move_direction.is_zero_approx():
 			owner_node.facing_direction = owner_node.move_direction
