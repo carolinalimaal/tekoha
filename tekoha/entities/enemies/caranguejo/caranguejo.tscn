@@ -94,7 +94,7 @@ animation = &"walk_h"
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1860673571]
 script = ExtResource("2_4i4ph")
-max_health = 8
+max_health = 2
 metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=1006615641 node_paths=PackedStringArray("hitbox_collision")]
@@ -139,7 +139,7 @@ metadata/_custom_type_script = "uid://bjkumybw6hi8o"
 script = ExtResource("11_lc10e")
 metadata/_custom_type_script = "uid://bjkumybw6hi8o"
 
-[node name="State" type="Node" parent="StateMachine" unique_id=460664687]
+[node name="Stun" type="Node" parent="StateMachine" unique_id=460664687]
 script = ExtResource("13_10w0j")
 metadata/_custom_type_script = "uid://bjkumybw6hi8o"
 

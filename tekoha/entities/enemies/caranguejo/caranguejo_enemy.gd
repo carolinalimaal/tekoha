@@ -12,6 +12,7 @@ signal puzzle_activator()
 @export var death_effect: Shader
 
 var attack_range_sqr: int
+var is_dead: bool = false
 
 @onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_component: HealthComponent = $HealthComponent
@@ -19,6 +20,7 @@ var attack_range_sqr: int
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 
 func _ready() -> void:
+	sprite_2d.material = sprite_2d.material.duplicate()
 	state_machine = $StateMachine
 	attack_range_sqr = attack_range * attack_range
 	health_component.died.connect(_on_enemy_died)
@@ -47,17 +49,21 @@ func set_death_progress(value: float) -> void:
 	sprite_2d.material.set_shader_parameter("progress", value)
 
 func _on_enemy_died():
+	is_dead = true
 	var parent = get_parent()
 	if parent.name == "MecanicActivators":
 		puzzle_activator.emit()
+	state_machine.set_process(false)
+	set_physics_process(false)
+	hitbox_component.hitbox_collision.set_deferred("disabled", true)
+	hurtbox_component.hurtbox_collision.set_deferred("disabled", true)
 	die()
-	state_machine.current_state.transition_to("Death")
 
 func _on_enemy_attack_received(attack_data: AttackData):
-	if state_machine.current_state.name in ["Death", "Stun"]:
+	if is_dead or state_machine.current_state.name in ["Stun"]:
 		return
 	health_component.take_damage(attack_data)
-	if state_machine.current_state.name != "Death":
+	if not is_dead:
 		apply_damage()
 		var stun_state = state_machine.states.get("stun")
 		stun_state.receive_attack_data(attack_data)

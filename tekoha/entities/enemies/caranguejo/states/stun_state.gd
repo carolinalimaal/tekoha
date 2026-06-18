@@ -29,4 +29,6 @@ func _physics_update(_delta: float):
 	pass
 
 func _on_stun_timeout():
+	if not is_instance_valid(owner_node) or owner_node.is_dead:
+		return
 	transition_to("Align")
