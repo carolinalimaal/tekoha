@@ -15,7 +15,11 @@ var is_showing: bool
 var current_dialogue: Array[DialogueLine]
 var index: int
 var type_tween: Tween
+var bg_tween: Tween
 var active_text_label: RichTextLabel
+var skip_cooldown_timer: float = 0.0
+
+const SKIP_COOLDOWN: float = 0.15
 
 @onready var solid_background: ColorRect = $SolidBackground
 @onready var cutscene_background: TextureRect = $CutsceneBackground
@@ -34,9 +38,14 @@ func _ready() -> void:
 	is_showing = false
 	InputManager.input_source_changed.connect(_on_input_source_changed)
 
+func _process(delta: float) -> void:
+	if skip_cooldown_timer > 0:
+		skip_cooldown_timer -= delta
+
 func _input(_event: InputEvent) -> void:
-	if InputManager.get_action_pressed("skip_dialogue") and is_showing:
+	if InputManager.get_action_pressed("skip_dialogue") and is_showing and skip_cooldown_timer <= 0:
 		get_viewport().set_input_as_handled()
+		skip_cooldown_timer = SKIP_COOLDOWN
 		_next_sentence()
 
 func start_speech(dialogue_data: DialogueSettings) -> void:
@@ -102,6 +111,9 @@ func _end_speech() -> void:
 	index = 0
 	
 	if solid_background.visible and cutscene_background.visible:
+		if bg_tween and bg_tween.is_running():
+			bg_tween.kill()
+
 		var fade_tween = create_tween()
 		fade_tween.tween_property(cutscene_background, "modulate:a", 0.0, 0.5)
 		fade_tween.tween_property(solid_background, "modulate:a", 0.0, 0.5)
@@ -127,17 +139,20 @@ func _set_background_image(current: DialogueLine, is_cutscene: bool) -> void:
 		solid_background.show()
 		navigation_legend.show()
 		
+		active_text_label = speech_text_cutscene
+
 		if cutscene_background.texture != current.background_image:
 			cutscene_background.texture = current.background_image
 			cutscene_background.show()
-			
+
+			if bg_tween and bg_tween.is_running():
+				bg_tween.kill()
+
 			# Animacao do background
 			cutscene_background.modulate.a = 0.0
-			var bg_tween = create_tween()
+			bg_tween = create_tween()
 			bg_tween.set_trans(Tween.TRANS_SINE)
 			bg_tween.tween_property(cutscene_background, "modulate:a", 1.0, 1.0)
-			
-			active_text_label = speech_text_cutscene
 	else:
 		dialogue_box.show()
 		cutscene_box.hide()
@@ -165,6 +180,8 @@ func force_close() -> void:
 	UIManager.is_interact_ui_open = false
 	if type_tween and type_tween.is_running():
 		type_tween.kill()
+	if bg_tween and bg_tween.is_running():
+		bg_tween.kill()
 
 func _on_input_source_changed(_source: InputManager.InputSource) -> void:
 	if is_showing:
