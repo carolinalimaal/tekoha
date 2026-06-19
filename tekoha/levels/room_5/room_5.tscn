@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="8_ln8wb"]
 [ext_resource type="Texture2D" uid="uid://4hv4ijur8gyw" path="res://assets/sprites/props/hammock/rede_save_livre.png" id="9_06kpn"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/props/muiraquita/muiraquita.tscn" id="12_1mig3"]
+[ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="13_vultg"]
 [ext_resource type="PackedScene" uid="uid://dlk1ggdwcoujt" path="res://entities/npcs/genericos/npcs_varanda_restaurante.tscn" id="14_1it45"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmo2d"]
@@ -567,6 +568,7 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("8_cqf1r")]
 position = Vector2(320, 512)
 hammock_texture = ExtResource("9_06kpn")
+hammock_collision = ExtResource("13_vultg")
 
 [node name="Muiraquita" parent="." unique_id=899051990 instance=ExtResource("12_1mig3")]
 position = Vector2(480, 968)

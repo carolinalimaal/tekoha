@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/components/save_point/save_point.tscn" id="5_vppv2"]
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="6_lp40p"]
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/props/bau/bau.tscn" id="7_n5d50"]
+[ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="8_0m1lt"]
 [ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="8_uhwsh"]
 [ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="9_0m1lt"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="10_7woc8"]
@@ -66,6 +67,7 @@ polygon = PackedVector2Array(355, 672, 547, 640, 707, 672, 899, 576, 995, 480, 1
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("5_vppv2")]
 position = Vector2(1023, 544)
 hammock_texture = ExtResource("6_lp40p")
+hammock_collision = ExtResource("8_0m1lt")
 
 [node name="Bau" parent="." unique_id=302874208 instance=ExtResource("7_n5d50")]
 position = Vector2(1087, 608)

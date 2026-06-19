@@ -17,6 +17,7 @@
 [ext_resource type="SpriteFrames" uid="uid://drc4q3kh0ufi2" path="res://assets/sprites/props/pots/vaso_01_2.tres" id="15_vhq43"]
 [ext_resource type="SpriteFrames" uid="uid://c4iwvjw63l00o" path="res://assets/sprites/props/pots/vaso_02_1.tres" id="16_kgm55"]
 [ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="19_cpiwb"]
+[ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="19_ej02v"]
 [ext_resource type="SpriteFrames" uid="uid://dl2so67ufwqwm" path="res://assets/sprites/props/pots/vaso_02_3.tres" id="20_ej02v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mf6jk"]
@@ -123,13 +124,13 @@ tile_set = ExtResource("8_cpiwb")
 tile_map_data = PackedByteArray("AAAfABIAAAAJAAEAAAAMAAkAAAAGAAEAAAAOAAcAAAAGAAEAAAARAA4AAAAGAAEAAAATAAQAAAAGAAEAAAAUAB0AAAAGAAEAAAAVABMAAAAGAAEAAAAWABgAAAAGAAEAAAAXAAwAAAAGAAEAAAAXAA4AAAAGAAEAAAAbABYAAAAGAAEAAAAfAA4AAAAGAAEAAAAgABkAAAAGAAEAAAAgABsAAAAGAAEAAAAiAA4AAAAGAAEAAAAlAA4AAAAGAAEAAAAoABsAAAAGAAEAAAAqABQAAAAGAAEAAAAtAAcAAAAGAAEAAAAxAAQAAAAGAAEAAAAyABgAAAAGAAEAAAAzABIAAAAGAAEAAAA0AB0AAAAGAAEAAAA1ABYAAAAGAAEAAAAdABwAAAAOAAIAAAAuAAQAAAAFAAEAAAAuAAUAAAAHAAMAAAA2AAUAAAAHAAMAAAA1AAUAAAAKAAIAAAAzAAAAAAANAAEAAAAzAAEAAAAKAAEAAAA0AAYAAAAEAAIAAAAvAAoAAAAEAAIAAAApAA8AAAAEAAIAAAAnAA4AAAAKAAEAAAAnAAsAAAAEAAIAAAAgABEAAAAIAAEAAAA=")
 tile_set = ExtResource("4_cpiwb")
 
-[node name="Limits" type="Node2D" parent="." unique_id=780763043]
+[node name="Limits" type="Node2D" parent="Tiles" unique_id=780763043]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Limits" unique_id=243301723]
+[node name="StaticBody2D" type="StaticBody2D" parent="Tiles/Limits" unique_id=243301723]
 collision_layer = 128
 collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/StaticBody2D" unique_id=209090283]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tiles/Limits/StaticBody2D" unique_id=209090283]
 polygon = PackedVector2Array(149, 1083, 301, 1086, 200, 1069, 270, 979, 307, 885, 356, 809, 420, 715, 464, 691, 536, 586, 689, 571, 884, 426, 992, 428, 919, 242, 999, 173, 1111, 128, 1234, 225, 1266, 305, 1335, 310, 1430, 157, 1465, 80, 1583, 50, 1647, 2, 1838, -1, 1832, 157, 1821, 306, 1737, 459, 1683, 534, 1628, 617, 1580, 674, 1488, 705, 1366, 779, 1147, 785, 1028, 829, 1014, 937, 943, 952, 875, 886, 874, 821, 930, 773, 731, 864, 687, 941, 627, 983, 627, 1061, 548, 1086, 640, 1082, 785, 876, 937, 981, 1037, 955, 1095, 860, 1222, 837, 1504, 764, 1642, 646, 1755, 490, 1853, 307, 1868, -13, 1632, -13, 1422, 70, 1323, 252, 1103, 98, 892, 232, 913, 376, 640, 519, 494, 554, 292, 823)
 
 [node name="Room9Door" type="Area2D" parent="." unique_id=684170949]
@@ -254,6 +255,7 @@ debug_color = Color(0.99235517, 0.08491052, 0, 0.41960785)
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("10_tog6q")]
 position = Vector2(916, 533)
 hammock_texture = ExtResource("11_1xkgs")
+hammock_collision = ExtResource("19_ej02v")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1414332641]
 y_sort_enabled = true

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="9_3gh8j"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/components/save_point/save_point.tscn" id="10_lnuge"]
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="11_2ryh5"]
+[ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="11_11rqf"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="12_n6g6m"]
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="13_11rqf"]
 
@@ -202,6 +203,7 @@ shape = SubResource("RectangleShape2D_n6g6m")
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("10_lnuge")]
 position = Vector2(410, 536)
 hammock_texture = ExtResource("11_2ryh5")
+hammock_collision = ExtResource("11_11rqf")
 
 [node name="NPCDonoBarco" parent="." unique_id=1741828607 instance=ExtResource("8_ha3u4")]
 position = Vector2(611, 820)
