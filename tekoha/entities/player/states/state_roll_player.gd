@@ -13,12 +13,14 @@ func _ready() -> void:
 
 func _enter() -> void:
 	owner_node.can_roll = false
+	# Desabilitar a hitbox_collision
+	owner_node.hitbox_component.hitbox_collision.set_deferred("disabled", true)
+	owner_node.set_collision_mask_value(13, false)
 	# Pegar a direcao da rolagem e aplicar o movimento
 	var roll_direction = owner_node.get_aim_direction()
 	owner_node.roll_direction = roll_direction if roll_direction != Vector2.ZERO else owner_node.facing_direction
+	# Adiciona a velocidade ao player
 	owner_node.velocity = owner_node.roll_direction * owner_node.ROLL_SPEED
-	# Desabilitar a hitbox_collision
-	owner_node.hitbox_component.hitbox_collision.set_deferred("disabled", true)
 	# Atribuir o tempo de cooldown
 	_roll_timer.wait_time = owner_node.roll_cooldown
 	# Conectar o sinal animation_finished
@@ -30,6 +32,7 @@ func _exit() -> void:
 	owner_node.facing_direction = owner_node.roll_direction
 	# Habilitar a hitbox_collision
 	owner_node.hitbox_component.hitbox_collision.set_deferred("disabled", false)
+	owner_node.set_collision_mask_value(13, true)
 	# Desconectar o sinal de animation_finished (evitar conflito com outros estados)
 	owner_node.animation_tree.animation_finished.disconnect(_on_animation_finished)
 	# Iniciar o timer do cooldown
