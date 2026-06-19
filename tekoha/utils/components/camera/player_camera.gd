@@ -9,12 +9,16 @@ var shake_fade: float = 4
 var shake_strengh: float
 
 func _ready() -> void:
-	level = get_parent()
+	level = get_node("Level").get_child(0)
 	if level is Level:
 		limit_left = level.limit_left
 		limit_right = level.limit_right
 		limit_bottom = level.limit_bottom
 		limit_top = level.limit_top
+		
+		zoom.x = level.camera_zoom
+		zoom.y = level.camera_zoom
+		
 	var root_mecanic: RootMecanic = level.get_node_or_null("RootMecanic")
 	if root_mecanic:
 		root_mecanic.shake_camera.connect(_on_camera_shake)
