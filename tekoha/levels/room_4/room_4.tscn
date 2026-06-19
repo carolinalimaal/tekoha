@@ -4,7 +4,6 @@
 [ext_resource type="AudioStream" uid="uid://ddwpcn8y5abs7" path="res://assets/sound/music/bgm_ambiente.wav" id="2_kkt51"]
 [ext_resource type="Texture2D" uid="uid://2orevd14dvd4" path="res://assets/sprites/tiles/chao/terra_rio/terra_rio.png" id="2_ptwuu"]
 [ext_resource type="Texture2D" uid="uid://b0do13h4w5fkm" path="res://assets/sprites/tiles/chao/grama_terra/grama_terra_tile.png" id="3_h3sq2"]
-[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="5_1245a"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="5_kkt51"]
 [ext_resource type="PackedScene" uid="uid://1qrmsqlofmkg" path="res://utils/components/door/door.tscn" id="6_h3sq2"]
 [ext_resource type="PackedScene" uid="uid://dc1wapt25fjje" path="res://utils/props/sign/sign.tscn" id="7_6xflk"]
@@ -511,6 +510,7 @@ room_2_music = ExtResource("2_kkt51")
 limit_top = 512
 limit_bottom = 1728
 limit_right = 1088
+camera_zoom = 1.5
 
 [node name="Tiles" type="Node2D" parent="." unique_id=222923614]
 y_sort_enabled = true
@@ -536,10 +536,6 @@ polygon = PackedVector2Array(-642.8904, 225.90967, -610.8904, 193.90967, -578.89
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Tiles/Limits/StaticBody2D" unique_id=532629335]
 position = Vector2(-738.8904, -766.09033)
 polygon = PackedVector2Array(672, 1472, 576, 1344, 448, 1248, 352, 1216, 192, 1184, 96, 1120, 96, 1504, 704, 1504)
-
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1212452996]
-script = ExtResource("5_1245a")
-metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Room2Door" parent="." unique_id=595878266 groups=["doors"] instance=ExtResource("6_h3sq2")]
 position = Vector2(96, 1056)

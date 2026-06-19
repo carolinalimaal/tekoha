@@ -10,7 +10,6 @@
 [ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="8_uhwsh"]
 [ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="9_0m1lt"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="10_7woc8"]
-[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="11_uhwsh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvq2q"]
 size = Vector2(32, 160)
@@ -22,6 +21,7 @@ limit_top = 320
 limit_bottom = 1120
 limit_left = 320
 limit_right = 1347
+camera_zoom = 1.5
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1818781560]
 y_sort_enabled = true
@@ -69,8 +69,3 @@ hammock_collision = ExtResource("8_0m1lt")
 position = Vector2(1087, 608)
 item = ExtResource("8_uhwsh")
 sprite_frames = ExtResource("9_0m1lt")
-
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=729321195]
-zoom = Vector2(1.5, 1.5)
-script = ExtResource("11_uhwsh")
-metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"

@@ -12,4 +12,6 @@ var new_item_found_panel: NewItemFoundPanel
 var confirmation_popup: ConfirmationPopup
 var player: Player
 
+var player_camera: PlayerCamera
+
 var inventory: Inventory

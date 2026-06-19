@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://bs7b7nv2t6yri" path="res://levels/room_10/root_mecanic.gd" id="7_khelp"]
 [ext_resource type="PackedScene" uid="uid://dx6yr2evs52lk" path="res://utils/props/root/root.tscn" id="8_drjbi"]
 [ext_resource type="SpriteFrames" uid="uid://d1u4kbte4dt8y" path="res://assets/sprites/props/chest/chest_03.tres" id="9_khelp"]
-[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="11_q4msy"]
 
 [sub_resource type="Resource" id="Resource_hvq2q"]
 metadata/__load_path__ = "res://data/items/acai.tres"
@@ -37,6 +36,7 @@ limit_top = 210
 limit_bottom = 1376
 limit_left = 384
 limit_right = 2432
+camera_zoom = 1.5
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1818781560]
 y_sort_enabled = true
@@ -189,11 +189,6 @@ shape = SubResource("RectangleShape2D_q4msy")
 
 [node name="Marker2D" type="Marker2D" parent="Room13Door" unique_id=1476808719]
 position = Vector2(0, 60)
-
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1584578629]
-zoom = Vector2(1.5, 1.5)
-script = ExtResource("11_q4msy")
-metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=367889744]
 navigation_polygon = SubResource("NavigationPolygon_khelp")

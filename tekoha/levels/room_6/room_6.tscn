@@ -9,7 +9,6 @@
 [ext_resource type="TileSet" uid="uid://c2k8hq2241a5o" path="res://assets/sprites/tiles/interiores/especial_tiles.tres" id="5_d3h8c"]
 [ext_resource type="Texture2D" uid="uid://chighqrp3ctbd" path="res://assets/sprites/tiles/objetos/objetos.png" id="5_fxwqa"]
 [ext_resource type="Texture2D" uid="uid://bhcc8dd3rymmg" path="res://assets/sprites/props/bar_counter/balcao_passavel.png" id="6_copml"]
-[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="7_fxwqa"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="9_copml"]
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="11_1n6nv"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/props/muiraquita/muiraquita.tscn" id="12_4hwci"]
@@ -84,6 +83,7 @@ limit_top = 110
 limit_bottom = 880
 limit_left = 285
 limit_right = 931
+camera_zoom = 2.0
 metadata/_custom_type_script = "uid://up3s6m65v4h7"
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1544974918]
@@ -144,12 +144,6 @@ debug_color = Color(0.93845415, 0.23231229, 0.24014667, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RollMecanic/StaticBody2D/RollArea" unique_id=898148196]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_u15um")
-
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1714251315]
-position = Vector2(609, 716)
-zoom = Vector2(2, 2)
-script = ExtResource("7_fxwqa")
-metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("5_8imx6")]
 position = Vector2(481, 190)
