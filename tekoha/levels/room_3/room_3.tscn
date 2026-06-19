@@ -19,9 +19,9 @@
 [ext_resource type="Script" uid="uid://d1vcrcidpkigq" path="res://utils/components/path_block.gd" id="17_2jupl"]
 [ext_resource type="Resource" uid="uid://dnypnxch0rxfl" path="res://data/cutscenes/cutscene_4/cutscene_4.tres" id="17_x4cld"]
 [ext_resource type="PackedScene" uid="uid://bx27oixgqklgm" path="res://utils/props/tutorial/tutorial.tscn" id="18_wbedm"]
-[ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="19_keg0k"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/components/save_point/save_point.tscn" id="19_wbedm"]
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="20_46t15"]
+[ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="20_iti7q"]
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="20_keg0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2msv"]
@@ -136,7 +136,7 @@ script = ExtResource("14_4iyy6")
 cutscene_1 = ExtResource("16_2jupl")
 cutscene_2 = ExtResource("17_x4cld")
 tutorial_packed_scene = ExtResource("18_wbedm")
-enemy_scene = ExtResource("19_keg0k")
+enemy_scene = ExtResource("20_iti7q")
 enemy_spawn_position = NodePath("../../EnemySpawnPoint")
 path_block_message = SubResource("Resource_24hp8")
 
