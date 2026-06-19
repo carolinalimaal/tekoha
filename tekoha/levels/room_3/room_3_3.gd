@@ -66,16 +66,14 @@ func _on_dialogue_ended() -> void:
 
 func _start_combat() -> void:
 	current_phase = Phase.COMBAT
-	
-	navigation_region_2d.set_deferred("enabled", true)
-	print("Região 2d habilitada")
-	
+	navigation_region_2d.enabled = true
+	await get_tree().physics_frame
+
 	if enemy_scene:
 		enemy_instance = enemy_scene.instantiate()
-		owner_node.add_child(enemy_instance)
-		
 		if enemy_spawn_position:
-			enemy_instance.global_position = enemy_spawn_position.global_position
+			enemy_instance.position = owner_node.to_local(enemy_spawn_position.global_position)
+		owner_node.add_child(enemy_instance)
 		path_block.set_deferred("monitoring", true)
 		enemy_instance.tree_exited.connect(_on_enemy_defeated)
 
@@ -85,8 +83,7 @@ func _on_enemy_defeated() -> void:
 		DialogueManager.start_speech(cutscene_2)
 
 func _finish_state() -> void:
-	navigation_region_2d.set_deferred("disabled", true)
-	print("Região 2d desabilitada")
+	navigation_region_2d.enabled = false
 	
 	if path_block:
 		path_block.set_deferred("monitoring", false)

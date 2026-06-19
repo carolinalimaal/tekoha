@@ -27,10 +27,6 @@ func _ready() -> void:
 	chase_range_sqr = chase_range * chase_range
 	attack_range_sqr = attack_range * attack_range
 	
-	nav_agent.path_desired_distance = 5.0
-	nav_agent.target_desired_distance = 5.0
-	nav_agent.target_position = GlobalRefs.player.position
-	
 	state_machine.init(self)
 
 func _physics_process(_delta: float) -> void:
