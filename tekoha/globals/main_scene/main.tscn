@@ -61,5 +61,6 @@ y_sort_enabled = true
 position = Vector2(45, 15)
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1007452761]
+position = Vector2(173, 110)
 script = ExtResource("12_qujwd")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"

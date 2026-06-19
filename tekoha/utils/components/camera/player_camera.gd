@@ -10,20 +10,9 @@ var shake_strengh: float
 
 func _ready() -> void:
 	GlobalRefs.player_camera = self
-	
 	level = get_parent().get_node("Level").get_child(0)
-	if level is Level:
-		limit_left = level.limit_left
-		limit_right = level.limit_right
-		limit_bottom = level.limit_bottom
-		limit_top = level.limit_top
-		
-		zoom.x = level.camera_zoom
-		zoom.y = level.camera_zoom
-		
-	var root_mecanic: RootMecanic = level.get_node_or_null("RootMecanic")
-	if root_mecanic:
-		root_mecanic.shake_camera.connect(_on_camera_shake)
+	update_camera_stats(level)
+	
 	make_current()
 
 func _process(delta: float) -> void:
@@ -53,3 +42,18 @@ func _on_camera_shake():
 	if InputManager.active_input_source == InputManager.InputSource.CONTROLLER:
 		Input.start_joy_vibration(0, 0.5, 0.5, 0.6)
 	apply_shake()
+	
+func update_camera_stats(level: Level):
+	print(level)
+	if level is Level:
+		limit_left = level.limit_left
+		limit_right = level.limit_right
+		limit_bottom = level.limit_bottom
+		limit_top = level.limit_top
+		
+		zoom.x = level.camera_zoom
+		zoom.y = level.camera_zoom
+		
+	var root_mecanic: RootMecanic = level.get_node_or_null("RootMecanic")
+	if root_mecanic:
+		root_mecanic.shake_camera.connect(_on_camera_shake)

@@ -47,16 +47,15 @@ func on_animation_midpoint_reached() -> void:
 	var level_door_marker = level_door.get_node("Marker2D")
 	var spawn_point = level_door_marker.global_position
 	
-	var next_level_camera = level_instance.get_node("PlayerCamera")
-	next_level_camera.global_position.x = level_door_marker.global_position.x
-	next_level_camera.global_position.y = level_door_marker.global_position.y
-	
 	var next_level_is_dark = level_instance.dark_room
 	if next_level_is_dark:
 		GlobalRefs.player.turn_light_on_or_off(true)
 	else:
 		GlobalRefs.player.turn_light_on_or_off(false)
 	
+	
 	GlobalRefs.player.global_position = spawn_point
+	GlobalRefs.player_camera.global_position = GlobalRefs.player.global_position
+	GlobalRefs.player_camera.update_camera_stats(level_instance)
 	GlobalSignals.emit_signal("level_loading_finished")
 	
