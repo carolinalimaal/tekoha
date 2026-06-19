@@ -3,6 +3,28 @@
 [ext_resource type="Script" uid="uid://dbkepn5k5mqk3" path="res://utils/props/muiraquita/muiraquita.gd" id="1_fubtg"]
 [ext_resource type="Texture2D" uid="uid://dmn4cdu2ya3v5" path="res://assets/sprites/items/muiraquita/muiraquita.png" id="2_8hme8"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sparkle"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_sparkle"]
+colors = PackedColorArray(0.55, 1, 0.65, 1, 0.55, 1, 0.65, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sparkle"]
+gradient = SubResource("Gradient_sparkle")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sparkle"]
+emission_shape = 2
+emission_sphere_radius = 9.0
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+damping_min = 10.0
+damping_max = 20.0
+scale_max = 2.5
+color = Color(0.55, 1, 0.65, 1)
+color_ramp = SubResource("GradientTexture1D_sparkle")
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_fubtg"]
 radius = 16.0
 
@@ -73,6 +95,14 @@ y_sort_enabled = true
 collision_layer = 512
 collision_mask = 0
 script = ExtResource("1_fubtg")
+
+[node name="Sparkles" type="GPUParticles2D" parent="." unique_id=2001234567]
+material = SubResource("CanvasItemMaterial_sparkle")
+scale = Vector2(2, 2)
+amount = 10
+lifetime = 1.2
+preprocess = 0.5
+process_material = SubResource("ParticleProcessMaterial_sparkle")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1103056214]
 texture = ExtResource("2_8hme8")
