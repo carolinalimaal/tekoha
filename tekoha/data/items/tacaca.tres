@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_kw1iu")
+health_gain = 3
 icon = ExtResource("1_1tfxd")
 name = "Tacacá"
 description = "Prato típico do Pará feito com tucupi, goma, camarão seco e jambu."

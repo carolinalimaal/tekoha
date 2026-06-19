@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_8h1xu")
+health_gain = 5
 icon = ExtResource("1_dlryv")
 name = "Peixe Frito com Açaí"
 description = "Peixe crocante acompanhado de açaí."

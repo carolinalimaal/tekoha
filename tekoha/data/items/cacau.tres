@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_3luio")
+health_gain = 1
 icon = ExtResource("1_tjxmk")
 name = "Cacau"
 description = "Fruta amazônica usada como matéria-prima do chocolate."

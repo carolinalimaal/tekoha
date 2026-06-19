@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="6_lp40p"]
 [ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/props/bau/bau.tscn" id="7_n5d50"]
 [ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="8_0m1lt"]
-[ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="8_uhwsh"]
 [ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="9_0m1lt"]
+[ext_resource type="Resource" uid="uid://c8aub04s02j8m" path="res://data/items/cacau.tres" id="9_lp40p"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="10_7woc8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvq2q"]
@@ -67,6 +67,6 @@ hammock_collision = ExtResource("8_0m1lt")
 
 [node name="Bau" parent="." unique_id=302874208 instance=ExtResource("7_n5d50")]
 position = Vector2(1087, 608)
-id = 3
-item = ExtResource("8_uhwsh")
+id = 4
+item = ExtResource("9_lp40p")
 sprite_frames = ExtResource("9_0m1lt")

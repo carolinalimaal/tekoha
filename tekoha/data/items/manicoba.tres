@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_oxvpw")
+health_gain = 5
 icon = ExtResource("1_sp85t")
 name = "Maniçoba"
 description = "Prato feito da folha de mandioca cozida por 7 dias para retirar o veneno."
