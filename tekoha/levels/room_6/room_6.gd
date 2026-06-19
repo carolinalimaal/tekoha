@@ -23,9 +23,12 @@ func _update_cecilia() -> void:
 	if state <= GameManager.GameState.TRAINING_COMPLETE:
 		npc_cecilia.global_position = first_cecilia_spawn.global_position
 		npc_cecilia.npc_dialogue = npc_cecilia.dialogues_list[0]
+	elif state == GameManager.GameState.FIRST_MEETING_CECILIA:
+		npc_cecilia.global_position = first_cecilia_spawn.global_position
+		npc_cecilia.npc_dialogue = npc_cecilia.dialogues_list[1]
 	elif state >= GameManager.GameState.AFTER_FIRST_ENEMY:
 		npc_cecilia.global_position = second_cecilia_spawn.global_position
-		npc_cecilia.npc_dialogue = npc_cecilia.dialogues_list[1]
+		npc_cecilia.npc_dialogue = npc_cecilia.dialogues_list[2]
 
 func _on_game_state_changed(new_state: GameManager.GameState) -> void:
 	if new_state >= GameManager.GameState.AFTER_FIRST_ENEMY:
@@ -38,6 +41,7 @@ func _on_game_state_changed(new_state: GameManager.GameState) -> void:
 
 func _go_to_room7() -> void:
 	room7_door.monitoring = true
-	GlobalSignals.animation_midpoint_reached.connect(room7_door.on_animation_midpoint_reached, CONNECT_ONE_SHOT)
+	if !GlobalSignals.animation_midpoint_reached.is_connected(room7_door.on_animation_midpoint_reached):
+		GlobalSignals.animation_midpoint_reached.connect(room7_door.on_animation_midpoint_reached, CONNECT_ONE_SHOT)
 	get_tree().paused = true
 	GlobalSignals.emit_signal("door_entered")

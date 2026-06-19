@@ -40,6 +40,7 @@ func _on_enemy_died():
 	state_machine.current_state.transition_to("Death")
 
 func _on_enemy_attack_received(attack_data: AttackData):
+	
 	# Nao sofre dano se estiver em DEATH ou STUN
 	if state_machine.current_state.name in ["Death", "Stun"]:
 		return

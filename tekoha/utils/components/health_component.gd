@@ -11,6 +11,7 @@ func _ready() -> void:
 	current_health = max_health
 
 func take_damage(attack_data: AttackData) -> void:
+	
 	current_health -= attack_data.damage_value
 	current_health = max(0, current_health)
 	

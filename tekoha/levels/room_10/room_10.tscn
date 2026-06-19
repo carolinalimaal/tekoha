@@ -264,6 +264,8 @@ tile_map_data = PackedByteArray("AAAdADYAAAAYAAMAAAAgADcAAAA5AAYAAAAgADQAAAA5AAY
 tile_set = ExtResource("3_unx7x")
 
 [node name="Rocks" type="TileMapLayer" parent="Tiles" unique_id=180321621]
+z_index = -1
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AABcACEAAAACAAEAAABdACIAAAACAAEAAABiACIAAAADAAEAAABjACEAAAADAAEAAABkACIAAAAAAAEAAABbACEAAAAAAAEAAABdACEAAAABAAEAAAA=")
 tile_set = ExtResource("3_unx7x")
 

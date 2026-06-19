@@ -27,6 +27,8 @@ func _ready() -> void:
 func _exit_tree() -> void:
 	if DialogueManager.dialogue_ended.is_connected(_on_dialogue_ended):
 		DialogueManager.dialogue_ended.disconnect(_on_dialogue_ended)
+	if area_2d.body_entered.is_connected(_on_exit_area_entered):
+		area_2d.body_entered.disconnect(_on_exit_area_entered)
 
 func _on_exit_area_entered(body: Node2D) -> void:
 	if body is Player:

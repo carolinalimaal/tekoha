@@ -12,13 +12,13 @@ metadata/_custom_type_script = "uid://x6215xlpsejj"
 [sub_resource type="Resource" id="Resource_cw132"]
 script = ExtResource("1_cw132")
 actor_name = "Cecília"
-text_pt = "Você pode me ajudar? Os peixes que pescamos hoje não estão rendendo nada! Os clientes estão insatisfeitos com o restaurante e, se continuar assim, teremos que fechá-lo. "
+text_pt = "Os peixes que pescamos hoje não estão rendendo nada! Os clientes estão insatisfeitos com o restaurante e, se continuar assim, teremos que fechá-lo. "
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_d1si6"]
 script = ExtResource("1_cw132")
 actor_name = "Cecília"
-text_pt = "Você pode pescar alguns peixes para mim? Posso fazer um almoço saboroso como recompensa! Você sabe pescar, não sabe?"
+text_pt = "Você pode pescar alguns peixes para mim? Posso fazer um almoço saboroso como recompensa!"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [resource]

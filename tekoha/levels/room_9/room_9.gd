@@ -11,6 +11,10 @@ var spawn_enemies_triggered: bool = false
 func _ready() -> void:
 	spawn_enemies_trigger.body_entered.connect(_on_body_entered_in_spawn_enemies_trigger)
 
+func _exit_tree() -> void:
+	if spawn_enemies_trigger.body_entered.is_connected(_on_body_entered_in_spawn_enemies_trigger):
+		spawn_enemies_trigger.body_entered.disconnect(_on_body_entered_in_spawn_enemies_trigger)
+
 func _on_body_entered_in_spawn_enemies_trigger(body: Node2D) -> void:
 	if body is Player and !spawn_enemies_triggered:
 		_spawn_enemies()

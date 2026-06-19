@@ -15,6 +15,7 @@ texture = ExtResource("2_00cek")
 texture_region_size = Vector2i(32, 32)
 0:2/size_in_atlas = Vector2i(9, 7)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-105, -72, 143, -72, 141, 44, 82, 44, 82, -33, 23, -32, 23, 43, -103, 44)
 14:7/0 = 0
 14:8/0 = 0
 15:7/0 = 0

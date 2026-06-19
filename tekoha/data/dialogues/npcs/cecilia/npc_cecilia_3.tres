@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="DialogueSettings" format=3 uid="uid://bcybr431sm52y"]
+
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="1_2bbk3"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="2_mk2do"]
+
+[sub_resource type="Resource" id="Resource_dc3iq"]
+script = ExtResource("1_2bbk3")
+actor_name = "Curupira"
+text_pt = "O que é isso, tia? Por que tem tantas pessoas no restaurante!?"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_bs7kn"]
+script = ExtResource("1_2bbk3")
+actor_name = "Cecilia"
+text_pt = "Alguns deles viram você aqui mais cedo, e, curiosos, os outros quiseram confirmar se era verdade. Você está famosinho hein!"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_yd1s7"]
+script = ExtResource("1_2bbk3")
+actor_name = "Cecilia"
+text_pt = "Vamos para a cozinha, tenho que lhe dar o que lhe prometi!"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[resource]
+script = ExtResource("2_mk2do")
+dialogues = Array[ExtResource("1_2bbk3")]([SubResource("Resource_dc3iq"), SubResource("Resource_bs7kn"), SubResource("Resource_yd1s7")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"

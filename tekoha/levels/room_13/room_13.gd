@@ -12,6 +12,10 @@ func _ready() -> void:
 
 	GlobalSignals.game_state_changed.connect(_on_game_state_changed)
 
+func _exit_tree() -> void:
+	if GlobalSignals.game_state_changed.is_connected(_on_game_state_changed):
+		GlobalSignals.game_state_changed.disconnect(_on_game_state_changed)
+
 func _on_game_state_changed(new_state: GameManager.GameState) -> void:
 	if new_state == GameManager.GameState.ROOM_14_UNLOCKED:
 		room_14_door.set_deferred("monitoring", true)

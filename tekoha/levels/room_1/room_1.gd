@@ -11,6 +11,12 @@ func _ready() -> void:
 	elif GameManager.current_save.game_state == GameManager.GameState.AFTER_PUZZLE_3:
 		DialogueManager.start_speech(cutscenes_list[1])
 
+func _exit_tree() -> void:
+	if DialogueManager.dialogue_started.is_connected(_on_cutscene_started):
+		DialogueManager.dialogue_started.disconnect(_on_cutscene_started)
+	if DialogueManager.dialogue_ended.is_connected(_on_cutscene_ended):
+		DialogueManager.dialogue_ended.disconnect(_on_cutscene_ended)
+
 func _on_cutscene_started() -> void:
 	pass
 

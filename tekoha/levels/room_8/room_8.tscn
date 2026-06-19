@@ -67,7 +67,6 @@ tile_map_data = PackedByteArray("AAAOABIAAgAOAAYAAAAOABMAAgAOAAAAAAAOABEAAgAOAAU
 tile_set = ExtResource("6_d3h20")
 
 [node name="Limits" type="Node2D" parent="." unique_id=969320535]
-visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Limits" unique_id=949254458]
 collision_layer = 128
