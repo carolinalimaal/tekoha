@@ -13,7 +13,6 @@
 [ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="6_t76wk"]
 [ext_resource type="SpriteFrames" uid="uid://d1u4kbte4dt8y" path="res://assets/sprites/props/chest/chest_03.tres" id="7_mch0w"]
 [ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="9_nh63o"]
-[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="10_wybie"]
 [ext_resource type="SpriteFrames" uid="uid://cv3hbm5lptd1d" path="res://assets/sprites/props/pots/vaso_01_3.tres" id="11_mch0w"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="11_t76wk"]
 [ext_resource type="SpriteFrames" uid="uid://dl2so67ufwqwm" path="res://assets/sprites/props/pots/vaso_02_3.tres" id="12_mch0w"]
@@ -89,6 +88,7 @@ limit_top = -101
 limit_bottom = 985
 limit_left = -1
 limit_right = 1326
+camera_zoom = 2.0
 dark_room = true
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1563633268]
@@ -164,14 +164,8 @@ position = Vector2(966, 715)
 sprite_frames = ExtResource("12_mch0w")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1847665103]
-visible = false
 energy = 0.9
 blend_mode = 1
-
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1334648957]
-zoom = Vector2(2, 2)
-script = ExtResource("10_wybie")
-metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Enemies" type="Node2D" parent="." unique_id=452241584]
 y_sort_enabled = true

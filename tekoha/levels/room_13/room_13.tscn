@@ -6,7 +6,6 @@
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="3_vm8ag"]
 [ext_resource type="TileSet" uid="uid://cwihu0lcjfmkq" path="res://assets/sprites/tiles/exteriores/casas/casas_genericas.tres" id="5_vm8ag"]
 [ext_resource type="TileSet" uid="uid://bnhj0h66lti0o" path="res://assets/sprites/tiles/barco/barco.tres" id="6_2ryh5"]
-[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="6_jk2ql"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="7_ha3u4"]
 [ext_resource type="PackedScene" uid="uid://b2sy76ie66ulp" path="res://entities/npcs/dono_barco/npc_dono_barco.tscn" id="8_ha3u4"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="9_3gh8j"]
@@ -22,10 +21,6 @@ size = Vector2(16, 200)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ha3u4"]
 size = Vector2(20, 39)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_2ryh5"]
-vertices = PackedVector2Array(461.1328, 413.46875, 778.5078, 157.46094, 798.9531, 211.64063, 1022.27344, 878.78906, 449.85156, 473.02344, 1018.21875, 909.1719, 357.1797, 922.7578, 365.1797, 849.90625, 1563.2578, 786, 1562.2578, 823.6797, 1435.25, 819.6875, 1434.2422, 859.7422, 1241.3203, 854.77344, 1627, 758.6406, 1627, 786, 1651.6328, 680.40625, 1656.3906, 756.6797, 1369.6406, 241.99219, 2358.2266, 260.8125, 2364.7734, 531.8906, 1696.3281, 593.6719, 1237.3125, 883.78906, 296.5078, 643.89844, 334.1797, 524.2969, 1674.5391, 667.3125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 3), PackedInt32Array(8, 9, 10), PackedInt32Array(10, 11, 12), PackedInt32Array(13, 14, 8), PackedInt32Array(15, 16, 13), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(12, 21, 3), PackedInt32Array(3, 7, 22, 23, 4), PackedInt32Array(8, 10, 12, 3, 2, 17, 20, 15), PackedInt32Array(15, 13, 8), PackedInt32Array(15, 20, 24)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(346, 933, 355, 851, 286, 644, 326, 517, 441, 466, 452, 408, 783, 141, 806, 202, 1370, 232, 2368, 251, 2375, 541, 1704, 603, 1683, 674, 1662, 686, 1667, 766, 1637, 768, 1637, 796, 1573, 796, 1572, 834, 1445, 830, 1444, 870, 1250, 865, 1246, 894, 1031, 889, 1027, 919)])
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6g6m"]
 size = Vector2(38, 34)
 
@@ -103,6 +98,11 @@ script = ExtResource("12_n6g6m")
 dialogues = Array[ExtResource("13_11rqf")]([SubResource("Resource_ymt15")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2ryh5"]
+vertices = PackedVector2Array(461.1328, 413.46875, 778.5078, 157.46094, 798.9531, 211.64063, 1022.27344, 878.78906, 449.85156, 473.02344, 1018.21875, 909.1719, 357.1797, 922.7578, 365.1797, 849.90625, 1563.2578, 786, 1562.2578, 823.6797, 1435.25, 819.6875, 1434.2422, 859.7422, 1241.3203, 854.77344, 1627, 758.6406, 1627, 786, 1651.6328, 680.40625, 1656.3906, 756.6797, 1369.6406, 241.99219, 2358.2266, 260.8125, 2364.7734, 531.8906, 1696.3281, 593.6719, 1237.3125, 883.78906, 296.5078, 643.89844, 334.1797, 524.2969, 1674.5391, 667.3125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 3), PackedInt32Array(8, 9, 10), PackedInt32Array(10, 11, 12), PackedInt32Array(13, 14, 8), PackedInt32Array(15, 16, 13), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(12, 21, 3), PackedInt32Array(3, 7, 22, 23, 4), PackedInt32Array(8, 10, 12, 3, 2, 17, 20, 15), PackedInt32Array(15, 13, 8), PackedInt32Array(15, 20, 24)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(346, 933, 355, 851, 286, 644, 326, 517, 441, 466, 452, 408, 783, 141, 806, 202, 1370, 232, 2368, 251, 2375, 541, 1704, 603, 1683, 674, 1662, 686, 1667, 766, 1637, 768, 1637, 796, 1573, 796, 1572, 834, 1445, 830, 1444, 870, 1250, 865, 1246, 894, 1031, 889, 1027, 919)])
+
 [node name="Room13" type="Node2D" unique_id=1333157004]
 y_sort_enabled = true
 script = ExtResource("1_xuy42")
@@ -110,6 +110,7 @@ limit_top = 10
 limit_bottom = 1100
 limit_left = 224
 limit_right = 2430
+camera_zoom = 1.5
 
 [node name="Tiles" type="Node2D" parent="." unique_id=444357556]
 y_sort_enabled = true
@@ -156,11 +157,6 @@ polygon = PackedVector2Array(3.7676468, -10.557572, -14.232353, -10.557572, -21.
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tiles/Limiits/StaticBody2D" unique_id=2066492859]
 position = Vector2(1824, 506)
 polygon = PackedVector2Array(3.7676468, -10.557572, -14.232353, -10.557572, -21.232353, -8.557572, -25.232409, -0.5575602, -24.232315, 10.442441, -9.35718, 10.991763, -2.2323537, 11.442428, 6.7675915, 11.442439, 18.767647, 11.442428, 24.767591, 8.44244, 28.767591, -2.5575602, 19.767647, -9.557572, 3.7676468, -10.557572, 3.7676845, -12.557559, 19.767685, -10.557559, 29.767685, -3.5575588, 26.767647, 8.442428, 18.767685, 12.442441, -4.2323155, 12.442441, -25.35718, 11.991763, -26.35718, -1.0082362, -21.232315, -10.557559, 3.7676845, -12.557559)
-
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=515087103]
-zoom = Vector2(1.5, 1.5)
-script = ExtResource("6_jk2ql")
-metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Room13Door" type="Area2D" parent="." unique_id=8688690]
 position = Vector2(2406, 400)

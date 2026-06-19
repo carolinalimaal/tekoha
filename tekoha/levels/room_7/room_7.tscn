@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="5_pu6nj"]
 [ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interiores/moveis/moveis.tres" id="5_rak3t"]
 [ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="6_vtyum"]
-[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="7_mhh0g"]
 [ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="8_jdn40"]
 [ext_resource type="Script" uid="uid://d1vcrcidpkigq" path="res://utils/components/path_block.gd" id="11_4m76p"]
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="12_lveah"]
@@ -169,6 +168,7 @@ limit_top = -20
 limit_bottom = 360
 limit_left = -30
 limit_right = 450
+camera_zoom = 2.0
 
 [node name="Tiles" type="Node2D" parent="." unique_id=605020391]
 y_sort_enabled = true
@@ -237,12 +237,6 @@ position = Vector2(160, 64)
 id = 1
 item = ExtResource("6_vtyum")
 sprite_frames = ExtResource("8_jdn40")
-
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=327988160]
-position = Vector2(209.5, 173)
-zoom = Vector2(2, 2)
-script = ExtResource("7_mhh0g")
-metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="PathBlock" type="Area2D" parent="." unique_id=1066191275]
 position = Vector2(368, 320)

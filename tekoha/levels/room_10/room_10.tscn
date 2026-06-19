@@ -13,7 +13,6 @@
 [ext_resource type="Resource" uid="uid://b1uk2qrqie5oq" path="res://data/items/vatapa.tres" id="7_ar5hv"]
 [ext_resource type="SpriteFrames" uid="uid://c7nm8qbhvooas" path="res://assets/sprites/props/chest/chest_02.tres" id="8_6acsn"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="8_vjkxj"]
-[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="9_xpsvw"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="11_ar5hv"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="12_mptwh"]
 
@@ -249,6 +248,7 @@ limit_top = -192
 limit_bottom = 1847
 limit_left = 10
 limit_right = 3990
+camera_zoom = 1.5
 
 [node name="Tiles" type="Node2D" parent="." unique_id=251073990]
 y_sort_enabled = true
@@ -380,12 +380,6 @@ position = Vector2(2067, 1271)
 
 [node name="Canudinho3" parent="Enemies" unique_id=812122308 instance=ExtResource("12_mptwh")]
 position = Vector2(1234, 603)
-
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=915924181]
-position = Vector2(2200, 1491)
-zoom = Vector2(1.5, 1.5)
-script = ExtResource("9_xpsvw")
-metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="Room10Door" type="Area2D" parent="." unique_id=665739645]
 position = Vector2(2193, 1823)

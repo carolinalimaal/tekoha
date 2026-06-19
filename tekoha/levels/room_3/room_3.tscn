@@ -4,7 +4,6 @@
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_wbedm"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="3_2jupl"]
 [ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interiores/moveis/moveis.tres" id="4_keg0k"]
-[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="7_607sj"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="8_607sj"]
 [ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="9_iti7q"]
 [ext_resource type="PackedScene" uid="uid://bq8cawdjlt7lm" path="res://utils/props/fishing_rod/fishing_rod.tscn" id="10_grr8x"]
@@ -64,6 +63,7 @@ script = ExtResource("1_grr8x")
 limit_bottom = 1234
 limit_left = -1190
 limit_right = 1901
+camera_zoom = 1.5
 metadata/_custom_type_script = "uid://up3s6m65v4h7"
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1800994472]
@@ -95,10 +95,6 @@ collision_layer = 128
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tiles/Limits/StaticBody2D" unique_id=61371833]
 polygon = PackedVector2Array(-724, 606, -888, 602, -882, 876, -964, 680, -961, 0, 1637, 0, 1619, 935, 1585, 655, 1562, 553, 1446, 493, 1255, 480, 1120, 403, 958, 318, 816, 258, 807, 66, 722, 39, 595, 74, 502, 182, 238, 166, 12, 174, -285, 290, -495, 329, -736, 429)
-
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1320015300]
-position = Vector2(632, 201)
-script = ExtResource("7_607sj")
 
 [node name="Room3Door" type="Area2D" parent="." unique_id=449525539 groups=["doors"]]
 position = Vector2(727, 94)

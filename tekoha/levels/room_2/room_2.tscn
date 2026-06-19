@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="3_i6edo"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="3_khgse"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="4_m550c"]
-[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="4_tb3ar"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="5_eta5w"]
 [ext_resource type="Texture2D" uid="uid://b0do13h4w5fkm" path="res://assets/sprites/tiles/chao/grama_terra/grama_terra_tile.png" id="6_m550c"]
 [ext_resource type="PackedScene" uid="uid://1qrmsqlofmkg" path="res://utils/components/door/door.tscn" id="7_uev6a"]
@@ -281,6 +280,7 @@ path_block_messages = Array[ExtResource("4_m550c")]([SubResource("Resource_qwu00
 limit_bottom = 1728
 limit_left = 32
 limit_right = 2496
+camera_zoom = 1.5
 
 [node name="Tiles" type="Node2D" parent="." unique_id=2027779332]
 y_sort_enabled = true
@@ -311,12 +311,6 @@ collision_layer = 128
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tiles/Limits/ForestLimits" unique_id=2011772129]
 polygon = PackedVector2Array(2496, 1728, 40, 1728, 56, 0, 2496, 0, 2496, 1232, 2496, 1423, 2483, 1426, 2482, 1237, 2272, 1232, 2264, 728, 2176, 536, 2176, 408, 2384, 312, 2384, 144, 2032, 160, 2008, 200, 1936, 376, 1984, 472, 1952, 536, 1952, 576, 1928, 952, 1872, 944, 1872, 1256, 1416, 1208, 1336, 1152, 1248, 1120, 1000, 1120, 832, 928, 760, 608, 688, 576, 496, 576, 344, 704, 376, 856, 504, 928, 368, 1040, 432, 1296, 648, 1504, 912, 1560, 1456, 1560, 1528, 1648, 1984, 1648, 2040, 1720, 2144, 1720, 2184, 1504, 2320, 1424, 2496, 1424)
-
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=27133479]
-position = Vector2(680, 1042)
-zoom = Vector2(1.5, 1.5)
-script = ExtResource("4_tb3ar")
-metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="World" type="Node2D" parent="." unique_id=77457589]
 y_sort_enabled = true

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bx0mu5n76tnj1" path="res://levels/room_8/room_8.gd" id="1_wjxbu"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="2_1p0c7"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_itpey"]
-[ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="3_lfef4"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="6_6mn3v"]
 [ext_resource type="TileSet" uid="uid://5mov6005ung0" path="res://assets/sprites/tiles/plataformas/pier.tres" id="6_d3h20"]
 [ext_resource type="TileSet" uid="uid://6emc5pw2epmo" path="res://assets/sprites/tiles/exteriores/restaurantes/restaurantes.tres" id="7_gnup6"]
@@ -39,6 +38,7 @@ script = ExtResource("1_wjxbu")
 limit_top = 110
 limit_bottom = 800
 limit_right = 1440
+camera_zoom = 1.5
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1109945342]
 y_sort_enabled = true
@@ -104,11 +104,6 @@ shape = SubResource("RectangleShape2D_6mn3v")
 
 [node name="Marker2D" type="Marker2D" parent="Room9Door" unique_id=1108853285]
 position = Vector2(-20, 60)
-
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=2010751751]
-zoom = Vector2(1.5, 1.5)
-script = ExtResource("3_lfef4")
-metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="NpcSeller" parent="." unique_id=561111194 instance=ExtResource("8_f01of")]
 y_sort_enabled = true
