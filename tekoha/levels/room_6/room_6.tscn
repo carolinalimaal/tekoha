@@ -68,7 +68,7 @@ sources/3 = SubResource("TileSetAtlasSource_j0ms1")
 size = Vector2(32, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u15um"]
-size = Vector2(36, 44)
+size = Vector2(32, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxwqa"]
 size = Vector2(8, 66)
@@ -127,7 +127,7 @@ position = Vector2(688, 454)
 script = ExtResource("5_0ipkc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RollMecanic" unique_id=745796859]
-collision_layer = 256
+collision_layer = 4352
 
 [node name="Sprite2D" type="Sprite2D" parent="RollMecanic/StaticBody2D" unique_id=1089912035]
 position = Vector2(0, -6.75)

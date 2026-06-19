@@ -13,7 +13,7 @@ height = 112.0
 
 [node name="Bush" type="StaticBody2D" unique_id=1810771264]
 y_sort_enabled = true
-collision_layer = 256
+collision_layer = 4096
 collision_mask = 17
 script = ExtResource("1_b14lp")
 
@@ -34,4 +34,3 @@ shape = SubResource("CapsuleShape2D_sltqe")
 debug_color = Color(0.8434005, 0.11474829, 0.8737881, 0.41960785)
 
 [connection signal="body_entered" from="PlayerRollArea" to="." method="_on_player_roll_area_body_entered"]
-[connection signal="body_exited" from="PlayerRollArea" to="." method="_on_player_roll_area_body_exited"]

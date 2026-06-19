@@ -57,7 +57,7 @@ collision_layer = 128
 collision_mask = 17
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tiles/Limits/StaticBody2D" unique_id=417730580]
-polygon = PackedVector2Array(2368, 672, 2176, 688, 2104, 768, 2016, 672, 1920, 704, 1824, 640, 1696, 672, 1520, 656, 1448, 736, 1416, 736, 1216, 448, 1088, 384, 2368, 480)
+polygon = PackedVector2Array(2368, 672, 2176, 688, 2104, 760, 2016, 672, 1920, 704, 1824, 640, 1696, 672, 1520, 656, 1448, 736, 1416, 736, 1216, 448, 1088, 384, 2368, 480)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tiles/Limits/StaticBody2D" unique_id=1245029087]
 polygon = PackedVector2Array(2336, 800, 2160, 808, 1952, 992, 1984, 1088, 2112, 1248, 2048, 1280, 2048, 1312, 1920, 1312, 1504, 960, 1424, 832, 1352, 824, 1088, 800, 896, 832, 736, 896, 576, 736, 640, 576, 704, 448, 480, 832, 2112, 1472)

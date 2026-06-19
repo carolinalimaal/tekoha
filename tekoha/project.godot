@@ -218,6 +218,7 @@ skip_dialogue={
 2d_physics/layer_10="Items"
 2d_physics/layer_11="NPCs"
 2d_physics/layer_12="Door"
+2d_physics/layer_13="Obstacles"
 
 [rendering]
 
