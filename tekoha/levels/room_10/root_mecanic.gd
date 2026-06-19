@@ -45,10 +45,7 @@ func _on_puzzle_activator_off():
 
 func camera_zoom_in_roots(step: int):
 	partial_pause()
-	var camera: PlayerCamera = get_parent().get_node("PlayerCamera")
-	
-	if camera:
-		camera_anim(camera, step)
+	camera_anim(GlobalRefs.player_camera, step)
 
 func camera_anim(camera: PlayerCamera, step: int):
 	camera.can_follow_player = false
