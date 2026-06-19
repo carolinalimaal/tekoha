@@ -35,10 +35,8 @@ func _physics_update(_delta: float):
 			owner_node.facing_direction = owner_node.move_direction
 
 func _makepath():
-	print("Aqui 3")
 	if GlobalRefs.player:
 		owner_node.nav_agent.target_position = GlobalRefs.player.global_position
 #
 func _on_nav_timer_timeout() -> void:
-	print("Aqui 4")
 	_makepath()
