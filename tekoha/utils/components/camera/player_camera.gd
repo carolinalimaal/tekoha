@@ -9,7 +9,9 @@ var shake_fade: float = 4
 var shake_strengh: float
 
 func _ready() -> void:
-	level = get_node("Level").get_child(0)
+	GlobalRefs.player_camera = self
+	
+	level = get_parent().get_node("Level").get_child(0)
 	if level is Level:
 		limit_left = level.limit_left
 		limit_right = level.limit_right

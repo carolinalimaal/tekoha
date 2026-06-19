@@ -11,7 +11,7 @@ func _setup_world_from_save() -> void:
 	
 	if save.current_level_path != "":
 		var current_level = level_container.get_child(0) if level_container.get_child_count() > 0 else null
-		var current_level_cam: PlayerCamera = current_level.get_node("PlayerCamera") if current_level != null else null
+		var cam_pos: PlayerCamera = GlobalRefs.player_camera
 		
 		if current_level == null or current_level.scene_file_path != save.current_level_path:
 			if current_level:
@@ -21,8 +21,8 @@ func _setup_world_from_save() -> void:
 			if new_level_scene:
 				var new_level_instance = new_level_scene.instantiate()
 				if save.camera_pos != Vector2.ZERO:
-					current_level_cam = new_level_instance.get_node("PlayerCamera")
-					current_level_cam.global_position = save.camera_pos
+					cam_pos = new_level_instance.get_node("PlayerCamera")
+					cam_pos.global_position = save.camera_pos
 				level_container.add_child(new_level_instance)
 			
 	
