@@ -8,7 +8,7 @@ signal puzzle_activator()
 @export var attack_range: int = 50
 
 var chase_range_sqr: int
-var attack_range_sqr: int
+var attack_range_sqr: float
 
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
@@ -18,6 +18,7 @@ func _ready() -> void:
 	animation_tree = $AnimationTree
 	state_machine = $StateMachine
 	nav_agent = $NavAgent
+	
 	
 	# Conectar sinais
 	health_component.died.connect(_on_enemy_died)

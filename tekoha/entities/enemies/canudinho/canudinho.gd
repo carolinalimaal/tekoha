@@ -35,7 +35,6 @@ func _on_enemy_died():
 	# Transicionar para DEATH
 	var parent_node = get_parent()
 	if parent_node.name == "MecanicActivators":
-		print("puzzle activation")
 		puzzle_activator.emit()
 	state_machine.current_state.transition_to("Death")
 

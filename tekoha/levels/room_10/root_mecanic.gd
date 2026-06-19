@@ -18,9 +18,7 @@ var consumable
 var enemies: Node2D
 
 func _ready() -> void:
-	level_parent = get_parent()
-	print(level_parent.name)
-	
+	level_parent = get_parent()	
 	enemies = get_parent().get_node_or_null("Enemies")
 	
 	if has_consumable:

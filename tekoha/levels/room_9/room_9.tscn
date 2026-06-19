@@ -82,6 +82,17 @@ radius = 163.1104
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgm55"]
 size = Vector2(107.86853, 20)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_cpiwb"]
+vertices = PackedVector2Array(590.8281, 932.96875, 535.9922, 1034.7188, 322.96875, 1037.4531, 409.71094, 825.60156, 507.1875, 702.7031, 665.03906, 638.53906, 1610.9219, 71.078125, 1788.7578, 71.96875, 1726.4219, 377.25, 1578.5703, 209.11719, 1516.8828, 366.0625, 1608.9219, 410.02344, 1563.25, 438.5703, 1459.7891, 367.42188, 622.9297, 930.8906, 727.4375, 799.6875, 796.28906, 762.1094, 793.3672, 577.28906, 935.0469, 725.8672, 980.6875, 572.1094, 991.8203, 704.59375, 1204.8203, 643.6328, 1193.9609, 689.0078, 989.7578, 509.54688, 1196.8906, 490.8125, 1392.3125, 577.65625, 1380.3594, 614.5, 1274.4219, 364.85938, 1409.1328, 329.2422, 1558.3594, 545.9922, 1452.6875, 330.89063)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 0, 5, 15), PackedInt32Array(16, 15, 5, 17), PackedInt32Array(18, 16, 17, 19, 20), PackedInt32Array(21, 22, 20, 19, 23, 24), PackedInt32Array(25, 26, 21, 24, 27, 28), PackedInt32Array(29, 25, 28, 13), PackedInt32Array(28, 30, 13), PackedInt32Array(12, 29, 13)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(542, 1044.6478, 308, 1047.6497, 401, 820.5088, 501, 694.4306, 661, 629.39026, 791, 567.3518, 972, 562.3487, 981, 500.31024, 1191, 481.29846, 1268, 356.2209, 1408, 319.19794, 1461, 321.1992, 1468, 357.22153, 1510, 356.2209, 1569, 206.12782, 1603, 61.03785, 1801, 62.03847, 1735, 385.2389, 1613, 419.25998, 1573, 444.27548, 1568, 554.34375, 1400, 586.3636, 1388, 623.38654, 1213, 652.40454, 1202, 698.4331, 994, 714.44305, 938, 735.45605, 800, 771.4784, 734, 807.50073, 628, 940.58325, 597, 942.5845)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ej02v"]
+vertices = PackedVector2Array(1227.8672, 227.20313, 1238.8125, 255.82031, 1053.6406, 364, 976.34375, 364, 944.27344, 286.64844, 964.2578, 213.35938, 1101.6563, 137.88281)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(960, 210, 939, 287, 973, 369, 1055, 369, 1245, 258, 1232, 224, 1102, 132)])
+agent_radius = 5.0
+
 [node name="Room9" type="Node2D" unique_id=1150128745]
 y_sort_enabled = true
 script = ExtResource("1_g5wxr")
@@ -277,3 +288,10 @@ position = Vector2(803, 628)
 
 [node name="Canudinho3" parent="Enemies" unique_id=300966700 instance=ExtResource("3_cpiwb")]
 position = Vector2(1594, 381)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=230970971]
+scale = Vector2(1, 0.99937993)
+navigation_polygon = SubResource("NavigationPolygon_cpiwb")
+
+[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="." unique_id=1479189142]
+navigation_polygon = SubResource("NavigationPolygon_ej02v")

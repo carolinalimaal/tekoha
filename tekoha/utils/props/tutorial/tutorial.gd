@@ -94,7 +94,6 @@ func _on_roll_area_body_entered(body: Node2D) -> void:
 		await _wait(DELAY_ROLL_CHECK)
 		_change_state(TutorialState.FINISHED)
 	else:
-		print("Ops! Você deve entrar com dash nessa área!")
 		_play_dialogue(DIALOG_ROLL_FAIL)
 
 func _on_cutscene_started() -> void:
@@ -113,7 +112,6 @@ func _on_cutscene_ended() -> void:
 
 # FLUXO DO TUTORIAL
 func _start_tutorial() -> void:
-	print("Tutorial iniciado")
 	interactable_comp.disable_interaction()
 	set_limits_layer(true)
 	zoom_in_camera()
@@ -124,7 +122,6 @@ func _start_tutorial() -> void:
 	_change_state(TutorialState.ATTACK_1)
 
 func _end_tutorial() -> void:
-	print("Tutorial finalizado")
 	DialogueManager.dialogue_ended.disconnect(_on_cutscene_ended)
 	DialogueManager.dialogue_started.disconnect(_on_cutscene_started)
 	

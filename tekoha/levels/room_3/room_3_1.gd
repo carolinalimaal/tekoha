@@ -1,6 +1,7 @@
 extends State
 
 @export var cutscene: DialogueSettings
+@onready var navigation_region_2d: NavigationRegion2D = $"../../NavigationRegion2D"
 
 @onready var fishing_rod: FishingRod = $"../../FishingRod"
 @onready var path_block: PathBlock = $"../../PathBlock"
@@ -16,6 +17,10 @@ func _enter() -> void:
 	
 	if path_block:
 		path_block.set_deferred("monitoring", false)
+		
+	navigation_region_2d.set_deferred("disabled", true)
+	print("Regiao 2d desativada")
+	print("oi")
 
 func _exit() -> void:
 	# Limpa todos os sinais por segurança ao sair do estado

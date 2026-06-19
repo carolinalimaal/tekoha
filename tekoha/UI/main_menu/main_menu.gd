@@ -39,10 +39,8 @@ func _ready() -> void:
 	GameManager.current_save = SaveManager.load_game()
 	if GameManager.current_save:
 		load_game_button.show()
-		print("tem save")
 	else:
 		load_game_button.hide()
-		print("nao tem save")
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if InputManager.get_action_pressed("ui_cancel"):

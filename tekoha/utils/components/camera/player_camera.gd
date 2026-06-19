@@ -17,10 +17,7 @@ func _ready() -> void:
 		limit_top = level.limit_top
 	var root_mecanic: RootMecanic = level.get_node_or_null("RootMecanic")
 	if root_mecanic:
-		print("root mecanic")
 		root_mecanic.shake_camera.connect(_on_camera_shake)
-	else:
-		print(root_mecanic)
 	make_current()
 
 func _process(delta: float) -> void:
@@ -47,7 +44,6 @@ func apply_shake():
 	shake_strengh = random_strengh
 
 func _on_camera_shake():
-	print("can_camera_shake")
 	if InputManager.active_input_source == InputManager.InputSource.CONTROLLER:
 		Input.start_joy_vibration(0, 0.5, 0.5, 0.6)
 	apply_shake()

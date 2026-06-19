@@ -25,6 +25,11 @@ size = Vector2(32, 160)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4msy"]
 size = Vector2(400, 16)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_khelp"]
+vertices = PackedVector2Array(1956.9688, 1100.8438, 2079.0469, 1242.7891, 2038.6484, 1263, 1895.6328, 1263, 1518.8516, 948.52344, 1924.6328, 985.47656, 1920.5781, 726.22656, 2014.2578, 690.71875, 2129.4688, 814.10156, 1825.0938, 658.8906, 1688.7891, 696.14844, 1531.5078, 678.46094, 1447.2734, 818.65625, 1450.7813, 755.14844, 1321, 804.0469, 1380.6797, 735.6172, 1138.1719, 430.6328, 1201.1797, 459.85938, 1085.5938, 783.9297, 1046.6016, 456.95313, 898.4219, 815.28906, 1019.0703, 458, 602.85156, 722.2422, 729.28906, 451.14844, 738.90625, 874.2578)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 0, 4), PackedInt32Array(6, 7, 8, 5, 4), PackedInt32Array(9, 6, 4, 10), PackedInt32Array(11, 10, 4, 12, 13), PackedInt32Array(13, 12, 14, 15), PackedInt32Array(16, 17, 15, 14, 18, 19), PackedInt32Array(19, 18, 20, 21), PackedInt32Array(22, 23, 21, 20, 24)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(723, 441, 591, 724, 736, 886, 901, 825, 1086, 794, 1320, 814, 1441, 828, 1511, 955, 1892, 1273, 2041, 1273, 2095, 1246, 1966, 1096, 1936, 989, 2144, 815, 2017, 679, 1922, 715, 1827, 648, 1688, 686, 1528, 668, 1448, 744, 1387, 727, 1208, 452, 1139, 420, 1045, 447, 1019, 448)])
+
 [node name="Room11" type="Node2D" unique_id=263309058]
 y_sort_enabled = true
 script = ExtResource("1_hvq2q")
@@ -120,7 +125,7 @@ position = Vector2(896, 736)
 position = Vector2(896, 512)
 
 [node name="Sacola3" parent="RootMecanic/MecanicActivators" unique_id=1218953658 instance=ExtResource("5_q4msy")]
-position = Vector2(1024, 448)
+position = Vector2(990, 511)
 
 [node name="Sacola4" parent="RootMecanic/MecanicActivators" unique_id=258615061 instance=ExtResource("5_q4msy")]
 position = Vector2(768, 640)
@@ -189,3 +194,6 @@ position = Vector2(0, 60)
 zoom = Vector2(1.5, 1.5)
 script = ExtResource("11_q4msy")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=367889744]
+navigation_polygon = SubResource("NavigationPolygon_khelp")

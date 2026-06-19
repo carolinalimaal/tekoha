@@ -18,6 +18,8 @@
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="11_t76wk"]
 [ext_resource type="SpriteFrames" uid="uid://dl2so67ufwqwm" path="res://assets/sprites/props/pots/vaso_02_3.tres" id="12_mch0w"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="15_hksbc"]
+[ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="15_nh63o"]
+[ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="19_4yb6g"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="16_0mwue"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4yb6g"]
@@ -75,6 +77,12 @@ metadata/_custom_type_script = "uid://bekubsjwettik"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mch0w"]
 size = Vector2(64, 32)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nh63o"]
+vertices = PackedVector2Array(430, 360.95313, 635.0703, 358.95313, 531.1172, 383, 465.6328, 383, 983, 240, 983, 303, 953, 303, 910, 276, 955, 240, 430, 403.9297, 469.34375, 435, 910, 233, 955, 200, 594.09375, 200, 850, 233, 633.9375, 280.84375, 613.46094, 277, 595.09375, 255, 747.9531, 266.1797, 752.9375, 726.9219, 562.39844, 724.0703, 570.4375, 623.65625, 526.8125, 626.3125, 530.78125, 724.8828, 397.46875, 722.09375, 393.47656, 687.1328, 497, 577.96094, 983.1172, 350.53906, 983.84375, 374.96094, 812.7969, 373.96875, 953, 347.52344, 363.82813, 277, 362.1797, 230, 401, 230, 510.1797, 255, 843.1172, 658.85156, 842.1172, 618.9297, 915, 617.9297, 940.3672, 704.3828, 360.90625, 686.1406, 359.07813, 578.96094, 497, 554, 529.1406, 554, 530.14844, 588.1797, 568.09375, 586.8203, 565.90625, 467.04688, 401, 199.95313, 508.17188, 199.03906, 943.84375, 488, 984.03906, 488, 985.9531, 700.4219, 915, 529, 361, 465.03906, 361, 404.92188, 818.39844, 704.10156, 775.89844, 703.1094, 775.09375, 660.85156, 938.39844, 727.96094, 821.3906, 727.03125, 816.1875, 462.03906, 938.84375, 461.03125, 777.1797, 529, 786.1797, 264.8125, 850, 276, 529.8828, 435)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 0, 3, 10), PackedInt32Array(8, 7, 11, 12), PackedInt32Array(13, 12, 11, 14), PackedInt32Array(15, 16, 17, 13, 14, 18), PackedInt32Array(19, 20, 21, 18), PackedInt32Array(22, 23, 24, 25, 26), PackedInt32Array(27, 28, 29, 30), PackedInt32Array(31, 32, 33, 34), PackedInt32Array(35, 36, 37, 38), PackedInt32Array(39, 40, 26, 25), PackedInt32Array(26, 41, 42, 43, 22), PackedInt32Array(21, 22, 43, 44), PackedInt32Array(18, 21, 44, 45, 1), PackedInt32Array(33, 46, 47, 34), PackedInt32Array(48, 49, 50, 38, 37, 51), PackedInt32Array(45, 52, 53, 10), PackedInt32Array(54, 55, 56, 35, 38), PackedInt32Array(38, 57, 58, 54), PackedInt32Array(59, 60, 48, 51, 61), PackedInt32Array(59, 61, 62, 29), PackedInt32Array(6, 30, 29, 62, 63), PackedInt32Array(64, 2, 1, 45), PackedInt32Array(16, 31, 34, 17), PackedInt32Array(53, 9, 10), PackedInt32Array(45, 10, 64), PackedInt32Array(18, 1, 15), PackedInt32Array(62, 18, 14), PackedInt32Array(62, 14, 63), PackedInt32Array(6, 63, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(354, 574, 492, 573, 492, 549, 534, 549, 535, 583, 563, 582, 561, 472, 356, 470, 356, 400, 425, 399, 425, 356, 630, 354, 629, 285, 613, 282, 359, 282, 357, 225, 396, 225, 396, 195, 513, 194, 515, 250, 590, 250, 589, 195, 960, 195, 960, 235, 988, 235, 988, 308, 958, 308, 958, 343, 988, 346, 989, 380, 818, 379, 821, 457, 943, 456, 948, 483, 989, 483, 991, 705, 945, 709, 943, 733, 817, 732, 814, 709, 771, 708, 770, 656, 838, 654, 837, 614, 910, 613, 910, 534, 772, 534, 781, 270, 753, 271, 758, 732, 557, 729, 565, 629, 532, 631, 536, 730, 393, 727, 389, 692, 356, 691)])
+agent_radius = 5.0
 
 [node name="Room14" type="Node2D" unique_id=2068467507]
 y_sort_enabled = true
@@ -173,17 +181,26 @@ position = Vector2(674, 446)
 [node name="Sacola" parent="Enemies" unique_id=461608080 instance=ExtResource("15_hksbc")]
 position = Vector2(-272, 172)
 
-[node name="Sacola2" parent="Enemies" unique_id=249321171 instance=ExtResource("15_hksbc")]
-position = Vector2(-272, -18)
+[node name="Canudinho" parent="Enemies" unique_id=2132468328 instance=ExtResource("19_4yb6g")]
+position = Vector2(-110, -28)
 
-[node name="Sacola3" parent="Enemies" unique_id=553958468 instance=ExtResource("15_hksbc")]
-position = Vector2(265, -125)
+[node name="Sacola2" parent="Enemies" unique_id=556049819 instance=ExtResource("15_hksbc")]
+position = Vector2(-226, 234)
 
-[node name="Canudinho" parent="Enemies" unique_id=2132468328 instance=ExtResource("16_0mwue")]
-position = Vector2(185, 251)
+[node name="Sacola3" parent="Enemies" unique_id=1035970229 instance=ExtResource("15_hksbc")]
+position = Vector2(216, -103)
 
-[node name="Canudinho2" parent="Enemies" unique_id=1857772725 instance=ExtResource("16_0mwue")]
-position = Vector2(247, 229)
+[node name="Sacola4" parent="Enemies" unique_id=1755073673 instance=ExtResource("15_hksbc")]
+position = Vector2(280, 130)
+
+[node name="Canudinho2" parent="Enemies" unique_id=1178490716 instance=ExtResource("19_4yb6g")]
+position = Vector2(262, 200)
+
+[node name="Canudinho3" parent="Enemies" unique_id=797534204 instance=ExtResource("19_4yb6g")]
+position = Vector2(208, 220)
+
+[node name="Canudinho4" parent="Enemies" unique_id=1452956171 instance=ExtResource("19_4yb6g")]
+position = Vector2(143, -156)
 
 [node name="Room14Door" type="Area2D" parent="." unique_id=240560434]
 position = Vector2(672, 752)
@@ -197,3 +214,16 @@ shape = SubResource("RectangleShape2D_mch0w")
 
 [node name="Marker2D" type="Marker2D" parent="Room14Door" unique_id=1764054172]
 position = Vector2(-1, -56)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=777650646]
+navigation_polygon = SubResource("NavigationPolygon_nh63o")
+
+[node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D" unique_id=1223454977]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(471, 388, 474, 430, 525, 430, 526, 388)
+
+[node name="Polygon2D2" type="Polygon2D" parent="NavigationRegion2D" unique_id=779514868]
+position = Vector2(-97.15906, 0)
+scale = Vector2(1.1136364, 1)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(896.3061, 271, 896.3061, 229, 859.48975, 229, 859.48975, 271)

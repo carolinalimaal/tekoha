@@ -32,6 +32,8 @@ func change_state(new_state_name: String):
 	var new_state = states.get(new_state_name.to_lower())
 	if !new_state:
 		return
+	if current_state == new_state:
+		return
 	if current_state:
 		previous_state = current_state
 		current_state._exit()
