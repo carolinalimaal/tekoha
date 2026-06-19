@@ -37,5 +37,5 @@ func attack():
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name in ["attack_1_down", "attack_1_left", "attack_1_right", "attack_1_up"]:
-		transition_to("AttackEnd")
+		transition_to("Idle")
 		return
