@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://bgiup2e5f7yt3"]
 
 [ext_resource type="Script" uid="uid://c5api7chbslvv" path="res://utils/components/save_point/save_point.gd" id="1_t7mtu"]
+[ext_resource type="Shape2D" uid="uid://bmbo32ewi0q0" path="res://utils/components/save_point/rede_collision_shape.tres" id="2_h88k6"]
 [ext_resource type="Texture2D" uid="uid://4hv4ijur8gyw" path="res://assets/sprites/props/hammock/rede_save_livre.png" id="2_rp8wi"]
 [ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="3_c3kmx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5jgo"]
-size = Vector2(38, 94)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7mtu"]
 size = Vector2(80, 42)
@@ -16,7 +14,7 @@ script = ExtResource("1_t7mtu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1373345767]
 rotation = -1.5707964
-shape = SubResource("RectangleShape2D_c5jgo")
+shape = ExtResource("2_h88k6")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=266610200]
 texture = ExtResource("2_rp8wi")

@@ -11,8 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://bhcc8dd3rymmg" path="res://assets/sprites/props/bar_counter/balcao_passavel.png" id="6_copml"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="7_fxwqa"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="9_copml"]
-[ext_resource type="Texture2D" uid="uid://4hv4ijur8gyw" path="res://assets/sprites/props/hammock/rede_save_livre.png" id="10_j0ms1"]
+[ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="11_1n6nv"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/props/muiraquita/muiraquita.tscn" id="12_4hwci"]
+[ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="12_qk5qf"]
 [ext_resource type="PackedScene" uid="uid://c4rfo8vpkou8r" path="res://entities/npcs/cecilia/npc_cecila.tscn" id="13_yxphn"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="14_bs7kn"]
 [ext_resource type="Resource" uid="uid://cg3qwx52dkf45" path="res://data/dialogues/npcs/cecilia/npc_cecilia_1.tres" id="15_d3h8c"]
@@ -113,7 +114,7 @@ tile_set = ExtResource("5_d3h8c")
 
 [node name="RoofWheel" type="TileMapLayer" parent="Tiles" unique_id=902466555]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAANAAUAAAADAAAAAAANAAYAAAADAAAAAAAQAAUAAAADAAAAAAAQAAYAAAADAAAAAAAcAAcAAAAIAAQAAAAcAAgAAAAIAAUAAAAcAAkAAAAIAAUAAAAUAAMAAAAAAAQAAAAUAAQAAAADAAQAAAAUAAUAAAADAAUAAAAUAAYAAAADAAUAAAAUAAcAAAAGAAQAAAAUAAgAAAAGAAUAAAAUAAkAAAAGAAUAAAA=")
+tile_map_data = PackedByteArray("AAAcAAcAAAAIAAQAAAAcAAgAAAAIAAUAAAAcAAkAAAAIAAUAAAAUAAMAAAAAAAQAAAAUAAQAAAADAAQAAAAUAAUAAAADAAUAAAAUAAYAAAADAAUAAAAUAAcAAAAGAAQAAAAUAAgAAAAGAAUAAAAUAAkAAAAGAAUAAAA=")
 tile_set = ExtResource("3_yxphn")
 
 [node name="Decoration" type="TileMapLayer" parent="Tiles" unique_id=1407982401]
@@ -152,7 +153,8 @@ metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
 
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("5_8imx6")]
 position = Vector2(481, 190)
-hammock_texture = ExtResource("10_j0ms1")
+hammock_texture = ExtResource("11_1n6nv")
+hammock_collision = ExtResource("12_qk5qf")
 
 [node name="Room5Door" type="Area2D" parent="." unique_id=976366615 groups=["doors"]]
 position = Vector2(736, 855)

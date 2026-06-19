@@ -2,15 +2,17 @@ class_name SavePoint
 extends StaticBody2D
 
 @export var hammock_texture: Texture
+@export var hammock_collision: Shape2D
 
 var detecting_player: bool
 
 @onready var sprite: Sprite2D = $Sprite
+@onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var interactable_component: InteractableComponent = $InteractableComponent
 
 func _ready() -> void:	
 	sprite.texture = hammock_texture
-	
+	collision.shape = hammock_collision
 
 func interact() -> void:
 	UIManager.is_interact_ui_open = true

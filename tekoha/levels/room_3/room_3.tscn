@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interiores/moveis/moveis.tres" id="4_keg0k"]
 [ext_resource type="Script" uid="uid://bl7u5w3hc2dqu" path="res://utils/components/camera/player_camera.gd" id="7_607sj"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="8_607sj"]
+[ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="9_iti7q"]
 [ext_resource type="PackedScene" uid="uid://bq8cawdjlt7lm" path="res://utils/props/fishing_rod/fishing_rod.tscn" id="10_grr8x"]
 [ext_resource type="Resource" uid="uid://cd7oa6g4deme4" path="res://data/cutscenes/cutscene_2/cutscene_2.tres" id="12_q0n6u"]
 [ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/components/state_machine/state_machine.gd" id="12_v8bbf"]
@@ -109,6 +110,7 @@ position = Vector2(-92, 77)
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("19_wbedm")]
 position = Vector2(-180, 404)
 hammock_texture = ExtResource("20_46t15")
+hammock_collision = ExtResource("9_iti7q")
 
 [node name="StateMachine" type="Node" parent="." unique_id=996926368 node_paths=PackedStringArray("_initial_state")]
 script = ExtResource("12_v8bbf")
