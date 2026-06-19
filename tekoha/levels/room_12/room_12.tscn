@@ -67,5 +67,6 @@ hammock_collision = ExtResource("8_0m1lt")
 
 [node name="Bau" parent="." unique_id=302874208 instance=ExtResource("7_n5d50")]
 position = Vector2(1087, 608)
+id = 3
 item = ExtResource("8_uhwsh")
 sprite_frames = ExtResource("9_0m1lt")

@@ -131,15 +131,18 @@ y_sort_enabled = true
 
 [node name="Bau" parent="Furniture" unique_id=302874208 instance=ExtResource("4_bnmol")]
 position = Vector2(383, 361)
+id = 4
 sprite_frames = ExtResource("6_t76wk")
 
 [node name="Bau2" parent="Furniture" unique_id=1275905486 instance=ExtResource("4_bnmol")]
 position = Vector2(552, 209)
+id = 5
 enemy_file = "uid://d1ou3wqyvyflw"
 sprite_frames = ExtResource("6_t76wk")
 
 [node name="Bau3" parent="Furniture" unique_id=933992229 instance=ExtResource("4_bnmol")]
 position = Vector2(801, 616)
+id = 6
 item = SubResource("Resource_4yb6g")
 sprite_frames = ExtResource("7_mch0w")
 
@@ -164,6 +167,7 @@ position = Vector2(966, 715)
 sprite_frames = ExtResource("12_mch0w")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1847665103]
+visible = false
 energy = 0.9
 blend_mode = 1
 

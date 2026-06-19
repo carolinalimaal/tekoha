@@ -291,6 +291,7 @@ position = Vector2(3168, 794)
 
 [node name="Bau" parent="World" unique_id=302874208 instance=ExtResource("6_egbhk")]
 position = Vector2(3168, 919)
+id = 2
 item = ExtResource("7_ar5hv")
 sprite_frames = ExtResource("8_6acsn")
 
