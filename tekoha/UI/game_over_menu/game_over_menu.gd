@@ -21,6 +21,10 @@ func _on_player_died() -> void:
 	continue_button.grab_focus()
 
 func _on_continue_pressed() -> void:
+	var save = SaveManager.load_game()
+	if save:
+		save.player_health = 6
+		GameManager.current_save = save
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 

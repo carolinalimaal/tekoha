@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwlallopgos46"]
 
-[ext_resource type="Script" uid="uid://0bkrlmh2efko" path="res://utils/projectile/projectile.gd" id="1_6fvpk"]
+[ext_resource type="Script" uid="uid://0bkrlmh2efko" path="res://utils/components/projectile/projectile.gd" id="1_6fvpk"]
 [ext_resource type="Script" uid="uid://b25oeps4g35sq" path="res://utils/components/hurtbox_component.gd" id="1_devi0"]
 [ext_resource type="Texture2D" uid="uid://7b232fm3daoh" path="res://assets/sprites/entities/enemies/canudinho_spritesheet.png" id="2_6fvpk"]
 [ext_resource type="Resource" uid="uid://clacbrg07garl" path="res://entities/enemies/canudinho/bola_papel.tres" id="3_hi3mn"]

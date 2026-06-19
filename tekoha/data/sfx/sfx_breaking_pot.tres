@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://dm712omsnnpbo"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_o8yvn"]
+[ext_resource type="AudioStream" uid="uid://bogdsqrpohorl" path="res://assets/sound/sfx/enviroment/sfx_breaking_pot.wav" id="2_p1fnq"]
+
+[resource]
+script = ExtResource("1_o8yvn")
+limit = 4
+type = 6
+sound_effect = ExtResource("2_p1fnq")
+pitch_randomness = 0.15
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"

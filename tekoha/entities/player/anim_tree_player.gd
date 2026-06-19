@@ -17,15 +17,12 @@ func _process(_delta: float) -> void:
 		"Attack1":
 			owner.anim_transition = 3
 			set("parameters/Attack_1/blend_position", owner.attack_direction)
-		"AttackEnd":
-			owner.anim_transition = 4
-			set("parameters/Attack_End/blend_position", owner.attack_direction)
 		"Attack2":
-			owner.anim_transition = 5
+			owner.anim_transition = 4
 			set("parameters/Attack_2/blend_position", owner.attack_direction)
 		"Stun":
-			owner.anim_transition = 6
+			owner.anim_transition = 5
 			set("parameters/Stun/blend_position", -owner.velocity)
 		"Death":
-			owner.anim_transition = 7
+			owner.anim_transition = 6
 			set("parameters/Death/blend_position", -owner.velocity)

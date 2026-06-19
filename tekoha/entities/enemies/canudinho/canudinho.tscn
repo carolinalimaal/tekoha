@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="2_vcpk6"]
 [ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="3_d78cc"]
 [ext_resource type="Script" uid="uid://b3dtapi7tmrs8" path="res://entities/enemies/canudinho/anim_tree_canudinho.gd" id="4_b5uvv"]
-[ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/state_machine/state_machine.gd" id="4_i4053"]
+[ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/components/state_machine/state_machine.gd" id="4_i4053"]
 [ext_resource type="Texture2D" uid="uid://cbo43r56ogs6q" path="res://assets/sprites/entities/enemies/canudinho_sheet.png" id="4_qp7q8"]
 [ext_resource type="Script" uid="uid://cai1y4n255biv" path="res://entities/enemies/generic_states/idle_enemy_state.gd" id="5_unx5h"]
 [ext_resource type="Script" uid="uid://bclio32j8isjr" path="res://entities/enemies/generic_states/patrol_enemy_state.gd" id="6_oi51r"]
@@ -1619,6 +1619,7 @@ transitions = ["Start", "Base", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(56, -105)
 
 [node name="Canudinho" type="CharacterBody2D" unique_id=2132468328]
+y_sort_enabled = true
 collision_layer = 16
 collision_mask = 1425
 motion_mode = 1

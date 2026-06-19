@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dhcppev66xefc" path="res://assets/UI/logo/tekoha_colorful.svg" id="3_lib8g"]
 [ext_resource type="PackedScene" uid="uid://ryb3syv1bcmd" path="res://UI/components/confirmation_popup/confirmation_popup.tscn" id="7_rxajg"]
 [ext_resource type="PackedScene" uid="uid://tc0txhjv7cm5" path="res://UI/components/navigation_legend/navigation_legend.tscn" id="8_0xi1j"]
-[ext_resource type="AudioStream" uid="uid://bvy34itisvfi2" path="res://assets/sound/music/main_menu.mp3" id="8_1dcnu"]
+[ext_resource type="AudioStream" uid="uid://bvy34itisvfi2" path="res://assets/sound/music/bgm_main_menu.mp3" id="8_1dcnu"]
 [ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/components/button/button.gd" id="9_0xi1j"]
 
 [node name="MainMenu" type="Control" unique_id=1960791146]

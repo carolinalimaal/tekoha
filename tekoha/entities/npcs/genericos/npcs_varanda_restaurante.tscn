@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dlk1ggdwcoujt"]
+
+[ext_resource type="Texture2D" uid="uid://c60ubhg7d7wm1" path="res://assets/sprites/entities/npcs/npcs_varanda_restaurante.png" id="2_k5nhx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3g6c"]
+atlas = ExtResource("2_k5nhx")
+region = Rect2(0, 0, 42, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khuib"]
+atlas = ExtResource("2_k5nhx")
+region = Rect2(42, 0, 42, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46hvw"]
+atlas = ExtResource("2_k5nhx")
+region = Rect2(84, 0, 42, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xc4i1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3g6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khuib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46hvw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_el7c7"]
+size = Vector2(36, 7)
+
+[node name="NpcsVarandaRestaurante" type="CharacterBody2D" unique_id=103834630]
+collision_layer = 1024
+collision_mask = 1425
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1662302596]
+sprite_frames = SubResource("SpriteFrames_xc4i1")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=972028364]
+position = Vector2(0, 25.5)
+shape = SubResource("RectangleShape2D_el7c7")

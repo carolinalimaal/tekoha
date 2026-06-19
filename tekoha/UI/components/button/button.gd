@@ -1,6 +1,6 @@
 class_name DefaultButton extends Button
 
-@export var houver_sound: SoundEffect.SOUND_EFFECT_TYPE = SoundEffect.SOUND_EFFECT_TYPE.UI_FOCUS
+@export var houver_sound: SoundEffect.SOUND_EFFECT_TYPE = SoundEffect.SOUND_EFFECT_TYPE.BUTTON_FOCUS
 
 var original_scale: Vector2 = Vector2.ONE
 

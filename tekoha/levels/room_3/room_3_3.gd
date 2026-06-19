@@ -13,12 +13,14 @@ extends State
 
 var tutorial_instance: Node2D
 var enemy_instance: Node2D
+var _player_ref: Node2D = null
 
 enum Phase { FISHING, CUTSCENE_1, COMBAT, CUTSCENE_2 }
 var current_phase: Phase = Phase.FISHING
 
 func _enter() -> void:
 	current_phase = Phase.FISHING
+	_player_ref = GlobalRefs.player
 	
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
@@ -42,10 +44,13 @@ func _exit() -> void:
 		DialogueManager.dialogue_started.disconnect(_on_dialogue_started)
 	if DialogueManager.dialogue_ended.is_connected(_on_dialogue_ended):
 		DialogueManager.dialogue_ended.disconnect(_on_dialogue_ended)
-		
+
 	if fishing_rod and fishing_rod.fishing_rod_interated.is_connected(_on_fishing_rod_interacted):
 		fishing_rod.fishing_rod_interated.disconnect(_on_fishing_rod_interacted)
-		
+
+	if is_instance_valid(enemy_instance) and enemy_instance.tree_exited.is_connected(_on_enemy_defeated):
+		enemy_instance.tree_exited.disconnect(_on_enemy_defeated)
+
 	if tutorial_instance:
 		tutorial_instance.queue_free()
 
@@ -78,7 +83,7 @@ func _start_combat() -> void:
 		enemy_instance.tree_exited.connect(_on_enemy_defeated)
 
 func _on_enemy_defeated() -> void:
-	if current_phase == Phase.COMBAT:
+	if current_phase == Phase.COMBAT and is_instance_valid(_player_ref):
 		current_phase = Phase.CUTSCENE_2
 		DialogueManager.start_speech(cutscene_2)
 

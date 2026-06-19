@@ -14,8 +14,9 @@ var attack_direction : Vector2
 var roll_direction : Vector2
 
 var can_move : bool = true
-var can_attack_1 : bool = true
-var can_attack_2 : bool = true
+var can_attack_1 : bool = false
+var can_attack_2 : bool = false
+var attack_2_locked: bool = true
 var can_roll : bool = true
 
 var roll_cooldown : float = 1.0
@@ -56,16 +57,16 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if can_move:
 		if InputManager.get_action_pressed("attack"):
 			# Bloquear ataques se ja estiver em ATTACK1 ou ATTACK2 ou ROLL
-			if state_machine.current_state.name in ["Attack1", "Attack2", "Roll"]:
+			if state_machine.current_state.name in ["Attack2", "Roll"]:
 				return
-			if state_machine.current_state.name != "AttackEnd" and can_attack_1:
+			if can_attack_1 and !can_attack_2:
 				state_machine.current_state.transition_to("Attack1")
-			elif state_machine.current_state.name == "AttackEnd" and can_attack_2:
+			elif can_attack_2 and !attack_2_locked:
 				state_machine.current_state.transition_to("attack2")
 			
 		elif InputManager.get_action_pressed("roll") and can_roll:
 			# Bloquear rolagem se estiver em ATTACK1, ATTACK_END ou ATTACK2
-			if state_machine.current_state.name in ["Attack1", "AttackEnd", "Attack2"]:
+			if state_machine.current_state.name in ["Attack1", "Attack2"]:
 				return
 			state_machine.current_state.transition_to("Roll")
 
@@ -117,11 +118,11 @@ func update_stats_from_save() -> void:
 		var state = GameManager.current_save.game_state
 		if state >= GameManager.GameState.TRAINING_COMPLETE:
 			can_attack_1 = true
-			can_attack_2 = true
+			attack_2_locked = false
 			can_roll = true
 		else:
 			can_attack_1 = false
-			can_attack_2 = false
+			attack_2_locked = true
 			can_roll = false
 
 func play_sfx_walk() -> void:
@@ -138,3 +139,9 @@ func turn_light_on_or_off(light: bool):
 		$PointLight2D.show()
 	else:
 		$PointLight2D.hide()
+
+func enable_attack_2():
+	can_attack_2 = true
+	
+func disable_attack_2():
+	can_attack_2 = false

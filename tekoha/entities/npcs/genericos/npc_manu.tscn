@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bdyh6ssl6wnjg"]
+
+[ext_resource type="Texture2D" uid="uid://d1aah28nxffy7" path="res://assets/sprites/entities/npcs/npc_manu_mesa.png" id="1_i8sts"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36x6k"]
+atlas = ExtResource("1_i8sts")
+region = Rect2(0, 0, 32, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jjoi"]
+atlas = ExtResource("1_i8sts")
+region = Rect2(32, 0, 32, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwsp6"]
+atlas = ExtResource("1_i8sts")
+region = Rect2(64, 0, 32, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5y3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36x6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jjoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwsp6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pr0o"]
+size = Vector2(17, 16)
+
+[node name="NpcManu" type="CharacterBody2D" unique_id=459407605]
+collision_layer = 1024
+collision_mask = 1425
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1490684527]
+sprite_frames = SubResource("SpriteFrames_c5y3b")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1512475922]
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_1pr0o")

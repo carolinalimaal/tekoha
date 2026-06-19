@@ -14,10 +14,12 @@ enum SOUND_EFFECT_TYPE {
 	BREAKING_POT,
 	BUSH,
 	PICKUP_ITEM,
-	UI_FOCUS,
+	BUTTON_FOCUS,
 	OPEN_MENU,
 	CLOSE_MENU,
 	SAVE,
+	BOAT_MOTOR_START,
+	BOAT_MOTOR_LOOP
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.
