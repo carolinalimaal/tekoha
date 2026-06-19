@@ -145,12 +145,12 @@ func set_limits_layer(condition: bool) -> void:
 
 func zoom_in_camera() -> void:
 	var tween: Tween = create_tween()
-	tween.tween_property(get_node("../PlayerCamera"), "zoom", Vector2(2, 2), DELAY_CAMERA_ZOOM)
+	tween.tween_property(GlobalRefs.player_camera, "zoom", Vector2(2, 2), DELAY_CAMERA_ZOOM)
 
 func zoom_out_camera() -> void:
 	await _wait(DELAY_CAMERA_ZOOM)
 	var tween: Tween = create_tween()
-	tween.tween_property(get_node("../PlayerCamera"), "zoom", Vector2(1, 1), DELAY_CAMERA_ZOOM)
+	tween.tween_property(GlobalRefs.player_camera, "zoom", Vector2(1.5, 1.5), DELAY_CAMERA_ZOOM)
 
 func dummy_appearence_anim() -> void:
 	GlobalRefs.player.can_move = false
