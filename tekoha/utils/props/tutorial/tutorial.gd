@@ -65,7 +65,7 @@ func _change_state(new_state: TutorialState) -> void:
 		TutorialState.ATTACK_2:
 			tutorial_ui.mark_attack_1_done()
 			await _wait(DELAY_UI_FEEDBACK)
-			GlobalRefs.player.can_attack_2 = true
+			GlobalRefs.player.attack_2_locked = false
 			_play_dialogue(DIALOG_ATTACK_2)
 			
 		TutorialState.ROLL:
