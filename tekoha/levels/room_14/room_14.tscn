@@ -18,8 +18,6 @@
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="11_t76wk"]
 [ext_resource type="SpriteFrames" uid="uid://dl2so67ufwqwm" path="res://assets/sprites/props/pots/vaso_02_3.tres" id="12_mch0w"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="15_hksbc"]
-[ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="15_nh63o"]
-[ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="19_4yb6g"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="16_0mwue"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4yb6g"]
@@ -166,6 +164,7 @@ position = Vector2(966, 715)
 sprite_frames = ExtResource("12_mch0w")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1847665103]
+visible = false
 energy = 0.9
 blend_mode = 1
 
@@ -181,7 +180,7 @@ position = Vector2(674, 446)
 [node name="Sacola" parent="Enemies" unique_id=461608080 instance=ExtResource("15_hksbc")]
 position = Vector2(-272, 172)
 
-[node name="Canudinho" parent="Enemies" unique_id=2132468328 instance=ExtResource("19_4yb6g")]
+[node name="Canudinho" parent="Enemies" unique_id=2132468328 instance=ExtResource("16_0mwue")]
 position = Vector2(-110, -28)
 
 [node name="Sacola2" parent="Enemies" unique_id=556049819 instance=ExtResource("15_hksbc")]
@@ -193,13 +192,13 @@ position = Vector2(216, -103)
 [node name="Sacola4" parent="Enemies" unique_id=1755073673 instance=ExtResource("15_hksbc")]
 position = Vector2(280, 130)
 
-[node name="Canudinho2" parent="Enemies" unique_id=1178490716 instance=ExtResource("19_4yb6g")]
+[node name="Canudinho2" parent="Enemies" unique_id=1178490716 instance=ExtResource("16_0mwue")]
 position = Vector2(262, 200)
 
-[node name="Canudinho3" parent="Enemies" unique_id=797534204 instance=ExtResource("19_4yb6g")]
+[node name="Canudinho3" parent="Enemies" unique_id=797534204 instance=ExtResource("16_0mwue")]
 position = Vector2(208, 220)
 
-[node name="Canudinho4" parent="Enemies" unique_id=1452956171 instance=ExtResource("19_4yb6g")]
+[node name="Canudinho4" parent="Enemies" unique_id=1452956171 instance=ExtResource("16_0mwue")]
 position = Vector2(143, -156)
 
 [node name="Room14Door" type="Area2D" parent="." unique_id=240560434]
