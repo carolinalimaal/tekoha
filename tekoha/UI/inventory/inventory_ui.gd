@@ -107,10 +107,7 @@ func _disconnect_popup_signals() -> void:
 
 func _set_slots_focus(enable: bool) -> void:
 	for slot in slots:
-		if enable and slot.item_slot and slot.item_slot.item:
-			slot.item_button.focus_mode = Control.FOCUS_ALL
-		else:
-			slot.item_button.focus_mode = Control.FOCUS_NONE
+		slot.item_button.focus_mode = Control.FOCUS_ALL if enable else Control.FOCUS_NONE
 
 # --- LOGICA DE DESCRICAO ---
 func _on_slot_highlighted(slot: InventorySlotUI) -> void:

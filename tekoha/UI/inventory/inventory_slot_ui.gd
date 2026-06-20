@@ -34,9 +34,9 @@ func set_item_slot(_item_slot: ItemSlot) -> void:
 		item_icon.texture = null
 		item_icon.visible = false
 		
-		item_button.disabled = true
-		item_button.focus_mode = Control.FOCUS_NONE # Impede que as setas parem aqui
-		item_button.mouse_filter = Control.MOUSE_FILTER_IGNORE # Ignora hover e cliques
+		item_button.disabled = false
+		item_button.focus_mode = Control.FOCUS_ALL
+		item_button.mouse_filter = Control.MOUSE_FILTER_STOP
 
 # --- METODOS DOS SINAIS ---
 
