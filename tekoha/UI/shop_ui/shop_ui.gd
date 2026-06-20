@@ -29,31 +29,40 @@ func cancel_action() -> void:
 	UIManager.close_top_menu()
 
 func _update_ui() -> void:
-	for item in item_list.get_children():
-		if item is ShopItemRow and GameManager.current_save.wallet < item.item.price:
-			item.price_label.add_theme_color_override("font_color", Color("#963638"))
+	var wallet = GameManager.current_save.wallet
+	for row in item_list.get_children():
+		if row is ShopItemRow:
+			row.update_state(wallet >= row.item.price)
 
 func _on_item_pressed(item_row_pressed: ShopItemRow) -> void:
 	current_row_selected = item_row_pressed
+
+	if GameManager.current_save.wallet < current_row_selected.item.price:
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_ERROR)
+		GlobalSignals.hud_info.emit("Sem dinheiro suficiente!")
+		return
+
 	GlobalRefs.confirmation_popup.setup(
-		"Deseja comprar " + current_row_selected.item.name + "?", 
-		null, 
+		"Deseja comprar " + current_row_selected.item.name + "?",
+		null,
 		true,
 		"Comprar")
-	
+
 	UIManager.open_menu("confirmation")
 	_connect_popup_signals()
 	_set_slots_focus(false)
 
 func _on_confirm_bought() -> void:
-	var item = current_row_selected.item
-	if GameManager.current_save.wallet >= item.price:
-		GameManager._remove_coin(item.price)
-		GlobalRefs.inventory.add_item(item)
-		_update_ui()
-	else:
+	if GlobalRefs.inventory._get_empty_item_slot() == null:
 		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_ERROR)
-		GlobalSignals.hud_info.emit("Sem dinheiro suficiente!")
+		GlobalSignals.hud_info.emit("Seu inventário já está cheio!")
+		_close_popup()
+		return
+
+	var item = current_row_selected.item
+	GameManager._remove_coin(item.price)
+	GlobalRefs.inventory.add_item(item)
+	_update_ui()
 	_close_popup()
 
 func _on_cancel_bought() -> void:
@@ -80,8 +89,6 @@ func _disconnect_popup_signals() -> void:
 		GlobalRefs.confirmation_popup.cancelled.disconnect(_on_cancel_bought)
 
 func _set_slots_focus(enable: bool) -> void:
-	for item in item_list.get_children():
-		if enable:
-			item.focus_mode = Control.FOCUS_ALL
-		else:
-			item.focus_mode = Control.FOCUS_NONE
+	for row in item_list.get_children():
+		if row is ShopItemRow:
+			row.focus_mode = Control.FOCUS_ALL if enable else Control.FOCUS_NONE

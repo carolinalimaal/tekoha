@@ -21,5 +21,11 @@ func setup_item(item_data: ConsumableItemData) -> void:
 		heart_container.update_hearts(item.health_gain)
 		price_label.text = str(item.price)
 
+func update_state(can_afford: bool) -> void:
+	if can_afford:
+		price_label.remove_theme_color_override("font_color")
+	else:
+		price_label.add_theme_color_override("font_color", Color("#963638"))
+
 func _on_item_button_pressed() -> void:
 	item_pressed.emit(self)
