@@ -69,4 +69,4 @@ theme_override_constants/separation = 8
 [node name="NavigationLegend" parent="Panel/VBoxContainer" unique_id=1102564893 instance=ExtResource("2_gbh3t")]
 layout_mode = 2
 size_flags_vertical = 8
-legend_text = "[ui_accept] Comprar"
+legend_text = "[ui_accept] Comprar [ui_cancel] Fechar"
