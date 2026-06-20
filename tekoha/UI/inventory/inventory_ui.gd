@@ -66,9 +66,15 @@ func _on_slot_clicked(slot: InventorySlotUI) -> void:
 func _on_confirm_use() -> void:
 	var item_slot = _current_slot_selected.item_slot
 	if item_slot and !item_slot.is_empty():
+		var hc = GlobalRefs.player.health_component
+		if hc.current_health >= hc.max_health:
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_ERROR)
+			GlobalSignals.hud_info.emit("Sua vida já está cheia!")
+			_close_popup()
+			return
 		GlobalRefs.player.heal(item_slot.item.health_gain)
 		GlobalRefs.inventory.remove_item_from_slot(item_slot.slot_index)
-	
+
 	_close_popup()
 
 func _on_cancel_use() -> void:

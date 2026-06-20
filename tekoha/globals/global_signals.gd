@@ -23,3 +23,6 @@ signal level_loading_finished()
 
 ## Sinal para avisar que o estado do jogo mudou
 signal game_state_changed(new_state: GameManager.GameState)
+
+## Sinal para exibir uma mensagem informativa na HUD
+signal hud_info(message: String)
