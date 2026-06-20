@@ -9,4 +9,4 @@ health_gain = 2
 icon = ExtResource("1_yn1ln")
 name = "Tambaqui Assado"
 description = "Peixe amazônico assado na brasa."
-price = 30
+price = 1

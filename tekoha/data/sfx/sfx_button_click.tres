@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://c2p4gfqkpybia"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_bk4qp"]
+[ext_resource type="AudioStream" uid="uid://e77na32bacra" path="res://assets/sound/sfx/ui/sfx_button_click.wav" id="2_rt6nx"]
+
+[resource]
+script = ExtResource("1_bk4qp")
+type = 15
+sound_effect = ExtResource("2_rt6nx")
+volume = -30.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"

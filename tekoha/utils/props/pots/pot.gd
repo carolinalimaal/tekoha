@@ -24,6 +24,13 @@ func _on_pot_attack_received(attack_data: AttackData):
 	animated_sprite_2d.play("default")
 
 func _on_pot_destroyed():
+	hitbox_component.set_deferred("monitoring", false)
+	hitbox_collision.set_deferred("disabled", true)
+	collision.set_deferred("disabled", true)
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.BREAKING_POT)
+
+	await animated_sprite_2d.animation_finished
+
 	#var amount_to_drop = randi_range(0, 3)
 	var chance = randf()
 	var amount_to_drop = 0
@@ -35,16 +42,12 @@ func _on_pot_destroyed():
 		amount_to_drop = 2
 	else: # 10% de chance de cair 3 moedas
 		amount_to_drop = 3
-	
+
 	for i in range(amount_to_drop):
 		_spawn_coin()
-	
-	hitbox_component.set_deferred("monitoring", false)
-	hitbox_collision.set_deferred("disabled", true)
-	collision.set_deferred("disabled", true)
+
 	y_sort_enabled = false
 	z_index = -1
-	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.BREAKING_POT)
 
 func _spawn_coin() -> void:
 	if coin_scene:

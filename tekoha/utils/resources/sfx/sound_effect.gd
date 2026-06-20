@@ -19,7 +19,9 @@ enum SOUND_EFFECT_TYPE {
 	CLOSE_MENU,
 	SAVE,
 	BOAT_MOTOR_START,
-	BOAT_MOTOR_LOOP
+	BOAT_MOTOR_LOOP,
+	BUTTON_CLICK,
+	UI_ERROR
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.

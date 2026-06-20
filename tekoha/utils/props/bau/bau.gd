@@ -29,8 +29,6 @@ func update_item_panel():
 			GlobalRefs.confirmation_popup.setup("O BAÚ ESTÁ VAZIO.", null, false)
 	elif item.name == "Caixa de ferramentas":
 		GlobalRefs.confirmation_popup.setup("VOCÊ ENCONTROU A CAIXA DE FERRAMENTAS!", null, false)
-	elif verify_full_inventory():
-		GlobalRefs.confirmation_popup.setup("SEU INVENTÁRIO ESTÁ CHEIO.", null, false)
 	elif item:
 		var text = "??? ENCONTRADO!" if !GameManager.current_save.known_items.has(item.name) else item.name.to_upper() + " ENCONTRADO!"
 		GlobalRefs.confirmation_popup.setup(text, item.icon, true, "Pegar")
@@ -80,6 +78,9 @@ func close_chest():
 		GlobalRefs.confirmation_popup.cancelled.disconnect(_on_chest_cancelled)
 
 func _on_chest_confirmed() -> void:
+	if verify_full_inventory():
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_ERROR)
+		return
 	GlobalRefs.inventory.add_item(item)
 	GameManager.current_save.opened_chests[id] = true
 	print("Item adicionado ao inventário!")

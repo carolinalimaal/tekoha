@@ -52,6 +52,7 @@ func _on_confirm_bought() -> void:
 		GlobalRefs.inventory.add_item(item)
 		_update_ui()
 	else:
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_ERROR)
 		push_warning("Não tem dinheiro suficiente!")
 	_close_popup()
 
