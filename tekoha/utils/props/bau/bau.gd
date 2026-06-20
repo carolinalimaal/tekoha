@@ -80,7 +80,7 @@ func close_chest():
 func _on_chest_confirmed() -> void:
 	if verify_full_inventory():
 		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.UI_ERROR)
-		GlobalSignals.hud_info.emit("Seu inventário está cheio!")
+		GlobalSignals.hud_info.emit("Seu inventário já está cheio!")
 		return
 	GlobalRefs.inventory.add_item(item)
 	GameManager.current_save.opened_chests[id] = true
