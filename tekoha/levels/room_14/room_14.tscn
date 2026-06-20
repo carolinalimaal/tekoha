@@ -85,10 +85,10 @@ agent_radius = 5.0
 [node name="Room14" type="Node2D" unique_id=2068467507]
 y_sort_enabled = true
 script = ExtResource("1_ra45h")
-limit_top = -101
-limit_bottom = 985
-limit_left = -1
-limit_right = 1326
+limit_top = 64
+limit_bottom = 799
+limit_left = 224
+limit_right = 1120
 camera_zoom = 2.0
 dark_room = true
 
@@ -231,3 +231,6 @@ position = Vector2(-161, 120)
 scale = Vector2(1.1136364, 1)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(860.2449, 216, 860.2449, 188, 836, 188, 836, 216)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=327577403]
+position = Vector2(224, 801)
