@@ -83,7 +83,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_krcdf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -100,7 +100,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x8n1w")
 }],
-"loop": false,
+"loop": 0,
 "name": &"first_hit",
 "speed": 5.0
 }, {
@@ -117,7 +117,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7ssbm")
 }],
-"loop": false,
+"loop": 0,
 "name": &"second_hit",
 "speed": 5.0
 }, {
@@ -134,7 +134,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y685w")
 }],
-"loop": true,
+"loop": 1,
 "name": &"third_hit",
 "speed": 5.0
 }]
@@ -144,6 +144,15 @@ size = Vector2(8, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uimn"]
 size = Vector2(4, 12)
+
+[sub_resource type="Gradient" id="Gradient_7yx3t"]
+offsets = PackedFloat32Array(0, 0.7255639)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3xd07"]
+gradient = SubResource("Gradient_7yx3t")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Torche" type="StaticBody2D" unique_id=458272595]
 y_sort_enabled = true
@@ -161,6 +170,7 @@ script = ExtResource("1_t3qqb")
 metadata/_custom_type_script = "uid://2pwu4vjmtkg6"
 
 [node name="HitBoxCollision" type="CollisionShape2D" parent="HitboxComponent" unique_id=265979637]
+visible = false
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_gs6p4")
 debug_color = Color(0.9014287, 0.28611633, 0.32205358, 0.41960785)
@@ -168,3 +178,8 @@ debug_color = Color(0.9014287, 0.28611633, 0.32205358, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=238660452]
 position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_8uimn")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2131575778]
+position = Vector2(0, -10)
+color = Color(1, 1, 0.35686275, 1)
+texture = SubResource("GradientTexture2D_3xd07")
