@@ -7,6 +7,7 @@ class_name Door extends Area2D
 @export var door_name: String
 
 var is_active: bool = false
+var blocked: bool = false
 
 func _ready() -> void:
 	body_entered.connect(_on_player_body_entered)
@@ -15,7 +16,7 @@ func _ready() -> void:
 	is_active = true
 
 func _on_player_body_entered(body: Node2D) -> void:
-	if is_active and body is Player:
+	if is_active and not blocked and body is Player:
 		trigger_transition()
 
 func trigger_transition() -> void:

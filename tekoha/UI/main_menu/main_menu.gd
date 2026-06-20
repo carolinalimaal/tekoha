@@ -37,7 +37,7 @@ func _ready() -> void:
 	
 	# Verificar se existe save para mostrar ou nao o load_game_button
 	GameManager.current_save = SaveManager.load_game()
-	if GameManager.current_save:
+	if GameManager.current_save and GameManager.current_save.game_state < GameManager.GameState.PRE_BOSSFIGHT:
 		load_game_button.show()
 	else:
 		load_game_button.hide()

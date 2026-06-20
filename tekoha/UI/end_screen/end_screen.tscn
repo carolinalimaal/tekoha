@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://0prw7kywtwp7"]
+
+[ext_resource type="Script" uid="uid://8308tt5v6lno" path="res://UI/end_screen/end_screen.gd" id="1_ucoga"]
+[ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="2_sta37"]
+[ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/components/button/button.gd" id="3_d8n0o"]
+
+[node name="EndScreen" type="CanvasLayer" unique_id=1157450737]
+script = ExtResource("1_ucoga")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=690816413]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1692891083]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_sta37")
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1707096972]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "A jornada de Curupira continua...
+Obrigado por jogar até aqui!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer" unique_id=1253045448]
+custom_minimum_size = Vector2(177.25, 55.313)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Menu Principal"
+script = ExtResource("3_d8n0o")
+metadata/_custom_type_script = "uid://dy6wirss0gjld"

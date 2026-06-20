@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="2_sq6vw"]
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="4_6q2b7"]
 [ext_resource type="TileSet" uid="uid://ckp1proet01b6" path="res://assets/sprites/tiles/interiores/interior_casas/house.tres" id="5_h3kau"]
+[ext_resource type="PackedScene" uid="uid://0prw7kywtwp7" path="res://UI/end_screen/end_screen.tscn" id="5_h180t"]
 [ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interiores/moveis/moveis.tres" id="7_6q2b7"]
 [ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="8_h3kau"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="8_h180t"]
@@ -45,6 +46,7 @@ fill_to = Vector2(0.5140845, 1)
 y_sort_enabled = true
 script = ExtResource("1_wyrnq")
 cutscenes_list = Array[ExtResource("2_sq6vw")]([ExtResource("2_1e7m2"), SubResource("Resource_eseu5")])
+end_screen_scene = ExtResource("5_h180t")
 limit_top = -70
 limit_bottom = 290
 limit_left = -30

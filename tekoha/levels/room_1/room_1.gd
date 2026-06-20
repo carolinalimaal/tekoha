@@ -1,10 +1,14 @@
 extends Level
 
 @export var cutscenes_list: Array[DialogueSettings]
+@export var end_screen_scene: PackedScene
+
+@onready var house_door: Door = $HouseDoor
 
 func _ready() -> void:
 	DialogueManager.dialogue_started.connect(_on_cutscene_started)
 	DialogueManager.dialogue_ended.connect(_on_cutscene_ended)
+	GlobalSignals.game_state_changed.connect(_on_game_changed)
 
 	if GameManager.current_save.game_state == GameManager.GameState.NEW_GAME:
 		DialogueManager.start_speech(cutscenes_list[0])
@@ -45,3 +49,17 @@ func _on_screen_black() -> void:
 	GlobalRefs.player.facing_direction = Vector2.DOWN
 	GameManager.set_game_state(GameManager.GameState.PRE_BOSSFIGHT)
 	SaveManager.save_game(GameManager.current_save)
+
+func _on_game_changed(new_state: GameManager.GameState) -> void:
+	if new_state == GameManager.GameState.PRE_BOSSFIGHT:
+		house_door.blocked = true
+		house_door.body_entered.connect(_on_house_door_entered)
+
+func _on_house_door_entered(body: Node2D) -> void:
+	if body is Player:
+		_show_end_screen()
+
+func _show_end_screen() -> void:
+	var screen: EndScreen = end_screen_scene.instantiate()
+	add_child(screen)
+	screen.show_screen()

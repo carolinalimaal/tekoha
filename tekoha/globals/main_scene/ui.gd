@@ -12,6 +12,7 @@ func _ready() -> void:
 	# Atualiza as referências globais
 	GlobalRefs.new_item_found_panel = new_item_found_panel
 	GlobalRefs.confirmation_popup = confirmation_popup
+	GlobalRefs.hud = hud
 	# Esconder a HUD durante diálogos
 	DialogueManager.dialogue_started.connect(hud.hide)
 	DialogueManager.dialogue_ended.connect(hud.show)
