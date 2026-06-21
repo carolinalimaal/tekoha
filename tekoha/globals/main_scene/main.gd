@@ -1,10 +1,12 @@
 extends Node2D
 
 @onready var level_container: Node2D = $Level
-@onready var directional_light_2d: DirectionalLight2D = $DirectionalLight2D
+@onready var afternoon_filter: DirectionalLight2D = $AfternoonFilter
+@onready var night_fall_filter: DirectionalLight2D = $NightFallFilter
 
 func _ready() -> void:
-	GlobalRefs.game_time_filter = directional_light_2d
+	GlobalRefs.game_afternoon_filter = afternoon_filter
+	GlobalRefs.game_nightfall_filter = night_fall_filter
 	if GameManager.current_save:
 		_setup_world_from_save()
 
@@ -28,3 +30,8 @@ func _setup_world_from_save() -> void:
 	if save.player_position != Vector2.ZERO:
 		GlobalRefs.player.set_deferred("global_position", save.player_position)
 		GlobalRefs.player_camera.set_deferred("global_position", save.camera_pos)
+	
+	if GameManager.current_save.game_state == GameManager.GameState.IN_ROOM_8:
+		GlobalRefs.game_afternoon_filter.show()
+		if GameManager.current_save.game_state == GameManager.GameState.AFTER_PUZZLE_3:
+			GlobalRefs.game_nightfall_filter.show()

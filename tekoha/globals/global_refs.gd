@@ -17,4 +17,5 @@ var player_camera: PlayerCamera
 
 var inventory: Inventory
 
-var game_time_filter: DirectionalLight2D 
+var game_afternoon_filter: DirectionalLight2D
+var game_nightfall_filter: DirectionalLight2D

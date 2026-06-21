@@ -7,7 +7,7 @@ func  _ready() -> void:
 		GameManager.set_game_state(GameManager.GameState.IN_ROOM_8)
 		_auto_save()
 	
-	GlobalRefs.game_time_filter.show()
+	GlobalRefs.game_afternoon_filter.show()
 	
 	room_8_door.set_deferred("monitoring", false)
 	
