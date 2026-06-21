@@ -64,3 +64,9 @@ position = Vector2(45, 15)
 position = Vector2(173, 110)
 script = ExtResource("12_qujwd")
 metadata/_custom_type_script = "uid://bl7u5w3hc2dqu"
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=2083127259]
+visible = false
+color = Color(0.47843137, 0.6431373, 0.9843137, 1)
+energy = 0.4
+blend_mode = 1
