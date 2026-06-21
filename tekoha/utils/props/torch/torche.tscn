@@ -83,7 +83,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_krcdf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -100,7 +100,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x8n1w")
 }],
-"loop": false,
+"loop": 0,
 "name": &"first_hit",
 "speed": 5.0
 }, {
@@ -117,7 +117,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7ssbm")
 }],
-"loop": false,
+"loop": 0,
 "name": &"second_hit",
 "speed": 5.0
 }, {
@@ -134,7 +134,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y685w")
 }],
-"loop": true,
+"loop": 1,
 "name": &"third_hit",
 "speed": 5.0
 }]
@@ -145,6 +145,23 @@ size = Vector2(8, 47)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uimn"]
 size = Vector2(4, 12)
 
+[sub_resource type="Gradient" id="Gradient_7yx3t"]
+offsets = PackedFloat32Array(0, 0.63533837)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3xd07"]
+gradient = SubResource("Gradient_7yx3t")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3xd07"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 6.0
+gravity = Vector3(0, -50, 0)
+scale_max = 2.0
+color = Color(1, 0.6313726, 0.3254902, 1)
+
 [node name="Torche" type="StaticBody2D" unique_id=458272595]
 y_sort_enabled = true
 collision_layer = 256
@@ -152,7 +169,6 @@ script = ExtResource("1_7hks3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1632676263]
 sprite_frames = SubResource("SpriteFrames_7hks3")
-animation = &"first_hit"
 
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=893045416]
 collision_layer = 128
@@ -168,3 +184,27 @@ debug_color = Color(0.9014287, 0.28611633, 0.32205358, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=238660452]
 position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_8uimn")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2131575778]
+position = Vector2(0, -10)
+color = Color(1, 1, 0.35686275, 1)
+energy = 0.5
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_3xd07")
+
+[node name="TorcheParticles" type="GPUParticles2D" parent="." unique_id=493483813]
+position = Vector2(0, -9)
+emitting = false
+amount_ratio = 0.2
+randomness = 0.1
+process_material = SubResource("ParticleProcessMaterial_3xd07")
+
+[node name="HitParticles" type="GPUParticles2D" parent="." unique_id=118857302]
+position = Vector2(0, -9)
+emitting = false
+amount = 40
+one_shot = true
+preprocess = 0.5
+speed_scale = 2.0
+randomness = 0.2
+process_material = SubResource("ParticleProcessMaterial_3xd07")
