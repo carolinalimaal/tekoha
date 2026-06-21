@@ -1,8 +1,10 @@
 extends Node2D
 
 @onready var level_container: Node2D = $Level
+@onready var directional_light_2d: DirectionalLight2D = $DirectionalLight2D
 
 func _ready() -> void:
+	GlobalRefs.game_time_filter = directional_light_2d
 	if GameManager.current_save:
 		_setup_world_from_save()
 

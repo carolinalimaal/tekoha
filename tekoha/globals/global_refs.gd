@@ -16,3 +16,5 @@ var player: Player
 var player_camera: PlayerCamera
 
 var inventory: Inventory
+
+var game_time_filter: DirectionalLight2D 
