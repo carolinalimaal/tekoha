@@ -44,7 +44,7 @@ func _ready() -> void:
 	_setup_initial_state()
 
 func _setup_initial_state() -> void:
-	hide_second_practice_dummy()
+	_set_second_dummy_visible(false)
 	roll_area.hide()
 	transition_layer.hide()
 	global_position = Vector2(-357.0, 645.0)
@@ -101,12 +101,12 @@ func _on_cutscene_started() -> void:
 
 func _on_cutscene_ended() -> void:
 	if current_state == TutorialState.ROLL and !practice_dummy.visible:
-		dummy_appearence_anim()
-		roll_area.show()
-	
-	if current_state != TutorialState.ATTACK_1:
 		player_reposition_respawn()
-	
+		dummy_appearance_anim()
+		roll_area.show()
+	elif current_state != TutorialState.ATTACK_1:
+		player_reposition_respawn()
+
 	if current_state != TutorialState.FINISHED:
 		tutorial_ui.show_ui()
 
@@ -114,7 +114,7 @@ func _on_cutscene_ended() -> void:
 func _start_tutorial() -> void:
 	interactable_comp.disable_interaction()
 	set_limits_layer(true)
-	zoom_in_camera()
+	_set_camera_zoom(Vector2(2, 2))
 	
 	DialogueManager.dialogue_ended.connect(_on_cutscene_ended)
 	DialogueManager.dialogue_started.connect(_on_cutscene_started)
@@ -127,7 +127,7 @@ func _end_tutorial() -> void:
 	
 	GameManager.set_game_state(GameManager.GameState.TRAINING_COMPLETE)
 	set_limits_layer(false)
-	zoom_out_camera()
+	_set_camera_zoom(Vector2(1.5, 1.5), DELAY_CAMERA_ZOOM)
 	tutorial_ui.hide_ui()
 	tutorial_finished.emit()
 
@@ -143,26 +143,23 @@ func set_limits_layer(condition: bool) -> void:
 	tutorial_limit_1.set_collision_layer_value(8, condition)
 	tutorial_limit_2.set_collision_layer_value(8, condition)
 
-func zoom_in_camera() -> void:
+func _set_camera_zoom(target: Vector2, pre_delay: float = 0.0) -> void:
+	if pre_delay > 0.0:
+		await _wait(pre_delay)
 	var tween: Tween = create_tween()
-	tween.tween_property(GlobalRefs.player_camera, "zoom", Vector2(2, 2), DELAY_CAMERA_ZOOM)
+	tween.tween_property(GlobalRefs.player_camera, "zoom", target, DELAY_CAMERA_ZOOM)
 
-func zoom_out_camera() -> void:
-	await _wait(DELAY_CAMERA_ZOOM)
-	var tween: Tween = create_tween()
-	tween.tween_property(GlobalRefs.player_camera, "zoom", Vector2(1.5, 1.5), DELAY_CAMERA_ZOOM)
-
-func dummy_appearence_anim() -> void:
+func dummy_appearance_anim() -> void:
 	GlobalRefs.player.can_move = false
 	transition_layer.show()
 	transition_rect.modulate.a = 0.0
-	
+
 	var tween: Tween = create_tween()
 	tween.tween_property(transition_rect, "modulate:a", 1.0, 1.0)
 	tutorial_ui.hide_ui()
-	tween.tween_callback(show_second_practice_dummy)
+	tween.tween_callback(_set_second_dummy_visible.bind(true))
 	tween.tween_property(transition_rect, "modulate:a", 0.0, 1.0)
-	
+
 	await tween.finished
 	tutorial_ui.show_ui()
 	transition_layer.hide()
@@ -171,14 +168,9 @@ func dummy_appearence_anim() -> void:
 func player_reposition_respawn() -> void:
 	GlobalRefs.player.global_position = player_reposition.global_position
 
-func hide_second_practice_dummy() -> void:
-	practice_dummy.hide()
-	practice_dummy.collision_shape.set_deferred("disabled", true)
-
-func show_second_practice_dummy() -> void:
-	practice_dummy.show()
-	practice_dummy.collision_shape.set_deferred("disabled", false)
+func _set_second_dummy_visible(is_visible: bool) -> void:
+	practice_dummy.visible = is_visible
+	practice_dummy.collision_shape.set_deferred("disabled", !is_visible)
 
 func disable_tutorial_interaction() -> void:
-	if interactable_comp:
-		interactable_comp.disable_interaction()
+	interactable_comp.disable_interaction()
