@@ -28,8 +28,6 @@ func _on_cutscene_ended() -> void:
 	if GameManager.current_save.game_state == GameManager.GameState.NEW_GAME:
 		GameManager.set_game_state(GameManager.GameState.BEFORE_FISHING)
 	elif GameManager.current_save.game_state == GameManager.GameState.AFTER_PUZZLE_3:
-		GlobalRefs.game_afternoon_filter.hide()
-		GlobalRefs.game_nightfall_filter.hide()
 		_start_sleep_sequence()
 
 func _start_sleep_sequence() -> void:
@@ -45,6 +43,10 @@ func _start_sleep_sequence() -> void:
 	tween.tween_callback(_on_screen_black)
 	tween.tween_property(overlay, "color:a", 0.0, 1.0)
 	tween.tween_callback(canvas.queue_free)
+	
+	await get_tree().create_timer(1.0).timeout
+	GlobalRefs.game_afternoon_filter.hide()
+	GlobalRefs.game_nightfall_filter.hide()
 
 func _on_screen_black() -> void:
 	GlobalRefs.player.global_position = Vector2(45.0,15.0)
