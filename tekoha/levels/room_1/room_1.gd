@@ -28,6 +28,8 @@ func _on_cutscene_ended() -> void:
 	if GameManager.current_save.game_state == GameManager.GameState.NEW_GAME:
 		GameManager.set_game_state(GameManager.GameState.BEFORE_FISHING)
 	elif GameManager.current_save.game_state == GameManager.GameState.AFTER_PUZZLE_3:
+		GlobalRefs.game_afternoon_filter.hide()
+		GlobalRefs.game_nightfall_filter.hide()
 		_start_sleep_sequence()
 
 func _start_sleep_sequence() -> void:
