@@ -7,7 +7,7 @@
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="5_tog6q"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="6_1xkgs"]
 [ext_resource type="Texture2D" uid="uid://bfuifh5omshv6" path="res://assets/sprites/tiles/natureza/natureza.png" id="6_25ocl"]
-[ext_resource type="TileSet" uid="uid://cwihu0lcjfmkq" path="res://assets/sprites/tiles/exteriores/casas/casas_genericas.tres" id="8_cpiwb"]
+[ext_resource type="TileSet" uid="uid://cwihu0lcjfmkq" path="res://assets/sprites/tiles/exteriores/casas/casas.tres" id="8_cpiwb"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/components/save_point/save_point.tscn" id="10_tog6q"]
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="11_1xkgs"]
 [ext_resource type="Script" uid="uid://sjtw4n37y6af" path="res://utils/components/secret_area/secret_area.gd" id="12_1xkgs"]

@@ -258,7 +258,7 @@ terrain_set_0/terrain_1/color = Color(0.6783371, 0.034591425, 0.463848, 1)
 sources/0 = SubResource("TileSetAtlasSource_khgse")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khgse"]
-size = Vector2(36, 27)
+size = Vector2(36, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eta5w"]
 size = Vector2(166, 19)
@@ -338,13 +338,12 @@ sprite_frames = ExtResource("12_reu2n")
 position = Vector2(624, 880)
 
 [node name="HouseDoor" parent="." unique_id=595878266 groups=["doors"] instance=ExtResource("7_uev6a")]
-position = Vector2(624, 963)
+position = Vector2(624, 920)
 monitorable = false
 target_level_path = "uid://c1k48pyjcab6e"
 door_name = "HouseDoor"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseDoor" unique_id=1966801129]
-position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_khgse")
 
 [node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=1532514667]
