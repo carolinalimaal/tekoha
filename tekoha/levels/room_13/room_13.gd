@@ -7,6 +7,9 @@ extends Level
 @export var motor_loop_sound: AudioStream
 
 func _ready() -> void:
+	if !GlobalRefs.game_afternoon_filter.visible:
+		GlobalRefs.game_afternoon_filter.show()
+	
 	if GameManager.current_save.game_state == GameManager.GameState.AFTER_PUZZLE_2:
 		room_14_door.set_deferred("monitoring", false)
 
