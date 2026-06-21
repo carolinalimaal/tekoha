@@ -42,7 +42,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3r2w2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -176,15 +176,19 @@ animation = &"bola_papel_h"
 animation = &"bola_papel_h"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_5llhv"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_suwlo")
 blend_point_0/pos = Vector2(0, 1)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_ygw4o")
 blend_point_1/pos = Vector2(0, -1)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_g57b1")
 blend_point_2/pos = Vector2(1, 0)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_2dief")
 blend_point_3/pos = Vector2(-1, 0)
-blend_mode = 1
+blend_point_3/name = &"3"
 
 [node name="BolaPapel" type="Area2D" unique_id=1799604730 node_paths=PackedStringArray("animation_tree", "hurtbox_component", "visible_on_screen_notifier") groups=["projectile"]]
 collision_layer = 0
