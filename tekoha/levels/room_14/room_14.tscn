@@ -231,6 +231,3 @@ position = Vector2(-161, 120)
 scale = Vector2(1.1136364, 1)
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(860.2449, 216, 860.2449, 188, 836, 188, 836, 216)
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=327577403]
-position = Vector2(224, 801)

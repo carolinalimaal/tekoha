@@ -51,7 +51,7 @@ tile_set = ExtResource("2_roctp")
 [node name="Limits" type="Node2D" parent="Tiles" unique_id=361058024]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tiles/Limits" unique_id=10946571]
-collision_layer = 384
+collision_layer = 128
 collision_mask = 17
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tiles/Limits/StaticBody2D" unique_id=417730580]
