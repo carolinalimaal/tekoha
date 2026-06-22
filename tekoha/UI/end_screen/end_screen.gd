@@ -17,5 +17,6 @@ func show_screen() -> void:
 	tween.tween_callback(main_menu_button.grab_focus)
 
 func _on_menu_pressed() -> void:
+	SaveManager.delete_game()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://UI/main_menu/main_menu.tscn")
