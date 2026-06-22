@@ -106,7 +106,7 @@ position = Vector2(-20, 48)
 
 [node name="NpcSeller" parent="." unique_id=561111194 instance=ExtResource("8_f01of")]
 y_sort_enabled = true
-position = Vector2(467, 363)
+position = Vector2(228, 313)
 
 [node name="Muiraquita" parent="." unique_id=700033084 instance=ExtResource("9_a1oop")]
 position = Vector2(1282, 459)
