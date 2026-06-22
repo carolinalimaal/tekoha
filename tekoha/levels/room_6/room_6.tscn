@@ -75,7 +75,7 @@ size = Vector2(32, 44)
 size = Vector2(8, 66)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0ms1"]
-size = Vector2(26, 54)
+size = Vector2(26, 8)
 
 [node name="Room6" type="Node2D" unique_id=1667791600]
 y_sort_enabled = true
@@ -163,21 +163,20 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_fxwqa")
 
 [node name="Marker2D" type="Marker2D" parent="Room5Door" unique_id=847099291]
-position = Vector2(65, 0)
+position = Vector2(40, -1.0927847e-06)
 
 [node name="Room7Door" type="Area2D" parent="." unique_id=1581697807 groups=["doors"]]
-position = Vector2(847, 296)
+position = Vector2(848, 313)
 script = ExtResource("9_copml")
 target_level_path = "uid://yeu56q2hrpgm"
 door_name = "Room7Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room7Door" unique_id=158132216]
-position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_j0ms1")
 
 [node name="Marker2D" type="Marker2D" parent="Room7Door" unique_id=1305301681]
-position = Vector2(0, 67)
+position = Vector2(0, 24)
 
 [node name="Muiraquita" parent="." unique_id=1877604477 instance=ExtResource("12_4hwci")]
 position = Vector2(731, 318)
@@ -191,7 +190,7 @@ dialogues_list = Array[ExtResource("14_bs7kn")]([ExtResource("15_d3h8c"), ExtRes
 position = Vector2(632, 700)
 
 [node name="SecondCeciliaSpawnPoint" type="Marker2D" parent="." unique_id=241871122]
-position = Vector2(799, 381)
+position = Vector2(768, 375)
 
 [node name="NpcManu" parent="." unique_id=1511157617 instance=ExtResource("18_a5usx")]
 z_index = 1

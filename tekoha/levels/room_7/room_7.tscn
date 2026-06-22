@@ -92,7 +92,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_lveah")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhh0g"]
-size = Vector2(32, 14)
+size = Vector2(32, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtyum"]
 size = Vector2(16, 58)
@@ -217,7 +217,7 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_mhh0g")
 
 [node name="Marker2D" type="Marker2D" parent="Room7Door" unique_id=1810861292]
-position = Vector2(0, -64)
+position = Vector2(0, -49)
 
 [node name="Room8Door" type="Area2D" parent="." unique_id=1835176623 groups=["doors"]]
 position = Vector2(414, 96)
@@ -239,7 +239,7 @@ item = ExtResource("9_1n1lg")
 sprite_frames = ExtResource("8_jdn40")
 
 [node name="PathBlock" type="Area2D" parent="." unique_id=1066191275]
-position = Vector2(368, 320)
+position = Vector2(368, 324)
 collision_layer = 0
 script = ExtResource("11_4m76p")
 path_block_message = SubResource("Resource_1n1lg")
@@ -265,7 +265,7 @@ shape = SubResource("RectangleShape2D_rak3t")
 debug_color = Color(0.6392157, 0.5254902, 0, 0.7607843)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1945160891]
-position = Vector2(368, 97)
+position = Vector2(368, 96)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1573523687]
 shape = SubResource("RectangleShape2D_1n1lg")

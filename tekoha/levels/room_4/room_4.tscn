@@ -482,10 +482,10 @@ sources/0 = SubResource("TileSetAtlasSource_6xflk")
 sources/1 = SubResource("TileSetAtlasSource_haabk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3sq2"]
-size = Vector2(32, 128)
+size = Vector2(20, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xflk"]
-size = Vector2(96, 32)
+size = Vector2(96, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pm3eg"]
 
@@ -501,7 +501,7 @@ dialogues = Array[ExtResource("11_5mqem")]([SubResource("Resource_6m4mh")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojuiy"]
-size = Vector2(136, 20)
+size = Vector2(110, 20)
 
 [node name="Room4" type="Node2D" unique_id=1956737914]
 y_sort_enabled = true
@@ -538,28 +538,26 @@ position = Vector2(-738.8904, -766.09033)
 polygon = PackedVector2Array(672, 1472, 576, 1344, 448, 1248, 352, 1216, 192, 1184, 96, 1120, 96, 1504, 704, 1504)
 
 [node name="Room2Door" parent="." unique_id=595878266 groups=["doors"] instance=ExtResource("6_h3sq2")]
-position = Vector2(96, 1056)
+position = Vector2(128, 1056)
 target_level_path = "uid://cudaprnhd7e17"
 door_name = "Room4Door"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room2Door" unique_id=1026978022]
-position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_h3sq2")
 
 [node name="Marker2D" type="Marker2D" parent="Room2Door" unique_id=2022444826]
-position = Vector2(64, 0)
+position = Vector2(55, 0)
 
 [node name="Room5Door" parent="." unique_id=148805372 groups=["doors"] instance=ExtResource("6_h3sq2")]
-position = Vector2(736, 1504)
+position = Vector2(752, 1490)
 target_level_path = "uid://bg2wya8wqj5e6"
 door_name = "Room4Door"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room5Door" unique_id=240926542]
-position = Vector2(16, -16)
 shape = SubResource("RectangleShape2D_6xflk")
 
 [node name="Marker2D" type="Marker2D" parent="Room5Door" unique_id=455292062]
-position = Vector2(0, -96)
+position = Vector2(0, -58)
 
 [node name="Room13Door" type="Area2D" parent="." unique_id=1485131359]
 position = Vector2(1020, 644)
@@ -582,7 +580,7 @@ position = Vector2(640, 1120)
 position = Vector2(544, 1696)
 
 [node name="PathBlock" type="Area2D" parent="." unique_id=580061877]
-position = Vector2(738, 1447)
+position = Vector2(738, 1462)
 script = ExtResource("10_urt5k")
 path_block_message = SubResource("Resource_25pbt")
 push_direction = Vector2(0, -1)

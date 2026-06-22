@@ -14,10 +14,10 @@
 [ext_resource type="Resource" uid="uid://bf1jdb62ejs2n" path="res://data/items/peixe_com_acai.tres" id="10_khelp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ds1xc"]
-size = Vector2(128, 32)
+size = Vector2(128, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvq2q"]
-size = Vector2(32, 160)
+size = Vector2(16, 122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4msy"]
 size = Vector2(400, 16)
@@ -51,14 +51,14 @@ tile_set = ExtResource("2_roctp")
 [node name="Limits" type="Node2D" parent="Tiles" unique_id=361058024]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tiles/Limits" unique_id=10946571]
-collision_layer = 128
+collision_layer = 384
 collision_mask = 17
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tiles/Limits/StaticBody2D" unique_id=417730580]
 polygon = PackedVector2Array(2368, 672, 2176, 688, 2104, 760, 2016, 672, 1920, 704, 1824, 640, 1696, 672, 1520, 656, 1448, 736, 1416, 736, 1216, 448, 1088, 384, 2368, 480)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tiles/Limits/StaticBody2D" unique_id=1245029087]
-polygon = PackedVector2Array(2336, 800, 2160, 808, 1952, 992, 1984, 1088, 2112, 1248, 2048, 1280, 2048, 1312, 1920, 1312, 1504, 960, 1424, 832, 1352, 824, 1088, 800, 896, 832, 736, 896, 576, 736, 640, 576, 704, 448, 480, 832, 2112, 1472)
+polygon = PackedVector2Array(2373, 805, 2160, 808, 1952, 992, 1984, 1088, 2112, 1248, 2048, 1280, 2048, 1312, 1920, 1312, 1504, 960, 1424, 832, 1352, 824, 1088, 800, 896, 832, 736, 896, 576, 736, 640, 576, 717, 413, 480, 832, 2112, 1472)
 
 [node name="Bush" parent="." unique_id=1810771264 instance=ExtResource("4_hvq2q")]
 position = Vector2(1416, 760)
@@ -147,7 +147,7 @@ item = ExtResource("10_khelp")
 sprite_frames = ExtResource("9_khelp")
 
 [node name="Room11Door" type="Area2D" parent="." unique_id=2095600415]
-position = Vector2(1984, 1280)
+position = Vector2(1984, 1302)
 collision_layer = 2048
 script = ExtResource("7_drjbi")
 target_level_path = "uid://b5dpy7jba3ouw"
@@ -155,14 +155,13 @@ door_name = "Room11Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room11Door" unique_id=465117992]
-position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_ds1xc")
 
 [node name="Marker2D" type="Marker2D" parent="Room11Door" unique_id=1337002795]
-position = Vector2(0, -32)
+position = Vector2(0, -36)
 
 [node name="Room12Door" type="Area2D" parent="." unique_id=688075895]
-position = Vector2(2368, 768)
+position = Vector2(2368, 736)
 collision_layer = 2048
 script = ExtResource("7_drjbi")
 target_level_path = "uid://c3gfgte4qpksc"
@@ -170,14 +169,13 @@ door_name = "Room12Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room12Door" unique_id=831091715]
-position = Vector2(-16, 0)
 shape = SubResource("RectangleShape2D_hvq2q")
 
 [node name="Marker2D" type="Marker2D" parent="Room12Door" unique_id=2122796225]
-position = Vector2(-96, -32)
+position = Vector2(-57, 0)
 
 [node name="Room13Door" type="Area2D" parent="." unique_id=272076136]
-position = Vector2(920, 271)
+position = Vector2(920, 230)
 script = ExtResource("7_drjbi")
 target_level_path = "uid://co0vptwphskq3"
 door_name = "Room13Door"
@@ -187,7 +185,7 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_q4msy")
 
 [node name="Marker2D" type="Marker2D" parent="Room13Door" unique_id=1476808719]
-position = Vector2(0, 60)
+position = Vector2(0, 40)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=367889744]
 navigation_polygon = SubResource("NavigationPolygon_khelp")

@@ -30,7 +30,7 @@ dialogues = Array[ExtResource("4_6q2b7")]([SubResource("Resource_h180t")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gyguw"]
-size = Vector2(32, 20)
+size = Vector2(32, 10)
 
 [sub_resource type="Gradient" id="Gradient_ign5b"]
 offsets = PackedFloat32Array(0, 0.9736842)
@@ -115,7 +115,7 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_gyguw")
 
 [node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=276414706]
-position = Vector2(-1, -88)
+position = Vector2(-1, -51)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1379758599]
 position = Vector2(176, -79)

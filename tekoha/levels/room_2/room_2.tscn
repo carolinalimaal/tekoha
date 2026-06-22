@@ -347,7 +347,7 @@ door_name = "HouseDoor"
 shape = SubResource("RectangleShape2D_khgse")
 
 [node name="Marker2D" type="Marker2D" parent="HouseDoor" unique_id=1532514667]
-position = Vector2(-1, 70)
+position = Vector2(0, 35)
 
 [node name="Room3Door" parent="." unique_id=42071688 groups=["doors"] instance=ExtResource("7_uev6a")]
 position = Vector2(2067, 1645)
@@ -359,7 +359,7 @@ door_name = "Room3Door"
 shape = SubResource("RectangleShape2D_eta5w")
 
 [node name="Marker2D" type="Marker2D" parent="Room3Door" unique_id=2112625929]
-position = Vector2(0, -70)
+position = Vector2(0, -56)
 
 [node name="Room4Door" parent="." unique_id=1788106564 groups=["doors"] instance=ExtResource("7_uev6a")]
 position = Vector2(2464, 1326)

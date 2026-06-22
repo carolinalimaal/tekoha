@@ -225,10 +225,10 @@ terrain_set_0/terrain_1/color = Color(0.6783371, 0.034591425, 0.463848, 1)
 sources/0 = SubResource("TileSetAtlasSource_khgse")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpsvw"]
-size = Vector2(356, 32)
+size = Vector2(356, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjkxj"]
-size = Vector2(348, 46)
+size = Vector2(348, 20)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8nycx"]
 vertices = PackedVector2Array(2833.2813, 1265.6406, 3020.1172, 1105.4922, 3102.7734, 1116.2266, 3040.1016, 1267.9297, 2725.0234, 1441.7578, 2761.0938, 1295.1797, 1371.6484, 1361.1484, 1349.7734, 1475.7578, 1290.2188, 1474.1328, 1159, 1291.7734, 1159, 1226.1875, 1839.0938, 728.2578, 2495.5781, 1514.8672, 905.0703, 595.97656, 835.96875, 444.96094, 909.4375, 281.0703, 1247.3516, 284.95313, 1377.1875, 392, 1056.4922, 1058.0703, 914.8672, 956.0703, 896.03125, 875.9922, 1758.3984, 506.46094, 1811.5469, 595.6797, 2431.2578, 1666.9922, 2341.9922, 1786.9766, 2034.7578, 1786.0078, 1681.1719, 1477.3672, 1473.2734, 1456.5703, 1440.2969, 1395.4688)
@@ -396,10 +396,10 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_xpsvw")
 
 [node name="Marker2D" type="Marker2D" parent="Room10Door" unique_id=1037434381]
-position = Vector2(7, -206)
+position = Vector2(0, -46)
 
 [node name="Room11Door" type="Area2D" parent="." unique_id=1379114903]
-position = Vector2(1113, -162)
+position = Vector2(1113, -119)
 collision_layer = 2048
 script = ExtResource("8_vjkxj")
 target_level_path = "uid://bas33vmll12wo"
@@ -410,7 +410,7 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_vjkxj")
 
 [node name="Marker2D" type="Marker2D" parent="Room11Door" unique_id=1150822044]
-position = Vector2(4, 103)
+position = Vector2(0, 58)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=847246918]
 navigation_polygon = SubResource("NavigationPolygon_8nycx")

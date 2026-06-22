@@ -107,7 +107,7 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_w2msv")
 
 [node name="Marker2D" type="Marker2D" parent="Room3Door" unique_id=1094404449]
-position = Vector2(-92, 77)
+position = Vector2(-20, 74)
 
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("19_wbedm")]
 position = Vector2(-180, 404)
@@ -146,7 +146,7 @@ tutorial_packed_scene = ExtResource("18_wbedm")
 position = Vector2(-440, 831)
 
 [node name="PathBlock" type="Area2D" parent="." unique_id=574947972]
-position = Vector2(704, 144)
+position = Vector2(704, 134)
 collision_layer = 0
 script = ExtResource("17_2jupl")
 push_distance = 32.0

@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="10_7woc8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvq2q"]
-size = Vector2(32, 160)
+size = Vector2(14, 124)
 
 [node name="Room12" type="Node2D" unique_id=263309058]
 y_sort_enabled = true
@@ -38,7 +38,7 @@ tile_set = ExtResource("2_7r5b5")
 [node name="Enemies" type="Node2D" parent="." unique_id=1626228944]
 
 [node name="Room12Door" type="Area2D" parent="." unique_id=688075895]
-position = Vector2(364, 768)
+position = Vector2(364, 734)
 collision_layer = 2048
 script = ExtResource("10_7woc8")
 target_level_path = "uid://bas33vmll12wo"
@@ -49,7 +49,7 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_hvq2q")
 
 [node name="Marker2D" type="Marker2D" parent="Room12Door" unique_id=2122796225]
-position = Vector2(96, 0)
+position = Vector2(60, 0)
 
 [node name="Limits" type="Node2D" parent="." unique_id=361058024]
 

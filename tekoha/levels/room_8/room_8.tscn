@@ -102,7 +102,7 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_6mn3v")
 
 [node name="Marker2D" type="Marker2D" parent="Room9Door" unique_id=1108853285]
-position = Vector2(-20, 60)
+position = Vector2(-20, 48)
 
 [node name="NpcSeller" parent="." unique_id=561111194 instance=ExtResource("8_f01of")]
 y_sort_enabled = true
