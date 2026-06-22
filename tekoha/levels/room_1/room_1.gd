@@ -9,11 +9,15 @@ func _ready() -> void:
 	DialogueManager.dialogue_started.connect(_on_cutscene_started)
 	DialogueManager.dialogue_ended.connect(_on_cutscene_ended)
 	GlobalSignals.game_state_changed.connect(_on_game_changed)
-
-	if GameManager.current_save.game_state == GameManager.GameState.NEW_GAME:
+	
+	var state = GameManager.current_save.game_state
+	if  state == GameManager.GameState.NEW_GAME:
 		DialogueManager.start_speech(cutscenes_list[0])
-	elif GameManager.current_save.game_state == GameManager.GameState.AFTER_PUZZLE_3:
+	elif state == GameManager.GameState.AFTER_PUZZLE_3:
 		DialogueManager.start_speech(cutscenes_list[1])
+	elif state == GameManager.GameState.PRE_BOSSFIGHT:
+		house_door.blocked = true
+		house_door.body_entered.connect(_on_house_door_entered)
 
 func _exit_tree() -> void:
 	if DialogueManager.dialogue_started.is_connected(_on_cutscene_started):

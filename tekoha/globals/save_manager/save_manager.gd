@@ -6,6 +6,11 @@ func save_game(save_data: SaveData) -> void:
 	_update_data()
 	ResourceSaver.save(save_data, SAVE_PATH)
 
+func delete_game() -> void:
+	if FileAccess.file_exists(SAVE_PATH):
+		DirAccess.remove_absolute(SAVE_PATH)
+	GameManager.current_save = null
+
 func load_game() -> SaveData:
 	if FileAccess.file_exists(SAVE_PATH):
 		return ResourceLoader.load(SAVE_PATH, "", ResourceLoader.CACHE_MODE_IGNORE) as SaveData
