@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_itpey"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="6_6mn3v"]
 [ext_resource type="TileSet" uid="uid://5mov6005ung0" path="res://assets/sprites/tiles/plataformas/pier.tres" id="6_d3h20"]
+[ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interiores/moveis/moveis.tres" id="7_d3h20"]
 [ext_resource type="TileSet" uid="uid://6emc5pw2epmo" path="res://assets/sprites/tiles/exteriores/restaurantes/restaurantes.tres" id="7_gnup6"]
 [ext_resource type="PackedScene" uid="uid://r33bwb7ekbh8" path="res://entities/npcs/vendedor/npc_seller.tscn" id="8_f01of"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/props/muiraquita/muiraquita.tscn" id="9_a1oop"]
@@ -34,6 +35,7 @@ metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 size = Vector2(10, 100)
 
 [node name="Room8" type="Node2D" unique_id=2101955080]
+z_index = -1
 y_sort_enabled = true
 script = ExtResource("1_wjxbu")
 bg_music = ExtResource("2_d3h20")
@@ -67,6 +69,10 @@ tile_set = ExtResource("7_gnup6")
 [node name="Pier" type="TileMapLayer" parent="Tiles" unique_id=175073664]
 tile_map_data = PackedByteArray("AAAOABIAAgAOAAYAAAAOABMAAgAOAAAAAAAOABEAAgAOAAUAAAAPABEAAgAPAAUAAAAPABIAAgAPAAYAAAAPABMAAgAPAAAAAAAOABQAAgAKAAAAAAAOABUAAgAMAAEAAAAPABQAAgALAAAAAAAPABUAAgANAAEAAAAQABUAAgAKAAEAAAARABUAAgAJAAEAAAASABUAAgAJAAEAAAATABUAAgAJAAEAAAAUABUAAgAJAAEAAAAVABUAAgAJAAEAAAAWABUAAgAJAAEAAAAXABUAAgAJAAEAAAAYABUAAgAJAAEAAAAZABUAAgAJAAEAAAAaABUAAgALAAEAAAAOABYAAgAMAAIAAAAPABYAAgANAAIAAAAQABYAAgAKAAIAAAARABYAAgAJAAIAAAASABYAAgAJAAIAAAATABYAAgAJAAIAAAAUABYAAgAJAAIAAAAVABYAAgAJAAIAAAAWABYAAgAJAAIAAAAXABYAAgAJAAIAAAAYABYAAgAJAAIAAAAZABYAAgAJAAIAAAAaABYAAgALAAIAAAA=")
 tile_set = ExtResource("6_d3h20")
+
+[node name="Moveis" type="TileMapLayer" parent="Tiles" unique_id=2042536714]
+tile_map_data = PackedByteArray("AAAFAAoAAQAJAAYAAAAFAAsAAQAJAAcAAAA=")
+tile_set = ExtResource("7_d3h20")
 
 [node name="Limits" type="Node2D" parent="." unique_id=969320535]
 

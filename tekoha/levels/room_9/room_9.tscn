@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="6_1xkgs"]
 [ext_resource type="Texture2D" uid="uid://bfuifh5omshv6" path="res://assets/sprites/tiles/natureza/natureza.png" id="6_25ocl"]
 [ext_resource type="TileSet" uid="uid://cwihu0lcjfmkq" path="res://assets/sprites/tiles/exteriores/casas/casas.tres" id="8_cpiwb"]
+[ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interiores/moveis/moveis.tres" id="9_ej02v"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/components/save_point/save_point.tscn" id="10_tog6q"]
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="11_1xkgs"]
 [ext_resource type="Script" uid="uid://sjtw4n37y6af" path="res://utils/components/secret_area/secret_area.gd" id="12_1xkgs"]
@@ -136,6 +137,12 @@ tile_set = ExtResource("8_cpiwb")
 [node name="Decorations" type="TileMapLayer" parent="Tiles" unique_id=325445348]
 tile_map_data = PackedByteArray("AAAfABIAAAAJAAEAAAAMAAkAAAAGAAEAAAAOAAcAAAAGAAEAAAARAA4AAAAGAAEAAAATAAQAAAAGAAEAAAAUAB0AAAAGAAEAAAAVABMAAAAGAAEAAAAWABgAAAAGAAEAAAAXAAwAAAAGAAEAAAAXAA4AAAAGAAEAAAAbABYAAAAGAAEAAAAfAA4AAAAGAAEAAAAgABkAAAAGAAEAAAAgABsAAAAGAAEAAAAiAA4AAAAGAAEAAAAlAA4AAAAGAAEAAAAoABsAAAAGAAEAAAAqABQAAAAGAAEAAAAtAAcAAAAGAAEAAAAxAAQAAAAGAAEAAAAyABgAAAAGAAEAAAAzABIAAAAGAAEAAAA0AB0AAAAGAAEAAAA1ABYAAAAGAAEAAAAdABwAAAAOAAIAAAAuAAQAAAAFAAEAAAAuAAUAAAAHAAMAAAA2AAUAAAAHAAMAAAA1AAUAAAAKAAIAAAAzAAAAAAANAAEAAAAzAAEAAAAKAAEAAAA0AAYAAAAEAAIAAAAvAAoAAAAEAAIAAAApAA8AAAAEAAIAAAAnAA4AAAAKAAEAAAAnAAsAAAAEAAIAAAAgABEAAAAIAAEAAAA=")
 tile_set = ExtResource("4_cpiwb")
+
+[node name="Moveis" type="TileMapLayer" parent="Tiles" unique_id=1558015968]
+z_index = -1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAdAA4AAQAJAAYAAAAdAA8AAQAJAAcAAAA=")
+tile_set = ExtResource("9_ej02v")
 
 [node name="Limits" type="Node2D" parent="Tiles" unique_id=780763043]
 

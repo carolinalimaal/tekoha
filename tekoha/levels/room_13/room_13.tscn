@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="3_vm8ag"]
 [ext_resource type="TileSet" uid="uid://cwihu0lcjfmkq" path="res://assets/sprites/tiles/exteriores/casas/casas.tres" id="5_vm8ag"]
 [ext_resource type="TileSet" uid="uid://bnhj0h66lti0o" path="res://assets/sprites/tiles/barco/barco.tres" id="6_2ryh5"]
+[ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interiores/moveis/moveis.tres" id="7_11rqf"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="7_ha3u4"]
 [ext_resource type="PackedScene" uid="uid://b2sy76ie66ulp" path="res://entities/npcs/dono_barco/npc_dono_barco.tscn" id="8_ha3u4"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="9_3gh8j"]
@@ -135,6 +136,12 @@ tile_set = ExtResource("5_vm8ag")
 [node name="Barco" type="TileMapLayer" parent="Tiles" unique_id=1053561797]
 tile_map_data = PackedByteArray("AAAUACAAAAAAAAcAAAA=")
 tile_set = ExtResource("6_2ryh5")
+
+[node name="Moveis" type="TileMapLayer" parent="Tiles" unique_id=310944963]
+z_index = -1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAtAAkAAQAJAAYAAAAtAAoAAQAJAAcAAAA=")
+tile_set = ExtResource("7_11rqf")
 
 [node name="Limiits" type="Node2D" parent="Tiles" unique_id=528705578]
 
