@@ -27,48 +27,54 @@ size = Vector2(38, 34)
 [sub_resource type="Resource" id="Resource_1euh0"]
 script = ExtResource("13_11rqf")
 actor_name = "Curupira"
-text_pt = "Tu es o dono desse barco?"
+text_pt = "Oi moço, esse barco é teu?"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_cl38t"]
 script = ExtResource("13_11rqf")
 actor_name = "Pescador"
-text_pt = "Sim, tu es o Curupira, nao e?"
+text_pt = "Sim... Pera, tu és o Curupira?"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_grtgn"]
 script = ExtResource("13_11rqf")
 actor_name = "Curupira"
-text_pt = "Sim... E eu estou precisando voltar pra minha cabana, mas preciso passar por esse rio"
+text_pt = "É... sou eu. Resolvi voltar para casa passando por aqui, mas preciso atravessar o rio."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_ff8i3"]
 script = ExtResource("13_11rqf")
 actor_name = "Curupira"
-text_pt = "Tu podes me ajudar a atravessar esse rio?"
+text_pt = "Podes me ajudar?"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_7di1m"]
 script = ExtResource("13_11rqf")
 actor_name = "Pescador"
-text_pt = "Ó, eu te levo, mas vais ter que me ajudar. Preciso arrumar uma coisa no motor do barco e as ferramentas tão na casa azul."
+text_pt = "Ó, eu te levo, só tem um problema. Tenho que arrumar uma coisa no motor."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_ninet"]
 script = ExtResource("13_11rqf")
 actor_name = "Pescador"
-text_pt = "Se tu pegares pra mim, arrumo o barco. So tem um detalhe, a casa ta infestada com essas coisas que surgiram aqui na vila."
+text_pt = "Minhas ferramentas tão na casa azul, se tu pegares pra mim eu te ajudo."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_n6g6m"]
+script = ExtResource("13_11rqf")
+actor_name = "Pescador"
+text_pt = "Só toma cuidado, a minha casa ficou infestada com essas coisas que surgiram aqui na mata."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_6jbsf"]
 script = ExtResource("12_n6g6m")
-dialogues = Array[ExtResource("13_11rqf")]([SubResource("Resource_1euh0"), SubResource("Resource_cl38t"), SubResource("Resource_grtgn"), SubResource("Resource_ff8i3"), SubResource("Resource_7di1m"), SubResource("Resource_ninet")])
+dialogues = Array[ExtResource("13_11rqf")]([SubResource("Resource_1euh0"), SubResource("Resource_cl38t"), SubResource("Resource_grtgn"), SubResource("Resource_ff8i3"), SubResource("Resource_7di1m"), SubResource("Resource_ninet"), SubResource("Resource_n6g6m")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
 [sub_resource type="Resource" id="Resource_1cplf"]
 script = ExtResource("13_11rqf")
 actor_name = "Pescador"
-text_pt = "Pega lá as ferramentas na minha casa, é a azul"
+text_pt = "Pega lá as ferramentas na minha casa, é a azul."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_fnfl1"]
@@ -79,23 +85,12 @@ metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 [sub_resource type="Resource" id="Resource_u6lot"]
 script = ExtResource("13_11rqf")
 actor_name = "Pescador"
-text_pt = "Como eu prometi pra ti, vou te levar pra perto da tua casa."
+text_pt = "Como eu te prometi, vou te levar pra perto da tua casa."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_jtmfk"]
 script = ExtResource("12_n6g6m")
 dialogues = Array[ExtResource("13_11rqf")]([SubResource("Resource_u6lot")])
-metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
-
-[sub_resource type="Resource" id="Resource_ymt15"]
-script = ExtResource("13_11rqf")
-actor_name = "Pescador"
-text_pt = "teste aqui"
-metadata/_custom_type_script = "uid://x6215xlpsejj"
-
-[sub_resource type="Resource" id="Resource_c4pr1"]
-script = ExtResource("12_n6g6m")
-dialogues = Array[ExtResource("13_11rqf")]([SubResource("Resource_ymt15")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2ryh5"]
@@ -207,7 +202,7 @@ hammock_collision = ExtResource("11_11rqf")
 
 [node name="NPCDonoBarco" parent="." unique_id=1741828607 instance=ExtResource("8_ha3u4")]
 position = Vector2(611, 820)
-dialogues_list = Array[ExtResource("12_n6g6m")]([SubResource("Resource_6jbsf"), SubResource("Resource_fnfl1"), SubResource("Resource_jtmfk"), SubResource("Resource_c4pr1")])
+dialogues_list = Array[ExtResource("12_n6g6m")]([SubResource("Resource_6jbsf"), SubResource("Resource_fnfl1"), SubResource("Resource_jtmfk")])
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1256912823]
 y_sort_enabled = true

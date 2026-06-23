@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drcfbij8j2dnn" path="res://entities/npcs/cecilia/npc_cecila.gd" id="1_v5rs4"]
 [ext_resource type="Texture2D" uid="uid://ynb6l0qsdsfi" path="res://assets/sprites/entities/npcs/npc_cecilia.png" id="2_6p7ux"]
-[ext_resource type="Resource" uid="uid://cg3qwx52dkf45" path="res://data/dialogues/npcs/cecilia/npc_cecilia_1.tres" id="2_j34bt"]
+[ext_resource type="Resource" uid="uid://cg3qwx52dkf45" path="res://data/dialogues/npcs/cecilia/room_6/npc_cecilia_1.tres" id="2_j34bt"]
 [ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="3_j34bt"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="3_qufrp"]
 

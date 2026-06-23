@@ -15,9 +15,9 @@
 [ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="12_qk5qf"]
 [ext_resource type="PackedScene" uid="uid://c4rfo8vpkou8r" path="res://entities/npcs/cecilia/npc_cecila.tscn" id="13_yxphn"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="14_bs7kn"]
-[ext_resource type="Resource" uid="uid://cg3qwx52dkf45" path="res://data/dialogues/npcs/cecilia/npc_cecilia_1.tres" id="15_d3h8c"]
-[ext_resource type="Resource" uid="uid://sygomlxeja2a" path="res://data/dialogues/npcs/cecilia/npc_cecilia_2.tres" id="16_bs7kn"]
-[ext_resource type="Resource" uid="uid://bcybr431sm52y" path="res://data/dialogues/npcs/cecilia/npc_cecilia_3.tres" id="18_1n6nv"]
+[ext_resource type="Resource" uid="uid://cg3qwx52dkf45" path="res://data/dialogues/npcs/cecilia/room_6/npc_cecilia_1.tres" id="15_d3h8c"]
+[ext_resource type="Resource" uid="uid://sygomlxeja2a" path="res://data/dialogues/npcs/cecilia/room_6/npc_cecilia_2.tres" id="16_bs7kn"]
+[ext_resource type="Resource" uid="uid://bcybr431sm52y" path="res://data/dialogues/npcs/cecilia/room_6/npc_cecilia_3.tres" id="18_1n6nv"]
 [ext_resource type="PackedScene" uid="uid://bdyh6ssl6wnjg" path="res://entities/npcs/genericos/npc_manu.tscn" id="18_a5usx"]
 [ext_resource type="PackedScene" uid="uid://c6i540q8c04us" path="res://entities/npcs/genericos/npc_sandro.tscn" id="19_dc3iq"]
 
