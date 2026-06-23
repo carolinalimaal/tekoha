@@ -5,6 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://cpsop22n6m24c" path="res://assets/sprites/entities/npcs/npc_vendedor.png" id="3_2m0bf"]
 [ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="4_gxtx1"]
 [ext_resource type="PackedScene" uid="uid://dmt7bvfe1i6dc" path="res://UI/shop_ui/shop_ui.tscn" id="5_2m0bf"]
+[ext_resource type="Script" uid="uid://bekubsjwettik" path="res://utils/resources/items/consumable_item_data.gd" id="6_qi8tu"]
+[ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="7_tfv3j"]
+[ext_resource type="Resource" uid="uid://cf5ymt2i6nll8" path="res://data/items/chocolate.tres" id="8_ymj71"]
+[ext_resource type="Resource" uid="uid://d3cuhf8ovruif" path="res://data/items/manga.tres" id="9_i3sgw"]
+[ext_resource type="Resource" uid="uid://bf1jdb62ejs2n" path="res://data/items/peixe_com_acai.tres" id="10_m4kxi"]
+[ext_resource type="Resource" uid="uid://ge17c1v1eykj" path="res://data/items/cafe_com_pupunha.tres" id="11_n7cx0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iiyho"]
 atlas = ExtResource("3_2m0bf")
@@ -78,3 +84,4 @@ layer = 18
 
 [node name="ShopUI" parent="CanvasLayer" unique_id=644589358 instance=ExtResource("5_2m0bf")]
 visible = false
+items_stock = Array[ExtResource("6_qi8tu")]([ExtResource("9_i3sgw"), ExtResource("8_ymj71"), ExtResource("7_tfv3j"), ExtResource("11_n7cx0"), ExtResource("10_m4kxi")])

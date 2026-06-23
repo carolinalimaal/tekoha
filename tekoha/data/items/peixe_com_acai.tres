@@ -9,4 +9,5 @@ health_gain = 5
 icon = ExtResource("1_dlryv")
 name = "Peixe Frito com Açaí"
 description = "Peixe crocante acompanhado de açaí."
+price = 50
 metadata/_custom_type_script = "uid://bekubsjwettik"

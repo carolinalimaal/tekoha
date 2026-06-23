@@ -9,4 +9,5 @@ health_gain = 3
 icon = ExtResource("1_idfug")
 name = "Café com pupunha"
 description = "Combinação típica de café com pupunha, muito consumida no lanche da tarde."
+price = 35
 metadata/_custom_type_script = "uid://bekubsjwettik"

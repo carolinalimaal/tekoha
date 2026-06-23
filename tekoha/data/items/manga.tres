@@ -5,8 +5,9 @@
 
 [resource]
 script = ExtResource("2_tcsfi")
+health_gain = 1
 icon = ExtResource("1_wu2u1")
 name = "Manga"
 description = "Fruta suculenta, doce com polpa fibrosa e um caroço grande."
-health_gain = 1
+price = 5
 metadata/_custom_type_script = "uid://bekubsjwettik"
