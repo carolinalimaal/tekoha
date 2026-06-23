@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://0bkrlmh2efko" path="res://utils/components/projectile/projectile.gd" id="1_6fvpk"]
 [ext_resource type="Script" uid="uid://b25oeps4g35sq" path="res://utils/components/hurtbox_component.gd" id="1_devi0"]
-[ext_resource type="Texture2D" uid="uid://7b232fm3daoh" path="res://assets/sprites/entities/enemies/canudinho_spritesheet.png" id="2_6fvpk"]
 [ext_resource type="Resource" uid="uid://clacbrg07garl" path="res://entities/enemies/canudinho/bola_papel.tres" id="3_hi3mn"]
+[ext_resource type="Texture2D" uid="uid://cbo43r56ogs6q" path="res://assets/sprites/entities/enemies/canudinho_spritesheet.png" id="4_hi3mn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6fvpk"]
 radius = 6.0827627
@@ -12,19 +12,19 @@ radius = 6.0827627
 radius = 7.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1qim"]
-atlas = ExtResource("2_6fvpk")
+atlas = ExtResource("4_hi3mn")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u3dkw"]
-atlas = ExtResource("2_6fvpk")
+atlas = ExtResource("4_hi3mn")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ra004"]
-atlas = ExtResource("2_6fvpk")
+atlas = ExtResource("4_hi3mn")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3r2w2"]
-atlas = ExtResource("2_6fvpk")
+atlas = ExtResource("4_hi3mn")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yhiqm"]
