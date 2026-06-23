@@ -31,7 +31,10 @@ func _setup_world_from_save() -> void:
 		GlobalRefs.player.set_deferred("global_position", save.player_position)
 		GlobalRefs.player_camera.set_deferred("global_position", save.camera_pos)
 	
-	if GameManager.current_save.game_state >= GameManager.GameState.IN_ROOM_8:
+	if GameManager.current_save.game_state >= GameManager.GameState.PRE_BOSSFIGHT:
+		GlobalRefs.game_afternoon_filter.hide()
+		GlobalRefs.game_nightfall_filter.hide()
+	elif GameManager.current_save.game_state >= GameManager.GameState.IN_ROOM_8:
 		GlobalRefs.game_afternoon_filter.show()
 		if GameManager.current_save.game_state >= GameManager.GameState.AFTER_PUZZLE_3:
 			GlobalRefs.game_nightfall_filter.show()
