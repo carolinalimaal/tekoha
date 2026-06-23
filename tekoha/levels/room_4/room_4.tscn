@@ -506,7 +506,7 @@ size = Vector2(110, 20)
 [node name="Room4" type="Node2D" unique_id=1956737914]
 y_sort_enabled = true
 script = ExtResource("1_3j4w8")
-room_2_music = ExtResource("2_kkt51")
+bg_music = ExtResource("2_kkt51")
 limit_top = 512
 limit_bottom = 1728
 limit_right = 1088

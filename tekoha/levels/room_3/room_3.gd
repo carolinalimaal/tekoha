@@ -1,8 +1,10 @@
 extends Level
 
+@export var bg_music: AudioStream
 @onready var state_machine: StateMachine = $StateMachine
 
 func _ready() -> void:
+	AudioManager.play_background_sound(bg_music)
 	state_machine.init(self)
 	change_room_state()
 

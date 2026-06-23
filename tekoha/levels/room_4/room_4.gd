@@ -1,6 +1,6 @@
 extends Level
 
-@export var room_2_music: AudioStream
+@export var bg_music: AudioStream
 # TODO: adicionar loop do motor 
 @export var motor_loop_sound: AudioStream
 
@@ -10,6 +10,8 @@ extends Level
 const BOAT_FADE_DURATION := 5.0
 
 func _ready() -> void:
+	AudioManager.play_background_sound(bg_music)
+	
 	if GameManager.current_save.game_state == GameManager.GameState.AFTER_PUZZLE_3:
 		path_block.set_deferred("monitoring", true)
 		room_5_door.set_deferred("monitoring", false)
@@ -18,11 +20,12 @@ func _ready() -> void:
 	else:
 		path_block.set_deferred("monitoring", false)
 		room_5_door.set_deferred("monitoring", true)
-		AudioManager.play_background_sound(room_2_music)
+		
 
 # Rever esse metodo aqui quando tiver os SFX
 func _play_boat_going_away() -> void:
-	AudioManager.stop_background_sound(BOAT_FADE_DURATION)
-	get_tree().create_timer(BOAT_FADE_DURATION + 0.5).timeout.connect(func():
-		AudioManager.play_background_sound(motor_loop_sound)
-	)
+	#AudioManager.stop_background_sound(BOAT_FADE_DURATION)
+	#get_tree().create_timer(BOAT_FADE_DURATION + 0.5).timeout.connect(func():
+		#AudioManager.play_background_sound(motor_loop_sound)
+	#)
+	pass

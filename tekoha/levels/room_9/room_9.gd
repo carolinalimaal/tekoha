@@ -1,5 +1,6 @@
 extends Level
 
+@export var bg_music: AudioStream
 @export var sacola_scene: PackedScene
 @export var canudinho_scene: PackedScene
 
@@ -9,6 +10,7 @@ var spawn_enemies_triggered: bool = false
 @onready var spawn_enemies_trigger: Area2D = $FingerEnemies/SpawnEnemiesTrigger
 
 func _ready() -> void:
+	AudioManager.play_background_sound(bg_music)
 	spawn_enemies_trigger.body_entered.connect(_on_body_entered_in_spawn_enemies_trigger)
 
 func _exit_tree() -> void:

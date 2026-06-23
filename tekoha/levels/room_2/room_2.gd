@@ -1,6 +1,6 @@
 extends Level
 
-@export var room_2_music: AudioStream
+@export var bg_music: AudioStream
 @export var path_block_messages: Array[DialogueSettings]
 
 @onready var room_4_door: Door = $Room4Door
@@ -9,7 +9,7 @@ extends Level
 @onready var path_block_2: PathBlock = $PathBlock2
 
 func _ready() -> void:
-	AudioManager.play_background_sound(room_2_music)
+	AudioManager.play_background_sound(bg_music)
 	
 	if GameManager.current_save.game_state <= GameManager.GameState.BEFORE_FISHING:
 		_lock_room_door(room_3_door, path_block_2, false)

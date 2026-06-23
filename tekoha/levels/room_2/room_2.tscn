@@ -275,7 +275,7 @@ size = Vector2(176, 6)
 [node name="Room2" type="Node2D" unique_id=1916809086]
 y_sort_enabled = true
 script = ExtResource("1_5ituv")
-room_2_music = ExtResource("2_126x5")
+bg_music = ExtResource("2_126x5")
 path_block_messages = Array[ExtResource("4_m550c")]([SubResource("Resource_qwu00"), SubResource("Resource_s6q7c"), SubResource("Resource_xdmhn")])
 limit_top = 1
 limit_bottom = 1728

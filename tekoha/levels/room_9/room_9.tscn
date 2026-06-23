@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b5f7xqfg4bqmr" path="res://levels/room_9/room_9.gd" id="1_g5wxr"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="2_25ocl"]
+[ext_resource type="AudioStream" uid="uid://ddwpcn8y5abs7" path="res://assets/sound/music/bgm_ambiente.wav" id="2_cpiwb"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="3_cpiwb"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="4_cpiwb"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="5_tog6q"]
@@ -95,6 +96,7 @@ agent_radius = 5.0
 [node name="Room9" type="Node2D" unique_id=1150128745]
 y_sort_enabled = true
 script = ExtResource("1_g5wxr")
+bg_music = ExtResource("2_cpiwb")
 sacola_scene = ExtResource("2_25ocl")
 canudinho_scene = ExtResource("3_cpiwb")
 limit_top = 10

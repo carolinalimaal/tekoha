@@ -1,12 +1,15 @@
 extends Level
 
-@onready var room_14_door: Door = $Room14Door
-@onready var room_4_door: Door = $Room4Door
-
+@export var bg_music: AudioStream
 # TODO: adicionar loop do motor 
 @export var motor_loop_sound: AudioStream
 
+@onready var room_14_door: Door = $Room14Door
+@onready var room_4_door: Door = $Room4Door
+
+
 func _ready() -> void:
+	AudioManager.play_background_sound(bg_music)
 	if !GlobalRefs.game_afternoon_filter.visible:
 		GlobalRefs.game_afternoon_filter.show()
 	

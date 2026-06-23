@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://c3gfgte4qpksc"]
 
 [ext_resource type="Script" uid="uid://cmjr028n4o8by" path="res://levels/room_12/room_12.gd" id="1_lp40p"]
+[ext_resource type="AudioStream" uid="uid://ddwpcn8y5abs7" path="res://assets/sound/music/bgm_ambiente.wav" id="2_0m1lt"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="2_7r5b5"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_uhwsh"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/components/save_point/save_point.tscn" id="5_vppv2"]
@@ -17,6 +18,7 @@ size = Vector2(14, 124)
 [node name="Room12" type="Node2D" unique_id=263309058]
 y_sort_enabled = true
 script = ExtResource("1_lp40p")
+bg_music = ExtResource("2_0m1lt")
 limit_top = 320
 limit_bottom = 1120
 limit_left = 320

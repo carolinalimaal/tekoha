@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://by0aaf7e4rakj"]
 
 [ext_resource type="Script" uid="uid://bugadubgfnpfs" path="res://levels/room_3/room_3.gd" id="1_grr8x"]
+[ext_resource type="AudioStream" uid="uid://ddwpcn8y5abs7" path="res://assets/sound/music/bgm_ambiente.wav" id="2_iti7q"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_wbedm"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="3_2jupl"]
 [ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interiores/moveis/moveis.tres" id="4_keg0k"]
@@ -60,6 +61,7 @@ agent_radius = 5.0
 [node name="Room3" type="Node2D" unique_id=51821466]
 y_sort_enabled = true
 script = ExtResource("1_grr8x")
+bg_music = ExtResource("2_iti7q")
 limit_bottom = 1234
 limit_left = -1190
 limit_right = 1901

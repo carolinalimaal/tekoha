@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bas33vmll12wo"]
 
 [ext_resource type="Script" uid="uid://ba7ox1ik14qpb" path="res://levels/room_11/room_11.gd" id="1_hvq2q"]
+[ext_resource type="AudioStream" uid="uid://ddwpcn8y5abs7" path="res://assets/sound/music/bgm_ambiente.wav" id="2_drjbi"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_khelp"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="2_roctp"]
 [ext_resource type="PackedScene" uid="uid://c8ui4rfngwjkm" path="res://utils/props/bush/bush.tscn" id="4_hvq2q"]
@@ -30,6 +31,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(723, 441, 591, 724, 736
 [node name="Room11" type="Node2D" unique_id=263309058]
 y_sort_enabled = true
 script = ExtResource("1_hvq2q")
+bg_music = ExtResource("2_drjbi")
 limit_top = 210
 limit_bottom = 1376
 limit_left = 384

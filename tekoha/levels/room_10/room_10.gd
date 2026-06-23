@@ -1,8 +1,13 @@
 extends Level
 
+# TODO: trocar para a bg_music do puzzle
+@export var bg_music: AudioStream
+
 @onready var root_mecanic: RootMecanic = $RootMecanic
 
 func _ready() -> void:
+	AudioManager.play_background_sound(bg_music)
+	
 	if GameManager.current_save.game_state >= GameManager.GameState.AFTER_PUZZLE_1:
 		root_mecanic.set_completed()
 		return

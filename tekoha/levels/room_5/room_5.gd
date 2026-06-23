@@ -1,6 +1,6 @@
 extends Level
 
-@export var room_2_music: AudioStream
+@export var bg_music: AudioStream
 
 func _ready() -> void:
-	AudioManager.play_background_sound(room_2_music)
+	AudioManager.play_background_sound(bg_music)

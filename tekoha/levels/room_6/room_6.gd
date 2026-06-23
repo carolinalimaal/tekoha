@@ -7,6 +7,8 @@ extends Level
 @onready var room7_door: Door = $Room7Door
 
 func _ready() -> void:
+	AudioManager.stop_background_sound()
+	
 	if GameManager.current_save.game_state < GameManager.GameState.AFTER_FIRST_ENEMY:
 		roll_mecanic.disable()
 	else:

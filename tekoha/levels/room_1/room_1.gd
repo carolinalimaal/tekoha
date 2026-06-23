@@ -6,6 +6,8 @@ extends Level
 @onready var house_door: Door = $HouseDoor
 
 func _ready() -> void:
+	AudioManager.stop_background_sound()
+	
 	DialogueManager.dialogue_started.connect(_on_cutscene_started)
 	DialogueManager.dialogue_ended.connect(_on_cutscene_ended)
 	GlobalSignals.game_state_changed.connect(_on_game_changed)
