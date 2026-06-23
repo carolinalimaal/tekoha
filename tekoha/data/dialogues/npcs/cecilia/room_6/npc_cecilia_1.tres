@@ -1,27 +1,27 @@
 [gd_resource type="Resource" script_class="DialogueSettings" format=3 uid="uid://cg3qwx52dkf45"]
 
-[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="1_cw132"]
-[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="2_d1si6"]
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="1_87mb7"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="2_2igf4"]
 
 [sub_resource type="Resource" id="Resource_4hg0q"]
-script = ExtResource("1_cw132")
+script = ExtResource("1_87mb7")
 actor_name = "Cecília"
 text_pt = "Curupira! Por favor, me ajude!"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_cw132"]
-script = ExtResource("1_cw132")
+script = ExtResource("1_87mb7")
 actor_name = "Cecília"
 text_pt = "Os peixes que pescamos hoje não estão rendendo nada! Os clientes estão insatisfeitos com o restaurante e, se continuar assim, teremos que fechá-lo. "
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_d1si6"]
-script = ExtResource("1_cw132")
+script = ExtResource("1_87mb7")
 actor_name = "Cecília"
 text_pt = "Você pode pescar alguns peixes para mim? Posso fazer um almoço saboroso como recompensa!"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [resource]
-script = ExtResource("2_d1si6")
-dialogues = Array[ExtResource("1_cw132")]([SubResource("Resource_4hg0q"), SubResource("Resource_cw132"), SubResource("Resource_d1si6")])
+script = ExtResource("2_2igf4")
+dialogues = Array[ExtResource("1_87mb7")]([SubResource("Resource_4hg0q"), SubResource("Resource_cw132"), SubResource("Resource_d1si6")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
