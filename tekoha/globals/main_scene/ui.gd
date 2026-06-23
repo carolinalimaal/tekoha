@@ -35,7 +35,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 			return
 	# Abre ou fecha o Pause
 	if InputManager.get_action_pressed("pause"):
-		if UIManager.menu_stack.is_empty():
+		if UIManager.menu_stack.is_empty() and not game_over_menu.visible:
 			UIManager.open_menu("pause")
 		elif UIManager.menu_stack.back() == pause_menu:
 			UIManager.close_top_menu()
