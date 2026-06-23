@@ -14,6 +14,9 @@ func _ready() -> void:
 	
 	self.hide()
 
+func cancel_action() -> void:
+	pass
+
 func _on_player_died() -> void:
 	get_tree().paused = true
 	self.show()
