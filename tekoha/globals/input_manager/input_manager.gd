@@ -50,7 +50,7 @@ func get_action_pressed(action_name: String):
 func get_aim_direction() -> Vector2:
 	match active_input_source:
 		InputSource.KEYBOARD:
-			return GlobalRefs.player.facing_direction
+			return Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		InputSource.CONTROLLER:
 			return controller_manager.get_controller_stick_input(controller_manager.active_controller)
 	return Vector2.ZERO
