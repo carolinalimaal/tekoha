@@ -512,8 +512,7 @@ tile_map_data = PackedByteArray("AAAdAA4AAAA5AAYAAAAIAA4AAAA5AAYAAAAaAA4AAAAcAAY
 tile_set = ExtResource("5_ggyjx")
 
 [node name="Rocks" type="TileMapLayer" parent="Tiles" unique_id=999608852]
-y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAiAA8AAAAEAAAAAAAiABAAAAAEAAEAAAAfABEAAAADAAEAAAAgABAAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAfABEAAAADAAEAAAAgABAAAAAAAAAAAAAiABAAAAACAAAAAAA=")
 tile_set = ExtResource("5_ggyjx")
 
 [node name="Restaurant" type="TileMapLayer" parent="Tiles" unique_id=998249889]

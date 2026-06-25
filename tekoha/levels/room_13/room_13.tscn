@@ -144,7 +144,6 @@ tile_map_data = PackedByteArray("AAAtAAkAAQAJAAYAAAAtAAoAAQAJAAcAAAA=")
 tile_set = ExtResource("7_11rqf")
 
 [node name="Limiits" type="Node2D" parent="Tiles" unique_id=528705578]
-visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tiles/Limiits" unique_id=870509544]
 collision_layer = 128
@@ -231,5 +230,4 @@ position = Vector2(2093, 409)
 position = Vector2(1812, 409)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1248306615]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_2ryh5")

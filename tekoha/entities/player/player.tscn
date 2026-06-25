@@ -3133,6 +3133,7 @@ fill_to = Vector2(0.8710247, 0.24204947)
 y_sort_enabled = true
 collision_mask = 8080
 motion_mode = 1
+wall_min_slide_angle = 0.08726646
 script = ExtResource("1_fkugw")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1115901677]
