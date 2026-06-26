@@ -1,6 +1,9 @@
 [gd_resource type="TileSet" format=3 uid="uid://bnhj0h66lti0o"]
 
 [ext_resource type="Texture2D" uid="uid://b6r8kxcula7ip" path="res://assets/sprites/tiles/barco/barco.png" id="1_c3s06"]
+[ext_resource type="Texture2D" uid="uid://cdjsmpunggiiu" path="res://assets/sprites/tiles/barco/barco_remo .png" id="2_imstv"]
+[ext_resource type="Texture2D" uid="uid://k5nvosqk15bp" path="res://assets/sprites/tiles/barco/barco_transporte_azul.png" id="3_nqxyv"]
+[ext_resource type="Texture2D" uid="uid://dcnhq72xcxeyj" path="res://assets/sprites/tiles/barco/barco_transporte_verde.png" id="4_bsmnv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8k31m"]
 texture = ExtResource("1_c3s06")
@@ -38,6 +41,51 @@ texture_region_size = Vector2i(32, 32)
 0:10/animation_frame_3/duration = 1.0
 0:10/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_76kmw"]
+texture = ExtResource("2_imstv")
+texture_region_size = Vector2i(32, 32)
+0:1/size_in_atlas = Vector2i(3, 2)
+0:1/next_alternative_id = 2
+0:1/animation_columns = 4
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/0 = 0
+0:1/1 = 1
+0:1/1/flip_h = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i1yex"]
+texture = ExtResource("3_nqxyv")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/next_alternative_id = 2
+0:0/animation_columns = 4
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pl7jb"]
+texture = ExtResource("4_bsmnv")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/next_alternative_id = 2
+0:0/animation_columns = 4
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+
 [resource]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_8k31m")
+sources/1 = SubResource("TileSetAtlasSource_76kmw")
+sources/2 = SubResource("TileSetAtlasSource_i1yex")
+sources/3 = SubResource("TileSetAtlasSource_pl7jb")

@@ -8,6 +8,7 @@
 [ext_resource type="TileSet" uid="uid://5mov6005ung0" path="res://assets/sprites/tiles/plataformas/pier.tres" id="6_d3h20"]
 [ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interiores/moveis/moveis.tres" id="7_d3h20"]
 [ext_resource type="TileSet" uid="uid://6emc5pw2epmo" path="res://assets/sprites/tiles/exteriores/restaurantes/restaurantes.tres" id="7_gnup6"]
+[ext_resource type="TileSet" uid="uid://bnhj0h66lti0o" path="res://assets/sprites/tiles/barco/barco.tres" id="8_bw01x"]
 [ext_resource type="PackedScene" uid="uid://r33bwb7ekbh8" path="res://entities/npcs/vendedor/npc_seller.tscn" id="8_f01of"]
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/props/muiraquita/muiraquita.tscn" id="9_a1oop"]
 [ext_resource type="Script" uid="uid://d1vcrcidpkigq" path="res://utils/components/path_block.gd" id="10_6mn3v"]
@@ -67,12 +68,16 @@ tile_map_data = PackedByteArray("AAAUAA4AAQAAAAAAAAA=")
 tile_set = ExtResource("7_gnup6")
 
 [node name="Pier" type="TileMapLayer" parent="Tiles" unique_id=175073664]
-tile_map_data = PackedByteArray("AAAOABIAAgAOAAYAAAAOABMAAgAOAAAAAAAOABEAAgAOAAUAAAAPABEAAgAPAAUAAAAPABIAAgAPAAYAAAAPABMAAgAPAAAAAAAOABQAAgAKAAAAAAAOABUAAgAMAAEAAAAPABQAAgALAAAAAAAPABUAAgANAAEAAAAQABUAAgAKAAEAAAARABUAAgAJAAEAAAASABUAAgAJAAEAAAATABUAAgAJAAEAAAAUABUAAgAJAAEAAAAVABUAAgAJAAEAAAAWABUAAgAJAAEAAAAXABUAAgAJAAEAAAAYABUAAgAJAAEAAAAZABUAAgAJAAEAAAAaABUAAgALAAEAAAAOABYAAgAMAAIAAAAPABYAAgANAAIAAAAQABYAAgAKAAIAAAARABYAAgAJAAIAAAASABYAAgAJAAIAAAATABYAAgAJAAIAAAAUABYAAgAJAAIAAAAVABYAAgAJAAIAAAAWABYAAgAJAAIAAAAXABYAAgAJAAIAAAAYABYAAgAJAAIAAAAZABYAAgAJAAIAAAAaABYAAgALAAIAAAA=")
+tile_map_data = PackedByteArray("AAAOABIAAgAOAAYAAAAOABMAAgAOAAAAAAAOABEAAgAOAAUAAAAPABEAAgAPAAUAAAAPABIAAgAPAAYAAAAPABMAAgAPAAAAAAAOABQAAgAKAAAAAAAPABQAAgALAAAAAAAOABUAAgAKAAAAAAAPABUAAgALAAAAAAA=")
 tile_set = ExtResource("6_d3h20")
 
 [node name="Moveis" type="TileMapLayer" parent="Tiles" unique_id=2042536714]
 tile_map_data = PackedByteArray("AAAFAAoAAQAJAAYAAAAFAAsAAQAJAAcAAAA=")
 tile_set = ExtResource("7_d3h20")
+
+[node name="Barco" type="TileMapLayer" parent="Tiles" unique_id=1648923044]
+tile_map_data = PackedByteArray("AAARABMAAgAAAAAAAQARABQAAwAAAAAAAQAOABYAAQAAAAEAAAA=")
+tile_set = ExtResource("8_bw01x")
 
 [node name="Limits" type="Node2D" parent="." unique_id=969320535]
 
