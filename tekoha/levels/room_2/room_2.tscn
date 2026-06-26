@@ -15,7 +15,6 @@
 [ext_resource type="SpriteFrames" uid="uid://cqt7aidvj8f77" path="res://assets/sprites/props/pots/vaso_02_2.tres" id="12_reu2n"]
 [ext_resource type="PackedScene" uid="uid://d2qw38t463t0o" path="res://levels/room_2/components/house.tscn" id="13_6wb8k"]
 [ext_resource type="Script" uid="uid://d1vcrcidpkigq" path="res://utils/components/path_block.gd" id="16_m550c"]
-[ext_resource type="PackedScene" uid="uid://r33bwb7ekbh8" path="res://entities/npcs/vendedor/npc_seller.tscn" id="16_qwu00"]
 
 [sub_resource type="Resource" id="Resource_m550c"]
 script = ExtResource("3_i6edo")
@@ -392,6 +391,3 @@ metadata/_custom_type_script = "uid://d1vcrcidpkigq"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathBlock2" unique_id=50993251]
 shape = SubResource("RectangleShape2D_qwu00")
 debug_color = Color(0.6392157, 0.5254902, 0, 0.7607843)
-
-[node name="NpcSeller" parent="." unique_id=561111194 instance=ExtResource("16_qwu00")]
-position = Vector2(973, 1259)
