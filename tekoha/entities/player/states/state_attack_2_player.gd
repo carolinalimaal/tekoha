@@ -33,7 +33,6 @@ func _physics_update(_delta: float) -> void:
 	pass
 
 func attack():
-	print("ataca")
 	owner_node.velocity = owner_node.attack_direction * ATTACK_SPEED
 	owner_node.hurtbox_component.hurtbox_collision.set_deferred("disabled", false)
 

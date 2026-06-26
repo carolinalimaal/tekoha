@@ -19,8 +19,6 @@ func _enter() -> void:
 		path_block.set_deferred("monitoring", false)
 		
 	navigation_region_2d.set_deferred("disabled", true)
-	print("Regiao 2d desativada")
-	print("oi")
 
 func _exit() -> void:
 	# Limpa todos os sinais por segurança ao sair do estado

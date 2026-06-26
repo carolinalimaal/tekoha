@@ -44,7 +44,6 @@ func _on_camera_shake():
 	apply_shake()
 	
 func update_camera_stats(level: Level):
-	print(level.name)
 	if level is Level:
 		limit_left = level.limit_left
 		limit_right = level.limit_right

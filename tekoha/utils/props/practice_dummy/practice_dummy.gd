@@ -16,5 +16,4 @@ func _on_attack_received(attack_data: AttackData):
 	animated_sprite.play("damage_anim")
 
 	if tutorial_dummy:
-		print("Ataque recebido")
 		damage_received.emit(attack_data)

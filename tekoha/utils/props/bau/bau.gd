@@ -54,11 +54,9 @@ func open_chest():
 		var enemy: Enemy = enemy_scene.instantiate() as Enemy
 		enemy.global_position = enemy_spawn.global_position
 		get_tree().current_scene.add_child(enemy)
-		print(enemy.global_position)
 	
 	if item and item.name == "Caixa de ferramentas":
 		item = null
-		print("pegou a caixa de ferramentas")
 		GameManager.set_game_state(GameManager.GameState.TOOLS_COLLECTED)
 
 func close_chest():
@@ -84,7 +82,6 @@ func _on_chest_confirmed() -> void:
 		return
 	GlobalRefs.inventory.add_item(item)
 	GameManager.current_save.opened_chests[id] = true
-	print("Item adicionado ao inventário!")
 	
 	var is_new_item = !GameManager.current_save.known_items.has(item.name)
 	var _item = item
