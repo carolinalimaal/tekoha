@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://goc7nv73r6n5"]
+
+[ext_resource type="Texture2D" uid="uid://cg4trt0qeh3ot" path="res://assets/sprites/entities/npcs/npc_sentado_pier.png" id="1_tk7u7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv8i5"]
+atlas = ExtResource("1_tk7u7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpk5m"]
+atlas = ExtResource("1_tk7u7")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxhnh"]
+atlas = ExtResource("1_tk7u7")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n15hr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv8i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpk5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxhnh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n15hr"]
+size = Vector2(23, 23)
+
+[node name="NpcPier" type="CharacterBody2D" unique_id=2139658897]
+y_sort_enabled = true
+collision_layer = 1024
+collision_mask = 401
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2111524328]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_n15hr")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1062701606]
+position = Vector2(-9.5, 8.5)
+shape = SubResource("RectangleShape2D_n15hr")

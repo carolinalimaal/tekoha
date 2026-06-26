@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bfv16sgha8dhu" path="res://utils/props/muiraquita/muiraquita.tscn" id="12_1mig3"]
 [ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="13_vultg"]
 [ext_resource type="PackedScene" uid="uid://dlk1ggdwcoujt" path="res://entities/npcs/genericos/npcs_varanda_restaurante.tscn" id="14_1it45"]
+[ext_resource type="PackedScene" uid="uid://goc7nv73r6n5" path="res://entities/npcs/genericos/npc_pier.tscn" id="15_vultg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmo2d"]
 texture = ExtResource("2_777hw")
@@ -577,3 +578,6 @@ id = 2
 
 [node name="NpcsVarandaRestaurante" parent="." unique_id=1266562718 instance=ExtResource("14_1it45")]
 position = Vector2(1188, 686)
+
+[node name="NpcPier" parent="." unique_id=2139658897 instance=ExtResource("15_vultg")]
+position = Vector2(506, 785)

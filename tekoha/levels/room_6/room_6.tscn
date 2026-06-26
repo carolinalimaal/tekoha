@@ -20,6 +20,8 @@
 [ext_resource type="Resource" uid="uid://bcybr431sm52y" path="res://data/dialogues/npcs/cecilia/room_6/npc_cecilia_3.tres" id="18_1n6nv"]
 [ext_resource type="PackedScene" uid="uid://bdyh6ssl6wnjg" path="res://entities/npcs/genericos/npc_manu.tscn" id="18_a5usx"]
 [ext_resource type="PackedScene" uid="uid://c6i540q8c04us" path="res://entities/npcs/genericos/npc_sandro.tscn" id="19_dc3iq"]
+[ext_resource type="PackedScene" uid="uid://cdm2xhabdhem4" path="res://entities/npcs/genericos/npc_idle_lado.tscn" id="21_qk5qf"]
+[ext_resource type="PackedScene" uid="uid://bmp5hscdwrfn3" path="res://entities/npcs/genericos/npc_thais.tscn" id="22_b20ta"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j0ms1"]
 texture = ExtResource("5_fxwqa")
@@ -199,6 +201,12 @@ position = Vector2(401, 537)
 [node name="NpcSandro" parent="." unique_id=1427079839 instance=ExtResource("19_dc3iq")]
 y_sort_enabled = true
 position = Vector2(657, 342)
+
+[node name="NpcIdleLado" parent="." unique_id=267557635 instance=ExtResource("21_qk5qf")]
+position = Vector2(511, 276)
+
+[node name="NpcThais" parent="." unique_id=651394413 instance=ExtResource("22_b20ta")]
+position = Vector2(487, 267)
 
 [connection signal="body_entered" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_entered"]
 [connection signal="body_exited" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_exited"]
