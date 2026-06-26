@@ -54,5 +54,7 @@ func stronger_light():
 	tween.tween_property(point_light_2d, "energy", 0.5, 0.3)
 	
 func torch_off_particles():
+	point_light_2d.energy = 0
+	point_light_2d.set_deferred("disabled", true)
 	torche_particles.emitting = false
 	hit_particles.emitting = false

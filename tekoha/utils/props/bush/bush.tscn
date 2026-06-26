@@ -3,6 +3,23 @@
 [ext_resource type="Script" uid="uid://bs7l7rtsy2ste" path="res://utils/props/bush/bush.gd" id="1_b14lp"]
 [ext_resource type="Texture2D" uid="uid://be0qxtpxxsegt" path="res://assets/sprites/props/bush/arbustos.png" id="1_rao2u"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3xd07"]
+lifetime_randomness = 0.6
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(60, 10, 1)
+direction = Vector3(1, 1, 0)
+spread = 50.0
+initial_velocity_min = -25.0
+initial_velocity_max = 25.0
+angular_velocity_min = -100.000015
+angular_velocity_max = 99.999985
+gravity = Vector3(0, 98, 0)
+linear_accel_min = -20.000002
+linear_accel_max = 74.99999
+scale_max = 3.0
+color = Color(0.5647059, 0.8627451, 0.16470589, 1)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b14lp"]
 radius = 16.0
 height = 112.0
@@ -21,6 +38,14 @@ script = ExtResource("1_b14lp")
 scale = Vector2(2, 2)
 texture = ExtResource("1_rao2u")
 hframes = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Sprite2D" unique_id=146421760]
+position = Vector2(0, -7)
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 15
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_3xd07")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=989535269]
 rotation = 1.5707964
