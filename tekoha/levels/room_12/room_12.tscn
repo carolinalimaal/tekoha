@@ -41,6 +41,15 @@ tile_set = ExtResource("2_7r5b5")
 tile_map_data = PackedByteArray("AAAkABIAAAAEAAAAAAAkABMAAAAEAAEAAAAaABMAAAAEAAAAAAAaABQAAAAEAAEAAAAiABYAAAAAAAEAAAAUABYAAAAAAAEAAAAQABUAAAAAAAEAAAAUABkAAAADAAEAAAAUABUAAAABAAAAAAAPABUAAAADAAEAAAAZABoAAAAAAAEAAAA=")
 tile_set = ExtResource("2_7r5b5")
 
+[node name="Limits" type="Node2D" parent="Tiles" unique_id=361058024]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tiles/Limits" unique_id=268495799]
+collision_layer = 128
+collision_mask = 17
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tiles/Limits/StaticBody2D" unique_id=2115228787]
+polygon = PackedVector2Array(355, 672, 547, 640, 707, 672, 899, 576, 995, 480, 1155, 480, 1219, 704, 931, 896, 387, 800, 355, 800, 1219, 1120, 1347, 256)
+
 [node name="Enemies" type="Node2D" parent="." unique_id=1626228944]
 
 [node name="Room12Door" type="Area2D" parent="." unique_id=688075895]
@@ -55,16 +64,7 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_hvq2q")
 
 [node name="Marker2D" type="Marker2D" parent="Room12Door" unique_id=2122796225]
-position = Vector2(60, 0)
-
-[node name="Limits" type="Node2D" parent="." unique_id=361058024]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Limits" unique_id=268495799]
-collision_layer = 128
-collision_mask = 17
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/StaticBody2D" unique_id=2115228787]
-polygon = PackedVector2Array(355, 672, 547, 640, 707, 672, 899, 576, 995, 480, 1155, 480, 1219, 704, 931, 896, 387, 800, 355, 800, 1219, 1120, 1347, 256)
+position = Vector2(63, 0)
 
 [node name="SavePoint" parent="." unique_id=1381855768 instance=ExtResource("5_vppv2")]
 position = Vector2(1023, 544)

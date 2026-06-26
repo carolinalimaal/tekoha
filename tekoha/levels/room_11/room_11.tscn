@@ -153,7 +153,7 @@ item = ExtResource("10_khelp")
 sprite_frames = ExtResource("9_khelp")
 
 [node name="Room11Door" type="Area2D" parent="." unique_id=2095600415]
-position = Vector2(1984, 1302)
+position = Vector2(1982, 1305)
 collision_layer = 2048
 script = ExtResource("7_drjbi")
 target_level_path = "uid://b5dpy7jba3ouw"
@@ -164,7 +164,7 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_ds1xc")
 
 [node name="Marker2D" type="Marker2D" parent="Room11Door" unique_id=1337002795]
-position = Vector2(0, -36)
+position = Vector2(0, -43)
 
 [node name="Room12Door" type="Area2D" parent="." unique_id=688075895]
 position = Vector2(2368, 736)
@@ -178,10 +178,10 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_hvq2q")
 
 [node name="Marker2D" type="Marker2D" parent="Room12Door" unique_id=2122796225]
-position = Vector2(-57, 0)
+position = Vector2(-67, 0)
 
 [node name="Room13Door" type="Area2D" parent="." unique_id=272076136]
-position = Vector2(920, 230)
+position = Vector2(920, 217)
 script = ExtResource("7_drjbi")
 target_level_path = "uid://co0vptwphskq3"
 door_name = "Room13Door"
@@ -191,7 +191,7 @@ metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 shape = SubResource("RectangleShape2D_q4msy")
 
 [node name="Marker2D" type="Marker2D" parent="Room13Door" unique_id=1476808719]
-position = Vector2(0, 40)
+position = Vector2(0, 57)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=367889744]
 navigation_polygon = SubResource("NavigationPolygon_khelp")
