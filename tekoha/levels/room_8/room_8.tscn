@@ -61,6 +61,7 @@ tile_map_data = PackedByteArray("AAAIAAkAAAABAAAAAAAJAAQAAAADAAAAAAAYAAkAAAAEAAA
 tile_set = ExtResource("6_6mn3v")
 
 [node name="Restaurant" type="TileMapLayer" parent="Tiles" unique_id=1900203983]
+z_index = 1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAUAA4AAQAAAAAAAAA=")
 tile_set = ExtResource("7_gnup6")
