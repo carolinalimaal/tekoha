@@ -28,6 +28,7 @@ var anim_transition : int = 0
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var state_machine: StateMachine = $StateMachine
+@onready var point_light_2d: PointLight2D = $PointLight2D
 
 func _init() -> void:
 	GlobalRefs.player = self

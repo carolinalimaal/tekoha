@@ -43,7 +43,9 @@ func _start_sleep_sequence() -> void:
 	overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
 	canvas.add_child(overlay)
 	add_child(canvas)
-
+	
+	GlobalRefs.player.turn_light_on_or_off(false)
+	
 	var tween := create_tween()
 	tween.tween_property(overlay, "color:a", 1.0, 1.0)
 	tween.tween_callback(_on_screen_black)
