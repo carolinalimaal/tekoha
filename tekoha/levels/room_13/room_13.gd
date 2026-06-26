@@ -10,6 +10,9 @@ extends Level
 
 func _ready() -> void:
 	AudioManager.play_background_sound(bg_music)
+	
+	GlobalRefs.player.turn_light_on_or_off(false)
+	
 	if !GlobalRefs.game_afternoon_filter.visible:
 		GlobalRefs.game_afternoon_filter.show()
 	
