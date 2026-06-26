@@ -15,6 +15,10 @@
 [ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="11_11rqf"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="12_n6g6m"]
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="13_11rqf"]
+[ext_resource type="PackedScene" uid="uid://84kqvhlbhwpg" path="res://utils/props/pots/pot.tscn" id="16_asqls"]
+[ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="17_u6lkp"]
+[ext_resource type="SpriteFrames" uid="uid://c4iwvjw63l00o" path="res://assets/sprites/props/pots/vaso_02_1.tres" id="18_abhh2"]
+[ext_resource type="SpriteFrames" uid="uid://dl2so67ufwqwm" path="res://assets/sprites/props/pots/vaso_02_3.tres" id="19_sqemn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk2ql"]
 size = Vector2(16, 200)
@@ -230,4 +234,21 @@ position = Vector2(2093, 409)
 position = Vector2(1812, 409)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1248306615]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_2ryh5")
+
+[node name="Pot" parent="." unique_id=222727829 instance=ExtResource("16_asqls")]
+position = Vector2(1363, 307)
+sprite_frames = ExtResource("17_u6lkp")
+
+[node name="Pot2" parent="." unique_id=10325439 instance=ExtResource("16_asqls")]
+position = Vector2(981, 339)
+sprite_frames = ExtResource("18_abhh2")
+
+[node name="Pot3" parent="." unique_id=2126718404 instance=ExtResource("16_asqls")]
+position = Vector2(1551, 295)
+sprite_frames = ExtResource("19_sqemn")
+
+[node name="Pot4" parent="." unique_id=507871918 instance=ExtResource("16_asqls")]
+position = Vector2(338, 559)
+sprite_frames = ExtResource("17_u6lkp")
