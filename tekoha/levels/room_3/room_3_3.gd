@@ -7,6 +7,7 @@ extends State
 @export var enemy_spawn_position: Marker2D
 @export var path_block_message: DialogueSettings
 
+@onready var room_3_door: Door = $"../../Room3Door"
 @onready var fishing_rod: FishingRod = $"../../FishingRod"
 @onready var path_block: PathBlock = $"../../PathBlock"
 @onready var navigation_region_2d: NavigationRegion2D = $"../../NavigationRegion2D"
@@ -14,6 +15,7 @@ extends State
 var tutorial_instance: Node2D
 var enemy_instance: Node2D
 var _player_ref: Node2D = null
+var _overlay_canvas: CanvasLayer = null
 
 enum Phase { FISHING, CUTSCENE_1, COMBAT, CUTSCENE_2 }
 var current_phase: Phase = Phase.FISHING
@@ -21,25 +23,24 @@ var current_phase: Phase = Phase.FISHING
 func _enter() -> void:
 	current_phase = Phase.FISHING
 	_player_ref = GlobalRefs.player
-	
+
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
-	
+
 	if path_block:
 		path_block.path_block_message = path_block_message
-	
+
 	if fishing_rod:
 		fishing_rod.enable_fishing_rod_interaction()
 		if !fishing_rod.fishing_rod_interated.is_connected(_on_fishing_rod_interacted):
 			fishing_rod.fishing_rod_interated.connect(_on_fishing_rod_interacted)
-	
+
 	if tutorial_packed_scene:
 		tutorial_instance = tutorial_packed_scene.instantiate()
 		owner_node.add_child(tutorial_instance)
 		tutorial_instance.disable_tutorial_interaction()
 
 func _exit() -> void:
-	# Limpeza rigorosa de sinais e instâncias
 	if DialogueManager.dialogue_started.is_connected(_on_dialogue_started):
 		DialogueManager.dialogue_started.disconnect(_on_dialogue_started)
 	if DialogueManager.dialogue_ended.is_connected(_on_dialogue_ended):
@@ -85,12 +86,26 @@ func _start_combat() -> void:
 func _on_enemy_defeated() -> void:
 	if current_phase == Phase.COMBAT and is_instance_valid(_player_ref):
 		current_phase = Phase.CUTSCENE_2
+		_overlay_canvas = CanvasLayer.new()
+		_overlay_canvas.layer = 0
+		var overlay := ColorRect.new()
+		overlay.color = Color.BLACK
+		overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
+		_overlay_canvas.add_child(overlay)
+		owner_node.add_child(_overlay_canvas)
 		DialogueManager.start_speech(cutscene_2)
 
 func _finish_state() -> void:
 	navigation_region_2d.enabled = false
-	
 	if path_block:
 		path_block.set_deferred("monitoring", false)
 	GameManager.set_game_state(GameManager.GameState.AFTER_FIRST_ENEMY)
 	owner_node.change_room_state()
+	_go_to_room2()
+
+func _go_to_room2() -> void:
+	room_3_door.monitoring = true
+	if !GlobalSignals.animation_midpoint_reached.is_connected(room_3_door.on_animation_midpoint_reached):
+		GlobalSignals.animation_midpoint_reached.connect(room_3_door.on_animation_midpoint_reached, CONNECT_ONE_SHOT)
+	get_tree().paused = true
+	GlobalSignals.emit_signal("door_entered")

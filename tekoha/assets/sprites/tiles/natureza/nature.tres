@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://5pnfq0vbj5j8"]
 
-[ext_resource type="Texture2D" uid="uid://bfuifh5omshv6" path="res://assets/sprites/tiles/natureza/natureza.png" id="1_m05ji"]
+[ext_resource type="Texture2D" uid="uid://bf75ojekpiu3g" path="res://assets/sprites/tiles/natureza/natureza.png" id="1_m05ji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nmlxt"]
 texture = ExtResource("1_m05ji")
@@ -116,6 +116,10 @@ texture_region_size = Vector2i(32, 32)
 0:6/0/texture_origin = Vector2i(0, 72)
 0:6/0/y_sort_origin = -10
 0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.257408, -13.06386, 6.850559, -13.382492, 11.31139, 3.8235703, -8.443718, 3.50494)
+10:0/0 = 0
+11:0/0 = 0
+11:1/0 = 0
+10:1/0 = 0
 
 [resource]
 tile_size = Vector2i(32, 32)

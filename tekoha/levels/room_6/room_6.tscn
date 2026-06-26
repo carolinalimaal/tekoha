@@ -206,7 +206,7 @@ position = Vector2(657, 342)
 position = Vector2(511, 276)
 
 [node name="NpcThais" parent="." unique_id=651394413 instance=ExtResource("22_b20ta")]
-position = Vector2(487, 267)
+position = Vector2(477, 266)
 
 [connection signal="body_entered" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_entered"]
 [connection signal="body_exited" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_exited"]

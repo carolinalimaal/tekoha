@@ -21,7 +21,6 @@ func _enter() -> void:
 	navigation_region_2d.set_deferred("disabled", true)
 
 func _exit() -> void:
-	# Limpa todos os sinais por segurança ao sair do estado
 	if DialogueManager.dialogue_started.is_connected(_on_cutscene_started):
 		DialogueManager.dialogue_started.disconnect(_on_cutscene_started)
 	if DialogueManager.dialogue_ended.is_connected(_on_cutscene_ended):

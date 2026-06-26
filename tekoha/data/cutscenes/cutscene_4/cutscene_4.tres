@@ -1,14 +1,53 @@
 [gd_resource type="Resource" script_class="DialogueSettings" format=3 uid="uid://dnypnxch0rxfl"]
 
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="1_diml6"]
+[ext_resource type="Texture2D" uid="uid://kwswm0i0aes" path="res://data/cutscenes/cutscene_4/img_1.png" id="2_hukba"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="2_ssotq"]
+[ext_resource type="Texture2D" uid="uid://dfey2ppxjwrkp" path="res://data/cutscenes/cutscene_4/img_2.png" id="3_hukba"]
 
 [sub_resource type="Resource" id="Resource_diml6"]
 script = ExtResource("1_diml6")
-text_pt = "Teste cutscene levando sacola até a Iara"
+actor_name = "Curupira"
+background_image = ExtResource("2_hukba")
+text_pt = "Iara! Iara! Você nem sabe!"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_iti7q"]
+script = ExtResource("1_diml6")
+actor_name = "Curupira"
+background_image = ExtResource("2_hukba")
+text_pt = "Olha o que eu encontrei! Ela me bateu no igarapé mas eu dei uma pisa nela!"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_24hp8"]
+script = ExtResource("1_diml6")
+actor_name = "Iara"
+background_image = ExtResource("2_hukba")
+text_pt = "Uma... sacola...?"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_oybd7"]
+script = ExtResource("1_diml6")
+actor_name = "Curupira"
+background_image = ExtResource("2_hukba")
+text_pt = "Sim! Ela me bateu empurrando, mas eu consegui derrotá-la do jeito que você me ensinou. Era ela que estava fazendo mal aos peixes!"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_1r253"]
+script = ExtResource("1_diml6")
+actor_name = "Iara"
+background_image = ExtResource("2_hukba")
+text_pt = "E essa cestinha de peixes? Você vai comer todos eles? Hmmm com uma farinha..."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_5oew8"]
+script = ExtResource("1_diml6")
+actor_name = "Iara"
+background_image = ExtResource("3_hukba")
+text_pt = "Como ele se esconde tão fácil...?"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [resource]
 script = ExtResource("2_ssotq")
-dialogues = Array[ExtResource("1_diml6")]([SubResource("Resource_diml6")])
+dialogues = Array[ExtResource("1_diml6")]([SubResource("Resource_diml6"), SubResource("Resource_iti7q"), SubResource("Resource_24hp8"), SubResource("Resource_oybd7"), SubResource("Resource_1r253"), SubResource("Resource_5oew8")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"

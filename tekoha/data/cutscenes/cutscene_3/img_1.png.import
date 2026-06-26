@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf75ojekpiu3g"
-path="res://.godot/imported/natureza.png-cb50d6da0873382fa88f4737018bd661.ctex"
+uid="uid://dycypgnghgf40"
+path="res://.godot/imported/img_1.png-b8507ab9659b7b16aa9a9ec2687c0d4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiles/natureza/natureza.png"
-dest_files=["res://.godot/imported/natureza.png-cb50d6da0873382fa88f4737018bd661.ctex"]
+source_file="res://data/cutscenes/cutscene_3/img_1.png"
+dest_files=["res://.godot/imported/img_1.png-b8507ab9659b7b16aa9a9ec2687c0d4e.ctex"]
 
 [params]
 

@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 func change_room_state() -> void:
 	var current_game_state = GameManager.current_save.game_state
 	var current_room_state = state_machine.current_state
-	
+
 	match current_game_state:
 		GameManager.GameState.BEFORE_FISHING:
 			current_room_state.transition_to("3_1")
