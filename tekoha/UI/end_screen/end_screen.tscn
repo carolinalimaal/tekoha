@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/components/button/button.gd" id="3_d8n0o"]
 
 [node name="EndScreen" type="CanvasLayer" unique_id=1157450737]
+process_mode = 3
 script = ExtResource("1_ucoga")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=690816413]

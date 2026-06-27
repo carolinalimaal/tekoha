@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var main_menu_button: DefaultButton = $VBoxContainer/MainMenuButton
 
 func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().paused = true
 	container.modulate.a = 0.0
 	main_menu_button.pressed.connect(_on_menu_pressed)
 
