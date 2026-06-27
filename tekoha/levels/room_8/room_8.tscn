@@ -36,6 +36,7 @@ metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 size = Vector2(10, 100)
 
 [node name="Room8" type="Node2D" unique_id=2101955080]
+z_index = -1
 y_sort_enabled = true
 script = ExtResource("1_wjxbu")
 bg_music = ExtResource("2_d3h20")
@@ -71,7 +72,6 @@ tile_map_data = PackedByteArray("AAAOABIAAgAOAAYAAAAOABMAAgAOAAAAAAAOABEAAgAOAAU
 tile_set = ExtResource("6_d3h20")
 
 [node name="Moveis" type="TileMapLayer" parent="Tiles" unique_id=2042536714]
-z_index = -1
 tile_map_data = PackedByteArray("AAAFAAoAAQAJAAYAAAAFAAsAAQAJAAcAAAA=")
 tile_set = ExtResource("7_d3h20")
 

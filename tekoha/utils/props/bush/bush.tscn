@@ -22,7 +22,7 @@ color = Color(0.5647059, 0.8627451, 0.16470589, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b14lp"]
 radius = 16.0
-height = 112.0
+height = 116.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sltqe"]
 radius = 14.0
