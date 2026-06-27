@@ -384,6 +384,27 @@ position = Vector2(2067, 1271)
 [node name="Canudinho3" parent="Enemies" unique_id=812122308 instance=ExtResource("12_mptwh")]
 position = Vector2(1234, 603)
 
+[node name="Sacola5" parent="Enemies" unique_id=765363054 instance=ExtResource("11_ar5hv")]
+position = Vector2(3267, 908)
+
+[node name="Canudinho4" parent="Enemies" unique_id=1495608084 instance=ExtResource("12_mptwh")]
+position = Vector2(1905, 1182)
+
+[node name="Canudinho5" parent="Enemies" unique_id=1945538669 instance=ExtResource("12_mptwh")]
+position = Vector2(2119, 1131)
+
+[node name="Canudinho6" parent="Enemies" unique_id=421394057 instance=ExtResource("12_mptwh")]
+position = Vector2(1421, 780)
+
+[node name="Sacola6" parent="Enemies" unique_id=997601946 instance=ExtResource("11_ar5hv")]
+position = Vector2(1584, 929)
+
+[node name="Sacola7" parent="Enemies" unique_id=1893230817 instance=ExtResource("11_ar5hv")]
+position = Vector2(1431, 1083)
+
+[node name="Sacola8" parent="Enemies" unique_id=993226227 instance=ExtResource("11_ar5hv")]
+position = Vector2(1590, 632)
+
 [node name="Room10Door" type="Area2D" parent="." unique_id=665739645]
 position = Vector2(2193, 1832)
 collision_layer = 2048
