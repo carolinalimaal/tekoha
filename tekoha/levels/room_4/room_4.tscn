@@ -525,7 +525,6 @@ tile_map_data = PackedByteArray("AAAWACMAAAA5AAYAAAAbAB8AAAA5AAYAAAAQABwAAAA5AAY
 tile_set = ExtResource("5_kkt51")
 
 [node name="Limits" type="Node2D" parent="Tiles" unique_id=1257623681]
-visible = false
 position = Vector2(738.8904, 766.09033)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tiles/Limits" unique_id=803893266]
