@@ -71,6 +71,7 @@ tile_map_data = PackedByteArray("AAAOABIAAgAOAAYAAAAOABMAAgAOAAAAAAAOABEAAgAOAAU
 tile_set = ExtResource("6_d3h20")
 
 [node name="Moveis" type="TileMapLayer" parent="Tiles" unique_id=2042536714]
+z_index = -1
 tile_map_data = PackedByteArray("AAAFAAoAAQAJAAYAAAAFAAsAAQAJAAcAAAA=")
 tile_set = ExtResource("7_d3h20")
 
