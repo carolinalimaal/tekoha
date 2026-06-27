@@ -64,6 +64,5 @@ func _register_muiraquita(id: int) -> void:
 
 func set_game_state(new_state: GameState) -> void:
 	if new_state and new_state != current_save.game_state:
-		print("estado antigo: ", current_save.game_state, " estado novo: ", new_state)
 		current_save.game_state = new_state
 		GlobalSignals.game_state_changed.emit(new_state)
