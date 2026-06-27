@@ -116,6 +116,7 @@ script = ExtResource("3_mc6od")
 metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
 [node name="Options" type="Button" parent="MenuOptions" unique_id=1615726804]
+visible = false
 custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
 theme = ExtResource("1_mc6od")

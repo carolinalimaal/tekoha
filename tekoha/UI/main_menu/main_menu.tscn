@@ -78,6 +78,7 @@ script = ExtResource("9_0xi1j")
 metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
 [node name="Options" type="Button" parent="VBoxContainer/MenuOptions" unique_id=419911537]
+visible = false
 custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
 theme = ExtResource("1_usm5j")
