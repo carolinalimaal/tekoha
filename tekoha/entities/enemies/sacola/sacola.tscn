@@ -1717,7 +1717,6 @@ script = ExtResource("2_kcolf")
 path_desired_distance = 10.0
 target_desired_distance = 20.0
 path_max_distance = 30.0
-debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
 
 [node name="StateMachine" type="Node" parent="." unique_id=463188144 node_paths=PackedStringArray("_initial_state")]
