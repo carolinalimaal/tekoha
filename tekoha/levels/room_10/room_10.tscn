@@ -266,7 +266,7 @@ tile_map_data = PackedByteArray("AAAdADYAAAAYAAMAAAAgADcAAAA5AAYAAAAgADQAAAA5AAY
 tile_set = ExtResource("3_unx7x")
 
 [node name="Rocks" type="TileMapLayer" parent="Tiles" unique_id=180321621]
-tile_map_data = PackedByteArray("AABcACEAAAACAAEAAABdACIAAAACAAEAAABiACIAAAADAAEAAABjACEAAAADAAEAAABbACEAAAAAAAEAAABeABkAAAABAAEAAABgABkAAAACAAEAAABlABkAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AABcACEAAAACAAEAAABdACIAAAACAAEAAABiACIAAAADAAEAAABjACEAAAADAAEAAABbACEAAAAAAAEAAABgABkAAAACAAEAAABlABkAAAAAAAAAAAA=")
 tile_set = ExtResource("3_unx7x")
 
 [node name="Decoration" type="TileMapLayer" parent="Tiles" unique_id=737717852]
@@ -289,7 +289,7 @@ y_sort_enabled = true
 position = Vector2(3073, 1067)
 
 [node name="Bush2" parent="World" unique_id=1633508051 instance=ExtResource("5_mptwh")]
-position = Vector2(3168, 794)
+position = Vector2(3168, 808)
 
 [node name="Bau" parent="World" unique_id=302874208 instance=ExtResource("6_egbhk")]
 position = Vector2(3168, 919)
