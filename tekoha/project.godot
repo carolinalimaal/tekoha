@@ -19,7 +19,7 @@ run/main_scene="uid://bdopbw67bxvxq"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/image="uid://c02qbq1vhi6x6"
 config/icon="uid://dhcppev66xefc"
-boot_splash/minimum_display_time=1000
+boot_splash/minimum_display_time=3000
 
 [audio]
 
