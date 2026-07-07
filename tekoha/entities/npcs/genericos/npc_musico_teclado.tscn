@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cok4xqvxrrbcu"]
+
+[ext_resource type="Texture2D" uid="uid://cvb5gwgqnooig" path="res://assets/sprites/entities/npcs/npcs_musicos.png" id="1_kgcv3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgcv3"]
+atlas = ExtResource("1_kgcv3")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_510ou"]
+atlas = ExtResource("1_kgcv3")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6hj2"]
+atlas = ExtResource("1_kgcv3")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_510ou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgcv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_510ou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6hj2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g6hj2"]
+radius = 14.035668
+
+[node name="NpcMusicoTeclado" type="CharacterBody2D" unique_id=1448697114]
+collision_layer = 1024
+collision_mask = 401
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=486898750]
+sprite_frames = SubResource("SpriteFrames_510ou")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=830821919]
+position = Vector2(0, 24)
+shape = SubResource("CircleShape2D_g6hj2")

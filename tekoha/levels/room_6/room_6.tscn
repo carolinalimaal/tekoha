@@ -22,6 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://c6i540q8c04us" path="res://entities/npcs/genericos/npc_sandro.tscn" id="19_dc3iq"]
 [ext_resource type="PackedScene" uid="uid://cdm2xhabdhem4" path="res://entities/npcs/genericos/npc_idle_lado.tscn" id="21_qk5qf"]
 [ext_resource type="PackedScene" uid="uid://bmp5hscdwrfn3" path="res://entities/npcs/genericos/npc_thais.tscn" id="22_b20ta"]
+[ext_resource type="PackedScene" uid="uid://x25wfe57coha" path="res://entities/npcs/genericos/npc_musico_cantor.tscn" id="23_s5772"]
+[ext_resource type="PackedScene" uid="uid://cvrs8krakrljs" path="res://entities/npcs/genericos/npc_musico_tambor.tscn" id="24_48i0n"]
+[ext_resource type="PackedScene" uid="uid://cok4xqvxrrbcu" path="res://entities/npcs/genericos/npc_musico_teclado.tscn" id="25_mp623"]
+[ext_resource type="PackedScene" uid="uid://brii571v8gti8" path="res://entities/npcs/genericos/npc_musico_violao.tscn" id="26_twh3b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j0ms1"]
 texture = ExtResource("5_fxwqa")
@@ -207,6 +211,18 @@ position = Vector2(511, 276)
 
 [node name="NpcThais" parent="." unique_id=651394413 instance=ExtResource("22_b20ta")]
 position = Vector2(477, 266)
+
+[node name="NpcMusicoCantor" parent="." unique_id=947486553 instance=ExtResource("23_s5772")]
+position = Vector2(601, 197)
+
+[node name="NpcMusicoTambor" parent="." unique_id=1657529352 instance=ExtResource("24_48i0n")]
+position = Vector2(569, 155)
+
+[node name="NpcMusicoTeclado" parent="." unique_id=1448697114 instance=ExtResource("25_mp623")]
+position = Vector2(606, 114)
+
+[node name="NpcMusicoViolao" parent="." unique_id=740244014 instance=ExtResource("26_twh3b")]
+position = Vector2(644, 194)
 
 [connection signal="body_entered" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_entered"]
 [connection signal="body_exited" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_exited"]

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://x25wfe57coha"]
+
+[ext_resource type="Texture2D" uid="uid://cvb5gwgqnooig" path="res://assets/sprites/entities/npcs/npcs_musicos.png" id="1_v8e54"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wbsv"]
+atlas = ExtResource("1_v8e54")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkrgs"]
+atlas = ExtResource("1_v8e54")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6odi"]
+atlas = ExtResource("1_v8e54")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n15hr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wbsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkrgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6odi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nj50m"]
+radius = 14.035668
+
+[node name="NpcMusicoCantor" type="CharacterBody2D" unique_id=947486553]
+collision_layer = 1024
+collision_mask = 401
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=94255873]
+sprite_frames = SubResource("SpriteFrames_n15hr")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1925993311]
+position = Vector2(0, 24)
+shape = SubResource("CircleShape2D_nj50m")
