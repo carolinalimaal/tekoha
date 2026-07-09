@@ -10,6 +10,7 @@ extends Control
 @onready var background: TextureRect = $Background
 
 @onready var confirmation_popup: ConfirmationPopup = $ConfirmationPopup
+@onready var options_menu: OptionsMenu = $OptionsMenu
 @onready var navigation_legend: NavigationLegend = $NavigationLegend
 
 
@@ -26,14 +27,16 @@ func _ready() -> void:
 	quit_button.pressed.connect(_on_quit_pressed)
 	
 	UIManager.register_menu("confirmation", confirmation_popup)
-	
+	UIManager.register_menu("options", options_menu)
+
 	new_game_button.grab_focus()
 	AudioManager.play_background_sound(main_menu_music)
-	
+
 	var random_number: int = randi_range(0, 2)
 	background.texture = bg_list[random_number]
-	
+
 	confirmation_popup.hide()
+	options_menu.hide()
 	
 	# Verificar se existe save para mostrar ou nao o load_game_button
 	GameManager.current_save = SaveManager.load_game()
@@ -77,8 +80,21 @@ func _on_load_game_pressed() -> void:
 	get_tree().change_scene_to_file("res://globals/main_scene/main.tscn")
 
 func _on_options_pressed() -> void:
-	# TODO: Funcionalidade de abrir menu de opcoes
-	pass
+	navigation_legend.hide()
+	UIManager.open_menu("options")
+	if !options_menu.closed.is_connected(_on_options_closed):
+		options_menu.closed.connect(_on_options_closed)
+	for b in menu_options.get_children():
+		if b is Button:
+			b.focus_mode = Control.FOCUS_NONE
+
+func _on_options_closed() -> void:
+	navigation_legend.show()
+	options_menu.closed.disconnect(_on_options_closed)
+	for b in menu_options.get_children():
+		if b is Button:
+			b.focus_mode = Control.FOCUS_ALL
+	options_button.grab_focus()
 
 func _on_quit_pressed() -> void:
 	navigation_legend.hide()

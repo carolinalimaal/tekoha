@@ -5,6 +5,7 @@ extends Node
 @onready var inventory_ui: InventoryUI = $MenuLayer/InventoryUi
 @onready var new_item_found_panel: NewItemFoundPanel = $MenuLayer/NewItemFoundPanel
 @onready var confirmation_popup: ConfirmationPopup = $MenuLayer/ConfirmationPopup
+@onready var options_menu: OptionsMenu = $MenuLayer/OptionsMenu
 
 @onready var hud: Control = $HUDLayer/HUD
 
@@ -12,6 +13,7 @@ func _ready() -> void:
 	# Atualiza as referências globais
 	GlobalRefs.new_item_found_panel = new_item_found_panel
 	GlobalRefs.confirmation_popup = confirmation_popup
+	GlobalRefs.options_menu = options_menu
 	GlobalRefs.hud = hud
 	# Esconder a HUD durante diálogos
 	DialogueManager.dialogue_started.connect(hud.hide)
@@ -22,6 +24,7 @@ func _ready() -> void:
 	UIManager.register_menu("inventory", inventory_ui)
 	UIManager.register_menu("item_found", new_item_found_panel)
 	UIManager.register_menu("confirmation", confirmation_popup)
+	UIManager.register_menu("options", options_menu)
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if InputManager.get_action_pressed("ui_cancel"):

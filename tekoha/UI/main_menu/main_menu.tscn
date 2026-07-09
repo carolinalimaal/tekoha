@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dhcppev66xefc" path="res://assets/UI/logo/tekoha_colorful.svg" id="3_lib8g"]
 [ext_resource type="PackedScene" uid="uid://ryb3syv1bcmd" path="res://UI/components/confirmation_popup/confirmation_popup.tscn" id="7_rxajg"]
 [ext_resource type="PackedScene" uid="uid://tc0txhjv7cm5" path="res://UI/components/navigation_legend/navigation_legend.tscn" id="8_0xi1j"]
+[ext_resource type="PackedScene" path="res://UI/components/options_menu/options_menu.tscn" id="10_ov1a1"]
 [ext_resource type="AudioStream" uid="uid://bvy34itisvfi2" path="res://assets/sound/music/bgm_main_menu.mp3" id="8_1dcnu"]
 [ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/components/button/button.gd" id="9_0xi1j"]
 
@@ -78,7 +79,6 @@ script = ExtResource("9_0xi1j")
 metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
 [node name="Options" type="Button" parent="VBoxContainer/MenuOptions" unique_id=419911537]
-visible = false
 custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
 theme = ExtResource("1_usm5j")
@@ -95,6 +95,9 @@ script = ExtResource("9_0xi1j")
 metadata/_custom_type_script = "uid://dy6wirss0gjld"
 
 [node name="ConfirmationPopup" parent="." unique_id=1699816863 instance=ExtResource("7_rxajg")]
+layout_mode = 1
+
+[node name="OptionsMenu" parent="." instance=ExtResource("10_ov1a1")]
 layout_mode = 1
 
 [node name="NavigationLegend" parent="." unique_id=1102564893 instance=ExtResource("8_0xi1j")]
