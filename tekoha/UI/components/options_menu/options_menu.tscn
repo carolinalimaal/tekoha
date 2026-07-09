@@ -8,6 +8,15 @@
 [ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/components/button/button.gd" id="6_opts1"]
 [ext_resource type="PackedScene" uid="uid://tc0txhjv7cm5" path="res://UI/components/navigation_legend/navigation_legend.tscn" id="7_opts1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k5q2"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.34117648, 0.34117648, 0.34117648, 0.1764706)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5k5q2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2p37t"]
@@ -15,6 +24,35 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cqfl8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svhrg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2p37t"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.34117648, 0.34117648, 0.34117648, 0.1764706)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqfl8"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.34117648, 0.34117648, 0.34117648, 0.1764706)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1160f"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.34117648, 0.34117648, 0.34117648, 0.1764706)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1160f"]
 
 [node name="OptionsMenu" type="Control" unique_id=944573917]
 process_mode = 3
@@ -44,7 +82,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="NinePatchRect" parent="Background/CenterContainer" unique_id=207041672]
-custom_minimum_size = Vector2(520, 460)
+custom_minimum_size = Vector2(520, 560)
 layout_mode = 2
 texture = ExtResource("3_opts1")
 region_rect = Rect2(68, 64, 252, 256)
@@ -54,9 +92,12 @@ patch_margin_right = 20
 patch_margin_bottom = 18
 
 [node name="MarginContainer" type="MarginContainer" parent="Background/CenterContainer/PanelContainer" unique_id=1922790468]
-layout_mode = 0
-offset_right = 520.0
-offset_bottom = 460.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 48
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 48
@@ -82,17 +123,21 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Vídeo"
 
-[node name="FullscreenRow" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content" unique_id=247773214]
+[node name="FullscreenRowPanel" type="PanelContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content" unique_id=1901038872]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5k5q2")
+
+[node name="FullscreenRow" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/FullscreenRowPanel" unique_id=247773214]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="FullscreenLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/FullscreenRow" unique_id=2121889420]
-custom_minimum_size = Vector2(220, 0)
+[node name="FullscreenLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/FullscreenRowPanel/FullscreenRow" unique_id=2121889420]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Tela Cheia"
 
-[node name="FullscreenToggle" type="Button" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/FullscreenRow" unique_id=1840575006]
+[node name="FullscreenToggle" type="Button" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/FullscreenRowPanel/FullscreenRow" unique_id=1840575006]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_vertical = 4
@@ -103,7 +148,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_svhrg")
 toggle_mode = true
 flat = true
 
-[node name="Frame" type="TextureRect" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/FullscreenRow/FullscreenToggle" unique_id=1699346190]
+[node name="Frame" type="TextureRect" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/FullscreenRowPanel/FullscreenRow/FullscreenToggle" unique_id=1699346190]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = 15
@@ -116,7 +161,7 @@ texture = ExtResource("4_opts1")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Fire" type="TextureRect" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/FullscreenRow/FullscreenToggle" unique_id=212300613]
+[node name="Fire" type="TextureRect" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/FullscreenRowPanel/FullscreenRow/FullscreenToggle" unique_id=212300613]
 visible = false
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
@@ -138,18 +183,22 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Áudio"
 
-[node name="MasterRow" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content" unique_id=1122029297]
+[node name="MasterRowPanel" type="PanelContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content" unique_id=315121298]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2p37t")
+
+[node name="MasterRow" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/MasterRowPanel" unique_id=1122029297]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="MasterLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/MasterRow" unique_id=244963355]
-custom_minimum_size = Vector2(220, 0)
+[node name="MasterLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/MasterRowPanel/MasterRow" unique_id=244963355]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Volume Geral"
 
-[node name="MasterSlider" type="HSlider" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/MasterRow" unique_id=1553519908]
+[node name="MasterSlider" type="HSlider" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/MasterRowPanel/MasterRow" unique_id=1553519908]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -158,18 +207,29 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="MusicRow" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content" unique_id=920391161]
+[node name="MasterValueLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/MasterRowPanel/MasterRow" unique_id=1212079026]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "100%"
+horizontal_alignment = 1
+
+[node name="MusicRowPanel" type="PanelContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content" unique_id=676685851]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cqfl8")
+
+[node name="MusicRow" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/MusicRowPanel" unique_id=920391161]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="MusicLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/MusicRow" unique_id=22166389]
-custom_minimum_size = Vector2(220, 0)
+[node name="MusicLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/MusicRowPanel/MusicRow" unique_id=22166389]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Música"
 
-[node name="MusicSlider" type="HSlider" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/MusicRow" unique_id=1743518311]
+[node name="MusicSlider" type="HSlider" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/MusicRowPanel/MusicRow" unique_id=1743518311]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -178,18 +238,29 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="SfxRow" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content" unique_id=73555086]
+[node name="MusicValueLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/MusicRowPanel/MusicRow" unique_id=1959781240]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "100%"
+horizontal_alignment = 1
+
+[node name="SfxRowPanel" type="PanelContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content" unique_id=1771039198]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1160f")
+
+[node name="SfxRow" type="HBoxContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/SfxRowPanel" unique_id=73555086]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="SfxLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/SfxRow" unique_id=312261860]
-custom_minimum_size = Vector2(220, 0)
+[node name="SfxLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/SfxRowPanel/SfxRow" unique_id=312261860]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Efeitos Sonoros"
 
-[node name="SfxSlider" type="HSlider" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/SfxRow" unique_id=57861557]
+[node name="SfxSlider" type="HSlider" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/SfxRowPanel/SfxRow" unique_id=57861557]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -198,11 +269,24 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
+[node name="SfxValueLabel" type="Label" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content/SfxRowPanel/SfxRow" unique_id=260567909]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "100%"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content" unique_id=1559749856]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1160f")
+
 [node name="BackButton" type="Button" parent="Background/CenterContainer/PanelContainer/MarginContainer/Content" unique_id=2120614625]
-custom_minimum_size = Vector2(177.25, 55.313)
+custom_minimum_size = Vector2(88.625, 27.657)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_opts1")
+theme_override_font_sizes/font_size = 20
 text = "Voltar"
 script = ExtResource("6_opts1")
 metadata/_custom_type_script = "uid://dy6wirss0gjld"
