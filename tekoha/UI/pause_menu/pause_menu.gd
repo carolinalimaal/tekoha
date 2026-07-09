@@ -1,5 +1,6 @@
 extends Control
 
+@onready var menu_options: VBoxContainer = $MenuOptions
 @onready var back_button: DefaultButton = $MenuOptions/Back
 @onready var options_button: DefaultButton = $MenuOptions/Options
 @onready var main_menu: DefaultButton = $MenuOptions/MainMenu
@@ -27,7 +28,21 @@ func _on_back_to_game_pressed() -> void:
 	UIManager.close_top_menu()
 
 func _on_options_pressed() -> void:
-	pass
+	navigation_legend.hide()
+	UIManager.open_menu("options")
+	if !GlobalRefs.options_menu.closed.is_connected(_on_options_closed):
+		GlobalRefs.options_menu.closed.connect(_on_options_closed)
+	for b in menu_options.get_children():
+		if b is Button:
+			b.focus_mode = Control.FOCUS_NONE
+
+func _on_options_closed() -> void:
+	navigation_legend.show()
+	GlobalRefs.options_menu.closed.disconnect(_on_options_closed)
+	for b in menu_options.get_children():
+		if b is Button:
+			b.focus_mode = Control.FOCUS_ALL
+	options_button.grab_focus()
 
 func _on_back_to_main_menu_pressed() -> void:
 	navigation_legend.hide()
