@@ -85,13 +85,15 @@ func _on_chest_confirmed() -> void:
 	
 	var is_new_item = !GameManager.current_save.known_items.has(item.name)
 	var _item = item
-	
+
 	item = null
 	close_chest()
-	
+
 	if is_new_item:
 		GameManager.current_save.known_items[_item.name] = true
 		GlobalRefs.new_item_found_panel.show_panel(GlobalRefs.ItemType.FOOD, _item)
+	else:
+		AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.PICKUP_ITEM)
 
 func _on_chest_cancelled() -> void:
 	close_chest()

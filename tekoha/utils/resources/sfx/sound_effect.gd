@@ -25,6 +25,7 @@ enum SOUND_EFFECT_TYPE {
 	SACOLA_ATTACK,
 	TYPING,
 	LOW_HEALTH,
+	NEW_ITEM_FOUND,
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.

@@ -45,7 +45,16 @@ func _on_dialogue_ended() -> void:
 
 func _after_first_dialogue() -> void:
 	_phase = Phase.APPROACHING_EXIT
-	GlobalRefs.inventory.add_item(load("res://data/items/tambaqui_assado.tres") as ConsumableItemData)
+
+	var gift_item: ConsumableItemData = load("res://data/items/tambaqui_assado.tres") as ConsumableItemData
+	GlobalRefs.inventory.add_item(gift_item)
+
+	if !GameManager.current_save.known_items.has(gift_item.name):
+		GameManager.current_save.known_items[gift_item.name] = true
+		GlobalRefs.new_item_found_panel.show_panel(GlobalRefs.ItemType.FOOD, gift_item)
+	else:
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.PICKUP_ITEM)
+
 	cecilia.npc_dialogue = cecilia.dialogues_list[1]
 	cecilia.interactable_component.disable_interaction()
 	path_block2.set_deferred("monitoring", false)

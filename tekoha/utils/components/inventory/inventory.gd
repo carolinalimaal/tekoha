@@ -14,8 +14,9 @@ func add_item(item: ConsumableItemData) -> bool:
 		return false
 	slot.item = item
 	# Emite sinais para atualizar a UI
+	GlobalSignals.hud_info.emit(item.name + " adicionado ao inventário!")
 	updated_inventory.emit()
-	
+
 	return true
 
 # Remove um item do inventario
