@@ -23,6 +23,9 @@ var roll_cooldown : float = 1.0
 
 var anim_transition : int = 0
 
+@export_range(0.0, 1.0, 0.01) var low_health_threshold: float = 0.25
+var _is_low_health: bool = false
+
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
@@ -37,6 +40,7 @@ func _ready() -> void:
 	# Conectar sinais
 	health_component.died.connect(_on_player_died)
 	hitbox_component.attack_received.connect(_on_player_attack_received)
+	health_changed.connect(_on_health_changed)
 	# Iniciar state_machine
 	state_machine.init(self)
 	# Adicionar ao grupo "player"
@@ -88,6 +92,21 @@ func die():
 func _on_player_died():
 	# Transicionar para DEATH
 	state_machine.current_state.transition_to("Death")
+
+func _on_health_changed() -> void:
+	var health_ratio = float(health_component.current_health) / float(health_component.max_health)
+	if health_component.current_health > 0 and health_ratio <= low_health_threshold:
+		if !_is_low_health:
+			_is_low_health = true
+			AudioManager.start_looping_audio(SoundEffect.SOUND_EFFECT_TYPE.LOW_HEALTH)
+	elif _is_low_health:
+		_is_low_health = false
+		AudioManager.stop_looping_audio(SoundEffect.SOUND_EFFECT_TYPE.LOW_HEALTH)
+
+func _exit_tree() -> void:
+	if _is_low_health:
+		_is_low_health = false
+		AudioManager.stop_looping_audio(SoundEffect.SOUND_EFFECT_TYPE.LOW_HEALTH)
 
 func _on_player_attack_received(attack_data: AttackData):
 	# Nao sofre dano se estiver em DEATH ou STUN

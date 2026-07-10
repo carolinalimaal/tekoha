@@ -24,6 +24,7 @@ enum SOUND_EFFECT_TYPE {
 	UI_ERROR,
 	SACOLA_ATTACK,
 	TYPING,
+	LOW_HEALTH,
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.
