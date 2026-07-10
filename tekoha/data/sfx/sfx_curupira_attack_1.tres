@@ -7,5 +7,5 @@
 script = ExtResource("1_cjpxi")
 type = 1
 sound_effect = ExtResource("2_7md8k")
-volume = -20.0
+volume = -10.0
 metadata/_custom_type_script = "uid://dogggnwn8i6i7"

@@ -52,3 +52,6 @@ func _on_enemy_attack_received(attack_data: AttackData):
 		var stun_state : StunState = state_machine.states.get("stun")
 		stun_state.receive_attack_data(attack_data)
 		state_machine.current_state.transition_to("Stun")
+
+func play_sfx_attack() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.SACOLA_ATTACK)

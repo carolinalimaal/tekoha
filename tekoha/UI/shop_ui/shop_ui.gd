@@ -7,7 +7,7 @@ extends Control
 
 var current_row_selected: ShopItemRow
 
-@onready var item_list: VBoxContainer = $Panel/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/ItemList
+@onready var item_list: VBoxContainer = $Panel/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/ItemList
 @onready var navigation_legend: NavigationLegend = $Panel/VBoxContainer/NavigationLegend
 
 func _ready() -> void:
@@ -62,8 +62,17 @@ func _on_confirm_bought() -> void:
 	var item = current_row_selected.item
 	GameManager._remove_coin(item.price)
 	GlobalRefs.inventory.add_item(item)
+
+	var is_new_item = !GameManager.current_save.known_items.has(item.name)
+
 	_update_ui()
 	_close_popup()
+
+	if is_new_item:
+		GameManager.current_save.known_items[item.name] = true
+		GlobalRefs.new_item_found_panel.show_panel(GlobalRefs.ItemType.FOOD, item)
+	else:
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.PICKUP_ITEM)
 
 func _on_cancel_bought() -> void:
 	_close_popup()

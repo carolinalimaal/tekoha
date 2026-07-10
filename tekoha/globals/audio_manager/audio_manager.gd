@@ -8,6 +8,9 @@ var sound_effect_dict: Dictionary = {}
 # CONFIGURAÇÕES DE BGM
 var bgm_player: AudioStreamPlayer
 
+# CONFIGURAÇÕES DE SFX EM LOOP
+var looping_sfx_players: Dictionary = {}
+
 func _ready() -> void:
 	# 1. Inicia o sistema de Música (BGM)
 	bgm_player = AudioStreamPlayer.new()
@@ -97,3 +100,39 @@ func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 			new_audio.play()
 	else:
 		push_error("AudioManager: Tipo de som não registrado - ", type)
+
+# Inicia um som global em loop
+# Nao faz nada se ja estiver tocando.
+func start_looping_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
+	if looping_sfx_players.has(type):
+		return
+
+	if !sound_effect_dict.has(type):
+		push_error("AudioManager: Tipo de som não registrado - ", type)
+		return
+
+	var sound_effect: SoundEffect = sound_effect_dict[type]
+	var loop_audio: AudioStreamPlayer = AudioStreamPlayer.new()
+	add_child(loop_audio)
+
+	loop_audio.stream = sound_effect.sound_effect
+	loop_audio.volume_db = sound_effect.volume
+	loop_audio.pitch_scale = sound_effect.pitch_scale
+	loop_audio.bus = "SFX"
+
+	# Reinicia a reproducao ao terminar, criando o efeito de loop
+	loop_audio.finished.connect(loop_audio.play)
+
+	looping_sfx_players[type] = loop_audio
+	loop_audio.play()
+
+# Para um som que esta em loop, se estiver tocando.
+func stop_looping_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
+	if !looping_sfx_players.has(type):
+		return
+
+	var loop_audio: AudioStreamPlayer = looping_sfx_players[type]
+	looping_sfx_players.erase(type)
+	loop_audio.finished.disconnect(loop_audio.play)
+	loop_audio.stop()
+	loop_audio.queue_free()

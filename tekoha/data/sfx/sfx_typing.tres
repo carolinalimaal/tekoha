@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://c3uqsauwrglfn"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_typing"]
+[ext_resource type="AudioStream" uid="uid://wtkyri4s74ev" path="res://assets/sound/sfx/system/sfx_typing.wav" id="2_typing"]
+
+[resource]
+script = ExtResource("1_typing")
+limit = 1
+type = 18
+sound_effect = ExtResource("2_typing")
+volume = -40.0
+pitch_scale = 1.2
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"

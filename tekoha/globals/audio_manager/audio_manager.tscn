@@ -14,8 +14,12 @@
 [ext_resource type="Resource" uid="uid://cdgxngwu47jib" path="res://data/sfx/sfx_save.tres" id="12_684e1"]
 [ext_resource type="Resource" uid="uid://c2p4gfqkpybia" path="res://data/sfx/sfx_button_click.tres" id="13_bk4qp"]
 [ext_resource type="Resource" uid="uid://br0afq8u0xv8p" path="res://data/sfx/sfx_ui_error.tres" id="14_w7mn3"]
+[ext_resource type="Resource" uid="uid://dbx4wypamv20e" path="res://data/sfx/sfx_sacola_attack.tres" id="15_1m5h4"]
+[ext_resource type="Resource" uid="uid://c3uqsauwrglfn" path="res://data/sfx/sfx_typing.tres" id="16_typing"]
+[ext_resource type="Resource" uid="uid://cr61xnhtgy8kh" path="res://data/sfx/sfx_low_health.tres" id="17_low_health"]
+[ext_resource type="Resource" uid="uid://dc2xiy8l05b5c" path="res://data/sfx/sfx_pickup_item_first_time.tres" id="18_new_item"]
 
 [node name="AudioManager" type="Node2D" unique_id=1953541211]
 process_mode = 3
 script = ExtResource("1_gqfen")
-sound_effects = Array[ExtResource("2_jkr7a")]([ExtResource("3_2bgjf"), ExtResource("4_1d2wt"), ExtResource("5_ulrmu"), ExtResource("6_fdt5a"), ExtResource("7_fdt5a"), ExtResource("8_lgug7"), ExtResource("9_qmnf0"), ExtResource("10_2d6s7"), ExtResource("11_1m5h4"), ExtResource("12_684e1"), ExtResource("13_bk4qp"), ExtResource("14_w7mn3")])
+sound_effects = Array[ExtResource("2_jkr7a")]([ExtResource("3_2bgjf"), ExtResource("4_1d2wt"), ExtResource("5_ulrmu"), ExtResource("6_fdt5a"), ExtResource("7_fdt5a"), ExtResource("8_lgug7"), ExtResource("9_qmnf0"), ExtResource("10_2d6s7"), ExtResource("11_1m5h4"), ExtResource("12_684e1"), ExtResource("13_bk4qp"), ExtResource("14_w7mn3"), ExtResource("15_1m5h4"), ExtResource("16_typing"), ExtResource("17_low_health"), ExtResource("18_new_item")])

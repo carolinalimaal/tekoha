@@ -21,7 +21,11 @@ enum SOUND_EFFECT_TYPE {
 	BOAT_MOTOR_START,
 	BOAT_MOTOR_LOOP,
 	BUTTON_CLICK,
-	UI_ERROR
+	UI_ERROR,
+	SACOLA_ATTACK,
+	TYPING,
+	LOW_HEALTH,
+	NEW_ITEM_FOUND,
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.

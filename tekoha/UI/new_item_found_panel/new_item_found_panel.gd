@@ -29,7 +29,8 @@ func _unhandled_input(_event: InputEvent) -> void:
 func show_panel(item_type: GlobalRefs.ItemType, item_data: ConsumableItemData) -> void:
 	_load_item_data(item_type, item_data)
 	modulate.a = 0.0
-	
+
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.NEW_ITEM_FOUND)
 	UIManager.open_menu("item_found")
 	
 	is_showing = true
