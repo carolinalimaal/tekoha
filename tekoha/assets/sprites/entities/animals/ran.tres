@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bpb56aatqerwk" path="res://assets/sprites/entities/animals/animais.png" id="1_hejq0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bqw4i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hejq0"]
 atlas = ExtResource("1_hejq0")
 region = Rect2(2304, 0, 64, 64)
 
@@ -10,7 +10,7 @@ region = Rect2(2304, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bqw4i")
+"texture": SubResource("AtlasTexture_hejq0")
 }],
 "loop": 1,
 "name": &"default",

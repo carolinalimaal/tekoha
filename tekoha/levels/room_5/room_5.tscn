@@ -15,6 +15,9 @@
 [ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="13_vultg"]
 [ext_resource type="PackedScene" uid="uid://dlk1ggdwcoujt" path="res://entities/npcs/genericos/npcs_varanda_restaurante.tscn" id="14_1it45"]
 [ext_resource type="PackedScene" uid="uid://goc7nv73r6n5" path="res://entities/npcs/genericos/npc_pier.tscn" id="15_vultg"]
+[ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="16_teyq8"]
+[ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="17_dnhaf"]
+[ext_resource type="SpriteFrames" uid="uid://110m3ia66xi4" path="res://assets/sprites/entities/animals/urubu.tres" id="18_dnhaf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmo2d"]
 texture = ExtResource("2_777hw")
@@ -581,3 +584,39 @@ position = Vector2(1188, 686)
 
 [node name="NpcPier" parent="." unique_id=2139658897 instance=ExtResource("15_vultg")]
 position = Vector2(506, 785)
+
+[node name="Animals" type="Node2D" parent="." unique_id=134040981]
+
+[node name="Animal" parent="Animals" unique_id=220143913 instance=ExtResource("16_teyq8")]
+position = Vector2(974, 648)
+animated_frames = ExtResource("17_dnhaf")
+
+[node name="Animal2" parent="Animals" unique_id=343388563 instance=ExtResource("16_teyq8")]
+position = Vector2(1273, 723)
+animated_frames = ExtResource("17_dnhaf")
+flipped = true
+
+[node name="Animal3" parent="Animals" unique_id=1791752054 instance=ExtResource("16_teyq8")]
+position = Vector2(1184, 762)
+animated_frames = ExtResource("17_dnhaf")
+
+[node name="Animal4" parent="Animals" unique_id=900346832 instance=ExtResource("16_teyq8")]
+position = Vector2(610, 654)
+animated_frames = ExtResource("17_dnhaf")
+flipped = true
+
+[node name="Animal5" parent="Animals" unique_id=462242491 instance=ExtResource("16_teyq8")]
+position = Vector2(521, 660)
+animated_frames = ExtResource("17_dnhaf")
+
+[node name="Animal6" parent="Animals" unique_id=1031260677 instance=ExtResource("16_teyq8")]
+position = Vector2(416, 868)
+animated_frames = ExtResource("17_dnhaf")
+
+[node name="Animal7" parent="Animals" unique_id=1012475295 instance=ExtResource("16_teyq8")]
+position = Vector2(1269, 519)
+animated_frames = ExtResource("18_dnhaf")
+
+[node name="Animal8" parent="Animals" unique_id=1339948488 instance=ExtResource("16_teyq8")]
+position = Vector2(1210, 519)
+animated_frames = ExtResource("18_dnhaf")

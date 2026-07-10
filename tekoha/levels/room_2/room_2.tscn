@@ -15,6 +15,9 @@
 [ext_resource type="SpriteFrames" uid="uid://cqt7aidvj8f77" path="res://assets/sprites/props/pots/vaso_02_2.tres" id="12_reu2n"]
 [ext_resource type="PackedScene" uid="uid://d2qw38t463t0o" path="res://levels/room_2/components/house.tscn" id="13_6wb8k"]
 [ext_resource type="Script" uid="uid://d1vcrcidpkigq" path="res://utils/components/path_block.gd" id="16_m550c"]
+[ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="16_qwu00"]
+[ext_resource type="SpriteFrames" uid="uid://110m3ia66xi4" path="res://assets/sprites/entities/animals/urubu.tres" id="17_3mnv1"]
+[ext_resource type="SpriteFrames" uid="uid://c747lrpptnjhi" path="res://assets/sprites/entities/animals/urubu_2.tres" id="17_qwu00"]
 
 [sub_resource type="Resource" id="Resource_m550c"]
 script = ExtResource("3_i6edo")
@@ -391,3 +394,17 @@ metadata/_custom_type_script = "uid://d1vcrcidpkigq"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathBlock2" unique_id=50993251]
 shape = SubResource("RectangleShape2D_qwu00")
 debug_color = Color(0.6392157, 0.5254902, 0, 0.7607843)
+
+[node name="Animals" type="Node2D" parent="." unique_id=1429143709]
+
+[node name="Urubu" parent="Animals" unique_id=220143913 instance=ExtResource("16_qwu00")]
+z_index = 1
+position = Vector2(2289, 110)
+frame_progress = 0.0
+animated_frames = ExtResource("17_qwu00")
+
+[node name="Urubu2" parent="Animals" unique_id=1282695895 instance=ExtResource("16_qwu00")]
+z_index = 1
+position = Vector2(697, 787)
+frame_progress = 0.0
+animated_frames = ExtResource("17_3mnv1")

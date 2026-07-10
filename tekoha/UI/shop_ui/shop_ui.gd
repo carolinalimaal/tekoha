@@ -7,7 +7,7 @@ extends Control
 
 var current_row_selected: ShopItemRow
 
-@onready var item_list: VBoxContainer = $Panel/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/ItemList
+@onready var item_list: VBoxContainer = $Panel/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/ItemList
 @onready var navigation_legend: NavigationLegend = $Panel/VBoxContainer/NavigationLegend
 
 func _ready() -> void:

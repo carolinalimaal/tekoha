@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="20_46t15"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="20_iti7q"]
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="20_keg0k"]
+[ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="24_oybd7"]
+[ext_resource type="SpriteFrames" uid="uid://cvp6vbsmeqb32" path="res://assets/sprites/entities/animals/ran.tres" id="25_1r253"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2msv"]
 size = Vector2(98, 20)
@@ -174,3 +176,17 @@ polygon = PackedVector2Array(-474, 808, -481, 826, -454, 847, -427, 847, -421, 8
 [node name="Polygon2D3" type="Polygon2D" parent="NavigationRegion2D" unique_id=595570955]
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-249, 379, -249, 436, -115, 436, -116, 379)
+
+[node name="Animals" type="Node2D" parent="." unique_id=1221256863]
+
+[node name="Animal" parent="Animals" unique_id=220143913 instance=ExtResource("24_oybd7")]
+position = Vector2(1052, 681)
+animated_frames = ExtResource("25_1r253")
+
+[node name="Animal2" parent="Animals" unique_id=1087438269 instance=ExtResource("24_oybd7")]
+position = Vector2(1166, 702)
+animated_frames = ExtResource("25_1r253")
+
+[node name="Animal3" parent="Animals" unique_id=1210291507 instance=ExtResource("24_oybd7")]
+position = Vector2(1104, 756)
+animated_frames = ExtResource("25_1r253")

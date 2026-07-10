@@ -4,19 +4,19 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lptd8"]
 atlas = ExtResource("1_lptd8")
-region = Rect2(1280, 0, 64, 64)
+region = Rect2(1024, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qf1mg"]
 atlas = ExtResource("1_lptd8")
-region = Rect2(1344, 0, 64, 64)
+region = Rect2(1088, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnd67"]
 atlas = ExtResource("1_lptd8")
-region = Rect2(1408, 0, 64, 64)
+region = Rect2(1152, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epprv"]
 atlas = ExtResource("1_lptd8")
-region = Rect2(1472, 0, 64, 64)
+region = Rect2(1216, 0, 64, 64)
 
 [resource]
 animations = [{

@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cyd5u8tfyauxa"]
 
-[ext_resource type="SpriteFrames" uid="uid://cvp6vbsmeqb32" path="res://assets/sprites/entities/animals/ran.tres" id="1_4yflo"]
+[ext_resource type="SpriteFrames" uid="uid://c747lrpptnjhi" path="res://assets/sprites/entities/animals/urubu_2.tres" id="1_4yflo"]
 [ext_resource type="Script" uid="uid://ccj8b1txuqiaf" path="res://animal.gd" id="1_kd7e4"]
 
 [node name="Animal" type="AnimatedSprite2D" unique_id=220143913]
 sprite_frames = ExtResource("1_4yflo")
+autoplay = "default"
 frame_progress = 0.34967577
 script = ExtResource("1_kd7e4")
