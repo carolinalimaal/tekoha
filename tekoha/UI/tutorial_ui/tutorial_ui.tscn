@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_li412"]
 [ext_resource type="Script" uid="uid://5qaramvgnnv4" path="res://UI/tutorial_ui/tutorial_ui.gd" id="1_paymk"]
-[ext_resource type="Texture2D" uid="uid://bt0j2ujlqm4m1" path="res://assets/UI/boxes/popup_box.png" id="2_paymk"]
 [ext_resource type="Texture2D" uid="uid://bjtlfvmeqxv8x" path="res://assets/UI/boxes/checkbox_moldura.png" id="3_cu5vs"]
+[ext_resource type="Texture2D" uid="uid://bq6pav8tavs0k" path="res://assets/UI/boxes/nine_slice_generic_box.png" id="3_paymk"]
 [ext_resource type="Texture2D" uid="uid://bym3x4j0qc6bh" path="res://assets/UI/boxes/checkbox_fogo.png" id="4_eprqr"]
 
 [node name="TutorialUI" type="CanvasLayer" unique_id=255701048]
@@ -16,25 +16,32 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -153.0
-offset_right = -153.0
+offset_left = -154.0
+offset_right = -154.0
 grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("1_li412")
 
 [node name="Background" type="NinePatchRect" parent="Control" unique_id=687606427]
-custom_minimum_size = Vector2(250, 400)
+custom_minimum_size = Vector2(250, 280)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -125.0
-offset_top = -200.0
+offset_top = -140.0
 offset_right = 125.0
-offset_bottom = 200.0
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_paymk")
+texture = ExtResource("3_paymk")
+region_rect = Rect2(68, 64, 252, 257)
+patch_margin_left = 18
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 19
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/Background" unique_id=1877955724]
 layout_mode = 1
@@ -44,12 +51,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 28
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 60
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 28
 
 [node name="TaskList" type="VBoxContainer" parent="Control/Background/MarginContainer" unique_id=1504776615]
 layout_mode = 2
+theme_override_constants/separation = 16
 alignment = 1
 
 [node name="Task1" type="HBoxContainer" parent="Control/Background/MarginContainer/TaskList" unique_id=219435352]
