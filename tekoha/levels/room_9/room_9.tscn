@@ -7,7 +7,7 @@
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="4_cpiwb"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="5_tog6q"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="6_1xkgs"]
-[ext_resource type="Texture2D" uid="uid://bfuifh5omshv6" path="res://assets/sprites/tiles/natureza/natureza.png" id="6_25ocl"]
+[ext_resource type="Texture2D" uid="uid://bf75ojekpiu3g" path="res://assets/sprites/tiles/natureza/natureza.png" id="6_25ocl"]
 [ext_resource type="TileSet" uid="uid://cwihu0lcjfmkq" path="res://assets/sprites/tiles/exteriores/casas/casas.tres" id="8_cpiwb"]
 [ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interiores/moveis/moveis.tres" id="9_ej02v"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/components/save_point/save_point.tscn" id="10_tog6q"]
@@ -93,6 +93,15 @@ vertices = PackedVector2Array(1227.8672, 227.20313, 1238.8125, 255.82031, 1053.6
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(960, 210, 939, 287, 973, 369, 1055, 369, 1245, 258, 1232, 224, 1102, 132)])
 agent_radius = 5.0
+
+[sub_resource type="Gradient" id="Gradient_asqls"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ej02v"]
+gradient = SubResource("Gradient_asqls")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.92253524, 0.48591548)
 
 [node name="Room9" type="Node2D" unique_id=1150128745]
 y_sort_enabled = true
@@ -297,3 +306,12 @@ navigation_polygon = SubResource("NavigationPolygon_cpiwb")
 
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="." unique_id=1479189142]
 navigation_polygon = SubResource("NavigationPolygon_ej02v")
+
+[node name="Lights" type="Node2D" parent="." unique_id=1182371611]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights" unique_id=772972982]
+position = Vector2(1020, 396)
+scale = Vector2(2.09375, 1.78125)
+color = Color(1, 1, 0.35686275, 1)
+energy = 0.5
+texture = SubResource("GradientTexture2D_ej02v")
