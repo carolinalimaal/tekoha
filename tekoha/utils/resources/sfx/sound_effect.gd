@@ -23,6 +23,7 @@ enum SOUND_EFFECT_TYPE {
 	BUTTON_CLICK,
 	UI_ERROR,
 	SACOLA_ATTACK,
+	TYPING,
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.

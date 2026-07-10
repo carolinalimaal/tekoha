@@ -18,6 +18,7 @@ var type_tween: Tween
 var bg_tween: Tween
 var active_text_label: RichTextLabel
 var skip_cooldown_timer: float = 0.0
+var _last_typed_character_count: int = 0
 
 const SKIP_COOLDOWN: float = 0.15
 
@@ -78,13 +79,29 @@ func _show_sentence() -> void:
 	
 	active_text_label.text = text_to_show
 	active_text_label.visible_characters = 0
-	
+	_last_typed_character_count = 0
+
 	if type_tween and type_tween.is_running():
 		type_tween.kill()
-	
+
 	type_tween = create_tween()
 	var duration = text_to_show.length() * typing_speed
-	type_tween.tween_property(active_text_label, "visible_characters", text_to_show.length(), duration)
+	type_tween.tween_method(_on_type_progress, 0, text_to_show.length(), duration)
+
+func _on_type_progress(visible_characters: int) -> void:
+	active_text_label.visible_characters = visible_characters
+
+	if visible_characters <= _last_typed_character_count:
+		return
+	_last_typed_character_count = visible_characters
+
+	var revealed_text := active_text_label.get_parsed_text()
+	if visible_characters > revealed_text.length():
+		return
+
+	var revealed_char := revealed_text[visible_characters - 1]
+	if !revealed_char.strip_edges().is_empty():
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.TYPING)
 
 func _next_sentence() -> void:
 	if !is_showing:
