@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://1fglvxuhlal0"]
 
-[ext_resource type="Script" uid="uid://bv7xgwalm2jk" path="res://entities/npcs/npc.gd" id="1_vnxnj"]
+[ext_resource type="Script" uid="uid://djb62keta3p8x" path="res://entities/npcs/iara/npc_iara.gd" id="1_vnxnj"]
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="2_twwqc"]
 [ext_resource type="Texture2D" uid="uid://bgnluxiwwhp7b" path="res://assets/sprites/entities/npcs/iara_com_cauda_idle_down.png" id="2_v8f82"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="3_bt2pk"]
 [ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="3_v8f82"]
 
-[sub_resource type="Resource" id="Resource_ha6mm"]
+[sub_resource type="Resource" id="Resource_twwqc"]
 script = ExtResource("2_twwqc")
 text_pt = "teste"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
-[sub_resource type="Resource" id="Resource_1vjwg"]
+[sub_resource type="Resource" id="Resource_bt2pk"]
 script = ExtResource("3_bt2pk")
-dialogues = Array[ExtResource("2_twwqc")]([SubResource("Resource_ha6mm")])
+dialogues = Array[ExtResource("2_twwqc")]([SubResource("Resource_twwqc")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v8f82"]
@@ -57,8 +57,8 @@ collision_layer = 1024
 collision_mask = 1937
 motion_mode = 1
 script = ExtResource("1_vnxnj")
+dialogues_list = Array[ExtResource("3_bt2pk")]([SubResource("Resource_bt2pk")])
 animated_sprite = NodePath("AnimatedSprite2D")
-npc_dialogue = SubResource("Resource_1vjwg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=567683469]
 position = Vector2(5, 10)
