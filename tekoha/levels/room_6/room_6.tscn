@@ -27,6 +27,12 @@
 [ext_resource type="PackedScene" uid="uid://cvrs8krakrljs" path="res://entities/npcs/genericos/npc_musico_tambor.tscn" id="24_48i0n"]
 [ext_resource type="PackedScene" uid="uid://cok4xqvxrrbcu" path="res://entities/npcs/genericos/npc_musico_teclado.tscn" id="25_mp623"]
 [ext_resource type="PackedScene" uid="uid://brii571v8gti8" path="res://entities/npcs/genericos/npc_musico_violao.tscn" id="26_twh3b"]
+[ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="27_twh3b"]
+[ext_resource type="SpriteFrames" uid="uid://trp5wfopf5t2" path="res://assets/sprites/entities/animals/gato_b.tres" id="28_4exbd"]
+[ext_resource type="SpriteFrames" uid="uid://duk72wc2kjsr3" path="res://assets/sprites/entities/animals/cachorro.tres" id="29_4exbd"]
+[ext_resource type="SpriteFrames" uid="uid://dd335a6yxaj04" path="res://assets/sprites/entities/animals/jacare.tres" id="30_8srqp"]
+[ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="31_urcta"]
+[ext_resource type="SpriteFrames" uid="uid://dvdb73ewtyl8n" path="res://assets/sprites/entities/animals/gato_p.tres" id="32_bq55y"]
 
 [sub_resource type="Resource" id="Resource_cecall"]
 script = ExtResource("14_cec1nt")
@@ -236,6 +242,49 @@ position = Vector2(606, 114)
 
 [node name="NpcMusicoViolao" parent="." unique_id=740244014 instance=ExtResource("26_twh3b")]
 position = Vector2(644, 194)
+
+[node name="Animals" type="Node2D" parent="." unique_id=1497907939]
+
+[node name="Animal" parent="Animals" unique_id=220143913 instance=ExtResource("27_twh3b")]
+z_index = 1
+position = Vector2(887, 464)
+animated_frames = ExtResource("28_4exbd")
+
+[node name="Animal2" parent="Animals" unique_id=1128632202 instance=ExtResource("27_twh3b")]
+z_index = 1
+position = Vector2(657, 134)
+animated_frames = ExtResource("29_4exbd")
+
+[node name="Animal3" parent="Animals" unique_id=1562035060 instance=ExtResource("27_twh3b")]
+z_index = 1
+position = Vector2(304, 88)
+animated_frames = ExtResource("30_8srqp")
+
+[node name="Animal4" parent="Animals" unique_id=1221492782 instance=ExtResource("27_twh3b")]
+z_index = 1
+position = Vector2(416, 60)
+animated_frames = ExtResource("30_8srqp")
+
+[node name="Animal5" parent="Animals" unique_id=641722407 instance=ExtResource("27_twh3b")]
+z_index = 1
+position = Vector2(790, 89)
+animated_frames = ExtResource("31_urcta")
+
+[node name="Animal6" parent="Animals" unique_id=157885318 instance=ExtResource("27_twh3b")]
+z_index = 1
+position = Vector2(861, 97)
+animated_frames = ExtResource("31_urcta")
+flipped = true
+
+[node name="Animal7" parent="Animals" unique_id=2072672223 instance=ExtResource("27_twh3b")]
+z_index = 1
+position = Vector2(681, 289)
+animated_frames = ExtResource("32_bq55y")
+
+[node name="Animal8" parent="Animals" unique_id=638254004 instance=ExtResource("27_twh3b")]
+z_index = 1
+position = Vector2(681, 289)
+animated_frames = ExtResource("32_bq55y")
 
 [connection signal="body_entered" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_entered"]
 [connection signal="body_exited" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_exited"]

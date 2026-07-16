@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://d1vcrcidpkigq" path="res://utils/components/path_block.gd" id="10_6mn3v"]
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="11_itpey"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="12_d3h20"]
+[ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="15_28wv3"]
+[ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="16_lvpqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfef4"]
 size = Vector2(10, 94)
@@ -139,3 +141,18 @@ metadata/_custom_type_script = "uid://d1vcrcidpkigq"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathBlock" unique_id=2139761038]
 shape = SubResource("RectangleShape2D_gnup6")
 debug_color = Color(0.6392157, 0.5254902, 0, 0.7607843)
+
+[node name="Animals" type="Node2D" parent="." unique_id=592229289]
+
+[node name="Animal" parent="Animals" unique_id=220143913 instance=ExtResource("15_28wv3")]
+position = Vector2(837, 632)
+animated_frames = ExtResource("16_lvpqs")
+
+[node name="Animal2" parent="Animals" unique_id=51309225 instance=ExtResource("15_28wv3")]
+position = Vector2(883, 569)
+animated_frames = ExtResource("16_lvpqs")
+flipped = true
+
+[node name="Animal3" parent="Animals" unique_id=589934003 instance=ExtResource("15_28wv3")]
+position = Vector2(485, 536)
+animated_frames = ExtResource("16_lvpqs")

@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dvdb73ewtyl8n"]
+
+[ext_resource type="Texture2D" uid="uid://bpb56aatqerwk" path="res://assets/sprites/entities/animals/animais.png" id="1_miclr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miclr"]
+atlas = ExtResource("1_miclr")
+region = Rect2(1792, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubnab"]
+atlas = ExtResource("1_miclr")
+region = Rect2(1856, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12bln"]
+atlas = ExtResource("1_miclr")
+region = Rect2(1920, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1rok"]
+atlas = ExtResource("1_miclr")
+region = Rect2(1984, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miclr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubnab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12bln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1rok")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
