@@ -7,11 +7,7 @@
 [ext_resource type="Resource" uid="uid://ca1rig5ioptmg" path="res://data/dialogues/tutorial/attack_2.tres" id="4_iu72u"]
 [ext_resource type="Resource" uid="uid://bo5imxps1sjqp" path="res://data/dialogues/tutorial/roll.tres" id="5_h5cln"]
 [ext_resource type="Resource" uid="uid://ceb6jm67ri2aq" path="res://data/dialogues/tutorial/roll_respawn.tres" id="6_h5cln"]
-[ext_resource type="Script" uid="uid://bevot8siuxavc" path="res://utils/components/interactable_component.gd" id="7_iu72u"]
 [ext_resource type="PackedScene" uid="uid://yg4avtagj8bh" path="res://UI/tutorial_ui/tutorial_ui.tscn" id="9_315tt"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_mh1kf"]
-radius = 56.568542
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh1kf"]
 size = Vector2(20, 56)
@@ -28,21 +24,6 @@ position = Vector2(0, -53)
 [node name="PracticeDummy2" parent="." unique_id=2126296874 instance=ExtResource("2_mh1kf")]
 position = Vector2(0, 23)
 tutorial_dummy = true
-
-[node name="InteractableComponent" type="Area2D" parent="." unique_id=873083021 node_paths=PackedStringArray("collision_shape", "marker")]
-collision_layer = 0
-script = ExtResource("7_iu72u")
-interact_label = "[interact] tutorial"
-collision_shape = NodePath("CollisionShape2D")
-marker = NodePath("Marker2D")
-metadata/_custom_type_script = "uid://bevot8siuxavc"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1373593887]
-position = Vector2(0, 23)
-shape = SubResource("CircleShape2D_mh1kf")
-
-[node name="Marker2D" type="Marker2D" parent="InteractableComponent" unique_id=1073670818]
-position = Vector2(0, -14)
 
 [node name="PlayerReposition" type="Marker2D" parent="." unique_id=532163376]
 position = Vector2(88, 32)

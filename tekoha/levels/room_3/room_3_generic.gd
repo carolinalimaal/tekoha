@@ -23,4 +23,3 @@ func _spawn_dummy_decoration() -> void:
 	if tutorial_packed_scene and !tutorial_instance:
 		tutorial_instance = tutorial_packed_scene.instantiate()
 		owner_node.add_child(tutorial_instance)
-		tutorial_instance.disable_tutorial_interaction()

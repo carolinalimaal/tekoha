@@ -30,7 +30,6 @@ var current_state: TutorialState = TutorialState.NOT_INITIATED
 
 @onready var practice_dummy: StaticBody2D = $PracticeDummy
 @onready var practice_dummy_2: StaticBody2D = $PracticeDummy2
-@onready var interactable_comp: InteractableComponent = $InteractableComponent
 @onready var player_reposition: Marker2D = $PlayerReposition
 @onready var roll_area: Area2D = $RollArea
 @onready var tutorial_limit_1: StaticBody2D = $Limits/TutorialLimit
@@ -112,7 +111,6 @@ func _on_cutscene_ended() -> void:
 
 # FLUXO DO TUTORIAL
 func _start_tutorial() -> void:
-	interactable_comp.disable_interaction()
 	set_limits_layer(true)
 	_set_camera_zoom(Vector2(2, 2))
 	
@@ -124,8 +122,7 @@ func _start_tutorial() -> void:
 func _end_tutorial() -> void:
 	DialogueManager.dialogue_ended.disconnect(_on_cutscene_ended)
 	DialogueManager.dialogue_started.disconnect(_on_cutscene_started)
-	
-	GameManager.set_game_state(GameManager.GameState.TRAINING_COMPLETE)
+
 	set_limits_layer(false)
 	_set_camera_zoom(Vector2(1.5, 1.5), DELAY_CAMERA_ZOOM)
 	tutorial_ui.hide_ui()
@@ -171,6 +168,3 @@ func player_reposition_respawn() -> void:
 func _set_second_dummy_visible(is_visible: bool) -> void:
 	practice_dummy.visible = is_visible
 	practice_dummy.collision_shape.set_deferred("disabled", !is_visible)
-
-func disable_tutorial_interaction() -> void:
-	interactable_comp.disable_interaction()

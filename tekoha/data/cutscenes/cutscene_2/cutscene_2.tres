@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bhg76nybm1m3i" path="res://data/cutscenes/cutscene_2/img_2.png" id="3_q8wif"]
 [ext_resource type="Texture2D" uid="uid://ctsh2dd10nj5s" path="res://data/cutscenes/cutscene_2/img_3.jpeg" id="4_8128d"]
 [ext_resource type="Texture2D" uid="uid://lkaiv8gmpbmw" path="res://data/cutscenes/cutscene_2/img_4.jpeg" id="5_yepy2"]
+[ext_resource type="Texture2D" uid="uid://dfey2ppxjwrkp" path="res://data/cutscenes/cutscene_4/img_2.png" id="6_yepy2"]
 
 [sub_resource type="Resource" id="Resource_meiwg"]
 script = ExtResource("1_meiwg")
@@ -48,7 +49,33 @@ background_image = ExtResource("5_yepy2")
 text_pt = "É você mesmo!! Claro que sabe, você é o Curupira! Você deveria estar me ajudando a proteger os animais!"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
+[sub_resource type="Resource" id="Resource_3mcit"]
+script = ExtResource("1_meiwg")
+background_image = ExtResource("6_yepy2")
+text_pt = "vai entrar coisa aqui ainda, provavelmente imagens só"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_wewem"]
+script = ExtResource("1_meiwg")
+actor_name = "Iara"
+background_image = ExtResource("6_yepy2")
+text_pt = "Não chore, criança."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_lf4nq"]
+script = ExtResource("1_meiwg")
+actor_name = "Iara"
+background_image = ExtResource("6_yepy2")
+text_pt = "Não é culpa sua que a água está desse jeito, exaltei-me quando falei com você, desculpe."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_iti7q"]
+script = ExtResource("1_meiwg")
+background_image = ExtResource("6_yepy2")
+text_pt = "Naquele momento apenas o som das águas e do choro do Curupira permaneceram."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
 [resource]
 script = ExtResource("2_w1dvp")
-dialogues = Array[ExtResource("1_meiwg")]([SubResource("Resource_meiwg"), SubResource("Resource_8128d"), SubResource("Resource_81xkw"), SubResource("Resource_q8wif"), SubResource("Resource_yepy2"), SubResource("Resource_erium")])
+dialogues = Array[ExtResource("1_meiwg")]([SubResource("Resource_meiwg"), SubResource("Resource_8128d"), SubResource("Resource_81xkw"), SubResource("Resource_q8wif"), SubResource("Resource_yepy2"), SubResource("Resource_erium"), SubResource("Resource_3mcit"), SubResource("Resource_wewem"), SubResource("Resource_lf4nq"), SubResource("Resource_iti7q")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
