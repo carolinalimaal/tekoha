@@ -26,6 +26,8 @@ func change_room_state() -> void:
 			current_room_state.transition_to("3_2")
 		GameManager.GameState.FIRST_MEETING_CECILIA:
 			current_room_state.transition_to("3_3")
+		GameManager.GameState.PRE_BOSSFIGHT:
+			current_room_state.transition_to("3_4")
 		_:
 			# Para os estados que não tem eventos importantes aqui
 			state_machine.change_state("3_Generic")

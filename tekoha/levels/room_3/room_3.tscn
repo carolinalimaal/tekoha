@@ -26,6 +26,8 @@
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="20_keg0k"]
 [ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="24_oybd7"]
 [ext_resource type="SpriteFrames" uid="uid://cvp6vbsmeqb32" path="res://assets/sprites/entities/animals/ran.tres" id="25_1r253"]
+[ext_resource type="PackedScene" uid="uid://1fglvxuhlal0" path="res://entities/npcs/iara/iara.tscn" id="26_iara"]
+[ext_resource type="Script" uid="uid://cvnimc11cvxig" path="res://levels/room_3/room_3_4.gd" id="27_iara"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2msv"]
 size = Vector2(98, 20)
@@ -199,6 +201,8 @@ enemy_spawn_position = NodePath("../../EnemySpawnPoint")
 path_block_message = SubResource("Resource_2lo2a")
 
 [node name="3_4" type="Node" parent="StateMachine" unique_id=1620559264]
+script = ExtResource("27_iara")
+npc_iara_scene = ExtResource("26_iara")
 
 [node name="3_Generic" type="Node" parent="StateMachine" unique_id=1734961440]
 script = ExtResource("15_i8o3k")
