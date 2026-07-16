@@ -59,7 +59,7 @@ metadata/_custom_type_script = "uid://x6215xlpsejj"
 [sub_resource type="Resource" id="Resource_5oew8"]
 script = ExtResource("20_keg0k")
 background_image = ExtResource("17_24hp8")
-text_pt = " A responsabilidade e o dever fragilizavam a criança, que desejava apenas uma vida tranquila às margens do Rio Guamá."
+text_pt = "A responsabilidade e o dever fragilizavam a criança, que desejava apenas uma vida tranquila às margens do Rio Guamá."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_24hp8"]
