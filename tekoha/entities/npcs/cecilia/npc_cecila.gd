@@ -10,6 +10,9 @@ func interact() -> void:
 
 func _on_timeline_ended() -> void:
 	super()
+	if current_dialogue_index == -1:
+		return
+
 	match GameManager.current_save.game_state:
 		GameManager.GameState.TRAINING_COMPLETE:
 			GameManager.set_game_state(GameManager.GameState.FIRST_MEETING_CECILIA)
@@ -17,3 +20,5 @@ func _on_timeline_ended() -> void:
 			GameManager.set_game_state(GameManager.GameState.SECOND_MEETING_CECILIA)
 		GameManager.GameState.IN_KITCHEN:
 			GameManager.set_game_state(GameManager.GameState.AFTER_CECILIA_GIFT)
+
+	current_dialogue_index = -1

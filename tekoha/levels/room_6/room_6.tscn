@@ -15,6 +15,7 @@
 [ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="12_qk5qf"]
 [ext_resource type="PackedScene" uid="uid://c4rfo8vpkou8r" path="res://entities/npcs/cecilia/npc_cecila.tscn" id="13_yxphn"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="14_bs7kn"]
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="14_cec1nt"]
 [ext_resource type="Resource" uid="uid://cg3qwx52dkf45" path="res://data/dialogues/npcs/cecilia/room_6/npc_cecilia_1.tres" id="15_d3h8c"]
 [ext_resource type="Resource" uid="uid://sygomlxeja2a" path="res://data/dialogues/npcs/cecilia/room_6/npc_cecilia_2.tres" id="16_bs7kn"]
 [ext_resource type="Resource" uid="uid://bcybr431sm52y" path="res://data/dialogues/npcs/cecilia/room_6/npc_cecilia_3.tres" id="18_1n6nv"]
@@ -26,6 +27,17 @@
 [ext_resource type="PackedScene" uid="uid://cvrs8krakrljs" path="res://entities/npcs/genericos/npc_musico_tambor.tscn" id="24_48i0n"]
 [ext_resource type="PackedScene" uid="uid://cok4xqvxrrbcu" path="res://entities/npcs/genericos/npc_musico_teclado.tscn" id="25_mp623"]
 [ext_resource type="PackedScene" uid="uid://brii571v8gti8" path="res://entities/npcs/genericos/npc_musico_violao.tscn" id="26_twh3b"]
+
+[sub_resource type="Resource" id="Resource_cecall"]
+script = ExtResource("14_cec1nt")
+actor_name = "Cecília"
+text_pt = "Curupira! Por favor, me ajude!"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="DialogueSettings_cecall"]
+script = ExtResource("14_bs7kn")
+dialogues = Array[ExtResource("14_cec1nt")]([SubResource("Resource_cecall")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j0ms1"]
 texture = ExtResource("5_fxwqa")
@@ -86,6 +98,7 @@ size = Vector2(26, 8)
 [node name="Room6" type="Node2D" unique_id=1667791600]
 y_sort_enabled = true
 script = ExtResource("1_bs7kn")
+cecilia_calling_dialogue = SubResource("DialogueSettings_cecall")
 limit_top = 50
 limit_bottom = 880
 limit_left = 285
