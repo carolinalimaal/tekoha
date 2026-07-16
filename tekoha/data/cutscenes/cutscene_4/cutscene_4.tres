@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_diml6"]
 script = ExtResource("1_diml6")
 actor_name = "Curupira"
-background_image = ExtResource("2_hukba")
+background_image = ExtResource("3_hukba")
 text_pt = "Iara! Iara! Você nem sabe!"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
