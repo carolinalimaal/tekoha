@@ -1,5 +1,10 @@
 extends Level
 
+const CECILIA_CAMERA_ZOOM := 2.5
+const CECILIA_CAMERA_DURATION := 1.0
+
+@export var cecilia_calling_dialogue: DialogueSettings
+
 @onready var roll_mecanic: Node2D = $RollMecanic
 @onready var npc_cecilia: NPC = $NpcCecila
 @onready var first_cecilia_spawn: Marker2D = $FirstCeciliaSpawnPoint
@@ -8,14 +13,17 @@ extends Level
 
 func _ready() -> void:
 	AudioManager.stop_background_sound()
-	
+
 	if GameManager.current_save.game_state < GameManager.GameState.AFTER_FIRST_ENEMY:
 		roll_mecanic.disable()
 	else:
 		roll_mecanic.enable()
 		room7_door.monitoring = false
+	
 	_update_cecilia()
 	GlobalSignals.game_state_changed.connect(_on_game_state_changed)
+	if GameManager.current_save.game_state == GameManager.GameState.TRAINING_COMPLETE:
+		_play_cecilia_calling_intro()
 
 func _exit_tree() -> void:
 	GlobalSignals.game_state_changed.disconnect(_on_game_state_changed)
@@ -47,3 +55,27 @@ func _go_to_room7() -> void:
 		GlobalSignals.animation_midpoint_reached.connect(room7_door.on_animation_midpoint_reached, CONNECT_ONE_SHOT)
 	get_tree().paused = true
 	GlobalSignals.emit_signal("door_entered")
+
+func _play_cecilia_calling_intro() -> void:
+	var camera := GlobalRefs.player_camera
+	var player := GlobalRefs.player
+
+	player.can_move = false
+	camera.can_follow_player = false
+
+	var tween_in := create_tween()
+	tween_in.parallel().tween_property(camera, "position", npc_cecilia.global_position, CECILIA_CAMERA_DURATION)
+	tween_in.parallel().tween_property(camera, "zoom", Vector2(CECILIA_CAMERA_ZOOM, CECILIA_CAMERA_ZOOM), CECILIA_CAMERA_DURATION)
+	await tween_in.finished
+
+	if cecilia_calling_dialogue:
+		DialogueManager.start_speech(cecilia_calling_dialogue)
+		await DialogueManager.dialogue_ended
+
+	var tween_out := create_tween()
+	tween_out.parallel().tween_property(camera, "position", player.global_position, CECILIA_CAMERA_DURATION)
+	tween_out.parallel().tween_property(camera, "zoom", Vector2(camera_zoom, camera_zoom), CECILIA_CAMERA_DURATION)
+	await tween_out.finished
+
+	camera.can_follow_player = true
+	player.can_move = true

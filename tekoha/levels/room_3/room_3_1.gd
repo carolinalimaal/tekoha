@@ -36,6 +36,7 @@ func _physics_update(_delta: float) -> void:
 
 func _on_player_interacted_with_fishing_rod() -> void:
 	fishing_rod.disable_fishing_rod_interaction()
+	owner_node.show_transition_overlay()
 	DialogueManager.start_speech(cutscene)
 
 func _on_cutscene_started() -> void:

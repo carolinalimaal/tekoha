@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://crb1fwmbpt7r7" path="res://levels/room_3/room_3_generic.gd" id="15_i8o3k"]
 [ext_resource type="Resource" uid="uid://u4xbem2sufih" path="res://data/cutscenes/cutscene_3/cutscene_3.tres" id="16_2jupl"]
 [ext_resource type="Script" uid="uid://d1vcrcidpkigq" path="res://utils/components/path_block.gd" id="17_2jupl"]
+[ext_resource type="Texture2D" uid="uid://dfey2ppxjwrkp" path="res://data/cutscenes/cutscene_4/img_2.png" id="17_24hp8"]
 [ext_resource type="Resource" uid="uid://dnypnxch0rxfl" path="res://data/cutscenes/cutscene_4/cutscene_4.tres" id="17_x4cld"]
 [ext_resource type="PackedScene" uid="uid://bx27oixgqklgm" path="res://utils/props/tutorial/tutorial.tscn" id="18_wbedm"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/components/save_point/save_point.tscn" id="19_wbedm"]
@@ -38,13 +39,69 @@ script = ExtResource("15_4iyy6")
 dialogues = Array[ExtResource("20_keg0k")]([SubResource("Resource_46t15")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
+[sub_resource type="Resource" id="Resource_train0"]
+script = ExtResource("20_keg0k")
+background_image = ExtResource("17_24hp8")
+text_pt = "Curupira passou alguns dias sob os ensinamentos da Iara para aprender técnicas básicas de combate com sua lança."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="DialogueSettings_train0"]
+script = ExtResource("15_4iyy6")
+dialogues = Array[ExtResource("20_keg0k")]([SubResource("Resource_train0")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
+[sub_resource type="Resource" id="Resource_1r253"]
+script = ExtResource("20_keg0k")
+background_image = ExtResource("17_24hp8")
+text_pt = "Ao terminar todo o treinamento, Curupira pensou em desistir. O peso da lança em suas mãos era um fardo imensurável para sua mente."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_5oew8"]
+script = ExtResource("20_keg0k")
+background_image = ExtResource("17_24hp8")
+text_pt = "A responsabilidade e o dever fragilizavam a criança, que desejava apenas uma vida tranquila às margens do Rio Guamá."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_24hp8"]
+script = ExtResource("20_keg0k")
+actor_name = "Curupira"
+background_image = ExtResource("17_24hp8")
+text_pt = "Não sei se sou capaz de usar isso, Iara."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_q34pk"]
+script = ExtResource("20_keg0k")
+actor_name = "Iara"
+background_image = ExtResource("17_24hp8")
+text_pt = "Não tema, criança. A coragem que você carregará sobre os ombros não será usada para ferir, mas para amparar os indefesos."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_k68xe"]
+script = ExtResource("20_keg0k")
+actor_name = "Iara"
+background_image = ExtResource("17_24hp8")
+text_pt = "Proteja aqueles que não conseguem fazê-lo, Curupira."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_khhq5"]
+script = ExtResource("20_keg0k")
+actor_name = "Iara"
+background_image = ExtResource("17_24hp8")
+text_pt = "Vá visitar as casas e os restaurantes à beira-rio, é bom conhecer as pessoas da ilha."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_oybd7"]
+script = ExtResource("15_4iyy6")
+dialogues = Array[ExtResource("20_keg0k")]([SubResource("Resource_1r253"), SubResource("Resource_5oew8"), SubResource("Resource_24hp8"), SubResource("Resource_q34pk"), SubResource("Resource_k68xe"), SubResource("Resource_khhq5")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
+
 [sub_resource type="Resource" id="Resource_iti7q"]
 script = ExtResource("20_keg0k")
 actor_name = "Curupira"
 text_pt = "Não posso fugir e deixar a Iara aqui!"
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
-[sub_resource type="Resource" id="Resource_24hp8"]
+[sub_resource type="Resource" id="Resource_2lo2a"]
 script = ExtResource("15_4iyy6")
 dialogues = Array[ExtResource("20_keg0k")]([SubResource("Resource_iti7q")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
@@ -127,6 +184,8 @@ cutscene = ExtResource("12_q0n6u")
 script = ExtResource("13_q0n6u")
 tutorial_packed_scene = ExtResource("18_wbedm")
 path_block_message = SubResource("Resource_keg0k")
+training_start_dialogue = SubResource("DialogueSettings_train0")
+training_finish_dialogue = SubResource("Resource_oybd7")
 
 [node name="3_3" type="Node" parent="StateMachine" unique_id=1307695745 node_paths=PackedStringArray("enemy_spawn_position")]
 script = ExtResource("14_4iyy6")
@@ -135,7 +194,7 @@ cutscene_2 = ExtResource("17_x4cld")
 tutorial_packed_scene = ExtResource("18_wbedm")
 enemy_scene = ExtResource("20_iti7q")
 enemy_spawn_position = NodePath("../../EnemySpawnPoint")
-path_block_message = SubResource("Resource_24hp8")
+path_block_message = SubResource("Resource_2lo2a")
 
 [node name="3_4" type="Node" parent="StateMachine" unique_id=1620559264]
 

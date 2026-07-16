@@ -152,10 +152,10 @@ func _end_speech() -> void:
 func _set_background_image(current: DialogueLine, is_cutscene: bool) -> void:
 	if is_cutscene:
 		dialogue_box.hide()
-		cutscene_box.show()
+		cutscene_box.visible = !current.hide_text_box
 		solid_background.show()
 		navigation_legend.show()
-		
+
 		active_text_label = speech_text_cutscene
 
 		if cutscene_background.texture != current.background_image:
@@ -171,11 +171,11 @@ func _set_background_image(current: DialogueLine, is_cutscene: bool) -> void:
 			bg_tween.set_trans(Tween.TRANS_SINE)
 			bg_tween.tween_property(cutscene_background, "modulate:a", 1.0, 1.0)
 	else:
-		dialogue_box.show()
+		dialogue_box.visible = !current.hide_text_box
 		cutscene_box.hide()
 		solid_background.hide()
 		navigation_legend.show()
-		
+
 		active_text_label = speech_text_dialogue
 
 func _set_actor_name(current: DialogueLine) -> String:

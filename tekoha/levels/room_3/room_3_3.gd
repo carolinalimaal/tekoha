@@ -38,7 +38,6 @@ func _enter() -> void:
 	if tutorial_packed_scene:
 		tutorial_instance = tutorial_packed_scene.instantiate()
 		owner_node.add_child(tutorial_instance)
-		tutorial_instance.disable_tutorial_interaction()
 
 func _exit() -> void:
 	if DialogueManager.dialogue_started.is_connected(_on_dialogue_started):

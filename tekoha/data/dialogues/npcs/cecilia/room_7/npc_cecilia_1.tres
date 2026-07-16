@@ -1,20 +1,53 @@
 [gd_resource type="Resource" script_class="DialogueSettings" format=3 uid="uid://dymc3x18o06vy"]
 
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="1_ds2ny"]
+[ext_resource type="Texture2D" uid="uid://dfey2ppxjwrkp" path="res://data/cutscenes/cutscene_4/img_2.png" id="2_dpbks"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="2_duwsh"]
 
 [sub_resource type="Resource" id="Resource_8n5gw"]
 script = ExtResource("1_ds2ny")
-actor_name = "Cecilia"
-text_pt = "Aqui tá a delícia que te prometi!"
+background_image = ExtResource("2_dpbks")
+text_pt = "Após finalizarem os pratos, Curupira é presenteado com um delicioso tambaqui assado, que em breves instantes será devorado com farinha. Cecilia foi servir os clientes, ansiosos com as maravilhosas receitas que a cozinheira preparara."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_86gnr"]
 script = ExtResource("1_ds2ny")
+background_image = ExtResource("2_dpbks")
 text_pt = "Curupira recebeu um tambaqui assado de Cecilia. Aperte [inventory] para abrir o inventário."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_ds2ny"]
+script = ExtResource("1_ds2ny")
+background_image = ExtResource("2_dpbks")
+text_pt = "Curupira aproveitou o momento para descansar, pensou ele que podia se distrair dos problemas no rio, mas o medo o acompanhou o dia inteiro. De bucho cheio, sentado no canto da cozinha, quase como se estivesse escondido, Curupira chorou um pouco. "
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_fxpfc"]
+script = ExtResource("1_ds2ny")
+background_image = ExtResource("2_dpbks")
+text_pt = "Ele percebeu que a saúde dos rios era, mesmo que indiretamente, motivo de felicidade para as pessoas."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_6eeov"]
+script = ExtResource("1_ds2ny")
+background_image = ExtResource("2_dpbks")
+text_pt = "As altas conversas do outro lado do balcão, as lindas músicas que eram tocadas para celebrar este simples momento de refeição ao lado de pessoas queridas fizeram o pequeno Curupira se lembrar da relação cativante que desenvolvera com Iara e Cecilia."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_duwsh"]
+script = ExtResource("1_ds2ny")
+actor_name = "Curupira"
+background_image = ExtResource("2_dpbks")
+text_pt = "Se os rios ficarem poluídos, Iara vai se machucar com as águas sujas! E a tia Cecilia pode perder seu restaurante..."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_dpbks"]
+script = ExtResource("1_ds2ny")
+background_image = ExtResource("2_dpbks")
+text_pt = "Curupira então segurou firme sua bolsa e preparou-se para sair de fininho."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [resource]
 script = ExtResource("2_duwsh")
-dialogues = Array[ExtResource("1_ds2ny")]([SubResource("Resource_8n5gw"), SubResource("Resource_86gnr")])
+dialogues = Array[ExtResource("1_ds2ny")]([SubResource("Resource_8n5gw"), SubResource("Resource_86gnr"), SubResource("Resource_ds2ny"), SubResource("Resource_fxpfc"), SubResource("Resource_6eeov"), SubResource("Resource_duwsh"), SubResource("Resource_dpbks")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
