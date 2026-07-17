@@ -10,6 +10,6 @@ func _ready() -> void:
 
 func collect() -> void:
 	if GameManager.current_save.known_items.has("coin"):
-		AudioManager.create_2d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.PICKUP_ITEM)
+		AudioManager.create_2d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.COIN)
 	GlobalSignals.coin_collected.emit(value)
 	queue_free()

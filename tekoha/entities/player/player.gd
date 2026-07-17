@@ -154,6 +154,13 @@ func play_sfx_attack_1() -> void:
 func play_sfx_attack_2() -> void:
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.CURUPIRA_ATTACK_2)
 
+func play_sfx_roll() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.CURUPIRA_ROLL)
+
+func play_sfx_take_damage() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.CURUPIRA_STUN)
+
+
 func turn_light_on_or_off(light: bool):
 	if light:
 		$PointLight2D.show()

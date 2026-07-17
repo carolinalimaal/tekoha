@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://cio3s4djkkxle"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_qrlhb"]
+[ext_resource type="AudioStream" uid="uid://bgdfg3dd41rty" path="res://assets/sound/sfx/enviroment/sfx_chest_close.wav" id="2_kmb3u"]
+
+[resource]
+script = ExtResource("1_qrlhb")
+type = 26
+sound_effect = ExtResource("2_kmb3u")
+volume = -35.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"

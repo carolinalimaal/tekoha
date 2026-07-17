@@ -26,6 +26,16 @@ enum SOUND_EFFECT_TYPE {
 	TYPING,
 	LOW_HEALTH,
 	NEW_ITEM_FOUND,
+	CANUDINHO_ATTACK,
+	ENEMY_ALERT,
+	ENEMY_DIE,
+	ENEMY_TAKE_DAMAGE,
+	CHEST_OPEN,
+	CHEST_CLOSE,
+	COIN,
+	MUIRAQUITA,
+	ROOT_SHRINK,
+	GAME_OVER,
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.

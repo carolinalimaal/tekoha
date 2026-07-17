@@ -21,6 +21,7 @@ func _on_player_died() -> void:
 	get_tree().paused = true
 	self.show()
 	animation_player.play("default")
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.GAME_OVER)
 	continue_button.grab_focus()
 
 func _on_continue_pressed() -> void:

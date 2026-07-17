@@ -18,8 +18,20 @@
 [ext_resource type="Resource" uid="uid://c3uqsauwrglfn" path="res://data/sfx/sfx_typing.tres" id="16_typing"]
 [ext_resource type="Resource" uid="uid://cr61xnhtgy8kh" path="res://data/sfx/sfx_low_health.tres" id="17_low_health"]
 [ext_resource type="Resource" uid="uid://dc2xiy8l05b5c" path="res://data/sfx/sfx_pickup_item_first_time.tres" id="18_new_item"]
+[ext_resource type="Resource" uid="uid://du6isllvwhctw" path="res://data/sfx/sfx_canudinho_attack.tres" id="19_canudinho_attack"]
+[ext_resource type="Resource" uid="uid://voy0o8pj5j72p" path="res://data/sfx/sfx_curupira_roll.tres" id="20_curupira_roll"]
+[ext_resource type="Resource" uid="uid://udxfnl9hq3qfs" path="res://data/sfx/sfx_curupira_take_damage.tres" id="21_curupira_take_damage"]
+[ext_resource type="Resource" uid="uid://rjnv1if7hva6z" path="res://data/sfx/sfx_enemy_alert.tres" id="22_enemy_alert"]
+[ext_resource type="Resource" uid="uid://5rwa33a59ixtd" path="res://data/sfx/sfx_inimigo_die.tres" id="23_inimigo_die"]
+[ext_resource type="Resource" uid="uid://2l0ylyh18j41d" path="res://data/sfx/sfx_inimigos_take_damage.tres" id="24_inimigos_take_damage"]
+[ext_resource type="Resource" uid="uid://2bs34bv1lboka" path="res://data/sfx/sfx_chest_open.tres" id="25_chest_open"]
+[ext_resource type="Resource" uid="uid://n3wpla4a86kuo" path="res://data/sfx/sfx_chest_close.tres" id="26_chest_close"]
+[ext_resource type="Resource" uid="uid://pylbw0mb9kw84" path="res://data/sfx/sfx_coin.tres" id="27_coin"]
+[ext_resource type="Resource" uid="uid://asuz9he12xfud" path="res://data/sfx/sfx_muiraquita.tres" id="28_muiraquita"]
+[ext_resource type="Resource" uid="uid://vy5onxpv0rizb" path="res://data/sfx/sfx_raizes_encolhendo.tres" id="29_root_shrink"]
+[ext_resource type="Resource" uid="uid://w3r4148vd3rm5" path="res://data/sfx/sfx_game_over.tres" id="30_game_over"]
 
 [node name="AudioManager" type="Node2D" unique_id=1953541211]
 process_mode = 3
 script = ExtResource("1_gqfen")
-sound_effects = Array[ExtResource("2_jkr7a")]([ExtResource("3_2bgjf"), ExtResource("4_1d2wt"), ExtResource("5_ulrmu"), ExtResource("6_fdt5a"), ExtResource("7_fdt5a"), ExtResource("8_lgug7"), ExtResource("9_qmnf0"), ExtResource("10_2d6s7"), ExtResource("11_1m5h4"), ExtResource("12_684e1"), ExtResource("13_bk4qp"), ExtResource("14_w7mn3"), ExtResource("15_1m5h4"), ExtResource("16_typing"), ExtResource("17_low_health"), ExtResource("18_new_item")])
+sound_effects = Array[ExtResource("2_jkr7a")]([ExtResource("3_2bgjf"), ExtResource("4_1d2wt"), ExtResource("5_ulrmu"), ExtResource("6_fdt5a"), ExtResource("7_fdt5a"), ExtResource("8_lgug7"), ExtResource("9_qmnf0"), ExtResource("10_2d6s7"), ExtResource("11_1m5h4"), ExtResource("12_684e1"), ExtResource("13_bk4qp"), ExtResource("14_w7mn3"), ExtResource("15_1m5h4"), ExtResource("16_typing"), ExtResource("17_low_health"), ExtResource("18_new_item"), ExtResource("19_canudinho_attack"), ExtResource("20_curupira_roll"), ExtResource("21_curupira_take_damage"), ExtResource("22_enemy_alert"), ExtResource("23_inimigo_die"), ExtResource("24_inimigos_take_damage"), ExtResource("25_chest_open"), ExtResource("26_chest_close"), ExtResource("27_coin"), ExtResource("28_muiraquita"), ExtResource("29_root_shrink"), ExtResource("30_game_over")])

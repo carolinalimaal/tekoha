@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://j5vhk2ba40p0"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_qrlhb"]
+[ext_resource type="AudioStream" uid="uid://ct2ccgd0t1fpf" path="res://assets/sound/sfx/entities/sfx_inimigos_take_damage.wav" id="2_kmb3u"]
+
+[resource]
+script = ExtResource("1_qrlhb")
+type = 24
+sound_effect = ExtResource("2_kmb3u")
+volume = -25.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://b21foaq672r5x"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_qrlhb"]
+[ext_resource type="AudioStream" uid="uid://3ht36b8qqmml" path="res://assets/sound/sfx/entities/sfx_enemy_alert.wav" id="2_kmb3u"]
+
+[resource]
+script = ExtResource("1_qrlhb")
+type = 22
+sound_effect = ExtResource("2_kmb3u")
+volume = -35.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"
