@@ -37,6 +37,7 @@ func open_chest():
 	UIManager.is_interact_ui_open = true
 	
 	sprite.play("bau_animation")
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CHEST_OPEN)
 	interactable_component.disable_interaction()
 	await sprite.animation_finished
 	
@@ -68,6 +69,7 @@ func close_chest():
 	enemy_file = ""
 	
 	sprite.play_backwards("bau_animation")
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CHEST_CLOSE)
 	interactable_component.enable_interaction()
 	
 	if GlobalRefs.confirmation_popup.confirmed.is_connected(_on_chest_confirmed):

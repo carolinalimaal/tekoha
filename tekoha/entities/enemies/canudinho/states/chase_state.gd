@@ -12,6 +12,7 @@ func _ready() -> void:
 	add_child(_nav_timer)
 
 func _enter():
+	AudioManager.create_2d_audio_at_location(owner_node.global_position, SoundEffect.SOUND_EFFECT_TYPE.ENEMY_ALERT)
 	_nav_timer.start()
 	pass
 

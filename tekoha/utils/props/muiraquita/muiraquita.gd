@@ -17,7 +17,7 @@ func collect() -> void:
 	if !GameManager.current_save.collected_muiraquitas.has(id):
 		# TODO: substituir por sfx específico do muiraquitã quando disponível
 		if GameManager.current_save.known_items.has("muiraquita"):
-			AudioManager.create_2d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.PICKUP_ITEM)
+			AudioManager.create_2d_audio_at_location(position, SoundEffect.SOUND_EFFECT_TYPE.MUIRAQUITA)
 		GlobalSignals.new_muiraquita_found.emit(id)
 		GlobalSignals.hud_info.emit("Muiraquitã coletado!")
 		modulate = Color(1,1,1,0.3)
