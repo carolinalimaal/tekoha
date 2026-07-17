@@ -4,13 +4,30 @@ extends AnimatedSprite2D
 @export var flyer: bool = false
 @export var flipped: bool = false
 
+var speed: int
+var direction: int
+
+var room_limit_left: int
+var room_limit_right: int
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if flipped:
 		flip_h = true
 	sprite_frames = animated_frames
+	if flyer:
+		speed = 350
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+func _process(delta: float) -> void:
+	if flyer:
+		global_position.x += direction * speed * delta
+		
+		if flipped and global_position.x < room_limit_left:
+			print("Arara disse tchau")
+			queue_free()
+			
+		elif !flipped and global_position.x > room_limit_right:
+			print("Arara disse tchau")
+			queue_free()

@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="8_vjkxj"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="11_ar5hv"]
 [ext_resource type="PackedScene" uid="uid://cejbdhwi8cbep" path="res://entities/enemies/canudinho/canudinho.tscn" id="12_mptwh"]
+[ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="17_6acsn"]
+[ext_resource type="SpriteFrames" uid="uid://110m3ia66xi4" path="res://assets/sprites/entities/animals/urubu.tres" id="18_mwtg3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_khgse"]
 texture = ExtResource("4_8nycx")
@@ -442,3 +444,25 @@ navigation_polygon = SubResource("NavigationPolygon_ar5hv")
 [node name="Polygon2D" type="Polygon2D" parent="NavigationRegion2D2" unique_id=434912346]
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(3130, 896, 3210, 896, 3210, 961, 3127, 961)
+
+[node name="Animals" type="Node2D" parent="." unique_id=477374947]
+
+[node name="Animal" parent="Animals" unique_id=220143913 instance=ExtResource("17_6acsn")]
+z_index = 1
+position = Vector2(708, 1199)
+animated_frames = ExtResource("18_mwtg3")
+
+[node name="Animal2" parent="Animals" unique_id=994604132 instance=ExtResource("17_6acsn")]
+z_index = 1
+position = Vector2(627, 1204)
+animated_frames = ExtResource("18_mwtg3")
+
+[node name="Animal3" parent="Animals" unique_id=601029283 instance=ExtResource("17_6acsn")]
+z_index = 1
+position = Vector2(3046, 528)
+animated_frames = ExtResource("18_mwtg3")
+
+[node name="Animal4" parent="Animals" unique_id=1105086622 instance=ExtResource("17_6acsn")]
+z_index = 1
+position = Vector2(2955, 532)
+animated_frames = ExtResource("18_mwtg3")
