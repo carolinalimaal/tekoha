@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://su1ahe12xfud"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_qrlhb"]
+[ext_resource type="AudioStream" uid="uid://bghpi4a3xp2te" path="res://assets/sound/sfx/enviroment/sfx_muiraquita.wav" id="2_kmb3u"]
+
+[resource]
+script = ExtResource("1_qrlhb")
+type = 28
+sound_effect = ExtResource("2_kmb3u")
+volume = -16.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"
