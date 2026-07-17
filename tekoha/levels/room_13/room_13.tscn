@@ -19,6 +19,13 @@
 [ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="17_u6lkp"]
 [ext_resource type="SpriteFrames" uid="uid://c4iwvjw63l00o" path="res://assets/sprites/props/pots/vaso_02_1.tres" id="18_abhh2"]
 [ext_resource type="SpriteFrames" uid="uid://dl2so67ufwqwm" path="res://assets/sprites/props/pots/vaso_02_3.tres" id="19_sqemn"]
+[ext_resource type="Script" uid="uid://c1mkr2gxjoonq" path="res://levels/room_2/animals.gd" id="20_sqemn"]
+[ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="21_puric"]
+[ext_resource type="SpriteFrames" uid="uid://dvdb73ewtyl8n" path="res://assets/sprites/entities/animals/gato_p.tres" id="22_75gdw"]
+[ext_resource type="SpriteFrames" uid="uid://cuimqx5uawdg7" path="res://assets/sprites/entities/animals/arara_azul.tres" id="22_416of"]
+[ext_resource type="SpriteFrames" uid="uid://dsdybuvg6ds8b" path="res://assets/sprites/entities/animals/arara_vermelha.tres" id="23_pk410"]
+[ext_resource type="SpriteFrames" uid="uid://dd335a6yxaj04" path="res://assets/sprites/entities/animals/jacare.tres" id="25_416of"]
+[ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="26_pk410"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk2ql"]
 size = Vector2(16, 200)
@@ -277,3 +284,42 @@ scale = Vector2(2.09375, 1.78125)
 color = Color(1, 1, 0.35686275, 1)
 energy = 0.5
 texture = SubResource("GradientTexture2D_3xd07")
+
+[node name="Animals" type="Node2D" parent="." unique_id=92715686]
+script = ExtResource("20_sqemn")
+arara_scene = ExtResource("21_puric")
+blue_arara_sprite = ExtResource("22_416of")
+red_arara_sprite = ExtResource("23_pk410")
+metadata/_custom_type_script = "uid://c1mkr2gxjoonq"
+
+[node name="Animal" parent="Animals" unique_id=220143913 instance=ExtResource("21_puric")]
+position = Vector2(1457, 323)
+animated_frames = ExtResource("22_75gdw")
+
+[node name="Animal2" parent="Animals" unique_id=1436862693 instance=ExtResource("21_puric")]
+position = Vector2(1808, 599)
+animated_frames = ExtResource("25_416of")
+
+[node name="Animal3" parent="Animals" unique_id=1139148117 instance=ExtResource("21_puric")]
+position = Vector2(1924, 562)
+animated_frames = ExtResource("25_416of")
+
+[node name="Animal4" parent="Animals" unique_id=1022331348 instance=ExtResource("21_puric")]
+position = Vector2(2060, 500)
+animated_frames = ExtResource("25_416of")
+
+[node name="Animal5" parent="Animals" unique_id=1701559696 instance=ExtResource("21_puric")]
+position = Vector2(1942, 347)
+animated_frames = ExtResource("25_416of")
+
+[node name="Animal6" parent="Animals" unique_id=587100452 instance=ExtResource("21_puric")]
+position = Vector2(1867, 318)
+animated_frames = ExtResource("25_416of")
+
+[node name="Animal7" parent="Animals" unique_id=1842097708 instance=ExtResource("21_puric")]
+position = Vector2(413, 1008)
+animated_frames = ExtResource("26_pk410")
+
+[node name="Animal8" parent="Animals" unique_id=1954252436 instance=ExtResource("21_puric")]
+position = Vector2(481, 1050)
+animated_frames = ExtResource("26_pk410")

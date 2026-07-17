@@ -20,6 +20,7 @@
 [ext_resource type="SpriteFrames" uid="uid://b3sngi85dqry7" path="res://assets/sprites/props/pots/vaso_01_1.tres" id="19_cpiwb"]
 [ext_resource type="Shape2D" uid="uid://dx0kpwb2sitv" path="res://utils/components/save_point/rede_toquinho_collision_shape.tres" id="19_ej02v"]
 [ext_resource type="SpriteFrames" uid="uid://dl2so67ufwqwm" path="res://assets/sprites/props/pots/vaso_02_3.tres" id="20_ej02v"]
+[ext_resource type="Script" uid="uid://c1mkr2gxjoonq" path="res://levels/room_2/animals.gd" id="21_glt6u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mf6jk"]
 texture = ExtResource("6_25ocl")
@@ -315,3 +316,7 @@ scale = Vector2(2.09375, 1.78125)
 color = Color(1, 1, 0.35686275, 1)
 energy = 0.5
 texture = SubResource("GradientTexture2D_ej02v")
+
+[node name="Animals" type="Node2D" parent="." unique_id=1847763145]
+script = ExtResource("21_glt6u")
+metadata/_custom_type_script = "uid://c1mkr2gxjoonq"
