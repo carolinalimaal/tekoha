@@ -8,6 +8,7 @@ class_name Animals extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if GameManager.current_save.game_state == GameManager.GameState.AFTER_PUZZLE_3:
+		print("ninguem nasce")
 		for animal in self.get_children():
 			animal.visible = false
 	else:
@@ -36,11 +37,11 @@ func arara_instatiation(sprite: SpriteFrames):
 	
 	if arara.flipped:
 		arara.global_position.x = room.limit_right
-		arara.global_position.y = GlobalRefs.player.global_position.y - 25
+		arara.global_position.y = GlobalRefs.player.global_position.y - 40
 		arara.room_limit_left = room.limit_left
 	else:
 		arara.global_position.x = room.limit_left
-		arara.global_position.y = GlobalRefs.player.global_position.y - 25
+		arara.global_position.y = GlobalRefs.player.global_position.y - 40
 		arara.room_limit_right = room.limit_right
 	
 	self.add_child(arara)
