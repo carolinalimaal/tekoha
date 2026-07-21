@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmfhnte8gq8ms"]
 
-[ext_resource type="Texture2D" uid="uid://l6ksfsnsipeb" path="res://assets/sprites/entities/boss/carranguejo/caranguejo.png" id="1_3euh3"]
+[ext_resource type="Texture2D" uid="uid://l6ksfsnsipeb" path="res://assets/sprites/entities/boss/caranguejo/caranguejo.png" id="1_3euh3"]
 [ext_resource type="Script" uid="uid://cv51abejj2n5d" path="res://entities/enemies/caranguejo/caranguejo_enemy.gd" id="1_70m37"]
 [ext_resource type="Shader" uid="uid://cy5u3amjuaqta" path="res://entities/enemies/caranguejo/caranguejo_take_damage.gdshader" id="2_4havc"]
 [ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="2_4i4ph"]
