@@ -21,7 +21,6 @@
 [ext_resource type="SpriteFrames" uid="uid://c747lrpptnjhi" path="res://assets/sprites/entities/animals/urubu_2.tres" id="17_qwu00"]
 [ext_resource type="SpriteFrames" uid="uid://cuimqx5uawdg7" path="res://assets/sprites/entities/animals/arara_azul.tres" id="18_xdmhn"]
 [ext_resource type="SpriteFrames" uid="uid://dsdybuvg6ds8b" path="res://assets/sprites/entities/animals/arara_vermelha.tres" id="19_a1oma"]
-[ext_resource type="PackedScene" uid="uid://bmfhnte8gq8ms" path="res://entities/enemies/caranguejo/caranguejo.tscn" id="22_a1oma"]
 
 [sub_resource type="Resource" id="Resource_m550c"]
 script = ExtResource("3_i6edo")
@@ -416,6 +415,3 @@ z_index = 1
 position = Vector2(697, 787)
 frame_progress = 0.0
 animated_frames = ExtResource("17_3mnv1")
-
-[node name="Caranguejo" parent="." unique_id=1701010688 instance=ExtResource("22_a1oma")]
-position = Vector2(620, 1081)
