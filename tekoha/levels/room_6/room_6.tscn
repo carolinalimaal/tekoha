@@ -33,6 +33,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dd335a6yxaj04" path="res://assets/sprites/entities/animals/jacare.tres" id="30_8srqp"]
 [ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="31_urcta"]
 [ext_resource type="SpriteFrames" uid="uid://dvdb73ewtyl8n" path="res://assets/sprites/entities/animals/gato_p.tres" id="32_bq55y"]
+[ext_resource type="PackedScene" uid="uid://blngbmgdujgxm" path="res://entities/npcs/genericos/npc_laura.tscn" id="34_brg8j"]
 
 [sub_resource type="Resource" id="Resource_cecall"]
 script = ExtResource("14_cec1nt")
@@ -226,10 +227,13 @@ y_sort_enabled = true
 position = Vector2(657, 342)
 
 [node name="NpcIdleLado" parent="." unique_id=267557635 instance=ExtResource("21_qk5qf")]
-position = Vector2(511, 276)
+position = Vector2(502, 190)
 
 [node name="NpcThais" parent="." unique_id=651394413 instance=ExtResource("22_b20ta")]
-position = Vector2(477, 266)
+position = Vector2(469, 298)
+
+[node name="NpcLaura" parent="." unique_id=459407605 instance=ExtResource("34_brg8j")]
+position = Vector2(440, 317)
 
 [node name="NpcMusicoCantor" parent="." unique_id=947486553 instance=ExtResource("23_s5772")]
 position = Vector2(601, 197)

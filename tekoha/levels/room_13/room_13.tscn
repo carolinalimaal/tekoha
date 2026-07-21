@@ -24,7 +24,11 @@
 [ext_resource type="SpriteFrames" uid="uid://cuimqx5uawdg7" path="res://assets/sprites/entities/animals/arara_azul.tres" id="22_416of"]
 [ext_resource type="SpriteFrames" uid="uid://dsdybuvg6ds8b" path="res://assets/sprites/entities/animals/arara_vermelha.tres" id="23_pk410"]
 [ext_resource type="SpriteFrames" uid="uid://dd335a6yxaj04" path="res://assets/sprites/entities/animals/jacare.tres" id="25_416of"]
+[ext_resource type="PackedScene" uid="uid://djapgqhmtf30o" path="res://entities/npcs/genericos/npc_pedro.tscn" id="26_nsngj"]
 [ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="26_pk410"]
+[ext_resource type="PackedScene" uid="uid://cqvng6p6ftyps" path="res://entities/npcs/genericos/npc_crianca_esq.tscn" id="28_7ab18"]
+[ext_resource type="PackedScene" uid="uid://0jbpc35odvpc" path="res://entities/npcs/genericos/npc_crianca_dir.tscn" id="29_2n5y2"]
+[ext_resource type="PackedScene" uid="uid://cdm2xhabdhem4" path="res://entities/npcs/genericos/npc_idle_lado.tscn" id="29_usnks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk2ql"]
 size = Vector2(16, 200)
@@ -318,3 +322,15 @@ animated_frames = ExtResource("26_pk410")
 [node name="Animal8" parent="Animals" unique_id=1954252436 instance=ExtResource("21_puric")]
 position = Vector2(481, 1050)
 animated_frames = ExtResource("26_pk410")
+
+[node name="NpcPedro" parent="." unique_id=459407605 instance=ExtResource("26_nsngj")]
+position = Vector2(1428, 320)
+
+[node name="NpcCriancaEsq" parent="." unique_id=1326542856 instance=ExtResource("28_7ab18")]
+position = Vector2(1406, 345)
+
+[node name="NpcCriancaDir" parent="." unique_id=838148412 instance=ExtResource("29_2n5y2")]
+position = Vector2(1467, 342)
+
+[node name="NpcIdleLado" parent="." unique_id=267557635 instance=ExtResource("29_usnks")]
+position = Vector2(579, 839)

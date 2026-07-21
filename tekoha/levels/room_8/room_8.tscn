@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="12_d3h20"]
 [ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="15_28wv3"]
 [ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="16_lvpqs"]
+[ext_resource type="PackedScene" uid="uid://bucllvjb3o7ht" path="res://entities/npcs/genericos/npc_nina.tscn" id="17_lvpqs"]
+[ext_resource type="PackedScene" uid="uid://p4kmdw4y6gk6" path="res://entities/npcs/genericos/npc_crianca_frente.tscn" id="18_d026n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfef4"]
 size = Vector2(10, 94)
@@ -156,3 +158,9 @@ flipped = true
 [node name="Animal3" parent="Animals" unique_id=589934003 instance=ExtResource("15_28wv3")]
 position = Vector2(485, 536)
 animated_frames = ExtResource("16_lvpqs")
+
+[node name="NpcNina" parent="." unique_id=459407605 instance=ExtResource("17_lvpqs")]
+position = Vector2(478, 664)
+
+[node name="NpcCriancaFrente" parent="." unique_id=651394413 instance=ExtResource("18_d026n")]
+position = Vector2(989, 408)
