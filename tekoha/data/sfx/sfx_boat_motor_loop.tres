@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://c2it4yhwjkg8n"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_50gth"]
+[ext_resource type="AudioStream" uid="uid://cvgi5354s61yd" path="res://assets/sound/sfx/enviroment/sfx_motor_barco_ligado.wav" id="2_oedv6"]
+
+[resource]
+script = ExtResource("1_50gth")
+type = 14
+sound_effect = ExtResource("2_oedv6")
+volume = -16.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"

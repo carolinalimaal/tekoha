@@ -1,8 +1,6 @@
 extends Level
 
 @export var bg_music: AudioStream
-# TODO: adicionar loop do motor 
-@export var motor_loop_sound: AudioStream
 
 @onready var room_14_door: Door = $Room14Door
 @onready var room_4_door: Door = $Room4Door
@@ -32,11 +30,6 @@ func _on_game_state_changed(new_state: GameManager.GameState) -> void:
 		_start_boat_sequence()
 
 func _start_boat_sequence() -> void:
-	# TODO: registrar esse sound effect no audio manager 
-	#AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.BOAT_MOTOR_START)
-	GlobalSignals.animation_midpoint_reached.connect(_on_screen_black, CONNECT_ONE_SHOT)
-	room_4_door.trigger_transition()
-
-func _on_screen_black() -> void:
-	if motor_loop_sound:
-		AudioManager.play_background_sound(motor_loop_sound, 0.0)
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.BOAT_MOTOR_START)
+	var start_duration = AudioManager.get_sound_effect_duration(SoundEffect.SOUND_EFFECT_TYPE.BOAT_MOTOR_START)
+	room_4_door.trigger_transition(start_duration)
