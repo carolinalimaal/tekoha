@@ -15,6 +15,8 @@ var attack_range_sqr: int
 var is_dead: bool = false
 
 @onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var spawn_sprite: AnimatedSprite2D = $SpawnSprite
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent

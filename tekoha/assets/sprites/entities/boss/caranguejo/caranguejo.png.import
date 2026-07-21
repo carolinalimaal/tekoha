@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://l6ksfsnsipeb"
-path="res://.godot/imported/caranguejo.png-2164d99daf80df47ed30b8f5d0b0ee33.ctex"
+path="res://.godot/imported/caranguejo.png-c66cd1dc699123ee534d8141160f5557.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/entities/boss/carranguejo/caranguejo.png"
-dest_files=["res://.godot/imported/caranguejo.png-2164d99daf80df47ed30b8f5d0b0ee33.ctex"]
+source_file="res://assets/sprites/entities/boss/caranguejo/caranguejo.png"
+dest_files=["res://.godot/imported/caranguejo.png-c66cd1dc699123ee534d8141160f5557.ctex"]
 
 [params]
 
