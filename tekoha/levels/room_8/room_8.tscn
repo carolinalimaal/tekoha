@@ -18,6 +18,7 @@
 [ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="16_lvpqs"]
 [ext_resource type="PackedScene" uid="uid://bucllvjb3o7ht" path="res://entities/npcs/genericos/npc_nina.tscn" id="17_lvpqs"]
 [ext_resource type="PackedScene" uid="uid://p4kmdw4y6gk6" path="res://entities/npcs/genericos/npc_crianca_frente.tscn" id="18_d026n"]
+[ext_resource type="PackedScene" uid="uid://c2amukeq4q6qo" path="res://entities/npcs/genericos/npc_carol.tscn" id="19_f1imr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfef4"]
 size = Vector2(10, 94)
@@ -164,3 +165,6 @@ position = Vector2(478, 664)
 
 [node name="NpcCriancaFrente" parent="." unique_id=651394413 instance=ExtResource("18_d026n")]
 position = Vector2(989, 408)
+
+[node name="NpcCarol" parent="." unique_id=1261501975 instance=ExtResource("19_f1imr")]
+position = Vector2(177, 363)
