@@ -52,6 +52,9 @@ func _on_enemy_attack_received(attack_data: AttackData):
 		stun_state.receive_attack_data(attack_data)
 		state_machine.current_state.transition_to("Stun")
 
+func play_sfx_walk() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.CANUDINHO_WALK)
+
 func play_sfx_attack() -> void:
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.CANUDINHO_ATTACK)
 

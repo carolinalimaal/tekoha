@@ -36,6 +36,8 @@ enum SOUND_EFFECT_TYPE {
 	MUIRAQUITA,
 	ROOT_SHRINK,
 	GAME_OVER,
+	SACOLA_WALK,
+	CANUDINHO_WALK,
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.
