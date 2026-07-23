@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bilqmooicp6ot"
-path="res://.godot/imported/alert_sprite.png-1c1a71fba8ef7acec76f5351b97e4f6f.ctex"
+path="res://.godot/imported/alert_sprite.png-ecbeddf947e5a6d3877a74b0c52dba64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemies/alert_sprite.png"
-dest_files=["res://.godot/imported/alert_sprite.png-1c1a71fba8ef7acec76f5351b97e4f6f.ctex"]
+source_file="res://assets/sprites/entities/enemies/alert_sprite.png"
+dest_files=["res://.godot/imported/alert_sprite.png-ecbeddf947e5a6d3877a74b0c52dba64.ctex"]
 
 [params]
 
