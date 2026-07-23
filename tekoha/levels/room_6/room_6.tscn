@@ -34,6 +34,8 @@
 [ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="31_urcta"]
 [ext_resource type="SpriteFrames" uid="uid://dvdb73ewtyl8n" path="res://assets/sprites/entities/animals/gato_p.tres" id="32_bq55y"]
 [ext_resource type="PackedScene" uid="uid://blngbmgdujgxm" path="res://entities/npcs/genericos/npc_laura.tscn" id="34_brg8j"]
+[ext_resource type="PackedScene" uid="uid://gugt655aipb0" path="res://entities/npcs/genericos/npc_balcao_restaurante.tscn" id="35_cteyk"]
+[ext_resource type="PackedScene" uid="uid://dbpl5rfxkfc0m" path="res://entities/npcs/genericos/npc_carimbo.tscn" id="36_6mj04"]
 
 [sub_resource type="Resource" id="Resource_cecall"]
 script = ExtResource("14_cec1nt")
@@ -227,7 +229,7 @@ y_sort_enabled = true
 position = Vector2(657, 342)
 
 [node name="NpcIdleLado" parent="." unique_id=267557635 instance=ExtResource("21_qk5qf")]
-position = Vector2(502, 190)
+position = Vector2(466, 192)
 
 [node name="NpcThais" parent="." unique_id=651394413 instance=ExtResource("22_b20ta")]
 position = Vector2(469, 298)
@@ -289,6 +291,12 @@ animated_frames = ExtResource("32_bq55y")
 z_index = 1
 position = Vector2(681, 289)
 animated_frames = ExtResource("32_bq55y")
+
+[node name="NpcBalcaoRestaurante" parent="." unique_id=179921955 instance=ExtResource("35_cteyk")]
+position = Vector2(717, 394)
+
+[node name="NpcCarimbo" parent="." unique_id=284373268 instance=ExtResource("36_6mj04")]
+position = Vector2(495, 176)
 
 [connection signal="body_entered" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_entered"]
 [connection signal="body_exited" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_exited"]

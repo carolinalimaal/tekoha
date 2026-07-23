@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dbpl5rfxkfc0m"]
+
+[ext_resource type="Texture2D" uid="uid://c6608reyq3wdc" path="res://assets/sprites/entities/npcs/npc_carimbo.png" id="1_gx6a6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk3o2"]
+atlas = ExtResource("1_gx6a6")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ocmt"]
+atlas = ExtResource("1_gx6a6")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08nlc"]
+atlas = ExtResource("1_gx6a6")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5y3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk3o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ocmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08nlc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4yv2r"]
+
+[node name="NpcCarimbo" type="CharacterBody2D" unique_id=459407605]
+collision_layer = 1024
+collision_mask = 1425
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1490684527]
+sprite_frames = SubResource("SpriteFrames_c5y3b")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1472805066]
+position = Vector2(0, 23)
+shape = SubResource("CircleShape2D_4yv2r")
