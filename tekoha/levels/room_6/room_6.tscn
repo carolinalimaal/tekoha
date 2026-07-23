@@ -249,6 +249,12 @@ position = Vector2(606, 114)
 [node name="NpcMusicoViolao" parent="." unique_id=740244014 instance=ExtResource("26_twh3b")]
 position = Vector2(644, 194)
 
+[node name="NpcBalcaoRestaurante" parent="." unique_id=179921955 instance=ExtResource("35_cteyk")]
+position = Vector2(717, 394)
+
+[node name="NpcCarimbo" parent="." unique_id=284373268 instance=ExtResource("36_6mj04")]
+position = Vector2(495, 176)
+
 [node name="Animals" type="Node2D" parent="." unique_id=1497907939]
 
 [node name="Animal" parent="Animals" unique_id=220143913 instance=ExtResource("27_twh3b")]
@@ -291,12 +297,6 @@ animated_frames = ExtResource("32_bq55y")
 z_index = 1
 position = Vector2(681, 289)
 animated_frames = ExtResource("32_bq55y")
-
-[node name="NpcBalcaoRestaurante" parent="." unique_id=179921955 instance=ExtResource("35_cteyk")]
-position = Vector2(717, 394)
-
-[node name="NpcCarimbo" parent="." unique_id=284373268 instance=ExtResource("36_6mj04")]
-position = Vector2(495, 176)
 
 [connection signal="body_entered" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_entered"]
 [connection signal="body_exited" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_exited"]
