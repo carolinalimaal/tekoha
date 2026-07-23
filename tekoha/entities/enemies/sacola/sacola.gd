@@ -13,6 +13,7 @@ var attack_range_sqr: float
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
+@onready var alert_sprite: Sprite2D = $AlertSprite
 
 func _ready() -> void:
 	animation_tree = $AnimationTree

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://8dwhdlge53bw" path="res://entities/enemies/canudinho/canudinho.gd" id="1_4fimn"]
 [ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="2_vcpk6"]
 [ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="3_d78cc"]
+[ext_resource type="Texture2D" uid="uid://bilqmooicp6ot" path="res://entities/enemies/alert_sprite.png" id="4_13p1o"]
 [ext_resource type="Script" uid="uid://b3dtapi7tmrs8" path="res://entities/enemies/canudinho/anim_tree_canudinho.gd" id="4_b5uvv"]
 [ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/components/state_machine/state_machine.gd" id="4_i4053"]
 [ext_resource type="Texture2D" uid="uid://cbo43r56ogs6q" path="res://assets/sprites/entities/enemies/canudinho_spritesheet.png" id="4_qp7q8"]
@@ -1813,6 +1814,11 @@ debug_color = Color(0.99607843, 0.050980393, 0, 0.41960785)
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1870106385]
 position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_qp7q8")
+
+[node name="AlertSprite" type="Sprite2D" parent="." unique_id=799777468]
+visible = false
+position = Vector2(0, -25)
+texture = ExtResource("4_13p1o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1235364969]
 sprite_frames = SubResource("SpriteFrames_j3eei")

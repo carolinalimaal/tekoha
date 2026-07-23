@@ -13,6 +13,7 @@ var aiming_range_sqr: int
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
 @onready var aiming_point: Marker2D = $AimingPoint
+@onready var alert_sprite: Sprite2D = $AlertSprite
 
 func _ready() -> void:
 	animation_tree = $AnimationTree

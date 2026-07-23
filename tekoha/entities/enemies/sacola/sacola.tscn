@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b25oeps4g35sq" path="res://utils/components/hurtbox_component.gd" id="3_yud06"]
 [ext_resource type="Resource" uid="uid://da1ugbg8nxcqf" path="res://entities/enemies/sacola/sacola_attack.tres" id="4_o5gcg"]
 [ext_resource type="Texture2D" uid="uid://ccbwamaknepiw" path="res://assets/sprites/entities/enemies/sacola_spritesheet.png" id="4_v8i60"]
+[ext_resource type="Texture2D" uid="uid://bilqmooicp6ot" path="res://entities/enemies/alert_sprite.png" id="6_3bxu3"]
 [ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/components/state_machine/state_machine.gd" id="9_ornil"]
 [ext_resource type="Script" uid="uid://cai1y4n255biv" path="res://entities/enemies/generic_states/idle_enemy_state.gd" id="10_p7yjf"]
 [ext_resource type="Script" uid="uid://bclio32j8isjr" path="res://entities/enemies/generic_states/patrol_enemy_state.gd" id="11_7kqut"]
@@ -1860,6 +1861,11 @@ disabled = true
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=928179189]
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_v8i60")
+
+[node name="AlertSprite" type="Sprite2D" parent="." unique_id=1941601610]
+visible = false
+position = Vector2(0, -21)
+texture = ExtResource("6_3bxu3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1840617448]
 sprite_frames = SubResource("SpriteFrames_n8d5x")
