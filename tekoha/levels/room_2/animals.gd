@@ -35,13 +35,14 @@ func arara_instatiation(sprite: SpriteFrames):
 	arara.direction = [-1,1].pick_random()
 	arara.flipped = arara.direction < 0
 	
-	if arara.flipped:
-		arara.global_position.x = room.limit_right
-		arara.global_position.y = GlobalRefs.player.global_position.y - 40
-		arara.room_limit_left = room.limit_left
-	else:
-		arara.global_position.x = room.limit_left
-		arara.global_position.y = GlobalRefs.player.global_position.y - 40
-		arara.room_limit_right = room.limit_right
+	if GlobalRefs.player:
+		if arara.flipped:
+			arara.global_position.x = room.limit_right
+			arara.global_position.y = GlobalRefs.player.global_position.y - 40
+			arara.room_limit_left = room.limit_left
+		else:
+			arara.global_position.x = room.limit_left
+			arara.global_position.y = GlobalRefs.player.global_position.y - 40
+			arara.room_limit_right = room.limit_right
 	
 	self.add_child(arara)
