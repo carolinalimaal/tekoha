@@ -13,6 +13,7 @@ var attack_range_sqr: float
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
+@onready var alert_sprite: Sprite2D = $AlertSprite
 
 func _ready() -> void:
 	animation_tree = $AnimationTree
@@ -53,5 +54,15 @@ func _on_enemy_attack_received(attack_data: AttackData):
 		stun_state.receive_attack_data(attack_data)
 		state_machine.current_state.transition_to("Stun")
 
+func play_sfx_walk() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.SACOLA_WALK)
+
+
 func play_sfx_attack() -> void:
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.SACOLA_ATTACK)
+
+func play_sfx_take_damage() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.ENEMY_TAKE_DAMAGE)
+
+func play_sfx_death() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.ENEMY_DIE)

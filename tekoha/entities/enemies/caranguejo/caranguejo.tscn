@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmfhnte8gq8ms"]
 
-[ext_resource type="Texture2D" uid="uid://l6ksfsnsipeb" path="res://assets/sprites/entities/boss/carranguejo/caranguejo.png" id="1_3euh3"]
+[ext_resource type="Texture2D" uid="uid://l6ksfsnsipeb" path="res://assets/sprites/entities/boss/caranguejo/caranguejo.png" id="1_3euh3"]
 [ext_resource type="Script" uid="uid://cv51abejj2n5d" path="res://entities/enemies/caranguejo/caranguejo_enemy.gd" id="1_70m37"]
 [ext_resource type="Shader" uid="uid://cy5u3amjuaqta" path="res://entities/enemies/caranguejo/caranguejo_take_damage.gdshader" id="2_4havc"]
 [ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="2_4i4ph"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://bymhj6jyxdmu1" path="res://entities/enemies/caranguejo/states/charge_state.gd" id="11_lc10e"]
 [ext_resource type="Script" uid="uid://b5a7bajxqqbxg" path="res://entities/enemies/caranguejo/states/stun_state.gd" id="13_10w0j"]
 [ext_resource type="Script" uid="uid://babneycdrb68l" path="res://entities/player/states/state_death_player.gd" id="14_ipjwl"]
+[ext_resource type="Texture2D" uid="uid://bjcyjdgm1735b" path="res://assets/sprites/entities/boss/caranguejo/splash agua.png" id="20_splsh"]
+[ext_resource type="Script" uid="uid://dg7iytupo2l6i" path="res://entities/enemies/caranguejo/states/spawn_state.gd" id="21_spwn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yj4m4"]
 radius = 9.0
@@ -61,6 +63,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0w93l"]
+atlas = ExtResource("20_splsh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1r4w"]
+atlas = ExtResource("20_splsh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_zt09p"]
+atlas = ExtResource("20_splsh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_725x7"]
+atlas = ExtResource("20_splsh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3t135"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0w93l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1r4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_zt09p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_725x7")
+}],
+"loop": 0,
+"name": &"spawn",
+"speed": 8.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ydlg6"]
 radius = 9.0
 
@@ -88,9 +126,14 @@ position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_yj4m4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=397109087]
+visible = false
 material = SubResource("ShaderMaterial_ydlg6")
 sprite_frames = SubResource("SpriteFrames_4havc")
 animation = &"walk_h"
+
+[node name="SpawnSprite" type="AnimatedSprite2D" parent="." unique_id=87479261]
+sprite_frames = SubResource("SpriteFrames_3t135")
+animation = &"spawn"
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1860673571]
 script = ExtResource("2_4i4ph")
@@ -128,8 +171,12 @@ script = ExtResource("9_10w0j")
 
 [node name="StateMachine" type="Node" parent="." unique_id=564826676 node_paths=PackedStringArray("_initial_state")]
 script = ExtResource("9_ya81p")
-_initial_state = NodePath("Align")
+_initial_state = NodePath("Spawn")
 metadata/_custom_type_script = "uid://coql161p0qttr"
+
+[node name="Spawn" type="Node" parent="StateMachine" unique_id=2142652645]
+script = ExtResource("21_spwn")
+metadata/_custom_type_script = "uid://bjkumybw6hi8o"
 
 [node name="Align" type="Node" parent="StateMachine" unique_id=225487954]
 script = ExtResource("10_d2ylw")

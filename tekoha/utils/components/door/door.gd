@@ -19,11 +19,16 @@ func _on_player_body_entered(body: Node2D) -> void:
 	if is_active and not blocked and body is Player:
 		trigger_transition()
 
-func trigger_transition() -> void:
-	GlobalSignals.animation_midpoint_reached.connect(on_animation_midpoint_reached, CONNECT_ONE_SHOT)
+func trigger_transition(extra_black_time: float = 0.0) -> void:
+	GlobalSignals.animation_midpoint_reached.connect(_on_animation_midpoint_reached_with_delay.bind(extra_black_time), CONNECT_ONE_SHOT)
 	get_tree().paused = true
 	GlobalSignals.emit_signal("door_entered")
-	
+
+func _on_animation_midpoint_reached_with_delay(extra_black_time: float) -> void:
+	if extra_black_time > 0.0:
+		await get_tree().create_timer(extra_black_time, true).timeout
+	on_animation_midpoint_reached()
+
 func on_animation_midpoint_reached() -> void:
 	if target_level_path == "":
 		push_error("Caminho do level não definido na porta!")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://8dwhdlge53bw" path="res://entities/enemies/canudinho/canudinho.gd" id="1_4fimn"]
 [ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="2_vcpk6"]
 [ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="3_d78cc"]
+[ext_resource type="Texture2D" uid="uid://bilqmooicp6ot" path="res://assets/sprites/entities/enemies/alert_sprite.png" id="4_13p1o"]
 [ext_resource type="Script" uid="uid://b3dtapi7tmrs8" path="res://entities/enemies/canudinho/anim_tree_canudinho.gd" id="4_b5uvv"]
 [ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/components/state_machine/state_machine.gd" id="4_i4053"]
 [ext_resource type="Texture2D" uid="uid://cbo43r56ogs6q" path="res://assets/sprites/entities/enemies/canudinho_spritesheet.png" id="4_qp7q8"]
@@ -777,6 +778,20 @@ tracks/3/keys = {
 "method": &"_shoot"
 }]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_attack"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_nu0lw"]
 resource_name = "attack_left"
@@ -829,6 +844,20 @@ tracks/3/keys = {
 "values": [{
 "args": [],
 "method": &"_shoot"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_attack"
 }]
 }
 
@@ -885,6 +914,20 @@ tracks/3/keys = {
 "method": &"_shoot"
 }]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_attack"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_waueu"]
 resource_name = "attack_up"
@@ -939,6 +982,20 @@ tracks/3/keys = {
 "method": &"_shoot"
 }]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_attack"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_brhlh"]
 resource_name = "death_down"
@@ -966,6 +1023,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_death"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_u40va"]
@@ -995,6 +1066,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_death"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_elvjq"]
 resource_name = "death_right"
@@ -1023,6 +1108,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_death"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_5r6dt"]
 resource_name = "death_up"
@@ -1050,6 +1149,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_death"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_xj8cv"]
@@ -1195,6 +1308,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_take_damage"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_1tbqr"]
 resource_name = "stun_left"
@@ -1222,6 +1349,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_take_damage"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_g71t2"]
@@ -1251,6 +1392,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_take_damage"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_iuw7n"]
 resource_name = "stun_up"
@@ -1278,6 +1433,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_take_damage"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_fhqrl"]
@@ -1308,6 +1477,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_walk"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_xh85q"]
 resource_name = "walk_left"
@@ -1336,6 +1519,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_walk"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_f13l7"]
@@ -1366,6 +1563,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_walk"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_tf67c"]
 resource_name = "walk_up"
@@ -1394,6 +1605,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_sfx_walk"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dhcik"]
@@ -1645,6 +1870,11 @@ debug_color = Color(0.99607843, 0.050980393, 0, 0.41960785)
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1870106385]
 position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_qp7q8")
+
+[node name="AlertSprite" type="Sprite2D" parent="." unique_id=799777468]
+visible = false
+position = Vector2(0, -25)
+texture = ExtResource("4_13p1o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1235364969]
 sprite_frames = SubResource("SpriteFrames_j3eei")

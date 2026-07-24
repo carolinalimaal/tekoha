@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://cn4cpn4m6q47h"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_qrlhb"]
+[ext_resource type="AudioStream" uid="uid://cvg3ax6ddp50y" path="res://assets/sound/sfx/enviroment/sfx_raizes_encolhendo.wav" id="2_kmb3u"]
+
+[resource]
+script = ExtResource("1_qrlhb")
+type = 29
+sound_effect = ExtResource("2_kmb3u")
+volume = -20.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"

@@ -16,6 +16,7 @@ var last_known_player_position: Vector2
 var anim_transition: int = 0
 
 var can_attack: bool = true
+var never_seen_player: bool = true
 
 var animation_tree: AnimationTree
 var state_machine: StateMachine

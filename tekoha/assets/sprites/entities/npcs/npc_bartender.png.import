@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l6ksfsnsipeb"
-path="res://.godot/imported/caranguejo.png-2164d99daf80df47ed30b8f5d0b0ee33.ctex"
+uid="uid://dw81hdn6q703m"
+path="res://.godot/imported/npc_bartender.png-1901b06695aaf2f19e5ec0abc57113e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/entities/boss/carranguejo/caranguejo.png"
-dest_files=["res://.godot/imported/caranguejo.png-2164d99daf80df47ed30b8f5d0b0ee33.ctex"]
+source_file="res://assets/sprites/entities/npcs/npc_bartender.png"
+dest_files=["res://.godot/imported/npc_bartender.png-1901b06695aaf2f19e5ec0abc57113e9.ctex"]
 
 [params]
 

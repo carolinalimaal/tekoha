@@ -8,4 +8,5 @@ func _ready() -> void:
 
 func root_remove():
 	animated_sprite.play("default")
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.ROOT_SHRINK)
 	set_collision_layer_value(9,false)

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://p4kmdw4y6gk6"]
+
+[ext_resource type="Texture2D" uid="uid://vyryw6vshhy7" path="res://assets/sprites/entities/npcs/npc_crianca_frente.png" id="1_vcc7a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsi2v"]
+atlas = ExtResource("1_vcc7a")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6v20"]
+atlas = ExtResource("1_vcc7a")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7osxl"]
+atlas = ExtResource("1_vcc7a")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2asp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsi2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6v20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7osxl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s5772"]
+
+[node name="NpcCriancaFrente" type="CharacterBody2D" unique_id=651394413]
+collision_layer = 1024
+collision_mask = 1425
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1117250083]
+sprite_frames = SubResource("SpriteFrames_i2asp")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1852389517]
+position = Vector2(0, 23)
+shape = SubResource("CircleShape2D_s5772")

@@ -12,9 +12,12 @@ func _ready() -> void:
 	add_child(_nav_timer)
 
 func _enter():
-	await get_tree().physics_frame
+	if owner_node.never_seen_player:
+		owner_node.never_seen_player = false
+		AudioManager.create_2d_audio_at_location(owner_node.global_position, SoundEffect.SOUND_EFFECT_TYPE.ENEMY_ALERT)
+		await _play_alert_animation()
+	
 	_nav_timer.start()
-	pass
 
 func _exit():
 	_nav_timer.stop()
@@ -42,3 +45,16 @@ func _makepath():
 #
 func _on_nav_timer_timeout() -> void:
 	_makepath()
+
+func _play_alert_animation() -> void:
+	owner_node.alert_sprite.visible = true
+	var tween = create_tween()
+	
+	for i in range(3):
+		tween.tween_property(owner_node.alert_sprite, "modulate:a", 0.0, 0.15)
+		tween.tween_property(owner_node.alert_sprite, "modulate:a", 1.0, 0.15)
+		
+	await tween.finished
+	
+	owner_node.alert_sprite.visible = false
+	owner_node.alert_sprite.modulate.a = 1.0

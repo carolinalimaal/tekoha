@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://b8nwij5v0ypnb"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_xptou"]
+[ext_resource type="AudioStream" uid="uid://cyj04m4kus0pu" path="res://assets/sound/sfx/entities/sfx_sacola_walk.wav" id="2_m3mb3"]
+
+[resource]
+script = ExtResource("1_xptou")
+type = 31
+sound_effect = ExtResource("2_m3mb3")
+volume = -35.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"

@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://dt2fs32m4hfnb" path="res://data/sfx/sfx_curupira_walk.tres" id="7_fdt5a"]
 [ext_resource type="Resource" uid="uid://bgqbtdby8qv86" path="res://data/sfx/sfx_curupira_attack_1.tres" id="8_lgug7"]
 [ext_resource type="Resource" uid="uid://llf3xb2jby5d" path="res://data/sfx/sfx_curupira_attack_2.tres" id="9_qmnf0"]
-[ext_resource type="Resource" uid="uid://kjvjik1fb254" path="res://data/sfx/sfx_pickup_item.tres" id="10_2d6s7"]
+[ext_resource type="Resource" uid="uid://kjvjik1fb254" path="res://data/sfx/sfx_pickup_item_standard.tres" id="10_2d6s7"]
 [ext_resource type="Resource" uid="uid://kcv22s3oq8tv" path="res://data/sfx/sfx_bush.tres" id="11_1m5h4"]
 [ext_resource type="Resource" uid="uid://cdgxngwu47jib" path="res://data/sfx/sfx_save.tres" id="12_684e1"]
 [ext_resource type="Resource" uid="uid://c2p4gfqkpybia" path="res://data/sfx/sfx_button_click.tres" id="13_bk4qp"]
@@ -18,8 +18,24 @@
 [ext_resource type="Resource" uid="uid://c3uqsauwrglfn" path="res://data/sfx/sfx_typing.tres" id="16_typing"]
 [ext_resource type="Resource" uid="uid://cr61xnhtgy8kh" path="res://data/sfx/sfx_low_health.tres" id="17_low_health"]
 [ext_resource type="Resource" uid="uid://dc2xiy8l05b5c" path="res://data/sfx/sfx_pickup_item_first_time.tres" id="18_new_item"]
+[ext_resource type="Resource" uid="uid://du6isllvwhctw" path="res://data/sfx/sfx_canudinho_attack.tres" id="19_canudinho_attack"]
+[ext_resource type="Resource" uid="uid://cdxnqx4bcjuav" path="res://data/sfx/sfx_curupira_roll.tres" id="20_curupira_roll"]
+[ext_resource type="Resource" uid="uid://1v2pcn7w3dmy" path="res://data/sfx/sfx_curupira_take_damage.tres" id="21_curupira_take_damage"]
+[ext_resource type="Resource" uid="uid://b21foaq672r5x" path="res://data/sfx/sfx_enemy_alert.tres" id="22_enemy_alert"]
+[ext_resource type="Resource" uid="uid://dp16youfb3ti0" path="res://data/sfx/sfx_inimigo_die.tres" id="23_inimigo_die"]
+[ext_resource type="Resource" uid="uid://j5vhk2ba40p0" path="res://data/sfx/sfx_inimigos_take_damage.tres" id="24_inimigos_take_damage"]
+[ext_resource type="Resource" uid="uid://d4dvkyei63f0o" path="res://data/sfx/sfx_chest_open.tres" id="25_chest_open"]
+[ext_resource type="Resource" uid="uid://cio3s4djkkxle" path="res://data/sfx/sfx_chest_close.tres" id="26_chest_close"]
+[ext_resource type="Resource" uid="uid://ixtkrxb0rf72" path="res://data/sfx/sfx_coin.tres" id="27_coin"]
+[ext_resource type="Resource" uid="uid://su1ahe12xfud" path="res://data/sfx/sfx_muiraquita.tres" id="28_muiraquita"]
+[ext_resource type="Resource" uid="uid://cn4cpn4m6q47h" path="res://data/sfx/sfx_raizes_encolhendo.tres" id="29_root_shrink"]
+[ext_resource type="Resource" uid="uid://drqr3unmj3euc" path="res://data/sfx/sfx_game_over.tres" id="30_game_over"]
+[ext_resource type="Resource" uid="uid://bbnmvvsixojmn" path="res://data/sfx/sfx_boat_motor_start.tres" id="31_boat_motor_start"]
+[ext_resource type="Resource" uid="uid://c2it4yhwjkg8n" path="res://data/sfx/sfx_boat_motor_loop.tres" id="32_boat_motor_loop"]
+[ext_resource type="Resource" uid="uid://b8nwij5v0ypnb" path="res://data/sfx/sfx_sacola_walk.tres" id="33_ou4mq"]
+[ext_resource type="Resource" uid="uid://cr38vmcinguwg" path="res://data/sfx/sfx_canudinho_walk.tres" id="34_6iq0h"]
 
 [node name="AudioManager" type="Node2D" unique_id=1953541211]
 process_mode = 3
 script = ExtResource("1_gqfen")
-sound_effects = Array[ExtResource("2_jkr7a")]([ExtResource("3_2bgjf"), ExtResource("4_1d2wt"), ExtResource("5_ulrmu"), ExtResource("6_fdt5a"), ExtResource("7_fdt5a"), ExtResource("8_lgug7"), ExtResource("9_qmnf0"), ExtResource("10_2d6s7"), ExtResource("11_1m5h4"), ExtResource("12_684e1"), ExtResource("13_bk4qp"), ExtResource("14_w7mn3"), ExtResource("15_1m5h4"), ExtResource("16_typing"), ExtResource("17_low_health"), ExtResource("18_new_item")])
+sound_effects = Array[ExtResource("2_jkr7a")]([ExtResource("3_2bgjf"), ExtResource("4_1d2wt"), ExtResource("5_ulrmu"), ExtResource("6_fdt5a"), ExtResource("7_fdt5a"), ExtResource("8_lgug7"), ExtResource("9_qmnf0"), ExtResource("10_2d6s7"), ExtResource("11_1m5h4"), ExtResource("12_684e1"), ExtResource("13_bk4qp"), ExtResource("14_w7mn3"), ExtResource("15_1m5h4"), ExtResource("16_typing"), ExtResource("17_low_health"), ExtResource("18_new_item"), ExtResource("19_canudinho_attack"), ExtResource("20_curupira_roll"), ExtResource("21_curupira_take_damage"), ExtResource("22_enemy_alert"), ExtResource("23_inimigo_die"), ExtResource("24_inimigos_take_damage"), ExtResource("25_chest_open"), ExtResource("26_chest_close"), ExtResource("27_coin"), ExtResource("28_muiraquita"), ExtResource("29_root_shrink"), ExtResource("30_game_over"), ExtResource("31_boat_motor_start"), ExtResource("32_boat_motor_loop"), ExtResource("33_ou4mq"), ExtResource("34_6iq0h")])
