@@ -117,6 +117,9 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32
 outlines = Array[PackedVector2Array]([PackedVector2Array(-829, 858, -829, 730, -706, 696, -543, 535, -448, 504, -323, 385, -218, 349, -17, 380, 279, 382, 544, 222, 599, 162, 750, 162, 751, 229, 656, 284, 656, 354, 536, 365, 538, 448, 672, 447, 693, 494, 877, 488, 900, 516, 978, 512, 999, 558, 1181, 563, 1222, 601, 1533, 609, 1560, 952, 1414, 959, 1407, 889, 1331, 888, 1338, 953, 1281, 954, 1274, 880, 1128, 889, 1118, 923, 961, 926, 955, 987, 896, 993, 893, 1052, 737, 1053, 732, 987, 638, 987, 635, 952, 479, 956, 479, 1021, 393, 1021, 384, 1054, 319, 1055, 313, 1017, 255, 1019, 250, 981, 164, 984, 155, 920, 35, 928, 30, 989, -91, 986, -96, 915, -224, 918, -228, 988, -415, 987, -417, 888, -670, 891, -685, 854)])
 agent_radius = 5.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv3ea"]
+size = Vector2(160, 20)
+
 [node name="Room3" type="Node2D" unique_id=51821466]
 y_sort_enabled = true
 script = ExtResource("1_grr8x")
@@ -249,3 +252,17 @@ animated_frames = ExtResource("25_1r253")
 [node name="Animal3" parent="Animals" unique_id=1210291507 instance=ExtResource("24_oybd7")]
 position = Vector2(1104, 756)
 animated_frames = ExtResource("25_1r253")
+
+[node name="Room34Door" type="Area2D" parent="." unique_id=920622693]
+position = Vector2(800, 1024)
+script = ExtResource("8_607sj")
+target_level_path = "uid://nf2q8sw81xmy"
+door_name = "Room34Door"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room34Door" unique_id=1251613810]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_nv3ea")
+
+[node name="Marker2D" type="Marker2D" parent="Room34Door" unique_id=1749388156]
+position = Vector2(0, -64)
