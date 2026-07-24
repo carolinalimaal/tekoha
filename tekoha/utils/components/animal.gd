@@ -16,7 +16,7 @@ func _ready() -> void:
 		flip_h = true
 	sprite_frames = animated_frames
 	if flyer:
-		speed = 350
+		speed = 300
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,9 +25,7 @@ func _process(delta: float) -> void:
 		global_position.x += direction * speed * delta
 		
 		if flipped and global_position.x < room_limit_left:
-			print("Arara disse tchau")
 			queue_free()
 			
 		elif !flipped and global_position.x > room_limit_right:
-			print("Arara disse tchau")
 			queue_free()

@@ -27,7 +27,6 @@ func start_araras_routine():
 				arara_instatiation(red_arara_sprite)
 
 func arara_instatiation(sprite: SpriteFrames):
-	print("intanciando arara")
 	var arara = arara_scene.instantiate()
 	arara.z_index = 10
 	arara.animated_frames = sprite
