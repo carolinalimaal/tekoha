@@ -1,0 +1,349 @@
+[gd_scene format=3 uid="uid://clqns2d2hvnrq"]
+
+[ext_resource type="Script" uid="uid://dsraoss6rq6p6" path="res://entities/enemies/boss/boss.gd" id="1_q5dj7"]
+[ext_resource type="Texture2D" uid="uid://bb0pas3n7fbgt" path="res://assets/sprites/entities/boss/arraia/boss corpo.png" id="2_y6fk3"]
+[ext_resource type="Texture2D" uid="uid://dr3pv0j8ei7ji" path="res://assets/sprites/entities/boss/arraia/shadow.png" id="3_8im48"]
+[ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/components/state_machine/state_machine.gd" id="3_kxds7"]
+[ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="3_sn6y4"]
+[ext_resource type="Script" uid="uid://b4a16vkdvf4mi" path="res://entities/enemies/boss/crab_spawn_area.gd" id="3_y6fk3"]
+[ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="4_3gqbu"]
+[ext_resource type="PackedScene" uid="uid://bmfhnte8gq8ms" path="res://entities/enemies/caranguejo/caranguejo.tscn" id="4_78hdg"]
+[ext_resource type="Script" uid="uid://dguw4ni65yh1u" path="res://entities/enemies/boss/wait.gd" id="5_1j377"]
+[ext_resource type="Script" uid="uid://b25oeps4g35sq" path="res://utils/components/hurtbox_component.gd" id="5_hbvyl"]
+[ext_resource type="Script" uid="uid://gxoaqc16nmqj" path="res://entities/enemies/boss/attack.gd" id="6_1j377"]
+[ext_resource type="Texture2D" uid="uid://b70nt5w215ugs" path="res://assets/sprites/entities/boss/arraia/boss cauda.png" id="6_78hdg"]
+[ext_resource type="Script" uid="uid://b5fvvlw35l6qk" path="res://entities/enemies/boss/aim.gd" id="6_q5dj7"]
+[ext_resource type="Script" uid="uid://c8ylfafeubddo" path="res://utils/resources/attack/attack_data.gd" id="6_u4fed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eebsq"]
+size = Vector2(515, 281)
+
+[sub_resource type="Resource" id="Resource_nv3ea"]
+script = ExtResource("6_u4fed")
+damage_value = 4
+knockback_force = 4.0
+metadata/_custom_type_script = "uid://c8ylfafeubddo"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nv3ea"]
+radius = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv3ea"]
+size = Vector2(64, 64)
+
+[sub_resource type="Animation" id="Animation_q5dj7"]
+resource_name = "aim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../StateMachine/Aim")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_attack"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_tkam1"]
+resource_name = "Attack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tail:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.5, 2),
+"transitions": PackedFloat32Array(4, 1, 5, 1),
+"update": 0,
+"values": [Vector2(0, -649.5), Vector2(0, -217.5), Vector2(0, -217.5), Vector2(0, -649.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HurtboxComponent/HurtboxCollision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.20000003, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitboxComponent/HitboxCollision:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shadow:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5000001, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y6fk3"]
+resource_name = "Attack2"
+length = 3.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tail:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.2, 1.4, 2.7, 3.2),
+"transitions": PackedFloat32Array(0.5, 1, 5, 1, 5, 1),
+"update": 0,
+"values": [Vector2(0, -649.5), Vector2(0, -342.5), Vector2(0, -342.5), Vector2(0, -217.5), Vector2(0, -217.5), Vector2(0, -649.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HurtboxComponent/HurtboxCollision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.4, 1.4333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitboxComponent/HitboxCollision:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.4, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shadow:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.7, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../StateMachine/Aim")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Attack"],
+"method": &"transition_to"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_1tj31"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tail:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -649.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HurtboxComponent/HurtboxCollision:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitboxComponent/HitboxCollision:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8im48"]
+_data = {
+&"Aim": SubResource("Animation_q5dj7"),
+&"Attack": SubResource("Animation_tkam1"),
+&"Attack2": SubResource("Animation_y6fk3"),
+&"RESET": SubResource("Animation_1tj31")
+}
+
+[node name="Boss" type="Node2D" unique_id=1761719591]
+script = ExtResource("1_q5dj7")
+
+[node name="Body" type="Sprite2D" parent="." unique_id=667655535]
+position = Vector2(0, 217)
+texture = ExtResource("2_y6fk3")
+
+[node name="CrabSpawnArea" type="Area2D" parent="." unique_id=1012182326]
+position = Vector2(0, 217)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("3_y6fk3")
+enemy_scene = ExtResource("4_78hdg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrabSpawnArea" unique_id=190055369]
+position = Vector2(1.5, 22.5)
+shape = SubResource("RectangleShape2D_eebsq")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=234468599]
+script = ExtResource("3_sn6y4")
+max_health = 100
+metadata/_custom_type_script = "uid://cxfitvewp4xj5"
+
+[node name="Attack" type="Node2D" parent="." unique_id=1048867530]
+position = Vector2(118, 20)
+
+[node name="Tail" type="Sprite2D" parent="Attack" unique_id=78925209]
+y_sort_enabled = true
+texture = ExtResource("6_78hdg")
+offset = Vector2(0, -649.5)
+
+[node name="Shadow" type="Sprite2D" parent="Attack" unique_id=1531170732]
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("3_8im48")
+
+[node name="HurtboxComponent" type="Area2D" parent="Attack" unique_id=1243736233 node_paths=PackedStringArray("hurtbox_collision")]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("5_hbvyl")
+attack_data = SubResource("Resource_nv3ea")
+hurtbox_collision = NodePath("HurtboxCollision")
+metadata/_custom_type_script = "uid://b25oeps4g35sq"
+
+[node name="HurtboxCollision" type="CollisionShape2D" parent="Attack/HurtboxComponent" unique_id=1895728515]
+shape = SubResource("CircleShape2D_nv3ea")
+disabled = true
+
+[node name="HitboxComponent" type="Area2D" parent="Attack" unique_id=428332076 node_paths=PackedStringArray("hitbox_collision")]
+position = Vector2(0, -32)
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("4_3gqbu")
+hitbox_collision = NodePath("HitboxCollision")
+metadata/_custom_type_script = "uid://2pwu4vjmtkg6"
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="Attack/HitboxComponent" unique_id=2136281872]
+shape = SubResource("RectangleShape2D_nv3ea")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2037776407]
+root_node = NodePath("../Attack")
+libraries/ = SubResource("AnimationLibrary_8im48")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=795516113]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=402350352]
+self_modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(600, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -27.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 1
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="CanvasLayer/ProgressBar" unique_id=1069335653]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.42592594
+anchor_right = 0.5
+anchor_bottom = -0.42592594
+offset_left = -108.0
+offset_top = -11.5
+offset_right = 108.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Îabebyra Yguá & Aratu Yguá"
+metadata/_edit_use_anchors_ = true
+
+[node name="StateMachine" type="Node" parent="." unique_id=790657437 node_paths=PackedStringArray("_initial_state")]
+script = ExtResource("3_kxds7")
+_initial_state = NodePath("Aim")
+metadata/_custom_type_script = "uid://coql161p0qttr"
+
+[node name="Wait" type="Node" parent="StateMachine" unique_id=1450028712]
+script = ExtResource("5_1j377")
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=551654876]
+script = ExtResource("6_1j377")
+
+[node name="Aim" type="Node" parent="StateMachine" unique_id=1437824843]
+script = ExtResource("6_q5dj7")

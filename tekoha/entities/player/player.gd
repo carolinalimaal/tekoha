@@ -4,8 +4,8 @@ extends CharacterBody2D
 signal player_dead()
 signal health_changed()
 
-const SPEED : float = 250.0
-const ROLL_SPEED : float = 120.0
+const SPEED : float = 150.0
+const ROLL_SPEED : float = 170.0
 
 var move_direction : Vector2
 var mouse_direction : Vector2

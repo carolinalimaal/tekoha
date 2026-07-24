@@ -2,7 +2,7 @@ class_name HealthComponent
 extends Node
 
 signal died
-
+signal health_changed
 @export var max_health: int
 
 var current_health: int
@@ -14,6 +14,7 @@ func take_damage(attack_data: AttackData) -> void:
 	
 	current_health -= attack_data.damage_value
 	current_health = max(0, current_health)
+	health_changed.emit()
 	
 	if current_health == 0:
 		_die()
