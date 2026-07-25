@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhcppev66xefc"
-path="res://.godot/imported/tekoha_colorful.svg-6ff8054fced75cd3396d3eea3dac505d.ctex"
+uid="uid://c4p3hhy5k5f3m"
+path="res://.godot/imported/spider.svg-45ffbb2965aabc63ccc18a4a870d340d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/logo/tekoha_colorful.svg"
-dest_files=["res://.godot/imported/tekoha_colorful.svg-6ff8054fced75cd3396d3eea3dac505d.ctex"]
+source_file="res://assets/UI/logos/spider.svg"
+dest_files=["res://.godot/imported/spider.svg-45ffbb2965aabc63ccc18a4a870d340d.ctex"]
 
 [params]
 

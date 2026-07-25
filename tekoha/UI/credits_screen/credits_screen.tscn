@@ -1,0 +1,362 @@
+[gd_scene format=3 uid="uid://c53p0k12r1a2y"]
+
+[ext_resource type="Script" uid="uid://ckxk01g3i1b2g" path="res://UI/credits_screen/credits_screen.gd" id="1_giom8"]
+[ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_o21ce"]
+[ext_resource type="Texture2D" uid="uid://dhcppev66xefc" path="res://assets/UI/logos/tekoha_colorful.svg" id="2_6if6n"]
+[ext_resource type="Texture2D" uid="uid://b43pkkdunwp5i" path="res://assets/bg_credits.jpg" id="2_dflmq"]
+[ext_resource type="Texture2D" uid="uid://djqw8nndto0lb" path="res://assets/UI/logos/ufpa.png" id="4_5ad82"]
+[ext_resource type="Texture2D" uid="uid://c4p3hhy5k5f3m" path="res://assets/UI/logos/spider.svg" id="5_xs16p"]
+[ext_resource type="PackedScene" uid="uid://tc0txhjv7cm5" path="res://UI/components/navigation_legend/navigation_legend.tscn" id="7_5ad82"]
+
+[node name="CreditsScreen" type="Control" unique_id=1829028358 node_paths=PackedStringArray("scroll_container", "content", "top_spacer", "bottom_spacer", "navigation_legend")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_o21ce")
+script = ExtResource("1_giom8")
+credits_time = 80.0
+scroll_container = NodePath("ScrollContainer")
+content = NodePath("ScrollContainer/MarginContainer/Content")
+top_spacer = NodePath("ScrollContainer/MarginContainer/Content/TopSpacer")
+bottom_spacer = NodePath("ScrollContainer/MarginContainer/Content/BottomSpacer")
+navigation_legend = NodePath("NavigationLegend")
+
+[node name="Background" type="TextureRect" parent="." unique_id=863745682]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dflmq")
+expand_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1568559369]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.43529412)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1029726216]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=1937501293]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="Content" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=964333984]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TopSpacer" type="Control" parent="ScrollContainer/MarginContainer/Content" unique_id=826907105]
+layout_mode = 2
+
+[node name="TekohaLogo" type="TextureRect" parent="ScrollContainer/MarginContainer/Content" unique_id=800779060]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+texture = ExtResource("2_6if6n")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/Content" unique_id=1745596322]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Um jogo feito por membros do Laboratório SPIDER, da Universidade Federal do Pará."
+horizontal_alignment = 1
+
+[node name="CreditsTitle" type="Label" parent="ScrollContainer/MarginContainer/Content" unique_id=2140688947]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Créditos"
+horizontal_alignment = 1
+
+[node name="Section1" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=1275810516]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section1" unique_id=2048738446]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Coordenação do Projeto"
+horizontal_alignment = 1
+
+[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section1" unique_id=1143858474]
+layout_mode = 2
+bbcode_enabled = true
+text = "Sandro Bezerra"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Section2" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=92187050]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section2" unique_id=2050184093]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Game Design"
+horizontal_alignment = 1
+
+[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section2" unique_id=1879121974]
+layout_mode = 2
+bbcode_enabled = true
+text = "Carolina Alves
+Bryan Young
+Manuela Araújo
+Marcelo de Loreto
+Maurício Aires
+Mayara Lima
+Nina Shibata
+Thaís Martins
+Sandro Bezerra"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Section3" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=876525712]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section3" unique_id=437135498]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Level Design"
+horizontal_alignment = 1
+
+[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section3" unique_id=48277650]
+layout_mode = 2
+bbcode_enabled = true
+text = "Carolina Alves
+Marcelo de Loreto
+Maurício Aires
+Pedro Castro"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Section4" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=1757296731]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section4" unique_id=151860511]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Desenvolvimento do jogo"
+horizontal_alignment = 1
+
+[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section4" unique_id=1231042505]
+layout_mode = 2
+bbcode_enabled = true
+text = "Carolina Alves
+Marcelo de Loreto
+Pedro Castro
+"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Section5" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=640396594]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=511641514]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Artes visuais"
+horizontal_alignment = 1
+
+[node name="SubTitle" type="Label" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=2013629070]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Pixel Art"
+horizontal_alignment = 1
+
+[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=1782737558]
+layout_mode = 2
+bbcode_enabled = true
+text = "Manuela Araújo
+Maurício Aires
+Thaís Martins"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="SubTitle2" type="Label" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=1599854488]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Desenho 2D"
+horizontal_alignment = 1
+
+[node name="Texts2" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=1298909822]
+layout_mode = 2
+bbcode_enabled = true
+text = "Laura Cruz"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Section6" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=811621350]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section6" unique_id=1738538265]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Música e Efeitos sonoros"
+horizontal_alignment = 1
+
+[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section6" unique_id=125749932]
+layout_mode = 2
+bbcode_enabled = true
+text = "Izzy Costa
+Leonardo Pratagy"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Section7" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=758128423]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section7" unique_id=492184319]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Documentação"
+horizontal_alignment = 1
+
+[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section7" unique_id=622570301]
+layout_mode = 2
+bbcode_enabled = true
+text = "Bryan Young
+Nina Shibata"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Section8" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=1708352477]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=66275186]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Ferramentas Utilizadas"
+horizontal_alignment = 1
+
+[node name="SubTitle" type="Label" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=234552035]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Game Engine"
+horizontal_alignment = 1
+
+[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=1314568540]
+layout_mode = 2
+bbcode_enabled = true
+text = "Godot Engine"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="SubTitle2" type="Label" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=1170168120]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Ferramentas Gráficas"
+horizontal_alignment = 1
+
+[node name="Texts2" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=1475510230]
+layout_mode = 2
+bbcode_enabled = true
+text = "Clip Studio Paint
+Photoshop
+Illustrator
+Aseprite
+Libresprite"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="SubTitle3" type="Label" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=890568524]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Produção e Edição de Som"
+horizontal_alignment = 1
+
+[node name="Texts3" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=488674581]
+layout_mode = 2
+bbcode_enabled = true
+text = "Ableton Live
+FL Studio"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Section9" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=1455385898]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section9" unique_id=1405722484]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Mensagem Final"
+horizontal_alignment = 1
+
+[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section9" unique_id=1523615398]
+layout_mode = 2
+bbcode_enabled = true
+text = "Agradecemos a todas as pessoas que fizeram parte desse projeto 
+e que puderam torná-lo realidade. 
+
+Agradecemos também a você, jogador, que experimentou nosso jogo!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="MsgFinal" type="Label" parent="ScrollContainer/MarginContainer/Content" unique_id=1563662305]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Muito obrigado por apoiar nosso projeto!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=1857324002]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="UfpaLogo" type="TextureRect" parent="ScrollContainer/MarginContainer/Content/HBoxContainer" unique_id=73370694]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("4_5ad82")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SpiderLogo" type="TextureRect" parent="ScrollContainer/MarginContainer/Content/HBoxContainer" unique_id=76342284]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("5_xs16p")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BottomSpacer" type="Control" parent="ScrollContainer/MarginContainer/Content" unique_id=1965781593]
+layout_mode = 2
+
+[node name="NavigationLegend" parent="." unique_id=1102564893 instance=ExtResource("7_5ad82")]
+visible = false
+layout_mode = 1
+legend_text = "[ui_cancel] Menu Principal"
