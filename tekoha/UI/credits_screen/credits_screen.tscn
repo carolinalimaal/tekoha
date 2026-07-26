@@ -43,15 +43,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.43529412)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1029726216]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=193771197]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=1937501293]
 layout_mode = 2
@@ -60,7 +58,7 @@ theme_override_constants/margin_left = 20
 [node name="Content" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=964333984]
 custom_minimum_size = Vector2(640, 0)
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 32
 
 [node name="TopSpacer" type="Control" parent="ScrollContainer/MarginContainer/Content" unique_id=826907105]
 layout_mode = 2
@@ -74,7 +72,7 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="ScrollContainer/MarginContainer/Content" unique_id=1745596322]
 layout_mode = 2
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 22
 text = "Um jogo feito por membros do Laboratório SPIDER, da Universidade Federal do Pará."
 horizontal_alignment = 1
 
@@ -86,7 +84,7 @@ horizontal_alignment = 1
 
 [node name="Section1" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=1275810516]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 12
 
 [node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section1" unique_id=2048738446]
 layout_mode = 2
@@ -104,7 +102,7 @@ horizontal_alignment = 1
 
 [node name="Section2" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=92187050]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 12
 
 [node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section2" unique_id=2050184093]
 layout_mode = 2
@@ -122,6 +120,7 @@ Marcelo de Loreto
 Maurício Aires
 Mayara Lima
 Nina Shibata
+Pedro Castro
 Thaís Martins
 Sandro Bezerra"
 fit_content = true
@@ -130,7 +129,7 @@ horizontal_alignment = 1
 
 [node name="Section3" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=876525712]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 12
 
 [node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section3" unique_id=437135498]
 layout_mode = 2
@@ -151,7 +150,7 @@ horizontal_alignment = 1
 
 [node name="Section4" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=1757296731]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 12
 
 [node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section4" unique_id=151860511]
 layout_mode = 2
@@ -172,7 +171,7 @@ horizontal_alignment = 1
 
 [node name="Section5" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=640396594]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 12
 
 [node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=511641514]
 layout_mode = 2
@@ -180,13 +179,17 @@ theme_override_font_sizes/font_size = 24
 text = "Artes visuais"
 horizontal_alignment = 1
 
-[node name="SubTitle" type="Label" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=2013629070]
+[node name="Subsection" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=227157827]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="SubTitle" type="Label" parent="ScrollContainer/MarginContainer/Content/Section5/Subsection" unique_id=2013629070]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Pixel Art"
 horizontal_alignment = 1
 
-[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=1782737558]
+[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section5/Subsection" unique_id=1782737558]
 layout_mode = 2
 bbcode_enabled = true
 text = "Manuela Araújo
@@ -196,23 +199,66 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="SubTitle2" type="Label" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=1599854488]
+[node name="Subsection2" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=1467173702]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="SubTitle2" type="Label" parent="ScrollContainer/MarginContainer/Content/Section5/Subsection2" unique_id=1599854488]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Desenho 2D"
+text = "Ilustrações e Concept Arts"
 horizontal_alignment = 1
 
-[node name="Texts2" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=1298909822]
+[node name="Texts2" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section5/Subsection2" unique_id=1298909822]
 layout_mode = 2
 bbcode_enabled = true
-text = "Laura Cruz"
+text = "Laura Cruz
+Thaís Martins"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Subsection3" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=369888709]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="SubTitle3" type="Label" parent="ScrollContainer/MarginContainer/Content/Section5/Subsection3" unique_id=718859310]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Interfaces de usuário"
+horizontal_alignment = 1
+
+[node name="Texts3" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section5/Subsection3" unique_id=1838815048]
+layout_mode = 2
+bbcode_enabled = true
+text = "Laura Cruz
+Thaís Martins"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Subsection4" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content/Section5" unique_id=1848373878]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="SubTitle4" type="Label" parent="ScrollContainer/MarginContainer/Content/Section5/Subsection4" unique_id=862337643]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Identidade visual"
+horizontal_alignment = 1
+
+[node name="Texts4" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section5/Subsection4" unique_id=1209850649]
+layout_mode = 2
+bbcode_enabled = true
+text = "Laura Cruz
+Thaís Martins"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
 [node name="Section6" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=811621350]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 12
 
 [node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section6" unique_id=1738538265]
 layout_mode = 2
@@ -231,7 +277,7 @@ horizontal_alignment = 1
 
 [node name="Section7" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=758128423]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 12
 
 [node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section7" unique_id=492184319]
 layout_mode = 2
@@ -243,6 +289,7 @@ horizontal_alignment = 1
 layout_mode = 2
 bbcode_enabled = true
 text = "Bryan Young
+Mayara Lima
 Nina Shibata"
 fit_content = true
 scroll_active = false
@@ -250,7 +297,7 @@ horizontal_alignment = 1
 
 [node name="Section8" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=1708352477]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 12
 
 [node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=66275186]
 layout_mode = 2
@@ -258,13 +305,17 @@ theme_override_font_sizes/font_size = 24
 text = "Ferramentas Utilizadas"
 horizontal_alignment = 1
 
-[node name="SubTitle" type="Label" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=234552035]
+[node name="Subsection" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=1770978509]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="SubTitle" type="Label" parent="ScrollContainer/MarginContainer/Content/Section8/Subsection" unique_id=234552035]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Game Engine"
 horizontal_alignment = 1
 
-[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=1314568540]
+[node name="Texts" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section8/Subsection" unique_id=1314568540]
 layout_mode = 2
 bbcode_enabled = true
 text = "Godot Engine"
@@ -272,13 +323,17 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="SubTitle2" type="Label" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=1170168120]
+[node name="Subsection2" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=685260464]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="SubTitle2" type="Label" parent="ScrollContainer/MarginContainer/Content/Section8/Subsection2" unique_id=1170168120]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Ferramentas Gráficas"
 horizontal_alignment = 1
 
-[node name="Texts2" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=1475510230]
+[node name="Texts2" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section8/Subsection2" unique_id=1475510230]
 layout_mode = 2
 bbcode_enabled = true
 text = "Clip Studio Paint
@@ -290,13 +345,17 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="SubTitle3" type="Label" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=890568524]
+[node name="Subsection3" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=934090252]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="SubTitle3" type="Label" parent="ScrollContainer/MarginContainer/Content/Section8/Subsection3" unique_id=890568524]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Produção e Edição de Som"
 horizontal_alignment = 1
 
-[node name="Texts3" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section8" unique_id=488674581]
+[node name="Texts3" type="RichTextLabel" parent="ScrollContainer/MarginContainer/Content/Section8/Subsection3" unique_id=488674581]
 layout_mode = 2
 bbcode_enabled = true
 text = "Ableton Live
@@ -307,7 +366,7 @@ horizontal_alignment = 1
 
 [node name="Section9" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Content" unique_id=1455385898]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 12
 
 [node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Content/Section9" unique_id=1405722484]
 layout_mode = 2
