@@ -35,7 +35,7 @@ func _ready() -> void:
 	if bottom_spacer:
 		bottom_spacer.custom_minimum_size.y = window_height
 	
-	# Aguarda mais dois frames para o Godot recalcular a árvore de UI inteira com as novas alturas mínimas aplicadas
+	# Aguarda mais dois frames para o Godot recalcular a árvore de UI inteira com as novas alturas mínimas
 	await get_tree().process_frame
 	await get_tree().process_frame
 	
@@ -44,8 +44,6 @@ func _ready() -> void:
 	
 	if _finished:
 		return
-
-	# Agora o get_combined_minimum_size().y retornará o valor correto com os espaçadores
 	var content_height: float = content.get_combined_minimum_size().y
 	var max_scroll: float = max(0.0, content_height - window_height)
 	
@@ -56,7 +54,6 @@ func _ready() -> void:
 		_tween.tween_property(scroll_container, "scroll_vertical", int(max_scroll), credits_time)
 		_tween.finished.connect(finish)
 	else:
-		# Se não houver o que rolar por erro de cálculo, fecha direto
 		finish()
 
 func _input(_event: InputEvent) -> void:
