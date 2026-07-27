@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bucllvjb3o7ht" path="res://entities/npcs/genericos/npc_nina.tscn" id="17_lvpqs"]
 [ext_resource type="PackedScene" uid="uid://p4kmdw4y6gk6" path="res://entities/npcs/genericos/npc_crianca_frente.tscn" id="18_d026n"]
 [ext_resource type="PackedScene" uid="uid://c2amukeq4q6qo" path="res://entities/npcs/genericos/npc_carol.tscn" id="19_f1imr"]
+[ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="20_0h1l2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfef4"]
 size = Vector2(10, 94)
@@ -160,11 +161,32 @@ flipped = true
 position = Vector2(485, 536)
 animated_frames = ExtResource("16_lvpqs")
 
-[node name="NpcNina" parent="." unique_id=459407605 instance=ExtResource("17_lvpqs")]
+[node name="NPCs" type="Node2D" parent="." unique_id=561850378]
+y_sort_enabled = true
+
+[node name="NpcNina" parent="NPCs" unique_id=459407605 instance=ExtResource("17_lvpqs")]
 position = Vector2(478, 664)
 
-[node name="NpcCriancaFrente" parent="." unique_id=651394413 instance=ExtResource("18_d026n")]
+[node name="NpcCriancaFrente" parent="NPCs" unique_id=651394413 instance=ExtResource("18_d026n")]
 position = Vector2(989, 408)
 
-[node name="NpcCarol" parent="." unique_id=1261501975 instance=ExtResource("19_f1imr")]
+[node name="NpcCarol" parent="NPCs" unique_id=1261501975 instance=ExtResource("19_f1imr")]
 position = Vector2(177, 363)
+
+[node name="SFXs" type="Node2D" parent="." unique_id=571141560]
+
+[node name="SFXAguaRio" type="AudioStreamPlayer2D" parent="SFXs" unique_id=989527406]
+position = Vector2(298, 545)
+stream = ExtResource("20_0h1l2")
+volume_db = -35.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXAguaRio2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=491550281]
+position = Vector2(1026, 500)
+stream = ExtResource("20_0h1l2")
+volume_db = -35.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"

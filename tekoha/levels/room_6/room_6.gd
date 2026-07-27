@@ -6,7 +6,7 @@ const CECILIA_CAMERA_DURATION := 1.0
 @export var cecilia_calling_dialogue: DialogueSettings
 
 @onready var roll_mecanic: Node2D = $RollMecanic
-@onready var npc_cecilia: NPC = $NpcCecila
+@onready var npc_cecilia: NPC = $NPCs/NpcCecila
 @onready var first_cecilia_spawn: Marker2D = $FirstCeciliaSpawnPoint
 @onready var second_cecilia_spawn: Marker2D = $SecondCeciliaSpawnPoint
 @onready var room7_door: Door = $Room7Door

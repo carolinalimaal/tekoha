@@ -242,24 +242,29 @@ position = Vector2(368, 96)
 shape = SubResource("RectangleShape2D_1n1lg")
 debug_color = Color(0.8730078, 0.00046340286, 0.843584, 0.41960785)
 
-[node name="NpcCecila" parent="." unique_id=2125482859 instance=ExtResource("14_8n5gw")]
+[node name="NPCs" type="Node2D" parent="." unique_id=1875133569]
+y_sort_enabled = true
+
+[node name="NpcCecila" parent="NPCs" unique_id=2125482859 instance=ExtResource("14_8n5gw")]
 position = Vector2(68, 117)
 dialogues_list = Array[ExtResource("13_8n5gw")]([ExtResource("15_86gnr"), ExtResource("16_ic5qo")])
 
-[node name="NpcFogao" parent="." unique_id=1438173127 instance=ExtResource("16_86gnr")]
+[node name="NpcFogao" parent="NPCs" unique_id=1438173127 instance=ExtResource("16_86gnr")]
 position = Vector2(99, 82)
 
-[node name="NpcBalcaoCozinha" parent="." unique_id=1982547839 instance=ExtResource("17_ic5qo")]
+[node name="NpcBalcaoCozinha" parent="NPCs" unique_id=1982547839 instance=ExtResource("17_ic5qo")]
 position = Vector2(308, 144)
 
-[node name="SfxCozinha" type="AudioStreamPlayer2D" parent="." unique_id=582271127]
+[node name="SFXs" type="Node2D" parent="." unique_id=1790194740]
+
+[node name="SfxCozinha" type="AudioStreamPlayer2D" parent="SFXs" unique_id=582271127]
 position = Vector2(190, 130)
 stream = ExtResource("19_xr7sx")
 volume_db = -22.0
 autoplay = true
 bus = &"SFX"
 
-[node name="SfxRestaurante" type="AudioStreamPlayer2D" parent="." unique_id=1176248683]
+[node name="SfxRestaurante" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1176248683]
 position = Vector2(-38, 375)
 stream = ExtResource("20_u3lv7")
 volume_db = -18.0

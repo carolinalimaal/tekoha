@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="16_teyq8"]
 [ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="17_dnhaf"]
 [ext_resource type="SpriteFrames" uid="uid://110m3ia66xi4" path="res://assets/sprites/entities/animals/urubu.tres" id="18_dnhaf"]
+[ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="19_cmi0e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmo2d"]
 texture = ExtResource("2_777hw")
@@ -579,12 +580,6 @@ hammock_collision = ExtResource("13_vultg")
 position = Vector2(480, 968)
 id = 2
 
-[node name="NpcsVarandaRestaurante" parent="." unique_id=1266562718 instance=ExtResource("14_1it45")]
-position = Vector2(1188, 686)
-
-[node name="NpcPier" parent="." unique_id=2139658897 instance=ExtResource("15_vultg")]
-position = Vector2(506, 785)
-
 [node name="Animals" type="Node2D" parent="." unique_id=134040981]
 
 [node name="Animal" parent="Animals" unique_id=220143913 instance=ExtResource("16_teyq8")]
@@ -620,3 +615,30 @@ animated_frames = ExtResource("18_dnhaf")
 [node name="Animal8" parent="Animals" unique_id=1339948488 instance=ExtResource("16_teyq8")]
 position = Vector2(1210, 519)
 animated_frames = ExtResource("18_dnhaf")
+
+[node name="NPCs" type="Node2D" parent="." unique_id=132507340]
+y_sort_enabled = true
+
+[node name="NpcsVarandaRestaurante" parent="NPCs" unique_id=1266562718 instance=ExtResource("14_1it45")]
+position = Vector2(1188, 686)
+
+[node name="NpcPier" parent="NPCs" unique_id=2139658897 instance=ExtResource("15_vultg")]
+position = Vector2(506, 785)
+
+[node name="SFXs" type="Node2D" parent="." unique_id=1727014269]
+
+[node name="SFXAguaRio" type="AudioStreamPlayer2D" parent="SFXs" unique_id=241672263]
+position = Vector2(402, 617)
+stream = ExtResource("19_cmi0e")
+volume_db = -35.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXAguaRio2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=224375613]
+position = Vector2(921, 602)
+stream = ExtResource("19_cmi0e")
+volume_db = -35.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"

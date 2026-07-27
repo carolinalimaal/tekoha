@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://1fglvxuhlal0" path="res://entities/npcs/iara/iara.tscn" id="26_iara"]
 [ext_resource type="Script" uid="uid://cvnimc11cvxig" path="res://levels/room_3/room_3_4.gd" id="27_iara"]
 [ext_resource type="SpriteFrames" uid="uid://dd335a6yxaj04" path="res://assets/sprites/entities/animals/jacare.tres" id="29_q34pk"]
+[ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="30_k68xe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2msv"]
 size = Vector2(98, 20)
@@ -258,19 +259,6 @@ animated_frames = ExtResource("25_1r253")
 position = Vector2(1104, 756)
 animated_frames = ExtResource("25_1r253")
 
-[node name="Room34Door" type="Area2D" parent="." unique_id=920622693]
-position = Vector2(800, 1024)
-script = ExtResource("8_607sj")
-target_level_path = "uid://nf2q8sw81xmy"
-door_name = "Room34Door"
-metadata/_custom_type_script = "uid://dot8xsk0qoeln"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room34Door" unique_id=1251613810]
-position = Vector2(16, 0)
-shape = SubResource("RectangleShape2D_nv3ea")
-
-[node name="Marker2D" type="Marker2D" parent="Room34Door" unique_id=1749388156]
-position = Vector2(0, -64)
 [node name="Animal4" parent="Animals" unique_id=958275065 instance=ExtResource("24_oybd7")]
 position = Vector2(-577, 989)
 animated_frames = ExtResource("29_q34pk")
@@ -290,3 +278,75 @@ animated_frames = ExtResource("29_q34pk")
 [node name="Animal8" parent="Animals" unique_id=318579291 instance=ExtResource("24_oybd7")]
 position = Vector2(582, 1079)
 animated_frames = ExtResource("29_q34pk")
+
+[node name="Room34Door" type="Area2D" parent="." unique_id=920622693]
+position = Vector2(800, 1024)
+script = ExtResource("8_607sj")
+target_level_path = "uid://nf2q8sw81xmy"
+door_name = "Room34Door"
+metadata/_custom_type_script = "uid://dot8xsk0qoeln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room34Door" unique_id=1251613810]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_nv3ea")
+
+[node name="Marker2D" type="Marker2D" parent="Room34Door" unique_id=1749388156]
+position = Vector2(0, -64)
+
+[node name="SFXs" type="Node2D" parent="." unique_id=1083138853]
+
+[node name="SFXAguaRio" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1257027118]
+position = Vector2(1094, 977)
+stream = ExtResource("30_k68xe")
+volume_db = -35.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXAguaRio2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1764343844]
+position = Vector2(550, 1020)
+stream = ExtResource("30_k68xe")
+volume_db = -35.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXAguaRio3" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1936353455]
+position = Vector2(102, 992)
+stream = ExtResource("30_k68xe")
+volume_db = -35.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXAguaRio4" type="AudioStreamPlayer2D" parent="SFXs" unique_id=432739692]
+position = Vector2(-318, 1038)
+stream = ExtResource("30_k68xe")
+volume_db = -35.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXAguaRio5" type="AudioStreamPlayer2D" parent="SFXs" unique_id=987194951]
+position = Vector2(-676, 933)
+stream = ExtResource("30_k68xe")
+volume_db = -35.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXAguaRio6" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1926639169]
+position = Vector2(1846, 636)
+stream = ExtResource("30_k68xe")
+volume_db = -35.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXAguaRio7" type="AudioStreamPlayer2D" parent="SFXs" unique_id=407939153]
+position = Vector2(-1191, 641)
+stream = ExtResource("30_k68xe")
+volume_db = -35.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"

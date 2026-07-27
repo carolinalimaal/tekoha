@@ -6,10 +6,10 @@ var _phase: Phase = Phase.CECILIA_TALK
 @onready var room_7_door: Door = $Room7Door
 @onready var room_8_door: Door = $Room8Door
 @onready var path_block2: PathBlock = $PathBlock2
-@onready var cecilia: NPC = $NpcCecila
+@onready var cecilia: NPC = $NPCs/NpcCecila
 @onready var area_2d: Area2D = $Area2D
-@onready var sfx_cozinha: AudioStreamPlayer2D = $SfxCozinha
-@onready var sfx_restaurante: AudioStreamPlayer2D = $SfxRestaurante
+@onready var sfx_cozinha: AudioStreamPlayer2D = $SFXs/SfxCozinha
+@onready var sfx_restaurante: AudioStreamPlayer2D = $SFXs/SfxRestaurante
 
 func _ready() -> void:
 	if GameManager.current_save.game_state == GameManager.GameState.SECOND_MEETING_CECILIA:

@@ -191,5 +191,4 @@ shape = SubResource("RectangleShape2D_q4msy")
 position = Vector2(0, 57)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=367889744]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_khelp")

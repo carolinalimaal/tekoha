@@ -211,50 +211,11 @@ position = Vector2(0, 24)
 position = Vector2(731, 318)
 id = 3
 
-[node name="NpcCecila" parent="." unique_id=2125482859 instance=ExtResource("13_yxphn")]
-position = Vector2(632, 700)
-dialogues_list = Array[ExtResource("14_bs7kn")]([ExtResource("15_d3h8c"), ExtResource("16_bs7kn"), ExtResource("18_1n6nv")])
-
 [node name="FirstCeciliaSpawnPoint" type="Marker2D" parent="." unique_id=1955373439]
 position = Vector2(632, 700)
 
 [node name="SecondCeciliaSpawnPoint" type="Marker2D" parent="." unique_id=241871122]
 position = Vector2(768, 375)
-
-[node name="NpcManu" parent="." unique_id=1511157617 instance=ExtResource("18_a5usx")]
-z_index = 1
-position = Vector2(401, 537)
-
-[node name="NpcSandro" parent="." unique_id=1427079839 instance=ExtResource("19_dc3iq")]
-y_sort_enabled = true
-position = Vector2(657, 342)
-
-[node name="NpcIdleLado" parent="." unique_id=267557635 instance=ExtResource("21_qk5qf")]
-position = Vector2(466, 192)
-
-[node name="NpcThais" parent="." unique_id=651394413 instance=ExtResource("22_b20ta")]
-position = Vector2(469, 298)
-
-[node name="NpcLaura" parent="." unique_id=459407605 instance=ExtResource("34_brg8j")]
-position = Vector2(440, 317)
-
-[node name="NpcMusicoCantor" parent="." unique_id=947486553 instance=ExtResource("23_s5772")]
-position = Vector2(601, 197)
-
-[node name="NpcMusicoTambor" parent="." unique_id=1657529352 instance=ExtResource("24_48i0n")]
-position = Vector2(569, 155)
-
-[node name="NpcMusicoTeclado" parent="." unique_id=1448697114 instance=ExtResource("25_mp623")]
-position = Vector2(606, 114)
-
-[node name="NpcMusicoViolao" parent="." unique_id=740244014 instance=ExtResource("26_twh3b")]
-position = Vector2(644, 194)
-
-[node name="NpcBalcaoRestaurante" parent="." unique_id=179921955 instance=ExtResource("35_cteyk")]
-position = Vector2(717, 394)
-
-[node name="NpcCarimbo" parent="." unique_id=284373268 instance=ExtResource("36_6mj04")]
-position = Vector2(495, 176)
 
 [node name="Animals" type="Node2D" parent="." unique_id=1497907939]
 
@@ -299,11 +260,56 @@ z_index = 1
 position = Vector2(681, 289)
 animated_frames = ExtResource("32_bq55y")
 
-[node name="SfxRestaurante" type="AudioStreamPlayer2D" parent="." unique_id=540325453]
+[node name="NPCs" type="Node2D" parent="." unique_id=1023854103]
+y_sort_enabled = true
+
+[node name="NpcCecila" parent="NPCs" unique_id=2125482859 instance=ExtResource("13_yxphn")]
+position = Vector2(632, 700)
+dialogues_list = Array[ExtResource("14_bs7kn")]([ExtResource("15_d3h8c"), ExtResource("16_bs7kn"), ExtResource("18_1n6nv")])
+
+[node name="NpcManu" parent="NPCs" unique_id=1511157617 instance=ExtResource("18_a5usx")]
+z_index = 1
+position = Vector2(401, 537)
+
+[node name="NpcSandro" parent="NPCs" unique_id=1427079839 instance=ExtResource("19_dc3iq")]
+y_sort_enabled = true
+position = Vector2(657, 342)
+
+[node name="NpcIdleLado" parent="NPCs" unique_id=267557635 instance=ExtResource("21_qk5qf")]
+position = Vector2(466, 192)
+
+[node name="NpcThais" parent="NPCs" unique_id=651394413 instance=ExtResource("22_b20ta")]
+position = Vector2(469, 298)
+
+[node name="NpcLaura" parent="NPCs" unique_id=459407605 instance=ExtResource("34_brg8j")]
+position = Vector2(440, 317)
+
+[node name="NpcMusicoCantor" parent="NPCs" unique_id=947486553 instance=ExtResource("23_s5772")]
+position = Vector2(601, 197)
+
+[node name="NpcMusicoTambor" parent="NPCs" unique_id=1657529352 instance=ExtResource("24_48i0n")]
+position = Vector2(569, 155)
+
+[node name="NpcMusicoTeclado" parent="NPCs" unique_id=1448697114 instance=ExtResource("25_mp623")]
+position = Vector2(606, 114)
+
+[node name="NpcMusicoViolao" parent="NPCs" unique_id=740244014 instance=ExtResource("26_twh3b")]
+position = Vector2(644, 194)
+
+[node name="NpcBalcaoRestaurante" parent="NPCs" unique_id=179921955 instance=ExtResource("35_cteyk")]
+position = Vector2(717, 394)
+
+[node name="NpcCarimbo" parent="NPCs" unique_id=284373268 instance=ExtResource("36_6mj04")]
+position = Vector2(495, 176)
+
+[node name="SFXs" type="Node2D" parent="." unique_id=168462933]
+
+[node name="SfxRestaurante" type="AudioStreamPlayer2D" parent="SFXs" unique_id=540325453]
 position = Vector2(523, 249)
 stream = ExtResource("37_t0j85")
-volume_db = -12.0
+volume_db = -14.0
 autoplay = true
+attenuation = 1.6817931
 bus = &"SFX"
 
 [connection signal="body_entered" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_entered"]
