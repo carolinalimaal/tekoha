@@ -6,6 +6,7 @@ extends Control
 @onready var new_game_button: DefaultButton = $VBoxContainer/MenuOptions/NewGame
 @onready var load_game_button: DefaultButton = $VBoxContainer/MenuOptions/LoadGame
 @onready var options_button: DefaultButton = $VBoxContainer/MenuOptions/Options
+@onready var credits_button: DefaultButton = $VBoxContainer/MenuOptions/Credits
 @onready var quit_button: DefaultButton = $VBoxContainer/MenuOptions/Quit
 @onready var background: TextureRect = $Background
 
@@ -24,6 +25,7 @@ func _ready() -> void:
 	new_game_button.pressed.connect(_on_new_game_pressed)
 	load_game_button.pressed.connect(_on_load_game_pressed)
 	options_button.pressed.connect(_on_options_pressed)
+	credits_button.pressed.connect(_on_credits_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
 	
 	UIManager.register_menu("confirmation", confirmation_popup)
@@ -95,6 +97,10 @@ func _on_options_closed() -> void:
 		if b is Button:
 			b.focus_mode = Control.FOCUS_ALL
 	options_button.grab_focus()
+
+func _on_credits_pressed() -> void:
+	GameManager.set_allow_skip_credits_flag(true)
+	get_tree().change_scene_to_file("res://UI/credits_screen/credits_screen.tscn")
 
 func _on_quit_pressed() -> void:
 	navigation_legend.hide()

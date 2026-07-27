@@ -22,6 +22,7 @@ enum GameState {
 }
 
 var current_save: SaveData
+var allow_skip_credits: bool = false
 
 func _ready() -> void:
 	GlobalSignals.coin_collected.connect(_on_coin_collected)
@@ -66,3 +67,6 @@ func set_game_state(new_state: GameState) -> void:
 	if new_state and new_state != current_save.game_state:
 		current_save.game_state = new_state
 		GlobalSignals.game_state_changed.emit(new_state)
+
+func set_allow_skip_credits_flag(value: bool) -> void:
+	allow_skip_credits = value
