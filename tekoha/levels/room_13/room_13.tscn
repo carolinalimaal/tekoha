@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://0jbpc35odvpc" path="res://entities/npcs/genericos/npc_crianca_dir.tscn" id="29_2n5y2"]
 [ext_resource type="PackedScene" uid="uid://cdm2xhabdhem4" path="res://entities/npcs/genericos/npc_idle_lado.tscn" id="29_usnks"]
 [ext_resource type="PackedScene" uid="uid://cm3qag8uwosj0" path="res://entities/npcs/genericos/npc_crianca_frente_2.tscn" id="30_usnks"]
+[ext_resource type="AudioStream" uid="uid://byb3kdd84lp20" path="res://assets/sound/sfx/enviroment/sfx_conversas_fundo.wav" id="31_uc7af"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk2ql"]
 size = Vector2(16, 200)
@@ -338,3 +339,19 @@ position = Vector2(579, 839)
 
 [node name="NpcCriancaFrente2" parent="." unique_id=651394413 instance=ExtResource("30_usnks")]
 position = Vector2(1344, 719)
+
+[node name="SfxConversas" type="AudioStreamPlayer2D" parent="." unique_id=237006204]
+position = Vector2(1433, 320)
+stream = ExtResource("31_uc7af")
+volume_db = -24.0
+autoplay = true
+max_distance = 1000.0
+bus = &"SFX"
+
+[node name="SfxConversas2" type="AudioStreamPlayer2D" parent="." unique_id=2062811074]
+position = Vector2(602, 841)
+stream = ExtResource("31_uc7af")
+volume_db = -24.0
+autoplay = true
+max_distance = 1000.0
+bus = &"SFX"
