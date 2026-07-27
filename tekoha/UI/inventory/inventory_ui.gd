@@ -72,6 +72,7 @@ func _on_confirm_use() -> void:
 			GlobalSignals.hud_info.emit("Sua vida já está cheia!")
 			_close_popup()
 			return
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.EATING)
 		GlobalRefs.player.heal(item_slot.item.health_gain)
 		GlobalRefs.inventory.remove_item_from_slot(item_slot.slot_index)
 

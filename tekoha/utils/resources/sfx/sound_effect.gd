@@ -38,6 +38,7 @@ enum SOUND_EFFECT_TYPE {
 	GAME_OVER,
 	SACOLA_WALK,
 	CANUDINHO_WALK,
+	EATING,
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.

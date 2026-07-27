@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://bjh5bbfj2ry7k"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_eating"]
+[ext_resource type="AudioStream" uid="uid://pjmlrrbep3pm" path="res://assets/sound/sfx/system/sfx_eating.wav" id="2_eating"]
+
+[resource]
+script = ExtResource("1_eating")
+type = 33
+sound_effect = ExtResource("2_eating")
+volume = -16.0
+pitch_randomness = 0.1
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"
