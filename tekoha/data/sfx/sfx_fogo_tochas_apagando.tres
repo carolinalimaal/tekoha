@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://cxo2h5hv7s43w"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_extinguish"]
+[ext_resource type="AudioStream" uid="uid://cyrcciv1e53bk" path="res://assets/sound/sfx/enviroment/sfx_fogo_tochas_apagando.wav" id="2_extinguish"]
+
+[resource]
+script = ExtResource("1_extinguish")
+type = 34
+sound_effect = ExtResource("2_extinguish")
+volume = -14.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"
