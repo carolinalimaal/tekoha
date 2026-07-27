@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://kvhxsxbk7elc"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_bkpad"]
+[ext_resource type="AudioStream" uid="uid://dfls3g41v08tu" path="res://assets/sound/sfx/entities/sfx_caranquejo_walk.wav" id="2_1y8f6"]
+
+[resource]
+script = ExtResource("1_bkpad")
+type = 36
+sound_effect = ExtResource("2_1y8f6")
+volume = -38.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"

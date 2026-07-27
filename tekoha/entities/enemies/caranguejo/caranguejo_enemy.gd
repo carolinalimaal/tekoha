@@ -27,6 +27,7 @@ func _ready() -> void:
 	attack_range_sqr = attack_range * attack_range
 	health_component.died.connect(_on_enemy_died)
 	hitbox_component.attack_received.connect(_on_enemy_attack_received)
+	sprite_2d.animation_looped.connect(play_sfx_walk)
 	state_machine.init(self)
 
 func _physics_process(_delta: float) -> void:
@@ -59,6 +60,7 @@ func _on_enemy_died():
 	set_physics_process(false)
 	hitbox_component.hitbox_collision.set_deferred("disabled", true)
 	hurtbox_component.hurtbox_collision.set_deferred("disabled", true)
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.ENEMY_DIE)
 	die()
 
 func _on_enemy_attack_received(attack_data: AttackData):
@@ -70,3 +72,8 @@ func _on_enemy_attack_received(attack_data: AttackData):
 		var stun_state = state_machine.states.get("stun")
 		stun_state.receive_attack_data(attack_data)
 		state_machine.current_state.transition_to("Stun")
+
+func play_sfx_walk() -> void:
+	if is_dead:
+		return
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.CARANGUEJO_WALK)
