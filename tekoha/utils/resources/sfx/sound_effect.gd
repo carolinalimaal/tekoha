@@ -40,6 +40,7 @@ enum SOUND_EFFECT_TYPE {
 	CANUDINHO_WALK,
 	EATING,
 	TORCH_EXTINGUISH,
+	TRAINING_DUMMY_HIT,
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.

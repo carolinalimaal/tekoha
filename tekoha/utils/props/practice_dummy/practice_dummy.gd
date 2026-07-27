@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func _on_attack_received(attack_data: AttackData):
 	animated_sprite.play("damage_anim")
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.TRAINING_DUMMY_HIT)
 
 	if tutorial_dummy:
 		damage_received.emit(attack_data)
