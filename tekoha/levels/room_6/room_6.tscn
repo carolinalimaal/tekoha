@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://blngbmgdujgxm" path="res://entities/npcs/genericos/npc_laura.tscn" id="34_brg8j"]
 [ext_resource type="PackedScene" uid="uid://gugt655aipb0" path="res://entities/npcs/genericos/npc_balcao_restaurante.tscn" id="35_cteyk"]
 [ext_resource type="PackedScene" uid="uid://dbpl5rfxkfc0m" path="res://entities/npcs/genericos/npc_carimbo.tscn" id="36_6mj04"]
+[ext_resource type="AudioStream" uid="uid://byb3kdd84lp20" path="res://assets/sound/sfx/enviroment/sfx_conversas_fundo.wav" id="37_t0j85"]
 
 [sub_resource type="Resource" id="Resource_cecall"]
 script = ExtResource("14_cec1nt")
@@ -297,6 +298,13 @@ animated_frames = ExtResource("32_bq55y")
 z_index = 1
 position = Vector2(681, 289)
 animated_frames = ExtResource("32_bq55y")
+
+[node name="SfxRestaurante" type="AudioStreamPlayer2D" parent="." unique_id=540325453]
+position = Vector2(523, 249)
+stream = ExtResource("37_t0j85")
+volume_db = -14.0
+autoplay = true
+bus = &"SFX"
 
 [connection signal="body_entered" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_entered"]
 [connection signal="body_exited" from="RollMecanic/StaticBody2D/RollArea" to="RollMecanic" method="_on_roll_area_body_exited"]

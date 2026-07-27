@@ -8,6 +8,8 @@ var _phase: Phase = Phase.CECILIA_TALK
 @onready var path_block2: PathBlock = $PathBlock2
 @onready var cecilia: NPC = $NpcCecila
 @onready var area_2d: Area2D = $Area2D
+@onready var sfx_cozinha: AudioStreamPlayer2D = $SfxCozinha
+@onready var sfx_restaurante: AudioStreamPlayer2D = $SfxRestaurante
 
 func _ready() -> void:
 	if GameManager.current_save.game_state == GameManager.GameState.SECOND_MEETING_CECILIA:
@@ -21,7 +23,8 @@ func _ready() -> void:
 	
 	area_2d.body_entered.connect(_on_exit_area_entered)
 	area_2d.set_deferred("monitoring", false)
-
+	
+	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
 func _exit_tree() -> void:
@@ -34,6 +37,12 @@ func _on_exit_area_entered(body: Node2D) -> void:
 	if body is Player:
 		cecilia.interact()
 
+func _on_dialogue_started() -> void:
+	match _phase:
+		Phase.CECILIA_TALK:
+			sfx_cozinha.stop()
+			sfx_restaurante.stop()
+
 func _on_dialogue_ended() -> void:
 	match _phase:
 		Phase.CECILIA_TALK:
@@ -44,6 +53,8 @@ func _on_dialogue_ended() -> void:
 				_after_exit_dialogue()
 
 func _after_first_dialogue() -> void:
+	sfx_cozinha.play()
+	sfx_restaurante.play()
 	_phase = Phase.APPROACHING_EXIT
 
 	var gift_item: ConsumableItemData = load("res://data/items/tambaqui_assado.tres") as ConsumableItemData
