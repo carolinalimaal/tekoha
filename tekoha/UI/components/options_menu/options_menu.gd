@@ -25,11 +25,20 @@ const ROW_HIGHLIGHT_BORDER_COLOR: Color = Color(1.0, 0.75, 0.35, 0.9)
 @onready var back_button: DefaultButton = $Background/CenterContainer/PanelContainer/MarginContainer/Content/BackButton
 @onready var navigation_legend: NavigationLegend = $NavigationLegend
 
+const SFX_PREVIEW_DELAY: float = 0.2
+
 var _row_focus_style: StyleBoxFlat
 var _row_default_style: StyleBoxEmpty
+var _sfx_preview_timer: Timer
 
 func _ready() -> void:
 	_setup_row_highlight_styles()
+
+	_sfx_preview_timer = Timer.new()
+	_sfx_preview_timer.one_shot = true
+	_sfx_preview_timer.wait_time = SFX_PREVIEW_DELAY
+	_sfx_preview_timer.timeout.connect(_play_sfx_preview)
+	add_child(_sfx_preview_timer)
 
 	fullscreen_toggle.toggled.connect(_on_fullscreen_toggled)
 	fullscreen_toggle.focus_entered.connect(_on_row_focus_entered.bind(fullscreen_row_panel))
@@ -105,6 +114,7 @@ func _on_fullscreen_toggled(pressed: bool) -> void:
 func _on_master_volume_changed(value: float) -> void:
 	SettingsManager.set_master_volume(value)
 	_update_volume_label(master_value_label, value)
+	_sfx_preview_timer.start()
 
 func _on_music_volume_changed(value: float) -> void:
 	SettingsManager.set_music_volume(value)
@@ -113,6 +123,10 @@ func _on_music_volume_changed(value: float) -> void:
 func _on_sfx_volume_changed(value: float) -> void:
 	SettingsManager.set_sfx_volume(value)
 	_update_volume_label(sfx_value_label, value)
+	_sfx_preview_timer.start()
+
+func _play_sfx_preview() -> void:
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.BUTTON_CLICK)
 
 func _on_back_pressed() -> void:
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.CLOSE_MENU)

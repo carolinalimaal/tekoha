@@ -8,11 +8,20 @@ var master_volume: float = 1.0
 var music_volume: float = 1.0
 var sfx_volume: float = 1.0
 
+var _base_bus_volume_db: Dictionary = {}
+
 func _ready() -> void:
+	_capture_base_bus_volumes()
 	_load_settings()
 	_apply_volume("Master", master_volume)
 	_apply_volume("Music", music_volume)
 	_apply_volume("SFX", sfx_volume)
+
+func _capture_base_bus_volumes() -> void:
+	for bus_name in ["Master", "Music", "SFX"]:
+		var bus_index: int = AudioServer.get_bus_index(bus_name)
+		if bus_index != -1:
+			_base_bus_volume_db[bus_name] = AudioServer.get_bus_volume_db(bus_index)
 
 func set_fullscreen(value: bool) -> void:
 	fullscreen = value
@@ -43,7 +52,8 @@ func _apply_volume(bus_name: String, value: float) -> void:
 	var bus_index: int = AudioServer.get_bus_index(bus_name)
 	if bus_index == -1:
 		return
-	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
+	var base_db: float = _base_bus_volume_db.get(bus_name, 0.0)
+	AudioServer.set_bus_volume_db(bus_index, base_db + linear_to_db(value))
 	AudioServer.set_bus_mute(bus_index, value <= 0.0)
 
 func _is_fullscreen() -> bool:
@@ -59,7 +69,6 @@ func _load_settings() -> void:
 		sfx_volume = config.get_value("audio", "sfx_volume", 1.0)
 		_apply_fullscreen()
 	else:
-		# Primeira execução: respeita o modo de janela definido no projeto.
 		fullscreen = _is_fullscreen()
 
 func _save_settings() -> void:

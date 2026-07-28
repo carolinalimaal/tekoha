@@ -1,6 +1,6 @@
 extends Level
 
-@export var bg_music: AudioStream
+@export var bg_music: MusicTrack
 @export var sacola_scene: PackedScene
 @export var canudinho_scene: PackedScene
 

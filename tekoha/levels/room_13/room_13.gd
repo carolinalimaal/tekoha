@@ -1,6 +1,6 @@
 extends Level
 
-@export var bg_music: AudioStream
+@export var bg_music: MusicTrack
 
 @onready var room_14_door: Door = $Room14Door
 @onready var room_4_door: Door = $Room4Door

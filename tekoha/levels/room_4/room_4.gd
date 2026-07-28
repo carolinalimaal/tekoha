@@ -1,6 +1,6 @@
 extends Level
 
-@export var bg_music: AudioStream
+@export var bg_music: MusicTrack
 #@export var motor_loop_duration: float = 2.0
 
 @onready var path_block: PathBlock = $PathBlock

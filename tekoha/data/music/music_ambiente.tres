@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MusicTrack" format=3]
+
+[ext_resource type="Script" path="res://utils/resources/music/music_track.gd" id="1_ambiente"]
+[ext_resource type="AudioStream" uid="uid://ddwpcn8y5abs7" path="res://assets/sound/music/bgm_ambiente.wav" id="2_ambiente"]
+
+[resource]
+script = ExtResource("1_ambiente")
+track = ExtResource("2_ambiente")
+volume = 0.0
+metadata/_custom_type_script = "res://utils/resources/music/music_track.gd"

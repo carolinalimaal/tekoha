@@ -11,34 +11,40 @@ var bgm_player: AudioStreamPlayer
 # CONFIGURAÇÕES DE SFX EM LOOP
 var looping_sfx_players: Dictionary = {}
 
+# SFX one-shot atualmente tocando
+var active_sfx_players: Array = []
+
 func _ready() -> void:
-	# 1. Inicia o sistema de Música (BGM)
+	# Inicia o sistema de Música (BGM)
 	bgm_player = AudioStreamPlayer.new()
 	bgm_player.bus = "Music" # Envia para o bus de Música
 	add_child(bgm_player)
 	
-	# 2. Prepara o dicionário de Efeitos Sonoros (SFX)
+	# Prepara o dicionário de Efeitos Sonoros (SFX)
 	for sound_effect: SoundEffect in sound_effects:
 		sound_effect_dict[sound_effect.type] = sound_effect
 
 
 # FUNÇÕES DE BGM
 # Toca uma música de fundo. Se já houver uma tocando, faz um fade out antes.
-func play_background_sound(new_sound: AudioStream, fade_time: float = 1.0) -> void:
-	if bgm_player.stream == new_sound and bgm_player.playing:
+func play_background_sound(new_sound: MusicTrack, fade_time: float = 1.0) -> void:
+	if not new_sound:
 		return
-		
+
+	if bgm_player.stream == new_sound.track and bgm_player.playing:
+		return
+
 	if bgm_player.playing:
 		var tween = create_tween()
 		tween.tween_property(bgm_player, "volume_db", -80.0, fade_time)
 		tween.tween_callback(func():
-			bgm_player.stream = new_sound
+			bgm_player.stream = new_sound.track
 			bgm_player.play()
-			bgm_player.volume_db = 0.0
+			bgm_player.volume_db = new_sound.volume
 		)
 	else:
-		bgm_player.stream = new_sound
-		bgm_player.volume_db = 0.0
+		bgm_player.stream = new_sound.track
+		bgm_player.volume_db = new_sound.volume
 		bgm_player.play()
 
 # Para a música imediatamente.
@@ -73,13 +79,15 @@ func create_2d_audio_at_location(location: Vector2, type: SoundEffect.SOUND_EFFE
 			new_2D_audio.pitch_scale = sound_effect.pitch_scale + variacao
 			
 			# Limpeza automática ao terminar
+			active_sfx_players.append(new_2D_audio)
 			new_2D_audio.finished.connect(sound_effect.on_audio_finished)
 			new_2D_audio.finished.connect(new_2D_audio.queue_free)
+			new_2D_audio.finished.connect(active_sfx_players.erase.bind(new_2D_audio))
 			new_2D_audio.play()
 	else:
 		push_error("AudioManager: Tipo de som não registrado - ", type)
 
-# Cria um som global que toca igual independente da câmera (ex: UI, level up).
+# Cria um som global que toca igual independente da câmera
 func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 	if sound_effect_dict.has(type):
 		var sound_effect: SoundEffect = sound_effect_dict[type]
@@ -95,13 +103,15 @@ func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 			var variacao = randf_range(-sound_effect.pitch_randomness, sound_effect.pitch_randomness)
 			new_audio.pitch_scale = sound_effect.pitch_scale + variacao
 			
+			active_sfx_players.append(new_audio)
 			new_audio.finished.connect(sound_effect.on_audio_finished)
 			new_audio.finished.connect(new_audio.queue_free)
+			new_audio.finished.connect(active_sfx_players.erase.bind(new_audio))
 			new_audio.play()
 	else:
 		push_error("AudioManager: Tipo de som não registrado - ", type)
 
-# Retorna a duracao (em segundos) do AudioStream registrado para o tipo, ou 0 se nao encontrado.
+# Retorna a duracao em segundos do AudioStream registrado
 func get_sound_effect_duration(type: SoundEffect.SOUND_EFFECT_TYPE) -> float:
 	if sound_effect_dict.has(type):
 		return sound_effect_dict[type].sound_effect.get_length()
@@ -148,3 +158,12 @@ func stop_looping_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 	loop_audio.finished.disconnect(loop_audio.play)
 	loop_audio.stop()
 	loop_audio.queue_free()
+
+# Interrompe todos os SFX ativos no momento (um-tiro e em loop).
+func stop_all_sfx() -> void:
+	for player in active_sfx_players.duplicate():
+		player.stop()
+		player.finished.emit()
+
+	for type: SoundEffect.SOUND_EFFECT_TYPE in looping_sfx_players.keys().duplicate():
+		stop_looping_audio(type)

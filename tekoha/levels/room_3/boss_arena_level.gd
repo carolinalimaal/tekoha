@@ -12,6 +12,8 @@ func _ready() -> void:
 
 func _on_boss_defeated() -> void:
 	GameManager.set_game_state(GameManager.GameState.POS_BOSSFIGHT)
+	AudioManager.stop_all_sfx()
+	AudioManager.stop_background_sound(0.0)
 	if pos_boss_cutscene:
 		DialogueManager.dialogue_finishing.connect(_on_cutscene_finishing, CONNECT_ONE_SHOT)
 		DialogueManager.dialogue_ended.connect(_on_cutscene_ended, CONNECT_ONE_SHOT)

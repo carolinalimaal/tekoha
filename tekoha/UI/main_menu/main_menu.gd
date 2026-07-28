@@ -1,6 +1,6 @@
 extends Control
 
-@export var main_menu_music: AudioStream
+@export var main_menu_music: MusicTrack
 
 @onready var menu_options: VBoxContainer = $VBoxContainer/MenuOptions
 @onready var new_game_button: DefaultButton = $VBoxContainer/MenuOptions/NewGame

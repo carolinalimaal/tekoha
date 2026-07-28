@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://b5dpy7jba3ouw"]
 
 [ext_resource type="Script" uid="uid://br7u668sprpdj" path="res://levels/room_10/room_10.gd" id="1_xpsvw"]
-[ext_resource type="AudioStream" uid="uid://ddwpcn8y5abs7" path="res://assets/sound/music/bgm_ambiente.wav" id="2_8nycx"]
+[ext_resource type="Resource" path="res://data/music/music_ambiente.tres" id="2_8nycx"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_fkh8x"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="3_unx7x"]
 [ext_resource type="Texture2D" uid="uid://b0do13h4w5fkm" path="res://assets/sprites/tiles/chao/grama_terra/grama_terra_tile.png" id="4_8nycx"]

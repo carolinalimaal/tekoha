@@ -1,7 +1,7 @@
 extends Level
 
 # TODO: trocar para a bg_music do puzzle
-@export var bg_music: AudioStream
+@export var bg_music: MusicTrack
 
 func _ready() -> void:
 	AudioManager.stop_background_sound()

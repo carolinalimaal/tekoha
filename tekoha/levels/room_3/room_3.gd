@@ -2,7 +2,7 @@ extends Level
 
 const TRANSITION_FADE_DURATION := 0.5
 
-@export var bg_music: AudioStream
+@export var bg_music: MusicTrack
 @onready var state_machine: StateMachine = $StateMachine
 
 var _transition_overlay: CanvasLayer = null
