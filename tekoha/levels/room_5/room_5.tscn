@@ -19,6 +19,7 @@
 [ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="17_dnhaf"]
 [ext_resource type="SpriteFrames" uid="uid://110m3ia66xi4" path="res://assets/sprites/entities/animals/urubu.tres" id="18_dnhaf"]
 [ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="19_cmi0e"]
+[ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="20_n2ekj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmo2d"]
 texture = ExtResource("2_777hw")
@@ -641,4 +642,13 @@ stream = ExtResource("19_cmi0e")
 volume_db = -35.0
 autoplay = true
 attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXMata" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1177760056]
+position = Vector2(899, 295)
+stream = ExtResource("20_n2ekj")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
 bus = &"SFX"

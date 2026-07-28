@@ -21,6 +21,7 @@
 [ext_resource type="SpriteFrames" uid="uid://c747lrpptnjhi" path="res://assets/sprites/entities/animals/urubu_2.tres" id="17_qwu00"]
 [ext_resource type="SpriteFrames" uid="uid://cuimqx5uawdg7" path="res://assets/sprites/entities/animals/arara_azul.tres" id="18_xdmhn"]
 [ext_resource type="SpriteFrames" uid="uid://dsdybuvg6ds8b" path="res://assets/sprites/entities/animals/arara_vermelha.tres" id="19_a1oma"]
+[ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="22_a1oma"]
 
 [sub_resource type="Resource" id="Resource_m550c"]
 script = ExtResource("3_i6edo")
@@ -415,3 +416,32 @@ z_index = 1
 position = Vector2(697, 787)
 frame_progress = 0.0
 animated_frames = ExtResource("17_3mnv1")
+
+[node name="SFXs" type="Node2D" parent="." unique_id=691799414]
+
+[node name="SFXMata" type="AudioStreamPlayer2D" parent="SFXs" unique_id=203075578]
+position = Vector2(1799, 357)
+stream = ExtResource("22_a1oma")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
+bus = &"SFX"
+
+[node name="SFXMata2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1973625079]
+position = Vector2(884, 1614)
+stream = ExtResource("22_a1oma")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
+bus = &"SFX"
+
+[node name="SFXMata3" type="AudioStreamPlayer2D" parent="SFXs" unique_id=972780613]
+position = Vector2(1036, 896)
+stream = ExtResource("22_a1oma")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
+bus = &"SFX"

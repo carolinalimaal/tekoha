@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://cm3qag8uwosj0" path="res://entities/npcs/genericos/npc_crianca_frente_2.tscn" id="30_usnks"]
 [ext_resource type="AudioStream" uid="uid://byb3kdd84lp20" path="res://assets/sound/sfx/enviroment/sfx_conversas_fundo.wav" id="31_uc7af"]
 [ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="32_8fnq6"]
+[ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="33_ko4mv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk2ql"]
 size = Vector2(16, 200)
@@ -392,4 +393,13 @@ stream = ExtResource("32_8fnq6")
 volume_db = -35.0
 autoplay = true
 attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXMata" type="AudioStreamPlayer2D" parent="SFXs" unique_id=253019460]
+position = Vector2(414, 236)
+stream = ExtResource("33_ko4mv")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
 bus = &"SFX"

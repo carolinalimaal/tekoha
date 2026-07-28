@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="10_7woc8"]
 [ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="13_eofvv"]
 [ext_resource type="SpriteFrames" uid="uid://cvp6vbsmeqb32" path="res://assets/sprites/entities/animals/ran.tres" id="14_4rlwf"]
+[ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="14_3374i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvq2q"]
 size = Vector2(14, 124)
@@ -88,3 +89,14 @@ animated_frames = ExtResource("14_4rlwf")
 [node name="Animal2" parent="Animals" unique_id=1417988394 instance=ExtResource("13_eofvv")]
 position = Vector2(1059, 483)
 animated_frames = ExtResource("14_4rlwf")
+
+[node name="SFXs" type="Node2D" parent="." unique_id=1099285067]
+
+[node name="SFXMata" type="AudioStreamPlayer2D" parent="SFXs" unique_id=468967324]
+position = Vector2(851, -56)
+stream = ExtResource("14_3374i")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
+bus = &"SFX"

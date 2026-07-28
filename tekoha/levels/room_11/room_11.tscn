@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dx6yr2evs52lk" path="res://utils/props/root/root.tscn" id="8_drjbi"]
 [ext_resource type="SpriteFrames" uid="uid://d1u4kbte4dt8y" path="res://assets/sprites/props/chest/chest_03.tres" id="9_khelp"]
 [ext_resource type="Resource" uid="uid://bf1jdb62ejs2n" path="res://data/items/peixe_com_acai.tres" id="10_khelp"]
+[ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="14_ds1xc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ds1xc"]
 size = Vector2(128, 12)
@@ -192,3 +193,14 @@ position = Vector2(0, 57)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=367889744]
 navigation_polygon = SubResource("NavigationPolygon_khelp")
+
+[node name="SFXs" type="Node2D" parent="." unique_id=1606001390]
+
+[node name="SFXMata" type="AudioStreamPlayer2D" parent="SFXs" unique_id=640019982]
+position = Vector2(2026, 556)
+stream = ExtResource("14_ds1xc")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
+bus = &"SFX"

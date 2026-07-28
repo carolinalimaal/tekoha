@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="22_w3s6i"]
 [ext_resource type="SpriteFrames" uid="uid://cuimqx5uawdg7" path="res://assets/sprites/entities/animals/arara_azul.tres" id="23_s5rj6"]
 [ext_resource type="SpriteFrames" uid="uid://dsdybuvg6ds8b" path="res://assets/sprites/entities/animals/arara_vermelha.tres" id="24_540e6"]
+[ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="25_s5rj6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mf6jk"]
 texture = ExtResource("6_25ocl")
@@ -326,3 +327,23 @@ arara_scene = ExtResource("22_w3s6i")
 blue_arara_sprite = ExtResource("23_s5rj6")
 red_arara_sprite = ExtResource("24_540e6")
 metadata/_custom_type_script = "uid://c1mkr2gxjoonq"
+
+[node name="SFXs" type="Node2D" parent="." unique_id=862889873]
+position = Vector2(1723, 544)
+
+[node name="SFXMata" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1555901814]
+position = Vector2(-1130, -137)
+stream = ExtResource("25_s5rj6")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
+bus = &"SFX"
+
+[node name="SFXMata2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=562276200]
+stream = ExtResource("25_s5rj6")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
+bus = &"SFX"

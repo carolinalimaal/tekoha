@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://cvnimc11cvxig" path="res://levels/room_3/room_3_4.gd" id="27_iara"]
 [ext_resource type="SpriteFrames" uid="uid://dd335a6yxaj04" path="res://assets/sprites/entities/animals/jacare.tres" id="29_q34pk"]
 [ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="30_k68xe"]
+[ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="31_khhq5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2msv"]
 size = Vector2(98, 20)
@@ -349,4 +350,22 @@ stream = ExtResource("30_k68xe")
 volume_db = -35.0
 autoplay = true
 attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXMata" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1471331358]
+position = Vector2(-536, 313)
+stream = ExtResource("31_khhq5")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
+bus = &"SFX"
+
+[node name="SFXMata2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=2088990109]
+position = Vector2(1102, 354)
+stream = ExtResource("31_khhq5")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
 bus = &"SFX"

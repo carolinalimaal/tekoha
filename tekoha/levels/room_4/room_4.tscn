@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="11_5mqem"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="12_pm3eg"]
 [ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="13_pm3eg"]
+[ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="14_6m4mh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xflk"]
 texture = ExtResource("2_ptwuu")
@@ -592,10 +593,21 @@ metadata/_custom_type_script = "uid://d1vcrcidpkigq"
 shape = SubResource("RectangleShape2D_ojuiy")
 debug_color = Color(0.63288116, 0.5287686, 3.85046e-07, 0.41960785)
 
-[node name="SFXAguaRio" type="AudioStreamPlayer2D" parent="." unique_id=1224564826]
+[node name="SFXs" type="Node2D" parent="." unique_id=1641254342]
+
+[node name="SFXAguaRio" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1224564826]
 position = Vector2(987, 635)
 stream = ExtResource("13_pm3eg")
 volume_db = -35.0
 autoplay = true
 attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXMata" type="AudioStreamPlayer2D" parent="SFXs" unique_id=691180672]
+position = Vector2(303, 1321)
+stream = ExtResource("14_6m4mh")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
 bus = &"SFX"
