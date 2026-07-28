@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_typing")
 limit = 1
-type = 17
+type = 16
 sound_effect = ExtResource("2_typing")
 volume = -35.0
 pitch_scale = 1.2

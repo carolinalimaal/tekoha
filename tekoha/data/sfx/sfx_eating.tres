@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_eating")
-type = 32
+type = 31
 sound_effect = ExtResource("2_eating")
 volume = -16.0
 pitch_randomness = 0.1

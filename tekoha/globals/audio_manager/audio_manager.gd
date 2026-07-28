@@ -117,12 +117,6 @@ func get_sound_effect_duration(type: SoundEffect.SOUND_EFFECT_TYPE) -> float:
 		return sound_effect_dict[type].sound_effect.get_length()
 	return 0.0
 
-# Inicia um som global em loop e o interrompe automaticamente apos 'duration' segundos.
-func start_looping_audio_for_duration(type: SoundEffect.SOUND_EFFECT_TYPE, duration: float) -> void:
-	start_looping_audio(type)
-	var stop_timer := get_tree().create_timer(duration, true)
-	stop_timer.timeout.connect(func(): stop_looping_audio(type))
-
 # Inicia um som global em loop
 # Nao faz nada se ja estiver tocando.
 func start_looping_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
