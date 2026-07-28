@@ -41,6 +41,8 @@ func _ready() -> void:
 	health_component.died.connect(_on_player_died)
 	hitbox_component.attack_received.connect(_on_player_attack_received)
 	health_changed.connect(_on_health_changed)
+	DialogueManager.dialogue_started.connect(_on_dialogue_started)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	# Iniciar state_machine
 	state_machine.init(self)
 	# Adicionar ao grupo "player"
@@ -107,10 +109,24 @@ func _exit_tree() -> void:
 	if _is_low_health:
 		_is_low_health = false
 		AudioManager.stop_looping_audio(SoundEffect.SOUND_EFFECT_TYPE.LOW_HEALTH)
+	if DialogueManager.dialogue_started.is_connected(_on_dialogue_started):
+		DialogueManager.dialogue_started.disconnect(_on_dialogue_started)
+	if DialogueManager.dialogue_ended.is_connected(_on_dialogue_ended):
+		DialogueManager.dialogue_ended.disconnect(_on_dialogue_ended)
+
+func _on_dialogue_started() -> void:
+	if _is_low_health:
+		AudioManager.stop_looping_audio(SoundEffect.SOUND_EFFECT_TYPE.LOW_HEALTH)
+
+func _on_dialogue_ended() -> void:
+	if _is_low_health:
+		AudioManager.start_looping_audio(SoundEffect.SOUND_EFFECT_TYPE.LOW_HEALTH)
 
 func _on_player_attack_received(attack_data: AttackData):
-	# Nao sofre dano se estiver em DEATH ou STUN
+	# Nao sofre dano se estiver em DEATH ou STUN, nem durante dialogos/cutscenes
 	if state_machine.current_state.name in ["Death", "Stun"]:
+		return
+	if DialogueManager.is_showing:
 		return
 		
 	# Sofrer o dano 

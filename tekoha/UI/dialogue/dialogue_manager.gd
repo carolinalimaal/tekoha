@@ -2,6 +2,8 @@ extends CanvasLayer
 
 signal dialogue_started
 signal dialogue_ended
+## Emitido no início de _end_speech(), antes do fade que revela o mundo do jogo
+signal dialogue_finishing
 
 enum Idiom {
 	PT, 
@@ -119,6 +121,7 @@ func _next_sentence() -> void:
 		_end_speech()
 
 func _end_speech() -> void:
+	dialogue_finishing.emit()
 	dialogue_box.hide()
 	cutscene_box.hide()
 	navigation_legend.hide()

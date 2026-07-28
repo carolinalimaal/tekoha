@@ -1,5 +1,7 @@
 extends Node2D
 
+signal death_sequence_finished
+
 @export var take_damage_effect: Shader
 @export var blink_duration: float = 0.8
 
@@ -8,9 +10,11 @@ extends Node2D
 @onready var hurtbox_component: HurtboxComponent = $Attack/HurtboxComponent
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var health_ui: CanvasLayer = $CanvasLayer
 @onready var progress_bar: ProgressBar = $CanvasLayer/VBoxContainer/ProgressBar
 @onready var body: Sprite2D = $Body
 @onready var tail: Sprite2D = $Attack/Tail
+@onready var crab_spawn_area: Area2D = $CrabSpawnArea
 
 var state_machine: StateMachine
 
@@ -39,6 +43,7 @@ func _process(_delta: float) -> void:
 func _on_boss_died():
 	GlobalRefs.player_camera.apply_shake()
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.ARRAIA_DIE)
+	state_machine.current_state.transition_to("Death")
 
 func _on_boss_attack_received(attack_data: AttackData):
 	if state_machine.current_state.name in ["Death", "Stun"]:

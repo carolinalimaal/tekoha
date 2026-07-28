@@ -16,6 +16,7 @@
 [ext_resource type="Shader" uid="uid://dmd5k6yxg24en" path="res://entities/enemies/boss/boss_take_damage.gdshader" id="14_take_damage"]
 [ext_resource type="Script" uid="uid://gxoaqc16nmqj" path="res://entities/enemies/boss/attack.gd" id="14_uq55q"]
 [ext_resource type="Script" uid="uid://b5fvvlw35l6qk" path="res://entities/enemies/boss/aim.gd" id="15_oxfk7"]
+[ext_resource type="Script" path="res://entities/enemies/boss/death.gd" id="16_death"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_take_damage"]
 shader = ExtResource("14_take_damage")
@@ -397,3 +398,6 @@ script = ExtResource("14_uq55q")
 
 [node name="Aim" type="Node" parent="StateMachine" unique_id=1437824843]
 script = ExtResource("15_oxfk7")
+
+[node name="Death" type="Node" parent="StateMachine" unique_id=1980234561]
+script = ExtResource("16_death")

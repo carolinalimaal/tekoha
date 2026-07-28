@@ -5,8 +5,10 @@
 [ext_resource type="Script" uid="uid://dy6wirss0gjld" path="res://UI/components/button/button.gd" id="3_d8n0o"]
 
 [node name="EndScreen" type="CanvasLayer" unique_id=1157450737]
+layer = 1
 process_mode = 3
 script = ExtResource("1_ucoga")
+button_timeout = 10.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=690816413]
 anchors_preset = 15
@@ -42,11 +44,11 @@ Obrigado por jogar até aqui!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MainMenuButton" type="Button" parent="VBoxContainer" unique_id=1253045448]
+[node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=1253045448]
 custom_minimum_size = Vector2(177.25, 55.313)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Menu Principal"
+text = "Ver Créditos"
 script = ExtResource("3_d8n0o")
 metadata/_custom_type_script = "uid://dy6wirss0gjld"

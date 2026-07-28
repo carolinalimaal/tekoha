@@ -281,14 +281,14 @@ position = Vector2(582, 1079)
 animated_frames = ExtResource("29_q34pk")
 
 [node name="Room34Door" type="Area2D" parent="." unique_id=920622693]
-position = Vector2(800, 1024)
+position = Vector2(819, 1098)
+monitoring = false
 script = ExtResource("8_607sj")
 target_level_path = "uid://nf2q8sw81xmy"
 door_name = "Room34Door"
 metadata/_custom_type_script = "uid://dot8xsk0qoeln"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room34Door" unique_id=1251613810]
-position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_nv3ea")
 
 [node name="Marker2D" type="Marker2D" parent="Room34Door" unique_id=1749388156]

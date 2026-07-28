@@ -20,10 +20,14 @@ func _ready() -> void:
 		allow_skip = GameManager.allow_skip_credits
 		if allow_skip and navigation_legend:
 			navigation_legend.visible = allow_skip
-	
+
 	if scroll_container:
 		scroll_container.scroll_vertical = 0
-	
+		# Deixa transparente até o TopSpacer ter seu tamanho calculado, evitando
+		# o flash do texto aparecendo no topo antes de ser empurrado pra baixo.
+		# Usa modulate (não hide/visible) para não interferir no layout/scroll.
+		scroll_container.modulate.a = 0.0
+
 	# Aguarda um frame para garantir que a árvore e o viewport estejam prontos
 	await get_tree().process_frame
 	
@@ -44,6 +48,10 @@ func _ready() -> void:
 	
 	if _finished:
 		return
+
+	if scroll_container:
+		scroll_container.modulate.a = 1.0
+
 	var content_height: float = content.get_combined_minimum_size().y
 	var max_scroll: float = max(0.0, content_height - window_height)
 	

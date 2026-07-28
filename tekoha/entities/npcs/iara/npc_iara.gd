@@ -5,6 +5,12 @@ extends NPC
 var current_dialogue_index: int = -1
 var _is_own_dialogue: bool = false
 
+func _ready() -> void:
+	super()
+	match GameManager.current_save.game_state:
+		GameManager.GameState.PRE_BOSSFIGHT:
+			npc_dialogue = dialogues_list[0]
+
 func interact() -> void:
 	current_dialogue_index = dialogues_list.find(npc_dialogue)
 	_is_own_dialogue = true
@@ -19,4 +25,3 @@ func _on_timeline_ended() -> void:
 	match GameManager.current_save.game_state:
 		GameManager.GameState.PRE_BOSSFIGHT:
 			GameManager.set_game_state(GameManager.GameState.BOSSFIGHT)
-			# TODO: Teletransportar o Curupira para a arena da bossfight

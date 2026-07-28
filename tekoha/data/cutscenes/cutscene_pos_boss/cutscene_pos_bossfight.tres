@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DialogueSettings" format=3 uid="uid://l3vxyifaw4cg"]
+
+[ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="1_t8ggp"]
+[ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="2_k4f5x"]
+[ext_resource type="Texture2D" uid="uid://dfey2ppxjwrkp" path="res://data/cutscenes/cutscene_4/img_2.png" id="2_yosmy"]
+
+[sub_resource type="Resource" id="Resource_3s6fh"]
+script = ExtResource("1_t8ggp")
+background_image = ExtResource("2_yosmy")
+text_pt = "pos boss"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[resource]
+script = ExtResource("2_k4f5x")
+dialogues = Array[ExtResource("1_t8ggp")]([SubResource("Resource_3s6fh")])
+metadata/_custom_type_script = "uid://bmi6yxeeux1kk"

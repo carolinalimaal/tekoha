@@ -18,6 +18,9 @@ func _on_crab_spawn_timer_timeout():
 	spawn_enemy()
 	crab_spawn_timer.set_wait_time(randf_range(1.0, 3.0))
 
+func stop_spawning() -> void:
+	crab_spawn_timer.stop()
+
 func spawn_enemy() -> void:
 	if not enemy_scene:
 		return

@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://nf2q8sw81xmy"]
 
-[ext_resource type="Script" uid="uid://up3s6m65v4h7" path="res://utils/components/level/level.gd" id="1_3u7q2"]
 [ext_resource type="Texture2D" uid="uid://danfg7hoxnasr" path="res://assets/sprites/tiles/chao/grama_rio/grama_rio_esverdeado.png" id="2_dbjiy"]
+[ext_resource type="Resource" uid="uid://l3vxyifaw4cg" path="res://data/cutscenes/cutscene_pos_boss/cutscene_pos_bossfight.tres" id="2_o5w41"]
 [ext_resource type="PackedScene" uid="uid://m4hesdju1jrd" path="res://entities/enemies/boss/boss.tscn" id="3_o5w41"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="4_3s6fh"]
+[ext_resource type="Script" uid="uid://dasdjqiwt6nav" path="res://levels/room_3/boss_arena_level.gd" id="5_boss_arena"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vv66c"]
 texture = ExtResource("2_dbjiy")
@@ -274,7 +275,8 @@ sources/1 = SubResource("TileSetAtlasSource_vv66c")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nv3ea"]
 
 [node name="Room34" type="Node2D" unique_id=575912879]
-script = ExtResource("1_3u7q2")
+script = ExtResource("5_boss_arena")
+pos_boss_cutscene = ExtResource("2_o5w41")
 limit_bottom = 480
 limit_left = -336
 limit_right = 336
