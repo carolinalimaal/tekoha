@@ -16,7 +16,7 @@
 [ext_resource type="Shader" uid="uid://dmd5k6yxg24en" path="res://entities/enemies/boss/boss_take_damage.gdshader" id="14_take_damage"]
 [ext_resource type="Script" uid="uid://gxoaqc16nmqj" path="res://entities/enemies/boss/attack.gd" id="14_uq55q"]
 [ext_resource type="Script" uid="uid://b5fvvlw35l6qk" path="res://entities/enemies/boss/aim.gd" id="15_oxfk7"]
-[ext_resource type="Script" path="res://entities/enemies/boss/death.gd" id="16_death"]
+[ext_resource type="Script" uid="uid://b41spms7e2w1d" path="res://entities/enemies/boss/death.gd" id="16_death"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_take_damage"]
 shader = ExtResource("14_take_damage")
@@ -303,7 +303,7 @@ script = ExtResource("3_woyg1")
 enemy_scene = ExtResource("4_fgpxg")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CrabSpawnArea" unique_id=793578204]
-polygon = PackedVector2Array(-2, 194, 120, 184, 225, 158, 251, 108, 251, -29, 193, -112, -219, -104, -254, -7, -239, 113, -162, 180, -2, 194, -1, 217, -112, 216, -184, 208, -232, 184, -264, 152, -280, 128, -288, 88, -288, -24, -272, -96, -248, -128, -200, -152, -176, -152, -120, -136, -72, -136, -48, -144, -32, -152, 32, -152, 40, -144, 72, -136, 120, -136, 144, -144, 192, -152, 240, -136, 272, -96, 288, -24, 288, 72, 280, 136, 248, 176, 184, 208, -1, 217)
+polygon = PackedVector2Array(0, 194, 120, 184, 225, 158, 251, 108, 251, -29, 193, -112, -219, -104, -254, -7, -239, 113, -162, 180, 0, 194, 0, 212, -111, 209, -182, 205, -230, 180, -260, 151, -276, 128, -285, 82, -281, -21, -268, -92, -242, -124, -199, -146, -163, -142, -120, -130, -71, -130, -46, -140, -24, -152, 25, -151, 62, -133, 121, -131, 157, -143, 196, -146, 241, -130, 269, -92, 284, -23, 285, 73, 276, 135, 244, 173, 186, 203, 0, 212)
 
 [node name="HealthComponent" type="Node" parent="." unique_id=234468599]
 script = ExtResource("5_ncffa")
