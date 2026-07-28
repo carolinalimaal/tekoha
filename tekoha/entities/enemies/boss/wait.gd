@@ -12,14 +12,14 @@ func _ready() -> void:
 	
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _enter() -> void:
 	attack_timer.timeout.connect(_on_attack_timer_timeout)
 	attack_timer.start()
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	pass
 
 func _exit() -> void:

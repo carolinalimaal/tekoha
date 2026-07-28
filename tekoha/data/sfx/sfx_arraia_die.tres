@@ -8,5 +8,6 @@ script = ExtResource("1_arraia")
 limit = 1
 type = 37
 sound_effect = ExtResource("2_arraia")
-volume = -18.0
+volume = -10.0
+pitch_scale = 0.8
 metadata/_custom_type_script = "uid://dogggnwn8i6i7"

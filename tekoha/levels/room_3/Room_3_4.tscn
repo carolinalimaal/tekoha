@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://up3s6m65v4h7" path="res://utils/components/level/level.gd" id="1_3u7q2"]
 [ext_resource type="Texture2D" uid="uid://danfg7hoxnasr" path="res://assets/sprites/tiles/chao/grama_rio/grama_rio_esverdeado.png" id="2_dbjiy"]
-[ext_resource type="PackedScene" uid="uid://clqns2d2hvnrq" path="res://entities/enemies/boss/boss.tscn" id="3_o5w41"]
+[ext_resource type="PackedScene" uid="uid://m4hesdju1jrd" path="res://entities/enemies/boss/boss.tscn" id="3_o5w41"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="4_3s6fh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vv66c"]

@@ -3,8 +3,6 @@ extends State
 
 @onready var attack: Node2D = $"../../Attack"
 
-var _distance_to_player: float
-var _aim_speed: float = 200
 var target_position : Vector2 = Vector2.ZERO
 
 
