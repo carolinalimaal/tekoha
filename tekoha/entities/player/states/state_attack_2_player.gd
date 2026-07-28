@@ -17,13 +17,14 @@ func _enter() -> void:
 	owner_node.animation_tree.animation_finished.connect(_on_animation_finished)
 
 func _exit() -> void:
+	# Desconectar o sinal de animation_finished (evitar conflito com outros estados)
+	owner_node.animation_tree.animation_finished.disconnect(_on_animation_finished)
 	owner_node.velocity = Vector2.ZERO
 	# Atualizar a facing_direction
 	owner_node.facing_direction = owner_node.attack_direction
 	# Desabilitar a hurtbox_collision
 	owner_node.hurtbox_component.hurtbox_collision.set_deferred("disabled", true)
-	# Desconectar o sinal de animation_finished (evitar conflito com outros estados)
-	owner_node.animation_tree.animation_finished.disconnect(_on_animation_finished)
+	
 
 
 func _update(_delta: float) -> void:
