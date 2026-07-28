@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_kv7ns")
 limit = 2
-type = 11
+type = 10
 sound_effect = ExtResource("2_rx70k")
 volume = -32.0
 metadata/_custom_type_script = "uid://dogggnwn8i6i7"
