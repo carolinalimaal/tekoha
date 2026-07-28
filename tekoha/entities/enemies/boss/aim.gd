@@ -23,7 +23,7 @@ func _exit():
 func _update(_delta: float):
 	if GlobalRefs.player:
 		get_target()
-		attack.global_position = attack.global_position.lerp(target_position + Vector2(0, 21.5), 1 - exp(-_delta * 6.5))
+		attack.global_position = attack.global_position.lerp(target_position - Vector2(0, 5.5), 1 - exp(-_delta * 6.5))
 		
 
 func get_target():
