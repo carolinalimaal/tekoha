@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://clqns2d2hvnrq"]
+[gd_scene format=3 uid="uid://m4hesdju1jrd"]
 
 [ext_resource type="Script" uid="uid://dsraoss6rq6p6" path="res://entities/enemies/boss/boss.gd" id="1_bmhca"]
 [ext_resource type="Texture2D" uid="uid://bb0pas3n7fbgt" path="res://assets/sprites/entities/boss/arraia/boss corpo.png" id="2_obb5p"]
@@ -13,8 +13,14 @@
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="11_osf0o"]
 [ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/components/state_machine/state_machine.gd" id="12_7wn2w"]
 [ext_resource type="Script" uid="uid://dguw4ni65yh1u" path="res://entities/enemies/boss/wait.gd" id="13_kpwar"]
+[ext_resource type="Shader" uid="uid://dmd5k6yxg24en" path="res://entities/enemies/boss/boss_take_damage.gdshader" id="14_take_damage"]
 [ext_resource type="Script" uid="uid://gxoaqc16nmqj" path="res://entities/enemies/boss/attack.gd" id="14_uq55q"]
 [ext_resource type="Script" uid="uid://b5fvvlw35l6qk" path="res://entities/enemies/boss/aim.gd" id="15_oxfk7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_take_damage"]
+shader = ExtResource("14_take_damage")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
 
 [sub_resource type="Resource" id="Resource_nv3ea"]
 script = ExtResource("9_ywpxm")
@@ -237,10 +243,12 @@ _data = {
 [node name="Boss" type="Node2D" unique_id=1761719591]
 y_sort_enabled = true
 script = ExtResource("1_bmhca")
+take_damage_effect = ExtResource("14_take_damage")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=667655535]
 z_index = -1
 y_sort_enabled = true
+material = SubResource("ShaderMaterial_take_damage")
 position = Vector2(0, 217)
 texture = ExtResource("2_obb5p")
 
@@ -256,7 +264,7 @@ polygon = PackedVector2Array(-2, 194, 120, 184, 225, 158, 251, 108, 251, -29, 19
 
 [node name="HealthComponent" type="Node" parent="." unique_id=234468599]
 script = ExtResource("5_ncffa")
-max_health = 100
+max_health = 8
 metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
 [node name="Attack" type="Node2D" parent="." unique_id=1048867530]
@@ -268,6 +276,7 @@ texture = ExtResource("6_kvmq7")
 offset = Vector2(0, 27)
 
 [node name="Tail" type="Sprite2D" parent="Attack" unique_id=78925209]
+material = SubResource("ShaderMaterial_take_damage")
 texture = ExtResource("7_bf4i6")
 offset = Vector2(0, -649.5)
 

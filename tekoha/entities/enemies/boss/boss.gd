@@ -33,6 +33,7 @@ func _on_boss_attack_received(attack_data: AttackData):
 	if state_machine.current_state.name in ["Death", "Stun"]:
 		return
 	health_component.take_damage(attack_data)
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.ARRAIA_STUN)
 
 func on_health_changed():
 	progress_bar.set_value(health_component.current_health)

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://6vr1s63lmkse"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_eq6km"]
+[ext_resource type="AudioStream" uid="uid://c30d1s37wsd7s" path="res://assets/sound/sfx/entities/sfx_arraia_take_damage.wav" id="2_eq6km"]
+
+[resource]
+script = ExtResource("1_eq6km")
+limit = 1
+type = 38
+sound_effect = ExtResource("2_eq6km")
+volume = -18.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"
