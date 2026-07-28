@@ -1,22 +1,23 @@
 [gd_scene format=3 uid="uid://clqns2d2hvnrq"]
 
-[ext_resource type="Script" uid="uid://dsraoss6rq6p6" path="res://entities/enemies/boss/boss.gd" id="1_q5dj7"]
-[ext_resource type="Texture2D" uid="uid://bb0pas3n7fbgt" path="res://assets/sprites/entities/boss/arraia/boss corpo.png" id="2_y6fk3"]
-[ext_resource type="Texture2D" uid="uid://dr3pv0j8ei7ji" path="res://assets/sprites/entities/boss/arraia/shadow.png" id="3_8im48"]
-[ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/components/state_machine/state_machine.gd" id="3_kxds7"]
-[ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="3_sn6y4"]
-[ext_resource type="Script" uid="uid://b4a16vkdvf4mi" path="res://entities/enemies/boss/crab_spawn_area.gd" id="3_y6fk3"]
-[ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="4_3gqbu"]
-[ext_resource type="PackedScene" uid="uid://bmfhnte8gq8ms" path="res://entities/enemies/caranguejo/caranguejo.tscn" id="4_78hdg"]
-[ext_resource type="Script" uid="uid://dguw4ni65yh1u" path="res://entities/enemies/boss/wait.gd" id="5_1j377"]
-[ext_resource type="Script" uid="uid://b25oeps4g35sq" path="res://utils/components/hurtbox_component.gd" id="5_hbvyl"]
-[ext_resource type="Script" uid="uid://gxoaqc16nmqj" path="res://entities/enemies/boss/attack.gd" id="6_1j377"]
-[ext_resource type="Texture2D" uid="uid://b70nt5w215ugs" path="res://assets/sprites/entities/boss/arraia/boss cauda.png" id="6_78hdg"]
-[ext_resource type="Script" uid="uid://b5fvvlw35l6qk" path="res://entities/enemies/boss/aim.gd" id="6_q5dj7"]
-[ext_resource type="Script" uid="uid://c8ylfafeubddo" path="res://utils/resources/attack/attack_data.gd" id="6_u4fed"]
+[ext_resource type="Script" uid="uid://dsraoss6rq6p6" path="res://entities/enemies/boss/boss.gd" id="1_bmhca"]
+[ext_resource type="Texture2D" uid="uid://bb0pas3n7fbgt" path="res://assets/sprites/entities/boss/arraia/boss corpo.png" id="2_obb5p"]
+[ext_resource type="Script" uid="uid://b4a16vkdvf4mi" path="res://entities/enemies/boss/crab_spawn_area.gd" id="3_woyg1"]
+[ext_resource type="PackedScene" uid="uid://bmfhnte8gq8ms" path="res://entities/enemies/caranguejo/caranguejo.tscn" id="4_fgpxg"]
+[ext_resource type="Script" uid="uid://cxfitvewp4xj5" path="res://utils/components/health_component.gd" id="5_ncffa"]
+[ext_resource type="Texture2D" uid="uid://dr3pv0j8ei7ji" path="res://assets/sprites/entities/boss/arraia/shadow.png" id="6_kvmq7"]
+[ext_resource type="Texture2D" uid="uid://b70nt5w215ugs" path="res://assets/sprites/entities/boss/arraia/boss cauda.png" id="7_bf4i6"]
+[ext_resource type="Script" uid="uid://b25oeps4g35sq" path="res://utils/components/hurtbox_component.gd" id="8_pu026"]
+[ext_resource type="Script" uid="uid://c8ylfafeubddo" path="res://utils/resources/attack/attack_data.gd" id="9_ywpxm"]
+[ext_resource type="Script" uid="uid://2pwu4vjmtkg6" path="res://utils/components/hitbox_component.gd" id="10_42nvh"]
+[ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="11_osf0o"]
+[ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/components/state_machine/state_machine.gd" id="12_7wn2w"]
+[ext_resource type="Script" uid="uid://dguw4ni65yh1u" path="res://entities/enemies/boss/wait.gd" id="13_kpwar"]
+[ext_resource type="Script" uid="uid://gxoaqc16nmqj" path="res://entities/enemies/boss/attack.gd" id="14_uq55q"]
+[ext_resource type="Script" uid="uid://b5fvvlw35l6qk" path="res://entities/enemies/boss/aim.gd" id="15_oxfk7"]
 
 [sub_resource type="Resource" id="Resource_nv3ea"]
-script = ExtResource("6_u4fed")
+script = ExtResource("9_ywpxm")
 damage_value = 4
 knockback_force = 4.0
 metadata/_custom_type_script = "uid://c8ylfafeubddo"
@@ -235,26 +236,26 @@ _data = {
 
 [node name="Boss" type="Node2D" unique_id=1761719591]
 y_sort_enabled = true
-script = ExtResource("1_q5dj7")
+script = ExtResource("1_bmhca")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=667655535]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(0, 217)
-texture = ExtResource("2_y6fk3")
+texture = ExtResource("2_obb5p")
 
 [node name="CrabSpawnArea" type="Area2D" parent="." unique_id=1012182326]
 position = Vector2(0, 217)
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("3_y6fk3")
-enemy_scene = ExtResource("4_78hdg")
+script = ExtResource("3_woyg1")
+enemy_scene = ExtResource("4_fgpxg")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CrabSpawnArea" unique_id=793578204]
 polygon = PackedVector2Array(-2, 194, 120, 184, 225, 158, 251, 108, 251, -29, 193, -112, -219, -104, -254, -7, -239, 113, -162, 180, -2, 194, -1, 217, -112, 216, -184, 208, -232, 184, -264, 152, -280, 128, -288, 88, -288, -24, -272, -96, -248, -128, -200, -152, -176, -152, -120, -136, -72, -136, -48, -144, -32, -152, 32, -152, 40, -144, 72, -136, 120, -136, 144, -144, 192, -152, 240, -136, 272, -96, 288, -24, 288, 72, 280, 136, 248, 176, 184, 208, -1, 217)
 
 [node name="HealthComponent" type="Node" parent="." unique_id=234468599]
-script = ExtResource("3_sn6y4")
+script = ExtResource("5_ncffa")
 max_health = 100
 metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
@@ -263,17 +264,17 @@ position = Vector2(137, -76)
 
 [node name="Shadow" type="Sprite2D" parent="Attack" unique_id=1531170732]
 self_modulate = Color(1, 1, 1, 0)
-texture = ExtResource("3_8im48")
+texture = ExtResource("6_kvmq7")
 offset = Vector2(0, 27)
 
 [node name="Tail" type="Sprite2D" parent="Attack" unique_id=78925209]
-texture = ExtResource("6_78hdg")
+texture = ExtResource("7_bf4i6")
 offset = Vector2(0, -649.5)
 
 [node name="HurtboxComponent" type="Area2D" parent="Attack" unique_id=1243736233 node_paths=PackedStringArray("hurtbox_collision")]
 collision_layer = 64
 collision_mask = 2
-script = ExtResource("5_hbvyl")
+script = ExtResource("8_pu026")
 attack_data = SubResource("Resource_nv3ea")
 hurtbox_collision = NodePath("HurtboxCollision")
 metadata/_custom_type_script = "uid://b25oeps4g35sq"
@@ -287,7 +288,7 @@ disabled = true
 position = Vector2(0, -32)
 collision_layer = 32
 collision_mask = 4
-script = ExtResource("4_3gqbu")
+script = ExtResource("10_42nvh")
 hitbox_collision = NodePath("HitboxCollision")
 metadata/_custom_type_script = "uid://2pwu4vjmtkg6"
 
@@ -302,49 +303,46 @@ libraries/ = SubResource("AnimationLibrary_8im48")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=795516113]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=402350352]
-self_modulate = Color(1, 0, 0, 1)
-custom_minimum_size = Vector2(600, 0)
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=93363705]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = -27.0
-offset_right = 2.0
+offset_left = -300.0
+offset_top = -87.0
+offset_right = 300.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1069335653]
+layout_mode = 2
+theme = ExtResource("11_osf0o")
+text = "Îabebyra Yguá & Aratu Yguá"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/VBoxContainer" unique_id=402350352]
+self_modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(600, 30)
+layout_mode = 2
 size_flags_vertical = 1
 value = 100.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="CanvasLayer/ProgressBar" unique_id=1069335653]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = -0.42592594
-anchor_right = 0.5
-anchor_bottom = -0.42592594
-offset_left = -108.0
-offset_top = -11.5
-offset_right = 108.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Îabebyra Yguá & Aratu Yguá"
-metadata/_edit_use_anchors_ = true
-
 [node name="StateMachine" type="Node" parent="." unique_id=790657437 node_paths=PackedStringArray("_initial_state")]
-script = ExtResource("3_kxds7")
+script = ExtResource("12_7wn2w")
 _initial_state = NodePath("Aim")
 metadata/_custom_type_script = "uid://coql161p0qttr"
 
 [node name="Wait" type="Node" parent="StateMachine" unique_id=1450028712]
-script = ExtResource("5_1j377")
+script = ExtResource("13_kpwar")
 
 [node name="Attack" type="Node" parent="StateMachine" unique_id=551654876]
-script = ExtResource("6_1j377")
+script = ExtResource("14_uq55q")
 
 [node name="Aim" type="Node" parent="StateMachine" unique_id=1437824843]
-script = ExtResource("6_q5dj7")
+script = ExtResource("15_oxfk7")

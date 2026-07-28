@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bw404pxawf7ig"]
 
-[ext_resource type="PackedScene" uid="uid://clqns2d2hvnrq" path="res://entities/enemies/boss/Boss.tscn" id="1_7w86a"]
+[ext_resource type="PackedScene" uid="uid://clqns2d2hvnrq" path="res://entities/enemies/boss/boss.tscn" id="1_7w86a"]
 [ext_resource type="PackedScene" uid="uid://cc1753k1fycf4" path="res://entities/player/player.tscn" id="2_s2wow"]
 
 [node name="teste" type="Node2D" unique_id=847730695]
