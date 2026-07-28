@@ -56,3 +56,9 @@ func set_shader_blink_intensity(value: float) -> void:
 
 func on_health_changed():
 	progress_bar.set_value(health_component.current_health)
+
+func play_sfx_attack_prepare() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.ARRAIA_ATTACK_PREPARE)
+
+func play_sfx_attack() -> void:
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.ARRAIA_ATTACK)

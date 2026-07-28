@@ -44,6 +44,8 @@ enum SOUND_EFFECT_TYPE {
 	CARANGUEJO_WALK,
 	ARRAIA_DIE,
 	ARRAIA_STUN,
+	ARRAIA_ATTACK_PREPARE,
+	ARRAIA_ATTACK,
 }
 
 @export_range(0, 10) var limit: int = 5 # Limite de reproduções simultâneas deste som.

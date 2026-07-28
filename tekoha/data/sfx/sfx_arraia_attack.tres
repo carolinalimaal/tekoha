@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://evayngtm66qg"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_m3jqu"]
+[ext_resource type="AudioStream" uid="uid://dmruki4ggae4c" path="res://assets/sound/sfx/entities/sfx_arraia_attack_ataca.wav" id="2_n58wt"]
+
+[resource]
+script = ExtResource("1_m3jqu")
+limit = 1
+type = 40
+sound_effect = ExtResource("2_n58wt")
+volume = -10.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"
