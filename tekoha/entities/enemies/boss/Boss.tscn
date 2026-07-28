@@ -15,9 +15,6 @@
 [ext_resource type="Script" uid="uid://b5fvvlw35l6qk" path="res://entities/enemies/boss/aim.gd" id="6_q5dj7"]
 [ext_resource type="Script" uid="uid://c8ylfafeubddo" path="res://utils/resources/attack/attack_data.gd" id="6_u4fed"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eebsq"]
-size = Vector2(515, 281)
-
 [sub_resource type="Resource" id="Resource_nv3ea"]
 script = ExtResource("6_u4fed")
 damage_value = 4
@@ -72,7 +69,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 1.5, 2),
 "transitions": PackedFloat32Array(4, 1, 5, 1),
 "update": 0,
-"values": [Vector2(0, -649.5), Vector2(0, -217.5), Vector2(0, -217.5), Vector2(0, -649.5)]
+"values": [Vector2(0, -622.5), Vector2(0, -190.5), Vector2(0, -190.5), Vector2(0, -622.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -124,7 +121,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 1.2, 1.4, 2.7, 3.2),
 "transitions": PackedFloat32Array(0.5, 1, 5, 1, 5, 1),
 "update": 0,
-"values": [Vector2(0, -649.5), Vector2(0, -342.5), Vector2(0, -342.5), Vector2(0, -217.5), Vector2(0, -217.5), Vector2(0, -649.5)]
+"values": [Vector2(0, -622.5), Vector2(0, -315.5), Vector2(0, -315.5), Vector2(0, -190.5), Vector2(0, -190.5), Vector2(0, -622.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -237,9 +234,12 @@ _data = {
 }
 
 [node name="Boss" type="Node2D" unique_id=1761719591]
+y_sort_enabled = true
 script = ExtResource("1_q5dj7")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=667655535]
+z_index = -1
+y_sort_enabled = true
 position = Vector2(0, 217)
 texture = ExtResource("2_y6fk3")
 
@@ -250,9 +250,8 @@ collision_mask = 0
 script = ExtResource("3_y6fk3")
 enemy_scene = ExtResource("4_78hdg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CrabSpawnArea" unique_id=190055369]
-position = Vector2(1.5, 22.5)
-shape = SubResource("RectangleShape2D_eebsq")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CrabSpawnArea" unique_id=793578204]
+polygon = PackedVector2Array(-2, 194, 120, 184, 225, 158, 251, 108, 251, -29, 193, -112, -219, -104, -254, -7, -239, 113, -162, 180, -2, 194, -1, 217, -112, 216, -184, 208, -232, 184, -264, 152, -280, 128, -288, 88, -288, -24, -272, -96, -248, -128, -200, -152, -176, -152, -120, -136, -72, -136, -48, -144, -32, -152, 32, -152, 40, -144, 72, -136, 120, -136, 144, -144, 192, -152, 240, -136, 272, -96, 288, -24, 288, 72, 280, 136, 248, 176, 184, 208, -1, 217)
 
 [node name="HealthComponent" type="Node" parent="." unique_id=234468599]
 script = ExtResource("3_sn6y4")
@@ -260,16 +259,16 @@ max_health = 100
 metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
 [node name="Attack" type="Node2D" parent="." unique_id=1048867530]
-position = Vector2(118, 20)
-
-[node name="Tail" type="Sprite2D" parent="Attack" unique_id=78925209]
-y_sort_enabled = true
-texture = ExtResource("6_78hdg")
-offset = Vector2(0, -649.5)
+position = Vector2(137, -76)
 
 [node name="Shadow" type="Sprite2D" parent="Attack" unique_id=1531170732]
 self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("3_8im48")
+offset = Vector2(0, 27)
+
+[node name="Tail" type="Sprite2D" parent="Attack" unique_id=78925209]
+texture = ExtResource("6_78hdg")
+offset = Vector2(0, -649.5)
 
 [node name="HurtboxComponent" type="Area2D" parent="Attack" unique_id=1243736233 node_paths=PackedStringArray("hurtbox_collision")]
 collision_layer = 64
@@ -280,6 +279,7 @@ hurtbox_collision = NodePath("HurtboxCollision")
 metadata/_custom_type_script = "uid://b25oeps4g35sq"
 
 [node name="HurtboxCollision" type="CollisionShape2D" parent="Attack/HurtboxComponent" unique_id=1895728515]
+position = Vector2(0, 27)
 shape = SubResource("CircleShape2D_nv3ea")
 disabled = true
 
@@ -292,6 +292,7 @@ hitbox_collision = NodePath("HitboxCollision")
 metadata/_custom_type_script = "uid://2pwu4vjmtkg6"
 
 [node name="HitboxCollision" type="CollisionShape2D" parent="Attack/HitboxComponent" unique_id=2136281872]
+position = Vector2(0, 27)
 shape = SubResource("RectangleShape2D_nv3ea")
 disabled = true
 
