@@ -37,6 +37,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_boss_died():
+	GlobalRefs.player_camera.apply_shake()
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.ARRAIA_DIE)
 
 func _on_boss_attack_received(attack_data: AttackData):
