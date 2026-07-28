@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://cekcykam27qfl"]
+
+[ext_resource type="Script" uid="uid://dogggnwn8i6i7" path="res://utils/resources/sfx/sound_effect.gd" id="1_arraia"]
+[ext_resource type="AudioStream" uid="uid://c80p27psover5" path="res://assets/sound/sfx/entities/sfx_arraia_die.wav" id="2_arraia"]
+
+[resource]
+script = ExtResource("1_arraia")
+limit = 1
+type = 37
+sound_effect = ExtResource("2_arraia")
+volume = -18.0
+metadata/_custom_type_script = "uid://dogggnwn8i6i7"
