@@ -19,7 +19,7 @@ func _ready() -> void:
 	bgm_player = AudioStreamPlayer.new()
 	bgm_player.bus = "Music" # Envia para o bus de Música
 	add_child(bgm_player)
-	
+
 	# Prepara o dicionário de Efeitos Sonoros (SFX)
 	for sound_effect: SoundEffect in sound_effects:
 		sound_effect_dict[sound_effect.type] = sound_effect

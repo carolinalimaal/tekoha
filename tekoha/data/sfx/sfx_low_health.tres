@@ -8,5 +8,5 @@ script = ExtResource("1_low_health")
 limit = 1
 type = 17
 sound_effect = ExtResource("2_low_health")
-volume = -20.0
+volume = -18.0
 metadata/_custom_type_script = "uid://dogggnwn8i6i7"

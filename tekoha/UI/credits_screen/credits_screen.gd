@@ -3,6 +3,7 @@ extends Control
 @export_range(1.0, 1000.0, 1.0) var credits_time: float = 50.0
 @export var delay_before_start: float = 0.1
 
+@export var bg_music: MusicTrack
 @export var main_menu_scene: String = "res://UI/main_menu/main_menu.tscn"
 @export var allow_skip: bool = false
 
@@ -16,6 +17,8 @@ var _finished: bool = false
 var _tween: Tween
 
 func _ready() -> void:
+	AudioManager.play_background_sound(bg_music)
+	
 	if GameManager.allow_skip_credits:
 		allow_skip = GameManager.allow_skip_credits
 		if allow_skip and navigation_legend:

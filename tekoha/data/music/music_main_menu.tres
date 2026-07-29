@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="MusicTrack" format=3]
+[gd_resource type="Resource" script_class="MusicTrack" format=3 uid="uid://d3gxmdypsg38g"]
 
-[ext_resource type="Script" path="res://utils/resources/music/music_track.gd" id="1_mainmenu"]
+[ext_resource type="Script" uid="uid://c0w7oa21iwpaf" path="res://utils/resources/music/music_track.gd" id="1_mainmenu"]
 [ext_resource type="AudioStream" uid="uid://bvy34itisvfi2" path="res://assets/sound/music/bgm_main_menu.mp3" id="2_mainmenu"]
 
 [resource]
 script = ExtResource("1_mainmenu")
 track = ExtResource("2_mainmenu")
-volume = 0.0
-metadata/_custom_type_script = "res://utils/resources/music/music_track.gd"
+volume = -4.0

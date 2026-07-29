@@ -600,6 +600,7 @@ position = Vector2(987, 635)
 stream = ExtResource("13_pm3eg")
 volume_db = -35.0
 autoplay = true
+max_distance = 1000.0
 attenuation = 1.4142139
 bus = &"SFX"
 

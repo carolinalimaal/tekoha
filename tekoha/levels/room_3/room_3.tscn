@@ -31,9 +31,6 @@
 [ext_resource type="SpriteFrames" uid="uid://dd335a6yxaj04" path="res://assets/sprites/entities/animals/jacare.tres" id="29_q34pk"]
 [ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="30_k68xe"]
 [ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="31_khhq5"]
-[ext_resource type="PackedScene" uid="uid://cn6gcnndvsxy8" path="res://utils/props/bau/bau.tscn" id="32_ylp48"]
-[ext_resource type="Resource" uid="uid://c680qx72e4gr7" path="res://data/items/tambaqui_assado.tres" id="33_fc6is"]
-[ext_resource type="SpriteFrames" uid="uid://dowkws2wfoix0" path="res://assets/sprites/props/chest/chest_01.tres" id="34_o1j5t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2msv"]
 size = Vector2(98, 20)
@@ -379,15 +376,3 @@ autoplay = true
 max_distance = 1000.0
 attenuation = 1.464086
 bus = &"SFX"
-
-[node name="Bau" parent="." unique_id=302874208 instance=ExtResource("32_ylp48")]
-position = Vector2(230, 515)
-id = 20
-item = ExtResource("33_fc6is")
-sprite_frames = ExtResource("34_o1j5t")
-
-[node name="Bau2" parent="." unique_id=1971924261 instance=ExtResource("32_ylp48")]
-position = Vector2(353, 514)
-id = 21
-item = ExtResource("33_fc6is")
-sprite_frames = ExtResource("34_o1j5t")

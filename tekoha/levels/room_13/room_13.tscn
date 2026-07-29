@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vmg8iwoaa4vd" path="res://levels/room_13/room_13.gd" id="1_xuy42"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_smvml"]
+[ext_resource type="Resource" uid="uid://copl08iifv0on" path="res://data/music/music_ambiente.tres" id="2_xpmo7"]
 [ext_resource type="TileSet" uid="uid://5mov6005ung0" path="res://assets/sprites/tiles/plataformas/pier.tres" id="3_75667"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="3_vm8ag"]
 [ext_resource type="TileSet" uid="uid://cwihu0lcjfmkq" path="res://assets/sprites/tiles/exteriores/casas/casas.tres" id="5_vm8ag"]
@@ -129,6 +130,7 @@ metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 [node name="Room13" type="Node2D" unique_id=1333157004]
 y_sort_enabled = true
 script = ExtResource("1_xuy42")
+bg_music = ExtResource("2_xpmo7")
 limit_top = 10
 limit_bottom = 1100
 limit_left = 224
@@ -397,6 +399,24 @@ bus = &"SFX"
 
 [node name="SFXMata" type="AudioStreamPlayer2D" parent="SFXs" unique_id=253019460]
 position = Vector2(414, 236)
+stream = ExtResource("33_ko4mv")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
+bus = &"SFX"
+
+[node name="SFXMata2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=680820394]
+position = Vector2(1595, 76)
+stream = ExtResource("33_ko4mv")
+volume_db = -30.0
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.464086
+bus = &"SFX"
+
+[node name="SFXMata3" type="AudioStreamPlayer2D" parent="SFXs" unique_id=888780087]
+position = Vector2(291, 795)
 stream = ExtResource("33_ko4mv")
 volume_db = -30.0
 autoplay = true
