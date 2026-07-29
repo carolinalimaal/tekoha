@@ -2,12 +2,14 @@ class_name BossArenaLevel
 extends Level
 
 @export var pos_boss_cutscene: DialogueSettings
+@export var bg_music: MusicTrack
 
 @onready var boss: Node2D = $Boss
 
 var _end_screen: EndScreen
 
 func _ready() -> void:
+	AudioManager.play_background_sound(bg_music)
 	boss.death_sequence_finished.connect(_on_boss_defeated, CONNECT_ONE_SHOT)
 
 func _on_boss_defeated() -> void:

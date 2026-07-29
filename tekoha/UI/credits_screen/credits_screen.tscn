@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="1_o21ce"]
 [ext_resource type="Texture2D" uid="uid://dhcppev66xefc" path="res://assets/UI/logos/tekoha_colorful.svg" id="2_6if6n"]
 [ext_resource type="Texture2D" uid="uid://b43pkkdunwp5i" path="res://assets/bg_credits.jpg" id="2_dflmq"]
+[ext_resource type="Resource" uid="uid://d3gxmdypsg38g" path="res://data/music/music_main_menu.tres" id="3_xs16p"]
 [ext_resource type="Texture2D" uid="uid://djqw8nndto0lb" path="res://assets/UI/logos/ufpa.png" id="4_5ad82"]
 [ext_resource type="Texture2D" uid="uid://c4p3hhy5k5f3m" path="res://assets/UI/logos/spider.svg" id="5_xs16p"]
 [ext_resource type="PackedScene" uid="uid://tc0txhjv7cm5" path="res://UI/components/navigation_legend/navigation_legend.tscn" id="7_5ad82"]
@@ -18,6 +19,7 @@ grow_vertical = 2
 theme = ExtResource("1_o21ce")
 script = ExtResource("1_giom8")
 credits_time = 80.0
+bg_music = ExtResource("3_xs16p")
 scroll_container = NodePath("ScrollContainer")
 content = NodePath("ScrollContainer/MarginContainer/Content")
 top_spacer = NodePath("ScrollContainer/MarginContainer/Content/TopSpacer")

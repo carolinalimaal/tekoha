@@ -4,6 +4,7 @@ const CECILIA_CAMERA_ZOOM := 2.5
 const CECILIA_CAMERA_DURATION := 1.0
 
 @export var cecilia_calling_dialogue: DialogueSettings
+@export var bg_music: MusicTrack
 
 @onready var roll_mecanic: Node2D = $RollMecanic
 @onready var npc_cecilia: NPC = $NPCs/NpcCecila
@@ -12,7 +13,7 @@ const CECILIA_CAMERA_DURATION := 1.0
 @onready var room7_door: Door = $Room7Door
 
 func _ready() -> void:
-	AudioManager.stop_background_sound()
+	AudioManager.play_background_sound(bg_music)
 
 	if GameManager.current_save.game_state < GameManager.GameState.AFTER_FIRST_ENEMY:
 		roll_mecanic.disable()

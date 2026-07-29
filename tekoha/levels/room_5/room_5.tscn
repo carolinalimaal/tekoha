@@ -633,6 +633,7 @@ position = Vector2(402, 617)
 stream = ExtResource("19_cmi0e")
 volume_db = -35.0
 autoplay = true
+max_distance = 1000.0
 attenuation = 1.4142139
 bus = &"SFX"
 
@@ -641,6 +642,7 @@ position = Vector2(921, 602)
 stream = ExtResource("19_cmi0e")
 volume_db = -35.0
 autoplay = true
+max_distance = 1000.0
 attenuation = 1.4142139
 bus = &"SFX"
 

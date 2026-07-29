@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bx0mu5n76tnj1" path="res://levels/room_8/room_8.gd" id="1_wjxbu"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="2_1p0c7"]
-[ext_resource type="Resource" path="res://data/music/music_ambiente.tres" id="2_d3h20"]
+[ext_resource type="Resource" uid="uid://copl08iifv0on" path="res://data/music/music_ambiente.tres" id="2_d3h20"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_itpey"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="6_6mn3v"]
 [ext_resource type="TileSet" uid="uid://5mov6005ung0" path="res://assets/sprites/tiles/plataformas/pier.tres" id="6_d3h20"]
@@ -181,6 +181,7 @@ position = Vector2(298, 545)
 stream = ExtResource("20_0h1l2")
 volume_db = -35.0
 autoplay = true
+max_distance = 1000.0
 attenuation = 1.4142139
 bus = &"SFX"
 
@@ -189,6 +190,7 @@ position = Vector2(1026, 500)
 stream = ExtResource("20_0h1l2")
 volume_db = -35.0
 autoplay = true
+max_distance = 1000.0
 attenuation = 1.4142139
 bus = &"SFX"
 
