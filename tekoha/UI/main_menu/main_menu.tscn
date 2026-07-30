@@ -51,6 +51,7 @@ grow_vertical = 2
 alignment = 1
 
 [node name="Logo" type="TextureRect" parent="VBoxContainer" unique_id=1139531770]
+texture_filter = 2
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 size_flags_horizontal = 4

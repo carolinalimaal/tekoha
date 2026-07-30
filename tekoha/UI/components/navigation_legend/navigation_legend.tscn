@@ -19,6 +19,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 script = ExtResource("1_r7xjo")
+icon_size = 36
 
 [node name="Legend" type="RichTextLabel" parent="." unique_id=1000946290]
 layout_mode = 2
