@@ -23,6 +23,8 @@
 [ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="20_0h1l2"]
 [ext_resource type="PackedScene" uid="uid://kwqb7tcela74" path="res://entities/npcs/genericos/npc_marcelo.tscn" id="21_5km75"]
 [ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="21_8li2e"]
+[ext_resource type="PackedScene" uid="uid://c5o7ne5je4yko" path="res://entities/npcs/genericos/npc_nadando_1.tscn" id="24_i45q5"]
+[ext_resource type="PackedScene" uid="uid://b5xbd7ams7c6e" path="res://entities/npcs/genericos/npc_nadando_2.tscn" id="25_m0gbd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfef4"]
 size = Vector2(10, 94)
@@ -188,6 +190,12 @@ position = Vector2(177, 363)
 
 [node name="NpcMarcelo" parent="NPCs" unique_id=1670427580 instance=ExtResource("21_5km75")]
 position = Vector2(1347, 440)
+
+[node name="NpcNadando1" parent="NPCs" unique_id=1967241152 instance=ExtResource("24_i45q5")]
+position = Vector2(753, 635)
+
+[node name="NpcNadando2" parent="NPCs" unique_id=1938599646 instance=ExtResource("25_m0gbd")]
+position = Vector2(707, 661)
 
 [node name="SFXs" type="Node2D" parent="." unique_id=571141560]
 

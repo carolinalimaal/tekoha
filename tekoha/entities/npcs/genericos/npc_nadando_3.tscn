@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://befq3gskj0l2m"]
+
+[ext_resource type="Texture2D" uid="uid://d35pdplr62j02" path="res://assets/sprites/entities/npcs/npc_nadando_3.png" id="1_dm6tq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctt03"]
+atlas = ExtResource("1_dm6tq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xeck"]
+atlas = ExtResource("1_dm6tq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07fad"]
+atlas = ExtResource("1_dm6tq")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgpc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctt03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xeck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07fad")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NpcNadando3" type="Node2D" unique_id=1936699412]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=402130511]
+sprite_frames = SubResource("SpriteFrames_kgpc6")
+autoplay = "default"

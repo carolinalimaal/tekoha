@@ -19,7 +19,9 @@
 [ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="17_dnhaf"]
 [ext_resource type="SpriteFrames" uid="uid://110m3ia66xi4" path="res://assets/sprites/entities/animals/urubu.tres" id="18_dnhaf"]
 [ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="19_cmi0e"]
+[ext_resource type="PackedScene" uid="uid://cv7bk28vtm71w" path="res://entities/npcs/genericos/npc_senhora_lendo.tscn" id="19_j3jio"]
 [ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="20_n2ekj"]
+[ext_resource type="PackedScene" uid="uid://befq3gskj0l2m" path="res://entities/npcs/genericos/npc_nadando_3.tscn" id="20_voxs2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmo2d"]
 texture = ExtResource("2_777hw")
@@ -625,6 +627,12 @@ position = Vector2(1188, 686)
 
 [node name="NpcPier" parent="NPCs" unique_id=2139658897 instance=ExtResource("15_vultg")]
 position = Vector2(506, 785)
+
+[node name="NpcSenhoraLendo" parent="NPCs" unique_id=1670427580 instance=ExtResource("19_j3jio")]
+position = Vector2(952, 484)
+
+[node name="NpcNadando3" parent="NPCs" unique_id=1176380182 instance=ExtResource("20_voxs2")]
+position = Vector2(1264, 765)
 
 [node name="SFXs" type="Node2D" parent="." unique_id=1727014269]
 

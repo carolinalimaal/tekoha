@@ -33,7 +33,9 @@
 [ext_resource type="PackedScene" uid="uid://cm3qag8uwosj0" path="res://entities/npcs/genericos/npc_crianca_frente_2.tscn" id="30_usnks"]
 [ext_resource type="AudioStream" uid="uid://byb3kdd84lp20" path="res://assets/sound/sfx/enviroment/sfx_conversas_fundo.wav" id="31_uc7af"]
 [ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="32_8fnq6"]
+[ext_resource type="PackedScene" uid="uid://liborcklowi3" path="res://entities/npcs/genericos/npc_senhora_tricotando.tscn" id="32_a2lrf"]
 [ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="33_ko4mv"]
+[ext_resource type="PackedScene" uid="uid://bm7aw6n24xr4j" path="res://entities/npcs/genericos/npc_nadando_4.tscn" id="36_t58sm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk2ql"]
 size = Vector2(16, 200)
@@ -347,6 +349,9 @@ position = Vector2(1344, 719)
 position = Vector2(611, 820)
 dialogues_list = Array[ExtResource("12_n6g6m")]([SubResource("Resource_6jbsf"), SubResource("Resource_fnfl1"), SubResource("Resource_jtmfk")])
 
+[node name="NpcSenhoraTricotando" parent="NPCs" unique_id=1670427580 instance=ExtResource("32_a2lrf")]
+position = Vector2(813, 345)
+
 [node name="SFXs" type="Node2D" parent="." unique_id=988057189]
 
 [node name="SfxConversas" type="AudioStreamPlayer2D" parent="SFXs" unique_id=237006204]
@@ -423,3 +428,6 @@ autoplay = true
 max_distance = 1000.0
 attenuation = 1.464086
 bus = &"SFX"
+
+[node name="NpcNadando4" parent="." unique_id=1342507969 instance=ExtResource("36_t58sm")]
+position = Vector2(747, 972)

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cv7bk28vtm71w"]
+
+[ext_resource type="Texture2D" uid="uid://b2gsmj5cejfxl" path="res://assets/sprites/entities/npcs/npc_senhora_lendo.png" id="1_m5qhv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36800"]
+atlas = ExtResource("1_m5qhv")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lw4q"]
+atlas = ExtResource("1_m5qhv")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ouqv"]
+atlas = ExtResource("1_m5qhv")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgpc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36800")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lw4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ouqv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oakdp"]
+
+[node name="NpcSenhoraLendo" type="CharacterBody2D" unique_id=1670427580]
+y_sort_enabled = true
+collision_layer = 1024
+collision_mask = 1425
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=402130511]
+sprite_frames = SubResource("SpriteFrames_kgpc6")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=684657697]
+position = Vector2(0, 17)
+shape = SubResource("CircleShape2D_oakdp")

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://liborcklowi3"]
+
+[ext_resource type="Texture2D" uid="uid://uwodh0vryjpr" path="res://assets/sprites/entities/npcs/npc_senhora_tricotando.png" id="1_3uaa6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k05li"]
+atlas = ExtResource("1_3uaa6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw40q"]
+atlas = ExtResource("1_3uaa6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqct7"]
+atlas = ExtResource("1_3uaa6")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgpc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k05li")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw40q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqct7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oakdp"]
+
+[node name="NpcSenhoraTricotando" type="CharacterBody2D" unique_id=1670427580]
+y_sort_enabled = true
+collision_layer = 1024
+collision_mask = 1425
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=402130511]
+sprite_frames = SubResource("SpriteFrames_kgpc6")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=684657697]
+position = Vector2(0, 19)
+shape = SubResource("CircleShape2D_oakdp")
