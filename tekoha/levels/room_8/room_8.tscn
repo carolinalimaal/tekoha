@@ -194,7 +194,7 @@ position = Vector2(1347, 440)
 [node name="SFXAguaRio" type="AudioStreamPlayer2D" parent="SFXs" unique_id=989527406]
 position = Vector2(298, 545)
 stream = ExtResource("20_0h1l2")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 max_distance = 1000.0
 attenuation = 1.4142139
@@ -203,7 +203,7 @@ bus = &"SFX"
 [node name="SFXAguaRio2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=491550281]
 position = Vector2(1026, 500)
 stream = ExtResource("20_0h1l2")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 max_distance = 1000.0
 attenuation = 1.4142139

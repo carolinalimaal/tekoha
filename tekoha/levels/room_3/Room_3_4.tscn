@@ -2,9 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://danfg7hoxnasr" path="res://assets/sprites/tiles/chao/grama_rio/grama_rio_esverdeado.png" id="2_dbjiy"]
 [ext_resource type="Resource" uid="uid://l3vxyifaw4cg" path="res://data/cutscenes/cutscene_pos_boss/cutscene_pos_bossfight.tres" id="2_o5w41"]
-[ext_resource type="PackedScene" uid="uid://m4hesdju1jrd" path="res://entities/enemies/boss/boss.tscn" id="3_o5w41"]
+[ext_resource type="PackedScene" uid="uid://m4hesdju1jrd" path="res://entities/enemies/boss/Boss.tscn" id="3_o5w41"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="4_3s6fh"]
 [ext_resource type="Script" uid="uid://dasdjqiwt6nav" path="res://levels/room_3/boss_arena_level.gd" id="5_boss_arena"]
+[ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="6_o5w41"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vv66c"]
 texture = ExtResource("2_dbjiy")
@@ -313,3 +314,37 @@ collision_layer = 128
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Limits/StaticBody2D" unique_id=965609146]
 polygon = PackedVector2Array(0, 216, 112, 240, 272, 200, 360, -8, 216, -168, -224, -168, -336, -48, -256, 232, 0, 216, -112, 216, -184, 208, -232, 184, -264, 152, -280, 128, -288, 88, -288, -24, -272, -96, -248, -128, -200, -152, -176, -152, -120, -136, -72, -136, -48, -144, -32, -152, 32, -152, 40, -144, 72, -136, 120, -136, 144, -144, 192, -152, 240, -136, 272, -96, 288, -24, 288, 72, 280, 136, 248, 176, 184, 208)
+
+[node name="SFXs" type="Node2D" parent="." unique_id=1473809886]
+
+[node name="SFXAguaRio" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1003071697]
+position = Vector2(401, 439)
+stream = ExtResource("6_o5w41")
+volume_db = -33.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXAguaRio2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1468868873]
+position = Vector2(-343, 42)
+stream = ExtResource("6_o5w41")
+volume_db = -33.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXAguaRio3" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1669980766]
+position = Vector2(-359, 468)
+stream = ExtResource("6_o5w41")
+volume_db = -33.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"
+
+[node name="SFXAguaRio4" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1743122344]
+position = Vector2(347, 4)
+stream = ExtResource("6_o5w41")
+volume_db = -33.0
+autoplay = true
+attenuation = 1.4142139
+bus = &"SFX"

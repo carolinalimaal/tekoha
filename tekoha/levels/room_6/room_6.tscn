@@ -307,7 +307,7 @@ position = Vector2(495, 176)
 [node name="SfxRestaurante" type="AudioStreamPlayer2D" parent="SFXs" unique_id=540325453]
 position = Vector2(523, 249)
 stream = ExtResource("37_t0j85")
-volume_db = -14.0
+volume_db = -12.0
 autoplay = true
 attenuation = 1.6817931
 bus = &"SFX"

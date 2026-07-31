@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://r787xu0ctkdt" path="res://levels/room_5/room_5.gd" id="1_pmo2d"]
 [ext_resource type="Texture2D" uid="uid://b0do13h4w5fkm" path="res://assets/sprites/tiles/chao/grama_terra/grama_terra_tile.png" id="2_777hw"]
-[ext_resource type="Resource" path="res://data/music/music_ambiente.tres" id="2_ggyjx"]
+[ext_resource type="Resource" uid="uid://copl08iifv0on" path="res://data/music/music_ambiente.tres" id="2_ggyjx"]
 [ext_resource type="Texture2D" uid="uid://2orevd14dvd4" path="res://assets/sprites/tiles/chao/terra_rio/terra_rio.png" id="3_2mt7e"]
 [ext_resource type="PackedScene" uid="uid://1qrmsqlofmkg" path="res://utils/components/door/door.tscn" id="4_85668"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="5_ggyjx"]
@@ -631,7 +631,7 @@ position = Vector2(506, 785)
 [node name="SFXAguaRio" type="AudioStreamPlayer2D" parent="SFXs" unique_id=241672263]
 position = Vector2(402, 617)
 stream = ExtResource("19_cmi0e")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 max_distance = 1000.0
 attenuation = 1.4142139
@@ -640,7 +640,7 @@ bus = &"SFX"
 [node name="SFXAguaRio2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=224375613]
 position = Vector2(921, 602)
 stream = ExtResource("19_cmi0e")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 max_distance = 1000.0
 attenuation = 1.4142139

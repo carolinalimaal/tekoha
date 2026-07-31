@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://by0aaf7e4rakj"]
 
 [ext_resource type="Script" uid="uid://bugadubgfnpfs" path="res://levels/room_3/room_3.gd" id="1_grr8x"]
-[ext_resource type="Resource" path="res://data/music/music_ambiente.tres" id="2_iti7q"]
+[ext_resource type="Resource" uid="uid://copl08iifv0on" path="res://data/music/music_ambiente.tres" id="2_iti7q"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_wbedm"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="3_2jupl"]
 [ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interiores/moveis/moveis.tres" id="4_keg0k"]
@@ -299,7 +299,7 @@ position = Vector2(0, -64)
 [node name="SFXAguaRio" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1257027118]
 position = Vector2(1094, 977)
 stream = ExtResource("30_k68xe")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 max_distance = 1000.0
 attenuation = 1.4142139
@@ -308,7 +308,7 @@ bus = &"SFX"
 [node name="SFXAguaRio2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1764343844]
 position = Vector2(550, 1020)
 stream = ExtResource("30_k68xe")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 max_distance = 1000.0
 attenuation = 1.4142139
@@ -317,7 +317,7 @@ bus = &"SFX"
 [node name="SFXAguaRio3" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1936353455]
 position = Vector2(102, 992)
 stream = ExtResource("30_k68xe")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 max_distance = 1000.0
 attenuation = 1.4142139
@@ -326,7 +326,7 @@ bus = &"SFX"
 [node name="SFXAguaRio4" type="AudioStreamPlayer2D" parent="SFXs" unique_id=432739692]
 position = Vector2(-318, 1038)
 stream = ExtResource("30_k68xe")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 max_distance = 1000.0
 attenuation = 1.4142139
@@ -335,7 +335,7 @@ bus = &"SFX"
 [node name="SFXAguaRio5" type="AudioStreamPlayer2D" parent="SFXs" unique_id=987194951]
 position = Vector2(-676, 933)
 stream = ExtResource("30_k68xe")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 max_distance = 1000.0
 attenuation = 1.4142139
@@ -344,7 +344,7 @@ bus = &"SFX"
 [node name="SFXAguaRio6" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1926639169]
 position = Vector2(1846, 636)
 stream = ExtResource("30_k68xe")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 max_distance = 1000.0
 attenuation = 1.4142139
@@ -353,7 +353,7 @@ bus = &"SFX"
 [node name="SFXAguaRio7" type="AudioStreamPlayer2D" parent="SFXs" unique_id=407939153]
 position = Vector2(-1191, 641)
 stream = ExtResource("30_k68xe")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 max_distance = 1000.0
 attenuation = 1.4142139

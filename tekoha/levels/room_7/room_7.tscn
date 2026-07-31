@@ -260,13 +260,13 @@ position = Vector2(308, 144)
 [node name="SfxCozinha" type="AudioStreamPlayer2D" parent="SFXs" unique_id=582271127]
 position = Vector2(190, 130)
 stream = ExtResource("19_xr7sx")
-volume_db = -22.0
+volume_db = -20.0
 autoplay = true
 bus = &"SFX"
 
 [node name="SfxRestaurante" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1176248683]
 position = Vector2(-38, 375)
 stream = ExtResource("20_u3lv7")
-volume_db = -17.0
+volume_db = -15.0
 autoplay = true
 bus = &"SFX"

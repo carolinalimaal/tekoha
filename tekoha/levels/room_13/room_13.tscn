@@ -352,7 +352,7 @@ dialogues_list = Array[ExtResource("12_n6g6m")]([SubResource("Resource_6jbsf"), 
 [node name="SfxConversas" type="AudioStreamPlayer2D" parent="SFXs" unique_id=237006204]
 position = Vector2(1433, 320)
 stream = ExtResource("31_uc7af")
-volume_db = -24.0
+volume_db = -22.0
 autoplay = true
 max_distance = 1000.0
 bus = &"SFX"
@@ -360,7 +360,7 @@ bus = &"SFX"
 [node name="SfxConversas2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=2062811074]
 position = Vector2(602, 841)
 stream = ExtResource("31_uc7af")
-volume_db = -24.0
+volume_db = -22.0
 autoplay = true
 max_distance = 1000.0
 bus = &"SFX"
@@ -368,7 +368,7 @@ bus = &"SFX"
 [node name="SFXAguaRio" type="AudioStreamPlayer2D" parent="SFXs" unique_id=558468776]
 position = Vector2(1980, 338)
 stream = ExtResource("32_8fnq6")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 attenuation = 1.4142139
 bus = &"SFX"
@@ -376,7 +376,7 @@ bus = &"SFX"
 [node name="SFXAguaRio2" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1586250096]
 position = Vector2(1774, 691)
 stream = ExtResource("32_8fnq6")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 attenuation = 1.4142139
 bus = &"SFX"
@@ -384,7 +384,7 @@ bus = &"SFX"
 [node name="SFXAguaRio3" type="AudioStreamPlayer2D" parent="SFXs" unique_id=1384942596]
 position = Vector2(1383, 932)
 stream = ExtResource("32_8fnq6")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 attenuation = 1.4142139
 bus = &"SFX"
@@ -392,7 +392,7 @@ bus = &"SFX"
 [node name="SFXAguaRio4" type="AudioStreamPlayer2D" parent="SFXs" unique_id=535530129]
 position = Vector2(367, 1027)
 stream = ExtResource("32_8fnq6")
-volume_db = -35.0
+volume_db = -33.0
 autoplay = true
 attenuation = 1.4142139
 bus = &"SFX"
