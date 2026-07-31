@@ -8,7 +8,6 @@ class_name Animals extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if GameManager.current_save.game_state == GameManager.GameState.AFTER_PUZZLE_3:
-		print("ninguem nasce")
 		for animal in self.get_children():
 			animal.visible = false
 	else:

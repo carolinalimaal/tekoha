@@ -33,7 +33,6 @@ func _input(event: InputEvent) -> void:
 		var current_device = event.device
 		if controller_manager.active_controller != current_device:
 			controller_manager.active_controller = current_device
-			print("Jogador trocou de controle! Novo ativo: ", current_device)
 			active_controller_changed.emit(current_device)
 
 func get_movement_vector() -> Vector2:
@@ -58,7 +57,6 @@ func get_aim_direction() -> Vector2:
 func _set_input_source(source: InputSource) -> void:
 	if active_input_source != source:
 		active_input_source = source
-		print("InputSource mudou para: ", active_input_source)
 		input_source_changed.emit(source)
 
 func _on_controller_connected(_device_id: int) -> void:

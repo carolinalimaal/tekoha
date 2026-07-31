@@ -84,7 +84,6 @@ func _register_controller(device_id: int) -> void:
 		"guid" : Input.get_joy_guid(device_id),
 		"type" : controller_type
 	}
-	print("Controle conectado! %s (id:%s) - Tipo: %s" % [Input.get_joy_name(device_id), device_id, controller_type])
 	
 	if active_controller == -1:
 		active_controller = device_id
@@ -94,7 +93,6 @@ func _register_controller(device_id: int) -> void:
 func _deregister_controller(device_id: int) -> void:
 	if connected_controllers.has(device_id):
 		var controller_name = connected_controllers[device_id].name
-		print("Controle disconectado! %s (id:%s) " % [controller_name, device_id])
 		connected_controllers.erase(device_id)
 		
 		if active_controller == device_id:
