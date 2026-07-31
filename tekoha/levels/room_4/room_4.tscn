@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="12_pm3eg"]
 [ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="13_pm3eg"]
 [ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="14_6m4mh"]
+[ext_resource type="PackedScene" uid="uid://r33bwb7ekbh8" path="res://entities/npcs/vendedor/npc_seller.tscn" id="15_25pbt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xflk"]
 texture = ExtResource("2_ptwuu")
@@ -612,3 +613,6 @@ autoplay = true
 max_distance = 1000.0
 attenuation = 1.464086
 bus = &"SFX"
+
+[node name="NpcSeller" parent="." unique_id=561111194 instance=ExtResource("15_25pbt")]
+position = Vector2(357, 977)
