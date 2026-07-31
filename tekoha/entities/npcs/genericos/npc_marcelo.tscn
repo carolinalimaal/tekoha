@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://kwqb7tcela74"]
+
+[ext_resource type="Texture2D" uid="uid://cefk6styuhuqu" path="res://assets/sprites/entities/npcs/npc_marcelo.png" id="1_0pgmq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdjkt"]
+atlas = ExtResource("1_0pgmq")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0p57"]
+atlas = ExtResource("1_0pgmq")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0lsy"]
+atlas = ExtResource("1_0pgmq")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgpc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdjkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0p57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0lsy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oakdp"]
+
+[node name="NpcMarcelo" type="CharacterBody2D" unique_id=1670427580]
+collision_layer = 1024
+collision_mask = 1425
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=402130511]
+sprite_frames = SubResource("SpriteFrames_kgpc6")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=684657697]
+position = Vector2(0, 23)
+shape = SubResource("CircleShape2D_oakdp")

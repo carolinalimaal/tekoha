@@ -17,9 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://cyd5u8tfyauxa" path="res://entities/animals/animal.tscn" id="15_28wv3"]
 [ext_resource type="SpriteFrames" uid="uid://ctau83h2j00el" path="res://assets/sprites/entities/animals/garca.tres" id="16_lvpqs"]
 [ext_resource type="PackedScene" uid="uid://bucllvjb3o7ht" path="res://entities/npcs/genericos/npc_nina.tscn" id="17_lvpqs"]
+[ext_resource type="SpriteFrames" uid="uid://110m3ia66xi4" path="res://assets/sprites/entities/animals/urubu.tres" id="17_wj57u"]
 [ext_resource type="PackedScene" uid="uid://p4kmdw4y6gk6" path="res://entities/npcs/genericos/npc_crianca_frente.tscn" id="18_d026n"]
 [ext_resource type="PackedScene" uid="uid://c2amukeq4q6qo" path="res://entities/npcs/genericos/npc_carol.tscn" id="19_f1imr"]
 [ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="20_0h1l2"]
+[ext_resource type="PackedScene" uid="uid://kwqb7tcela74" path="res://entities/npcs/genericos/npc_marcelo.tscn" id="21_5km75"]
 [ext_resource type="AudioStream" uid="uid://dvhe5a1avi84e" path="res://assets/sound/sfx/enviroment/sfx_ambiente_mata.wav" id="21_8li2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfef4"]
@@ -162,6 +164,16 @@ flipped = true
 position = Vector2(485, 536)
 animated_frames = ExtResource("16_lvpqs")
 
+[node name="Animal4" parent="Animals" unique_id=977144206 instance=ExtResource("15_28wv3")]
+z_index = 1
+position = Vector2(1363, 340)
+animated_frames = ExtResource("17_wj57u")
+
+[node name="Animal5" parent="Animals" unique_id=424597091 instance=ExtResource("15_28wv3")]
+z_index = 1
+position = Vector2(1423, 405)
+animated_frames = ExtResource("17_wj57u")
+
 [node name="NPCs" type="Node2D" parent="." unique_id=561850378]
 y_sort_enabled = true
 
@@ -173,6 +185,9 @@ position = Vector2(989, 408)
 
 [node name="NpcCarol" parent="NPCs" unique_id=1261501975 instance=ExtResource("19_f1imr")]
 position = Vector2(177, 363)
+
+[node name="NpcMarcelo" parent="NPCs" unique_id=1670427580 instance=ExtResource("21_5km75")]
+position = Vector2(1347, 440)
 
 [node name="SFXs" type="Node2D" parent="." unique_id=571141560]
 
