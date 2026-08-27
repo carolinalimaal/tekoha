@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dj5gbwsev0rga" path="res://levels/room_6/room_6.gd" id="1_bs7kn"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_fxwqa"]
 [ext_resource type="TileSet" uid="uid://ccj1hrp0264wr" path="res://assets/sprites/tiles/interiores/interior_restaurante/interior_restaurante.tres" id="3_yxphn"]
+[ext_resource type="Resource" uid="uid://b0r320elx2gpp" path="res://data/music/music_restaurant.tres" id="4_00v40"]
 [ext_resource type="TileSet" uid="uid://cpo6ddxlj32yv" path="res://assets/sprites/tiles/interiores/moveis/moveis.tres" id="4_d3h8c"]
 [ext_resource type="Script" uid="uid://dfho07qjg6y3i" path="res://levels/room_6/roll_mecanic.gd" id="5_0ipkc"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/components/save_point/save_point.tscn" id="5_8imx6"]
@@ -109,6 +110,7 @@ size = Vector2(26, 8)
 y_sort_enabled = true
 script = ExtResource("1_bs7kn")
 cecilia_calling_dialogue = SubResource("DialogueSettings_cecall")
+bg_music = ExtResource("4_00v40")
 limit_top = 50
 limit_bottom = 880
 limit_left = 285

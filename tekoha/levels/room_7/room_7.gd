@@ -12,6 +12,7 @@ var _phase: Phase = Phase.CECILIA_TALK
 @onready var sfx_restaurante: AudioStreamPlayer2D = $SFXs/SfxRestaurante
 
 func _ready() -> void:
+	AudioManager.stop_background_sound()
 	if GameManager.current_save.game_state == GameManager.GameState.SECOND_MEETING_CECILIA:
 		GameManager.set_game_state(GameManager.GameState.IN_KITCHEN)
 		_auto_save()

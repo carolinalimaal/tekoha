@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://b5dpy7jba3ouw"]
 
 [ext_resource type="Script" uid="uid://br7u668sprpdj" path="res://levels/room_10/room_10.gd" id="1_xpsvw"]
-[ext_resource type="Resource" path="res://data/music/music_ambiente.tres" id="2_8nycx"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_fkh8x"]
+[ext_resource type="Resource" uid="uid://m4bgwipn6vmo" path="res://data/music/music_puzzle_tochas.tres" id="2_mwtg3"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="3_unx7x"]
 [ext_resource type="Texture2D" uid="uid://b0do13h4w5fkm" path="res://assets/sprites/tiles/chao/grama_terra/grama_terra_tile.png" id="4_8nycx"]
 [ext_resource type="PackedScene" uid="uid://c8ui4rfngwjkm" path="res://utils/props/bush/bush.tscn" id="5_mptwh"]
@@ -245,10 +245,14 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedIn
 outlines = Array[PackedVector2Array]([PackedVector2Array(2980, 836, 3102, 829, 3124, 821, 3214, 821, 3233, 829, 3328, 851, 3343, 1001, 3305, 993, 3136, 1055, 3120, 1035, 3012, 1039, 2931, 944, 2930, 838)])
 agent_radius = 5.0
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5taf1"]
+a = Vector2(259, -273)
+b = Vector2(-245, 249)
+
 [node name="Room10" type="Node2D" unique_id=1823858816]
 y_sort_enabled = true
 script = ExtResource("1_xpsvw")
-bg_music = ExtResource("2_8nycx")
+bg_music = ExtResource("2_mwtg3")
 limit_top = -192
 limit_bottom = 1847
 limit_left = 10
@@ -496,3 +500,10 @@ autoplay = true
 max_distance = 1000.0
 attenuation = 1.464086
 bus = &"SFX"
+
+[node name="MusicTrigger" type="Area2D" parent="." unique_id=1775103334]
+position = Vector2(2058, 1303)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicTrigger" unique_id=1625156288]
+shape = SubResource("SegmentShape2D_5taf1")
+debug_color = Color(0.9098039, 0, 0.40392157, 0.6156863)

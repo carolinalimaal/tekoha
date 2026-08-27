@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MusicTrack" format=3 uid="uid://m4bgwipn6vmo"]
+
+[ext_resource type="Script" uid="uid://c0w7oa21iwpaf" path="res://utils/resources/music/music_track.gd" id="1_gve7b"]
+[ext_resource type="AudioStream" uid="uid://dbmakb0yhiutc" path="res://assets/sound/music/bgm_puzzle_tochas.wav" id="2_ktxqv"]
+
+[resource]
+script = ExtResource("1_gve7b")
+track = ExtResource("2_ktxqv")
+volume = -2.0
+metadata/_custom_type_script = "uid://c0w7oa21iwpaf"
