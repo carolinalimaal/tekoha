@@ -390,6 +390,7 @@ value = 50.0
 texture_under = ExtResource("13_xm65m")
 texture_over = ExtResource("14_4dntf")
 texture_progress = ExtResource("15_l2g1w")
+tint_progress = Color(1.353256, 0, 0.22780283, 1)
 
 [node name="StateMachine" type="Node" parent="." unique_id=790657437 node_paths=PackedStringArray("_initial_state")]
 script = ExtResource("12_7wn2w")
