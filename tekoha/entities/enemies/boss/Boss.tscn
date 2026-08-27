@@ -13,8 +13,11 @@
 [ext_resource type="Theme" uid="uid://b71bgholxna22" path="res://UI/tekoha_theme.tres" id="11_osf0o"]
 [ext_resource type="Script" uid="uid://coql161p0qttr" path="res://utils/components/state_machine/state_machine.gd" id="12_7wn2w"]
 [ext_resource type="Script" uid="uid://dguw4ni65yh1u" path="res://entities/enemies/boss/wait.gd" id="13_kpwar"]
+[ext_resource type="Texture2D" uid="uid://d148wnh3g400k" path="res://assets/UI/hud/boss_healthbar/under_barra_boss.png" id="13_xm65m"]
+[ext_resource type="Texture2D" uid="uid://fq2mi7kt75nt" path="res://assets/UI/hud/boss_healthbar/over_barra_boss.png" id="14_4dntf"]
 [ext_resource type="Shader" uid="uid://dmd5k6yxg24en" path="res://entities/enemies/boss/boss_take_damage.gdshader" id="14_take_damage"]
 [ext_resource type="Script" uid="uid://gxoaqc16nmqj" path="res://entities/enemies/boss/attack.gd" id="14_uq55q"]
+[ext_resource type="Texture2D" uid="uid://cyqkb6pgswash" path="res://assets/UI/hud/boss_healthbar/progress_barra_boss.png" id="15_l2g1w"]
 [ext_resource type="Script" uid="uid://b5fvvlw35l6qk" path="res://entities/enemies/boss/aim.gd" id="15_oxfk7"]
 [ext_resource type="Script" uid="uid://b41spms7e2w1d" path="res://entities/enemies/boss/death.gd" id="16_death"]
 
@@ -377,13 +380,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/VBoxContainer" unique_id=402350352]
-self_modulate = Color(1, 0, 0, 1)
-custom_minimum_size = Vector2(600, 30)
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/VBoxContainer" unique_id=1197884263]
+custom_minimum_size = Vector2(500, 60)
 layout_mode = 2
-size_flags_vertical = 1
-value = 100.0
-show_percentage = false
+size_flags_horizontal = 4
+size_flags_vertical = 4
+step = 0.01
+value = 50.0
+texture_under = ExtResource("13_xm65m")
+texture_over = ExtResource("14_4dntf")
+texture_progress = ExtResource("15_l2g1w")
 
 [node name="StateMachine" type="Node" parent="." unique_id=790657437 node_paths=PackedStringArray("_initial_state")]
 script = ExtResource("12_7wn2w")
