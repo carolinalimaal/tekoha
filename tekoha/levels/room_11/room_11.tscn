@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bas33vmll12wo"]
 
 [ext_resource type="Script" uid="uid://ba7ox1ik14qpb" path="res://levels/room_11/room_11.gd" id="1_hvq2q"]
-[ext_resource type="Resource" path="res://data/music/music_ambiente.tres" id="2_drjbi"]
+[ext_resource type="Resource" uid="uid://m4bgwipn6vmo" path="res://data/music/music_puzzle_tochas.tres" id="2_ds1xc"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_khelp"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="2_roctp"]
 [ext_resource type="PackedScene" uid="uid://c8ui4rfngwjkm" path="res://utils/props/bush/bush.tscn" id="4_hvq2q"]
@@ -29,10 +29,14 @@ vertices = PackedVector2Array(1956.9688, 1100.8438, 2079.0469, 1242.7891, 2038.6
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 0, 4), PackedInt32Array(6, 7, 8, 5, 4), PackedInt32Array(9, 6, 4, 10), PackedInt32Array(11, 10, 4, 12, 13), PackedInt32Array(13, 12, 14, 15), PackedInt32Array(16, 17, 15, 14, 18, 19), PackedInt32Array(19, 18, 20, 21), PackedInt32Array(22, 23, 21, 20, 24)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(723, 441, 591, 724, 736, 886, 901, 825, 1086, 794, 1320, 814, 1441, 828, 1511, 955, 1892, 1273, 2041, 1273, 2095, 1246, 1966, 1096, 1936, 989, 2144, 815, 2017, 679, 1922, 715, 1827, 648, 1688, 686, 1528, 668, 1448, 744, 1387, 727, 1208, 452, 1139, 420, 1045, 447, 1019, 448)])
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ds1xc"]
+a = Vector2(59, -55)
+b = Vector2(-63, 52)
+
 [node name="Room11" type="Node2D" unique_id=263309058]
 y_sort_enabled = true
 script = ExtResource("1_hvq2q")
-bg_music = ExtResource("2_drjbi")
+bg_music = ExtResource("2_ds1xc")
 limit_top = 210
 limit_bottom = 1376
 limit_left = 384
@@ -204,3 +208,10 @@ autoplay = true
 max_distance = 1000.0
 attenuation = 1.464086
 bus = &"SFX"
+
+[node name="MusicTrigger" type="Area2D" parent="." unique_id=2036387576]
+position = Vector2(1313, 739)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicTrigger" unique_id=2041758798]
+shape = SubResource("SegmentShape2D_ds1xc")
+debug_color = Color(0.9098039, 0, 0.40392157, 0.6156863)
