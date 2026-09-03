@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://kwswm0i0aes" path="res://data/cutscenes/cutscene_4/img_1.png" id="2_hukba"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="2_ssotq"]
 [ext_resource type="Texture2D" uid="uid://dfey2ppxjwrkp" path="res://data/cutscenes/cutscene_4/img_2.png" id="3_hukba"]
+[ext_resource type="Texture2D" uid="uid://eo74ixhyb7nw" path="res://data/cutscenes/cutscene_4/LAMBENDO OS BEIÇOS.png" id="4_58vxe"]
 
 [sub_resource type="Resource" id="Resource_diml6"]
 script = ExtResource("1_diml6")
@@ -36,8 +37,20 @@ metadata/_custom_type_script = "uid://x6215xlpsejj"
 [sub_resource type="Resource" id="Resource_1r253"]
 script = ExtResource("1_diml6")
 actor_name = "Iara"
-background_image = ExtResource("2_hukba")
+background_image = ExtResource("4_58vxe")
 text_pt = "E essa cestinha de peixes? Você vai comer todos eles? Hmmm com uma farinha..."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_covyp"]
+script = ExtResource("1_diml6")
+background_image = ExtResource("3_hukba")
+text_pt = "Não durou muito para o devaneio de Iara ser interrompido, pois o Curupira a assustara com um salto, ao lembrar que deveria levar os peixes para Cecilia, a dona do restaurante."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_q66iw"]
+script = ExtResource("1_diml6")
+background_image = ExtResource("3_hukba")
+text_pt = "Ao sair correndo, Curupira deixa cair a sacola no chão. Iara brevemente irrita-se com o descuido do Curupira, mas, antes de chamar sua atenção, Iara já o havia perdido de vista."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_5oew8"]
@@ -49,5 +62,5 @@ metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [resource]
 script = ExtResource("2_ssotq")
-dialogues = Array[ExtResource("1_diml6")]([SubResource("Resource_diml6"), SubResource("Resource_iti7q"), SubResource("Resource_24hp8"), SubResource("Resource_oybd7"), SubResource("Resource_1r253"), SubResource("Resource_5oew8")])
+dialogues = Array[ExtResource("1_diml6")]([SubResource("Resource_diml6"), SubResource("Resource_iti7q"), SubResource("Resource_24hp8"), SubResource("Resource_oybd7"), SubResource("Resource_1r253"), SubResource("Resource_covyp"), SubResource("Resource_q66iw"), SubResource("Resource_5oew8")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"

@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://x6215xlpsejj" path="res://utils/resources/dialogue/dialogue_line.gd" id="1_i3u7g"]
 [ext_resource type="Script" uid="uid://bmi6yxeeux1kk" path="res://utils/resources/dialogue/dialogue_settings.gd" id="2_oye4k"]
+[ext_resource type="Texture2D" uid="uid://prix5s0miaqb" path="res://data/dialogues/npcs/cecilia/room_7/CECÍLIA.png" id="2_rsuru"]
+[ext_resource type="Texture2D" uid="uid://dfey2ppxjwrkp" path="res://data/cutscenes/cutscene_4/img_2.png" id="3_pje1j"]
+[ext_resource type="Texture2D" uid="uid://bru5qkoyktb0i" path="res://data/dialogues/npcs/cecilia/room_7/CECÍLIA E CURUPIRA.png" id="4_wxnp4"]
 
 [sub_resource type="Resource" id="Resource_xr7sx"]
 script = ExtResource("1_i3u7g")
@@ -15,13 +18,26 @@ actor_name = "Curupira"
 text_pt = "É que... eu preciso ir..."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
+[sub_resource type="Resource" id="Resource_o1j5t"]
+script = ExtResource("1_i3u7g")
+background_image = ExtResource("2_rsuru")
+text_pt = "Com os olhos repletos de ternura, Cecilia olha para a criança, que estava pronta para partir. Sabendo ela que não poderia impedi-lo, ela ajoelha-se para ficar na altura do pequeno Curupira."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_54p3c"]
+script = ExtResource("1_i3u7g")
+background_image = ExtResource("3_pje1j")
+text_pt = "Com as mãos nas bochechas quentes do Curupira, Cecilia o fala em despedida:"
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
 [sub_resource type="Resource" id="Resource_ds2ny"]
 script = ExtResource("1_i3u7g")
 actor_name = "Cecilia"
+background_image = ExtResource("4_wxnp4")
 text_pt = "Tudo bem... Quando estiver passando por aqui, volte para nos ver. Separarei o melhor peixe para você, e farei um delicioso Chocolate."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [resource]
 script = ExtResource("2_oye4k")
-dialogues = Array[ExtResource("1_i3u7g")]([SubResource("Resource_xr7sx"), SubResource("Resource_u3lv7"), SubResource("Resource_ds2ny")])
+dialogues = Array[ExtResource("1_i3u7g")]([SubResource("Resource_xr7sx"), SubResource("Resource_u3lv7"), SubResource("Resource_o1j5t"), SubResource("Resource_54p3c"), SubResource("Resource_ds2ny")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
