@@ -1,7 +1,10 @@
 class_name StunState
 extends State
 
+const ANIM_DURATION : float = 0.55 
+
 var _attack_data : AttackData
+var _timeout_timer : SceneTreeTimer
 
 func _enter() -> void:
 	# Aplicar knockback
@@ -10,10 +13,16 @@ func _enter() -> void:
 	owner_node.facing_direction = - knockback_direction
 	# Conectar o sinal animation_finished
 	owner_node.animation_tree.animation_finished.connect(_on_animation_finished)
+	# Failsafe: garante que o estado nao fique travado caso animation_finished nao dispare
+	_timeout_timer = get_tree().create_timer(ANIM_DURATION)
+	_timeout_timer.timeout.connect(_on_timeout)
 
 func _exit() -> void:
 	# Disconectar o sinal animation_finished
 	owner_node.animation_tree.animation_finished.disconnect(_on_animation_finished)
+	if _timeout_timer:
+		_timeout_timer.timeout.disconnect(_on_timeout)
+		_timeout_timer = null
 
 func _update(_delta: float) -> void:
 	pass
@@ -25,7 +34,10 @@ func receive_attack_data(attack_data: AttackData):
 	_attack_data = attack_data
 
 func _on_animation_finished(anim_name: StringName) -> void:
-	# No fim da animacao de morte, chama o metodo die()
 	if anim_name in ["stun_down", "stun_up", "stun_left", "stun_right"]:
 		transition_to("Idle")
 		return
+
+func _on_timeout() -> void:
+	if state_machine.current_state == self:
+		transition_to("Idle")

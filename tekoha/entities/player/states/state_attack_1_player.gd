@@ -4,6 +4,9 @@ extends State
 const ATTACK_SPEED : int = 50
 const ATTACK_KNOCKBACK : int = 20
 const ATTACK_DAMAGE : int = 4
+const ANIM_DURATION : float = 0.65
+
+var _timeout_timer : SceneTreeTimer
 
 func _enter() -> void:
 	owner_node.velocity = Vector2.ZERO
@@ -15,16 +18,24 @@ func _enter() -> void:
 	owner_node.hurtbox_component.attack_data.knockback_force= ATTACK_KNOCKBACK
 	# Conectar o sinal animation_finished
 	owner_node.animation_tree.animation_finished.connect(_on_animation_finished)
+	
+	# Timer de seguranca caso o AnimationTree nao emita o sinal animation_finished
+	_timeout_timer = get_tree().create_timer(ANIM_DURATION)
+	_timeout_timer.timeout.connect(_on_timeout)
 
 func _exit() -> void:
 	# Desconectar o sinal de animation_finished (evitar conflito com outros estados)
 	owner_node.animation_tree.animation_finished.disconnect(_on_animation_finished)
+	if _timeout_timer:
+		_timeout_timer.timeout.disconnect(_on_timeout)
+		_timeout_timer = null
 	owner_node.velocity = Vector2.ZERO
 	# Atualizar a facing_direction
 	owner_node.facing_direction = owner_node.attack_direction
 	# Desabilitar a hurtbox_collision
 	owner_node.hurtbox_component.hurtbox_collision.set_deferred("disabled", true)
-	
+	owner_node.can_attack_2 = false
+
 
 func _update(_delta: float) -> void:
 	pass
@@ -40,3 +51,7 @@ func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name in ["attack_1_down", "attack_1_left", "attack_1_right", "attack_1_up"]:
 		transition_to("Idle")
 		return
+
+func _on_timeout() -> void:
+	if state_machine.current_state == self:
+		transition_to("Idle")
