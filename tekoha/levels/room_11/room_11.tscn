@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bas33vmll12wo"]
 
 [ext_resource type="Script" uid="uid://ba7ox1ik14qpb" path="res://levels/room_11/room_11.gd" id="1_hvq2q"]
-[ext_resource type="Resource" uid="uid://m4bgwipn6vmo" path="res://data/music/music_puzzle_tochas.tres" id="2_ds1xc"]
+[ext_resource type="Resource" uid="uid://cutrcils312u8" path="res://data/music/music_puzzle_horda.tres" id="2_ds1xc"]
 [ext_resource type="TileSet" uid="uid://b2rao7vy6qv6w" path="res://assets/sprites/tiles/chao/ground.tres" id="2_khelp"]
 [ext_resource type="TileSet" uid="uid://5pnfq0vbj5j8" path="res://assets/sprites/tiles/natureza/nature.tres" id="2_roctp"]
 [ext_resource type="PackedScene" uid="uid://c8ui4rfngwjkm" path="res://utils/props/bush/bush.tscn" id="4_hvq2q"]

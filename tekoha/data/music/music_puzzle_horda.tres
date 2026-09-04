@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MusicTrack" format=3 uid="uid://cutrcils312u8"]
+
+[ext_resource type="Script" uid="uid://c0w7oa21iwpaf" path="res://utils/resources/music/music_track.gd" id="1_v266x"]
+[ext_resource type="AudioStream" uid="uid://cjtc2aae0so2c" path="res://assets/sound/music/bgm_puzzle_horda.wav" id="2_v266x"]
+
+[resource]
+script = ExtResource("1_v266x")
+track = ExtResource("2_v266x")
+volume = -2.0
+metadata/_custom_type_script = "uid://c0w7oa21iwpaf"
