@@ -102,7 +102,7 @@ func _on_cutscene_ended() -> void:
 	if current_state == TutorialState.ROLL and !practice_dummy.visible:
 		player_reposition_respawn()
 		dummy_appearance_anim()
-		roll_area.show()
+		#roll_area.show()
 	elif current_state != TutorialState.ATTACK_1:
 		player_reposition_respawn()
 
@@ -154,13 +154,22 @@ func dummy_appearance_anim() -> void:
 	var tween: Tween = create_tween()
 	tween.tween_property(transition_rect, "modulate:a", 1.0, 1.0)
 	tutorial_ui.hide_ui()
+	
+	# Reposiciona o jogador enquanto a tela está totalmente preta
+	tween.tween_callback(player_reposition_respawn)
 	tween.tween_callback(_set_second_dummy_visible.bind(true))
+	
 	tween.tween_property(transition_rect, "modulate:a", 0.0, 1.0)
 
 	await tween.finished
+
+	# Libera o movimento e só então ativa a área do roll
+	GlobalRefs.player.can_move = true
 	tutorial_ui.show_ui()
 	transition_layer.hide()
-	GlobalRefs.player.can_move = true
+
+	if current_state == TutorialState.ROLL:
+		roll_area.show()
 
 func player_reposition_respawn() -> void:
 	GlobalRefs.player.global_position = player_reposition.global_position
