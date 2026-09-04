@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bhg76nybm1m3i" path="res://data/cutscenes/cutscene_2/img_2.png" id="3_q8wif"]
 [ext_resource type="Texture2D" uid="uid://ctsh2dd10nj5s" path="res://data/cutscenes/cutscene_2/img_3.jpeg" id="4_8128d"]
 [ext_resource type="Texture2D" uid="uid://lkaiv8gmpbmw" path="res://data/cutscenes/cutscene_2/img_4.jpeg" id="5_yepy2"]
+[ext_resource type="Texture2D" uid="uid://ddbrvdinjlpa3" path="res://data/cutscenes/cutscene_2/AMEAÇANDO LANÇA.png" id="6_erium"]
 [ext_resource type="Texture2D" uid="uid://dfey2ppxjwrkp" path="res://data/cutscenes/cutscene_4/img_2.png" id="6_yepy2"]
+[ext_resource type="Texture2D" uid="uid://bklle5vl80g3j" path="res://data/cutscenes/cutscene_2/CHORANDO.png" id="8_3mcit"]
 
 [sub_resource type="Resource" id="Resource_meiwg"]
 script = ExtResource("1_meiwg")
@@ -46,8 +48,26 @@ metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_3mcit"]
 script = ExtResource("1_meiwg")
+background_image = ExtResource("6_erium")
+text_pt = "Ela balançava sua lança furiosamente enquanto olhava o pequeno rapaz à sua frente. "
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_8proe"]
+script = ExtResource("1_meiwg")
 background_image = ExtResource("6_yepy2")
-text_pt = "vai entrar coisa aqui ainda, provavelmente imagens só"
+text_pt = "O que a sereia não sabia é que o Curupira estava perdido consigo mesmo. Ele não acreditava em si, não conhecia suas responsabilidades. A inocência da criança o havia protegido da realidade cruel que estava pairando sobre a Ilha do Combu."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_tpa0v"]
+script = ExtResource("1_meiwg")
+background_image = ExtResource("6_yepy2")
+text_pt = "Ao olhar para o igarapé poluído com várias redes de pesca em sua margem, peixes boiando, sufocados pelas sacolas plásticas e latinhas de bebidas, semelhantes aos que a sereia estava recolhendo, Curupira entra em choque."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_i2ix2"]
+script = ExtResource("1_meiwg")
+background_image = ExtResource("8_3mcit")
+text_pt = "Perturbado com o que via, o Curupira sentiu culpa. Ele percebeu, naquele instante, que sua casa estava sendo destruída. Ao lembrar dos seus banhos refrescantes nos igarapés da ilha, ele chorou como uma criança."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_wewem"]
@@ -72,5 +92,5 @@ metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [resource]
 script = ExtResource("2_w1dvp")
-dialogues = Array[ExtResource("1_meiwg")]([SubResource("Resource_meiwg"), SubResource("Resource_8128d"), SubResource("Resource_81xkw"), SubResource("Resource_q8wif"), SubResource("Resource_yepy2"), SubResource("Resource_erium"), SubResource("Resource_3mcit"), SubResource("Resource_wewem"), SubResource("Resource_lf4nq"), SubResource("Resource_iti7q")])
+dialogues = Array[ExtResource("1_meiwg")]([SubResource("Resource_meiwg"), SubResource("Resource_8128d"), SubResource("Resource_81xkw"), SubResource("Resource_q8wif"), SubResource("Resource_yepy2"), SubResource("Resource_erium"), SubResource("Resource_3mcit"), SubResource("Resource_8proe"), SubResource("Resource_tpa0v"), SubResource("Resource_i2ix2"), SubResource("Resource_wewem"), SubResource("Resource_lf4nq"), SubResource("Resource_iti7q")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"

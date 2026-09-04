@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dfey2ppxjwrkp" path="res://data/cutscenes/cutscene_4/img_2.png" id="17_24hp8"]
 [ext_resource type="Resource" uid="uid://dnypnxch0rxfl" path="res://data/cutscenes/cutscene_4/cutscene_4.tres" id="17_x4cld"]
 [ext_resource type="PackedScene" uid="uid://bx27oixgqklgm" path="res://utils/props/tutorial/tutorial.tscn" id="18_wbedm"]
+[ext_resource type="Texture2D" uid="uid://bq3nod8cglwtb" path="res://data/cutscenes/cutscene_4/LANÇA.png" id="18_ylp48"]
 [ext_resource type="PackedScene" uid="uid://bgiup2e5f7yt3" path="res://utils/components/save_point/save_point.tscn" id="19_wbedm"]
 [ext_resource type="Texture2D" uid="uid://dreitvlrbbsai" path="res://assets/sprites/props/hammock/rede_save_toquinho.png" id="20_46t15"]
 [ext_resource type="PackedScene" uid="uid://d1ou3wqyvyflw" path="res://entities/enemies/sacola/sacola.tscn" id="20_iti7q"]
@@ -90,6 +91,12 @@ background_image = ExtResource("17_24hp8")
 text_pt = "Proteja aqueles que não conseguem fazê-lo, Curupira."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
+[sub_resource type="Resource" id="Resource_ar0i7"]
+script = ExtResource("20_keg0k")
+background_image = ExtResource("18_ylp48")
+text_pt = "A postura solene, mas reconfortante, de Iara preencheu o vazio que habitava no coração de Curupira. O calor da coragem e da determinação aquece suas mãos trêmulas e frágeis, que seguraram a lança com firmeza."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
 [sub_resource type="Resource" id="Resource_khhq5"]
 script = ExtResource("20_keg0k")
 actor_name = "Iara"
@@ -99,7 +106,7 @@ metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [sub_resource type="Resource" id="Resource_oybd7"]
 script = ExtResource("15_4iyy6")
-dialogues = Array[ExtResource("20_keg0k")]([SubResource("Resource_1r253"), SubResource("Resource_5oew8"), SubResource("Resource_24hp8"), SubResource("Resource_q34pk"), SubResource("Resource_k68xe"), SubResource("Resource_khhq5")])
+dialogues = Array[ExtResource("20_keg0k")]([SubResource("Resource_1r253"), SubResource("Resource_5oew8"), SubResource("Resource_24hp8"), SubResource("Resource_q34pk"), SubResource("Resource_k68xe"), SubResource("Resource_ar0i7"), SubResource("Resource_khhq5")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
 
 [sub_resource type="Resource" id="Resource_iti7q"]
