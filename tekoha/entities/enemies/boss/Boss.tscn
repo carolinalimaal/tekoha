@@ -310,10 +310,11 @@ polygon = PackedVector2Array(0, 194, 120, 184, 225, 158, 251, 108, 251, -29, 193
 
 [node name="HealthComponent" type="Node" parent="." unique_id=234468599]
 script = ExtResource("5_ncffa")
-max_health = 100
+max_health = 10
 metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
 [node name="Attack" type="Node2D" parent="." unique_id=1048867530]
+y_sort_enabled = true
 position = Vector2(137, -76)
 
 [node name="Shadow" type="Sprite2D" parent="Attack" unique_id=1531170732]
@@ -322,6 +323,7 @@ texture = ExtResource("6_kvmq7")
 offset = Vector2(0, 27)
 
 [node name="Tail" type="Sprite2D" parent="Attack" unique_id=78925209]
+y_sort_enabled = true
 material = SubResource("ShaderMaterial_take_damage")
 texture = ExtResource("7_bf4i6")
 offset = Vector2(0, -649.5)
@@ -386,7 +388,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 step = 0.01
-value = 50.0
+value = 100.0
 texture_under = ExtResource("13_xm65m")
 texture_over = ExtResource("14_4dntf")
 texture_progress = ExtResource("15_l2g1w")

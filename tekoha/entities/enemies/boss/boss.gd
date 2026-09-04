@@ -11,7 +11,7 @@ signal death_sequence_finished
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var health_ui: CanvasLayer = $CanvasLayer
-@onready var progress_bar: ProgressBar = $CanvasLayer/VBoxContainer/ProgressBar
+@onready var progress_bar: TextureProgressBar = $CanvasLayer/VBoxContainer/TextureProgressBar
 @onready var body: Sprite2D = $Body
 @onready var tail: Sprite2D = $Attack/Tail
 @onready var crab_spawn_area: Area2D = $CrabSpawnArea
