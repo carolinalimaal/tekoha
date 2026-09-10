@@ -18,6 +18,7 @@ func _ready() -> void:
 		item_row_instance.setup_item(i)
 
 func grab_initial_focus() -> void:
+	_set_slots_focus(true)
 	_update_ui()
 	item_list.get_child(0).grab_focus()
 
@@ -69,6 +70,7 @@ func _on_confirm_bought() -> void:
 	_close_popup()
 
 	if is_new_item:
+		_set_slots_focus(false)
 		GameManager.current_save.known_items[item.name] = true
 		GlobalRefs.new_item_found_panel.show_panel(GlobalRefs.ItemType.FOOD, item)
 	else:
