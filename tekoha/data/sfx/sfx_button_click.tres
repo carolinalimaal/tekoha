@@ -7,6 +7,6 @@
 script = ExtResource("1_bk4qp")
 type = 13
 sound_effect = ExtResource("2_rt6nx")
-volume = -32.0
+volume = -30.0
 pitch_scale = 0.9
 metadata/_custom_type_script = "uid://dogggnwn8i6i7"
