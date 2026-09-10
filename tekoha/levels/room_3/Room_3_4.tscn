@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://danfg7hoxnasr" path="res://assets/sprites/tiles/chao/grama_rio/grama_rio_esverdeado.png" id="2_dbjiy"]
 [ext_resource type="Resource" uid="uid://l3vxyifaw4cg" path="res://data/cutscenes/cutscene_pos_boss/cutscene_pos_bossfight.tres" id="2_o5w41"]
 [ext_resource type="PackedScene" uid="uid://m4hesdju1jrd" path="res://entities/enemies/boss/Boss.tscn" id="3_o5w41"]
+[ext_resource type="Resource" uid="uid://dmlwevuousw8o" path="res://data/music/music_boss.tres" id="3_pe2ny"]
 [ext_resource type="Script" uid="uid://dot8xsk0qoeln" path="res://utils/components/door/door.gd" id="4_3s6fh"]
 [ext_resource type="Script" uid="uid://dasdjqiwt6nav" path="res://levels/room_3/boss_arena_level.gd" id="5_boss_arena"]
 [ext_resource type="AudioStream" uid="uid://bsaf1qnltuhts" path="res://assets/sound/sfx/enviroment/sfx_agua_margem_rio.wav" id="6_o5w41"]
@@ -278,6 +279,7 @@ sources/1 = SubResource("TileSetAtlasSource_vv66c")
 [node name="Room34" type="Node2D" unique_id=575912879]
 script = ExtResource("5_boss_arena")
 pos_boss_cutscene = ExtResource("2_o5w41")
+bg_music = ExtResource("3_pe2ny")
 limit_bottom = 480
 limit_left = -336
 limit_right = 336

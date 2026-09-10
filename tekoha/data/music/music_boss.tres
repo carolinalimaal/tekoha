@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MusicTrack" format=3 uid="uid://dmlwevuousw8o"]
+
+[ext_resource type="Script" uid="uid://c0w7oa21iwpaf" path="res://utils/resources/music/music_track.gd" id="1_eo37m"]
+[ext_resource type="AudioStream" uid="uid://da15yde7xnyl6" path="res://assets/sound/music/bgm_bossfight.wav" id="2_eo37m"]
+
+[resource]
+script = ExtResource("1_eo37m")
+track = ExtResource("2_eo37m")
+volume = -2.0
+metadata/_custom_type_script = "uid://c0w7oa21iwpaf"
