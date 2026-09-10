@@ -43,6 +43,7 @@ func _ready() -> void:
 	health_changed.connect(_on_health_changed)
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+	GlobalSignals.game_state_changed.connect(_on_game_state_changed)
 	# Iniciar state_machine
 	state_machine.init(self)
 	# Adicionar ao grupo "player"
@@ -113,6 +114,8 @@ func _exit_tree() -> void:
 		DialogueManager.dialogue_started.disconnect(_on_dialogue_started)
 	if DialogueManager.dialogue_ended.is_connected(_on_dialogue_ended):
 		DialogueManager.dialogue_ended.disconnect(_on_dialogue_ended)
+	if GlobalSignals.game_state_changed.is_connected(_on_game_state_changed):
+		GlobalSignals.game_state_changed.disconnect(_on_game_state_changed)
 
 func _on_dialogue_started() -> void:
 	if _is_low_health:
@@ -121,6 +124,10 @@ func _on_dialogue_started() -> void:
 func _on_dialogue_ended() -> void:
 	if _is_low_health:
 		AudioManager.start_looping_audio(SoundEffect.SOUND_EFFECT_TYPE.LOW_HEALTH)
+
+func _on_game_state_changed(new_state: GameManager.GameState) -> void:
+	if new_state == GameManager.GameState.POS_BOSSFIGHT:
+		_is_low_health = false
 
 func _on_player_attack_received(attack_data: AttackData):
 	# Nao sofre dano se estiver em DEATH ou STUN, nem durante dialogos/cutscenes
