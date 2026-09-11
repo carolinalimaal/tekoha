@@ -83,7 +83,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_tkam1"]
 resource_name = "Attack"
-length = 2.0
+length = 3.0000000000000004
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -91,7 +91,7 @@ tracks/0/path = NodePath("Tail:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 1.5, 2),
+"times": PackedFloat32Array(0, 0.2, 2, 2.5),
 "transitions": PackedFloat32Array(4, 1, 5, 1),
 "update": 0,
 "values": [Vector2(0, -622.5), Vector2(0, -190.5), Vector2(0, -190.5), Vector2(0, -622.5)]
@@ -115,7 +115,7 @@ tracks/2/path = NodePath("HitboxComponent/HitboxCollision:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 1.5),
+"times": PackedFloat32Array(0.2, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -149,7 +149,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_y6fk3"]
 resource_name = "Attack2"
-length = 3.2
+length = 4.699999999999999
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -157,7 +157,7 @@ tracks/0/path = NodePath("Tail:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 1.2, 1.4, 2.7, 3.2),
+"times": PackedFloat32Array(0, 0.2, 1.7, 1.9, 3.7, 4.2),
 "transitions": PackedFloat32Array(0.5, 1, 5, 1, 5, 1),
 "update": 0,
 "values": [Vector2(0, -622.5), Vector2(0, -315.5), Vector2(0, -315.5), Vector2(0, -190.5), Vector2(0, -190.5), Vector2(0, -622.5)]
@@ -169,7 +169,7 @@ tracks/1/path = NodePath("HurtboxComponent/HurtboxCollision:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.4, 1.4333333),
+"times": PackedFloat32Array(1.9, 1.9333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -181,7 +181,7 @@ tracks/2/path = NodePath("HitboxComponent/HitboxCollision:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.4, 2.7),
+"times": PackedFloat32Array(1.9, 3.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]

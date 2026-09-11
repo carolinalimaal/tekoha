@@ -7,10 +7,35 @@
 [sub_resource type="Resource" id="Resource_3s6fh"]
 script = ExtResource("1_t8ggp")
 background_image = ExtResource("2_yosmy")
-text_pt = "pos boss"
+text_pt = "Com um movimento rápido e preciso de sua lança, Curupira derrota a grande arraia de algas que se dissolve em uma massa verde e lentamente se dissipa pelas águas do rio Combu."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_02msl"]
+script = ExtResource("1_t8ggp")
+background_image = ExtResource("2_yosmy")
+text_pt = "Após o confortante momento de comemoração e reencontro, Iara emergiu das águas em sua forma de sereia na frente de Curupira."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_w37kt"]
+script = ExtResource("1_t8ggp")
+background_image = ExtResource("2_yosmy")
+text_pt = "Iara retirou uma das flores de vitória-régia que adornavam seus cabelos e a envolveu em uma esfera de água, com movimentos graciosos e delicados de suas mãos, chamando a atenção do jovem rapaz à sua frente."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_nedh8"]
+script = ExtResource("1_t8ggp")
+actor_name = "Iara"
+background_image = ExtResource("2_yosmy")
+text_pt = "Pegue, criança. Você sabe do que é capaz. Você sabe que o meio ambiente precisa de você. Eu estarei por perto para te guiar."
+metadata/_custom_type_script = "uid://x6215xlpsejj"
+
+[sub_resource type="Resource" id="Resource_54w0l"]
+script = ExtResource("1_t8ggp")
+background_image = ExtResource("2_yosmy")
+text_pt = "Curupira ainda sentia medo e não estava plenamente seguro de suas habilidades, mas a flor lhe trazia uma grande sensação de tranquilidade e conforto. Em tamanha proximidade do amuleto, o pequeno Curupira se sentiu capaz de seguir em frente em meio ao medo e à incerteza."
 metadata/_custom_type_script = "uid://x6215xlpsejj"
 
 [resource]
 script = ExtResource("2_k4f5x")
-dialogues = Array[ExtResource("1_t8ggp")]([SubResource("Resource_3s6fh")])
+dialogues = Array[ExtResource("1_t8ggp")]([SubResource("Resource_3s6fh"), SubResource("Resource_02msl"), SubResource("Resource_w37kt"), SubResource("Resource_nedh8"), SubResource("Resource_54w0l")])
 metadata/_custom_type_script = "uid://bmi6yxeeux1kk"
