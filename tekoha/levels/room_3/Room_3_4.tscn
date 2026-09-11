@@ -277,6 +277,7 @@ sources/1 = SubResource("TileSetAtlasSource_vv66c")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nv3ea"]
 
 [node name="Room34" type="Node2D" unique_id=575912879]
+y_sort_enabled = true
 script = ExtResource("5_boss_arena")
 pos_boss_cutscene = ExtResource("2_o5w41")
 bg_music = ExtResource("3_pe2ny")

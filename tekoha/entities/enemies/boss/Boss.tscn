@@ -205,7 +205,7 @@ tracks/4/path = NodePath("../StateMachine/Aim")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.2),
+"times": PackedFloat32Array(1.7),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": ["Attack"],
@@ -219,7 +219,7 @@ tracks/5/path = NodePath("..")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(1.4),
+"times": PackedFloat32Array(1.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -310,7 +310,7 @@ polygon = PackedVector2Array(0, 194, 120, 184, 225, 158, 251, 108, 251, -29, 193
 
 [node name="HealthComponent" type="Node" parent="." unique_id=234468599]
 script = ExtResource("5_ncffa")
-max_health = 10
+max_health = 100
 metadata/_custom_type_script = "uid://cxfitvewp4xj5"
 
 [node name="Attack" type="Node2D" parent="." unique_id=1048867530]
